@@ -8,6 +8,6 @@ namespace MenaxhimiBibliotekes.BO
 {
     public class Abonenti
     {
-
+        //koment
     }
 }
