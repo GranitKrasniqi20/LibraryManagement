@@ -42,7 +42,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abonenti.cs" />
+    <Compile Include="Autori.cs" />
+    <Compile Include="Fatura.cs" />
+    <Compile Include="Gjuha.cs" />
+    <Compile Include="Huazimi.cs" />
+    <Compile Include="LlojiMaterialit.cs" />
+    <Compile Include="LokacioniMaterialit.cs" />
+    <Compile Include="Materiali.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rafti.cs" />
+    <Compile Include="Rezervimi.cs" />
+    <Compile Include="Roli.cs" />
+    <Compile Include="ShtepiaBotuese.cs" />
+    <Compile Include="TipiFatures.cs" />
+    <Compile Include="TipiVeprimit.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="Zhanri.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
