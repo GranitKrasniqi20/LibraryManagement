@@ -8,6 +8,7 @@ namespace MenaxhimiBibliotekes.BO
 {
     public class Abonenti
     {
+        //Komenti GK
         public int AbonentiID { get; set; }
         public string Emri { get; set; }
         public string Mbiemri { get; set; }
