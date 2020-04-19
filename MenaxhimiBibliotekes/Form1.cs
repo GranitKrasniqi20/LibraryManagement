@@ -16,5 +16,51 @@ namespace MenaxhimiBibliotekes
         {
             InitializeComponent();
         }
+
+        private void AddControlsToPanel(Control c)
+        {
+            panelSubmenu.Controls.Clear();
+            panelSubmenu.Controls.Add(c);
+        }
+
+        private void ShowSubmenu()
+        {
+            lblNothingToDisplay.Hide();
+            panelSubmenu.Show();
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            panelSubmenu.Hide();
+            lblNothingToDisplay.Show();
+        }
+
+        private void appLogo_Click(object sender, EventArgs e)
+        {
+            panelSubmenu.Hide();
+            lblNothingToDisplay.Show();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            panelSubmenu.Hide();
+            lblNothingToDisplay.Show();
+        }
+
+        private void btnMembers_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu();
+
+            Submenus_User_Controls.ucMembers ucm = new Submenus_User_Controls.ucMembers();
+            AddControlsToPanel(ucm);
+        }
+
+        private void btnMaterials_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu();
+
+            Submenus_User_Controls.ucMaterials ucmat = new Submenus_User_Controls.ucMaterials();
+            AddControlsToPanel(ucmat);
+        }
     }
 }

@@ -52,10 +52,37 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeNothingToDisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeNothingToDisplayForm.Designer.cs">
+      <DependentUpon>HomeNothingToDisplayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Submenus-User-Controls\ucDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Submenus-User-Controls\ucDashboard.Designer.cs">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Submenus-User-Controls\ucMaterials.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Submenus-User-Controls\ucMaterials.Designer.cs">
+      <DependentUpon>ucMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Submenus-User-Controls\ucMembers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Submenus-User-Controls\ucMembers.Designer.cs">
+      <DependentUpon>ucMembers.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeNothingToDisplayForm.resx">
+      <DependentUpon>HomeNothingToDisplayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +93,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Submenus-User-Controls\ucDashboard.resx">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Submenus-User-Controls\ucMaterials.resx">
+      <DependentUpon>ucMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Submenus-User-Controls\ucMembers.resx">
+      <DependentUpon>ucMembers.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +117,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="brand\helping-icons\thisLogout.png" />
     <Content Include="brand\helping-icons\thisUser.png" />
     <Content Include="brand\icons\dashboard.png" />
     <Content Include="brand\icons\thisDashboard.png" />
