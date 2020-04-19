@@ -79,5 +79,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="brand\helping-icons\thisUser.png" />
+    <Content Include="brand\icons\dashboard.png" />
+    <Content Include="brand\icons\thisDashboard.png" />
+    <Content Include="brand\icons\thisMaterials.png" />
+    <Content Include="brand\icons\thisMembers.png" />
+    <Content Include="brand\icons\thisNotifications.png" />
+    <Content Include="brand\icons\thisSettings.png" />
+    <Content Include="brand\logo\full-logo.png" />
+    <Content Include="brand\logo\logo-icon.png" />
+    <Content Include="brand\logo\logo-name.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
