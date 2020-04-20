@@ -8,7 +8,41 @@ using MenaxhimiBibliotekes.BO;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    class MaterialDAL:ICrud<Material>
+    public class MaterialDAL : ICrud<Material>
     {
+        public bool Add(Material obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(Material obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Material Get(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Material Get(Material obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Material> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Update(Material obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
