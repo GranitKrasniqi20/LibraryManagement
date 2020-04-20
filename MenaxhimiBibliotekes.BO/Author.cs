@@ -8,8 +8,8 @@ namespace MenaxhimiBibliotekes.BO
 {
     public class Author
     {
-        public int AutoriID { get; set; }
-        public string EmriAutorit { get; set; }
-        public string MbiemriAutorit { get; set; }
+        public int AuthorID { get; set; }
+        public string AuthorName { get; set; }
+        public string AuthorLastName { get; set; }
     }
 }
