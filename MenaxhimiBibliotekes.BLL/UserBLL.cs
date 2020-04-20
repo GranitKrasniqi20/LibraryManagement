@@ -5,28 +5,36 @@ using System.Text;
 using System.Threading.Tasks;
 using MenaxhimiBibliotekes.BO;
 using MenaxhimiBibliotekes.BO.Interfaces;
+using MenaxhimiBibliotekes.DAL;
+
+
+
+
 namespace MenaxhimiBibliotekes.BLL
 {
     class UserBLL : ICrud<User>
     {
+        UserDAL usr = new UserDAL();
         public bool Add(User obj)
         {
+           return usr.Add(obj);
 
         }
 
         public bool Delete(int Id)
         {
-            throw new NotImplementedException();
+           return usr.Delete(Id);
+         
         }
 
         public bool Delete(User obj)
         {
-            throw new NotImplementedException();
+           return usr.Delete(obj);
         }
 
         public User Get(int Id)
         {
-            throw new NotImplementedException();
+            return usr.Get(Id);
         }
 
         public User Get(User obj)
@@ -36,12 +44,12 @@ namespace MenaxhimiBibliotekes.BLL
 
         public List<User> GetAll()
         {
-            throw new NotImplementedException();
+            return usr.GetAll();
         }
 
         public bool Update(User obj)
         {
-            throw new NotImplementedException();
+            return usr.Update(obj);
         }
     }
 }

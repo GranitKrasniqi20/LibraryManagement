@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abonenti.cs" />
-    <Compile Include="Autori.cs" />
+    <Compile Include="Subscriber.cs" />
+    <Compile Include="Author.cs" />
     <Compile Include="Fatura.cs" />
     <Compile Include="Gjuha.cs" />
     <Compile Include="Huazimi.cs" />

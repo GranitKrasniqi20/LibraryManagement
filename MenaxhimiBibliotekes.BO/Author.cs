@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class Autori
+    public class Author
     {
         public int AutoriID { get; set; }
         public string EmriAutorit { get; set; }

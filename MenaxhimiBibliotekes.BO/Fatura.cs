@@ -10,7 +10,7 @@ namespace MenaxhimiBibliotekes.BO
     {
         public int FaturaID { get; set; }
         public int AbonentiId { get; set; }
-        public virtual Abonenti Abonenti { get; set; }
+        public virtual Subscriber Abonenti { get; set; }
         public int MaterialiId { get; set; }
         public virtual Materiali Materiali { get; set; }
         public int TipiFaturesID { get; set; }

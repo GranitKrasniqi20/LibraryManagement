@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class Abonenti
+    public class Subscriber
     {
         //Komenti GK
         public int AbonentiID { get; set; }

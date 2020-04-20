@@ -32,6 +32,6 @@ namespace MenaxhimiBibliotekes.BO
         public int NumriFaqeve { get; set; }
 
 
-        List<Autori> Authors { get; set; } = new List<Autori>();
+        List<Author> Authors { get; set; } = new List<Author>();
     }
 }

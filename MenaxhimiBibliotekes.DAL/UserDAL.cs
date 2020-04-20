@@ -7,9 +7,9 @@ using MenaxhimiBibliotekes.BO;
 using MenaxhimiBibliotekes.BO.Interfaces;
 namespace MenaxhimiBibliotekes.DAL
 {
-    class UserDAL : ICrud<User>
+    public class UserDAL : ICrud<User>
     {
-        public bool Add(User obj)
+        public bool Add(User obj) 
         {
             using ()
             {
