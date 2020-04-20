@@ -46,6 +46,7 @@
     <Compile Include="Fatura.cs" />
     <Compile Include="Gjuha.cs" />
     <Compile Include="Huazimi.cs" />
+    <Compile Include="Interfaces\ICrud.cs" />
     <Compile Include="LlojiMaterialit.cs" />
     <Compile Include="LokacioniMaterialit.cs" />
     <Compile Include="Materiali.cs" />

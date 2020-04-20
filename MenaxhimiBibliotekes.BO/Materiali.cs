@@ -10,8 +10,6 @@ namespace MenaxhimiBibliotekes.BO
     {
         public int MaterialiID { get; set; }
 
-        public int AutoriID { get; set; }
-        public virtual Autori Autori { get; set; }
 
         public int ZhanriID { get; set; }
         public virtual Zhanri Zhanri { get; set; }
@@ -32,5 +30,8 @@ namespace MenaxhimiBibliotekes.BO
         public int KopjeTeLira { get; set; }//Numri Kopjeve te lira
         public int Sasia { get; set; }//Tirazhi
         public int NumriFaqeve { get; set; }
+
+
+        List<Autori> Authors { get; set; } = new List<Autori>();
     }
 }
