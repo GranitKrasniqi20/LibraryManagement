@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Login Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeNothingToDisplayForm.cs">
+    <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomeNothingToDisplayForm.Designer.cs">
-      <DependentUpon>HomeNothingToDisplayForm.cs</DependentUpon>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,11 +78,11 @@
     <Compile Include="Submenus-User-Controls\ucMembers.Designer.cs">
       <DependentUpon>ucMembers.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Login Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeNothingToDisplayForm.resx">
-      <DependentUpon>HomeNothingToDisplayForm.cs</DependentUpon>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,16 +115,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Dashboard Forms\" />
+    <Folder Include="Materials Forms\" />
+    <Folder Include="Members Forms\" />
+    <Folder Include="Notifications Forms\" />
+    <Folder Include="Settings Forms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="brand\bg\bg1.jpg" />
+    <Content Include="brand\bg\bg2.jpg" />
     <Content Include="brand\helping-icons\thisLogout.png" />
     <Content Include="brand\helping-icons\thisUser.png" />
+    <Content Include="brand\helping-icons\ucLogo.png" />
     <Content Include="brand\icons\dashboard.png" />
     <Content Include="brand\icons\thisDashboard.png" />
     <Content Include="brand\icons\thisMaterials.png" />
     <Content Include="brand\icons\thisMembers.png" />
     <Content Include="brand\icons\thisNotifications.png" />
     <Content Include="brand\icons\thisSettings.png" />
+    <Content Include="brand\logo\full-logo-HD.png" />
     <Content Include="brand\logo\full-logo.png" />
     <Content Include="brand\logo\logo-icon.png" />
     <Content Include="brand\logo\logo-name.png" />
