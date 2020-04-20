@@ -9,14 +9,14 @@ namespace MenaxhimiBibliotekes.BO
     public class Subscriber
     {
         //Komenti GK
-        public int AbonentiID { get; set; }
-        public string Emri { get; set; }
-        public string Mbiemri { get; set; }
-        public string Adresa { get; set; }
-        public DateTime Datelindja { get; set; }
-        public string NumriPersonal { get; set; }
-        public string Emaili { get; set; }
-        public bool Gjinia { get; set; }
-        public DateTime DataSkadimit { get; set; }
+        public int SubscriberId { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public string PersonalNo { get; set; }
+        public string Email { get; set; }
+        public bool Gender { get; set; }
+        public DateTime SubscribeExpireDate { get; set; }
     }
 }

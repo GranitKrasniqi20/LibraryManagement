@@ -41,24 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audit.cs" />
     <Compile Include="Subscriber.cs" />
     <Compile Include="Author.cs" />
-    <Compile Include="Fatura.cs" />
-    <Compile Include="Gjuha.cs" />
-    <Compile Include="Huazimi.cs" />
+    <Compile Include="Bill.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="Borrow.cs" />
     <Compile Include="Interfaces\ICrud.cs" />
-    <Compile Include="LlojiMaterialit.cs" />
-    <Compile Include="LokacioniMaterialit.cs" />
-    <Compile Include="Materiali.cs" />
+    <Compile Include="MaterialType.cs" />
+    <Compile Include="MaterialLocation.cs" />
+    <Compile Include="Material.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rafti.cs" />
-    <Compile Include="Rezervimi.cs" />
-    <Compile Include="Roli.cs" />
-    <Compile Include="ShtepiaBotuese.cs" />
-    <Compile Include="TipiFatures.cs" />
-    <Compile Include="TipiVeprimit.cs" />
+    <Compile Include="Shelf.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="PublishHouse.cs" />
+    <Compile Include="BillType.cs" />
+    <Compile Include="TypeOfAction.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="Zhanri.cs" />
+    <Compile Include="Genre.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

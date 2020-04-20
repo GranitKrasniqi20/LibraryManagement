@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class ShtepiaBotuese
+    public class PublishHouse : Audit
     {
-        public int ShtepiaBotueseID { get; set; }
-        public string _ShtepiaBotuese { get; set; }
+        public int PublishHouseId { get; set; }
+        public string _PublishHouse { get; set; }
     }
 }

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class LokacioniMaterialit
+    public class MaterialLocation : Audit
     {
         public int LokacioniMaterialitID { get; set; }
         public int RaftiID { get; set; }
-        public virtual Rafti Rafti { get; set; }
+        public virtual Shelf Rafti { get; set; }
         public int MaterialiID { get; set; }
-        public virtual Materiali Materiali { get; set; }
+        public virtual Material Materiali { get; set; }
     }
 }

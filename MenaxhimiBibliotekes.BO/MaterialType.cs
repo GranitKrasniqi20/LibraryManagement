@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class TipiFatures
+    public class MaterialType : Audit
     {
-        public int TipiFaturesId { get; set; }
-        public string _TipiFatures { get; set; }
+        public int MaterialTypeId { get; set; }
+        public string _MaterialType { get; set; }
     }
 }

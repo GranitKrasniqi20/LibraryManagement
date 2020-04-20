@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class Roli
+    public class Genre : Audit
     {
-        public int RoliID { get; set; }
-        public string RoliUserit { get; set; }
+        public int GenreId { get; set; }
+        public string _genre { get; set; }
     }
 }

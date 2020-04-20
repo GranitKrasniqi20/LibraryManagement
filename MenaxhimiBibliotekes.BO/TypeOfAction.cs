@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class Gjuha
+    public class TypeOfAction
     {
-        public int GjuhaID { get; set; }
-        public string nGjuha { get; set; }
+        public int TypeOfActionId { get; set; }
+        public string nTipiVeprimit { get; set; }
     }
 }

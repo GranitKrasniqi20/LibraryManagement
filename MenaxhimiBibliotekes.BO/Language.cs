@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class Zhanri
+    public class Language : Audit
     {
-        public int ZhanriID { get; set; }
-        public string _Zhanri { get; set; }
+        public int LanguageI { get; set; }
+        public string _Language { get; set; }
     }
 }

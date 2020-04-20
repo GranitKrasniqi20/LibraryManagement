@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class LlojiMaterialit
+    public class Role
     {
-        public int LlojiMaterialitID { get; set; }
-        public string _LlojitMaterialit { get; set; }
+        public int UserRoleId { get; set; }
+        public string UserRole { get; set; }
     }
 }
