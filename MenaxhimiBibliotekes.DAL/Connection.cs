@@ -42,10 +42,6 @@ namespace MenaxhimiBibliotekes.DAL
         public static void AddParameter(SqlCommand command, string parameterName, object value)
         {
             command.Parameters.AddWithValue(parameterName, value);
-
-            //vazhdon haleeeeeeeeeeee--------------------------------------------------------------------------------------
-            
-
         }
 
 

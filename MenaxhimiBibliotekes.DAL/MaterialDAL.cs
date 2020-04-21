@@ -8,7 +8,7 @@ using MenaxhimiBibliotekes.BO;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class MaterialDAL : ICrud<Material>
+    public class MaterialDAL : ICrud<Material>,
     {
         public bool Add(Material obj)
         {
