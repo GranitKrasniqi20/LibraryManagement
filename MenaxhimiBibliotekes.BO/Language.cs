@@ -8,7 +8,7 @@ namespace MenaxhimiBibliotekes.BO
 {
     public class Language : Audit
     {
-        public int LanguageI { get; set; }
+        public int LanguageId { get; set; }
         public string _Language { get; set; }
     }
 }

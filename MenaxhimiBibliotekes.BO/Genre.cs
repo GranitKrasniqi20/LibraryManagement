@@ -9,6 +9,6 @@ namespace MenaxhimiBibliotekes.BO
     public class Genre : Audit
     {
         public int GenreId { get; set; }
-        public string _genre { get; set; }
+        public string _Genre { get; set; }
     }
 }

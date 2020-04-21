@@ -8,9 +8,9 @@ using MenaxhimiBibliotekes.BO;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class MaterialDAL : ICrud<Material>
+    public class BillDAL : ICrud<Bill>
     {
-        public bool Add(Material obj)
+        public bool Add(Bill obj)
         {
             throw new NotImplementedException();
         }
@@ -20,27 +20,27 @@ namespace MenaxhimiBibliotekes.DAL
             throw new NotImplementedException();
         }
 
-        public bool Delete(Material obj)
+        public bool Delete(Bill obj)
         {
             throw new NotImplementedException();
         }
 
-        public Material Get(int Id)
+        public Bill Get(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public Material Get(Material obj)
+        public Bill Get(Bill obj)
         {
             throw new NotImplementedException();
         }
 
-        public List<Material> GetAll()
+        public List<Bill> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Material obj)
+        public bool Update(Bill obj)
         {
             throw new NotImplementedException();
         }

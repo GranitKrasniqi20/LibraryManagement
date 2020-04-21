@@ -7,45 +7,45 @@ using MenaxhimiBibliotekes.BO.Interfaces;
 using MenaxhimiBibliotekes.BO;
 using MenaxhimiBibliotekes.DAL;
 
-
 namespace MenaxhimiBibliotekes.BLL
 {
-    class MaterialBLL : ICrud<Material>
+    public class SubscriberBLL : ICrud<Subscriber>
     {
-        MaterialDAL _materialDAL = new MaterialDAL();
-        public bool Add(Material obj)
+        SubscriberDAL _subscriberDAL = new SubscriberDAL();
+
+        public bool Add(Subscriber obj)
         {
-           return _materialDAL.Add(obj);
+            return _subscriberDAL.Add(obj);
         }
 
         public bool Delete(int Id)
         {
-           return _materialDAL.Delete(Id);
+            return _subscriberDAL.Delete(Id);
         }
 
-        public bool Delete(Material obj)
+        public bool Delete(Subscriber obj)
         {
             throw new NotImplementedException();
         }
 
-        public Material Get(int Id)
+        public Subscriber Get(int Id)
         {
             return Get(Id);
         }
 
-        public Material Get(Material obj)
+        public Subscriber Get(Subscriber obj)
         {
             return Get(obj);
         }
 
-        public List<Material> GetAll()
+        public List<Subscriber> GetAll()
         {
             return GetAll();
         }
 
-        public bool Update(Material obj)
+        public bool Update(Subscriber obj)
         {
-            return _materialDAL.Update(obj);
+            return _subscriberDAL.Update(obj);
         }
     }
 }
