@@ -62,7 +62,7 @@ namespace MenaxhimiBibliotekes
             panelSubmenu.Hide();
             lblNothingToDisplay.Hide();
 
-            Login_Forms.LoginForm loginform = new Login_Forms.LoginForm();
+            Login_Forms.loginForm loginform = new Login_Forms.loginForm();
             loginform.MdiParent = this;
             loginform.Show();
         }

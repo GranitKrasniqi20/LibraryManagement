@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login Forms\LoginForm.cs">
+    <Compile Include="Login Forms\loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login Forms\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="Login Forms\loginForm.Designer.cs">
+      <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
@@ -78,8 +78,8 @@
     <Compile Include="Submenus-User-Controls\ucMembers.Designer.cs">
       <DependentUpon>ucMembers.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Login Forms\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Login Forms\loginForm.resx">
+      <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>

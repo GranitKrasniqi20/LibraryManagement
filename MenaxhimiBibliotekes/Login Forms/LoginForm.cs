@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.Login_Forms
 {
-    public partial class LoginForm : Form
+    public partial class loginForm : Form
     {
-        public LoginForm()
+        public loginForm()
         {
             InitializeComponent();
         }
