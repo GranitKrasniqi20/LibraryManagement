@@ -12,6 +12,39 @@ namespace MenaxhimiBibliotekes.DAL
 {
     public class UserDAL : ICrud<User>,IConvertToBO<User>
     {
+
+
+        public User LogIn(string username, string password)
+        {
+            try
+            {
+                User usr = new User();
+                using (SqlConnection conn = Connection.GetConnection())
+                {
+                    using (SqlCommand command = Connection.Command(conn, "usp_LogIn", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            Connection.AddParameter(command, "UserName", username);
+                            Connection.AddParameter(command, "Password", password);
+                            if (reader.HasRows)
+                            {
+                                return ToBO(reader);
+                            }
+                            else
+                            {
+                                throw new Exception();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
         public bool Add(User obj) 
         {
             int rowsAffected = 0;
@@ -154,46 +187,69 @@ namespace MenaxhimiBibliotekes.DAL
 
         public List<User> GetAll()
         {
-            List<User> AllUsers = new List<User>();
-            using (var conn = Connection.GetConnection())
+            try
             {
-                using (var command = Connection.Command(conn, "usp_GetAllUsers", CommandType.StoredProcedure))
+                List<User> AllUsers = new List<User>();
+                using (var conn = Connection.GetConnection())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (var command = Connection.Command(conn, "usp_GetAllUsers", CommandType.StoredProcedure))
                     {
-                        if (reader.HasRows)
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            while (reader.Read())
+                            if (reader.HasRows)
                             {
-                                AllUsers.Add(ToBO(reader));
+                                while (reader.Read())
+                                {
+                                    AllUsers.Add(ToBO(reader));
+                                }
                             }
                         }
                     }
-                }
 
+                }
+                if (AllUsers.Count > 0)
+                {
+                    return AllUsers;
+
+                }
+                else
+                {
+                    throw new Exception();
+                }
             }
-            return AllUsers;
+            catch (Exception)
+            {
+
+                return null;
+            }
         }
 
         public User ToBO(SqlDataReader reader)
         {
-            User usr = new User();
-            usr.UserID = int.Parse(reader["UserID"].ToString());
-            usr.Username = reader["Username"].ToString();
-            usr.Password = reader["Password"].ToString();
-            usr.Name = reader["Name"].ToString();
-            usr.LastName = reader["LastName"].ToString();
-            usr.RoleID =int.Parse(reader["RoleId"].ToString());
-            usr._role.UserRoleId = int.Parse(reader["RoleId"].ToString());
-            usr._role.UserRole = reader["Role"].ToString();
-            usr.Email = reader["Email"].ToString();
+            try
+            {
+                User usr = new User();
+                usr.UserID = int.Parse(reader["UserID"].ToString());
+                usr.Username = reader["Username"].ToString();
+                usr.Password = reader["Password"].ToString();
+                usr.Name = reader["Name"].ToString();
+                usr.LastName = reader["LastName"].ToString();
+                usr.RoleID = int.Parse(reader["RoleId"].ToString());
+                usr._role.UserRoleId = int.Parse(reader["RoleId"].ToString());
+                usr._role.UserRole = reader["Role"].ToString();
+                usr.Email = reader["Email"].ToString();
 
 
                 usr.IsActive = (bool)reader["IsActive"];
 
 
 
-            return usr;
+                return usr;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public bool Update(User obj)
@@ -211,7 +267,7 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "@LastName", obj.LastName);
                         Connection.AddParameter(command, "@RoleId", obj.RoleID);
                         Connection.AddParameter(command, "@Email", obj.Email);
-                        Connection.AddParameter(command, "@InsertBy", obj.InsBy);//gabimmmmmm
+                        Connection.AddParameter(command, "@UpdBy", obj.UpdBy);//gabimmmmmm
 
                         rowsAffected = command.ExecuteNonQuery();
                     }

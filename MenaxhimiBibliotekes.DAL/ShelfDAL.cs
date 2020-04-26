@@ -16,27 +16,7 @@ namespace MenaxhimiBibliotekes.DAL
 
 
 
-        //public bool UpdateMaterialLocation(SqlConnection conn, int materialId, int currentShelfId, Shelf ml)
-        //{
-        //    int rowaffecte;
-        //    using (SqlCommand command = Connection.Command(conn, "usp_UpdateMaterialAuthor", CommandType.StoredProcedure))
-        //    {
-        //        Connection.AddParameter(command, "MaterialId", materialId);
-        //        Connection.AddParameter(command, "RaftiId", ml.ShelfId);
-        //        Connection.AddParameter(command, "updBy", ml.UpdBy);
-        //        rowaffecte = command.ExecuteNonQuery();
-        //    }
 
-        //    if (rowaffecte > 0)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-
-        //}
         public bool Add(Shelf obj)
         {
             int isInserted = 0;
@@ -220,6 +200,12 @@ namespace MenaxhimiBibliotekes.DAL
                 return false;
             }
         }
+
+
+        //internal List<Shelf> GetMaterialLocation()
+        //{
+
+        //}
     }
 
 }
