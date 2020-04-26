@@ -61,9 +61,8 @@
             this.panelMenu.Controls.Add(this.appName);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(6);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(546, 1560);
+            this.panelMenu.Size = new System.Drawing.Size(273, 536);
             this.panelMenu.TabIndex = 1;
             // 
             // btnSettings
@@ -74,11 +73,10 @@
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 781);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSettings.Location = new System.Drawing.Point(0, 406);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(546, 129);
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnSettings.Size = new System.Drawing.Size(273, 67);
             this.btnSettings.TabIndex = 2;
             this.btnSettings.Text = "  Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -94,11 +92,10 @@
             this.btnNotifications.ForeColor = System.Drawing.Color.White;
             this.btnNotifications.Image = ((System.Drawing.Image)(resources.GetObject("btnNotifications.Image")));
             this.btnNotifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotifications.Location = new System.Drawing.Point(0, 646);
-            this.btnNotifications.Margin = new System.Windows.Forms.Padding(6);
+            this.btnNotifications.Location = new System.Drawing.Point(0, 336);
             this.btnNotifications.Name = "btnNotifications";
-            this.btnNotifications.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnNotifications.Size = new System.Drawing.Size(546, 129);
+            this.btnNotifications.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnNotifications.Size = new System.Drawing.Size(273, 67);
             this.btnNotifications.TabIndex = 2;
             this.btnNotifications.Text = "  Notifications";
             this.btnNotifications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,11 +111,10 @@
             this.btnMaterials.ForeColor = System.Drawing.Color.White;
             this.btnMaterials.Image = ((System.Drawing.Image)(resources.GetObject("btnMaterials.Image")));
             this.btnMaterials.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaterials.Location = new System.Drawing.Point(0, 512);
-            this.btnMaterials.Margin = new System.Windows.Forms.Padding(6);
+            this.btnMaterials.Location = new System.Drawing.Point(0, 266);
             this.btnMaterials.Name = "btnMaterials";
-            this.btnMaterials.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnMaterials.Size = new System.Drawing.Size(546, 129);
+            this.btnMaterials.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnMaterials.Size = new System.Drawing.Size(273, 67);
             this.btnMaterials.TabIndex = 2;
             this.btnMaterials.Text = "  Materials";
             this.btnMaterials.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,11 +131,10 @@
             this.btnMembers.ForeColor = System.Drawing.Color.White;
             this.btnMembers.Image = ((System.Drawing.Image)(resources.GetObject("btnMembers.Image")));
             this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembers.Location = new System.Drawing.Point(0, 377);
-            this.btnMembers.Margin = new System.Windows.Forms.Padding(6);
+            this.btnMembers.Location = new System.Drawing.Point(0, 196);
             this.btnMembers.Name = "btnMembers";
-            this.btnMembers.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnMembers.Size = new System.Drawing.Size(546, 129);
+            this.btnMembers.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnMembers.Size = new System.Drawing.Size(273, 67);
             this.btnMembers.TabIndex = 2;
             this.btnMembers.Text = "  Members";
             this.btnMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -156,11 +151,10 @@
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 242);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 126);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(546, 129);
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(273, 67);
             this.btnDashboard.TabIndex = 2;
             this.btnDashboard.Text = "  Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -174,10 +168,9 @@
             this.panelUser.Controls.Add(this.btnLogout);
             this.panelUser.Controls.Add(this.btnLoggedUser);
             this.panelUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelUser.Location = new System.Drawing.Point(0, 1256);
-            this.panelUser.Margin = new System.Windows.Forms.Padding(6);
+            this.panelUser.Location = new System.Drawing.Point(0, 378);
             this.panelUser.Name = "panelUser";
-            this.panelUser.Size = new System.Drawing.Size(546, 304);
+            this.panelUser.Size = new System.Drawing.Size(273, 158);
             this.panelUser.TabIndex = 1;
             // 
             // btnLogout
@@ -188,11 +181,10 @@
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 142);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLogout.Location = new System.Drawing.Point(0, 74);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(546, 162);
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(273, 84);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "  Log Out";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,11 +200,10 @@
             this.btnLoggedUser.ForeColor = System.Drawing.Color.White;
             this.btnLoggedUser.Image = ((System.Drawing.Image)(resources.GetObject("btnLoggedUser.Image")));
             this.btnLoggedUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoggedUser.Location = new System.Drawing.Point(0, 4);
-            this.btnLoggedUser.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLoggedUser.Location = new System.Drawing.Point(0, 2);
             this.btnLoggedUser.Name = "btnLoggedUser";
-            this.btnLoggedUser.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnLoggedUser.Size = new System.Drawing.Size(546, 135);
+            this.btnLoggedUser.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnLoggedUser.Size = new System.Drawing.Size(273, 70);
             this.btnLoggedUser.TabIndex = 2;
             this.btnLoggedUser.Text = "  Beis Presheva";
             this.btnLoggedUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -222,10 +213,9 @@
             // appLogo
             // 
             this.appLogo.Image = ((System.Drawing.Image)(resources.GetObject("appLogo.Image")));
-            this.appLogo.Location = new System.Drawing.Point(42, 42);
-            this.appLogo.Margin = new System.Windows.Forms.Padding(6);
+            this.appLogo.Location = new System.Drawing.Point(21, 22);
             this.appLogo.Name = "appLogo";
-            this.appLogo.Size = new System.Drawing.Size(92, 158);
+            this.appLogo.Size = new System.Drawing.Size(46, 82);
             this.appLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.appLogo.TabIndex = 0;
             this.appLogo.TabStop = false;
@@ -234,10 +224,9 @@
             // appName
             // 
             this.appName.Image = ((System.Drawing.Image)(resources.GetObject("appName.Image")));
-            this.appName.Location = new System.Drawing.Point(148, 42);
-            this.appName.Margin = new System.Windows.Forms.Padding(6);
+            this.appName.Location = new System.Drawing.Point(74, 22);
             this.appName.Name = "appName";
-            this.appName.Size = new System.Drawing.Size(376, 158);
+            this.appName.Size = new System.Drawing.Size(188, 82);
             this.appName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.appName.TabIndex = 0;
             this.appName.TabStop = false;
@@ -248,10 +237,9 @@
             this.lblNothingToDisplay.BackColor = System.Drawing.Color.Transparent;
             this.lblNothingToDisplay.Font = new System.Drawing.Font("Segoe UI", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNothingToDisplay.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNothingToDisplay.Location = new System.Drawing.Point(616, 63);
-            this.lblNothingToDisplay.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblNothingToDisplay.Location = new System.Drawing.Point(308, 33);
             this.lblNothingToDisplay.Name = "lblNothingToDisplay";
-            this.lblNothingToDisplay.Size = new System.Drawing.Size(949, 141);
+            this.lblNothingToDisplay.Size = new System.Drawing.Size(476, 71);
             this.lblNothingToDisplay.TabIndex = 3;
             this.lblNothingToDisplay.Text = "Nothing To Display";
             // 
@@ -259,24 +247,23 @@
             // 
             this.panelSubmenu.BackColor = System.Drawing.Color.Gainsboro;
             this.panelSubmenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelSubmenu.Location = new System.Drawing.Point(546, 0);
-            this.panelSubmenu.Margin = new System.Windows.Forms.Padding(6);
+            this.panelSubmenu.Location = new System.Drawing.Point(273, 0);
             this.panelSubmenu.Name = "panelSubmenu";
-            this.panelSubmenu.Size = new System.Drawing.Size(570, 1560);
+            this.panelSubmenu.Size = new System.Drawing.Size(285, 536);
             this.panelSubmenu.TabIndex = 4;
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2468, 1560);
+            this.ClientSize = new System.Drawing.Size(1193, 536);
             this.Controls.Add(this.panelSubmenu);
             this.Controls.Add(this.lblNothingToDisplay);
             this.Controls.Add(this.panelMenu);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(2374, 1569);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(847, 543);
             this.Name = "mainForm";
             this.Text = "Stackbooks Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

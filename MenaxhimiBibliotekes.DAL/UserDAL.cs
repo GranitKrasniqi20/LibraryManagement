@@ -21,13 +21,13 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     using (var command = Connection.Command(conn, "usp_InsertUser", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "@UserName", obj.Username);
-                        Connection.AddParameter(command, "@Password", obj.Password);
-                        Connection.AddParameter(command, "@Name", obj.Name);
-                        Connection.AddParameter(command, "@LastName", obj.LastName);
-                        Connection.AddParameter(command, "@RoleId", obj.RoleID);
-                        Connection.AddParameter(command, "@Email", obj.Email);
-                        Connection.AddParameter(command, "@InsertBy", obj.InsBy);
+                        Connection.AddParameter(command, "UserName", obj.Username);
+                        Connection.AddParameter(command, "Password", obj.Password);
+                        Connection.AddParameter(command, "Name", obj.Name);
+                        Connection.AddParameter(command, "LastName", obj.LastName);
+                        Connection.AddParameter(command, "RoleId", obj.RoleID);
+                        Connection.AddParameter(command, "Email", obj.Email);
+                        Connection.AddParameter(command, "InstBy", obj.InsBy);
 
                          rowsAffected = command.ExecuteNonQuery();
                     }
@@ -188,14 +188,9 @@ namespace MenaxhimiBibliotekes.DAL
             usr._role.UserRole = reader["Role"].ToString();
             usr.Email = reader["Email"].ToString();
 
-            if (reader["IsActive"].ToString() == "1")
-            {
-                usr.IsActive = true;
-            }
-            else
-            {
-                usr.IsActive = false;
-            }
+
+                usr.IsActive = (bool)reader["IsActive"];
+
 
 
             return usr;
@@ -216,7 +211,7 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "@LastName", obj.LastName);
                         Connection.AddParameter(command, "@RoleId", obj.RoleID);
                         Connection.AddParameter(command, "@Email", obj.Email);
-                        Connection.AddParameter(command, "@InsertBy", obj.InsBy);
+                        Connection.AddParameter(command, "@InsertBy", obj.InsBy);//gabimmmmmm
 
                         rowsAffected = command.ExecuteNonQuery();
                     }

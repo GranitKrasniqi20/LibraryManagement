@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class Shelf
+    public class Shelf:Audit
     {
         public int ShelfId { get; set; }
         public string Location { get; set; }
