@@ -62,7 +62,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(273, 536);
+            this.panelMenu.Size = new System.Drawing.Size(273, 656);
             this.panelMenu.TabIndex = 1;
             // 
             // btnSettings
@@ -168,7 +168,7 @@
             this.panelUser.Controls.Add(this.btnLogout);
             this.panelUser.Controls.Add(this.btnLoggedUser);
             this.panelUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelUser.Location = new System.Drawing.Point(0, 378);
+            this.panelUser.Location = new System.Drawing.Point(0, 498);
             this.panelUser.Name = "panelUser";
             this.panelUser.Size = new System.Drawing.Size(273, 158);
             this.panelUser.TabIndex = 1;
@@ -249,7 +249,7 @@
             this.panelSubmenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSubmenu.Location = new System.Drawing.Point(273, 0);
             this.panelSubmenu.Name = "panelSubmenu";
-            this.panelSubmenu.Size = new System.Drawing.Size(285, 536);
+            this.panelSubmenu.Size = new System.Drawing.Size(285, 656);
             this.panelSubmenu.TabIndex = 4;
             // 
             // mainForm
@@ -257,13 +257,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1193, 536);
+            this.ClientSize = new System.Drawing.Size(1026, 656);
             this.Controls.Add(this.panelSubmenu);
             this.Controls.Add(this.lblNothingToDisplay);
             this.Controls.Add(this.panelMenu);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(847, 543);
+            this.MinimumSize = new System.Drawing.Size(1031, 662);
             this.Name = "mainForm";
             this.Text = "Stackbooks Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

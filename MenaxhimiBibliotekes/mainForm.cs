@@ -15,6 +15,8 @@ namespace MenaxhimiBibliotekes
         public mainForm()
         {
             InitializeComponent();
+            panelSubmenu.Hide();
+            lblNothingToDisplay.Show();
         }
 
         private void AddControlsToPanel(Control c)
@@ -43,10 +45,13 @@ namespace MenaxhimiBibliotekes
 
         private void btnMembers_Click(object sender, EventArgs e)
         {
-            ShowSubmenu();
+            //ShowSubmenu();
 
-            Submenus_User_Controls.ucMembers ucm = new Submenus_User_Controls.ucMembers();
-            AddControlsToPanel(ucm);
+            //Submenus_User_Controls.ucMembers ucm = new Submenus_User_Controls.ucMembers();
+            //AddControlsToPanel(ucm);
+            Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
+            membersform.MdiParent = this;
+            membersform.Show();
         }
 
         private void btnMaterials_Click(object sender, EventArgs e)
