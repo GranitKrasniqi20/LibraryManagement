@@ -16,5 +16,23 @@ namespace MenaxhimiBibliotekes.Members_Forms
         {
             InitializeComponent();
         }
+
+        private void btnAddMember_Click(object sender, EventArgs e)
+        {
+            AddMemberForm add = new AddMemberForm();
+            add.ShowDialog();
+        }
+
+        private void btnUpdateMember_Click(object sender, EventArgs e)
+        {
+            UpdateMemberForm update = new UpdateMemberForm();
+            update.ShowDialog();
+        }
+
+        private void btnDeleteMember_Click(object sender, EventArgs e)
+        {
+            DeleteMemberForm delete = new DeleteMemberForm();
+            delete.ShowDialog();
+        }
     }
 }

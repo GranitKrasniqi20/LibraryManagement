@@ -58,11 +58,29 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Members Forms\AddMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members Forms\AddMemberForm.Designer.cs">
+      <DependentUpon>AddMemberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members Forms\DeleteMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members Forms\DeleteMemberForm.Designer.cs">
+      <DependentUpon>DeleteMemberForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Members Forms\MembersForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Members Forms\MembersForm.Designer.cs">
       <DependentUpon>MembersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members Forms\UpdateMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members Forms\UpdateMemberForm.Designer.cs">
+      <DependentUpon>UpdateMemberForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,8 +108,17 @@
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Members Forms\AddMemberForm.resx">
+      <DependentUpon>AddMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members Forms\DeleteMemberForm.resx">
+      <DependentUpon>DeleteMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Members Forms\MembersForm.resx">
       <DependentUpon>MembersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members Forms\UpdateMemberForm.resx">
+      <DependentUpon>UpdateMemberForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
