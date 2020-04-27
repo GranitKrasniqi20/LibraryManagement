@@ -13,12 +13,13 @@ namespace MenaxhimiBibliotekes.DAL
     public class UserDAL : ICrud<User>,IConvertToBO<User>
     {
 
-
+        User usr = new User();
         public User LogIn(string username, string password)
         {
+            usr = new User();
             try
             {
-                User usr = new User();
+
                 using (SqlConnection conn = Connection.GetConnection())
                 {
                     using (SqlCommand command = Connection.Command(conn, "usp_LogIn", CommandType.StoredProcedure))
@@ -29,7 +30,15 @@ namespace MenaxhimiBibliotekes.DAL
                             Connection.AddParameter(command, "Password", password);
                             if (reader.HasRows)
                             {
-                                return ToBO(reader);
+                                usr = ToBO(reader);
+                                if (usr != null)
+                                {
+                                    return usr;
+                                }
+                                else
+                                {
+                                    throw new Exception();
+                                }
                             }
                             else
                             {
@@ -63,6 +72,14 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "InstBy", obj.InsBy);
 
                          rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
                     }
 
                 }
@@ -72,14 +89,7 @@ namespace MenaxhimiBibliotekes.DAL
                 return false;
             }
 
-            if (rowsAffected >0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
         }
 
         public bool Delete(int Id)
@@ -95,6 +105,14 @@ namespace MenaxhimiBibliotekes.DAL
 
 
                         rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
                     }
 
                 }
@@ -104,14 +122,7 @@ namespace MenaxhimiBibliotekes.DAL
                 return false;
             }
 
-            if (rowsAffected > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
         }
 
         public bool Delete(User obj)
@@ -127,6 +138,14 @@ namespace MenaxhimiBibliotekes.DAL
 
 
                         rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
                     }
 
                 }
@@ -136,18 +155,12 @@ namespace MenaxhimiBibliotekes.DAL
                 return false;
             }
 
-            if (rowsAffected > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
         }
 
         public User Get(int Id)
         {
+            usr = new User();
             try
             {
                 using (var conn = Connection.GetConnection())
@@ -160,8 +173,15 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             if (reader.HasRows)
                             {
-
-                                return ToBO(reader);
+                                usr = ToBO(reader);
+                                if (usr != null)
+                                {
+                                    return usr;
+                                }
+                                else
+                                {
+                                    throw new Exception();
+                                }
 
                             }
                             else
@@ -187,6 +207,7 @@ namespace MenaxhimiBibliotekes.DAL
 
         public List<User> GetAll()
         {
+            usr = new User();
             try
             {
                 List<User> AllUsers = new List<User>();
@@ -200,7 +221,11 @@ namespace MenaxhimiBibliotekes.DAL
                             {
                                 while (reader.Read())
                                 {
-                                    AllUsers.Add(ToBO(reader));
+                                    usr = ToBO(reader);
+                                    if (usr != null)
+                                    {
+                                        AllUsers.Add(usr);
+                                    }
                                 }
                             }
                         }
@@ -216,6 +241,7 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     throw new Exception();
                 }
+
             }
             catch (Exception)
             {
@@ -270,6 +296,15 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "@UpdBy", obj.UpdBy);//gabimmmmmm
 
                         rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
                     }
 
                 }
@@ -279,14 +314,7 @@ namespace MenaxhimiBibliotekes.DAL
                 return false;
             }
 
-            if (rowsAffected > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
         }
     }
 }

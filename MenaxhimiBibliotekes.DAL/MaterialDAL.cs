@@ -43,7 +43,7 @@ namespace MenaxhimiBibliotekes.DAL
                             Connection.AddParameter(command, "ISBN", obj.ISBN);
                         }
 
-                        Connection.AddParameter(command, "MaterialType", obj._MaterialType.MaterialTypeId);
+                        Connection.AddParameter(command, "MaterialTypeId", obj._MaterialType.MaterialTypeId);
                         Connection.AddParameter(command, "AvailableCoppies", obj.AvailableCoppies);// ne sql me llogarit
 
                         Connection.AddParameter(command, "Quantity", obj.Quantity);// nese ne sql egziston mu mbledh kuantiteti
@@ -55,7 +55,8 @@ namespace MenaxhimiBibliotekes.DAL
 
                         Connection.AddParameter(command, "Language", obj._Language._Language); // mu konsultu me koleget a me lan ket apo vetem id:D
                         Connection.AddParameter(command, "InsBy", obj.InsBy);
-                        Connection.AddParameter(command, "Author", obj._Author.AuthorID);
+                        Connection.AddParameter(command, "Author", obj._Author.AuthorName);
+
 
 
                         MaterialId = command.ExecuteNonQuery();//me bo ne sql me kthy id te kti produkti qe 
