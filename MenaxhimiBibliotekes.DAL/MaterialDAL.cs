@@ -21,10 +21,17 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 using (SqlConnection conn = Connection.GetConnection())
                 {
-                    using ( SqlCommand command = Connection.Command(conn,"usp_CreateMaterial",CommandType.StoredProcedure))
+                    using (SqlCommand command = Connection.Command(conn, "usp_CreateMaterial", CommandType.StoredProcedure))
                     {
                         Connection.AddParameter(command, "Title", obj.Title);
-                        Connection.AddParameter(command, "GenreId", obj._Genre.GenreId);
+                        if (obj._Genre.GenreId > 0)
+                        {
+                            Connection.AddParameter(command, "GenreId", obj._Genre.GenreId);
+                        }
+                        else
+                        {
+                            Connection.AddParameter(command, "Genre", obj._Genre._Genre);
+                        }
 
 
 
@@ -43,45 +50,72 @@ namespace MenaxhimiBibliotekes.DAL
                             Connection.AddParameter(command, "ISBN", obj.ISBN);
                         }
 
-                        Connection.AddParameter(command, "MaterialTypeId", obj._MaterialType.MaterialTypeId);
-                        Connection.AddParameter(command, "AvailableCoppies", obj.AvailableCoppies);// ne sql me llogarit
+                        if (obj._MaterialType.MaterialTypeId > 0)
+                        {
+                            Connection.AddParameter(command, "MaterialTypeId", obj._MaterialType.MaterialTypeId);
+                        }
+                        else
+                        {
+                            Connection.AddParameter(command, "MaterialType", obj._MaterialType._MaterialType);
+                        }
 
                         Connection.AddParameter(command, "Quantity", obj.Quantity);// nese ne sql egziston mu mbledh kuantiteti
 
-                        if (obj.NumberOfPages != 0)
+                        if (obj.NumberOfPages > 0)
                         {
                             Connection.AddParameter(command, "NumberOfPages", obj.NumberOfPages);
                         }
 
-                        Connection.AddParameter(command, "Language", obj._Language._Language); // mu konsultu me koleget a me lan ket apo vetem id:D
-                        Connection.AddParameter(command, "InsBy", obj.InsBy);
-                        Connection.AddParameter(command, "Author", obj._Author.AuthorName);
 
-
-
-                        MaterialId = command.ExecuteNonQuery();//me bo ne sql me kthy id te kti produkti qe 
-                                                               //te insertojme edhe tek 2 tabelat e ndermjetme.
-
-
-                        bool isInserted;
-                        if (obj.Shelves.Count() > 0)
+                        if (obj._Language.LanguageId > 0)
                         {
-                            foreach (var item in obj.Shelves)
-                            {
-                                isInserted =   insertMaterialLocation(conn, MaterialId,item,obj.InsBy);
-
-                                if (isInserted == false)
-                                {
-                                    return false;
-                                }
-                            }
+                            Connection.AddParameter(command, "Language", obj._Language.LanguageId);
                         }
                         else
                         {
-                            return false;
+                            Connection.AddParameter(command, "Language", obj._Language._Language); // mu konsultu me koleget a me lan ket apo vetem id:D
                         }
+                        Connection.AddParameter(command, "InsBy", obj.InsBy);
+                        Connection.AddParameter(command, "Author", obj._Author.AuthorName);
+
+                        SqlParameter sqlparam = Connection.OutputParameters("MaterialId", SqlDbType.Int);
+
+                        Connection.AddParameter(command,sqlparam);
 
 
+                        command.ExecuteNonQuery();//me bo ne sql me kthy id te kti produkti qe 
+                        MaterialId = (int)sqlparam.Value;
+
+                        if (MaterialId > 0)
+                        {
+
+                            //te insertojme edhe tek tabela e ndermjetme.
+
+
+                            bool isInserted;
+                            if (obj.Shelves.Count() > 0)
+                            {
+                                foreach (var item in obj.Shelves)
+                                {
+                                    isInserted = insertMaterialLocation(conn, MaterialId, item, obj.InsBy);
+
+                                    if (isInserted == false)
+                                    {
+                                        return false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                return false;
+                            }
+
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    
                     }
 
                     return true;
@@ -257,8 +291,14 @@ namespace MenaxhimiBibliotekes.DAL
                     using (SqlCommand command = Connection.Command(conn, "usp_updateMaterial", CommandType.StoredProcedure))
                     {
                         Connection.AddParameter(command, "MaterialId", obj.MaterialId);
-                        Connection.AddParameter(command, "Title", obj.Title);
-                        Connection.AddParameter(command, "GenreId", obj._Genre.GenreId);
+                        if (obj._Genre.GenreId > 0)
+                        {
+                            Connection.AddParameter(command, "GenreId", obj._Genre.GenreId);
+                        }
+                        else
+                        {
+                            Connection.AddParameter(command, "Genre", obj._Genre._Genre);
+                        }
 
 
 
@@ -277,17 +317,32 @@ namespace MenaxhimiBibliotekes.DAL
                             Connection.AddParameter(command, "ISBN", obj.ISBN);
                         }
 
-                        Connection.AddParameter(command, "MaterialType", obj._MaterialType._MaterialType);
-                        Connection.AddParameter(command, "AvailableCoppies", obj.AvailableCoppies);// ne sql me llogarit
+                        if (obj._MaterialType.MaterialTypeId > 0)
+                        {
+                            Connection.AddParameter(command, "MaterialTypeId", obj._MaterialType.MaterialTypeId);
+                        }
+                        else
+                        {
+                            Connection.AddParameter(command, "MaterialType", obj._MaterialType._MaterialType);
+                        }
 
                         Connection.AddParameter(command, "Quantity", obj.Quantity);// nese ne sql egziston mu mbledh kuantiteti
 
-                        if (obj.NumberOfPages != 0)
+                        if (obj.NumberOfPages > 0)
                         {
                             Connection.AddParameter(command, "NumberOfPages", obj.NumberOfPages);
                         }
 
-                        Connection.AddParameter(command, "Language", obj._Language._Language); // mu konsultu me koleget a me lan ket apo vetem id:D
+
+                        if (obj._Language.LanguageId > 0)
+                        {
+                            Connection.AddParameter(command, "Language", obj._Language.LanguageId);
+                        }
+                        else
+                        {
+                            Connection.AddParameter(command, "Language", obj._Language._Language); // mu konsultu me koleget a me lan ket apo vetem id:D
+                        }
+                        Connection.AddParameter(command, "Author", obj._Author.AuthorName);
                         Connection.AddParameter(command, "UbdBy", obj.UpdBy);
 
 
