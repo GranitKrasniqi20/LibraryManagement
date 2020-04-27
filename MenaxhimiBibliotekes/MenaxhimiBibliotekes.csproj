@@ -58,6 +58,48 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials Forms\AddMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\AddMaterialForm.Designer.cs">
+      <DependentUpon>AddMaterialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\DeleteMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\DeleteMaterialForm.Designer.cs">
+      <DependentUpon>DeleteMaterialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\InsertNewGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\InsertNewGenre.Designer.cs">
+      <DependentUpon>InsertNewGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\InsertNewLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\InsertNewLanguage.Designer.cs">
+      <DependentUpon>InsertNewLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\InsertNewMaterialType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\InsertNewMaterialType.Designer.cs">
+      <DependentUpon>InsertNewMaterialType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\MaterialsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\MaterialsForm.Designer.cs">
+      <DependentUpon>MaterialsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\UpdateMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\UpdateMaterialForm.Designer.cs">
+      <DependentUpon>UpdateMaterialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Members Forms\AddMemberForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +150,27 @@
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\AddMaterialForm.resx">
+      <DependentUpon>AddMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\DeleteMaterialForm.resx">
+      <DependentUpon>DeleteMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\InsertNewGenre.resx">
+      <DependentUpon>InsertNewGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\InsertNewLanguage.resx">
+      <DependentUpon>InsertNewLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\InsertNewMaterialType.resx">
+      <DependentUpon>InsertNewMaterialType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\MaterialsForm.resx">
+      <DependentUpon>MaterialsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\UpdateMaterialForm.resx">
+      <DependentUpon>UpdateMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Members Forms\AddMemberForm.resx">
       <DependentUpon>AddMemberForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,13 +216,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dashboard Forms\" />
-    <Folder Include="Materials Forms\" />
     <Folder Include="Notifications Forms\" />
     <Folder Include="Settings Forms\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="brand\bg\bg1.jpg" />
     <Content Include="brand\bg\bg2.jpg" />
+    <Content Include="brand\bg\bg3.jpg" />
+    <Content Include="brand\bg\bg4.jpg" />
+    <Content Include="brand\bg\bg5.jpg" />
+    <Content Include="brand\bg\bg6.jpg" />
     <Content Include="brand\helping-icons\thisLogout.png" />
     <Content Include="brand\helping-icons\thisUser.png" />
     <Content Include="brand\helping-icons\ucLogo.png" />

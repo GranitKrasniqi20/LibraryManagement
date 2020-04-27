@@ -41,21 +41,22 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMemberID = new System.Windows.Forms.Label();
+            this.txtMemberID = new System.Windows.Forms.TextBox();
             this.comboSubscriptionPlan = new System.Windows.Forms.ComboBox();
             this.lblSubscriptionPlan = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtFromDate = new System.Windows.Forms.TextBox();
+            this.txtTillDate = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFrom = new System.Windows.Forms.Label();
             this.lblTill = new System.Windows.Forms.Label();
-            this.txtFromDate = new System.Windows.Forms.TextBox();
-            this.txtTillDate = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.radioMashkull = new System.Windows.Forms.RadioButton();
             this.radioFemer = new System.Windows.Forms.RadioButton();
+            this.radioMashkull = new System.Windows.Forms.RadioButton();
             this.txtPersonalNumber = new System.Windows.Forms.TextBox();
             this.lblGender = new System.Windows.Forms.Label();
             this.lblPersonalNumber = new System.Windows.Forms.Label();
@@ -63,16 +64,15 @@
             this.txtBirthdate = new System.Windows.Forms.TextBox();
             this.lblFullAddress = new System.Windows.Forms.Label();
             this.lblBirthdate = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdateMemberSubscription = new System.Windows.Forms.Button();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtMemberID = new System.Windows.Forms.TextBox();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -272,6 +272,15 @@
             this.lblMemberID.TabIndex = 0;
             this.lblMemberID.Text = "Member ID";
             // 
+            // txtMemberID
+            // 
+            this.txtMemberID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMemberID.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtMemberID.Location = new System.Drawing.Point(23, 41);
+            this.txtMemberID.Name = "txtMemberID";
+            this.txtMemberID.Size = new System.Drawing.Size(356, 33);
+            this.txtMemberID.TabIndex = 1;
+            // 
             // comboSubscriptionPlan
             // 
             this.comboSubscriptionPlan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,6 +320,26 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(360, 40);
             this.tableLayoutPanel4.TabIndex = 8;
             // 
+            // txtFromDate
+            // 
+            this.txtFromDate.Enabled = false;
+            this.txtFromDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFromDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtFromDate.Location = new System.Drawing.Point(3, 3);
+            this.txtFromDate.Name = "txtFromDate";
+            this.txtFromDate.Size = new System.Drawing.Size(162, 33);
+            this.txtFromDate.TabIndex = 2;
+            // 
+            // txtTillDate
+            // 
+            this.txtTillDate.Enabled = false;
+            this.txtTillDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTillDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtTillDate.Location = new System.Drawing.Point(193, 3);
+            this.txtTillDate.Name = "txtTillDate";
+            this.txtTillDate.Size = new System.Drawing.Size(162, 33);
+            this.txtTillDate.TabIndex = 3;
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
@@ -346,26 +375,6 @@
             this.lblTill.Size = new System.Drawing.Size(42, 25);
             this.lblTill.TabIndex = 2;
             this.lblTill.Text = "Till:";
-            // 
-            // txtFromDate
-            // 
-            this.txtFromDate.Enabled = false;
-            this.txtFromDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFromDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtFromDate.Location = new System.Drawing.Point(3, 3);
-            this.txtFromDate.Name = "txtFromDate";
-            this.txtFromDate.Size = new System.Drawing.Size(162, 33);
-            this.txtFromDate.TabIndex = 2;
-            // 
-            // txtTillDate
-            // 
-            this.txtTillDate.Enabled = false;
-            this.txtTillDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTillDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtTillDate.Location = new System.Drawing.Point(193, 3);
-            this.txtTillDate.Name = "txtTillDate";
-            this.txtTillDate.Size = new System.Drawing.Size(162, 33);
-            this.txtTillDate.TabIndex = 3;
             // 
             // txtEmail
             // 
@@ -415,18 +424,6 @@
             this.panel4.Size = new System.Drawing.Size(360, 32);
             this.panel4.TabIndex = 11;
             // 
-            // radioMashkull
-            // 
-            this.radioMashkull.AutoSize = true;
-            this.radioMashkull.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioMashkull.Location = new System.Drawing.Point(0, 0);
-            this.radioMashkull.Name = "radioMashkull";
-            this.radioMashkull.Size = new System.Drawing.Size(91, 25);
-            this.radioMashkull.TabIndex = 0;
-            this.radioMashkull.TabStop = true;
-            this.radioMashkull.Text = "Mashkull";
-            this.radioMashkull.UseVisualStyleBackColor = true;
-            // 
             // radioFemer
             // 
             this.radioFemer.AutoSize = true;
@@ -438,6 +435,18 @@
             this.radioFemer.TabStop = true;
             this.radioFemer.Text = "Femer";
             this.radioFemer.UseVisualStyleBackColor = true;
+            // 
+            // radioMashkull
+            // 
+            this.radioMashkull.AutoSize = true;
+            this.radioMashkull.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioMashkull.Location = new System.Drawing.Point(0, 0);
+            this.radioMashkull.Name = "radioMashkull";
+            this.radioMashkull.Size = new System.Drawing.Size(91, 25);
+            this.radioMashkull.TabIndex = 0;
+            this.radioMashkull.TabStop = true;
+            this.radioMashkull.Text = "Mashkull";
+            this.radioMashkull.UseVisualStyleBackColor = true;
             // 
             // txtPersonalNumber
             // 
@@ -506,6 +515,15 @@
             this.lblBirthdate.TabIndex = 0;
             this.lblBirthdate.Text = "Birthdate";
             // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtFirstName.Location = new System.Drawing.Point(23, 137);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(356, 33);
+            this.txtFirstName.TabIndex = 1;
+            // 
             // txtLastName
             // 
             this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -562,15 +580,6 @@
             this.panel3.Size = new System.Drawing.Size(356, 52);
             this.panel3.TabIndex = 0;
             // 
-            // panel5
-            // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel5.Controls.Add(this.btnUpdateMemberSubscription);
-            this.panel5.Location = new System.Drawing.Point(411, 15);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(356, 52);
-            this.panel5.TabIndex = 0;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(127)))), ((int)(((byte)(120)))));
@@ -584,6 +593,15 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel5.Controls.Add(this.btnUpdateMemberSubscription);
+            this.panel5.Location = new System.Drawing.Point(411, 15);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(356, 52);
+            this.panel5.TabIndex = 0;
+            // 
             // btnUpdateMemberSubscription
             // 
             this.btnUpdateMemberSubscription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(127)))), ((int)(((byte)(120)))));
@@ -596,24 +614,6 @@
             this.btnUpdateMemberSubscription.TabIndex = 0;
             this.btnUpdateMemberSubscription.Text = "Update Member Subscription";
             this.btnUpdateMemberSubscription.UseVisualStyleBackColor = false;
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtFirstName.Location = new System.Drawing.Point(23, 137);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(356, 33);
-            this.txtFirstName.TabIndex = 1;
-            // 
-            // txtMemberID
-            // 
-            this.txtMemberID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMemberID.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtMemberID.Location = new System.Drawing.Point(23, 41);
-            this.txtMemberID.Name = "txtMemberID";
-            this.txtMemberID.Size = new System.Drawing.Size(356, 33);
-            this.txtMemberID.TabIndex = 1;
             // 
             // UpdateMemberForm
             // 
