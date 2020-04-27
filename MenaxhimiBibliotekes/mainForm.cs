@@ -19,6 +19,9 @@ namespace MenaxhimiBibliotekes
             lblNothingToDisplay.Show();
         }
 
+
+
+        //Customized Design Methods
         private void AddControlsToPanel(Control c)
         {
             panelSubmenu.Controls.Clear();
@@ -45,10 +48,6 @@ namespace MenaxhimiBibliotekes
 
         private void btnMembers_Click(object sender, EventArgs e)
         {
-            //ShowSubmenu();
-
-            //Submenus_User_Controls.ucMembers ucm = new Submenus_User_Controls.ucMembers();
-            //AddControlsToPanel(ucm);
             Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
             membersform.MdiParent = this;
             membersform.Show();
@@ -56,10 +55,9 @@ namespace MenaxhimiBibliotekes
 
         private void btnMaterials_Click(object sender, EventArgs e)
         {
-            ShowSubmenu();
-
-            Submenus_User_Controls.ucMaterials ucmat = new Submenus_User_Controls.ucMaterials();
-            AddControlsToPanel(ucmat);
+            Materials_Forms.MaterialsForm materialsform = new Materials_Forms.MaterialsForm();
+            materialsform.MdiParent = this;
+            materialsform.Show();
         }
 
         private void mainForm_Shown(object sender, EventArgs e)

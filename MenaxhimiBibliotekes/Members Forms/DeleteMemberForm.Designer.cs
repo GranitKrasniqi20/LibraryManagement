@@ -40,41 +40,41 @@
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtFirstName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtLastName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtFullAddress = new System.Windows.Forms.Label();
+            this.lblFullAddress = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtBirthdate = new System.Windows.Forms.Label();
+            this.lblBirthdate = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtGender = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
             this.lblMemberID = new System.Windows.Forms.Label();
             this.txtMemberID = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblFullAddress = new System.Windows.Forms.Label();
-            this.lblBirthdate = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.txtPersonalNumber = new System.Windows.Forms.Label();
             this.lblPersonalNumber = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.txtPhoneNumber = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.txtSubscriptionPlan = new System.Windows.Forms.Label();
             this.lblSubscriptionPlan = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.lblFromDate = new System.Windows.Forms.Label();
-            this.lblTillDate = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.Label();
-            this.txtFullAddress = new System.Windows.Forms.Label();
-            this.txtBirthdate = new System.Windows.Forms.Label();
-            this.txtGender = new System.Windows.Forms.Label();
-            this.txtPersonalNumber = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.Label();
-            this.txtPhoneNumber = new System.Windows.Forms.Label();
-            this.txtSubscriptionPlan = new System.Windows.Forms.Label();
-            this.txtFromDate = new System.Windows.Forms.Label();
             this.txtTillDate = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtFromDate = new System.Windows.Forms.Label();
+            this.lblTillDate = new System.Windows.Forms.Label();
+            this.lblFromDate = new System.Windows.Forms.Label();
+            this.btnSearchMember = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -226,7 +226,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel3.Controls.Add(this.panel3, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.panel4, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.panel5, 1, 5);
@@ -239,7 +239,7 @@
             this.tableLayoutPanel3.Controls.Add(this.panel10, 3, 5);
             this.tableLayoutPanel3.Controls.Add(this.panel11, 3, 6);
             this.tableLayoutPanel3.Controls.Add(this.panel12, 3, 7);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSearchMember, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 164);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -255,6 +255,151 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(841, 470);
             this.tableLayoutPanel3.TabIndex = 12;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.txtFirstName);
+            this.panel3.Controls.Add(this.lblFirstName);
+            this.panel3.Location = new System.Drawing.Point(23, 145);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(384, 55);
+            this.panel3.TabIndex = 2;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.AutoSize = true;
+            this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Location = new System.Drawing.Point(129, -3);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(36, 25);
+            this.txtFirstName.TabIndex = 0;
+            this.txtFirstName.Text = "---";
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.Location = new System.Drawing.Point(12, -3);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(111, 25);
+            this.lblFirstName.TabIndex = 0;
+            this.lblFirstName.Text = "First Name:";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.txtLastName);
+            this.panel4.Controls.Add(this.lblLastName);
+            this.panel4.Location = new System.Drawing.Point(23, 206);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(384, 55);
+            this.panel4.TabIndex = 2;
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.AutoSize = true;
+            this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(129, -3);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(36, 25);
+            this.txtLastName.TabIndex = 0;
+            this.txtLastName.Text = "---";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(15, 0);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(108, 25);
+            this.lblLastName.TabIndex = 0;
+            this.lblLastName.Text = "Last Name:";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.txtFullAddress);
+            this.panel5.Controls.Add(this.lblFullAddress);
+            this.panel5.Location = new System.Drawing.Point(23, 267);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(384, 55);
+            this.panel5.TabIndex = 2;
+            // 
+            // txtFullAddress
+            // 
+            this.txtFullAddress.AutoSize = true;
+            this.txtFullAddress.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullAddress.Location = new System.Drawing.Point(129, -3);
+            this.txtFullAddress.Name = "txtFullAddress";
+            this.txtFullAddress.Size = new System.Drawing.Size(36, 25);
+            this.txtFullAddress.TabIndex = 0;
+            this.txtFullAddress.Text = "---";
+            // 
+            // lblFullAddress
+            // 
+            this.lblFullAddress.AutoSize = true;
+            this.lblFullAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullAddress.Location = new System.Drawing.Point(2, -3);
+            this.lblFullAddress.Name = "lblFullAddress";
+            this.lblFullAddress.Size = new System.Drawing.Size(121, 25);
+            this.lblFullAddress.TabIndex = 0;
+            this.lblFullAddress.Text = "Full Address:";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.txtBirthdate);
+            this.panel6.Controls.Add(this.lblBirthdate);
+            this.panel6.Location = new System.Drawing.Point(23, 328);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(384, 55);
+            this.panel6.TabIndex = 2;
+            // 
+            // txtBirthdate
+            // 
+            this.txtBirthdate.AutoSize = true;
+            this.txtBirthdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBirthdate.Location = new System.Drawing.Point(129, -3);
+            this.txtBirthdate.Name = "txtBirthdate";
+            this.txtBirthdate.Size = new System.Drawing.Size(36, 25);
+            this.txtBirthdate.TabIndex = 0;
+            this.txtBirthdate.Text = "---";
+            // 
+            // lblBirthdate
+            // 
+            this.lblBirthdate.AutoSize = true;
+            this.lblBirthdate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthdate.Location = new System.Drawing.Point(26, -3);
+            this.lblBirthdate.Name = "lblBirthdate";
+            this.lblBirthdate.Size = new System.Drawing.Size(97, 25);
+            this.lblBirthdate.TabIndex = 0;
+            this.lblBirthdate.Text = "Birthdate:";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.txtGender);
+            this.panel7.Controls.Add(this.lblGender);
+            this.panel7.Location = new System.Drawing.Point(23, 389);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(384, 55);
+            this.panel7.TabIndex = 2;
+            // 
+            // txtGender
+            // 
+            this.txtGender.AutoSize = true;
+            this.txtGender.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGender.Location = new System.Drawing.Point(129, -3);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(36, 25);
+            this.txtGender.TabIndex = 0;
+            this.txtGender.Text = "---";
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(43, -3);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(80, 25);
+            this.lblGender.TabIndex = 0;
+            this.lblGender.Text = "Gender:";
             // 
             // lblMemberID
             // 
@@ -275,101 +420,6 @@
             this.txtMemberID.Size = new System.Drawing.Size(384, 33);
             this.txtMemberID.TabIndex = 1;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.txtFirstName);
-            this.panel3.Controls.Add(this.lblFirstName);
-            this.panel3.Location = new System.Drawing.Point(23, 145);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(384, 55);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.txtLastName);
-            this.panel4.Controls.Add(this.lblLastName);
-            this.panel4.Location = new System.Drawing.Point(23, 206);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(384, 55);
-            this.panel4.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.txtFullAddress);
-            this.panel5.Controls.Add(this.lblFullAddress);
-            this.panel5.Location = new System.Drawing.Point(23, 267);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(384, 55);
-            this.panel5.TabIndex = 2;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.txtBirthdate);
-            this.panel6.Controls.Add(this.lblBirthdate);
-            this.panel6.Location = new System.Drawing.Point(23, 328);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(384, 55);
-            this.panel6.TabIndex = 2;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.txtGender);
-            this.panel7.Controls.Add(this.lblGender);
-            this.panel7.Location = new System.Drawing.Point(23, 389);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(384, 55);
-            this.panel7.TabIndex = 2;
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(12, -3);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(111, 25);
-            this.lblFirstName.TabIndex = 0;
-            this.lblFirstName.Text = "First Name:";
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(15, 0);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(108, 25);
-            this.lblLastName.TabIndex = 0;
-            this.lblLastName.Text = "Last Name:";
-            // 
-            // lblFullAddress
-            // 
-            this.lblFullAddress.AutoSize = true;
-            this.lblFullAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullAddress.Location = new System.Drawing.Point(2, -3);
-            this.lblFullAddress.Name = "lblFullAddress";
-            this.lblFullAddress.Size = new System.Drawing.Size(121, 25);
-            this.lblFullAddress.TabIndex = 0;
-            this.lblFullAddress.Text = "Full Address:";
-            // 
-            // lblBirthdate
-            // 
-            this.lblBirthdate.AutoSize = true;
-            this.lblBirthdate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthdate.Location = new System.Drawing.Point(26, -3);
-            this.lblBirthdate.Name = "lblBirthdate";
-            this.lblBirthdate.Size = new System.Drawing.Size(97, 25);
-            this.lblBirthdate.TabIndex = 0;
-            this.lblBirthdate.Text = "Birthdate:";
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(43, -3);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(80, 25);
-            this.lblGender.TabIndex = 0;
-            this.lblGender.Text = "Gender:";
-            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.txtPersonalNumber);
@@ -378,6 +428,16 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(384, 55);
             this.panel8.TabIndex = 2;
+            // 
+            // txtPersonalNumber
+            // 
+            this.txtPersonalNumber.AutoSize = true;
+            this.txtPersonalNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonalNumber.Location = new System.Drawing.Point(177, -3);
+            this.txtPersonalNumber.Name = "txtPersonalNumber";
+            this.txtPersonalNumber.Size = new System.Drawing.Size(36, 25);
+            this.txtPersonalNumber.TabIndex = 0;
+            this.txtPersonalNumber.Text = "---";
             // 
             // lblPersonalNumber
             // 
@@ -398,6 +458,16 @@
             this.panel9.Size = new System.Drawing.Size(384, 55);
             this.panel9.TabIndex = 2;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.AutoSize = true;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(177, -3);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(36, 25);
+            this.txtEmail.TabIndex = 0;
+            this.txtEmail.Text = "---";
+            // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
@@ -417,6 +487,16 @@
             this.panel10.Size = new System.Drawing.Size(384, 55);
             this.panel10.TabIndex = 2;
             // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.AutoSize = true;
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.Location = new System.Drawing.Point(177, -3);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(36, 25);
+            this.txtPhoneNumber.TabIndex = 0;
+            this.txtPhoneNumber.Text = "---";
+            // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
@@ -435,6 +515,16 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(384, 55);
             this.panel11.TabIndex = 2;
+            // 
+            // txtSubscriptionPlan
+            // 
+            this.txtSubscriptionPlan.AutoSize = true;
+            this.txtSubscriptionPlan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubscriptionPlan.Location = new System.Drawing.Point(177, -3);
+            this.txtSubscriptionPlan.Name = "txtSubscriptionPlan";
+            this.txtSubscriptionPlan.Size = new System.Drawing.Size(36, 25);
+            this.txtSubscriptionPlan.TabIndex = 0;
+            this.txtSubscriptionPlan.Text = "---";
             // 
             // lblSubscriptionPlan
             // 
@@ -457,115 +547,15 @@
             this.panel12.Size = new System.Drawing.Size(384, 55);
             this.panel12.TabIndex = 2;
             // 
-            // lblFromDate
+            // txtTillDate
             // 
-            this.lblFromDate.AutoSize = true;
-            this.lblFromDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFromDate.Location = new System.Drawing.Point(104, -3);
-            this.lblFromDate.Name = "lblFromDate";
-            this.lblFromDate.Size = new System.Drawing.Size(62, 25);
-            this.lblFromDate.TabIndex = 0;
-            this.lblFromDate.Text = "From:";
-            // 
-            // lblTillDate
-            // 
-            this.lblTillDate.AutoSize = true;
-            this.lblTillDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTillDate.Location = new System.Drawing.Point(124, 27);
-            this.lblTillDate.Name = "lblTillDate";
-            this.lblTillDate.Size = new System.Drawing.Size(42, 25);
-            this.lblTillDate.TabIndex = 0;
-            this.lblTillDate.Text = "Till:";
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.AutoSize = true;
-            this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(129, -3);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(36, 25);
-            this.txtFirstName.TabIndex = 0;
-            this.txtFirstName.Text = "---";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.AutoSize = true;
-            this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(129, -3);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(36, 25);
-            this.txtLastName.TabIndex = 0;
-            this.txtLastName.Text = "---";
-            // 
-            // txtFullAddress
-            // 
-            this.txtFullAddress.AutoSize = true;
-            this.txtFullAddress.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullAddress.Location = new System.Drawing.Point(129, -3);
-            this.txtFullAddress.Name = "txtFullAddress";
-            this.txtFullAddress.Size = new System.Drawing.Size(36, 25);
-            this.txtFullAddress.TabIndex = 0;
-            this.txtFullAddress.Text = "---";
-            // 
-            // txtBirthdate
-            // 
-            this.txtBirthdate.AutoSize = true;
-            this.txtBirthdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBirthdate.Location = new System.Drawing.Point(129, -3);
-            this.txtBirthdate.Name = "txtBirthdate";
-            this.txtBirthdate.Size = new System.Drawing.Size(36, 25);
-            this.txtBirthdate.TabIndex = 0;
-            this.txtBirthdate.Text = "---";
-            // 
-            // txtGender
-            // 
-            this.txtGender.AutoSize = true;
-            this.txtGender.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGender.Location = new System.Drawing.Point(129, -3);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(36, 25);
-            this.txtGender.TabIndex = 0;
-            this.txtGender.Text = "---";
-            // 
-            // txtPersonalNumber
-            // 
-            this.txtPersonalNumber.AutoSize = true;
-            this.txtPersonalNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonalNumber.Location = new System.Drawing.Point(177, -3);
-            this.txtPersonalNumber.Name = "txtPersonalNumber";
-            this.txtPersonalNumber.Size = new System.Drawing.Size(36, 25);
-            this.txtPersonalNumber.TabIndex = 0;
-            this.txtPersonalNumber.Text = "---";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.AutoSize = true;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(177, -3);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(36, 25);
-            this.txtEmail.TabIndex = 0;
-            this.txtEmail.Text = "---";
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.AutoSize = true;
-            this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(177, -3);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(36, 25);
-            this.txtPhoneNumber.TabIndex = 0;
-            this.txtPhoneNumber.Text = "---";
-            // 
-            // txtSubscriptionPlan
-            // 
-            this.txtSubscriptionPlan.AutoSize = true;
-            this.txtSubscriptionPlan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubscriptionPlan.Location = new System.Drawing.Point(177, -3);
-            this.txtSubscriptionPlan.Name = "txtSubscriptionPlan";
-            this.txtSubscriptionPlan.Size = new System.Drawing.Size(36, 25);
-            this.txtSubscriptionPlan.TabIndex = 0;
-            this.txtSubscriptionPlan.Text = "---";
+            this.txtTillDate.AutoSize = true;
+            this.txtTillDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTillDate.Location = new System.Drawing.Point(177, 27);
+            this.txtTillDate.Name = "txtTillDate";
+            this.txtTillDate.Size = new System.Drawing.Size(36, 25);
+            this.txtTillDate.TabIndex = 0;
+            this.txtTillDate.Text = "---";
             // 
             // txtFromDate
             // 
@@ -577,29 +567,39 @@
             this.txtFromDate.TabIndex = 0;
             this.txtFromDate.Text = "---";
             // 
-            // txtTillDate
+            // lblTillDate
             // 
-            this.txtTillDate.AutoSize = true;
-            this.txtTillDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTillDate.Location = new System.Drawing.Point(177, 27);
-            this.txtTillDate.Name = "txtTillDate";
-            this.txtTillDate.Size = new System.Drawing.Size(36, 25);
-            this.txtTillDate.TabIndex = 0;
-            this.txtTillDate.Text = "---";
+            this.lblTillDate.AutoSize = true;
+            this.lblTillDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTillDate.Location = new System.Drawing.Point(124, 27);
+            this.lblTillDate.Name = "lblTillDate";
+            this.lblTillDate.Size = new System.Drawing.Size(42, 25);
+            this.lblTillDate.TabIndex = 0;
+            this.lblTillDate.Text = "Till:";
             // 
-            // button1
+            // lblFromDate
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(433, 3);
-            this.button1.Name = "button1";
-            this.tableLayoutPanel3.SetRowSpan(this.button1, 2);
-            this.button1.Size = new System.Drawing.Size(384, 116);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Search Specific Member";
-            this.button1.UseVisualStyleBackColor = false;
+            this.lblFromDate.AutoSize = true;
+            this.lblFromDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFromDate.Location = new System.Drawing.Point(104, -3);
+            this.lblFromDate.Name = "lblFromDate";
+            this.lblFromDate.Size = new System.Drawing.Size(62, 25);
+            this.lblFromDate.TabIndex = 0;
+            this.lblFromDate.Text = "From:";
+            // 
+            // btnSearchMember
+            // 
+            this.btnSearchMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
+            this.btnSearchMember.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchMember.ForeColor = System.Drawing.Color.White;
+            this.btnSearchMember.Location = new System.Drawing.Point(433, 3);
+            this.btnSearchMember.Name = "btnSearchMember";
+            this.tableLayoutPanel3.SetRowSpan(this.btnSearchMember, 2);
+            this.btnSearchMember.Size = new System.Drawing.Size(384, 116);
+            this.btnSearchMember.TabIndex = 3;
+            this.btnSearchMember.Text = "Search Specific Member";
+            this.btnSearchMember.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel6
             // 
@@ -737,7 +737,7 @@
         private System.Windows.Forms.Label txtTillDate;
         private System.Windows.Forms.Label txtFromDate;
         private System.Windows.Forms.Label lblTillDate;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearchMember;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button btnDelete;

@@ -36,7 +36,7 @@
             this.panelFullBody = new System.Windows.Forms.Panel();
             this.tabControlMembersForm = new System.Windows.Forms.TabControl();
             this.tabMainPage = new System.Windows.Forms.TabPage();
-            this.tableSpaceBottom = new System.Windows.Forms.TableLayoutPanel();
+            this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
             this.IDCOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +51,7 @@
             this.FromDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InfoColBtn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
+            this.tableBottomSpace = new System.Windows.Forms.TableLayoutPanel();
             this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
             this.textSearchMember = new System.Windows.Forms.TextBox();
             this.comboSortMember = new System.Windows.Forms.ComboBox();
@@ -69,7 +69,7 @@
             this.panelFullBody.SuspendLayout();
             this.tabControlMembersForm.SuspendLayout();
             this.tabMainPage.SuspendLayout();
-            this.tableSpaceBottom.SuspendLayout();
+            this.tableDataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.tableSearch.SuspendLayout();
             this.tableSpace2.SuspendLayout();
@@ -78,6 +78,7 @@
             // tableHeader
             // 
             this.tableHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.tableHeader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableHeader.BackgroundImage")));
             this.tableHeader.ColumnCount = 3;
             this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
@@ -94,6 +95,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.picTitle);
             this.panel1.Location = new System.Drawing.Point(143, 3);
@@ -146,8 +148,8 @@
             // 
             // tabMainPage
             // 
-            this.tabMainPage.Controls.Add(this.tableSpaceBottom);
             this.tabMainPage.Controls.Add(this.tableDataGridView);
+            this.tabMainPage.Controls.Add(this.tableBottomSpace);
             this.tabMainPage.Controls.Add(this.tableSearch);
             this.tabMainPage.Controls.Add(this.tableButtons);
             this.tabMainPage.Controls.Add(this.tableSpace2);
@@ -160,20 +162,20 @@
             this.tabMainPage.Text = "Main Page";
             this.tabMainPage.UseVisualStyleBackColor = true;
             // 
-            // tableSpaceBottom
+            // tableDataGridView
             // 
-            this.tableSpaceBottom.ColumnCount = 3;
-            this.tableSpaceBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSpaceBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceBottom.Controls.Add(this.dgvMembers, 1, 0);
-            this.tableSpaceBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableSpaceBottom.Location = new System.Drawing.Point(3, 150);
-            this.tableSpaceBottom.Name = "tableSpaceBottom";
-            this.tableSpaceBottom.RowCount = 1;
-            this.tableSpaceBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSpaceBottom.Size = new System.Drawing.Size(726, 318);
-            this.tableSpaceBottom.TabIndex = 9;
+            this.tableDataGridView.ColumnCount = 3;
+            this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDataGridView.Controls.Add(this.dgvMembers, 1, 0);
+            this.tableDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableDataGridView.Location = new System.Drawing.Point(3, 150);
+            this.tableDataGridView.Name = "tableDataGridView";
+            this.tableDataGridView.RowCount = 1;
+            this.tableDataGridView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableDataGridView.Size = new System.Drawing.Size(726, 318);
+            this.tableDataGridView.TabIndex = 9;
             // 
             // dgvMembers
             // 
@@ -264,17 +266,17 @@
             this.InfoColBtn.HeaderText = "More Info";
             this.InfoColBtn.Name = "InfoColBtn";
             // 
-            // tableDataGridView
+            // tableBottomSpace
             // 
-            this.tableDataGridView.ColumnCount = 1;
-            this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableDataGridView.Location = new System.Drawing.Point(3, 468);
-            this.tableDataGridView.Name = "tableDataGridView";
-            this.tableDataGridView.RowCount = 1;
-            this.tableDataGridView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableDataGridView.Size = new System.Drawing.Size(726, 22);
-            this.tableDataGridView.TabIndex = 8;
+            this.tableBottomSpace.ColumnCount = 1;
+            this.tableBottomSpace.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableBottomSpace.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableBottomSpace.Location = new System.Drawing.Point(3, 468);
+            this.tableBottomSpace.Name = "tableBottomSpace";
+            this.tableBottomSpace.RowCount = 1;
+            this.tableBottomSpace.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableBottomSpace.Size = new System.Drawing.Size(726, 22);
+            this.tableBottomSpace.TabIndex = 8;
             // 
             // tableSearch
             // 
@@ -445,7 +447,7 @@
             this.panelFullBody.ResumeLayout(false);
             this.tabControlMembersForm.ResumeLayout(false);
             this.tabMainPage.ResumeLayout(false);
-            this.tableSpaceBottom.ResumeLayout(false);
+            this.tableDataGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             this.tableSearch.ResumeLayout(false);
             this.tableSearch.PerformLayout();
@@ -474,8 +476,8 @@
         private System.Windows.Forms.TextBox textSearchMember;
         private System.Windows.Forms.ComboBox comboSortMember;
         private System.Windows.Forms.Button btnSearchMember;
+        private System.Windows.Forms.TableLayoutPanel tableBottomSpace;
         private System.Windows.Forms.TableLayoutPanel tableDataGridView;
-        private System.Windows.Forms.TableLayoutPanel tableSpaceBottom;
         private System.Windows.Forms.DataGridView dgvMembers;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDCOL;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
