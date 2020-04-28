@@ -99,7 +99,7 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 using (var conn = Connection.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_InsertUser", CommandType.StoredProcedure))
+                    using (var command = Connection.Command(conn, "usp_DeleteUser", CommandType.StoredProcedure))
                     {
                         Connection.AddParameter(command, "@UserId", Id);
 
@@ -127,7 +127,35 @@ namespace MenaxhimiBibliotekes.DAL
 
         public bool Delete(User obj)
         {
-            throw new NotImplementedException();
+            //int rowsAffected = 0;
+            //try
+            //{
+            //    using (var conn = Connection.GetConnection())
+            //    {
+            //        using (var command = Connection.Command(conn, "usp_InsertUser", CommandType.StoredProcedure))
+            //        {
+            //            Connection.AddParameter(command, "@Username", obj.Username);
+
+
+            //            rowsAffected = command.ExecuteNonQuery();
+            //            if (rowsAffected > 0)
+            //            {
+            //                return true;
+            //            }
+            //            else
+            //            {
+            //                throw new Exception();
+            //            }
+            //        }
+
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    return false;
+            //}
+
+            return false;
         }
 
         public User Get(int Id)
@@ -259,13 +287,13 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     using (var command = Connection.Command(conn, "usp_UpdateUser", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "@UserName", obj.Username);
-                        Connection.AddParameter(command, "@Password", obj.Password);
-                        Connection.AddParameter(command, "@Name", obj.Name);
-                        Connection.AddParameter(command, "@LastName", obj.LastName);
-                        Connection.AddParameter(command, "@RoleId", obj.RoleID);
-                        Connection.AddParameter(command, "@Email", obj.Email);
-                        Connection.AddParameter(command, "@UpdBy", obj.UpdBy);//gabimmmmmm
+                        Connection.AddParameter(command, "UserName", obj.Username);
+                        Connection.AddParameter(command, "Password", obj.Password);
+                        Connection.AddParameter(command, "Name", obj.Name);
+                        Connection.AddParameter(command, "LastName", obj.LastName);
+                        Connection.AddParameter(command, "RoleId", obj.RoleID);
+                        Connection.AddParameter(command, "Email", obj.Email);
+                        Connection.AddParameter(command, "UpdBy", obj.UpdBy);//gabimmmmmm
 
                         rowsAffected = command.ExecuteNonQuery();
 
