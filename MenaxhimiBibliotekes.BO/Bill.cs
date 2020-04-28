@@ -8,7 +8,7 @@ namespace MenaxhimiBibliotekes.BO
 {
     public class Bill : Audit
     {
-        public int BillID { get; set; }
+        public int BillId { get; set; }
         public int SubscriberId { get; set; }
         public virtual Subscriber _Subscriber { get; set; }
         public int MaterialId { get; set; }

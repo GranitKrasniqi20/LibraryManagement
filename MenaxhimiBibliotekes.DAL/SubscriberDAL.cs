@@ -13,7 +13,7 @@ namespace MenaxhimiBibliotekes.DAL
 {
     public class SubscriberDAL : ICrud<Subscriber>, IConvertToBO<Subscriber>
     {
-        private Subscriber subscriber;
+        Subscriber subscriber;
 
         public bool Add(Subscriber obj)
         {
@@ -32,7 +32,7 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "PhoneNo", obj.PhoneNo);
                         Connection.AddParameter(command, "Email", obj.Email);
                         Connection.AddParameter(command, "Gender", obj.Gender);
-                        Connection.AddParameter(command, "EndDate", obj.EndDate);
+                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
                         Connection.AddParameter(command, "InsBy", obj.InsBy);
 
                         isInserted = command.ExecuteNonQuery();
@@ -187,7 +187,7 @@ namespace MenaxhimiBibliotekes.DAL
 
                 subscriber.PhoneNo = reader["PhoneNo"].ToString();
                 subscriber.Email = reader["Email"].ToString();
-                subscriber.EndDate = DateTime.Parse(reader["EndDate"].ToString());
+                subscriber.ExpirationDate = DateTime.Parse(reader["ExpirationDate"].ToString());
 
 
                
@@ -228,7 +228,7 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "PhoneNo", obj.PhoneNo);
                         Connection.AddParameter(command, "Email", obj.Email);
                         Connection.AddParameter(command, "Gender", obj.Gender);
-                        Connection.AddParameter(command, "EndDate", obj.EndDate);
+                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
                         Connection.AddParameter(command, "UpdBy", obj.UpdBy);
 
                         rowsAffected = command.ExecuteNonQuery();

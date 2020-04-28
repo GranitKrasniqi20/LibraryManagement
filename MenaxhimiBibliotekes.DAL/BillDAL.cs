@@ -12,7 +12,7 @@ namespace MenaxhimiBibliotekes.DAL
 {
     public class BillDAL : ICrud<Bill>, IConvertToBO<Bill>
     {
-        private Bill bill;
+        Bill bill;
 
         public bool Add(Bill obj)
         {
@@ -126,7 +126,7 @@ namespace MenaxhimiBibliotekes.DAL
             try
             {
                 List<Bill> _AllBill = new List<Bill>();
-                bill = new Bill();
+                bill = new Bill(); 
                 using (SqlConnection conn = Connection.GetConnection())
                 {
                     using (SqlCommand command = Connection.Command(conn, "usp_Bill_Read", CommandType.StoredProcedure))
@@ -159,12 +159,74 @@ namespace MenaxhimiBibliotekes.DAL
 
         public Bill ToBO(SqlDataReader reader)
         {
-            throw new NotImplementedException();
+            bill = new Bill();
+
+            bill.BillId = int.Parse(reader["SubscriberId"].ToString());
+            bill._Subscriber.SubscriberId = int.Parse(reader["SubscriberId"].ToString());
+           
+            if (reader["MaterialId"] != DBNull.Value)
+            {
+                bill._Material.MaterialId = int.Parse(reader["MaterialId"].ToString());
+            }
+
+            bill._BillType.BillTypeId = int.Parse(reader["BillTypeId"].ToString());
+            bill.BillingDate = DateTime.Parse(reader["BillingDate"].ToString());
+            bill.Price = decimal.Parse(reader["Price"].ToString());
+
+            if (reader["RegistrationDate"] != DBNull.Value)
+            {
+                bill.RegistrationDate = DateTime.Parse(reader["RegistrationDate"].ToString());
+            }
+
+            if (reader["ExpirationDate"] != DBNull.Value)
+            {
+                bill.ExpirationDate = DateTime.Parse(reader["ExpirationnDate"].ToString());
+            }
+
+            bill.InsBy = int.Parse(reader["InsBy"].ToString());
+            bill.InsDate = (DateTime)reader["InsDate"];
+            bill.UpdBy = int.Parse(reader["UpdBy"].ToString());
+            bill.UpdDate = (DateTime)reader["UpdDate"];
+            bill.UpdNo = int.Parse(reader["UpdNo"].ToString());
+
+            return bill;
         }
 
         public bool Update(Bill obj)
         {
-            throw new NotImplementedException();
+            int rowsAffected = 0;
+            try
+            {
+                using (var conn = Connection.GetConnection())
+                {
+                    using (var command = Connection.Command(conn, "usp_Bill_Update", CommandType.StoredProcedure))
+                    {
+                        Connection.AddParameter(command, "SubscriberId", obj.SubscriberId);
+                        Connection.AddParameter(command, "MaterialId", obj.MaterialId);
+                        Connection.AddParameter(command, "BillType", obj.BillType);
+                        Connection.AddParameter(command, "BillingDate", obj.BillingDate);
+                        Connection.AddParameter(command, "RegistrationDate", obj.RegistrationDate);
+                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
+                        Connection.AddParameter(command, "Description", obj.Description);
+                        Connection.AddParameter(command, "UpdBy", obj.UpdBy);
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
