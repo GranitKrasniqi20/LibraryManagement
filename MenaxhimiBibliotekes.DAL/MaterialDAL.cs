@@ -24,14 +24,9 @@ namespace MenaxhimiBibliotekes.DAL
                     using (SqlCommand command = Connection.Command(conn, "usp_CreateMaterial", CommandType.StoredProcedure))
                     {
                         Connection.AddParameter(command, "Title", obj.Title);
-                        if (obj._Genre.GenreId > 0)
-                        {
+
                             Connection.AddParameter(command, "GenreId", obj._Genre.GenreId);
-                        }
-                        else
-                        {
-                            Connection.AddParameter(command, "Genre", obj._Genre._Genre);
-                        }
+
 
 
 
@@ -50,14 +45,8 @@ namespace MenaxhimiBibliotekes.DAL
                             Connection.AddParameter(command, "ISBN", obj.ISBN);
                         }
 
-                        if (obj._MaterialType.MaterialTypeId > 0)
-                        {
+
                             Connection.AddParameter(command, "MaterialTypeId", obj._MaterialType.MaterialTypeId);
-                        }
-                        else
-                        {
-                            Connection.AddParameter(command, "MaterialType", obj._MaterialType._MaterialType);
-                        }
 
                         Connection.AddParameter(command, "Quantity", obj.Quantity);// nese ne sql egziston mu mbledh kuantiteti
 
@@ -67,14 +56,9 @@ namespace MenaxhimiBibliotekes.DAL
                         }
 
 
-                        if (obj._Language.LanguageId > 0)
-                        {
+
                             Connection.AddParameter(command, "Language", obj._Language.LanguageId);
-                        }
-                        else
-                        {
-                            Connection.AddParameter(command, "Language", obj._Language._Language); // mu konsultu me koleget a me lan ket apo vetem id:D
-                        }
+
                         Connection.AddParameter(command, "InsBy", obj.InsBy);
                         Connection.AddParameter(command, "Author", obj._Author.AuthorName);
 
@@ -291,14 +275,8 @@ namespace MenaxhimiBibliotekes.DAL
                     using (SqlCommand command = Connection.Command(conn, "usp_updateMaterial", CommandType.StoredProcedure))
                     {
                         Connection.AddParameter(command, "MaterialId", obj.MaterialId);
-                        if (obj._Genre.GenreId > 0)
-                        {
                             Connection.AddParameter(command, "GenreId", obj._Genre.GenreId);
-                        }
-                        else
-                        {
-                            Connection.AddParameter(command, "Genre", obj._Genre._Genre);
-                        }
+
 
 
 
@@ -317,14 +295,8 @@ namespace MenaxhimiBibliotekes.DAL
                             Connection.AddParameter(command, "ISBN", obj.ISBN);
                         }
 
-                        if (obj._MaterialType.MaterialTypeId > 0)
-                        {
+
                             Connection.AddParameter(command, "MaterialTypeId", obj._MaterialType.MaterialTypeId);
-                        }
-                        else
-                        {
-                            Connection.AddParameter(command, "MaterialType", obj._MaterialType._MaterialType);
-                        }
 
                         Connection.AddParameter(command, "Quantity", obj.Quantity);// nese ne sql egziston mu mbledh kuantiteti
 
@@ -332,16 +304,8 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             Connection.AddParameter(command, "NumberOfPages", obj.NumberOfPages);
                         }
+                            Connection.AddParameter(command, "LanguageId", obj._Language.LanguageId);
 
-
-                        if (obj._Language.LanguageId > 0)
-                        {
-                            Connection.AddParameter(command, "Language", obj._Language.LanguageId);
-                        }
-                        else
-                        {
-                            Connection.AddParameter(command, "Language", obj._Language._Language); // mu konsultu me koleget a me lan ket apo vetem id:D
-                        }
                         Connection.AddParameter(command, "Author", obj._Author.AuthorName);
                         Connection.AddParameter(command, "UbdBy", obj.UpdBy);
 
@@ -380,23 +344,13 @@ namespace MenaxhimiBibliotekes.DAL
                 material.Title = reader["Title"].ToString();
 
                 material._Genre.GenreId = int.Parse(reader["GenreId"].ToString());// me rregullu edhe ktu
-                material._Genre.GenreId= int.Parse(reader["GenreId"].ToString());
-                material._Genre._Genre = reader["Genre"].ToString();
-                material._Genre.InsBy = int.Parse(reader["GenreInsBy"].ToString());
-                material._Genre.InsDate = (DateTime)reader["GenreInsDate"];
-                material._Genre.UpdBy = int.Parse(reader["GenreUpdBy"].ToString());
-                material._Genre.UpdDate = (DateTime)reader["GenreUpdDate"];
-                material._Genre.UpdNo = int.Parse(reader["GenreUpdNo"].ToString());
+
 
                 if (reader["PublishHouseId"] != DBNull.Value)
                 {
-                    material._PublishHouse._PublishHouse = reader["PublishHouse"].ToString();
+
                     material._PublishHouse.PublishHouseId = int.Parse(reader["PublishHouseId"].ToString());
-                    material._MaterialType.InsBy = int.Parse(reader["PublishHouseInsBy"].ToString());
-                    material._MaterialType.InsDate = (DateTime)reader["PublishHouseInsDate"];
-                    material._MaterialType.UpdBy = int.Parse(reader["PublishHouseUpdBy"].ToString());
-                    material._MaterialType.UpdDate = (DateTime)reader["PublishHouseUpdDate"];
-                    material._MaterialType.UpdNo = int.Parse(reader["PublishHouseUpdNo"].ToString());
+
 
                 }
                 if (reader["PublishYear"] != DBNull.Value)
@@ -412,12 +366,6 @@ namespace MenaxhimiBibliotekes.DAL
                     material.ISBN = reader["ISBN"].ToString();
                 }
                 material._MaterialType.MaterialTypeId = int.Parse(reader["MaterialTypeId"].ToString());
-                material._MaterialType._MaterialType = reader["MaterialType"].ToString();
-                material._MaterialType.InsBy = int.Parse(reader["MaterialTypeInsBy"].ToString());
-                material._MaterialType.InsDate = (DateTime)reader["MaterialTypeInsDate"];
-                material._MaterialType.UpdBy = int.Parse(reader["MaterialTypeUpdBy"].ToString());
-                material._MaterialType.UpdDate = (DateTime)reader["MaterialTypeUpdDate"];
-                material._MaterialType.UpdNo = int.Parse(reader["MaterialTypeUpdNo"].ToString());
 
 
                 material.AvailableCoppies = int.Parse(reader["AvailableCoppies"].ToString());
@@ -429,36 +377,30 @@ namespace MenaxhimiBibliotekes.DAL
                 }
 
                 material._Author.AuthorID = int.Parse(reader["AuthorId"].ToString());
-
                 material._Author.AuthorName = reader["Language"].ToString();
 
-                if (reader["AuthorLastName"] != DBNull.Value)
-                {
-                    material._Author.AuthorLastName = reader["AuthorName"].ToString();
-                }
-                material._Author.InsBy = int.Parse(reader["AuthorInsBy"].ToString());
-                material._Author.InsDate = (DateTime)reader["AuthorInsDate"];
-                material._Author.UpdBy = int.Parse(reader["AuthorUpdBy"].ToString());
-                material._Author.UpdDate = (DateTime)reader["AuthorUpdDate"];
-                material._Author.UpdNo = int.Parse(reader["AuthorUpdNo"].ToString());
+
 
 
                 material._Language.LanguageId = int.Parse(reader["LanguageId"].ToString());
-                material._Language._Language = reader["Language"].ToString();
-                material._Language.InsBy = int.Parse(reader["LanguageInsBy"].ToString());
-                material._Language.InsDate = (DateTime)reader["LanguageInsDate"];
-                material._Language.UpdBy = int.Parse(reader["LanguageUpdBy"].ToString());
-                material._Language.UpdDate = (DateTime)reader["LanguageUpdDate"];
-                material._Language.UpdNo = int.Parse(reader["LanguageUpdNo"].ToString());
 
 
                 material.IsActive = (bool)reader["IsActive"];
 
                 material.InsBy = int.Parse(reader["InsBy"].ToString());
                 material.InsDate = (DateTime)reader["InsDate"];
-                material.UpdBy = int.Parse(reader["UpdBy"].ToString());
-                material.UpdDate = (DateTime)reader["UpdDate"];
+
+                if (reader["UpdBy"] != DBNull.Value)
+                {
+                    material.UpdBy = int.Parse(reader["UpdBy"].ToString());
+                }
+                if (reader["UpdDate"] != DBNull.Value)
+                {
+                    material.UpdDate = (DateTime)reader["UpdDate"];
+                }
+
                 material.UpdNo = int.Parse(reader["UpdNo"].ToString());
+
                 return material;
             }
             catch (Exception)
