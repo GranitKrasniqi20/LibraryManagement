@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BillBLL.cs" />
+    <Compile Include="BillTypeBLL.cs" />
     <Compile Include="MaterialBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubscriberBLL.cs" />

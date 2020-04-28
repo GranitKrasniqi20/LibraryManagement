@@ -240,5 +240,15 @@
     <Content Include="brand\logo\logo-icon.png" />
     <Content Include="brand\logo\logo-name.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MenaxhimiBibliotekes.BLL\MenaxhimiBibliotekes.BLL.csproj">
+      <Project>{df92a796-2500-4e6a-967a-2d3948acbeca}</Project>
+      <Name>MenaxhimiBibliotekes.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MenaxhimiBibliotekes.BO\MenaxhimiBibliotekes.BO.csproj">
+      <Project>{225bc69c-d650-48b8-8c57-f0812ae2a684}</Project>
+      <Name>MenaxhimiBibliotekes.BO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
