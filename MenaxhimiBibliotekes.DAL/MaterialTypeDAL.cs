@@ -10,7 +10,7 @@ using System.Data;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    class MaterialTypeDAL : ICrud<MaterialType>, IConvertToBO<MaterialType>
+    public class MaterialTypeDAL : ICrud<MaterialType>, IConvertToBO<MaterialType>
     {
         MaterialType mt;
         public bool Add(MaterialType obj)
