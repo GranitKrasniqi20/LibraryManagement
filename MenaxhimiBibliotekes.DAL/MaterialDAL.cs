@@ -119,7 +119,7 @@ namespace MenaxhimiBibliotekes.DAL
 
 
 
-        public bool insertMaterialLocation(SqlConnection conn, int materialId, Shelf shelf,int insBy)
+        public bool insertMaterialLocation(SqlConnection conn, int materialId, Shelf shelf, int insBy)
         {
             int rowaffecte;
             using (SqlCommand command = Connection.Command(conn, "usp_CreateMaterialAuthor", CommandType.StoredProcedure))

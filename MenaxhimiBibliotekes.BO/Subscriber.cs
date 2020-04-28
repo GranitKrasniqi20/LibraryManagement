@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class Subscriber
+    public class Subscriber : Audit
     {
-        //Komenti GK
         public int SubscriberId { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTime Birthday { get; set; }
         public string PersonalNo { get; set; }
+        public string PhoneNo { get; set; }
         public string Email { get; set; }
         public bool Gender { get; set; }
-        public DateTime ExpireDate { get; set; }
+        public DateTime EndDate { get; set; }
+
+        public virtual List<Bill> Bills { get; set; }
     }
 }
