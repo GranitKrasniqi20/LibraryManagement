@@ -10,7 +10,7 @@ using System.Data;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    class LanguageDAL : ICrud<Language>, IConvertToBO<Language>
+    public class LanguageDAL : ICrud<Language>, IConvertToBO<Language>
     {
         Language lang;
         public bool Add(Language obj)

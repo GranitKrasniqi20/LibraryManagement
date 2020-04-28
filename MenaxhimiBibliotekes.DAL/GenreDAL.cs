@@ -12,7 +12,7 @@ using System.Data;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    class GenreDAL:ICrud<Genre>, IConvertToBO<Genre>
+   public class GenreDAL:ICrud<Genre>, IConvertToBO<Genre>
     {
         Genre gen;
         public bool Add(Genre obj)
