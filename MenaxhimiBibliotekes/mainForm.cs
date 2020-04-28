@@ -82,5 +82,10 @@ namespace MenaxhimiBibliotekes
             loginform.MdiParent = this;
             loginform.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

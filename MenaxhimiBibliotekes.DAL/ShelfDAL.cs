@@ -148,13 +148,18 @@ namespace MenaxhimiBibliotekes.DAL
 
                 shelf.InsBy = int.Parse(reader["InsBy"].ToString());
                 shelf.InsDate = (DateTime)reader["InsDate"];
-                shelf.UpdBy = int.Parse(reader["UpdBy"].ToString());
-                shelf.UpdDate = (DateTime)reader["UpdDate"];
-                shelf.UpdNo = int.Parse(reader["UpdNo"].ToString());
 
-                
+                if (reader["UpdBy"] != DBNull.Value)
+                {
+                    shelf.UpdBy = int.Parse(reader["UpdBy"].ToString());
+                }
+                if (reader["UpdDate"] != DBNull.Value)
+                {
+                    shelf.UpdDate = (DateTime)reader["UpdDate"];
+                }
 
-
+                    shelf.UpdNo = int.Parse(reader["UpdNo"].ToString());
+               
 
                 return shelf;
             }
