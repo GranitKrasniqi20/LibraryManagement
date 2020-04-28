@@ -17,15 +17,24 @@ namespace MenaxhimiBibliotekes
             InitializeComponent();
             panelSubmenu.Hide();
             lblNothingToDisplay.Show();
+
+            
         }
 
-
+        Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
+        Materials_Forms.MaterialsForm materialsform = new Materials_Forms.MaterialsForm();
 
         //Customized Design Methods
         private void AddControlsToPanel(Control c)
         {
             panelSubmenu.Controls.Clear();
             panelSubmenu.Controls.Add(c);
+        }
+
+        private void CloseAllWindows()
+        {
+            membersform.Hide();
+            materialsform.Hide();
         }
 
         private void ShowSubmenu()
@@ -48,16 +57,20 @@ namespace MenaxhimiBibliotekes
 
         private void btnMembers_Click(object sender, EventArgs e)
         {
-            Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
+            CloseAllWindows();
+
             membersform.MdiParent = this;
             membersform.Show();
+            membersform.WindowState = FormWindowState.Maximized;
         }
 
         private void btnMaterials_Click(object sender, EventArgs e)
         {
-            Materials_Forms.MaterialsForm materialsform = new Materials_Forms.MaterialsForm();
+            CloseAllWindows();
+
             materialsform.MdiParent = this;
             materialsform.Show();
+            materialsform.WindowState = FormWindowState.Maximized;
         }
 
         private void mainForm_Shown(object sender, EventArgs e)

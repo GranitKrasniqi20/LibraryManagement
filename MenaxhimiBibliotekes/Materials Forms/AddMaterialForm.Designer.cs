@@ -53,8 +53,8 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblPages = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtPages = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.comboGenre = new System.Windows.Forms.ComboBox();
@@ -380,8 +380,8 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.txtQuantity, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtPages, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtQuantity, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(405, 443);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -389,15 +389,6 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(356, 35);
             this.tableLayoutPanel5.TabIndex = 3;
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtQuantity.Location = new System.Drawing.Point(3, 3);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(162, 33);
-            this.txtQuantity.TabIndex = 4;
             // 
             // txtPages
             // 
@@ -407,6 +398,15 @@
             this.txtPages.Name = "txtPages";
             this.txtPages.Size = new System.Drawing.Size(162, 33);
             this.txtPages.TabIndex = 4;
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtQuantity.Location = new System.Drawing.Point(3, 3);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(162, 33);
+            this.txtQuantity.TabIndex = 4;
             // 
             // txtTitle
             // 
