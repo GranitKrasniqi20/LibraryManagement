@@ -15,7 +15,7 @@ namespace MenaxhimiBibliotekes.BLL
         LanguageDAL lang = new LanguageDAL();
         public bool Add(Language obj)
         {
-           return lang.Add(obj);
+            return lang.Add(obj);
         }
 
         public bool Delete(int Id)

@@ -214,10 +214,6 @@ namespace MenaxhimiBibliotekes.DAL
 
         }
 
-        public Material Get(Material obj)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<Material> GetAll()
         {
@@ -276,9 +272,6 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         Connection.AddParameter(command, "MaterialId", obj.MaterialId);
                             Connection.AddParameter(command, "GenreId", obj._Genre.GenreId);
-
-
-
 
                         if (obj.PublishPlace != null)
                         {

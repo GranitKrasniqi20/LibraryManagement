@@ -11,12 +11,7 @@ namespace MenaxhimiBibliotekes.BO.Interfaces
         bool Add(T obj);
         bool Update(T obj);
         bool Delete(int Id);
-        bool Delete(T obj);
-
-
         T Get(int Id);
-        T Get(T obj);
-
         List<T> GetAll();
     }
 }

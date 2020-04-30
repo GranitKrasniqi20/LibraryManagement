@@ -81,10 +81,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Delete(Bill obj)
-        {
-            throw new NotImplementedException();
-        }
 
         public Bill Get(int Id)
         {
@@ -116,10 +112,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public Bill Get(Bill obj)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<Bill> GetAll()
         {

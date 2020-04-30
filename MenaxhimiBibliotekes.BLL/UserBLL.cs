@@ -15,6 +15,11 @@ namespace MenaxhimiBibliotekes.BLL
     class UserBLL : ICrud<User>
     {
         UserDAL usr = new UserDAL();
+
+        public User LogIn(string username, string password)
+        {
+            usr.LogIn(username, password);
+        }
         public bool Add(User obj)
         {
            return usr.Add(obj);

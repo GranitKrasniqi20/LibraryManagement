@@ -12,11 +12,11 @@ namespace MenaxhimiBibliotekes.BLL
     class GenreBLL : ICrud<Genre>
     {
 
-        GenreDAL gen= new GenreDAL();
+        GenreDAL gen = new GenreDAL();
         public bool Add(Genre obj)
         {
-          return  gen.Add(obj);
-            
+            return gen.Add(obj);
+
         }
 
         public bool Delete(int Id)

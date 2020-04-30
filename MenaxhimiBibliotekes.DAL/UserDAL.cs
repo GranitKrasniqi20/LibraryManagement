@@ -125,38 +125,7 @@ namespace MenaxhimiBibliotekes.DAL
 
         }
 
-        public bool Delete(User obj)
-        {
-            //int rowsAffected = 0;
-            //try
-            //{
-            //    using (var conn = Connection.GetConnection())
-            //    {
-            //        using (var command = Connection.Command(conn, "usp_InsertUser", CommandType.StoredProcedure))
-            //        {
-            //            Connection.AddParameter(command, "@Username", obj.Username);
 
-
-            //            rowsAffected = command.ExecuteNonQuery();
-            //            if (rowsAffected > 0)
-            //            {
-            //                return true;
-            //            }
-            //            else
-            //            {
-            //                throw new Exception();
-            //            }
-            //        }
-
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    return false;
-            //}
-
-            return false;
-        }
 
         public User Get(int Id)
         {
@@ -200,10 +169,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public User Get(User obj)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<User> GetAll()
         {

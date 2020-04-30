@@ -87,10 +87,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Delete(Subscriber obj)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public Subscriber Get(int Id)
         {
@@ -123,10 +120,6 @@ namespace MenaxhimiBibliotekes.DAL
 
         }
 
-        public Subscriber Get(Subscriber obj)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<Subscriber> GetAll()
         {

@@ -22,6 +22,7 @@ namespace MenaxhimiBibliotekes.BO
         public int Quantity { get; set; }//Tirazhi
         public int NumberOfPages { get; set; }
         public bool IsActive { get; set; }
+
         public List<Shelf> Shelves { get; set; } = new List<Shelf>();
     }
 }

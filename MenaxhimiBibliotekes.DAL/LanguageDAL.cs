@@ -50,20 +50,13 @@ namespace MenaxhimiBibliotekes.DAL
             throw new NotImplementedException();
         }
 
-        public bool Delete(Language obj)
-        {
-            throw new NotImplementedException();
-        }
 
         public Language Get(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public Language Get(Language obj)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public List<Language> GetAll()
         {
@@ -168,5 +161,5 @@ namespace MenaxhimiBibliotekes.DAL
     }
 
 
-    }
+    
 }

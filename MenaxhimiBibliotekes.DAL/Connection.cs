@@ -43,6 +43,7 @@ namespace MenaxhimiBibliotekes.DAL
         {
             command.Parameters.AddWithValue(parameterName, value);
         }
+
         public static void AddParameter(SqlCommand command,SqlParameter param)
         {
             command.Parameters.Add(param);

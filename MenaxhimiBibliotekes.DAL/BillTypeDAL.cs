@@ -8,5 +8,6 @@ namespace MenaxhimiBibliotekes.DAL
 {
     class BillTypeDAL
     {
+
     }
 }

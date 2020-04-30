@@ -57,10 +57,7 @@ namespace MenaxhimiBibliotekes.DAL
             throw new NotImplementedException();
         }
 
-        public bool Delete(Shelf obj)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public Shelf Get(int Id)
         {
@@ -89,10 +86,6 @@ namespace MenaxhimiBibliotekes.DAL
 
         }
 
-        public Shelf Get(Shelf obj)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<Shelf> GetAll()
         {

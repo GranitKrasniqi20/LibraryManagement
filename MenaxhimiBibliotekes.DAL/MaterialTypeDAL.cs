@@ -50,20 +50,13 @@ namespace MenaxhimiBibliotekes.DAL
             throw new NotImplementedException();
         }
 
-        public bool Delete(MaterialType obj)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public MaterialType Get(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public MaterialType Get(MaterialType obj)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<MaterialType> GetAll()
         {
