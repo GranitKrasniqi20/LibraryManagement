@@ -23,6 +23,7 @@ namespace MenaxhimiBibliotekes
 
         Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
         Materials_Forms.MaterialsForm materialsform = new Materials_Forms.MaterialsForm();
+        Settings_Forms.SettingsForm2 settingsform = new Settings_Forms.SettingsForm2();
 
         //Customized Design Methods
         private void AddControlsToPanel(Control c)
@@ -35,6 +36,7 @@ namespace MenaxhimiBibliotekes
         {
             membersform.Hide();
             materialsform.Hide();
+            settingsform.Hide();
         }
 
         private void ShowSubmenu()
@@ -83,8 +85,12 @@ namespace MenaxhimiBibliotekes
             loginform.Show();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void btnSettings_Click(object sender, EventArgs e)
         {
+            CloseAllWindows();
+
+            settingsform.MdiParent = this;
+            settingsform.Show();
 
         }
     }
