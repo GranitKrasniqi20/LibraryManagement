@@ -133,7 +133,7 @@
             this.lblTitleTitle.Location = new System.Drawing.Point(83, 17);
             this.lblTitleTitle.Name = "lblTitleTitle";
             this.lblTitleTitle.Size = new System.Drawing.Size(341, 50);
-            this.lblTitleTitle.TabIndex = 1;
+            this.lblTitleTitle.TabIndex = 0;
             this.lblTitleTitle.Text = "DELETE MATERIAL";
             // 
             // picTitle
@@ -192,7 +192,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(841, 19);
-            this.tableLayoutPanel2.TabIndex = 12;
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel7
             // 
@@ -206,7 +206,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(841, 27);
-            this.tableLayoutPanel7.TabIndex = 13;
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // lblFooterTitle
             // 
@@ -254,7 +254,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(841, 470);
-            this.tableLayoutPanel3.TabIndex = 14;
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // panel3
             // 
@@ -597,7 +597,7 @@
             this.btnSearchMaterial.Name = "btnSearchMaterial";
             this.tableLayoutPanel3.SetRowSpan(this.btnSearchMaterial, 2);
             this.btnSearchMaterial.Size = new System.Drawing.Size(384, 116);
-            this.btnSearchMaterial.TabIndex = 3;
+            this.btnSearchMaterial.TabIndex = 2;
             this.btnSearchMaterial.Text = "Search Specific Material";
             this.btnSearchMaterial.UseVisualStyleBackColor = false;
             // 
@@ -614,7 +614,7 @@
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(841, 100);
-            this.tableLayoutPanel6.TabIndex = 15;
+            this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel13
             // 
@@ -634,7 +634,7 @@
             this.btnDelete.Location = new System.Drawing.Point(0, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(356, 52);
-            this.btnDelete.TabIndex = 0;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete Material";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 

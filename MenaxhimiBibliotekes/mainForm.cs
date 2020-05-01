@@ -15,7 +15,6 @@ namespace MenaxhimiBibliotekes
         public mainForm()
         {
             InitializeComponent();
-            panelSubmenu.Hide();
             lblNothingToDisplay.Show();
 
             
@@ -23,14 +22,9 @@ namespace MenaxhimiBibliotekes
 
         Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
         Materials_Forms.MaterialsForm materialsform = new Materials_Forms.MaterialsForm();
-        Settings_Forms.SettingsForm2 settingsform = new Settings_Forms.SettingsForm2();
+        Settings_Forms.SettingsForm settingsform = new Settings_Forms.SettingsForm();
 
         //Customized Design Methods
-        private void AddControlsToPanel(Control c)
-        {
-            panelSubmenu.Controls.Clear();
-            panelSubmenu.Controls.Add(c);
-        }
 
         private void CloseAllWindows()
         {
@@ -42,18 +36,15 @@ namespace MenaxhimiBibliotekes
         private void ShowSubmenu()
         {
             lblNothingToDisplay.Hide();
-            panelSubmenu.Show();
         }
 
         private void appLogo_Click(object sender, EventArgs e)
         {
-            panelSubmenu.Hide();
             lblNothingToDisplay.Show();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            panelSubmenu.Hide();
             lblNothingToDisplay.Show();
         }
 
@@ -77,7 +68,6 @@ namespace MenaxhimiBibliotekes
 
         private void mainForm_Shown(object sender, EventArgs e)
         {
-            panelSubmenu.Hide();
             lblNothingToDisplay.Hide();
 
             Login_Forms.loginForm loginform = new Login_Forms.loginForm();

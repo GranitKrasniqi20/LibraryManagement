@@ -41,26 +41,58 @@
             this.tabEditAccount = new System.Windows.Forms.TabPage();
             this.tabDeleteAccount = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNameCreate = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtLastNameCreate = new System.Windows.Forms.TextBox();
+            this.txtEmailCreate = new System.Windows.Forms.TextBox();
+            this.txtUsernameCreate = new System.Windows.Forms.TextBox();
+            this.txtPasswordCreate = new System.Windows.Forms.TextBox();
+            this.comboRoleCreate = new System.Windows.Forms.ComboBox();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.comboRoleEdit = new System.Windows.Forms.ComboBox();
+            this.txtPasswordEdit = new System.Windows.Forms.TextBox();
+            this.txtUsernameEdit = new System.Windows.Forms.TextBox();
+            this.txtEmailEdit = new System.Windows.Forms.TextBox();
+            this.txtLastNameEdit = new System.Windows.Forms.TextBox();
+            this.txtNameEdit = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.txtIDEdit = new System.Windows.Forms.TextBox();
+            this.btnUpdateAccount = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSearchToDelete = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.txtIDDelete = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtRoleDelete = new System.Windows.Forms.Label();
+            this.txtNameDelete = new System.Windows.Forms.Label();
+            this.txtLastNameDelete = new System.Windows.Forms.Label();
+            this.txtEmailDelete = new System.Windows.Forms.Label();
+            this.txtUsernameDelete = new System.Windows.Forms.Label();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.tabControlSettings.SuspendLayout();
             this.tabCreateAccount.SuspendLayout();
+            this.tabEditAccount.SuspendLayout();
+            this.tabDeleteAccount.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +123,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(60, 55);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
             // 
             // panel1
@@ -112,7 +144,7 @@
             this.lblTitleTitle.Location = new System.Drawing.Point(67, 18);
             this.lblTitleTitle.Name = "lblTitleTitle";
             this.lblTitleTitle.Size = new System.Drawing.Size(493, 50);
-            this.lblTitleTitle.TabIndex = 1;
+            this.lblTitleTitle.TabIndex = 0;
             this.lblTitleTitle.Text = "MANAGE USER ACCOUNTS";
             // 
             // picTitle
@@ -136,7 +168,7 @@
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(717, 27);
-            this.tableLayoutPanel7.TabIndex = 11;
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // lblFooterTitle
             // 
@@ -166,13 +198,13 @@
             // tabCreateAccount
             // 
             this.tabCreateAccount.Controls.Add(this.panel2);
-            this.tabCreateAccount.Controls.Add(this.button2);
-            this.tabCreateAccount.Controls.Add(this.comboBox1);
-            this.tabCreateAccount.Controls.Add(this.textBox5);
-            this.tabCreateAccount.Controls.Add(this.textBox4);
-            this.tabCreateAccount.Controls.Add(this.textBox3);
-            this.tabCreateAccount.Controls.Add(this.textBox2);
-            this.tabCreateAccount.Controls.Add(this.textBox1);
+            this.tabCreateAccount.Controls.Add(this.btnCreate);
+            this.tabCreateAccount.Controls.Add(this.comboRoleCreate);
+            this.tabCreateAccount.Controls.Add(this.txtPasswordCreate);
+            this.tabCreateAccount.Controls.Add(this.txtUsernameCreate);
+            this.tabCreateAccount.Controls.Add(this.txtEmailCreate);
+            this.tabCreateAccount.Controls.Add(this.txtLastNameCreate);
+            this.tabCreateAccount.Controls.Add(this.txtNameCreate);
             this.tabCreateAccount.Controls.Add(this.label6);
             this.tabCreateAccount.Controls.Add(this.label5);
             this.tabCreateAccount.Controls.Add(this.label4);
@@ -189,6 +221,22 @@
             // 
             // tabEditAccount
             // 
+            this.tabEditAccount.Controls.Add(this.btnEdit);
+            this.tabEditAccount.Controls.Add(this.btnUpdateAccount);
+            this.tabEditAccount.Controls.Add(this.comboRoleEdit);
+            this.tabEditAccount.Controls.Add(this.txtPasswordEdit);
+            this.tabEditAccount.Controls.Add(this.txtUsernameEdit);
+            this.tabEditAccount.Controls.Add(this.txtEmailEdit);
+            this.tabEditAccount.Controls.Add(this.txtLastNameEdit);
+            this.tabEditAccount.Controls.Add(this.txtIDEdit);
+            this.tabEditAccount.Controls.Add(this.txtNameEdit);
+            this.tabEditAccount.Controls.Add(this.label8);
+            this.tabEditAccount.Controls.Add(this.label9);
+            this.tabEditAccount.Controls.Add(this.label10);
+            this.tabEditAccount.Controls.Add(this.label11);
+            this.tabEditAccount.Controls.Add(this.lblID);
+            this.tabEditAccount.Controls.Add(this.label12);
+            this.tabEditAccount.Controls.Add(this.label13);
             this.tabEditAccount.Location = new System.Drawing.Point(4, 34);
             this.tabEditAccount.Name = "tabEditAccount";
             this.tabEditAccount.Padding = new System.Windows.Forms.Padding(3);
@@ -199,6 +247,20 @@
             // 
             // tabDeleteAccount
             // 
+            this.tabDeleteAccount.Controls.Add(this.btnSearchToDelete);
+            this.tabDeleteAccount.Controls.Add(this.btnDelete);
+            this.tabDeleteAccount.Controls.Add(this.txtIDDelete);
+            this.tabDeleteAccount.Controls.Add(this.label14);
+            this.tabDeleteAccount.Controls.Add(this.label15);
+            this.tabDeleteAccount.Controls.Add(this.label16);
+            this.tabDeleteAccount.Controls.Add(this.label17);
+            this.tabDeleteAccount.Controls.Add(this.label18);
+            this.tabDeleteAccount.Controls.Add(this.txtUsernameDelete);
+            this.tabDeleteAccount.Controls.Add(this.txtEmailDelete);
+            this.tabDeleteAccount.Controls.Add(this.txtLastNameDelete);
+            this.tabDeleteAccount.Controls.Add(this.txtNameDelete);
+            this.tabDeleteAccount.Controls.Add(this.txtRoleDelete);
+            this.tabDeleteAccount.Controls.Add(this.label19);
             this.tabDeleteAccount.Location = new System.Drawing.Point(4, 34);
             this.tabDeleteAccount.Name = "tabDeleteAccount";
             this.tabDeleteAccount.Padding = new System.Windows.Forms.Padding(3);
@@ -210,36 +272,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 70);
+            this.label1.Location = new System.Drawing.Point(76, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 21);
+            this.label1.Size = new System.Drawing.Size(47, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Roli:";
+            this.label1.Text = "Role:";
             // 
-            // textBox1
+            // txtNameCreate
             // 
-            this.textBox1.Location = new System.Drawing.Point(157, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 29);
-            this.textBox1.TabIndex = 1;
+            this.txtNameCreate.Location = new System.Drawing.Point(157, 108);
+            this.txtNameCreate.Name = "txtNameCreate";
+            this.txtNameCreate.Size = new System.Drawing.Size(226, 29);
+            this.txtNameCreate.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 111);
+            this.label2.Location = new System.Drawing.Point(66, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 21);
+            this.label2.Size = new System.Drawing.Size(57, 21);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Emri:";
+            this.label2.Text = "Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 155);
+            this.label3.Location = new System.Drawing.Point(33, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 21);
+            this.label3.Size = new System.Drawing.Size(90, 21);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Mbiemri:";
+            this.label3.Text = "Last Name:";
             // 
             // label4
             // 
@@ -268,77 +330,351 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Password:";
             // 
-            // textBox2
+            // txtLastNameCreate
             // 
-            this.textBox2.Location = new System.Drawing.Point(157, 152);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(226, 29);
-            this.textBox2.TabIndex = 1;
+            this.txtLastNameCreate.Location = new System.Drawing.Point(157, 152);
+            this.txtLastNameCreate.Name = "txtLastNameCreate";
+            this.txtLastNameCreate.Size = new System.Drawing.Size(226, 29);
+            this.txtLastNameCreate.TabIndex = 3;
             // 
-            // textBox3
+            // txtEmailCreate
             // 
-            this.textBox3.Location = new System.Drawing.Point(157, 196);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(226, 29);
-            this.textBox3.TabIndex = 1;
+            this.txtEmailCreate.Location = new System.Drawing.Point(157, 196);
+            this.txtEmailCreate.Name = "txtEmailCreate";
+            this.txtEmailCreate.Size = new System.Drawing.Size(226, 29);
+            this.txtEmailCreate.TabIndex = 4;
             // 
-            // textBox4
+            // txtUsernameCreate
             // 
-            this.textBox4.Location = new System.Drawing.Point(157, 272);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(226, 29);
-            this.textBox4.TabIndex = 1;
+            this.txtUsernameCreate.Location = new System.Drawing.Point(157, 272);
+            this.txtUsernameCreate.Name = "txtUsernameCreate";
+            this.txtUsernameCreate.Size = new System.Drawing.Size(226, 29);
+            this.txtUsernameCreate.TabIndex = 5;
             // 
-            // textBox5
+            // txtPasswordCreate
             // 
-            this.textBox5.Location = new System.Drawing.Point(157, 315);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(226, 29);
-            this.textBox5.TabIndex = 1;
+            this.txtPasswordCreate.Location = new System.Drawing.Point(157, 315);
+            this.txtPasswordCreate.Name = "txtPasswordCreate";
+            this.txtPasswordCreate.Size = new System.Drawing.Size(226, 29);
+            this.txtPasswordCreate.TabIndex = 6;
             // 
-            // comboBox1
+            // comboRoleCreate
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboRoleCreate.FormattingEnabled = true;
+            this.comboRoleCreate.Items.AddRange(new object[] {
             "Admin",
             "User"});
-            this.comboBox1.Location = new System.Drawing.Point(157, 67);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(226, 29);
-            this.comboBox1.TabIndex = 2;
+            this.comboRoleCreate.Location = new System.Drawing.Point(157, 67);
+            this.comboRoleCreate.Name = "comboRoleCreate";
+            this.comboRoleCreate.Size = new System.Drawing.Size(226, 29);
+            this.comboRoleCreate.TabIndex = 1;
             // 
-            // button2
+            // btnCreate
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(440, 272);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(210, 72);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Create Account";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Location = new System.Drawing.Point(440, 272);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(210, 72);
+            this.btnCreate.TabIndex = 7;
+            this.btnCreate.Text = "Create Account";
+            this.btnCreate.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lblInfo);
             this.panel2.Location = new System.Drawing.Point(440, 67);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(210, 158);
-            this.panel2.TabIndex = 4;
+            this.panel2.TabIndex = 0;
             // 
-            // label7
+            // lblInfo
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(159, 102);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "An Admin should be able\r\nto add other admins and\r\nusers in the system.\r\n\r\nContact" +
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(20, 25);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(159, 102);
+            this.lblInfo.TabIndex = 0;
+            this.lblInfo.Text = "An Admin should be able\r\nto add other admins and\r\nusers in the system.\r\n\r\nContact" +
     " support:\r\nsupport@stackbooks.com";
+            // 
+            // comboRoleEdit
+            // 
+            this.comboRoleEdit.FormattingEnabled = true;
+            this.comboRoleEdit.Items.AddRange(new object[] {
+            "Admin",
+            "User"});
+            this.comboRoleEdit.Location = new System.Drawing.Point(157, 106);
+            this.comboRoleEdit.Name = "comboRoleEdit";
+            this.comboRoleEdit.Size = new System.Drawing.Size(226, 29);
+            this.comboRoleEdit.TabIndex = 10;
+            // 
+            // txtPasswordEdit
+            // 
+            this.txtPasswordEdit.Location = new System.Drawing.Point(157, 354);
+            this.txtPasswordEdit.Name = "txtPasswordEdit";
+            this.txtPasswordEdit.Size = new System.Drawing.Size(226, 29);
+            this.txtPasswordEdit.TabIndex = 15;
+            // 
+            // txtUsernameEdit
+            // 
+            this.txtUsernameEdit.Location = new System.Drawing.Point(157, 311);
+            this.txtUsernameEdit.Name = "txtUsernameEdit";
+            this.txtUsernameEdit.Size = new System.Drawing.Size(226, 29);
+            this.txtUsernameEdit.TabIndex = 14;
+            // 
+            // txtEmailEdit
+            // 
+            this.txtEmailEdit.Location = new System.Drawing.Point(157, 235);
+            this.txtEmailEdit.Name = "txtEmailEdit";
+            this.txtEmailEdit.Size = new System.Drawing.Size(226, 29);
+            this.txtEmailEdit.TabIndex = 13;
+            // 
+            // txtLastNameEdit
+            // 
+            this.txtLastNameEdit.Location = new System.Drawing.Point(157, 191);
+            this.txtLastNameEdit.Name = "txtLastNameEdit";
+            this.txtLastNameEdit.Size = new System.Drawing.Size(226, 29);
+            this.txtLastNameEdit.TabIndex = 12;
+            // 
+            // txtNameEdit
+            // 
+            this.txtNameEdit.Location = new System.Drawing.Point(157, 147);
+            this.txtNameEdit.Name = "txtNameEdit";
+            this.txtNameEdit.Size = new System.Drawing.Size(226, 29);
+            this.txtNameEdit.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(51, 357);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 21);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Password:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(47, 314);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 21);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Username:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(82, 238);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 21);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Email:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(44, 194);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(90, 21);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Last Name:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(77, 150);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 21);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Name:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(87, 109);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 21);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Role:";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(29, 46);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(105, 21);
+            this.lblID.TabIndex = 0;
+            this.lblID.Text = "Search by ID:";
+            // 
+            // txtIDEdit
+            // 
+            this.txtIDEdit.Location = new System.Drawing.Point(157, 43);
+            this.txtIDEdit.Name = "txtIDEdit";
+            this.txtIDEdit.Size = new System.Drawing.Size(226, 29);
+            this.txtIDEdit.TabIndex = 8;
+            // 
+            // btnUpdateAccount
+            // 
+            this.btnUpdateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnUpdateAccount.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateAccount.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateAccount.Location = new System.Drawing.Point(420, 311);
+            this.btnUpdateAccount.Name = "btnUpdateAccount";
+            this.btnUpdateAccount.Size = new System.Drawing.Size(210, 72);
+            this.btnUpdateAccount.TabIndex = 16;
+            this.btnUpdateAccount.Text = "Update Account";
+            this.btnUpdateAccount.UseVisualStyleBackColor = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(420, 29);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEdit.Size = new System.Drawing.Size(210, 56);
+            this.btnEdit.TabIndex = 9;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            // 
+            // btnSearchToDelete
+            // 
+            this.btnSearchToDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnSearchToDelete.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchToDelete.ForeColor = System.Drawing.Color.White;
+            this.btnSearchToDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchToDelete.Location = new System.Drawing.Point(420, 29);
+            this.btnSearchToDelete.Name = "btnSearchToDelete";
+            this.btnSearchToDelete.Size = new System.Drawing.Size(210, 56);
+            this.btnSearchToDelete.TabIndex = 18;
+            this.btnSearchToDelete.Text = "Search";
+            this.btnSearchToDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(420, 234);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(210, 72);
+            this.btnDelete.TabIndex = 19;
+            this.btnDelete.Text = "Delete Account";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // txtIDDelete
+            // 
+            this.txtIDDelete.Location = new System.Drawing.Point(157, 43);
+            this.txtIDDelete.Name = "txtIDDelete";
+            this.txtIDDelete.Size = new System.Drawing.Size(226, 29);
+            this.txtIDDelete.TabIndex = 17;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(47, 285);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(87, 21);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Username:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(82, 238);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(52, 21);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Email:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(44, 194);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(90, 21);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Last Name:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(29, 46);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(105, 21);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Search by ID:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(77, 150);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(57, 21);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Name:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(87, 109);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(47, 21);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Role:";
+            // 
+            // txtRoleDelete
+            // 
+            this.txtRoleDelete.AutoSize = true;
+            this.txtRoleDelete.Location = new System.Drawing.Point(153, 109);
+            this.txtRoleDelete.Name = "txtRoleDelete";
+            this.txtRoleDelete.Size = new System.Drawing.Size(28, 21);
+            this.txtRoleDelete.TabIndex = 0;
+            this.txtRoleDelete.Text = "---";
+            // 
+            // txtNameDelete
+            // 
+            this.txtNameDelete.AutoSize = true;
+            this.txtNameDelete.Location = new System.Drawing.Point(153, 150);
+            this.txtNameDelete.Name = "txtNameDelete";
+            this.txtNameDelete.Size = new System.Drawing.Size(28, 21);
+            this.txtNameDelete.TabIndex = 0;
+            this.txtNameDelete.Text = "---";
+            // 
+            // txtLastNameDelete
+            // 
+            this.txtLastNameDelete.AutoSize = true;
+            this.txtLastNameDelete.Location = new System.Drawing.Point(153, 194);
+            this.txtLastNameDelete.Name = "txtLastNameDelete";
+            this.txtLastNameDelete.Size = new System.Drawing.Size(28, 21);
+            this.txtLastNameDelete.TabIndex = 0;
+            this.txtLastNameDelete.Text = "---";
+            // 
+            // txtEmailDelete
+            // 
+            this.txtEmailDelete.AutoSize = true;
+            this.txtEmailDelete.Location = new System.Drawing.Point(153, 238);
+            this.txtEmailDelete.Name = "txtEmailDelete";
+            this.txtEmailDelete.Size = new System.Drawing.Size(28, 21);
+            this.txtEmailDelete.TabIndex = 0;
+            this.txtEmailDelete.Text = "---";
+            // 
+            // txtUsernameDelete
+            // 
+            this.txtUsernameDelete.AutoSize = true;
+            this.txtUsernameDelete.Location = new System.Drawing.Point(153, 285);
+            this.txtUsernameDelete.Name = "txtUsernameDelete";
+            this.txtUsernameDelete.Size = new System.Drawing.Size(28, 21);
+            this.txtUsernameDelete.TabIndex = 0;
+            this.txtUsernameDelete.Text = "---";
             // 
             // ManageUserAccountsForm
             // 
@@ -362,6 +698,10 @@
             this.tabControlSettings.ResumeLayout(false);
             this.tabCreateAccount.ResumeLayout(false);
             this.tabCreateAccount.PerformLayout();
+            this.tabEditAccount.ResumeLayout(false);
+            this.tabEditAccount.PerformLayout();
+            this.tabDeleteAccount.ResumeLayout(false);
+            this.tabDeleteAccount.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -381,20 +721,50 @@
         private System.Windows.Forms.TabPage tabCreateAccount;
         private System.Windows.Forms.TabPage tabEditAccount;
         private System.Windows.Forms.TabPage tabDeleteAccount;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNameCreate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.ComboBox comboRoleCreate;
+        private System.Windows.Forms.TextBox txtPasswordCreate;
+        private System.Windows.Forms.TextBox txtUsernameCreate;
+        private System.Windows.Forms.TextBox txtEmailCreate;
+        private System.Windows.Forms.TextBox txtLastNameCreate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnUpdateAccount;
+        private System.Windows.Forms.ComboBox comboRoleEdit;
+        private System.Windows.Forms.TextBox txtPasswordEdit;
+        private System.Windows.Forms.TextBox txtUsernameEdit;
+        private System.Windows.Forms.TextBox txtEmailEdit;
+        private System.Windows.Forms.TextBox txtLastNameEdit;
+        private System.Windows.Forms.TextBox txtIDEdit;
+        private System.Windows.Forms.TextBox txtNameEdit;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnSearchToDelete;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox txtIDDelete;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label txtUsernameDelete;
+        private System.Windows.Forms.Label txtEmailDelete;
+        private System.Windows.Forms.Label txtLastNameDelete;
+        private System.Windows.Forms.Label txtNameDelete;
+        private System.Windows.Forms.Label txtRoleDelete;
+        private System.Windows.Forms.Label label19;
     }
 }

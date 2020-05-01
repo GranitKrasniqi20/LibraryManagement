@@ -33,7 +33,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnManageAccounts = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnMyAccount = new System.Windows.Forms.Button();
+            this.btnMyProfile = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -72,7 +72,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(405, 299);
-            this.tableLayoutPanel3.TabIndex = 15;
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // panel2
             // 
@@ -94,33 +94,33 @@
             this.btnManageAccounts.Margin = new System.Windows.Forms.Padding(2);
             this.btnManageAccounts.Name = "btnManageAccounts";
             this.btnManageAccounts.Size = new System.Drawing.Size(312, 66);
-            this.btnManageAccounts.TabIndex = 0;
+            this.btnManageAccounts.TabIndex = 1;
             this.btnManageAccounts.Text = "Manage User Accounts";
             this.btnManageAccounts.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.Controls.Add(this.btnMyAccount);
+            this.panel3.Controls.Add(this.btnMyProfile);
             this.panel3.Location = new System.Drawing.Point(46, 191);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(312, 66);
             this.panel3.TabIndex = 1;
             // 
-            // btnMyAccount
+            // btnMyProfile
             // 
-            this.btnMyAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnMyAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMyAccount.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMyAccount.ForeColor = System.Drawing.Color.White;
-            this.btnMyAccount.Location = new System.Drawing.Point(0, 0);
-            this.btnMyAccount.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMyAccount.Name = "btnMyAccount";
-            this.btnMyAccount.Size = new System.Drawing.Size(312, 66);
-            this.btnMyAccount.TabIndex = 0;
-            this.btnMyAccount.Text = "My Account";
-            this.btnMyAccount.UseVisualStyleBackColor = false;
+            this.btnMyProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnMyProfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMyProfile.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMyProfile.ForeColor = System.Drawing.Color.White;
+            this.btnMyProfile.Location = new System.Drawing.Point(0, 0);
+            this.btnMyProfile.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMyProfile.Name = "btnMyProfile";
+            this.btnMyProfile.Size = new System.Drawing.Size(312, 66);
+            this.btnMyProfile.TabIndex = 2;
+            this.btnMyProfile.Text = "My Profile";
+            this.btnMyProfile.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel7
             // 
@@ -133,7 +133,7 @@
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(405, 27);
-            this.tableLayoutPanel7.TabIndex = 14;
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // lblFooterTitle
             // 
@@ -199,7 +199,7 @@
             this.txtRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtRole.Name = "txtRole";
             this.txtRole.Size = new System.Drawing.Size(36, 25);
-            this.txtRole.TabIndex = 1;
+            this.txtRole.TabIndex = 0;
             this.txtRole.Text = "---";
             // 
             // tableSpace1
@@ -248,7 +248,7 @@
             this.lblTitleTitle.Location = new System.Drawing.Point(86, 18);
             this.lblTitleTitle.Name = "lblTitleTitle";
             this.lblTitleTitle.Size = new System.Drawing.Size(196, 50);
-            this.lblTitleTitle.TabIndex = 1;
+            this.lblTitleTitle.TabIndex = 0;
             this.lblTitleTitle.Text = "SETTINGS";
             // 
             // picTitle
@@ -297,7 +297,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnManageAccounts;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnMyAccount;
+        private System.Windows.Forms.Button btnMyProfile;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label lblFooterTitle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
