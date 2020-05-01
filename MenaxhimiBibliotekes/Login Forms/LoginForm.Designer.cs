@@ -79,6 +79,7 @@
             this.btnCloseLogin.TabIndex = 4;
             this.btnCloseLogin.Text = "Close";
             this.btnCloseLogin.UseVisualStyleBackColor = false;
+            this.btnCloseLogin.Click += new System.EventHandler(this.btnCloseLogin_Click);
             // 
             // btnLogin
             // 
@@ -92,6 +93,7 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblPasswordLogin
             // 
@@ -188,6 +190,7 @@
             this.Name = "loginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "loginForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.loginForm_FormClosed);
             this.panelHeaderLogin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogoLogin)).EndInit();
             this.ResumeLayout(false);

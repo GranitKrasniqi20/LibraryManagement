@@ -40,7 +40,6 @@
             this.btnLoggedUser = new System.Windows.Forms.Button();
             this.appLogo = new System.Windows.Forms.PictureBox();
             this.appName = new System.Windows.Forms.PictureBox();
-            this.lblNothingToDisplay = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).BeginInit();
@@ -231,28 +230,15 @@
             this.appName.TabIndex = 0;
             this.appName.TabStop = false;
             // 
-            // lblNothingToDisplay
-            // 
-            this.lblNothingToDisplay.AutoSize = true;
-            this.lblNothingToDisplay.BackColor = System.Drawing.Color.Transparent;
-            this.lblNothingToDisplay.Font = new System.Drawing.Font("Segoe UI", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNothingToDisplay.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNothingToDisplay.Location = new System.Drawing.Point(308, 33);
-            this.lblNothingToDisplay.Name = "lblNothingToDisplay";
-            this.lblNothingToDisplay.Size = new System.Drawing.Size(476, 71);
-            this.lblNothingToDisplay.TabIndex = 3;
-            this.lblNothingToDisplay.Text = "Nothing To Display";
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1026, 656);
-            this.Controls.Add(this.lblNothingToDisplay);
             this.Controls.Add(this.panelMenu);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1026, 647);
             this.Name = "mainForm";
             this.Text = "Stackbooks Management System";
@@ -263,7 +249,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appName)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -279,7 +264,6 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnLoggedUser;
-        private System.Windows.Forms.Label lblNothingToDisplay;
     }
 }
 
