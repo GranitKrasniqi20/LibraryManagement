@@ -378,7 +378,7 @@
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(356, 33);
-            this.tableLayoutPanel4.TabIndex = 3;
+            this.tableLayoutPanel4.TabIndex = 0;
             // 
             // lblFrom
             // 
@@ -414,7 +414,7 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(356, 38);
-            this.tableLayoutPanel5.TabIndex = 4;
+            this.tableLayoutPanel5.TabIndex = 0;
             // 
             // txtFromDate
             // 
@@ -521,7 +521,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.lblFooterTitle, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 734);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 629);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -554,16 +554,16 @@
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(784, 75);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(784, 0);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.Controls.Add(this.btnRegister);
-            this.panel4.Location = new System.Drawing.Point(23, 11);
+            this.panel4.Location = new System.Drawing.Point(23, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(356, 52);
+            this.panel4.Size = new System.Drawing.Size(356, 1);
             this.panel4.TabIndex = 0;
             // 
             // btnRegister
@@ -574,7 +574,7 @@
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(0, 0);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(356, 52);
+            this.btnRegister.Size = new System.Drawing.Size(356, 1);
             this.btnRegister.TabIndex = 13;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -583,9 +583,9 @@
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.Controls.Add(this.btnBill);
-            this.panel5.Location = new System.Drawing.Point(405, 11);
+            this.panel5.Location = new System.Drawing.Point(405, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(356, 52);
+            this.panel5.Size = new System.Drawing.Size(356, 1);
             this.panel5.TabIndex = 0;
             // 
             // btnBill
@@ -596,7 +596,7 @@
             this.btnBill.ForeColor = System.Drawing.Color.White;
             this.btnBill.Location = new System.Drawing.Point(0, 0);
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(356, 52);
+            this.btnBill.Size = new System.Drawing.Size(356, 1);
             this.btnBill.TabIndex = 14;
             this.btnBill.Text = "Bill";
             this.btnBill.UseVisualStyleBackColor = false;
@@ -605,7 +605,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 761);
+            this.ClientSize = new System.Drawing.Size(784, 656);
             this.Controls.Add(this.tableLayoutPanel8);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.tableLayoutPanel6);
@@ -613,7 +613,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(800, 800);
+            this.MinimumSize = new System.Drawing.Size(795, 662);
             this.Name = "AddMemberForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Member (Stackbooks)";

@@ -40,6 +40,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPasswordLogin = new System.Windows.Forms.TextBox();
             this.txtUsernameLogin = new System.Windows.Forms.TextBox();
+            this.lblUsernameError = new System.Windows.Forms.Label();
+            this.lblPasswordError = new System.Windows.Forms.Label();
             this.panelHeaderLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogoLogin)).BeginInit();
             this.SuspendLayout();
@@ -172,6 +174,30 @@
             this.txtUsernameLogin.Size = new System.Drawing.Size(309, 22);
             this.txtUsernameLogin.TabIndex = 1;
             // 
+            // lblUsernameError
+            // 
+            this.lblUsernameError.AutoSize = true;
+            this.lblUsernameError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsernameError.ForeColor = System.Drawing.Color.Maroon;
+            this.lblUsernameError.Location = new System.Drawing.Point(44, 334);
+            this.lblUsernameError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsernameError.Name = "lblUsernameError";
+            this.lblUsernameError.Size = new System.Drawing.Size(152, 17);
+            this.lblUsernameError.TabIndex = 0;
+            this.lblUsernameError.Text = "Username is not correct!";
+            // 
+            // lblPasswordError
+            // 
+            this.lblPasswordError.AutoSize = true;
+            this.lblPasswordError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordError.ForeColor = System.Drawing.Color.Maroon;
+            this.lblPasswordError.Location = new System.Drawing.Point(44, 446);
+            this.lblPasswordError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPasswordError.Name = "lblPasswordError";
+            this.lblPasswordError.Size = new System.Drawing.Size(149, 17);
+            this.lblPasswordError.TabIndex = 0;
+            this.lblPasswordError.Text = "Password is not correct!";
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,10 +212,12 @@
             this.Controls.Add(this.txtPasswordLogin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.lblPasswordError);
+            this.Controls.Add(this.lblUsernameError);
             this.Controls.Add(this.lblUsernameLogin);
             this.Name = "loginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "loginForm";
+            this.Text = "Log In (Stackbooks)";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.loginForm_FormClosed);
             this.panelHeaderLogin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogoLogin)).EndInit();
@@ -211,5 +239,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtPasswordLogin;
         private System.Windows.Forms.TextBox txtUsernameLogin;
+        private System.Windows.Forms.Label lblUsernameError;
+        private System.Windows.Forms.Label lblPasswordError;
     }
 }

@@ -74,8 +74,12 @@ namespace MenaxhimiBibliotekes
         {
 
             Login_Forms.loginForm loginform = new Login_Forms.loginForm();
-            loginform.MdiParent = this;
-            loginform.Show();
+
+            //loginform.MdiParent = this;
+            loginform.ShowDialog();
+
+            
+            
         }
 
         private void btnSettings_Click(object sender, EventArgs e)

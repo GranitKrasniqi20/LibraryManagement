@@ -16,6 +16,8 @@ namespace MenaxhimiBibliotekes.Login_Forms
         public loginForm()
         {
             InitializeComponent();
+            lblUsernameError.Hide();
+            lblPasswordError.Hide();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -29,6 +31,11 @@ namespace MenaxhimiBibliotekes.Login_Forms
                     FormLoggedUser.Username = txtUsernameLogin.Text;
                     FormLoggedUser.Password = txtPasswordLogin.Text;
                     FormLoggedUser.Role = "Admin";
+
+
+                    MessageBox.Show($"You logged successfully, {FormLoggedUser.Name} {FormLoggedUser.LastName} ({FormLoggedUser.Username})!", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    this.Hide();
                 }
                 else
                 {
@@ -51,5 +58,7 @@ namespace MenaxhimiBibliotekes.Login_Forms
         {
             Application.Exit();
         }
+
+        
     }
 }
