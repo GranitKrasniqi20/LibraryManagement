@@ -12,7 +12,8 @@ namespace MenaxhimiBibliotekes.DAL
     class Connection
     {
         private static string ConnectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
-            
+
+
 
 
         public static SqlConnection GetConnection()

@@ -23,20 +23,12 @@ namespace MenaxhimiBibliotekes.BLL
            return _materialDAL.Delete(Id);
         }
 
-        public bool Delete(Material obj)
-        {
-            throw new NotImplementedException();
-        }
 
         public Material Get(int Id)
         {
             return Get(Id);
         }
 
-        public Material Get(Material obj)
-        {
-            return Get(obj);
-        }
 
         public List<Material> GetAll()
         {

@@ -12,13 +12,13 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    class UserBLL : ICrud<User>
+    public class UserBLL : ICrud<User>
     {
         UserDAL usr = new UserDAL();
 
         public User LogIn(string username, string password)
         {
-            usr.LogIn(username, password);
+           return usr.LogIn(username, password);
         }
         public bool Add(User obj)
         {
@@ -32,10 +32,7 @@ namespace MenaxhimiBibliotekes.BLL
          
         }
 
-        public bool Delete(User obj)
-        {
-           return usr.Delete(obj);
-        }
+
 
         public User Get(int Id)
         {

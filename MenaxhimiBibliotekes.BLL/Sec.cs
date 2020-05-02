@@ -7,15 +7,18 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    class Sec
+   public class Sec
     {
-        public string Hash(string password, string username)
+
+        public static string Hash(string username,string password)
         {
-            return ComputeHash(SaltPassword(password, username));
+
+            return ComputeHash(SaltPassword(username,password)).Substring(0,40);
+
         }
 
 
-        private string ComputeHash(string password)
+        private static string ComputeHash(string password)
         {
             byte[] data = Encoding.ASCII.GetBytes(password);
             string result;
@@ -23,7 +26,7 @@ namespace MenaxhimiBibliotekes.BLL
             result = Convert.ToBase64String(sha.ComputeHash(data));
             return result;
         }
-        private string SaltPassword(string password, string username)
+        private static string SaltPassword(string username, string password )
         {
 
             char[] userchar = username.ToCharArray();
@@ -34,6 +37,10 @@ namespace MenaxhimiBibliotekes.BLL
 
                 i++;
 
+                if (i >= userchar.Length)
+                {
+                    break;
+                }
                 password = password + userchar[i];
 
             }

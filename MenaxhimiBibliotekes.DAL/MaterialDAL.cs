@@ -15,6 +15,7 @@ namespace MenaxhimiBibliotekes.DAL
         private Material material;
         public bool Add(Material obj)
         {
+
             int MaterialId ;//pusblish house id me kon nullable
 
             try
@@ -26,9 +27,6 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "Title", obj.Title);
 
                             Connection.AddParameter(command, "GenreId", obj._Genre.GenreId);
-
-
-
 
                         if (obj.PublishPlace != null)
                         {
@@ -262,7 +260,6 @@ namespace MenaxhimiBibliotekes.DAL
 
         public bool Update(Material obj)
         {
-            int MaterialId;
 
             try
             {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MenaxhimiBibliotekes.Settings_Forms;
 
 namespace MenaxhimiBibliotekes
 {
@@ -23,7 +24,7 @@ namespace MenaxhimiBibliotekes
 
         Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
         Materials_Forms.MaterialsForm materialsform = new Materials_Forms.MaterialsForm();
-        Settings_Forms.SettingsForm2 settingsform = new Settings_Forms.SettingsForm2();
+        Settings_Forms.SettingsForm settingsform = new Settings_Forms.SettingsForm();
 
         //Customized Design Methods
         private void AddControlsToPanel(Control c)
@@ -91,6 +92,11 @@ namespace MenaxhimiBibliotekes
 
             settingsform.MdiParent = this;
             settingsform.Show();
+
+        }
+
+        private void LblNothingToDisplay_Click(object sender, EventArgs e)
+        {
 
         }
     }
