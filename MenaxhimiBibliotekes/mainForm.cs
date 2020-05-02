@@ -7,32 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MenaxhimiBibliotekes.Settings_Forms;
-
+using MenaxhimiBibliotekes.BO;
 
 namespace MenaxhimiBibliotekes
 {
     public partial class mainForm : Form
     {
-        public mainForm()
-        {
-            InitializeComponent();
-            panelSubmenu.Hide();
-            lblNothingToDisplay.Show();
 
-            
-        }
-
+        /// <summary>
+        /// Global Variables & Instances
+        /// </summary>
         Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
         Materials_Forms.MaterialsForm materialsform = new Materials_Forms.MaterialsForm();
         Settings_Forms.SettingsForm settingsform = new Settings_Forms.SettingsForm();
 
-        //Customized Design Methods
-        private void AddControlsToPanel(Control c)
-        {
-            panelSubmenu.Controls.Clear();
-            panelSubmenu.Controls.Add(c);
-        }
+
+
+        /// <summary>
+        /// Customized Form Design Methods
+        /// </summary>
 
         private void CloseAllWindows()
         {
@@ -41,22 +34,23 @@ namespace MenaxhimiBibliotekes
             settingsform.Hide();
         }
 
-        private void ShowSubmenu()
+
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public mainForm()
         {
-            lblNothingToDisplay.Hide();
-            panelSubmenu.Show();
+            InitializeComponent();
         }
+
 
         private void appLogo_Click(object sender, EventArgs e)
         {
-            panelSubmenu.Hide();
-            lblNothingToDisplay.Show();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            panelSubmenu.Hide();
-            lblNothingToDisplay.Show();
         }
 
         private void btnMembers_Click(object sender, EventArgs e)
@@ -79,12 +73,13 @@ namespace MenaxhimiBibliotekes
 
         private void mainForm_Shown(object sender, EventArgs e)
         {
-            panelSubmenu.Hide();
-            lblNothingToDisplay.Hide();
 
             Login_Forms.loginForm loginform = new Login_Forms.loginForm();
-            loginform.MdiParent = this;
-            loginform.Show();
+
+            loginform.ShowDialog();
+
+            
+            
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -96,9 +91,23 @@ namespace MenaxhimiBibliotekes
 
         }
 
-        private void LblNothingToDisplay_Click(object sender, EventArgs e)
+        private void mainForm_Activated(object sender, EventArgs e)
         {
+            btnLoggedUser.Text = $"  {FormLoggedUser.Name} {FormLoggedUser.LastName}";
+        }
 
+        private void btnLoggedUser_Click(object sender, EventArgs e)
+        {
+            Settings_Forms.MyProfileForm profile = new Settings_Forms.MyProfileForm();
+
+            profile.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login_Forms.loginForm loginform = new Login_Forms.loginForm();
+
+            loginform.ShowDialog();
         }
     }
 }

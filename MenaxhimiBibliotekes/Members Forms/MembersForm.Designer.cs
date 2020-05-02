@@ -111,7 +111,7 @@
             this.lblTitle.Location = new System.Drawing.Point(151, 17);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(201, 50);
-            this.lblTitle.TabIndex = 1;
+            this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "MEMBERS";
             // 
             // picTitle
@@ -175,7 +175,7 @@
             this.tableDataGridView.RowCount = 1;
             this.tableDataGridView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableDataGridView.Size = new System.Drawing.Size(726, 318);
-            this.tableDataGridView.TabIndex = 9;
+            this.tableDataGridView.TabIndex = 0;
             // 
             // dgvMembers
             // 
@@ -199,7 +199,7 @@
             this.dgvMembers.Location = new System.Drawing.Point(23, 3);
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.Size = new System.Drawing.Size(680, 312);
-            this.dgvMembers.TabIndex = 0;
+            this.dgvMembers.TabIndex = 7;
             // 
             // IDCOL
             // 
@@ -276,7 +276,7 @@
             this.tableBottomSpace.RowCount = 1;
             this.tableBottomSpace.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableBottomSpace.Size = new System.Drawing.Size(726, 22);
-            this.tableBottomSpace.TabIndex = 8;
+            this.tableBottomSpace.TabIndex = 0;
             // 
             // tableSearch
             // 
@@ -287,7 +287,7 @@
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableSearch.Controls.Add(this.textSearchMember, 1, 0);
             this.tableSearch.Controls.Add(this.comboSortMember, 3, 0);
             this.tableSearch.Controls.Add(this.btnSearchMember, 5, 0);
@@ -298,7 +298,7 @@
             this.tableSearch.RowCount = 1;
             this.tableSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableSearch.Size = new System.Drawing.Size(726, 53);
-            this.tableSearch.TabIndex = 6;
+            this.tableSearch.TabIndex = 0;
             // 
             // textSearchMember
             // 
@@ -306,18 +306,18 @@
             this.textSearchMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSearchMember.Location = new System.Drawing.Point(23, 3);
             this.textSearchMember.Name = "textSearchMember";
-            this.textSearchMember.Size = new System.Drawing.Size(268, 39);
-            this.textSearchMember.TabIndex = 0;
+            this.textSearchMember.Size = new System.Drawing.Size(266, 39);
+            this.textSearchMember.TabIndex = 4;
             // 
             // comboSortMember
             // 
             this.comboSortMember.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboSortMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboSortMember.FormattingEnabled = true;
-            this.comboSortMember.Location = new System.Drawing.Point(310, 3);
+            this.comboSortMember.Location = new System.Drawing.Point(308, 3);
             this.comboSortMember.Name = "comboSortMember";
             this.comboSortMember.Size = new System.Drawing.Size(143, 40);
-            this.comboSortMember.TabIndex = 1;
+            this.comboSortMember.TabIndex = 5;
             // 
             // btnSearchMember
             // 
@@ -325,10 +325,10 @@
             this.btnSearchMember.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMember.ForeColor = System.Drawing.Color.White;
-            this.btnSearchMember.Location = new System.Drawing.Point(471, 3);
+            this.btnSearchMember.Location = new System.Drawing.Point(469, 3);
             this.btnSearchMember.Name = "btnSearchMember";
             this.btnSearchMember.Size = new System.Drawing.Size(229, 40);
-            this.btnSearchMember.TabIndex = 2;
+            this.btnSearchMember.TabIndex = 6;
             this.btnSearchMember.Text = "Search";
             this.btnSearchMember.UseVisualStyleBackColor = false;
             // 
@@ -342,7 +342,7 @@
             this.tableButtons.RowCount = 1;
             this.tableButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableButtons.Size = new System.Drawing.Size(726, 16);
-            this.tableButtons.TabIndex = 5;
+            this.tableButtons.TabIndex = 0;
             // 
             // tableSpace2
             // 
@@ -363,7 +363,7 @@
             this.tableSpace2.RowCount = 1;
             this.tableSpace2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableSpace2.Size = new System.Drawing.Size(726, 62);
-            this.tableSpace2.TabIndex = 4;
+            this.tableSpace2.TabIndex = 0;
             // 
             // btnAddMember
             // 
@@ -374,7 +374,7 @@
             this.btnAddMember.Location = new System.Drawing.Point(23, 3);
             this.btnAddMember.Name = "btnAddMember";
             this.btnAddMember.Size = new System.Drawing.Size(209, 56);
-            this.btnAddMember.TabIndex = 0;
+            this.btnAddMember.TabIndex = 1;
             this.btnAddMember.Text = "Add Member";
             this.btnAddMember.UseVisualStyleBackColor = false;
             this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
@@ -388,7 +388,7 @@
             this.btnUpdateMember.Location = new System.Drawing.Point(258, 3);
             this.btnUpdateMember.Name = "btnUpdateMember";
             this.btnUpdateMember.Size = new System.Drawing.Size(209, 56);
-            this.btnUpdateMember.TabIndex = 1;
+            this.btnUpdateMember.TabIndex = 2;
             this.btnUpdateMember.Text = "Update Member";
             this.btnUpdateMember.UseVisualStyleBackColor = false;
             this.btnUpdateMember.Click += new System.EventHandler(this.btnUpdateMember_Click);
@@ -402,7 +402,7 @@
             this.btnDeleteMember.Location = new System.Drawing.Point(493, 3);
             this.btnDeleteMember.Name = "btnDeleteMember";
             this.btnDeleteMember.Size = new System.Drawing.Size(209, 56);
-            this.btnDeleteMember.TabIndex = 2;
+            this.btnDeleteMember.TabIndex = 3;
             this.btnDeleteMember.Text = "Delete Member";
             this.btnDeleteMember.UseVisualStyleBackColor = false;
             this.btnDeleteMember.Click += new System.EventHandler(this.btnDeleteMember_Click);
@@ -417,7 +417,7 @@
             this.tableSpace1.RowCount = 1;
             this.tableSpace1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableSpace1.Size = new System.Drawing.Size(726, 16);
-            this.tableSpace1.TabIndex = 2;
+            this.tableSpace1.TabIndex = 0;
             // 
             // tabExpiredMembers
             // 

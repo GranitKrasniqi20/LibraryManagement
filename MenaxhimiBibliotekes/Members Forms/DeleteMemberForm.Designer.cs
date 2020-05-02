@@ -113,7 +113,7 @@
             this.tableHeader.RowCount = 1;
             this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableHeader.Size = new System.Drawing.Size(841, 88);
-            this.tableHeader.TabIndex = 4;
+            this.tableHeader.TabIndex = 0;
             // 
             // panel1
             // 
@@ -133,7 +133,7 @@
             this.lblTitle.Location = new System.Drawing.Point(83, 17);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(339, 50);
-            this.lblTitle.TabIndex = 1;
+            this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "DELETE MEMBERS";
             // 
             // picTitle
@@ -158,7 +158,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(841, 27);
-            this.tableLayoutPanel7.TabIndex = 9;
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // lblFooterTitle
             // 
@@ -184,7 +184,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(841, 57);
-            this.tableLayoutPanel1.TabIndex = 10;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -217,7 +217,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(841, 19);
-            this.tableLayoutPanel2.TabIndex = 11;
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
@@ -254,7 +254,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(841, 470);
-            this.tableLayoutPanel3.TabIndex = 12;
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // panel3
             // 
@@ -597,7 +597,7 @@
             this.btnSearchMember.Name = "btnSearchMember";
             this.tableLayoutPanel3.SetRowSpan(this.btnSearchMember, 2);
             this.btnSearchMember.Size = new System.Drawing.Size(384, 116);
-            this.btnSearchMember.TabIndex = 3;
+            this.btnSearchMember.TabIndex = 2;
             this.btnSearchMember.Text = "Search Specific Member";
             this.btnSearchMember.UseVisualStyleBackColor = false;
             // 
@@ -614,7 +614,7 @@
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(841, 100);
-            this.tableLayoutPanel6.TabIndex = 13;
+            this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel13
             // 
@@ -634,7 +634,7 @@
             this.btnDelete.Location = new System.Drawing.Point(0, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(356, 52);
-            this.btnDelete.TabIndex = 0;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete Member";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 

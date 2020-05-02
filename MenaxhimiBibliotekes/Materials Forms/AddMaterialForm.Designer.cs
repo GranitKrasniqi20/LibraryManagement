@@ -94,7 +94,7 @@
             this.tableHeader.RowCount = 1;
             this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableHeader.Size = new System.Drawing.Size(784, 88);
-            this.tableHeader.TabIndex = 3;
+            this.tableHeader.TabIndex = 0;
             // 
             // panel1
             // 
@@ -114,7 +114,7 @@
             this.lblTitleTitle.Location = new System.Drawing.Point(106, 17);
             this.lblTitleTitle.Name = "lblTitleTitle";
             this.lblTitleTitle.Size = new System.Drawing.Size(293, 50);
-            this.lblTitleTitle.TabIndex = 1;
+            this.lblTitleTitle.TabIndex = 0;
             this.lblTitleTitle.Text = "ADD MATERIAL";
             // 
             // picTitle
@@ -140,7 +140,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 57);
-            this.tableLayoutPanel1.TabIndex = 4;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -169,12 +169,12 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.lblFooterTitle, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 509);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 736);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(784, 27);
-            this.tableLayoutPanel7.TabIndex = 8;
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // lblFooterTitle
             // 
@@ -197,7 +197,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(784, 19);
-            this.tableLayoutPanel2.TabIndex = 9;
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
@@ -245,8 +245,8 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(784, 481);
-            this.tableLayoutPanel3.TabIndex = 10;
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(784, 487);
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // lblTitle
             // 
@@ -255,7 +255,7 @@
             this.lblTitle.Location = new System.Drawing.Point(23, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(49, 25);
-            this.lblTitle.TabIndex = 1;
+            this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
             // 
             // lblAuthor
@@ -265,7 +265,7 @@
             this.lblAuthor.Location = new System.Drawing.Point(23, 100);
             this.lblAuthor.Name = "lblAuthor";
             this.lblAuthor.Size = new System.Drawing.Size(72, 25);
-            this.lblAuthor.TabIndex = 1;
+            this.lblAuthor.TabIndex = 0;
             this.lblAuthor.Text = "Author";
             // 
             // lblGenre
@@ -275,7 +275,7 @@
             this.lblGenre.Location = new System.Drawing.Point(23, 200);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(63, 25);
-            this.lblGenre.TabIndex = 1;
+            this.lblGenre.TabIndex = 0;
             this.lblGenre.Text = "Genre";
             // 
             // lblLanguage
@@ -285,7 +285,7 @@
             this.lblLanguage.Location = new System.Drawing.Point(23, 300);
             this.lblLanguage.Name = "lblLanguage";
             this.lblLanguage.Size = new System.Drawing.Size(95, 25);
-            this.lblLanguage.TabIndex = 1;
+            this.lblLanguage.TabIndex = 0;
             this.lblLanguage.Text = "Language";
             // 
             // lblISBN
@@ -295,7 +295,7 @@
             this.lblISBN.Location = new System.Drawing.Point(23, 400);
             this.lblISBN.Name = "lblISBN";
             this.lblISBN.Size = new System.Drawing.Size(54, 25);
-            this.lblISBN.TabIndex = 1;
+            this.lblISBN.TabIndex = 0;
             this.lblISBN.Text = "ISBN";
             // 
             // lblMaterialType
@@ -305,7 +305,7 @@
             this.lblMaterialType.Location = new System.Drawing.Point(405, 0);
             this.lblMaterialType.Name = "lblMaterialType";
             this.lblMaterialType.Size = new System.Drawing.Size(129, 25);
-            this.lblMaterialType.TabIndex = 1;
+            this.lblMaterialType.TabIndex = 0;
             this.lblMaterialType.Text = "Material Type";
             // 
             // lblPublishHouse
@@ -315,7 +315,7 @@
             this.lblPublishHouse.Location = new System.Drawing.Point(405, 100);
             this.lblPublishHouse.Name = "lblPublishHouse";
             this.lblPublishHouse.Size = new System.Drawing.Size(133, 25);
-            this.lblPublishHouse.TabIndex = 1;
+            this.lblPublishHouse.TabIndex = 0;
             this.lblPublishHouse.Text = "Publish House";
             // 
             // lblPublishDate
@@ -325,7 +325,7 @@
             this.lblPublishDate.Location = new System.Drawing.Point(405, 200);
             this.lblPublishDate.Name = "lblPublishDate";
             this.lblPublishDate.Size = new System.Drawing.Size(120, 25);
-            this.lblPublishDate.TabIndex = 1;
+            this.lblPublishDate.TabIndex = 0;
             this.lblPublishDate.Text = "Publish Date";
             // 
             // lblPublishPlace
@@ -335,7 +335,7 @@
             this.lblPublishPlace.Location = new System.Drawing.Point(405, 300);
             this.lblPublishPlace.Name = "lblPublishPlace";
             this.lblPublishPlace.Size = new System.Drawing.Size(124, 25);
-            this.lblPublishPlace.TabIndex = 1;
+            this.lblPublishPlace.TabIndex = 0;
             this.lblPublishPlace.Text = "Publish Place";
             // 
             // tableLayoutPanel4
@@ -361,7 +361,7 @@
             this.lblQuantity.Location = new System.Drawing.Point(3, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(87, 25);
-            this.lblQuantity.TabIndex = 1;
+            this.lblQuantity.TabIndex = 0;
             this.lblQuantity.Text = "Quantity";
             // 
             // lblPages
@@ -371,7 +371,7 @@
             this.lblPages.Location = new System.Drawing.Point(191, 0);
             this.lblPages.Name = "lblPages";
             this.lblPages.Size = new System.Drawing.Size(120, 25);
-            this.lblPages.TabIndex = 1;
+            this.lblPages.TabIndex = 0;
             this.lblPages.Text = "No. of Pages";
             // 
             // tableLayoutPanel5
@@ -387,7 +387,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(356, 35);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(356, 41);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // txtPages
@@ -397,7 +397,7 @@
             this.txtPages.Location = new System.Drawing.Point(191, 3);
             this.txtPages.Name = "txtPages";
             this.txtPages.Size = new System.Drawing.Size(162, 33);
-            this.txtPages.TabIndex = 4;
+            this.txtPages.TabIndex = 11;
             // 
             // txtQuantity
             // 
@@ -406,7 +406,7 @@
             this.txtQuantity.Location = new System.Drawing.Point(3, 3);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(162, 33);
-            this.txtQuantity.TabIndex = 4;
+            this.txtQuantity.TabIndex = 10;
             // 
             // txtTitle
             // 
@@ -415,7 +415,8 @@
             this.txtTitle.Location = new System.Drawing.Point(23, 43);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(356, 33);
-            this.txtTitle.TabIndex = 4;
+            this.txtTitle.TabIndex = 1;
+            this.txtTitle.Validating += new System.ComponentModel.CancelEventHandler(this.txtTitle_Validating);
             // 
             // txtAuthor
             // 
@@ -424,7 +425,7 @@
             this.txtAuthor.Location = new System.Drawing.Point(23, 143);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(356, 33);
-            this.txtAuthor.TabIndex = 5;
+            this.txtAuthor.TabIndex = 3;
             // 
             // comboGenre
             // 
@@ -441,7 +442,8 @@
             this.comboGenre.Location = new System.Drawing.Point(23, 243);
             this.comboGenre.Name = "comboGenre";
             this.comboGenre.Size = new System.Drawing.Size(356, 33);
-            this.comboGenre.TabIndex = 6;
+            this.comboGenre.TabIndex = 5;
+            this.comboGenre.SelectedIndexChanged += new System.EventHandler(this.comboGenre_SelectedIndexChanged);
             // 
             // comboLanguage
             // 
@@ -456,7 +458,8 @@
             this.comboLanguage.Location = new System.Drawing.Point(23, 343);
             this.comboLanguage.Name = "comboLanguage";
             this.comboLanguage.Size = new System.Drawing.Size(356, 33);
-            this.comboLanguage.TabIndex = 6;
+            this.comboLanguage.TabIndex = 7;
+            this.comboLanguage.SelectedIndexChanged += new System.EventHandler(this.comboLanguage_SelectedIndexChanged);
             // 
             // txtISBN
             // 
@@ -465,7 +468,7 @@
             this.txtISBN.Location = new System.Drawing.Point(23, 443);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(356, 33);
-            this.txtISBN.TabIndex = 5;
+            this.txtISBN.TabIndex = 8;
             // 
             // comboMaterialType
             // 
@@ -479,7 +482,8 @@
             this.comboMaterialType.Location = new System.Drawing.Point(405, 43);
             this.comboMaterialType.Name = "comboMaterialType";
             this.comboMaterialType.Size = new System.Drawing.Size(356, 33);
-            this.comboMaterialType.TabIndex = 6;
+            this.comboMaterialType.TabIndex = 2;
+            this.comboMaterialType.SelectedIndexChanged += new System.EventHandler(this.comboMaterialType_SelectedIndexChanged);
             // 
             // txtPublishHouse
             // 
@@ -497,7 +501,7 @@
             this.txtPublishDate.Location = new System.Drawing.Point(405, 243);
             this.txtPublishDate.Name = "txtPublishDate";
             this.txtPublishDate.Size = new System.Drawing.Size(356, 33);
-            this.txtPublishDate.TabIndex = 4;
+            this.txtPublishDate.TabIndex = 6;
             // 
             // txtPublishPlace
             // 
@@ -506,7 +510,7 @@
             this.txtPublishPlace.Location = new System.Drawing.Point(405, 343);
             this.txtPublishPlace.Name = "txtPublishPlace";
             this.txtPublishPlace.Size = new System.Drawing.Size(356, 33);
-            this.txtPublishPlace.TabIndex = 4;
+            this.txtPublishPlace.TabIndex = 8;
             // 
             // tableLayoutPanel6
             // 
@@ -516,20 +520,20 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Controls.Add(this.panel13, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 645);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 651);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(784, 0);
-            this.tableLayoutPanel6.TabIndex = 14;
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(784, 85);
+            this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel13
             // 
             this.panel13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel13.Controls.Add(this.btnRegister);
-            this.panel13.Location = new System.Drawing.Point(214, 3);
+            this.panel13.Location = new System.Drawing.Point(214, 16);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(356, 1);
+            this.panel13.Size = new System.Drawing.Size(356, 52);
             this.panel13.TabIndex = 0;
             // 
             // btnRegister
@@ -540,26 +544,28 @@
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(0, 0);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(356, 1);
-            this.btnRegister.TabIndex = 0;
+            this.btnRegister.Size = new System.Drawing.Size(356, 52);
+            this.btnRegister.TabIndex = 12;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // AddMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 536);
+            this.ClientSize = new System.Drawing.Size(784, 763);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(690, 396);
+            this.MinimumSize = new System.Drawing.Size(800, 802);
             this.Name = "AddMaterialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Material (Stackbooks)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddMaterialForm_FormClosing);
             this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

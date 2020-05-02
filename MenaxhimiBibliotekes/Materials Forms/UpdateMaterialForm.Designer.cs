@@ -116,7 +116,7 @@
             this.lblTitleTitle.Location = new System.Drawing.Point(65, 15);
             this.lblTitleTitle.Name = "lblTitleTitle";
             this.lblTitleTitle.Size = new System.Drawing.Size(375, 50);
-            this.lblTitleTitle.TabIndex = 1;
+            this.lblTitleTitle.TabIndex = 0;
             this.lblTitleTitle.Text = "UPDATE MATERIALS";
             // 
             // picTitle
@@ -175,7 +175,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(792, 19);
-            this.tableLayoutPanel2.TabIndex = 11;
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel7
             // 
@@ -189,7 +189,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(792, 27);
-            this.tableLayoutPanel7.TabIndex = 12;
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // lblFooterTitle
             // 
@@ -254,7 +254,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(792, 564);
-            this.tableLayoutPanel3.TabIndex = 13;
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // comboMaterialType
             // 
@@ -268,7 +268,7 @@
             this.comboMaterialType.Location = new System.Drawing.Point(409, 137);
             this.comboMaterialType.Name = "comboMaterialType";
             this.comboMaterialType.Size = new System.Drawing.Size(356, 33);
-            this.comboMaterialType.TabIndex = 27;
+            this.comboMaterialType.TabIndex = 3;
             // 
             // lblMaterialID
             // 
@@ -312,7 +312,7 @@
             this.txtQuantity.Location = new System.Drawing.Point(3, 3);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(162, 33);
-            this.txtQuantity.TabIndex = 31;
+            this.txtQuantity.TabIndex = 11;
             // 
             // txtPages
             // 
@@ -321,7 +321,7 @@
             this.txtPages.Location = new System.Drawing.Point(193, 3);
             this.txtPages.Name = "txtPages";
             this.txtPages.Size = new System.Drawing.Size(162, 33);
-            this.txtPages.TabIndex = 32;
+            this.txtPages.TabIndex = 12;
             // 
             // tableLayoutPanel5
             // 
@@ -346,7 +346,7 @@
             this.lblPages.Location = new System.Drawing.Point(193, 0);
             this.lblPages.Name = "lblPages";
             this.lblPages.Size = new System.Drawing.Size(120, 25);
-            this.lblPages.TabIndex = 26;
+            this.lblPages.TabIndex = 0;
             this.lblPages.Text = "No. of Pages";
             // 
             // lblQuantity
@@ -356,7 +356,7 @@
             this.lblQuantity.Location = new System.Drawing.Point(3, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(87, 25);
-            this.lblQuantity.TabIndex = 26;
+            this.lblQuantity.TabIndex = 0;
             this.lblQuantity.Text = "Quantity";
             // 
             // lblTitle
@@ -366,7 +366,7 @@
             this.lblTitle.Location = new System.Drawing.Point(23, 96);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(49, 25);
-            this.lblTitle.TabIndex = 12;
+            this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
             // 
             // lblAuthor
@@ -376,7 +376,7 @@
             this.lblAuthor.Location = new System.Drawing.Point(23, 192);
             this.lblAuthor.Name = "lblAuthor";
             this.lblAuthor.Size = new System.Drawing.Size(72, 25);
-            this.lblAuthor.TabIndex = 13;
+            this.lblAuthor.TabIndex = 0;
             this.lblAuthor.Text = "Author";
             // 
             // lblGenre
@@ -386,7 +386,7 @@
             this.lblGenre.Location = new System.Drawing.Point(23, 288);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(63, 25);
-            this.lblGenre.TabIndex = 14;
+            this.lblGenre.TabIndex = 0;
             this.lblGenre.Text = "Genre";
             // 
             // lblLanguage
@@ -396,7 +396,7 @@
             this.lblLanguage.Location = new System.Drawing.Point(23, 384);
             this.lblLanguage.Name = "lblLanguage";
             this.lblLanguage.Size = new System.Drawing.Size(95, 25);
-            this.lblLanguage.TabIndex = 15;
+            this.lblLanguage.TabIndex = 0;
             this.lblLanguage.Text = "Language";
             // 
             // lblISBN
@@ -406,7 +406,7 @@
             this.lblISBN.Location = new System.Drawing.Point(23, 480);
             this.lblISBN.Name = "lblISBN";
             this.lblISBN.Size = new System.Drawing.Size(54, 25);
-            this.lblISBN.TabIndex = 16;
+            this.lblISBN.TabIndex = 0;
             this.lblISBN.Text = "ISBN";
             // 
             // txtTitle
@@ -416,7 +416,7 @@
             this.txtTitle.Location = new System.Drawing.Point(23, 137);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(356, 33);
-            this.txtTitle.TabIndex = 17;
+            this.txtTitle.TabIndex = 2;
             // 
             // txtAuthor
             // 
@@ -425,7 +425,7 @@
             this.txtAuthor.Location = new System.Drawing.Point(23, 233);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(356, 33);
-            this.txtAuthor.TabIndex = 18;
+            this.txtAuthor.TabIndex = 4;
             // 
             // comboGenre
             // 
@@ -442,7 +442,7 @@
             this.comboGenre.Location = new System.Drawing.Point(23, 329);
             this.comboGenre.Name = "comboGenre";
             this.comboGenre.Size = new System.Drawing.Size(356, 33);
-            this.comboGenre.TabIndex = 19;
+            this.comboGenre.TabIndex = 6;
             // 
             // comboLanguage
             // 
@@ -457,7 +457,7 @@
             this.comboLanguage.Location = new System.Drawing.Point(23, 425);
             this.comboLanguage.Name = "comboLanguage";
             this.comboLanguage.Size = new System.Drawing.Size(356, 33);
-            this.comboLanguage.TabIndex = 20;
+            this.comboLanguage.TabIndex = 8;
             // 
             // txtISBN
             // 
@@ -466,7 +466,7 @@
             this.txtISBN.Location = new System.Drawing.Point(23, 521);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(356, 33);
-            this.txtISBN.TabIndex = 21;
+            this.txtISBN.TabIndex = 10;
             // 
             // lblPublishPlace
             // 
@@ -475,7 +475,7 @@
             this.lblPublishPlace.Location = new System.Drawing.Point(409, 384);
             this.lblPublishPlace.Name = "lblPublishPlace";
             this.lblPublishPlace.Size = new System.Drawing.Size(124, 25);
-            this.lblPublishPlace.TabIndex = 25;
+            this.lblPublishPlace.TabIndex = 0;
             this.lblPublishPlace.Text = "Publish Place";
             // 
             // lblPublishDate
@@ -485,7 +485,7 @@
             this.lblPublishDate.Location = new System.Drawing.Point(409, 288);
             this.lblPublishDate.Name = "lblPublishDate";
             this.lblPublishDate.Size = new System.Drawing.Size(120, 25);
-            this.lblPublishDate.TabIndex = 24;
+            this.lblPublishDate.TabIndex = 0;
             this.lblPublishDate.Text = "Publish Date";
             // 
             // lblPublishHouse
@@ -495,7 +495,7 @@
             this.lblPublishHouse.Location = new System.Drawing.Point(409, 192);
             this.lblPublishHouse.Name = "lblPublishHouse";
             this.lblPublishHouse.Size = new System.Drawing.Size(133, 25);
-            this.lblPublishHouse.TabIndex = 23;
+            this.lblPublishHouse.TabIndex = 0;
             this.lblPublishHouse.Text = "Publish House";
             // 
             // lblMaterialType
@@ -505,7 +505,7 @@
             this.lblMaterialType.Location = new System.Drawing.Point(409, 96);
             this.lblMaterialType.Name = "lblMaterialType";
             this.lblMaterialType.Size = new System.Drawing.Size(129, 25);
-            this.lblMaterialType.TabIndex = 22;
+            this.lblMaterialType.TabIndex = 0;
             this.lblMaterialType.Text = "Material Type";
             // 
             // txtPublishHouse
@@ -515,7 +515,7 @@
             this.txtPublishHouse.Location = new System.Drawing.Point(409, 233);
             this.txtPublishHouse.Name = "txtPublishHouse";
             this.txtPublishHouse.Size = new System.Drawing.Size(356, 33);
-            this.txtPublishHouse.TabIndex = 28;
+            this.txtPublishHouse.TabIndex = 5;
             // 
             // txtPublishDate
             // 
@@ -524,7 +524,7 @@
             this.txtPublishDate.Location = new System.Drawing.Point(409, 329);
             this.txtPublishDate.Name = "txtPublishDate";
             this.txtPublishDate.Size = new System.Drawing.Size(356, 33);
-            this.txtPublishDate.TabIndex = 29;
+            this.txtPublishDate.TabIndex = 7;
             // 
             // txtPublishPlace
             // 
@@ -533,7 +533,7 @@
             this.txtPublishPlace.Location = new System.Drawing.Point(409, 425);
             this.txtPublishPlace.Name = "txtPublishPlace";
             this.txtPublishPlace.Size = new System.Drawing.Size(356, 33);
-            this.txtPublishPlace.TabIndex = 30;
+            this.txtPublishPlace.TabIndex = 9;
             // 
             // tableLayoutPanel6
             // 
@@ -548,7 +548,7 @@
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(792, 82);
-            this.tableLayoutPanel6.TabIndex = 15;
+            this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel13
             // 
@@ -568,7 +568,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(0, 0);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(356, 52);
-            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.TabIndex = 13;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 

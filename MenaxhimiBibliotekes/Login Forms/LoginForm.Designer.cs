@@ -40,6 +40,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPasswordLogin = new System.Windows.Forms.TextBox();
             this.txtUsernameLogin = new System.Windows.Forms.TextBox();
+            this.lblUsernameError = new System.Windows.Forms.Label();
+            this.lblPasswordError = new System.Windows.Forms.Label();
             this.panelHeaderLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogoLogin)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +55,7 @@
             this.panelHeaderLogin.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeaderLogin.Name = "panelHeaderLogin";
             this.panelHeaderLogin.Size = new System.Drawing.Size(414, 246);
-            this.panelHeaderLogin.TabIndex = 3;
+            this.panelHeaderLogin.TabIndex = 0;
             // 
             // picLogoLogin
             // 
@@ -76,9 +78,10 @@
             this.btnCloseLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseLogin.Name = "btnCloseLogin";
             this.btnCloseLogin.Size = new System.Drawing.Size(140, 42);
-            this.btnCloseLogin.TabIndex = 22;
+            this.btnCloseLogin.TabIndex = 4;
             this.btnCloseLogin.Text = "Close";
             this.btnCloseLogin.UseVisualStyleBackColor = false;
+            this.btnCloseLogin.Click += new System.EventHandler(this.btnCloseLogin_Click);
             // 
             // btnLogin
             // 
@@ -89,9 +92,10 @@
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(140, 42);
-            this.btnLogin.TabIndex = 23;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblPasswordLogin
             // 
@@ -102,7 +106,7 @@
             this.lblPasswordLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasswordLogin.Name = "lblPasswordLogin";
             this.lblPasswordLogin.Size = new System.Drawing.Size(76, 21);
-            this.lblPasswordLogin.TabIndex = 19;
+            this.lblPasswordLogin.TabIndex = 0;
             this.lblPasswordLogin.Text = "Password";
             // 
             // lblRightsReservedLogin
@@ -114,7 +118,7 @@
             this.lblRightsReservedLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRightsReservedLogin.Name = "lblRightsReservedLogin";
             this.lblRightsReservedLogin.Size = new System.Drawing.Size(177, 13);
-            this.lblRightsReservedLogin.TabIndex = 20;
+            this.lblRightsReservedLogin.TabIndex = 0;
             this.lblRightsReservedLogin.Text = "All Rights Reserved ©Stackbooks";
             // 
             // panel1
@@ -135,7 +139,7 @@
             this.lblUsernameLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsernameLogin.Name = "lblUsernameLogin";
             this.lblUsernameLogin.Size = new System.Drawing.Size(81, 21);
-            this.lblUsernameLogin.TabIndex = 21;
+            this.lblUsernameLogin.TabIndex = 0;
             this.lblUsernameLogin.Text = "Username";
             // 
             // panel3
@@ -157,7 +161,7 @@
             this.txtPasswordLogin.Name = "txtPasswordLogin";
             this.txtPasswordLogin.PasswordChar = '*';
             this.txtPasswordLogin.Size = new System.Drawing.Size(309, 22);
-            this.txtPasswordLogin.TabIndex = 17;
+            this.txtPasswordLogin.TabIndex = 2;
             // 
             // txtUsernameLogin
             // 
@@ -168,7 +172,31 @@
             this.txtUsernameLogin.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsernameLogin.Name = "txtUsernameLogin";
             this.txtUsernameLogin.Size = new System.Drawing.Size(309, 22);
-            this.txtUsernameLogin.TabIndex = 18;
+            this.txtUsernameLogin.TabIndex = 1;
+            // 
+            // lblUsernameError
+            // 
+            this.lblUsernameError.AutoSize = true;
+            this.lblUsernameError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsernameError.ForeColor = System.Drawing.Color.Maroon;
+            this.lblUsernameError.Location = new System.Drawing.Point(44, 334);
+            this.lblUsernameError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsernameError.Name = "lblUsernameError";
+            this.lblUsernameError.Size = new System.Drawing.Size(152, 17);
+            this.lblUsernameError.TabIndex = 0;
+            this.lblUsernameError.Text = "Username is not correct!";
+            // 
+            // lblPasswordError
+            // 
+            this.lblPasswordError.AutoSize = true;
+            this.lblPasswordError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordError.ForeColor = System.Drawing.Color.Maroon;
+            this.lblPasswordError.Location = new System.Drawing.Point(44, 446);
+            this.lblPasswordError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPasswordError.Name = "lblPasswordError";
+            this.lblPasswordError.Size = new System.Drawing.Size(149, 17);
+            this.lblPasswordError.TabIndex = 0;
+            this.lblPasswordError.Text = "Password is not correct!";
             // 
             // loginForm
             // 
@@ -184,10 +212,13 @@
             this.Controls.Add(this.txtPasswordLogin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.lblPasswordError);
+            this.Controls.Add(this.lblUsernameError);
             this.Controls.Add(this.lblUsernameLogin);
             this.Name = "loginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "loginForm";
+            this.Text = "Log In (Stackbooks)";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.loginForm_FormClosed);
             this.panelHeaderLogin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogoLogin)).EndInit();
             this.ResumeLayout(false);
@@ -208,5 +239,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtPasswordLogin;
         private System.Windows.Forms.TextBox txtUsernameLogin;
+        private System.Windows.Forms.Label lblUsernameError;
+        private System.Windows.Forms.Label lblPasswordError;
     }
 }

@@ -102,7 +102,7 @@
             this.tableHeader.RowCount = 1;
             this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableHeader.Size = new System.Drawing.Size(792, 88);
-            this.tableHeader.TabIndex = 3;
+            this.tableHeader.TabIndex = 0;
             // 
             // panel1
             // 
@@ -122,7 +122,7 @@
             this.lblTitle.Location = new System.Drawing.Point(76, 15);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(352, 50);
-            this.lblTitle.TabIndex = 1;
+            this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "UPDATE MEMBERS";
             // 
             // picTitle
@@ -147,7 +147,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(792, 27);
-            this.tableLayoutPanel7.TabIndex = 8;
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // lblFooterTitle
             // 
@@ -173,7 +173,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(792, 57);
-            this.tableLayoutPanel1.TabIndex = 9;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -206,7 +206,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(792, 19);
-            this.tableLayoutPanel2.TabIndex = 10;
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
@@ -260,7 +260,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(792, 564);
-            this.tableLayoutPanel3.TabIndex = 11;
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // lblMemberID
             // 
@@ -292,7 +292,7 @@
             this.comboSubscriptionPlan.Location = new System.Drawing.Point(23, 521);
             this.comboSubscriptionPlan.Name = "comboSubscriptionPlan";
             this.comboSubscriptionPlan.Size = new System.Drawing.Size(356, 33);
-            this.comboSubscriptionPlan.TabIndex = 6;
+            this.comboSubscriptionPlan.TabIndex = 11;
             // 
             // lblSubscriptionPlan
             // 
@@ -328,7 +328,7 @@
             this.txtFromDate.Location = new System.Drawing.Point(3, 3);
             this.txtFromDate.Name = "txtFromDate";
             this.txtFromDate.Size = new System.Drawing.Size(162, 33);
-            this.txtFromDate.TabIndex = 2;
+            this.txtFromDate.TabIndex = 12;
             // 
             // txtTillDate
             // 
@@ -338,7 +338,7 @@
             this.txtTillDate.Location = new System.Drawing.Point(193, 3);
             this.txtTillDate.Name = "txtTillDate";
             this.txtTillDate.Size = new System.Drawing.Size(162, 33);
-            this.txtTillDate.TabIndex = 3;
+            this.txtTillDate.TabIndex = 13;
             // 
             // tableLayoutPanel5
             // 
@@ -383,7 +383,7 @@
             this.txtEmail.Location = new System.Drawing.Point(23, 425);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(356, 33);
-            this.txtEmail.TabIndex = 10;
+            this.txtEmail.TabIndex = 9;
             // 
             // txtPhoneNumber
             // 
@@ -392,7 +392,7 @@
             this.txtPhoneNumber.Location = new System.Drawing.Point(409, 425);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(356, 33);
-            this.txtPhoneNumber.TabIndex = 1;
+            this.txtPhoneNumber.TabIndex = 10;
             // 
             // lblEmail
             // 
@@ -431,7 +431,7 @@
             this.radioFemer.Location = new System.Drawing.Point(107, 0);
             this.radioFemer.Name = "radioFemer";
             this.radioFemer.Size = new System.Drawing.Size(72, 25);
-            this.radioFemer.TabIndex = 0;
+            this.radioFemer.TabIndex = 7;
             this.radioFemer.TabStop = true;
             this.radioFemer.Text = "Femer";
             this.radioFemer.UseVisualStyleBackColor = true;
@@ -443,7 +443,7 @@
             this.radioMashkull.Location = new System.Drawing.Point(0, 0);
             this.radioMashkull.Name = "radioMashkull";
             this.radioMashkull.Size = new System.Drawing.Size(91, 25);
-            this.radioMashkull.TabIndex = 0;
+            this.radioMashkull.TabIndex = 6;
             this.radioMashkull.TabStop = true;
             this.radioMashkull.Text = "Mashkull";
             this.radioMashkull.UseVisualStyleBackColor = true;
@@ -455,7 +455,7 @@
             this.txtPersonalNumber.Location = new System.Drawing.Point(409, 329);
             this.txtPersonalNumber.Name = "txtPersonalNumber";
             this.txtPersonalNumber.Size = new System.Drawing.Size(356, 33);
-            this.txtPersonalNumber.TabIndex = 1;
+            this.txtPersonalNumber.TabIndex = 8;
             // 
             // lblGender
             // 
@@ -484,7 +484,7 @@
             this.txtFullAddress.Location = new System.Drawing.Point(23, 233);
             this.txtFullAddress.Name = "txtFullAddress";
             this.txtFullAddress.Size = new System.Drawing.Size(356, 33);
-            this.txtFullAddress.TabIndex = 1;
+            this.txtFullAddress.TabIndex = 4;
             // 
             // txtBirthdate
             // 
@@ -493,7 +493,7 @@
             this.txtBirthdate.Location = new System.Drawing.Point(409, 233);
             this.txtBirthdate.Name = "txtBirthdate";
             this.txtBirthdate.Size = new System.Drawing.Size(356, 33);
-            this.txtBirthdate.TabIndex = 1;
+            this.txtBirthdate.TabIndex = 5;
             // 
             // lblFullAddress
             // 
@@ -522,7 +522,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(23, 137);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(356, 33);
-            this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.TabIndex = 2;
             // 
             // txtLastName
             // 
@@ -531,7 +531,7 @@
             this.txtLastName.Location = new System.Drawing.Point(409, 137);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(356, 33);
-            this.txtLastName.TabIndex = 1;
+            this.txtLastName.TabIndex = 3;
             // 
             // lblFirstName
             // 
@@ -569,7 +569,7 @@
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(792, 82);
-            this.tableLayoutPanel6.TabIndex = 12;
+            this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel3
             // 
@@ -589,8 +589,8 @@
             this.btnUpdate.Location = new System.Drawing.Point(0, 0);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(356, 52);
-            this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "Update (Information Mistakes)";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // panel5
@@ -611,7 +611,7 @@
             this.btnUpdateMemberSubscription.Location = new System.Drawing.Point(0, 0);
             this.btnUpdateMemberSubscription.Name = "btnUpdateMemberSubscription";
             this.btnUpdateMemberSubscription.Size = new System.Drawing.Size(356, 52);
-            this.btnUpdateMemberSubscription.TabIndex = 0;
+            this.btnUpdateMemberSubscription.TabIndex = 15;
             this.btnUpdateMemberSubscription.Text = "Update Member Subscription";
             this.btnUpdateMemberSubscription.UseVisualStyleBackColor = false;
             // 
