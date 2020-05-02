@@ -24,7 +24,7 @@ namespace MenaxhimiBibliotekes.Login_Forms
         {
             try
             {
-                if (txtUsernameLogin.Text == "beispresheva" && txtPasswordLogin.Text == "luletebunari123")
+                if (txtUsernameLogin.Text == "beispresheva" && txtPasswordLogin.Text == "123")
                 {
                     FormLoggedUser.Name = "Beis";
                     FormLoggedUser.LastName = "Presheva";

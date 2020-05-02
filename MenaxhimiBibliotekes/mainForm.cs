@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MenaxhimiBibliotekes.BO;
 
 namespace MenaxhimiBibliotekes
 {
@@ -75,7 +76,6 @@ namespace MenaxhimiBibliotekes
 
             Login_Forms.loginForm loginform = new Login_Forms.loginForm();
 
-            //loginform.MdiParent = this;
             loginform.ShowDialog();
 
             
@@ -89,6 +89,25 @@ namespace MenaxhimiBibliotekes
             settingsform.MdiParent = this;
             settingsform.Show();
 
+        }
+
+        private void mainForm_Activated(object sender, EventArgs e)
+        {
+            btnLoggedUser.Text = $"  {FormLoggedUser.Name} {FormLoggedUser.LastName}";
+        }
+
+        private void btnLoggedUser_Click(object sender, EventArgs e)
+        {
+            Settings_Forms.MyProfileForm profile = new Settings_Forms.MyProfileForm();
+
+            profile.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login_Forms.loginForm loginform = new Login_Forms.loginForm();
+
+            loginform.ShowDialog();
         }
     }
 }

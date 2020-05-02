@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public static class FormLoggedUser
+    public class FormLoggedUser
     {
         public static string Name { get; set; }
         public static string LastName { get; set; }

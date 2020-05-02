@@ -416,6 +416,7 @@
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(356, 33);
             this.txtTitle.TabIndex = 1;
+            this.txtTitle.Validating += new System.ComponentModel.CancelEventHandler(this.txtTitle_Validating);
             // 
             // txtAuthor
             // 
@@ -442,6 +443,7 @@
             this.comboGenre.Name = "comboGenre";
             this.comboGenre.Size = new System.Drawing.Size(356, 33);
             this.comboGenre.TabIndex = 5;
+            this.comboGenre.SelectedIndexChanged += new System.EventHandler(this.comboGenre_SelectedIndexChanged);
             // 
             // comboLanguage
             // 
@@ -457,6 +459,7 @@
             this.comboLanguage.Name = "comboLanguage";
             this.comboLanguage.Size = new System.Drawing.Size(356, 33);
             this.comboLanguage.TabIndex = 7;
+            this.comboLanguage.SelectedIndexChanged += new System.EventHandler(this.comboLanguage_SelectedIndexChanged);
             // 
             // txtISBN
             // 
@@ -480,6 +483,7 @@
             this.comboMaterialType.Name = "comboMaterialType";
             this.comboMaterialType.Size = new System.Drawing.Size(356, 33);
             this.comboMaterialType.TabIndex = 2;
+            this.comboMaterialType.SelectedIndexChanged += new System.EventHandler(this.comboMaterialType_SelectedIndexChanged);
             // 
             // txtPublishHouse
             // 
@@ -544,6 +548,7 @@
             this.btnRegister.TabIndex = 12;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // AddMaterialForm
             // 
@@ -560,6 +565,7 @@
             this.Name = "AddMaterialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Material (Stackbooks)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddMaterialForm_FormClosing);
             this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
