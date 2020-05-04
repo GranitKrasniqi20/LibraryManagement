@@ -11,16 +11,16 @@ namespace MenaxhimiBibliotekes.BLL
 {
     public class BillBLL : ICrud<Bill>
     {
-        BillDAL _billDAL = new BillDAL();
+        BillDAL billDAL = new BillDAL();
 
         public bool Add(Bill obj)
         {
-            return _billDAL.Add(obj);
+            return billDAL.Add(obj);
         }
 
         public bool Delete(int Id)
         {
-            return _billDAL.Delete(Id);
+            return billDAL.Delete(Id);
         }
 
 
@@ -37,7 +37,7 @@ namespace MenaxhimiBibliotekes.BLL
 
         public bool Update(Bill obj)
         {
-            return _billDAL.Update(obj);
+            return billDAL.Update(obj);
         }
     }
 }

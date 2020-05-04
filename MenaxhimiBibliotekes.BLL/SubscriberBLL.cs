@@ -11,16 +11,16 @@ namespace MenaxhimiBibliotekes.BLL
 {
     public class SubscriberBLL : ICrud<Subscriber>
     {
-        SubscriberDAL _subscriberDAL = new SubscriberDAL();
+        SubscriberDAL subscriberDAL = new SubscriberDAL();
 
         public bool Add(Subscriber obj)
         {
-            return _subscriberDAL.Add(obj);
+            return subscriberDAL.Add(obj);
         }
 
         public bool Delete(int Id)
         {
-            return _subscriberDAL.Delete(Id);
+            return subscriberDAL.Delete(Id);
         }
 
         public bool Delete(Subscriber obj)
@@ -45,7 +45,7 @@ namespace MenaxhimiBibliotekes.BLL
 
         public bool Update(Subscriber obj)
         {
-            return _subscriberDAL.Update(obj);
+            return subscriberDAL.Update(obj);
         }
     }
 }

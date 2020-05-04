@@ -9,7 +9,8 @@ namespace MenaxhimiBibliotekes.BO
     public class BillType : Audit
     {
         public int BillTypeId { get; set; }
-        public string _billType { get; set; }
+        public string _BillType { get; set; }
+
         public virtual List<Bill> Bills { get; set; }
     }
 }

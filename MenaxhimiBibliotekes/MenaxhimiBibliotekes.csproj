@@ -58,11 +58,11 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Materials Forms\AddMaterialForm.cs">
+    <Compile Include="Materials Forms\AddNewMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Materials Forms\AddMaterialForm.Designer.cs">
-      <DependentUpon>AddMaterialForm.cs</DependentUpon>
+    <Compile Include="Materials Forms\AddNewMaterial.Designer.cs">
+      <DependentUpon>AddNewMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="Materials Forms\DeleteMaterialForm.cs">
       <SubType>Form</SubType>
@@ -87,6 +87,12 @@
     </Compile>
     <Compile Include="Materials Forms\InsertNewMaterialType.Designer.cs">
       <DependentUpon>InsertNewMaterialType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\MaterialLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\MaterialLocation.Designer.cs">
+      <DependentUpon>MaterialLocation.cs</DependentUpon>
     </Compile>
     <Compile Include="Materials Forms\MaterialsForm.cs">
       <SubType>Form</SubType>
@@ -174,8 +180,8 @@
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Materials Forms\AddMaterialForm.resx">
-      <DependentUpon>AddMaterialForm.cs</DependentUpon>
+    <EmbeddedResource Include="Materials Forms\AddNewMaterial.resx">
+      <DependentUpon>AddNewMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\DeleteMaterialForm.resx">
       <DependentUpon>DeleteMaterialForm.cs</DependentUpon>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\InsertNewMaterialType.resx">
       <DependentUpon>InsertNewMaterialType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\MaterialLocation.resx">
+      <DependentUpon>MaterialLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\MaterialsForm.resx">
       <DependentUpon>MaterialsForm.cs</DependentUpon>
@@ -287,6 +296,10 @@
     <ProjectReference Include="..\MenaxhimiBibliotekes.BO\MenaxhimiBibliotekes.BO.csproj">
       <Project>{225bc69c-d650-48b8-8c57-f0812ae2a684}</Project>
       <Name>MenaxhimiBibliotekes.BO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MenaxhimiBibliotekes.DAL\MenaxhimiBibliotekes.DAL.csproj">
+      <Project>{DCFB6047-CE15-4C5A-82B6-CCFD884E1DBF}</Project>
+      <Name>MenaxhimiBibliotekes.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
