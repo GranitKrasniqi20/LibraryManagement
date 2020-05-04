@@ -11,16 +11,16 @@ namespace MenaxhimiBibliotekes.BLL
 {
     public class BillTypeBLL : ICrud<BillType>
     {
-        BillTypeDAL _billTypeDAL = new BillTypeDAL();
+        BillTypeDAL billTypeDAL = new BillTypeDAL();
 
         public bool Add(BillType obj)
         {
-            return _billTypeDAL.Add(obj);
+            return billTypeDAL.Add(obj);
         }
 
         public bool Delete(int Id)
         {
-            return _billTypeDAL.Delete(Id);
+            return billTypeDAL.Delete(Id);
         }
 
         public bool Delete(BillType obj)
@@ -45,7 +45,7 @@ namespace MenaxhimiBibliotekes.BLL
 
         public bool Update(BillType obj)
         {
-            return _billTypeDAL.Update(obj);
+            return billTypeDAL.Update(obj);
         }
     }
 }

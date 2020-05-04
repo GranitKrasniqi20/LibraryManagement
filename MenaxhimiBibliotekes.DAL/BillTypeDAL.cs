@@ -13,7 +13,7 @@ namespace MenaxhimiBibliotekes.DAL
 {
     public class BillTypeDAL : ICrud<BillType>, IConvertToBO<BillType>
     {
-        BillType billType;
+        private BillType billType;
 
         public bool Add(BillType obj)
         {
@@ -24,7 +24,7 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     using (SqlCommand command = Connection.Command(conn, "usp_BillType_Insert", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "BillType", obj._billType);
+                        Connection.AddParameter(command, "BillType", obj._BillType);
                         Connection.AddParameter(command, "InsBy", obj.InsBy);
                         isInserted = command.ExecuteNonQuery();
 
@@ -42,14 +42,38 @@ namespace MenaxhimiBibliotekes.DAL
             }
             catch (Exception)
             {
-
                 return false;
             }
         }
 
         public bool Delete(int Id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (SqlConnection conn = Connection.GetConnection())
+                {
+                    using (SqlCommand command = Connection.Command(conn, "usp_BillType_Delete", CommandType.StoredProcedure))
+                    {
+                        Connection.AddParameter(command, "BillTypeId", Id);
+
+                        int Affected = command.ExecuteNonQuery();
+
+                        if (Affected > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
         public bool Delete(BillType obj)
@@ -59,12 +83,32 @@ namespace MenaxhimiBibliotekes.DAL
 
         public BillType Get(int Id)
         {
-            throw new NotImplementedException();
-        }
-
-        public BillType Get(BillType obj)
-        {
-            throw new NotImplementedException();
+            try
+            {
+                billType = new BillType();
+                using (SqlConnection conn = Connection.GetConnection())
+                {
+                    using (SqlCommand command = Connection.Command(conn, "usp_BillType_GetByID", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.HasRows)
+                            {
+                                billType = ToBO(sqr);
+                                if (billType == null)
+                                {
+                                    throw new Exception();
+                                }
+                            }
+                            return billType;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public List<BillType> GetAll()
@@ -75,7 +119,7 @@ namespace MenaxhimiBibliotekes.DAL
 
             using (SqlConnection sqlconn = Connection.GetConnection())
             {
-                using (SqlCommand command = Connection.Command(sqlconn, "usp_BillType_Read", CommandType.StoredProcedure))
+                using (SqlCommand command = Connection.Command(sqlconn, "usp_BillType_GetAll", CommandType.StoredProcedure))
                 {
                     using (SqlDataReader sqr = command.ExecuteReader())
                     {
@@ -101,12 +145,59 @@ namespace MenaxhimiBibliotekes.DAL
 
         public BillType ToBO(SqlDataReader reader)
         {
-            throw new NotImplementedException();
+            try
+            {
+                billType = new BillType();
+
+                billType.BillTypeId = (int)reader["BillTypeId"];
+                billType._BillType = reader["BillType"].ToString();
+
+                billType.InsBy = int.Parse(reader["InsBy"].ToString());
+                billType.InsDate = (DateTime)reader["InsDate"];
+
+                if (reader["UpdBy"] != DBNull.Value)
+                {
+                    billType.UpdBy = int.Parse(reader["UpdBy"].ToString());
+                }
+                if (reader["UpdDate"] != DBNull.Value)
+                {
+                    billType.UpdDate = (DateTime)reader["UpdDate"];
+                }
+
+                billType.UpdNo = int.Parse(reader["UpdNo"].ToString());
+                return billType;
+            }
+            
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public bool Update(BillType obj)
         {
-            throw new NotImplementedException();
+            int isUpdated = 0;
+            using (SqlConnection conn = Connection.GetConnection())
+            {
+                using (SqlCommand command = Connection.Command(conn, "usp_BillType_Update", CommandType.StoredProcedure))
+                {
+                    Connection.AddParameter(command, "MaterialTypeId", obj.BillTypeId);
+                    Connection.AddParameter(command, "MaterialType", obj._BillType);
+                    Connection.AddParameter(command, "InsBy", obj.InsBy);
+                    isUpdated = command.ExecuteNonQuery();
+
+
+                    if (isUpdated > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
+            }
         }
     }
 }

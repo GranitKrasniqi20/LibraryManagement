@@ -12,7 +12,7 @@ namespace MenaxhimiBibliotekes.DAL
 {
     public class BillDAL : ICrud<Bill>, IConvertToBO<Bill>
     {
-        Bill bill;
+        private Bill bill;
 
         public bool Add(Bill obj)
         {
@@ -21,7 +21,7 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 using (var conn = Connection.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_Bill_Insert", CommandType.StoredProcedure))
+                    using (var command = Connection.Command(conn, "usp_Bills_Insert", CommandType.StoredProcedure))
                     {
                         Connection.AddParameter(command, "SubscriberId", obj.SubscriberId);
                         Connection.AddParameter(command, "MaterialId", obj.MaterialId);
@@ -57,7 +57,7 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 using (SqlConnection conn = Connection.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Bill_Delete", CommandType.StoredProcedure))
+                    using (SqlCommand command = Connection.Command(conn, "usp_Bills_Delete", CommandType.StoredProcedure))
                     {
                         Connection.AddParameter(command, "BillId", Id);
 
@@ -89,7 +89,7 @@ namespace MenaxhimiBibliotekes.DAL
                 bill = new Bill();
                 using (SqlConnection conn = Connection.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Bill_Read", CommandType.StoredProcedure))
+                    using (SqlCommand command = Connection.Command(conn, "usp_Bills_GetByID", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -121,7 +121,7 @@ namespace MenaxhimiBibliotekes.DAL
                 bill = new Bill(); 
                 using (SqlConnection conn = Connection.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Bill_Read", CommandType.StoredProcedure))
+                    using (SqlCommand command = Connection.Command(conn, "usp_Bills_GetAll", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -177,8 +177,16 @@ namespace MenaxhimiBibliotekes.DAL
 
             bill.InsBy = int.Parse(reader["InsBy"].ToString());
             bill.InsDate = (DateTime)reader["InsDate"];
-            bill.UpdBy = int.Parse(reader["UpdBy"].ToString());
-            bill.UpdDate = (DateTime)reader["UpdDate"];
+
+            if (reader["UpdBy"] != DBNull.Value)
+            {
+                bill.UpdBy = int.Parse(reader["UpdBy"].ToString());
+            }
+            if (reader["UpdDate"] != DBNull.Value)
+            {
+                bill.UpdDate = (DateTime)reader["UpdDate"];
+            }
+
             bill.UpdNo = int.Parse(reader["UpdNo"].ToString());
 
             return bill;
@@ -191,7 +199,7 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 using (var conn = Connection.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_Bill_Update", CommandType.StoredProcedure))
+                    using (var command = Connection.Command(conn, "usp_Bills_Update", CommandType.StoredProcedure))
                     {
                         Connection.AddParameter(command, "SubscriberId", obj.SubscriberId);
                         Connection.AddParameter(command, "MaterialId", obj.MaterialId);

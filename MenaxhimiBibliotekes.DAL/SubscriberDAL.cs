@@ -13,11 +13,11 @@ namespace MenaxhimiBibliotekes.DAL
 {
     public class SubscriberDAL : ICrud<Subscriber>, IConvertToBO<Subscriber>
     {
-        Subscriber subscriber;
+        private Subscriber subscriber;
 
         public bool Add(Subscriber obj)
         {
-            int isInserted = 0;
+            int rowInserted = 0;
             try
             {
                 using (SqlConnection conn = Connection.GetConnection())
@@ -33,12 +33,13 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "Email", obj.Email);
                         Connection.AddParameter(command, "Gender", obj.Gender);
                         Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
+                        Connection.AddParameter(command, "IsActive", obj.IsActive);
                         Connection.AddParameter(command, "InsBy", obj.InsBy);
 
-                        isInserted = command.ExecuteNonQuery();
+                        rowInserted = command.ExecuteNonQuery();
 
 
-                        if (isInserted > 0)
+                        if (rowInserted > 0)
                         {
                             return true;
                         }
@@ -51,7 +52,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
             catch (Exception)
             {
-
                 return false;
             }
         }
@@ -77,7 +77,6 @@ namespace MenaxhimiBibliotekes.DAL
                             return false;
                         }
                     }
-
                 }
             }
             catch (Exception)
@@ -86,9 +85,7 @@ namespace MenaxhimiBibliotekes.DAL
                 return false;
             }
         }
-
-
-
+        
         public Subscriber Get(int Id)
         {
             try
@@ -96,7 +93,7 @@ namespace MenaxhimiBibliotekes.DAL
                 subscriber = new Subscriber();
                 using (SqlConnection conn = Connection.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Subscriber_Read", CommandType.StoredProcedure))
+                    using (SqlCommand command = Connection.Command(conn, "usp_Subscriber_GetByID", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -129,7 +126,7 @@ namespace MenaxhimiBibliotekes.DAL
                 subscriber = new Subscriber();
                 using (SqlConnection conn = Connection.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Subscriber_Read", CommandType.StoredProcedure))
+                    using (SqlCommand command = Connection.Command(conn, "usp_Subscriber_GetAll", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -144,7 +141,7 @@ namespace MenaxhimiBibliotekes.DAL
                                     }
 
                                     _AllSubscriber.Add(subscriber);
-}
+                                }
                             }
                             return _AllSubscriber;
                         }
@@ -182,17 +179,19 @@ namespace MenaxhimiBibliotekes.DAL
                 subscriber.Email = reader["Email"].ToString();
                 subscriber.ExpirationDate = DateTime.Parse(reader["ExpirationDate"].ToString());
 
-
-               
-
                 subscriber.InsBy = int.Parse(reader["InsBy"].ToString());
                 subscriber.InsDate = (DateTime)reader["InsDate"];
-                subscriber.UpdBy = int.Parse(reader["UpdBy"].ToString());
-                subscriber.UpdDate = (DateTime)reader["UpdDate"];
+
+                if (reader["UpdBy"] != DBNull.Value)
+                {
+                    subscriber.UpdBy = int.Parse(reader["UpdBy"].ToString());
+                }
+                if (reader["UpdDate"] != DBNull.Value)
+                {
+                    subscriber.UpdDate = (DateTime)reader["UpdDate"];
+                }
+
                 subscriber.UpdNo = int.Parse(reader["UpdNo"].ToString());
-
-
-
 
 
                 return subscriber;
@@ -222,6 +221,7 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "Email", obj.Email);
                         Connection.AddParameter(command, "Gender", obj.Gender);
                         Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
+                        Connection.AddParameter(command, "IsActive", obj.IsActive);
                         Connection.AddParameter(command, "UpdBy", obj.UpdBy);
 
                         rowsAffected = command.ExecuteNonQuery();
@@ -235,7 +235,6 @@ namespace MenaxhimiBibliotekes.DAL
                             throw new Exception();
                         }
                     }
-
                 }
             }
             catch (Exception)

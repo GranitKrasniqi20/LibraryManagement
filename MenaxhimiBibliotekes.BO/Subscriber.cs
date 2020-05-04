@@ -18,6 +18,7 @@ namespace MenaxhimiBibliotekes.BO
         public string Email { get; set; }
         public bool Gender { get; set; }
         public DateTime ExpirationDate { get; set; }
+        public bool IsActive { get; set; }
 
     }
 }
