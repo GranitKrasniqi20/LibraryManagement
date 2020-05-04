@@ -102,7 +102,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
         }
 
-        private void comboLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboLanguage_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (comboLanguage.SelectedItem == "Other")
             {

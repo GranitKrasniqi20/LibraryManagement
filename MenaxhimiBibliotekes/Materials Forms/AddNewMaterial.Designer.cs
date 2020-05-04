@@ -446,6 +446,7 @@
             this.comboLanguage.Name = "comboLanguage";
             this.comboLanguage.Size = new System.Drawing.Size(356, 33);
             this.comboLanguage.TabIndex = 7;
+            this.comboLanguage.SelectedIndexChanged += new System.EventHandler(this.comboLanguage_SelectedIndexChanged_1);
             // 
             // txtISBN
             // 
