@@ -19,7 +19,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void btnAddMaterial_Click(object sender, EventArgs e)
         {
-            AddMaterialForm add = new AddMaterialForm();
+            AddNewMaterial add = new AddNewMaterial();
             add.ShowDialog();
         }
 

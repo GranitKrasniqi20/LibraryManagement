@@ -10,7 +10,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    class MaterialBLL : ICrud<Material>
+    public class MaterialBLL : ICrud<Material>
     {
         MaterialDAL _materialDAL = new MaterialDAL();
         public bool Add(Material obj)
