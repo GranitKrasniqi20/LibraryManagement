@@ -16,7 +16,7 @@ namespace MenaxhimiBibliotekes.DAL
         public bool Add(Material obj)
         {
 
-            int MaterialId ;//pusblish house id me kon nullable
+           
 
             try
             {
@@ -70,13 +70,17 @@ namespace MenaxhimiBibliotekes.DAL
                         }
 
                         else
-                    {
-                        throw new Exception();
+                        {
+                              
+                               throw new Exception();
+                            
+                        }
+
                     }
 
-                }
+                
 
-                    return true;
+
                 }
             }
 

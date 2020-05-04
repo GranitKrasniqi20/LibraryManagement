@@ -177,8 +177,16 @@ namespace MenaxhimiBibliotekes.DAL
 
             bill.InsBy = int.Parse(reader["InsBy"].ToString());
             bill.InsDate = (DateTime)reader["InsDate"];
-            bill.UpdBy = int.Parse(reader["UpdBy"].ToString());
-            bill.UpdDate = (DateTime)reader["UpdDate"];
+
+            if (reader["UpdBy"] != DBNull.Value)
+            {
+                bill.UpdBy = int.Parse(reader["UpdBy"].ToString());
+            }
+            if (reader["UpdDate"] != DBNull.Value)
+            {
+                bill.UpdDate = (DateTime)reader["UpdDate"];
+            }
+
             bill.UpdNo = int.Parse(reader["UpdNo"].ToString());
 
             return bill;

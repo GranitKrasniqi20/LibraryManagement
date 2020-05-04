@@ -24,8 +24,8 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     using (SqlCommand command = DbHelper.Command(conn, "usp_BillType_Insert", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "BillType", obj._billType);
-                        Connection.AddParameter(command, "InsBy", obj.InsBy);
+                        command.Parameters.AddWithValue("BillType", obj._BillType);
+                        command.Parameters.AddWithValue("InsBy", obj.InsBy);
                         isInserted = command.ExecuteNonQuery();
 
                         
@@ -50,11 +50,11 @@ namespace MenaxhimiBibliotekes.DAL
         {
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_BillType_Delete", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_BillType_Delete", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "BillTypeId", Id);
+                        command.Parameters.AddWithValue("BillTypeId", Id);
 
                         int Affected = command.ExecuteNonQuery();
 
@@ -86,9 +86,9 @@ namespace MenaxhimiBibliotekes.DAL
             try
             {
                 billType = new BillType();
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_BillType_GetByID", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_BillType_GetByID", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -119,7 +119,7 @@ namespace MenaxhimiBibliotekes.DAL
 
             using (SqlConnection sqlconn = DbHelper.GetConnection())
             {
-                using (SqlCommand command = Connection.Command(sqlconn, "usp_BillType_Read", CommandType.StoredProcedure))
+                using (SqlCommand command = DbHelper.Command(sqlconn, "usp_BillType_Read", CommandType.StoredProcedure))
                 {
                     using (SqlDataReader sqr = command.ExecuteReader())
                     {
@@ -178,13 +178,13 @@ namespace MenaxhimiBibliotekes.DAL
         public bool Update(BillType obj)
         {
             int isUpdated = 0;
-            using (SqlConnection conn = Connection.GetConnection())
+            using (SqlConnection conn = DbHelper.GetConnection())
             {
-                using (SqlCommand command = Connection.Command(conn, "usp_BillType_Update", CommandType.StoredProcedure))
+                using (SqlCommand command = DbHelper.Command(conn, "usp_BillType_Update", CommandType.StoredProcedure))
                 {
-                    Connection.AddParameter(command, "MaterialTypeId", obj.BillTypeId);
-                    Connection.AddParameter(command, "MaterialType", obj._BillType);
-                    Connection.AddParameter(command, "InsBy", obj.InsBy);
+                    command.Parameters.AddWithValue( "MaterialTypeId", obj.BillTypeId);
+                    command.Parameters.AddWithValue("MaterialType", obj._BillType);
+                    command.Parameters.AddWithValue("InsBy", obj.InsBy);
                     isUpdated = command.ExecuteNonQuery();
 
 

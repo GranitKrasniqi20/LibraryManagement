@@ -38,6 +38,7 @@ namespace MenaxhimiBibliotekes.Login_Forms
 
                 UserBLL usrbll = new UserBLL();
                 User usr = new User();
+
                 string pw = Sec.Hash(txtUsernameLogin.Text, txtPasswordLogin.Text);
 
 
@@ -50,13 +51,13 @@ namespace MenaxhimiBibliotekes.Login_Forms
                     throw new Exception();
                 }
 
-                if (usr.Password == pw)
+                else if (usr.Password == pw)
                 {
                     FormLoggedUser.Name = usr.Name;
                     FormLoggedUser.LastName = usr.LastName;
                     FormLoggedUser.Username = txtUsernameLogin.Text;
                     //FormLoggedUser.Password = txtPasswordLogin.Text;
-                    FormLoggedUser.Role = usr._role;
+                   // FormLoggedUser.Role = usr._role;
 
 
                     //MessageBox.Show($"You logged successfully, {FormLoggedUser.Name} {FormLoggedUser.LastName} ({FormLoggedUser.Username})!", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
