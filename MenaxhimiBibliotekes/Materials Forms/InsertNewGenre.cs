@@ -35,7 +35,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 if (gv.ValidateGenre(txtInsert.Text.Trim()))
                 {
                     ge._Genre = txtInsert.Text.Trim();
-                    ge.InsBy = FormLoggedUser.Id;
+                    ge.InsBy = 80; //FormLoggedUser.Id;
 
                     if (genBLL.Add(ge))
                     {
@@ -57,7 +57,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
             catch (Exception)
             {
-                MessageBox.Show("Genre not inserted please contact your administrator");
+                MessageBox.Show("This Genre exists. If its not activated, please update it!");
             }
         }
     }

@@ -21,7 +21,7 @@ namespace MenaxhimiBibliotekes.BLL
 
         public bool Delete(int Id)
         {
-            throw new NotImplementedException();
+           return  gen.Delete(Id);
         }
 
         public bool Delete(Genre obj)

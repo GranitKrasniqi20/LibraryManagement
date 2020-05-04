@@ -122,7 +122,7 @@ namespace test
             //    Console.WriteLine(item._Language +" \n" + " \n" + " \n");
             //}
 
-            
+
 
 
             //Author au = new Author();
@@ -167,7 +167,31 @@ namespace test
             //}
 
 
+            //Genre ge = new Genre();
+            //GenreBLL gebll = new GenreBLL();
 
+            //ge.GenreId = 2;
+            //ge._Genre = "diti";
+            //ge.UpdBy = 80;
+
+
+            //if (gebll.Update(ge))
+            //{
+            //    Console.WriteLine(true);
+            //}
+
+
+           Language lan = new Language();
+            LanguageBLL lanbll = new LanguageBLL();
+
+            lan._Language = "helloworld";
+            lan.InsBy = 80;
+
+            lanbll.Add(lan);
+            //foreach (var item in lanbll.GetAll())
+            //{
+            //    Console.WriteLine(item._MaterialType + "\n");
+            //}
 
 
         }

@@ -7,6 +7,7 @@ using MenaxhimiBibliotekes.BO.Interfaces;
 using MenaxhimiBibliotekes.BO;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
@@ -18,29 +19,48 @@ namespace MenaxhimiBibliotekes.DAL
             int isInserted = 0;
             try
             {
+                int error;
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
                     using (SqlCommand command = DbHelper.Command(conn, "usp_CreateLanguage", CommandType.StoredProcedure))
                     {
                         command.Parameters.AddWithValue("Language", obj._Language);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
-                        isInserted = command.ExecuteNonQuery();
+                       
 
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
 
-                        if (isInserted > 0)
-                        {
-                            return true;
-                        }
-                        else
+                        command.Parameters.Add(sqlpa);
+
+                        command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+                        if (error == 1)
                         {
                             throw new Exception();
                         }
+                        else if (error == 0)
+                        {
+                            MessageBox.Show("good");
+                            return true;
+                        }
+
+                        return false;
                     }
                 }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Please contact your administrator");
+                return false;
+            }
+
             catch (Exception)
             {
-
+                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
                 return false;
             }
         }

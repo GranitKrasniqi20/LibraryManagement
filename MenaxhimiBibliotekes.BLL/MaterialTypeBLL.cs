@@ -19,23 +19,17 @@ namespace MenaxhimiBibliotekes.BLL
 
         public bool Delete(int Id)
         {
-            throw new NotImplementedException();
+           return mt.Delete(Id);
         }
 
-        public bool Delete(MaterialType obj)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public MaterialType Get(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public MaterialType Get(MaterialType obj)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public List<MaterialType> GetAll()
         {

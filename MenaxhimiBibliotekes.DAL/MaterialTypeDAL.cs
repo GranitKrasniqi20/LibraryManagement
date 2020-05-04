@@ -7,6 +7,7 @@ using MenaxhimiBibliotekes.BO.Interfaces;
 using MenaxhimiBibliotekes.BO;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
@@ -15,34 +16,53 @@ namespace MenaxhimiBibliotekes.DAL
         MaterialType mt;
         public bool Add(MaterialType obj)
         {
-            int isInserted = 0;
+            int error;
             try
             {
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
                     using (SqlCommand command = DbHelper.Command(conn, "usp_CreateMaterialType", CommandType.StoredProcedure))
                     {
+
+
                         command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
-                        isInserted = command.ExecuteNonQuery();
 
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
 
-                        if (isInserted > 0)
-                        {
-                            return true;
-                        }
-                        else
+                        command.Parameters.Add(sqlpa);
+
+                         command.ExecuteNonQuery();
+                         error = (int)sqlpa.Value ;
+
+                        if (error == 1)
                         {
                             throw new Exception();
                         }
+                        else if(error == 0)
+                        {
+                            MessageBox.Show("good");
+                            return true;
+                        }
+
+                        return false ;
                     }
                 }
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
-
+                MessageBox.Show("Please contact your administrator");
                 return false;
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
+                return false;
+            }
+
         }
 
         public bool Delete(int Id)
@@ -91,7 +111,7 @@ namespace MenaxhimiBibliotekes.DAL
             
             using (SqlConnection sqlconn = DbHelper.GetConnection())
             {
-                using (SqlCommand command = DbHelper.Command(sqlconn, "@GetAllMaterialTypes", CommandType.StoredProcedure))
+                using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetAllMaterialTypes", CommandType.StoredProcedure))
                 {
                     using (SqlDataReader sqr = command.ExecuteReader())
                     {
@@ -159,7 +179,7 @@ namespace MenaxhimiBibliotekes.DAL
             int isUpdated = 0;
             using (SqlConnection conn = DbHelper.GetConnection())
             {
-                using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateGenre", CommandType.StoredProcedure))
+                using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateMaterialType", CommandType.StoredProcedure))
                 {
                     command.Parameters.AddWithValue("MaterialTypeId", obj.MaterialTypeId);
                     command.Parameters.AddWithValue("MaterialType", obj._MaterialType);

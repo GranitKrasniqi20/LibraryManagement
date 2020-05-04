@@ -95,7 +95,7 @@ namespace MenaxhimiBibliotekes.DAL
             gen = new Genre();
             using (SqlConnection sqlconn = DbHelper.GetConnection())
             {
-                using (SqlCommand command = DbHelper.Command(sqlconn, "@GetAllGenres",CommandType.StoredProcedure))
+                using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetAllGenres",CommandType.StoredProcedure))
                 {
                     using (SqlDataReader sqr = command.ExecuteReader())
                     {
@@ -180,6 +180,7 @@ namespace MenaxhimiBibliotekes.DAL
                         throw new Exception();
                     }
                 }
+
             }
         }
     }
