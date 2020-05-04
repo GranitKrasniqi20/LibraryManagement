@@ -32,6 +32,10 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "Description", obj.Description);
                         Connection.AddParameter(command, "InstBy", obj.InsBy);
 
+                        SqlParameter sqlparam = Connection.OutputParameters("BillId", SqlDbType.Int);
+
+                        Connection.AddParameter(command, sqlparam);
+
                         rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
@@ -204,9 +208,9 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "SubscriberId", obj.SubscriberId);
                         Connection.AddParameter(command, "MaterialId", obj.MaterialId);
                         Connection.AddParameter(command, "BillType", obj.BillType);
-                        Connection.AddParameter(command, "BillingDate", obj.BillingDate);
-                        Connection.AddParameter(command, "RegistrationDate", obj.RegistrationDate);
-                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
+                        Connection.AddParameter(command, "BillingDate", obj.BillingDate);//Nuk ka nevoje me e dergu, d.faturimit duhet fshire
+                        Connection.AddParameter(command, "RegistrationDate", obj.RegistrationDate);//Nuk ka nevoje me e dergu, d.regj. duhet fshire
+                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);//duhet me dergu parametrin numrin e muajve
                         Connection.AddParameter(command, "Description", obj.Description);
                         Connection.AddParameter(command, "UpdBy", obj.UpdBy);
 

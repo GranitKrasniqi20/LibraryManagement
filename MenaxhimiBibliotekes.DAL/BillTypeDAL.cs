@@ -26,6 +26,10 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         Connection.AddParameter(command, "BillType", obj._BillType);
                         Connection.AddParameter(command, "InsBy", obj.InsBy);
+
+                        SqlParameter sqlparam = Connection.OutputParameters("BillTypeId", SqlDbType.Int);
+
+                        Connection.AddParameter(command, sqlparam);
                         isInserted = command.ExecuteNonQuery();
 
                         

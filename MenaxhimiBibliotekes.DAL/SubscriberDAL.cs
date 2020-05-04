@@ -36,6 +36,10 @@ namespace MenaxhimiBibliotekes.DAL
                         Connection.AddParameter(command, "IsActive", obj.IsActive);
                         Connection.AddParameter(command, "InsBy", obj.InsBy);
 
+                        SqlParameter sqlparam = Connection.OutputParameters("SubscriberId", SqlDbType.Int);
+
+                        Connection.AddParameter(command, sqlparam); 
+
                         rowInserted = command.ExecuteNonQuery();
 
 
