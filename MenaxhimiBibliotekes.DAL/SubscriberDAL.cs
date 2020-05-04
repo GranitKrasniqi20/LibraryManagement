@@ -13,37 +13,32 @@ namespace MenaxhimiBibliotekes.DAL
 {
     public class SubscriberDAL : ICrud<Subscriber>, IConvertToBO<Subscriber>
     {
-        private Subscriber subscriber;
+        Subscriber subscriber;
 
         public bool Add(Subscriber obj)
         {
-            int rowInserted = 0;
+            int isInserted = 0;
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Subscriber_Insert", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscriber_Insert", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "Name", obj.Name);
-                        Connection.AddParameter(command, "LastName", obj.LastName);
-                        Connection.AddParameter(command, "Address", obj.Address);
-                        Connection.AddParameter(command, "Birthday", obj.Birthday);
-                        Connection.AddParameter(command, "PersonalNo", obj.PersonalNo);
-                        Connection.AddParameter(command, "PhoneNo", obj.PhoneNo);
-                        Connection.AddParameter(command, "Email", obj.Email);
-                        Connection.AddParameter(command, "Gender", obj.Gender);
-                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
-                        Connection.AddParameter(command, "IsActive", obj.IsActive);
-                        Connection.AddParameter(command, "InsBy", obj.InsBy);
+                        command.Parameters.AddWithValue("Name", obj.Name);
+                        command.Parameters.AddWithValue("LastName", obj.LastName);
+                        command.Parameters.AddWithValue("Address", obj.Address);
+                        command.Parameters.AddWithValue("Birthday", obj.Birthday);
+                        command.Parameters.AddWithValue("PersonalNo", obj.PersonalNo);
+                        command.Parameters.AddWithValue("PhoneNo", obj.PhoneNo);
+                        command.Parameters.AddWithValue("Email", obj.Email);
+                        command.Parameters.AddWithValue("Gender", obj.Gender);
+                        command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                        command.Parameters.AddWithValue("InsBy", obj.InsBy);
 
-                        SqlParameter sqlparam = Connection.OutputParameters("SubscriberId", SqlDbType.Int);
-
-                        Connection.AddParameter(command, sqlparam); 
-
-                        rowInserted = command.ExecuteNonQuery();
+                        isInserted = command.ExecuteNonQuery();
 
 
-                        if (rowInserted > 0)
+                        if (isInserted > 0)
                         {
                             return true;
                         }
@@ -56,6 +51,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
             catch (Exception)
             {
+
                 return false;
             }
         }
@@ -65,11 +61,11 @@ namespace MenaxhimiBibliotekes.DAL
         {
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Subsriber_Delete", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subsriber_Delete", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "SubscriberId", Id);
+                        command.Parameters.AddWithValue("SubscriberId", Id);
                         int Affected = command.ExecuteNonQuery();
 
                         if (Affected > 0)
@@ -81,6 +77,7 @@ namespace MenaxhimiBibliotekes.DAL
                             return false;
                         }
                     }
+
                 }
             }
             catch (Exception)
@@ -89,15 +86,17 @@ namespace MenaxhimiBibliotekes.DAL
                 return false;
             }
         }
-        
+
+
+
         public Subscriber Get(int Id)
         {
             try
             {
                 subscriber = new Subscriber();
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Subscriber_GetByID", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscriber_Read", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -128,9 +127,9 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 List<Subscriber> _AllSubscriber = new List<Subscriber>();
                 subscriber = new Subscriber();
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Subscriber_GetAll", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscriber_Read", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -145,7 +144,7 @@ namespace MenaxhimiBibliotekes.DAL
                                     }
 
                                     _AllSubscriber.Add(subscriber);
-                                }
+}
                             }
                             return _AllSubscriber;
                         }
@@ -183,19 +182,17 @@ namespace MenaxhimiBibliotekes.DAL
                 subscriber.Email = reader["Email"].ToString();
                 subscriber.ExpirationDate = DateTime.Parse(reader["ExpirationDate"].ToString());
 
+
+               
+
                 subscriber.InsBy = int.Parse(reader["InsBy"].ToString());
                 subscriber.InsDate = (DateTime)reader["InsDate"];
-
-                if (reader["UpdBy"] != DBNull.Value)
-                {
-                    subscriber.UpdBy = int.Parse(reader["UpdBy"].ToString());
-                }
-                if (reader["UpdDate"] != DBNull.Value)
-                {
-                    subscriber.UpdDate = (DateTime)reader["UpdDate"];
-                }
-
+                subscriber.UpdBy = int.Parse(reader["UpdBy"].ToString());
+                subscriber.UpdDate = (DateTime)reader["UpdDate"];
                 subscriber.UpdNo = int.Parse(reader["UpdNo"].ToString());
+
+
+
 
 
                 return subscriber;
@@ -212,21 +209,20 @@ namespace MenaxhimiBibliotekes.DAL
             int rowsAffected = 0;
             try
             {
-                using (var conn = Connection.GetConnection())
+                using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_Subscriber_Update", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_Subscriber_Update", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "Name", obj.Name);
-                        Connection.AddParameter(command, "LastName", obj.LastName);
-                        Connection.AddParameter(command, "Address", obj.Address);
-                        Connection.AddParameter(command, "Birthday", obj.Birthday);
-                        Connection.AddParameter(command, "PersonalNo", obj.PersonalNo);
-                        Connection.AddParameter(command, "PhoneNo", obj.PhoneNo);
-                        Connection.AddParameter(command, "Email", obj.Email);
-                        Connection.AddParameter(command, "Gender", obj.Gender);
-                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
-                        Connection.AddParameter(command, "IsActive", obj.IsActive);
-                        Connection.AddParameter(command, "UpdBy", obj.UpdBy);
+                        command.Parameters.AddWithValue("Name", obj.Name);
+                        command.Parameters.AddWithValue("LastName", obj.LastName);
+                        command.Parameters.AddWithValue("Address", obj.Address);
+                        command.Parameters.AddWithValue("Birthday", obj.Birthday);
+                        command.Parameters.AddWithValue("PersonalNo", obj.PersonalNo);
+                        command.Parameters.AddWithValue("PhoneNo", obj.PhoneNo);
+                        command.Parameters.AddWithValue("Email", obj.Email);
+                        command.Parameters.AddWithValue("Gender", obj.Gender);
+                        command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                        command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
                         rowsAffected = command.ExecuteNonQuery();
 
@@ -239,6 +235,7 @@ namespace MenaxhimiBibliotekes.DAL
                             throw new Exception();
                         }
                     }
+
                 }
             }
             catch (Exception)

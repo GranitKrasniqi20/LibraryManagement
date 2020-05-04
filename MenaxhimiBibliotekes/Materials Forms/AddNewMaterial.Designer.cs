@@ -390,6 +390,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(162, 33);
             this.txtQuantity.TabIndex = 10;
+            this.txtQuantity.Validating += new System.ComponentModel.CancelEventHandler(this.txtQuantity_Validating);
             // 
             // txtTitle
             // 
@@ -489,6 +490,8 @@
             this.txtPublishDate.Name = "txtPublishDate";
             this.txtPublishDate.Size = new System.Drawing.Size(356, 33);
             this.txtPublishDate.TabIndex = 6;
+            this.txtPublishDate.Enter += new System.EventHandler(this.txtPublishDate_Enter);
+            this.txtPublishDate.Validating += new System.ComponentModel.CancelEventHandler(this.txtPublishDate_Validating);
             // 
             // txtPublishPlace
             // 
@@ -498,6 +501,8 @@
             this.txtPublishPlace.Name = "txtPublishPlace";
             this.txtPublishPlace.Size = new System.Drawing.Size(356, 33);
             this.txtPublishPlace.TabIndex = 8;
+            this.txtPublishPlace.Enter += new System.EventHandler(this.txtPublishPlace_Enter);
+            this.txtPublishPlace.Validating += new System.ComponentModel.CancelEventHandler(this.txtPublishPlace_Validating);
             // 
             // lblMaterialLocation
             // 

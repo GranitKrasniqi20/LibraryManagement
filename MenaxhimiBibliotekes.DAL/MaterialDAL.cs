@@ -20,85 +20,61 @@ namespace MenaxhimiBibliotekes.DAL
 
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_CreateMaterial", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_CreateMaterial", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "Title", obj.Title);
+                        command.Parameters.AddWithValue("@Title", obj.Title);
 
-                            Connection.AddParameter(command, "GenreId", obj._Genre.GenreId);
+                        command.Parameters.AddWithValue("@GenreId", obj._Genre.GenreId);
 
                         if (obj.PublishPlace != null)
                         {
-                            Connection.AddParameter(command, "PublishHouse", obj._PublishHouse._PublishHouse);
+                            command.Parameters.AddWithValue("@PublishHouse", obj._PublishHouse._PublishHouse);
                         }
 
                         if (obj.PublishPlace != null)
                         {
-                            Connection.AddParameter(command, "PlaceOfPublication", obj.PublishPlace);
+                            command.Parameters.AddWithValue("@PlaceOfPublication", obj.PublishPlace);
                         }
 
                         if (obj.ISBN != null)
                         {
-                            Connection.AddParameter(command, "ISBN", obj.ISBN);
+                            command.Parameters.AddWithValue("@ISBN", obj.ISBN);
                         }
 
 
-                            Connection.AddParameter(command, "MaterialTypeId", obj._MaterialType.MaterialTypeId);
+                        command.Parameters.AddWithValue("@MaterialTypeId", obj._MaterialType.MaterialTypeId);
 
-                        Connection.AddParameter(command, "Quantity", obj.Quantity);// nese ne sql egziston mu mbledh kuantiteti
+                        command.Parameters.AddWithValue("@Quantity", obj.Quantity);// nese ne sql egziston mu mbledh kuantiteti
 
                         if (obj.NumberOfPages > 0)
                         {
-                            Connection.AddParameter(command, "NumberOfPages", obj.NumberOfPages);
+                            command.Parameters.AddWithValue("@NumberOfPages", obj.NumberOfPages);
                         }
 
 
 
-                            Connection.AddParameter(command, "Language", obj._Language.LanguageId);
+                        command.Parameters.AddWithValue("@LanguageId", obj._Language.LanguageId);
 
-                        Connection.AddParameter(command, "InsBy", obj.InsBy);
-                        Connection.AddParameter(command, "Author", obj._Author.AuthorName);
+                        command.Parameters.AddWithValue("@InsBy", obj.InsBy);
+                        command.Parameters.AddWithValue("@AuthorName", obj._Author.AuthorName);
+                        command.Parameters.AddWithValue("@IsActive", obj.IsActive);
+                        command.Parameters.AddWithValue("@ShelfId", obj._Shelf.ShelfId);
 
-                        SqlParameter sqlparam = Connection.OutputParameters("MaterialId", SqlDbType.Int);
-
-                        Connection.AddParameter(command,sqlparam);
-
-
-                        command.ExecuteNonQuery();//me bo ne sql me kthy id te kti produkti qe 
-                        MaterialId = (int)sqlparam.Value;
-
-                        if (MaterialId > 0)
+                        int rows = command.ExecuteNonQuery();
+                        if (rows > 0)
                         {
-
-                            //te insertojme edhe tek tabela e ndermjetme.
-
-
-                            bool isInserted;
-                            if (obj.Shelves.Count() > 0)
-                            {
-                                foreach (var item in obj.Shelves)
-                                {
-                                    isInserted = insertMaterialLocation(conn, MaterialId, item, obj.InsBy);
-
-                                    if (isInserted == false)
-                                    {
-                                        return false;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                return false;
-                            }
-
+                            return
+                                 true;
                         }
+
                         else
-                        {
-                            throw new Exception();
-                        }
-                    
+                    {
+                        throw new Exception();
                     }
+
+                }
 
                     return true;
                 }
@@ -117,39 +93,18 @@ namespace MenaxhimiBibliotekes.DAL
 
 
 
-        public bool insertMaterialLocation(SqlConnection conn, int materialId, Shelf shelf, int insBy)
-        {
-            int rowaffecte;
-            using (SqlCommand command = Connection.Command(conn, "usp_CreateMaterialAuthor", CommandType.StoredProcedure))
-            {
-                Connection.AddParameter(command, "MaterialId", materialId);
-                Connection.AddParameter(command, "RaftiId", shelf.ShelfId);
-                Connection.AddParameter(command, "InsBy", insBy);
-                rowaffecte = command.ExecuteNonQuery();
-            }
 
-
-            if (rowaffecte > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
 
 
         public bool Delete(int Id)
         {
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_DeleteMaterial", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_DeleteMaterial", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "MaterialId", Id);
+                        command.Parameters.AddWithValue("MaterialId", Id);
                         int Affected = command.ExecuteNonQuery();
 
                         if (Affected > 0)
@@ -171,19 +126,16 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Delete(Material obj)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public Material Get(int Id)
         {
             try
             {
                 material = new Material();
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_GetMaterial", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_GetMaterial", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -219,9 +171,9 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 List<Material> _AllMaterials = new List<Material>();
                 material = new Material();
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_GetMaterial", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_GetMaterial", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -263,41 +215,41 @@ namespace MenaxhimiBibliotekes.DAL
 
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_updateMaterial", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_updateMaterial", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "MaterialId", obj.MaterialId);
-                            Connection.AddParameter(command, "GenreId", obj._Genre.GenreId);
+                        command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
+                        command.Parameters.AddWithValue("GenreId", obj._Genre.GenreId);
 
                         if (obj.PublishPlace != null)
                         {
-                            Connection.AddParameter(command, "PublishHouse", obj._PublishHouse._PublishHouse);
+                            command.Parameters.AddWithValue("PublishHouse", obj._PublishHouse._PublishHouse);
                         }
 
                         if (obj.PublishPlace != null)
                         {
-                            Connection.AddParameter(command, "PlaceOfPublication", obj.PublishPlace);
+                            command.Parameters.AddWithValue("PlaceOfPublication", obj.PublishPlace);
                         }
 
                         if (obj.ISBN != null)
                         {
-                            Connection.AddParameter(command, "ISBN", obj.ISBN);
+                            command.Parameters.AddWithValue("ISBN", obj.ISBN);
                         }
 
 
-                            Connection.AddParameter(command, "MaterialTypeId", obj._MaterialType.MaterialTypeId);
+                        command.Parameters.AddWithValue("MaterialTypeId", obj._MaterialType.MaterialTypeId);
 
-                        Connection.AddParameter(command, "Quantity", obj.Quantity);// nese ne sql egziston mu mbledh kuantiteti
+                        command.Parameters.AddWithValue("Quantity", obj.Quantity);// nese ne sql egziston mu mbledh kuantiteti
 
                         if (obj.NumberOfPages > 0)
                         {
-                            Connection.AddParameter(command, "NumberOfPages", obj.NumberOfPages);
+                            command.Parameters.AddWithValue("NumberOfPages", obj.NumberOfPages);
                         }
-                            Connection.AddParameter(command, "LanguageId", obj._Language.LanguageId);
+                        command.Parameters.AddWithValue("LanguageId", obj._Language.LanguageId);
 
-                        Connection.AddParameter(command, "Author", obj._Author.AuthorName);
-                        Connection.AddParameter(command, "UbdBy", obj.UpdBy);
+                        command.Parameters.AddWithValue("Author", obj._Author.AuthorName);
+                        command.Parameters.AddWithValue("UbdBy", obj.UpdBy);
 
 
 
@@ -406,12 +358,12 @@ namespace MenaxhimiBibliotekes.DAL
         public bool UpdateMaterialLocation(SqlConnection conn, int materialId, int currentShelfId, Shelf ml)
         {
             int rowaffecte;
-            using (SqlCommand command = Connection.Command(conn, "usp_UpdateMaterialAuthor", CommandType.StoredProcedure))
+            using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateMaterialAuthor", CommandType.StoredProcedure))
             {
-                Connection.AddParameter(command, "MaterialId", materialId);
-                Connection.AddParameter(command, "MaterialId", materialId);
-                Connection.AddParameter(command, "RaftiId", ml.ShelfId);
-                Connection.AddParameter(command, "updBy", ml.UpdBy);
+                command.Parameters.AddWithValue("MaterialId", materialId);
+                command.Parameters.AddWithValue("MaterialId", materialId);
+                command.Parameters.AddWithValue("RaftiId", ml.ShelfId);
+                command.Parameters.AddWithValue("updBy", ml.UpdBy);
                 rowaffecte = command.ExecuteNonQuery();
             }
 

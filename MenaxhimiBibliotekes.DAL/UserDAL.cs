@@ -20,12 +20,12 @@ namespace MenaxhimiBibliotekes.DAL
             try
             {
 
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_LogIn", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_LogIn", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "@UserName", username);
-                        Connection.AddParameter(command, "@Password", password);
+                        command.Parameters.AddWithValue("@UserName", username);
+                        command.Parameters.AddWithValue("@Password", password);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
 
@@ -61,9 +61,9 @@ namespace MenaxhimiBibliotekes.DAL
             int rowsAffected = 0;
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_CreateUsers", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_CreateUsers", CommandType.StoredProcedure))
                     {
                         command.Parameters.AddWithValue("UserName", obj.Username);
                         command.Parameters.AddWithValue("Password", obj.Password);
@@ -99,11 +99,11 @@ namespace MenaxhimiBibliotekes.DAL
             int rowsAffected = 0;
             try
             {
-                using (var conn = Connection.GetConnection())
+                using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_DeleteUser", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_DeleteUser", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "@UserId", Id);
+                        command.Parameters.AddWithValue("@UserId", Id);
 
 
                         rowsAffected = command.ExecuteNonQuery();
@@ -134,11 +134,11 @@ namespace MenaxhimiBibliotekes.DAL
             usr = new User();
             try
             {
-                using (var conn = Connection.GetConnection())
+                using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_GetUserById", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_GetUserById", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "@UserId",Id);
+                        command.Parameters.AddWithValue("@UserId",Id);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -178,9 +178,9 @@ namespace MenaxhimiBibliotekes.DAL
             try
             {
                 List<User> AllUsers = new List<User>();
-                using (var conn = Connection.GetConnection())
+                using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_GetAllUsers", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_GetAllUsers", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -250,17 +250,17 @@ namespace MenaxhimiBibliotekes.DAL
             int rowsAffected = 0;
             try
             {
-                using (var conn = Connection.GetConnection())
+                using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_UpdateUser", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_UpdateUser", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "UserName", obj.Username);
-                        Connection.AddParameter(command, "Password", obj.Password);
-                        Connection.AddParameter(command, "Name", obj.Name);
-                        Connection.AddParameter(command, "LastName", obj.LastName);
-                        Connection.AddParameter(command, "RoleId", obj.RoleID);
-                        Connection.AddParameter(command, "Email", obj.Email);
-                        Connection.AddParameter(command, "UpdBy", obj.UpdBy);//gabimmmmmm
+                        command.Parameters.AddWithValue("UserName", obj.Username);
+                        command.Parameters.AddWithValue("Password", obj.Password);
+                        command.Parameters.AddWithValue("Name", obj.Name);
+                        command.Parameters.AddWithValue("LastName", obj.LastName);
+                        command.Parameters.AddWithValue("RoleId", obj.RoleID);
+                        command.Parameters.AddWithValue("Email", obj.Email);
+                        command.Parameters.AddWithValue("UpdBy", obj.UpdBy);//gabimmmmmm
 
                         rowsAffected = command.ExecuteNonQuery();
 

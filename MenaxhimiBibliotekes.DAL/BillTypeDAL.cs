@@ -20,11 +20,11 @@ namespace MenaxhimiBibliotekes.DAL
             int isInserted = 0;
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_BillType_Insert", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_BillType_Insert", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "BillType", obj._BillType);
+                        Connection.AddParameter(command, "BillType", obj._billType);
                         Connection.AddParameter(command, "InsBy", obj.InsBy);
 
                         SqlParameter sqlparam = Connection.OutputParameters("BillTypeId", SqlDbType.Int);
@@ -121,9 +121,9 @@ namespace MenaxhimiBibliotekes.DAL
 
             billType = new BillType();
 
-            using (SqlConnection sqlconn = Connection.GetConnection())
+            using (SqlConnection sqlconn = DbHelper.GetConnection())
             {
-                using (SqlCommand command = Connection.Command(sqlconn, "usp_BillType_GetAll", CommandType.StoredProcedure))
+                using (SqlCommand command = Connection.Command(sqlconn, "usp_BillType_Read", CommandType.StoredProcedure))
                 {
                     using (SqlDataReader sqr = command.ExecuteReader())
                     {

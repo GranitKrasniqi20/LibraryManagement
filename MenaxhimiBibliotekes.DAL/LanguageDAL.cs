@@ -18,12 +18,12 @@ namespace MenaxhimiBibliotekes.DAL
             int isInserted = 0;
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_CreateLanguage", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_CreateLanguage", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "Language", obj._Language);
-                        Connection.AddParameter(command, "InsBy", obj.InsBy);
+                        command.Parameters.AddWithValue("Language", obj._Language);
+                        command.Parameters.AddWithValue("InsBy", obj.InsBy);
                         isInserted = command.ExecuteNonQuery();
 
 
@@ -47,12 +47,58 @@ namespace MenaxhimiBibliotekes.DAL
 
         public bool Delete(int Id)
         {
-            throw new NotImplementedException();
+            int IsDeleted = 0;
+            try
+            {
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_DeleteLanguage", CommandType.StoredProcedure))
+                    {
+                        command.Parameters.AddWithValue("LanguageId", Id);
+                        IsDeleted = command.ExecuteNonQuery();
+
+
+                        if (IsDeleted > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
 
         public Language Get(int Id)
         {
+
+            //lang = new Language();
+
+            //using (SqlConnection sqlconn = DbHelper.GetConnection())
+            //{
+            //    using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetLanguage", CommandType.StoredProcedure))
+            //    {
+            //        using (SqlDataReader sqr = command.ExecuteReader())
+            //        {
+
+            //                if (sqr.Read())
+            //                {
+
+            //                    lang = ToBO(sqr);
+            //                }
+
+            //            return lang;
+            //        }
+            //    }
+            //}
             throw new NotImplementedException();
         }
 
@@ -63,9 +109,9 @@ namespace MenaxhimiBibliotekes.DAL
             List<Language> AllLanguage = new List<Language>();
             lang = new Language();
 
-            using (SqlConnection sqlconn = Connection.GetConnection())
+            using (SqlConnection sqlconn = DbHelper.GetConnection())
             {
-                using (SqlCommand command = Connection.Command(sqlconn, "@GetAllLanguages", CommandType.StoredProcedure))
+                using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetAllLanguages", CommandType.StoredProcedure))
                 {
                     using (SqlDataReader sqr = command.ExecuteReader())
                     {
@@ -98,13 +144,13 @@ namespace MenaxhimiBibliotekes.DAL
         public bool Update(Language obj)
         {
             int isUpdated = 0;
-            using (SqlConnection conn = Connection.GetConnection())
+            using (SqlConnection conn = DbHelper.GetConnection())
             {
-                using (SqlCommand command = Connection.Command(conn, "usp_UpdateGenre", CommandType.StoredProcedure))
+                using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateLanguage", CommandType.StoredProcedure))
                 {
-                    Connection.AddParameter(command, "MaterialTypeId", obj.LanguageId);
-                    Connection.AddParameter(command, "MaterialType", obj._Language);
-                    Connection.AddParameter(command, "InsBy", obj.InsBy);
+                    command.Parameters.AddWithValue("LanguageId", obj.LanguageId);
+                    command.Parameters.AddWithValue("Language", obj._Language);
+                    command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
                     isUpdated = command.ExecuteNonQuery();
 
 

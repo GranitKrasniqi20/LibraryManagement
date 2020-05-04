@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="BillDAL.cs" />
     <Compile Include="BillTypeDAL.cs" />
-    <Compile Include="Connection.cs" />
+    <Compile Include="DbHelper.cs" />
     <Compile Include="GenreDAL.cs" />
     <Compile Include="LanguageDAL.cs" />
     <Compile Include="MaterialDAL.cs" />
