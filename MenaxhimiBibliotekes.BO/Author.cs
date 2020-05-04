@@ -10,6 +10,5 @@ namespace MenaxhimiBibliotekes.BO
     {
         public int AuthorID { get; set; }
         public string AuthorName { get; set; }
-        public string AuthorLastName { get; set; }
     }
 }

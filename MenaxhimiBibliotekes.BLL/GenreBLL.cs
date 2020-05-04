@@ -9,7 +9,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    class GenreBLL : ICrud<Genre>
+    public class GenreBLL : ICrud<Genre>
     {
 
         GenreDAL gen = new GenreDAL();

@@ -22,14 +22,14 @@ namespace MenaxhimiBibliotekes.DAL
             int isInserted = 0;
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_CreateShelf", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_CreateShelf", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "Location", obj.Location);
-                        Connection.AddParameter(command, "Quantity", obj.Quantity);
-                        Connection.AddParameter(command, "Description", obj.Description);
-                        Connection.AddParameter(command, "InsBy", obj.InsBy);
+                        command.Parameters.AddWithValue("Location", obj.Location);
+                        command.Parameters.AddWithValue("Quantity", obj.Quantity);
+                        command.Parameters.AddWithValue("Description", obj.Description);
+                        command.Parameters.AddWithValue("InsBy", obj.InsBy);
 
                         isInserted = command.ExecuteNonQuery();
 
@@ -61,11 +61,11 @@ namespace MenaxhimiBibliotekes.DAL
 
         public Shelf Get(int Id)
         {
-            using (var conn = Connection.GetConnection())
+            using (var conn = DbHelper.GetConnection())
             {
-                using (var command = Connection.Command(conn, "usp_GetShelfById", CommandType.StoredProcedure))
+                using (var command = DbHelper.Command(conn, "usp_GetShelfById", CommandType.StoredProcedure))
                 {
-                    Connection.AddParameter(command, "ShelfId", Id);
+                    command.Parameters.AddWithValue("ShelfId", Id);
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -92,9 +92,9 @@ namespace MenaxhimiBibliotekes.DAL
             List<Shelf> shelves = new List<Shelf>();
             try
             {
-                using (var conn = Connection.GetConnection())
+                using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_GetShelfAllShelves", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_GetShelfAllShelves", CommandType.StoredProcedure))
                     {
 
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -168,15 +168,15 @@ namespace MenaxhimiBibliotekes.DAL
             int isUpdated = 0;
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_CreateShelf", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateShelf", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "ShelfId", obj.ShelfId);
-                        Connection.AddParameter(command, "Location", obj.Location);
-                        Connection.AddParameter(command, "Quantity", obj.Quantity);
-                        Connection.AddParameter(command, "Description", obj.Description);
-                        Connection.AddParameter(command, "UpdBy", obj.InsBy);
+                        command.Parameters.AddWithValue("ShelfId", obj.ShelfId);
+                        command.Parameters.AddWithValue("Location", obj.Location);
+                        command.Parameters.AddWithValue("Quantity", obj.Quantity);
+                        command.Parameters.AddWithValue("Description", obj.Description);
+                        command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
                         isUpdated = command.ExecuteNonQuery();
 
@@ -200,10 +200,7 @@ namespace MenaxhimiBibliotekes.DAL
         }
 
 
-        //internal List<Shelf> GetMaterialLocation()
-        //{
 
-        //}
     }
 
 }

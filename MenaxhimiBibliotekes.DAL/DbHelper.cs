@@ -9,7 +9,7 @@ using System.Data;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    class Connection
+    class DbHelper
     {
         private static string ConnectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
 
@@ -40,25 +40,7 @@ namespace MenaxhimiBibliotekes.DAL
             return command;
         }
 
-        public static void AddParameter(SqlCommand command, string parameterName, object value)
-        {
-            command.Parameters.AddWithValue(parameterName, value);
-        }
-
-        public static void AddParameter(SqlCommand command,SqlParameter param)
-        {
-            command.Parameters.Add(param);
-        }
-        public static SqlParameter OutputParameters(string ParameterName, SqlDbType DbType)
-        {
-            SqlParameter sqlparam = new SqlParameter();
-
-            sqlparam.ParameterName = ParameterName;
-            sqlparam.SqlDbType = DbType;
-            sqlparam.Direction = ParameterDirection.Output;
-
-            return sqlparam;
-        }
+ 
 
 
     }

@@ -12,7 +12,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class UserBLL : ICrud<User>
+    public class UserBLL : ICrud<User>, ILogIn
     {
         UserDAL usr = new UserDAL();
 
@@ -53,5 +53,7 @@ namespace MenaxhimiBibliotekes.BLL
         {
             return usr.Update(obj);
         }
+
+
     }
 }

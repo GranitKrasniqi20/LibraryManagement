@@ -8,7 +8,9 @@ namespace MenaxhimiBibliotekes.BO
 {
     public class Role
     {
+
         public int UserRoleId { get; set; }
         public string UserRole { get; set; }
+
     }
 }
