@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MenaxhimiBibliotekes.BLL;
 using MenaxhimiBibliotekes.BO;
 
 namespace MenaxhimiBibliotekes.Login_Forms
@@ -19,34 +20,70 @@ namespace MenaxhimiBibliotekes.Login_Forms
             lblUsernameError.Hide();
             lblPasswordError.Hide();
         }
+        //string pw = usbll.LogIn(usr.Username, usr.Password).Password;
+
+        //    if (usbll.LogIn(usr.Username, usr.Password).Password == Sec.Hash("Endrittmava", "123123"))
+        //    {
+        //        Console.WriteLine("mir osht");
+        //    }
+
+
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
+
             try
             {
-                if (txtUsernameLogin.Text == "beispresheva" && txtPasswordLogin.Text == "123")
+
+                UserBLL usrbll = new UserBLL();
+                User usr = new User();
+                string pw = Sec.Hash(txtUsernameLogin.Text, txtPasswordLogin.Text);
+
+
+
+
+                usr = usrbll.LogIn(txtUsernameLogin.Text, pw);
+
+                if (usr == null)
                 {
-                    FormLoggedUser.Name = "Beis";
-                    FormLoggedUser.LastName = "Presheva";
+                    throw new Exception();
+                }
+
+                if (usr.Password == pw)
+                {
+                    FormLoggedUser.Name = usr.Name;
+                    FormLoggedUser.LastName = usr.LastName;
                     FormLoggedUser.Username = txtUsernameLogin.Text;
                     FormLoggedUser.Password = txtPasswordLogin.Text;
-                    FormLoggedUser.Role = "Admin";
+                    //FormLoggedUser.Role = "Admin";
 
 
-                    MessageBox.Show($"You logged successfully, {FormLoggedUser.Name} {FormLoggedUser.LastName} ({FormLoggedUser.Username})!", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //MessageBox.Show($"You logged successfully, {FormLoggedUser.Name} {FormLoggedUser.LastName} ({FormLoggedUser.Username})!", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                     this.Hide();
                 }
+
                 else
                 {
-                    MessageBox.Show("The Log In Information you typed is incorrect. \nPlease try again!", "Information Incorrect!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    throw new Exception();
                 }
+
+
+
+
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("The Log In Information you typed is incorrect. \nPlease try again!", "Information Incorrect!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+
+
+
+
+
+
         }
 
         private void btnCloseLogin_Click(object sender, EventArgs e)
@@ -59,6 +96,6 @@ namespace MenaxhimiBibliotekes.Login_Forms
             Application.Exit();
         }
 
-        
+
     }
 }

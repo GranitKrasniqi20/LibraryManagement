@@ -9,7 +9,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    class LanguageBLL : ICrud<Language>
+    public class LanguageBLL : ICrud<Language>
     {
 
         LanguageDAL lang = new LanguageDAL();
@@ -20,13 +20,10 @@ namespace MenaxhimiBibliotekes.BLL
 
         public bool Delete(int Id)
         {
-            throw new NotImplementedException();
+            return lang.Delete(Id);
         }
 
-        public bool Delete(Language obj)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public Language Get(int Id)
         {

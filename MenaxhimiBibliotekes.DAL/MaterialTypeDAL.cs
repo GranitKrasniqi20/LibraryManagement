@@ -18,12 +18,12 @@ namespace MenaxhimiBibliotekes.DAL
             int isInserted = 0;
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_CreateMaterialType", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_CreateMaterialType", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "Genre", obj._MaterialType);
-                        Connection.AddParameter(command, "InsBy", obj.InsBy);
+                        command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
+                        command.Parameters.AddWithValue("InsBy", obj.InsBy);
                         isInserted = command.ExecuteNonQuery();
 
 
@@ -47,7 +47,33 @@ namespace MenaxhimiBibliotekes.DAL
 
         public bool Delete(int Id)
         {
-            throw new NotImplementedException();
+            int IsDeleted = 0;
+            try
+            {
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_DeleteMaterialType", CommandType.StoredProcedure))
+                    {
+                        command.Parameters.AddWithValue("MaterialTypeId", Id);
+                        IsDeleted = command.ExecuteNonQuery();
+
+
+                        if (IsDeleted > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
 
@@ -63,9 +89,9 @@ namespace MenaxhimiBibliotekes.DAL
             List<MaterialType> AllMaterialType = new List<MaterialType>();
             mt = new MaterialType();
             
-            using (SqlConnection sqlconn = Connection.GetConnection())
+            using (SqlConnection sqlconn = DbHelper.GetConnection())
             {
-                using (SqlCommand command = Connection.Command(sqlconn, "@GetAllGenres", CommandType.StoredProcedure))
+                using (SqlCommand command = DbHelper.Command(sqlconn, "@GetAllMaterialTypes", CommandType.StoredProcedure))
                 {
                     using (SqlDataReader sqr = command.ExecuteReader())
                     {
@@ -131,13 +157,13 @@ namespace MenaxhimiBibliotekes.DAL
         public bool Update(MaterialType obj)
         {
             int isUpdated = 0;
-            using (SqlConnection conn = Connection.GetConnection())
+            using (SqlConnection conn = DbHelper.GetConnection())
             {
-                using (SqlCommand command = Connection.Command(conn, "usp_UpdateGenre", CommandType.StoredProcedure))
+                using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateGenre", CommandType.StoredProcedure))
                 {
-                    Connection.AddParameter(command, "MaterialTypeId", obj.MaterialTypeId);
-                    Connection.AddParameter(command, "MaterialType", obj._MaterialType);
-                    Connection.AddParameter(command, "InsBy", obj.InsBy);
+                    command.Parameters.AddWithValue("MaterialTypeId", obj.MaterialTypeId);
+                    command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
+                    command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
                     isUpdated = command.ExecuteNonQuery();
 
 

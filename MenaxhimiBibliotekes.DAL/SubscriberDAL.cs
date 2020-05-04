@@ -20,20 +20,20 @@ namespace MenaxhimiBibliotekes.DAL
             int isInserted = 0;
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Subscriber_Insert", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscriber_Insert", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "Name", obj.Name);
-                        Connection.AddParameter(command, "LastName", obj.LastName);
-                        Connection.AddParameter(command, "Address", obj.Address);
-                        Connection.AddParameter(command, "Birthday", obj.Birthday);
-                        Connection.AddParameter(command, "PersonalNo", obj.PersonalNo);
-                        Connection.AddParameter(command, "PhoneNo", obj.PhoneNo);
-                        Connection.AddParameter(command, "Email", obj.Email);
-                        Connection.AddParameter(command, "Gender", obj.Gender);
-                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
-                        Connection.AddParameter(command, "InsBy", obj.InsBy);
+                        command.Parameters.AddWithValue("Name", obj.Name);
+                        command.Parameters.AddWithValue("LastName", obj.LastName);
+                        command.Parameters.AddWithValue("Address", obj.Address);
+                        command.Parameters.AddWithValue("Birthday", obj.Birthday);
+                        command.Parameters.AddWithValue("PersonalNo", obj.PersonalNo);
+                        command.Parameters.AddWithValue("PhoneNo", obj.PhoneNo);
+                        command.Parameters.AddWithValue("Email", obj.Email);
+                        command.Parameters.AddWithValue("Gender", obj.Gender);
+                        command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                        command.Parameters.AddWithValue("InsBy", obj.InsBy);
 
                         isInserted = command.ExecuteNonQuery();
 
@@ -61,11 +61,11 @@ namespace MenaxhimiBibliotekes.DAL
         {
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Subsriber_Delete", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subsriber_Delete", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "SubscriberId", Id);
+                        command.Parameters.AddWithValue("SubscriberId", Id);
                         int Affected = command.ExecuteNonQuery();
 
                         if (Affected > 0)
@@ -94,9 +94,9 @@ namespace MenaxhimiBibliotekes.DAL
             try
             {
                 subscriber = new Subscriber();
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Subscriber_Read", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscriber_Read", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -127,9 +127,9 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 List<Subscriber> _AllSubscriber = new List<Subscriber>();
                 subscriber = new Subscriber();
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Subscriber_Read", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscriber_Read", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -209,20 +209,20 @@ namespace MenaxhimiBibliotekes.DAL
             int rowsAffected = 0;
             try
             {
-                using (var conn = Connection.GetConnection())
+                using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_Subscriber_Update", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_Subscriber_Update", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "Name", obj.Name);
-                        Connection.AddParameter(command, "LastName", obj.LastName);
-                        Connection.AddParameter(command, "Address", obj.Address);
-                        Connection.AddParameter(command, "Birthday", obj.Birthday);
-                        Connection.AddParameter(command, "PersonalNo", obj.PersonalNo);
-                        Connection.AddParameter(command, "PhoneNo", obj.PhoneNo);
-                        Connection.AddParameter(command, "Email", obj.Email);
-                        Connection.AddParameter(command, "Gender", obj.Gender);
-                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
-                        Connection.AddParameter(command, "UpdBy", obj.UpdBy);
+                        command.Parameters.AddWithValue("Name", obj.Name);
+                        command.Parameters.AddWithValue("LastName", obj.LastName);
+                        command.Parameters.AddWithValue("Address", obj.Address);
+                        command.Parameters.AddWithValue("Birthday", obj.Birthday);
+                        command.Parameters.AddWithValue("PersonalNo", obj.PersonalNo);
+                        command.Parameters.AddWithValue("PhoneNo", obj.PhoneNo);
+                        command.Parameters.AddWithValue("Email", obj.Email);
+                        command.Parameters.AddWithValue("Gender", obj.Gender);
+                        command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                        command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
                         rowsAffected = command.ExecuteNonQuery();
 

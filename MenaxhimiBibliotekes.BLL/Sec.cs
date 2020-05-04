@@ -26,6 +26,7 @@ namespace MenaxhimiBibliotekes.BLL
             result = Convert.ToBase64String(sha.ComputeHash(data));
             return result;
         }
+
         private static string SaltPassword(string username, string password )
         {
 

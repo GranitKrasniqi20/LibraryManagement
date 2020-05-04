@@ -42,6 +42,7 @@
             this.btnInsert.TabIndex = 8;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // txtInsert
             // 

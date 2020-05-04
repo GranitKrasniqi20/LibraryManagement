@@ -19,18 +19,18 @@ namespace MenaxhimiBibliotekes.DAL
             int rowsAffected = 0;
             try
             {
-                using (var conn = Connection.GetConnection())
+                using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_Bill_Insert", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_Bill_Insert", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "SubscriberId", obj.SubscriberId);
-                        Connection.AddParameter(command, "MaterialId", obj.MaterialId);
-                        Connection.AddParameter(command, "BillType", obj.BillType);
-                        Connection.AddParameter(command, "BillingDate", obj.BillingDate);
-                        Connection.AddParameter(command, "RegistrationDate", obj.RegistrationDate);
-                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
-                        Connection.AddParameter(command, "Description", obj.Description);
-                        Connection.AddParameter(command, "InstBy", obj.InsBy);
+                        command.Parameters.AddWithValue("SubscriberId", obj.SubscriberId);
+                        command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
+                        command.Parameters.AddWithValue("BillType", obj.BillType);
+                        command.Parameters.AddWithValue("BillingDate", obj.BillingDate);
+                        command.Parameters.AddWithValue("RegistrationDate", obj.RegistrationDate);
+                        command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                        command.Parameters.AddWithValue("Description", obj.Description);
+                        command.Parameters.AddWithValue("InstBy", obj.InsBy);
 
                         rowsAffected = command.ExecuteNonQuery();
 
@@ -55,11 +55,11 @@ namespace MenaxhimiBibliotekes.DAL
         {
             try
             {
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Bill_Delete", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bill_Delete", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "BillId", Id);
+                        command.Parameters.AddWithValue("BillId", Id);
 
                         int Affected = command.ExecuteNonQuery();
 
@@ -87,9 +87,9 @@ namespace MenaxhimiBibliotekes.DAL
             try
             {
                 bill = new Bill();
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Bill_Read", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bill_Read", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -119,9 +119,9 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 List<Bill> _AllBill = new List<Bill>();
                 bill = new Bill(); 
-                using (SqlConnection conn = Connection.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = Connection.Command(conn, "usp_Bill_Read", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bill_Read", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -189,18 +189,18 @@ namespace MenaxhimiBibliotekes.DAL
             int rowsAffected = 0;
             try
             {
-                using (var conn = Connection.GetConnection())
+                using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = Connection.Command(conn, "usp_Bill_Update", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_Bill_Update", CommandType.StoredProcedure))
                     {
-                        Connection.AddParameter(command, "SubscriberId", obj.SubscriberId);
-                        Connection.AddParameter(command, "MaterialId", obj.MaterialId);
-                        Connection.AddParameter(command, "BillType", obj.BillType);
-                        Connection.AddParameter(command, "BillingDate", obj.BillingDate);
-                        Connection.AddParameter(command, "RegistrationDate", obj.RegistrationDate);
-                        Connection.AddParameter(command, "ExpirationDate", obj.ExpirationDate);
-                        Connection.AddParameter(command, "Description", obj.Description);
-                        Connection.AddParameter(command, "UpdBy", obj.UpdBy);
+                        command.Parameters.AddWithValue("SubscriberId", obj.SubscriberId);
+                        command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
+                        command.Parameters.AddWithValue("BillType", obj.BillType);
+                        command.Parameters.AddWithValue("BillingDate", obj.BillingDate);
+                        command.Parameters.AddWithValue("RegistrationDate", obj.RegistrationDate);
+                        command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                        command.Parameters.AddWithValue("Description", obj.Description);
+                        command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
                         rowsAffected = command.ExecuteNonQuery();
 

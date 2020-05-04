@@ -44,6 +44,7 @@
     <Compile Include="Audit.cs" />
     <Compile Include="FormLoggedUser.cs" />
     <Compile Include="Interfaces\IConvertToBO.cs" />
+    <Compile Include="Interfaces\ILogIn.cs" />
     <Compile Include="Subscriber.cs" />
     <Compile Include="Author.cs" />
     <Compile Include="Bill.cs" />
