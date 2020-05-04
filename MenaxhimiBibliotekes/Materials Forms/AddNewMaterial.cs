@@ -151,12 +151,20 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 //material._Genre._Genre = comboGenre.SelectedItem.ToString();
                 //material._Language._Language = comboLanguage.SelectedItem.ToString();
                 //material.ISBN = txtISBN.Text;
-                                                                ////material._Shelf.Location = comboMaterialLocation.SelectedItem.ToString();
+                //material._Shelf.Location = comboMaterialLocation.SelectedItem.ToString();
                 //material._MaterialType._MaterialType = comboMaterialType.SelectedItem.ToString();
                 //material._PublishHouse._PublishHouse = txtPublishHouse.Text;
-
-
-                
+                int n;
+                bool isNumeric = int.TryParse(txtPublishDate.Text, out n);
+                if (isNumeric)
+                {
+                    material.PublishYear = new DateTime(int.Parse(txtPublishDate.Text), 1, 1);
+                    string gg = material.PublishYear.ToShortDateString();  
+                }
+                else
+                {
+                    MessageBox.Show("");
+                }
 
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
@@ -225,5 +233,52 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 txtPublishHouse.ForeColor = Color.Gray;
             }
         }
+
+        private void txtPublishDate_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPublishDate.Text))
+            {
+                txtPublishDate.Text = $"{lblPublishDate.Text} should not be empty";
+                txtPublishDate.ForeColor = Color.DarkRed;
+            }
+        }
+
+        private void txtPublishDate_Enter(object sender, EventArgs e)
+        {
+            if (txtPublishDate.Text == $"{lblPublishDate.Text} should not be empty")
+            {
+                txtPublishDate.Text = string.Empty;
+                txtPublishDate.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtPublishPlace_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPublishPlace.Text))
+            {
+                txtPublishPlace.Text = $"{lblPublishPlace.Text} should not be empty";
+                txtPublishPlace.ForeColor = Color.DarkRed;
+            }
+        }
+
+        private void txtPublishPlace_Enter(object sender, EventArgs e)
+        {
+            if (txtPublishPlace.Text == $"{lblPublishPlace.Text} should not be empty")
+            {
+                txtPublishPlace.Text = string.Empty;
+                txtPublishPlace.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtQuantity_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtQuantity.Text))
+            {
+                txtQuantity.Text = $"{lblPublishDate.Text} should not be empty";
+                txtQuantity.ForeColor = Color.DarkRed;
+            }
+        }
+
+        
     }
 }
