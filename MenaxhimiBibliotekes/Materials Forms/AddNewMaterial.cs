@@ -23,7 +23,48 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         public AddNewMaterial()
         {
             InitializeComponent();
-            
+
+            //Combobox GENRE fill
+            comboGenre.Items.Clear();
+
+            GenreBLL genreBllList = new GenreBLL();
+            List<Genre> genreList = genreBllList.GetAll();
+            comboGenre.Items.Add("Other");
+
+            foreach (var item in genreList)
+            {
+                comboGenre.Items.Add(item._Genre);
+            }
+
+
+            //Combobox MATERIAL TYPE fill
+            comboMaterialType.Items.Clear();
+
+            MaterialTypeBLL materialtypeBllList = new MaterialTypeBLL();
+            List<MaterialType> materialtypeList = materialtypeBllList.GetAll();
+            comboMaterialType.Items.Add("Other");
+
+            foreach (var item in materialtypeList)
+            {
+                comboMaterialType.Items.Add(item._MaterialType);
+            }
+
+
+            //Combobox LANGUAGES fill
+            comboLanguage.Items.Clear();
+
+            LanguageBLL languageBllList = new LanguageBLL();
+            List<Language> languageList = languageBllList.GetAll();
+            comboLanguage.Items.Add("Other");
+
+            foreach (var item in languageList)
+            {
+                comboLanguage.Items.Add(item._Language);
+            }
+
+
+            //Combobox MATERIAL LOCATION fill
+            // ... data and code here
         }
 
 
@@ -97,6 +138,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void comboGenre_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
             if (comboGenre.SelectedItem == "Other")
             {
                 InsertNewGenre genreForm = new InsertNewGenre();
@@ -146,8 +188,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                 material.Title = txtTitle.Text;
                 material._Author.AuthorName = txtAuthor.Text;
-                material._Genre._Genre = comboGenre.SelectedItem.ToString();
-                material._Language._Language = comboLanguage.SelectedItem.ToString();
+                material._Genre._Genre = comboGenre.SelectedValue.ToString();
+                material._Language._Language = comboLanguage.SelectedValue.ToString();
                 material.ISBN = txtISBN.Text;
                 material._Shelf.Location = comboMaterialLocation.SelectedItem.ToString();
                 material._MaterialType._MaterialType = comboMaterialType.SelectedItem.ToString();
