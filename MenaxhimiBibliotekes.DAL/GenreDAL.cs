@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-   public class GenreDAL:ICrud<Genre>, IConvertToBO<Genre>
+   public class GenreDAL : ICreate<Genre>, IUpdate<Genre>, IDelete, IRead<Genre>, IConvertToBO<Genre>
     {
         Genre gen;
-        public bool Add(Genre obj)
+        public int Add(Genre obj)
         {
             int error ;
             try
@@ -26,7 +26,7 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         command.Parameters.AddWithValue("Genre", obj._Genre);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
-                        
+
 
 
                         SqlParameter sqlpa = new SqlParameter();
@@ -39,38 +39,22 @@ namespace MenaxhimiBibliotekes.DAL
                         command.ExecuteNonQuery();
                         error = (int)sqlpa.Value;
 
-                        if (error == 1)
-                        {
-                            throw new Exception();
-                        }
-                        else if (error == 0)
-                        {
-                            MessageBox.Show("good");
-                            return true;
-                        }
+                        return error;
 
-                        return false;
                     }
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-
-                MessageBox.Show("Please contact your administrator");
-                return false;
-
+                return -1;
             }
 
-            catch (Exception)
-            {
-                MessageBox.Show("Genre name  should be uniqe, please if this material type is deactivated update it");
-                return false;
-            }
         }
 
 
 
-        public bool Delete(int Id)
+
+        public int Delete(int Id)
         {
             int IsDeleted = 0;
             try
@@ -79,25 +63,17 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     using (SqlCommand command = DbHelper.Command(conn, "usp_DeleteGenre", CommandType.StoredProcedure))
                     {
-                        command.Parameters.AddWithValue( "GenreId", Id);
+                        command.Parameters.AddWithValue("GenreId", Id);
                         IsDeleted = command.ExecuteNonQuery();
 
-
-                        if (IsDeleted > 0)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            throw new Exception();
-                        }
+                        return IsDeleted;
                     }
+
                 }
             }
             catch (Exception)
             {
-
-                return false;
+                return -1;
             }
         }
 
@@ -179,12 +155,11 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Update(Genre obj)
+        public int Update(Genre obj)
         {
             int isUpdated = 0;
             try
             {
-                int error;
 
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
@@ -203,37 +178,26 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.Add(sqlpa);
 
                         isUpdated = command.ExecuteNonQuery();
-                        error = (int)sqlpa.Value;
+                        return (int)sqlpa.Value;
 
-                        if (error == 1 )
-                        {
-                            throw new Exception();
-                        }
-                        else if (error == 0 && isUpdated > 0)
-                        {
-                            MessageBox.Show("good");
-                            return true;
-                        }
 
-                        return false;
+
                     }
                 }
             }
-
-
-            catch (SqlException ex)
+            catch(Exception)
             {
-
-                MessageBox.Show("Please contact your administrator");
-                return false;
-
+                
+                    return -1;
+                
             }
 
-            catch (Exception)
-            {
-                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
-                return false;
-            }
+
+        
         }
+                
+
+
+        
     }
 }

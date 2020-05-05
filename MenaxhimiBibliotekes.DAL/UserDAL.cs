@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class UserDAL : ICrud<User>,IConvertToBO<User>
+    public class UserDAL : ICreate<User>, IUpdate<User>, IDelete, IRead<User>, IConvertToBO<User>
     {
 
         User usr = new User();
@@ -57,7 +57,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-        public bool Add(User obj) 
+        public int Add(User obj) 
         {
             int rowsAffected = 0;
             try
@@ -94,31 +94,31 @@ namespace MenaxhimiBibliotekes.DAL
                         else if(error == 2)
                         {
                             MessageBox.Show("You are not an Admin");
-                            return false;
+                            return -1;
                         }
                         else if (error == 0)
                         {
-                            return true;
+                            return 0;
                         }
 
-                        return false;
+                        return -1;
                     }
                 }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Please contact your administrator");
-                return false;
+                return -1;
             }
             catch (Exception)
             {
                 MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
-                return false;
+                return -1;
             }
 
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             int rowsAffected = 0;
             try
@@ -133,7 +133,7 @@ namespace MenaxhimiBibliotekes.DAL
                         rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            return true;
+                            return 0;
                         }
                         else
                         {
@@ -145,7 +145,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
             catch (Exception)
             {
-                return false;
+                return -1;
             }
 
 
@@ -269,7 +269,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Update(User obj)
+        public int Update(User obj)
         {
             int rowsAffected = 0;
             try
@@ -303,27 +303,27 @@ namespace MenaxhimiBibliotekes.DAL
                          if (error == 2)
                         {
                             MessageBox.Show("This username doese'nt exist");
-                            return false;
+                            return -2;
                         }
                         else if (error == 0)
                         {
                             MessageBox.Show("good");
-                            return true;
+                            return 0;
                         }
 
-                        return false;
+                        return -1;
                     }
                 }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Please contact your administrator");
-                return false;
+                return -1;
             }
             catch (Exception)
             {
                 MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
-                return false;
+                return -1;
             }
 
         }

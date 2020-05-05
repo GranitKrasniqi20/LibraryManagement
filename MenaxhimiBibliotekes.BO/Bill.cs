@@ -13,7 +13,7 @@ namespace MenaxhimiBibliotekes.BO
         public virtual Subscriber _Subscriber { get; set; }
         public int MaterialId { get; set; }
         public virtual Material _Material { get; set; }
-        public int BillType { get; set; }
+        public int BillTypeId { get; set; }
         public virtual BillType _BillType { get; set; }
         public DateTime BillingDate { get; set; }
         public decimal Price { get; set; }

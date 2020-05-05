@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class MaterialTypeDAL : ICrud<MaterialType>, IConvertToBO<MaterialType>
+    public class MaterialTypeDAL : ICreate<MaterialType>, IUpdate<MaterialType>, IDelete, IRead<MaterialType>, IConvertToBO<MaterialType>
     {
         MaterialType mt;
-        public bool Add(MaterialType obj)
+        public int Add(MaterialType obj)
         {
-            
+
             try
             {
                 using (SqlConnection conn = DbHelper.GetConnection())
@@ -36,37 +36,27 @@ namespace MenaxhimiBibliotekes.DAL
 
                         command.Parameters.Add(sqlpa);
 
-                         command.ExecuteNonQuery();
-                         error = (int)sqlpa.Value ;
+                        command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
 
-                        if (error == 1)
-                        {
-                            throw new Exception();
-                        }
-                        else if(error == 0)
-                        {
-                            MessageBox.Show("good");
-                            return true;
-                        }
-
-                        return false ;
+                        return error; 
                     }
                 }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Please contact your administrator");
-                return false;
+                MessageBox.Show("Material Type has an problem, please contact your administrator ");
+                return -1;
             }
             catch (Exception)
             {
-                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
-                return false;
+                MessageBox.Show("Material Type has an problem, please contact your administrator ");
+                return -1;
             }
 
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             int IsDeleted = 0;
             try
@@ -81,7 +71,7 @@ namespace MenaxhimiBibliotekes.DAL
 
                         if (IsDeleted > 0)
                         {
-                            return true;
+                            return 0;
                         }
                         else
                         {
@@ -93,7 +83,7 @@ namespace MenaxhimiBibliotekes.DAL
             catch (Exception)
             {
 
-                return false;
+                return -1;
             }
         }
 
@@ -109,7 +99,7 @@ namespace MenaxhimiBibliotekes.DAL
         {
             List<MaterialType> AllMaterialType = new List<MaterialType>();
             mt = new MaterialType();
-            
+
             using (SqlConnection sqlconn = DbHelper.GetConnection())
             {
                 using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetAllMaterialTypes", CommandType.StoredProcedure))
@@ -175,7 +165,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Update(MaterialType obj)
+        public int Update(MaterialType obj)
         {
             int error;
             try
@@ -189,7 +179,7 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("MaterialTypeId", obj.MaterialTypeId);
                         command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
-                    
+
 
                         SqlParameter sqlpa = new SqlParameter();
                         sqlpa.ParameterName = "Error";
@@ -199,34 +189,21 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.Add(sqlpa);
 
                         command.ExecuteNonQuery();
-                        error = (int)sqlpa.Value;
-
-                        if (error == 1)
-                        {
-                            throw new Exception();
-                        }
-                        else if (error == 0)
-                        {
-                            MessageBox.Show("good");
-                            return true;
-                        }
-
-                        return false;
+                        return (int)sqlpa.Value;
                     }
                 }
             }
-        
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Please contact your administrator");
-                return false;
-            }
             catch (Exception)
             {
-                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
-                return false;
+                return -1;
             }
-        }
 
+
+        }
     }
+
+
 }
+    
+
+       

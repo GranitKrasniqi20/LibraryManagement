@@ -9,24 +9,21 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class SubscriberBLL : ICrud<Subscriber>
+    public class SubscriberBLL : ICreate<Subscriber>, IUpdate<Subscriber>, IDelete, IRead<Subscriber>
     {
         SubscriberDAL subscriberDAL = new SubscriberDAL();
 
-        public bool Add(Subscriber obj)
+        public int Add(Subscriber obj)
         {
             return subscriberDAL.Add(obj);
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             return subscriberDAL.Delete(Id);
         }
 
-        public bool Delete(Subscriber obj)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public Subscriber Get(int Id)
         {
@@ -43,7 +40,7 @@ namespace MenaxhimiBibliotekes.BLL
             return GetAll();
         }
 
-        public bool Update(Subscriber obj)
+        public int Update(Subscriber obj)
         {
             return subscriberDAL.Update(obj);
         }

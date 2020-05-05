@@ -9,17 +9,17 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class GenreBLL : ICrud<Genre>
+    public class GenreBLL : ICreate<Genre>,IUpdate<Genre>,IDelete,IRead<Genre>
     {
 
         GenreDAL gen = new GenreDAL();
-        public bool Add(Genre obj)
+        public int Add(Genre obj)
         {
             return gen.Add(obj);
 
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
            return  gen.Delete(Id);
         }
@@ -44,7 +44,7 @@ namespace MenaxhimiBibliotekes.BLL
             return gen.GetAll();
         }
 
-        public bool Update(Genre obj)
+        public int Update(Genre obj)
         {
             return gen.Update(obj);
         }

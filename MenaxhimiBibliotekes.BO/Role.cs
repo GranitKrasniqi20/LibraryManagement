@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO
 {
-    public class Role
+    public class Role:Audit
     {
 
         public int UserRoleId { get; set; }

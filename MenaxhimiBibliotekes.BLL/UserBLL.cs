@@ -12,7 +12,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class UserBLL : ICrud<User>, ILogIn
+    public class UserBLL : ICreate<User>, IUpdate<User>, IDelete, IRead<User>
     {
         UserDAL usr = new UserDAL();
 
@@ -20,13 +20,13 @@ namespace MenaxhimiBibliotekes.BLL
         {
            return usr.LogIn(username, password);
         }
-        public bool Add(User obj)
+        public int Add(User obj)
         {
            return usr.Add(obj);
 
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
            return usr.Delete(Id);
          
@@ -39,17 +39,13 @@ namespace MenaxhimiBibliotekes.BLL
             return usr.Get(Id);
         }
 
-        public User Get(User obj)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<User> GetAll()
         {
             return usr.GetAll();
         }
 
-        public bool Update(User obj)
+        public int Update(User obj)
         {
             return usr.Update(obj);
         }

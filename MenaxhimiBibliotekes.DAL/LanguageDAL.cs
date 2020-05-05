@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class LanguageDAL : ICrud<Language>, IConvertToBO<Language>
+    public class LanguageDAL : ICreate<Language>, IUpdate<Language>, IDelete, IRead<Language>, IConvertToBO<Language>
     {
         Language lang;
-        public bool Add(Language obj)
+        public int Add(Language obj)
         {
             int isInserted = 0;
             try
@@ -37,37 +37,20 @@ namespace MenaxhimiBibliotekes.DAL
 
                         isInserted= command.ExecuteNonQuery();
                         error = (int)sqlpa.Value;
-
-                        if (error == 1 )
-                        {
-                            throw new Exception();
-                        }
-                        else if (error == 0 && isInserted > 0)
-                        {
-                            MessageBox.Show("good");
-                            return true;
-                        }
-
-                        return false;
+                        return error;
                     }
                 }
             }
-            catch (SqlException ex)
-            {
 
-                MessageBox.Show("Please contact your administrator");
-                return false;
-
-            }
 
             catch (Exception)
             {
-                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
-                return false;
+                
+                return -1;
             }
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             int IsDeleted = 0;
             try
@@ -79,11 +62,14 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("LanguageId", Id);
                         IsDeleted = command.ExecuteNonQuery();
 
+                        
 
                         if (IsDeleted > 0)
                         {
-                            return true;
+                            return 0;
                         }
+
+
                         else
                         {
                             throw new Exception();
@@ -94,7 +80,7 @@ namespace MenaxhimiBibliotekes.DAL
             catch (Exception)
             {
 
-                return false;
+                return -1;
             }
         }
 
@@ -171,7 +157,7 @@ namespace MenaxhimiBibliotekes.DAL
 
 
         }
-        public bool Update(Language obj)
+        public int Update(Language obj)
         {
             int isUpdated = 0;
             try
@@ -197,17 +183,8 @@ namespace MenaxhimiBibliotekes.DAL
                         isUpdated = command.ExecuteNonQuery();
                         error = (int)sqlpa.Value;
 
-                        if (error == 1 && isUpdated > 0)
-                        {
-                            throw new Exception();
-                        }
-                        else if (error == 0)
-                        {
-                            MessageBox.Show("good");
-                            return true;
-                        }
 
-                        return false;
+                        return error;
                     }
                 }
             }
@@ -217,14 +194,14 @@ namespace MenaxhimiBibliotekes.DAL
             {
 
                 MessageBox.Show("Please contact your administrator");
-                return false;
+                return -1;
 
             }
 
             catch (Exception)
             {
                 MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
-                return false;
+                return -1;
             }
         }
 
