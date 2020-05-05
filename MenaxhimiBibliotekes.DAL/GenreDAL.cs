@@ -66,7 +66,7 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("GenreId", Id);
                         IsDeleted = command.ExecuteNonQuery();
 
-
+                        return IsDeleted;
                     }
 
                 }
