@@ -20,6 +20,18 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         Material material;
         MaterialBLL materialBLL;
 
+        MaterialTypeBLL materialtypeBllList;
+        List<MaterialType> materialtypeList;
+
+        GenreBLL genreBllList;
+        List<Genre> genreList;
+
+        LanguageBLL languageBllList;
+        List<Language> languageList;
+
+        ShelfBLL shelfBLLList;
+        List<Shelf> shelfList;
+
         public AddNewMaterial()
         {
             InitializeComponent();
@@ -27,8 +39,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             //Combobox GENRE fill
             comboGenre.Items.Clear();
 
-            GenreBLL genreBllList = new GenreBLL();
-            List<Genre> genreList = genreBllList.GetAll();
+            genreBllList = new GenreBLL();
+            genreList = genreBllList.GetAll();
             comboGenre.Items.Add("Other");
 
             foreach (var item in genreList)
@@ -40,8 +52,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             //Combobox MATERIAL TYPE fill
             comboMaterialType.Items.Clear();
 
-            MaterialTypeBLL materialtypeBllList = new MaterialTypeBLL();
-            List<MaterialType> materialtypeList = materialtypeBllList.GetAll();
+            materialtypeBllList = new MaterialTypeBLL();
+            materialtypeList = materialtypeBllList.GetAll();
             comboMaterialType.Items.Add("Other");
 
             foreach (var item in materialtypeList)
@@ -53,8 +65,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             //Combobox LANGUAGES fill
             comboLanguage.Items.Clear();
 
-            LanguageBLL languageBllList = new LanguageBLL();
-            List<Language> languageList = languageBllList.GetAll();
+            languageBllList = new LanguageBLL();
+            languageList = languageBllList.GetAll();
             comboLanguage.Items.Add("Other");
 
             foreach (var item in languageList)
@@ -64,7 +76,18 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
             //Combobox MATERIAL LOCATION fill
-            // ... data and code here
+            comboMaterialLocation.Items.Clear();
+
+            shelfBLLList = new ShelfBLL();
+            shelfList = shelfBLLList.GetAll();
+            comboMaterialLocation.Items.Add("Other");
+
+            foreach (var item in shelfList)
+            {
+                comboMaterialLocation.Items.Add(item.Location);
+            }
+
+
         }
 
 
@@ -188,11 +211,46 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                 material.Title = txtTitle.Text;
                 material._Author.AuthorName = txtAuthor.Text;
-                material._Genre._Genre = comboGenre.SelectedValue.ToString();
-                material._Language._Language = comboLanguage.SelectedValue.ToString();
+
+                foreach (var item in genreList)
+                {
+                    if (item._Genre == comboGenre.SelectedItem.ToString())
+                    {
+                        material._Genre.GenreId = item.GenreId;
+                        material.GenreId = item.GenreId;
+                    }
+                }
+
+                foreach (var item in languageList)
+                {
+                    if (item._Language == comboLanguage.SelectedItem.ToString())
+                    {
+                        material._Language.LanguageId = item.LanguageId;
+                        material.LanguageId = item.LanguageId;
+                    }
+                }
+
+
                 material.ISBN = txtISBN.Text;
-                material._Shelf.Location = comboMaterialLocation.SelectedItem.ToString();
-                material._MaterialType._MaterialType = comboMaterialType.SelectedItem.ToString();
+
+                foreach (var item in shelfList)
+                {
+                    if (item.Location == comboMaterialLocation.SelectedItem.ToString())
+                    {
+                        material._Shelf.ShelfId = item.ShelfId;
+                        material.ShelfId = item.ShelfId;
+                    }
+                }
+
+                foreach (var item in materialtypeList)
+                {
+                    if (item._MaterialType == comboMaterialType.SelectedItem.ToString())
+                    {
+                        material._MaterialType.MaterialTypeId = item.MaterialTypeId;
+                        material.MaterialTypeId = item.MaterialTypeId;
+                    }
+                }
+
                 material._PublishHouse._PublishHouse = txtPublishHouse.Text;
 
                 int n;

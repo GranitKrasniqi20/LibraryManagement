@@ -26,7 +26,11 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!");
 
             RuleFor(m => m._Language)
-                .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!");
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
+
+            RuleFor(m => m.ISBN)
+                .Length(13, 13).WithMessage("Length of {PropertyName} should be exact 13!")
+                .Matches("^\\d{13}$").WithMessage("Please enter only digit numbers!");
 
             RuleFor(m => m._Shelf)
                 .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!");
