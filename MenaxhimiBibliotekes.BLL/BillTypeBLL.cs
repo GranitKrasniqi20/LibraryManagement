@@ -23,11 +23,6 @@ namespace MenaxhimiBibliotekes.BLL
             return billTypeDAL.Delete(Id);
         }
 
-        public bool Delete(BillType obj)
-        {
-            throw new NotImplementedException();
-        }
-
         public BillType Get(int Id)
         {
             return Get(Id);

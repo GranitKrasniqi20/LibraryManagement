@@ -8,6 +8,16 @@ namespace MenaxhimiBibliotekes.BO
 {
     public class Material : Audit
     {
+        public Material()
+        {
+            _Genre = new Genre();
+            _PublishHouse = new PublishHouse();
+            _Author = new Author();
+            _MaterialType = new MaterialType();
+            _Language = new Language();
+            _Shelf = new Shelf();
+        }
+
         public int MaterialId { get; set; }
         public int GenreId { get; set; }
         public virtual Genre _Genre { get; set; }

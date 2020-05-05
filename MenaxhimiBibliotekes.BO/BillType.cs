@@ -11,6 +11,5 @@ namespace MenaxhimiBibliotekes.BO
         public int BillTypeId { get; set; }
         public string _BillType { get; set; }
 
-        public virtual List<Bill> Bills { get; set; }
     }
 }

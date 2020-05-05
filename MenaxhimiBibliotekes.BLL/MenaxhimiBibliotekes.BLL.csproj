@@ -60,12 +60,14 @@
     <Compile Include="SubscriberBLL.cs" />
     <Compile Include="Sec.cs" />
     <Compile Include="UserBLL.cs" />
+    <Compile Include="Validate\BillValidation.cs" />
     <Compile Include="Validate\GenreValidation.cs" />
     <Compile Include="Validate\LanguageValidation.cs" />
     <Compile Include="Validate\MaterialTypeValidation.cs" />
     <Compile Include="Validate\MaterialValidation.cs" />
     <Compile Include="Validate\ShelfValidation.cs" />
     <Compile Include="Validate\UsersValidation.cs" />
+    <Compile Include="Validate\SubscriberValidation.cs" />
     <Compile Include="Validate\Validation.cs" />
   </ItemGroup>
   <ItemGroup>

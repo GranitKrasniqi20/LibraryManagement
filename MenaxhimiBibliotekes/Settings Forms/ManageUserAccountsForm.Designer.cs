@@ -57,13 +57,11 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.comboRoleEdit = new System.Windows.Forms.ComboBox();
-            this.txtPasswordEdit = new System.Windows.Forms.TextBox();
             this.txtUsernameEdit = new System.Windows.Forms.TextBox();
             this.txtEmailEdit = new System.Windows.Forms.TextBox();
             this.txtLastNameEdit = new System.Windows.Forms.TextBox();
             this.txtIDEdit = new System.Windows.Forms.TextBox();
             this.txtNameEdit = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -85,6 +83,15 @@
             this.txtNameDelete = new System.Windows.Forms.Label();
             this.txtRoleDelete = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.tabChangePassword = new System.Windows.Forms.TabPage();
+            this.txtPasswordChangePassword = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnEditChangePassword = new System.Windows.Forms.Button();
+            this.txtIDChangePassword = new System.Windows.Forms.TextBox();
+            this.lbl = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtUsernameChangePassword = new System.Windows.Forms.Label();
+            this.btnUpdatePassword = new System.Windows.Forms.Button();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -94,6 +101,7 @@
             this.panel2.SuspendLayout();
             this.tabEditAccount.SuspendLayout();
             this.tabDeleteAccount.SuspendLayout();
+            this.tabChangePassword.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableHeader
@@ -186,6 +194,7 @@
             this.tabControlSettings.Controls.Add(this.tabCreateAccount);
             this.tabControlSettings.Controls.Add(this.tabEditAccount);
             this.tabControlSettings.Controls.Add(this.tabDeleteAccount);
+            this.tabControlSettings.Controls.Add(this.tabChangePassword);
             this.tabControlSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlSettings.ItemSize = new System.Drawing.Size(120, 30);
@@ -358,13 +367,11 @@
             this.tabEditAccount.Controls.Add(this.btnEdit);
             this.tabEditAccount.Controls.Add(this.btnUpdateAccount);
             this.tabEditAccount.Controls.Add(this.comboRoleEdit);
-            this.tabEditAccount.Controls.Add(this.txtPasswordEdit);
             this.tabEditAccount.Controls.Add(this.txtUsernameEdit);
             this.tabEditAccount.Controls.Add(this.txtEmailEdit);
             this.tabEditAccount.Controls.Add(this.txtLastNameEdit);
             this.tabEditAccount.Controls.Add(this.txtIDEdit);
             this.tabEditAccount.Controls.Add(this.txtNameEdit);
-            this.tabEditAccount.Controls.Add(this.label8);
             this.tabEditAccount.Controls.Add(this.label9);
             this.tabEditAccount.Controls.Add(this.label10);
             this.tabEditAccount.Controls.Add(this.label11);
@@ -399,7 +406,7 @@
             this.btnUpdateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.btnUpdateAccount.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateAccount.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateAccount.Location = new System.Drawing.Point(420, 311);
+            this.btnUpdateAccount.Location = new System.Drawing.Point(420, 290);
             this.btnUpdateAccount.Name = "btnUpdateAccount";
             this.btnUpdateAccount.Size = new System.Drawing.Size(210, 72);
             this.btnUpdateAccount.TabIndex = 16;
@@ -416,13 +423,6 @@
             this.comboRoleEdit.Name = "comboRoleEdit";
             this.comboRoleEdit.Size = new System.Drawing.Size(226, 29);
             this.comboRoleEdit.TabIndex = 10;
-            // 
-            // txtPasswordEdit
-            // 
-            this.txtPasswordEdit.Location = new System.Drawing.Point(157, 354);
-            this.txtPasswordEdit.Name = "txtPasswordEdit";
-            this.txtPasswordEdit.Size = new System.Drawing.Size(226, 29);
-            this.txtPasswordEdit.TabIndex = 15;
             // 
             // txtUsernameEdit
             // 
@@ -458,15 +458,6 @@
             this.txtNameEdit.Name = "txtNameEdit";
             this.txtNameEdit.Size = new System.Drawing.Size(226, 29);
             this.txtNameEdit.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(51, 357);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 21);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Password:";
             // 
             // label9
             // 
@@ -677,6 +668,101 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Role:";
             // 
+            // tabChangePassword
+            // 
+            this.tabChangePassword.Controls.Add(this.btnUpdatePassword);
+            this.tabChangePassword.Controls.Add(this.txtUsernameChangePassword);
+            this.tabChangePassword.Controls.Add(this.label20);
+            this.tabChangePassword.Controls.Add(this.btnEditChangePassword);
+            this.tabChangePassword.Controls.Add(this.txtIDChangePassword);
+            this.tabChangePassword.Controls.Add(this.lbl);
+            this.tabChangePassword.Controls.Add(this.txtPasswordChangePassword);
+            this.tabChangePassword.Controls.Add(this.label8);
+            this.tabChangePassword.Location = new System.Drawing.Point(4, 34);
+            this.tabChangePassword.Name = "tabChangePassword";
+            this.tabChangePassword.Padding = new System.Windows.Forms.Padding(3);
+            this.tabChangePassword.Size = new System.Drawing.Size(709, 433);
+            this.tabChangePassword.TabIndex = 3;
+            this.tabChangePassword.Text = "Change Password";
+            this.tabChangePassword.UseVisualStyleBackColor = true;
+            // 
+            // txtPasswordChangePassword
+            // 
+            this.txtPasswordChangePassword.Location = new System.Drawing.Point(157, 226);
+            this.txtPasswordChangePassword.Name = "txtPasswordChangePassword";
+            this.txtPasswordChangePassword.Size = new System.Drawing.Size(226, 29);
+            this.txtPasswordChangePassword.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(51, 229);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 21);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Password:";
+            // 
+            // btnEditChangePassword
+            // 
+            this.btnEditChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnEditChangePassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditChangePassword.ForeColor = System.Drawing.Color.White;
+            this.btnEditChangePassword.Image = ((System.Drawing.Image)(resources.GetObject("btnEditChangePassword.Image")));
+            this.btnEditChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditChangePassword.Location = new System.Drawing.Point(420, 29);
+            this.btnEditChangePassword.Name = "btnEditChangePassword";
+            this.btnEditChangePassword.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEditChangePassword.Size = new System.Drawing.Size(210, 56);
+            this.btnEditChangePassword.TabIndex = 20;
+            this.btnEditChangePassword.Text = "Edit";
+            this.btnEditChangePassword.UseVisualStyleBackColor = false;
+            // 
+            // txtIDChangePassword
+            // 
+            this.txtIDChangePassword.Location = new System.Drawing.Point(157, 43);
+            this.txtIDChangePassword.Name = "txtIDChangePassword";
+            this.txtIDChangePassword.Size = new System.Drawing.Size(226, 29);
+            this.txtIDChangePassword.TabIndex = 19;
+            // 
+            // lbl
+            // 
+            this.lbl.AutoSize = true;
+            this.lbl.Location = new System.Drawing.Point(29, 46);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(105, 21);
+            this.lbl.TabIndex = 18;
+            this.lbl.Text = "Search by ID:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(47, 171);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(87, 21);
+            this.label20.TabIndex = 21;
+            this.label20.Text = "Username:";
+            // 
+            // txtUsernameChangePassword
+            // 
+            this.txtUsernameChangePassword.AutoSize = true;
+            this.txtUsernameChangePassword.Location = new System.Drawing.Point(153, 171);
+            this.txtUsernameChangePassword.Name = "txtUsernameChangePassword";
+            this.txtUsernameChangePassword.Size = new System.Drawing.Size(28, 21);
+            this.txtUsernameChangePassword.TabIndex = 21;
+            this.txtUsernameChangePassword.Text = "---";
+            // 
+            // btnUpdatePassword
+            // 
+            this.btnUpdatePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnUpdatePassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePassword.ForeColor = System.Drawing.Color.White;
+            this.btnUpdatePassword.Location = new System.Drawing.Point(420, 171);
+            this.btnUpdatePassword.Name = "btnUpdatePassword";
+            this.btnUpdatePassword.Size = new System.Drawing.Size(210, 84);
+            this.btnUpdatePassword.TabIndex = 22;
+            this.btnUpdatePassword.Text = "Update Password";
+            this.btnUpdatePassword.UseVisualStyleBackColor = false;
+            // 
             // ManageUserAccountsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -705,6 +791,8 @@
             this.tabEditAccount.PerformLayout();
             this.tabDeleteAccount.ResumeLayout(false);
             this.tabDeleteAccount.PerformLayout();
+            this.tabChangePassword.ResumeLayout(false);
+            this.tabChangePassword.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -740,13 +828,11 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnUpdateAccount;
         private System.Windows.Forms.ComboBox comboRoleEdit;
-        private System.Windows.Forms.TextBox txtPasswordEdit;
         private System.Windows.Forms.TextBox txtUsernameEdit;
         private System.Windows.Forms.TextBox txtEmailEdit;
         private System.Windows.Forms.TextBox txtLastNameEdit;
         private System.Windows.Forms.TextBox txtIDEdit;
         private System.Windows.Forms.TextBox txtNameEdit;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -767,5 +853,14 @@
         private System.Windows.Forms.Label txtNameDelete;
         private System.Windows.Forms.Label txtRoleDelete;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TabPage tabChangePassword;
+        private System.Windows.Forms.Button btnUpdatePassword;
+        private System.Windows.Forms.Label txtUsernameChangePassword;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btnEditChangePassword;
+        private System.Windows.Forms.TextBox txtIDChangePassword;
+        private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.TextBox txtPasswordChangePassword;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -31,18 +31,18 @@ namespace MenaxhimiBibliotekes.DAL
                         
                         if (isInserted > 0)
                         {
-                            return true;
+                            return 1;
                         }
                         else
                         {
-                            throw new Exception();
+                            return -1;
                         }
                     }
                 }
             }
             catch (Exception)
             {
-                return false;
+                return -1;
             }
         }
 
@@ -60,11 +60,11 @@ namespace MenaxhimiBibliotekes.DAL
 
                         if (Affected > 0)
                         {
-                            return true;
+                            return 1;
                         }
                         else
                         {
-                            return false;
+                            return -1;
                         }
                     }
                 }
@@ -72,13 +72,8 @@ namespace MenaxhimiBibliotekes.DAL
             catch (Exception)
             {
 
-                return false;
+                return -1;
             }
-        }
-
-        public bool Delete(BillType obj)
-        {
-            throw new NotImplementedException();
         }
 
         public BillType Get(int Id)
@@ -177,24 +172,23 @@ namespace MenaxhimiBibliotekes.DAL
 
         public int Update(BillType obj)
         {
-            int isUpdated = 0;
+            int isUpdated=0;
             using (SqlConnection conn = DbHelper.GetConnection())
             {
                 using (SqlCommand command = DbHelper.Command(conn, "usp_BillType_Update", CommandType.StoredProcedure))
                 {
-                    command.Parameters.AddWithValue( "MaterialTypeId", obj.BillTypeId);
-                    command.Parameters.AddWithValue("MaterialType", obj._BillType);
+                    command.Parameters.AddWithValue( "BillTypeId", obj.BillTypeId);
+                    command.Parameters.AddWithValue("_Billtype", obj._BillType);
                     command.Parameters.AddWithValue("InsBy", obj.InsBy);
                     isUpdated = command.ExecuteNonQuery();
-
-
+                    
                     if (isUpdated > 0)
                     {
-                        return true;
+                        return 1;
                     }
                     else
                     {
-                        throw new Exception();
+                        return -1;
                     }
                 }
             }

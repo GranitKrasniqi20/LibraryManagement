@@ -27,27 +27,41 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
                         command.Parameters.AddWithValue("BillType", obj.BillType);
                         command.Parameters.AddWithValue("BillingDate", obj.BillingDate);
-                        command.Parameters.AddWithValue("RegistrationDate", obj.RegistrationDate);
-                        command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
-                        command.Parameters.AddWithValue("Description", obj.Description);
+                        command.Parameters.AddWithValue("Price", obj.Price);
+
+                        if (obj.RegistrationDate != null)
+                        {
+                            command.Parameters.AddWithValue("RegistrationDate", obj.RegistrationDate);
+                        }
+
+                        if (obj.ExpirationDate != null)
+                        {
+                            command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                        }
+
+                        if (obj.Description != null)
+                        {
+                            command.Parameters.AddWithValue("Description", obj.Description);
+                        }
+
                         command.Parameters.AddWithValue("InstBy", obj.InsBy);
 
                         rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            return true;
+                            return 1;
                         }
                         else
                         {
-                            throw new Exception();
+                            return -1;
                         }
                     }
                 }
             }
             catch (Exception)
             {
-                return false;
+                return -1;
             }
         }
 
@@ -65,11 +79,11 @@ namespace MenaxhimiBibliotekes.DAL
 
                         if (Affected > 0)
                         {
-                            return true;
+                            return 1;
                         }
                         else
                         {
-                            return false;
+                            return -1;
                         }
                     }
                 }
@@ -77,7 +91,7 @@ namespace MenaxhimiBibliotekes.DAL
             catch (Exception)
             {
 
-                return false;
+                return -1;
             }
         }
 
@@ -205,27 +219,41 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
                         command.Parameters.AddWithValue("BillType", obj.BillType);
                         command.Parameters.AddWithValue("BillingDate", obj.BillingDate);
-                        command.Parameters.AddWithValue("RegistrationDate", obj.RegistrationDate);
-                        command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
-                        command.Parameters.AddWithValue("Description", obj.Description);
+                        command.Parameters.AddWithValue("Price", obj.Price);
+
+                        if (obj.RegistrationDate != null)
+                        {
+                            command.Parameters.AddWithValue("RegistrationDate", obj.RegistrationDate);
+                        }
+
+                        if (obj.ExpirationDate != null)
+                        {
+                            command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                        }
+
+                        if (obj.Description != null)
+                        {
+                            command.Parameters.AddWithValue("Description", obj.Description);
+                        }
+
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
                         rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            return true;
+                            return 1;
                         }
                         else
                         {
-                            throw new Exception();
+                            return -1;
                         }
                     }
                 }
             }
             catch (Exception)
             {
-                return false;
+                return -1;
             }
         }
     }
