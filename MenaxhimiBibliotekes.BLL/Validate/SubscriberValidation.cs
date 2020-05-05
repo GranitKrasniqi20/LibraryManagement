@@ -26,12 +26,12 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .Length(2, 20).WithMessage("Not shorter than 10 and not longer than 20");
 
-            RuleFor(m => m.Birthday)
-                .Must(BeAValidDate).WithMessage("{PropertyName} not entered properly!");
+            //RuleFor(m => m.Birthday)
+            //    .Must(BeAValidDate).WithMessage("{PropertyName} not entered properly!");
 
-            RuleFor(m => m.PersonalNo)
-               .Matches($"[0 - 9]").WithMessage("Enter only numbers")
-               .Length(10, 10).WithMessage("No longer and not shorter than 10 charachters");
+            //RuleFor(m => m.PersonalNo)
+            //   .Matches($"[0 - 9]").WithMessage("Enter only numbers")
+            //   .Length(10, 10).WithMessage("No longer and not shorter than 10 charachters");
 
             RuleFor(m => m.PhoneNo)
                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
@@ -48,12 +48,12 @@ namespace MenaxhimiBibliotekes.BLL.Validate
 
         }
 
-        protected bool BeAValidDate(DateTime date)
-        {
-            DateTime d = DateTime.Now;
-            DateTime min = new DateTime(1, 1, 1);
+        //protected bool BeAValidDate(DateTime date)
+        //{
+        //    DateTime d = DateTime.Now;
+        //    DateTime min = new DateTime(1, 1, 1);
 
-            return date <= d && date >= min;
-        }
+        //    return date <= d && date >= min;
+        //}
     }
 }

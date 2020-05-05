@@ -18,12 +18,10 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
             RuleFor(m => m.MaterialId)
-                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
+                .GreaterThan(0).WithMessage("Id unacceptable. Greater Id!");
 
             RuleFor(m => m.BillTypeId)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
-
-
 
             RuleFor(m => m.Price)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
@@ -31,10 +29,7 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .GreaterThan(0).WithMessage("Amount unacceptable. Greater price!");
 
             RuleFor(m => m.Description)
-               .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
-
-            RuleFor(m => m.Description)
-                .Length(2, 50).WithMessage("Not shorter than 2 and not longer than 50");
+               .Length(2, 50).WithMessage("Not shorter than 2 and not longer than 50");
 
         }
     }

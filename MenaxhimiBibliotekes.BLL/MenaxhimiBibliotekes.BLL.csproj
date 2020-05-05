@@ -60,6 +60,7 @@
     <Compile Include="SubscriberBLL.cs" />
     <Compile Include="Sec.cs" />
     <Compile Include="UserBLL.cs" />
+    <Compile Include="Validate\BillTypeValidation.cs" />
     <Compile Include="Validate\BillValidation.cs" />
     <Compile Include="Validate\GenreValidation.cs" />
     <Compile Include="Validate\LanguageValidation.cs" />
