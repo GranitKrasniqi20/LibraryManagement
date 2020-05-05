@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FluentValidation.Results;
 using MenaxhimiBibliotekes.BLL;
+using MenaxhimiBibliotekes.BLL.Validate;
 using MenaxhimiBibliotekes.BO;
 
 namespace MenaxhimiBibliotekes.Materials_Forms
@@ -140,43 +142,57 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 material = new Material();
                 materialBLL = new MaterialBLL();
 
-                string authorTextbox = txtAuthor.Text;
-                string[] myAuthors = authorTextbox.Split(' ');
+                //DateTime d = new DateTime();
 
-                DateTime d = new DateTime();
+                material.Title = txtTitle.Text;
+                material._Author.AuthorName = txtAuthor.Text;
+                material._Genre._Genre = comboGenre.SelectedItem.ToString();
+                material._Language._Language = comboLanguage.SelectedItem.ToString();
+                material.ISBN = txtISBN.Text;
+                material._Shelf.Location = comboMaterialLocation.SelectedItem.ToString();
+                material._MaterialType._MaterialType = comboMaterialType.SelectedItem.ToString();
+                material._PublishHouse._PublishHouse = txtPublishHouse.Text;
 
-                //material.Title = txtTitle.Text;
-                //material._Author.AuthorName = myAuthors[0];
-                //material._Author.AuthorLastName = myAuthors[1];
-                //material._Genre._Genre = comboGenre.SelectedItem.ToString();
-                //material._Language._Language = comboLanguage.SelectedItem.ToString();
-                //material.ISBN = txtISBN.Text;
-                //material._Shelf.Location = comboMaterialLocation.SelectedItem.ToString();
-                //material._MaterialType._MaterialType = comboMaterialType.SelectedItem.ToString();
-                //material._PublishHouse._PublishHouse = txtPublishHouse.Text;
                 int n;
                 bool isNumeric = int.TryParse(txtPublishDate.Text, out n);
                 if (isNumeric)
                 {
+                    //d = new DateTime(int.Parse(txtPublishDate.Text), 1, 1);
+                    //material.PublishYear = Convert.ToDateTime(d.Year);
+                    //string gg = material.PublishYear.ToShortDateString(); 
+
                     material.PublishYear = new DateTime(int.Parse(txtPublishDate.Text), 1, 1);
-                    string gg = material.PublishYear.ToShortDateString();  
+                }
+
+                material.Quantity = Convert.ToInt32(txtQuantity.Text);
+                material.NumberOfPages = Convert.ToInt32(txtPages.Text);
+
+                material.InsBy = FormLoggedUser.Id;
+
+
+
+                MaterialValidation materialValidator = new MaterialValidation();
+
+                ValidationResult results = materialValidator.Validate(material);
+
+
+                if (results.IsValid == false)
+                {
+                    foreach (ValidationFailure failure in results.Errors)
+                    {
+                        MessageBox.Show($"{failure.ErrorMessage}", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("");
-                }
-
-                if (ValidateChildren(ValidationConstraints.Enabled))
-                {
-
                     materialBLL.Add(material);
                     MessageBox.Show("The material is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
