@@ -8,9 +8,9 @@ namespace MenaxhimiBibliotekes.BO.Interfaces
 {
     public interface ICrud<T>
     {
-        bool Add(T obj);
-        bool Update(T obj);
-        bool Delete(int Id);
+        int Add(T obj);
+        int Update(T obj);
+        int Delete(int Id);
         T Get(int Id);
         List<T> GetAll();
     }

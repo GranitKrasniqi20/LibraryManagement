@@ -13,19 +13,14 @@ namespace MenaxhimiBibliotekes.BLL
     {
         SubscriberDAL subscriberDAL = new SubscriberDAL();
 
-        public bool Add(Subscriber obj)
+        public int Add(Subscriber obj)
         {
             return subscriberDAL.Add(obj);
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             return subscriberDAL.Delete(Id);
-        }
-
-        public bool Delete(Subscriber obj)
-        {
-            throw new NotImplementedException();
         }
 
         public Subscriber Get(int Id)
@@ -43,7 +38,7 @@ namespace MenaxhimiBibliotekes.BLL
             return GetAll();
         }
 
-        public bool Update(Subscriber obj)
+        public int Update(Subscriber obj)
         {
             return subscriberDAL.Update(obj);
         }

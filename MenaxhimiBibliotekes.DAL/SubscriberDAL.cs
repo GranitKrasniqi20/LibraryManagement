@@ -15,7 +15,7 @@ namespace MenaxhimiBibliotekes.DAL
     {
         Subscriber subscriber;
 
-        public bool Add(Subscriber obj)
+        public int Add(Subscriber obj)
         {
             int isInserted = 0;
             try
@@ -27,12 +27,22 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("Name", obj.Name);
                         command.Parameters.AddWithValue("LastName", obj.LastName);
                         command.Parameters.AddWithValue("Address", obj.Address);
-                        command.Parameters.AddWithValue("Birthday", obj.Birthday);
-                        command.Parameters.AddWithValue("PersonalNo", obj.PersonalNo);
+
+                        if (obj.Birthday != null)
+                        {
+                            command.Parameters.AddWithValue("Birthday", obj.Birthday);
+                        }
+
+                        if (obj.PersonalNo != null)
+                        {
+                            command.Parameters.AddWithValue("PersonalNo", obj.PersonalNo);
+                        }
+
                         command.Parameters.AddWithValue("PhoneNo", obj.PhoneNo);
                         command.Parameters.AddWithValue("Email", obj.Email);
                         command.Parameters.AddWithValue("Gender", obj.Gender);
                         command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                        command.Parameters.AddWithValue("IsActive", obj.IsActive);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
 
                         isInserted = command.ExecuteNonQuery();
@@ -40,11 +50,11 @@ namespace MenaxhimiBibliotekes.DAL
 
                         if (isInserted > 0)
                         {
-                            return true;
+                            return 1;
                         }
                         else
                         {
-                            throw new Exception();
+                            return -1;
                         }
                     }
                 }
@@ -52,12 +62,12 @@ namespace MenaxhimiBibliotekes.DAL
             catch (Exception)
             {
 
-                return false;
+                return -1;
             }
         }
          
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             try
             {
@@ -70,11 +80,11 @@ namespace MenaxhimiBibliotekes.DAL
 
                         if (Affected > 0)
                         {
-                            return true;
+                            return 1;
                         }
                         else
                         {
-                            return false;
+                            return -1;
                         }
                     }
 
@@ -83,7 +93,7 @@ namespace MenaxhimiBibliotekes.DAL
             catch (Exception)
             {
 
-                return false;
+                return -1;
             }
         }
 
@@ -212,7 +222,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Update(Subscriber obj)
+        public int Update(Subscriber obj)
         {
             int rowsAffected = 0;
             try
@@ -221,11 +231,21 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     using (var command = DbHelper.Command(conn, "usp_Subscriber_Update", CommandType.StoredProcedure))
                     {
+                        command.Parameters.AddWithValue("SubscriberId", obj.SubscriberId);
                         command.Parameters.AddWithValue("Name", obj.Name);
                         command.Parameters.AddWithValue("LastName", obj.LastName);
                         command.Parameters.AddWithValue("Address", obj.Address);
-                        command.Parameters.AddWithValue("Birthday", obj.Birthday);
-                        command.Parameters.AddWithValue("PersonalNo", obj.PersonalNo);
+
+                        if (obj.Birthday != null)
+                        {
+                            command.Parameters.AddWithValue("Birthday", obj.Birthday);
+                        }
+
+                        if (obj.PersonalNo != null)
+                        {
+                            command.Parameters.AddWithValue("PersonalNo", obj.PersonalNo);
+                        }
+
                         command.Parameters.AddWithValue("PhoneNo", obj.PhoneNo);
                         command.Parameters.AddWithValue("Email", obj.Email);
                         command.Parameters.AddWithValue("Gender", obj.Gender);
@@ -236,11 +256,11 @@ namespace MenaxhimiBibliotekes.DAL
 
                         if (rowsAffected > 0)
                         {
-                            return true;
+                            return 1;
                         }
                         else
                         {
-                            throw new Exception();
+                            return -1;
                         }
                     }
 
@@ -248,7 +268,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
             catch (Exception)
             {
-                return false;
+                return -1;
             }
         }
     }

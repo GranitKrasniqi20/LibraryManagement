@@ -13,19 +13,14 @@ namespace MenaxhimiBibliotekes.BLL
     {
         BillTypeDAL billTypeDAL = new BillTypeDAL();
 
-        public bool Add(BillType obj)
+        public int Add(BillType obj)
         {
             return billTypeDAL.Add(obj);
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             return billTypeDAL.Delete(Id);
-        }
-
-        public bool Delete(BillType obj)
-        {
-            throw new NotImplementedException();
         }
 
         public BillType Get(int Id)
@@ -43,7 +38,7 @@ namespace MenaxhimiBibliotekes.BLL
             return GetAll();
         }
 
-        public bool Update(BillType obj)
+        public int Update(BillType obj)
         {
             return billTypeDAL.Update(obj);
         }
