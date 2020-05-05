@@ -25,7 +25,7 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         command.Parameters.AddWithValue("SubscriberId", obj.SubscriberId);
                         command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
-                        command.Parameters.AddWithValue("BillType", obj.BillType);
+                        command.Parameters.AddWithValue("BillType", obj.BillTypeId);
                         command.Parameters.AddWithValue("BillingDate", obj.BillingDate);
                         command.Parameters.AddWithValue("Price", obj.Price);
 
@@ -217,7 +217,7 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         command.Parameters.AddWithValue("SubscriberId", obj.SubscriberId);
                         command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
-                        command.Parameters.AddWithValue("BillType", obj.BillType);
+                        command.Parameters.AddWithValue("BillTypeId", obj.BillTypeId);
                         command.Parameters.AddWithValue("BillingDate", obj.BillingDate);
                         command.Parameters.AddWithValue("Price", obj.Price);
 

@@ -17,9 +17,24 @@ namespace MenaxhimiBibliotekes.BLL.Validate
             RuleFor(m => m.SubscriberId)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
+            RuleFor(m => m.MaterialId)
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
+
+            RuleFor(m => m.BillTypeId)
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
+
+
 
             RuleFor(m => m.Price)
-                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
+                .LessThan(999).WithMessage("Amount unacceptable. Lower price!")
+                .GreaterThan(0).WithMessage("Amount unacceptable. Greater price!");
+
+            RuleFor(m => m.Description)
+               .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
+
+            RuleFor(m => m.Description)
+                .Length(2, 20).WithMessage("Not shorter than 2 and not longer than 50");
 
         }
     }

@@ -27,11 +27,9 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .Length(2, 20).WithMessage("Not shorter than 10 and not longer than 20");
 
             RuleFor(m => m.Birthday)
-                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .Must(BeAValidDate).WithMessage("{PropertyName} not entered properly!");
 
             RuleFor(m => m.PersonalNo)
-               .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                .Matches($"[0 - 9]").WithMessage("Enter only numbers")
                .Length(10, 10).WithMessage("No longer and not shorter than 10 charachters");
 

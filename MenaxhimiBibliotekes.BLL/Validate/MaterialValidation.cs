@@ -23,41 +23,41 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .Must(BeAValidAuthorName).WithMessage("{PropertyName} not entered properly!");
 
             RuleFor(m => m._Genre)
-                .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!");
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
             RuleFor(m => m._Language)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
             RuleFor(m => m.ISBN)
-                .Length(13, 13).WithMessage("Length of {PropertyName} should be exact 13!")
+                .Length(13, 13).WithMessage("{Length of {PropertyName} should be exact 13!")
                 .Matches("^\\d{13}$").WithMessage("Please enter only digit numbers!");
 
             RuleFor(m => m._Shelf)
-                .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!");
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
             RuleFor(m => m._MaterialType)
-                .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!");
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
             RuleFor(m => m._PublishHouse)
-                .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!")
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .Must(m => m._PublishHouse.Length >= 2 && m._PublishHouse.Length < 50)
                 .WithMessage("(TotalLength) is not acceptable. Lower than 50 characters!");
 
             RuleFor(m => m.PublishYear)
-                .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!")
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .Must(BeAValidYear).WithMessage("Invalid Date!");
 
             RuleFor(m => m.PublishPlace)
-                .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!")
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .Must(AcceptablePublishPlaceLength).WithMessage("Character Length should be lower than 50!");
 
             RuleFor(m => m.Quantity)
-                .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!")
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .LessThan(9999).WithMessage("Amount unacceptable. Lower quantity!")
                 .GreaterThan(0).WithMessage("Amount unacceptable. Greater quantity!");
 
             RuleFor(m => m.NumberOfPages)
-                .NotEmpty().WithMessage("PropertyName} is empty! Please fill it!")
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .LessThan(15000).WithMessage("Amount unacceptable. Lower Number of Pages!")
                 .GreaterThan(0).WithMessage("Amount unacceptable. Greater Number of Pages!");
 
