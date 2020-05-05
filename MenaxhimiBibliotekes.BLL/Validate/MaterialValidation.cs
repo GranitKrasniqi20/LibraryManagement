@@ -4,15 +4,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BLL.Validate
 {
     public class MaterialValidation : AbstractValidator<Material>
     {
-        
+        public Material material { get; set; }
+
         public MaterialValidation()
         {
+            material = new Material();
+        }
+
+        public void ValidateMaterial()
+        {
+            ////material = new Material();
+
             ValidatorOptions.CascadeMode = CascadeMode.StopOnFirstFailure;
 
             RuleFor(m => m.Title)
@@ -20,7 +29,6 @@ namespace MenaxhimiBibliotekes.BLL.Validate
 
             RuleFor(m => m._Author)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
-
                 .Must(BeAValidAuthorName).WithMessage("{PropertyName} not entered properly!");
 
             RuleFor(m => m._Genre)
@@ -29,9 +37,13 @@ namespace MenaxhimiBibliotekes.BLL.Validate
             RuleFor(m => m._Language)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
-            RuleFor(m => m.ISBN)
-                .Length(13, 13).WithMessage("{Length of {PropertyName} should be exact 13!")
+            if (material.ISBN.Length != 0)
+            {
+                RuleFor(m => m.ISBN)
+                .Length(13, 13).WithMessage("Length of {PropertyName} should be exact 13!")
                 .Matches("^\\d{13}$").WithMessage("Please enter only digit numbers!");
+            }
+
 
             RuleFor(m => m._Shelf)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
@@ -40,33 +52,30 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
             RuleFor(m => m._PublishHouse)
-                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .Must(m => m._PublishHouse.Length >= 2 && m._PublishHouse.Length < 50)
-                .WithMessage("(TotalLength) is not acceptable. Lower than 50 characters!");
+                .WithMessage("(PropertyName) is not acceptable. Lower than 50 characters!");
 
             RuleFor(m => m.PublishYear)
-                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .Must(BeAValidYear).WithMessage("Invalid Date!");
 
             RuleFor(m => m.PublishPlace)
-                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
-                .Must(AcceptablePublishPlaceLength).WithMessage("Character Length should be lower than 50!");
+                .Must(AcceptablePublishPlaceLength).WithMessage("{PropertyName} character length should be lower than 50!");
 
             RuleFor(m => m.Quantity)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
-                .LessThan(9999).WithMessage("Amount unacceptable. Lower quantity!")
+                .LessThan(10000).WithMessage("Amount unacceptable. Lower quantity!")
                 .GreaterThan(0).WithMessage("Amount unacceptable. Greater quantity!");
 
             RuleFor(m => m.NumberOfPages)
-                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .LessThan(15000).WithMessage("Amount unacceptable. Lower Number of Pages!")
                 .GreaterThan(0).WithMessage("Amount unacceptable. Greater Number of Pages!");
 
         }
-
         protected bool BeAValidAuthorName (Author name)
         {
-            return name.AuthorName.All(Char.IsLetter);
+            Regex r = new Regex("^[a-zA-Z]+( [a-zA-Z]+)*$");
+
+            return r.IsMatch(name.AuthorName);
         }
 
         protected bool BeAValidYear (DateTime year)

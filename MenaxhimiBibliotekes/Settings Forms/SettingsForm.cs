@@ -16,5 +16,17 @@ namespace MenaxhimiBibliotekes.Settings_Forms
         {
             InitializeComponent();
         }
+
+        private void btnManageAccounts_Click(object sender, EventArgs e)
+        {
+            ManageUserAccountsForm manage_users = new ManageUserAccountsForm();
+            manage_users.ShowDialog();
+        }
+
+        private void btnMyProfile_Click(object sender, EventArgs e)
+        {
+            MyProfileForm profile = new MyProfileForm();
+            profile.ShowDialog();
+        }
     }
 }

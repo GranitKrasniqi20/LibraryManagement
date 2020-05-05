@@ -97,6 +97,7 @@
             this.btnManageAccounts.TabIndex = 1;
             this.btnManageAccounts.Text = "Manage User Accounts";
             this.btnManageAccounts.UseVisualStyleBackColor = false;
+            this.btnManageAccounts.Click += new System.EventHandler(this.btnManageAccounts_Click);
             // 
             // panel3
             // 
@@ -121,6 +122,7 @@
             this.btnMyProfile.TabIndex = 2;
             this.btnMyProfile.Text = "My Profile";
             this.btnMyProfile.UseVisualStyleBackColor = false;
+            this.btnMyProfile.Click += new System.EventHandler(this.btnMyProfile_Click);
             // 
             // tableLayoutPanel7
             // 
