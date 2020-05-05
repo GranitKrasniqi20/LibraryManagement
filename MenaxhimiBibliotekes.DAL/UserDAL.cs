@@ -7,6 +7,7 @@ using MenaxhimiBibliotekes.BO;
 using MenaxhimiBibliotekes.BO.Interfaces;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
@@ -73,24 +74,47 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("Email", obj.Email);
                         command.Parameters.AddWithValue("InsertBy", obj.InsBy);
 
-                         rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            return true;
-                        }
-                        else
+                        int error;
+
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
+
+                        command.Parameters.Add(sqlpa);
+
+                        command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+                        if (error == 1)
                         {
                             throw new Exception();
                         }
-                    }
 
+                        else if(error == 2)
+                        {
+                            MessageBox.Show("You are not an Admin");
+                            return false;
+                        }
+                        else if (error == 0)
+                        {
+                            return true;
+                        }
+
+                        return false;
+                    }
                 }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Please contact your administrator");
+                return false;
             }
             catch (Exception)
             {
+                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
                 return false;
             }
-
 
         }
 
@@ -262,25 +286,45 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("Email", obj.Email);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);//gabimmmmmm
 
-                        rowsAffected = command.ExecuteNonQuery();
+                        int error;
 
-                        if (rowsAffected > 0)
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
+
+                        command.Parameters.Add(sqlpa);
+
+                        command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+
+
+                         if (error == 2)
                         {
+                            MessageBox.Show("This username doese'nt exist");
+                            return false;
+                        }
+                        else if (error == 0)
+                        {
+                            MessageBox.Show("good");
                             return true;
                         }
-                        else
-                        {
-                            throw new Exception();
-                        }
-                    }
 
+                        return false;
+                    }
                 }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Please contact your administrator");
+                return false;
             }
             catch (Exception)
             {
+                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
                 return false;
             }
-
 
         }
     }

@@ -20,10 +20,74 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         Material material;
         MaterialBLL materialBLL;
 
+        MaterialTypeBLL materialtypeBllList;
+        List<MaterialType> materialtypeList;
+
+        GenreBLL genreBllList;
+        List<Genre> genreList;
+
+        LanguageBLL languageBllList;
+        List<Language> languageList;
+
+        ShelfBLL shelfBLLList;
+        List<Shelf> shelfList;
+
         public AddNewMaterial()
         {
             InitializeComponent();
-            
+
+            //Combobox GENRE fill
+            comboGenre.Items.Clear();
+
+            genreBllList = new GenreBLL();
+            genreList = genreBllList.GetAll();
+            comboGenre.Items.Add("Other");
+
+            foreach (var item in genreList)
+            {
+                comboGenre.Items.Add(item._Genre);
+            }
+
+
+            //Combobox MATERIAL TYPE fill
+            comboMaterialType.Items.Clear();
+
+            materialtypeBllList = new MaterialTypeBLL();
+            materialtypeList = materialtypeBllList.GetAll();
+            comboMaterialType.Items.Add("Other");
+
+            foreach (var item in materialtypeList)
+            {
+                comboMaterialType.Items.Add(item._MaterialType);
+            }
+
+
+            //Combobox LANGUAGES fill
+            comboLanguage.Items.Clear();
+
+            languageBllList = new LanguageBLL();
+            languageList = languageBllList.GetAll();
+            comboLanguage.Items.Add("Other");
+
+            foreach (var item in languageList)
+            {
+                comboLanguage.Items.Add(item._Language);
+            }
+
+
+            //Combobox MATERIAL LOCATION fill
+            comboMaterialLocation.Items.Clear();
+
+            shelfBLLList = new ShelfBLL();
+            shelfList = shelfBLLList.GetAll();
+            comboMaterialLocation.Items.Add("Other");
+
+            foreach (var item in shelfList)
+            {
+                comboMaterialLocation.Items.Add(item.Location);
+            }
+
+
         }
 
 
@@ -97,6 +161,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void comboGenre_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
             if (comboGenre.SelectedItem == "Other")
             {
                 InsertNewGenre genreForm = new InsertNewGenre();
@@ -146,11 +211,46 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                 material.Title = txtTitle.Text;
                 material._Author.AuthorName = txtAuthor.Text;
-                material._Genre._Genre = comboGenre.SelectedItem.ToString();
-                material._Language._Language = comboLanguage.SelectedItem.ToString();
+
+                foreach (var item in genreList)
+                {
+                    if (item._Genre == comboGenre.SelectedItem.ToString())
+                    {
+                        material._Genre.GenreId = item.GenreId;
+                        material.GenreId = item.GenreId;
+                    }
+                }
+
+                foreach (var item in languageList)
+                {
+                    if (item._Language == comboLanguage.SelectedItem.ToString())
+                    {
+                        material._Language.LanguageId = item.LanguageId;
+                        material.LanguageId = item.LanguageId;
+                    }
+                }
+
+
                 material.ISBN = txtISBN.Text;
-                material._Shelf.Location = comboMaterialLocation.SelectedItem.ToString();
-                material._MaterialType._MaterialType = comboMaterialType.SelectedItem.ToString();
+
+                foreach (var item in shelfList)
+                {
+                    if (item.Location == comboMaterialLocation.SelectedItem.ToString())
+                    {
+                        material._Shelf.ShelfId = item.ShelfId;
+                        material.ShelfId = item.ShelfId;
+                    }
+                }
+
+                foreach (var item in materialtypeList)
+                {
+                    if (item._MaterialType == comboMaterialType.SelectedItem.ToString())
+                    {
+                        material._MaterialType.MaterialTypeId = item.MaterialTypeId;
+                        material.MaterialTypeId = item.MaterialTypeId;
+                    }
+                }
+
                 material._PublishHouse._PublishHouse = txtPublishHouse.Text;
 
                 int n;
@@ -295,6 +395,9 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
         }
 
-        
+        private void TxtTitle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

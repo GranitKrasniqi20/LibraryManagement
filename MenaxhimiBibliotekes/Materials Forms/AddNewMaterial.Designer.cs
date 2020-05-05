@@ -400,6 +400,7 @@
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(356, 33);
             this.txtTitle.TabIndex = 1;
+            this.txtTitle.TextChanged += new System.EventHandler(this.TxtTitle_TextChanged);
             this.txtTitle.Enter += new System.EventHandler(this.txtTitle_Enter_1);
             this.txtTitle.Validating += new System.ComponentModel.CancelEventHandler(this.txtTitle_Validating_1);
             // 
@@ -600,7 +601,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(795, 662);
+            this.MinimumSize = new System.Drawing.Size(800, 726);
             this.Name = "AddNewMaterial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Material (Stackbooks)";
