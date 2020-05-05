@@ -16,7 +16,7 @@ namespace MenaxhimiBibliotekes.DAL
         MaterialType mt;
         public bool Add(MaterialType obj)
         {
-            int error;
+            
             try
             {
                 using (SqlConnection conn = DbHelper.GetConnection())
@@ -27,6 +27,7 @@ namespace MenaxhimiBibliotekes.DAL
 
                         command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
+                        int error;
 
                         SqlParameter sqlpa = new SqlParameter();
                         sqlpa.ParameterName = "Error";
@@ -176,27 +177,56 @@ namespace MenaxhimiBibliotekes.DAL
 
         public bool Update(MaterialType obj)
         {
-            int isUpdated = 0;
-            using (SqlConnection conn = DbHelper.GetConnection())
+            int error;
+            try
             {
-                using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateMaterialType", CommandType.StoredProcedure))
+
+
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    command.Parameters.AddWithValue("MaterialTypeId", obj.MaterialTypeId);
-                    command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
-                    command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
-                    isUpdated = command.ExecuteNonQuery();
-
-
-                    if (isUpdated > 0)
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateMaterialType", CommandType.StoredProcedure))
                     {
-                        return true;
-                    }
-                    else
-                    {
-                        throw new Exception();
+                        command.Parameters.AddWithValue("MaterialTypeId", obj.MaterialTypeId);
+                        command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
+                        command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
+                    
+
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
+
+                        command.Parameters.Add(sqlpa);
+
+                        command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+                        if (error == 1)
+                        {
+                            throw new Exception();
+                        }
+                        else if (error == 0)
+                        {
+                            MessageBox.Show("good");
+                            return true;
+                        }
+
+                        return false;
                     }
                 }
             }
+        
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Please contact your administrator");
+                return false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
+                return false;
+            }
         }
+
     }
 }

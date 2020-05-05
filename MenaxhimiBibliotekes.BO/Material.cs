@@ -33,8 +33,8 @@ namespace MenaxhimiBibliotekes.BO
         public DateTime PublishYear { get; set; }
         public string PublishPlace { get; set; }
         public string ISBN { get; set; }
-        public int AvailableCoppies { get; set; }//Numri Kopjeve te liraC:\Users\ET\Desktop\MenaxhimiBibliotekes\MenaxhimiBibliotekes.BO\Material.cs
-        public int Quantity { get; set; }//Tirazhi
+        public int AvailableCoppies { get; set; }
+        public int Quantity { get; set; }
         public int NumberOfPages { get; set; }
         public bool IsActive { get; set; }
         public int ShelfId { get; set; }

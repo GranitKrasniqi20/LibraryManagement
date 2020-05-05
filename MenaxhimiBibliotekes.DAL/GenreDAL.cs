@@ -8,7 +8,7 @@ using MenaxhimiBibliotekes.BO.Interfaces;
 using MenaxhimiBibliotekes.BO;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
@@ -17,7 +17,7 @@ namespace MenaxhimiBibliotekes.DAL
         Genre gen;
         public bool Add(Genre obj)
         {
-            int isInserted = 0;
+            int error ;
             try
             {
                 using (SqlConnection conn = DbHelper.GetConnection())
@@ -26,23 +26,44 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         command.Parameters.AddWithValue("Genre", obj._Genre);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
-                        isInserted = command.ExecuteNonQuery();
+                        
 
 
-                        if (isInserted > 0)
-                        {
-                            return true;
-                        }
-                        else
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
+
+                        command.Parameters.Add(sqlpa);
+
+                        command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+                        if (error == 1)
                         {
                             throw new Exception();
                         }
+                        else if (error == 0)
+                        {
+                            MessageBox.Show("good");
+                            return true;
+                        }
+
+                        return false;
                     }
                 }
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
 
+                MessageBox.Show("Please contact your administrator");
+                return false;
+
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Genre name  should be uniqe, please if this material type is deactivated update it");
                 return false;
             }
         }
@@ -161,26 +182,57 @@ namespace MenaxhimiBibliotekes.DAL
         public bool Update(Genre obj)
         {
             int isUpdated = 0;
-            using (SqlConnection conn = DbHelper.GetConnection())
+            try
             {
-                using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateGenre", CommandType.StoredProcedure))
+                int error;
+
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    command.Parameters.AddWithValue("GenreId", obj.GenreId);
-                    command.Parameters.AddWithValue("Genre", obj._Genre);
-                    command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
-                    isUpdated = command.ExecuteNonQuery();
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateGenre", CommandType.StoredProcedure))
+                    {
+                        command.Parameters.AddWithValue("GenreId", obj.GenreId);
+                        command.Parameters.AddWithValue("Genre", obj._Genre);
+                        command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
 
-                    if (isUpdated > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        throw new Exception();
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
+
+                        command.Parameters.Add(sqlpa);
+
+                        isUpdated = command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+                        if (error == 1 )
+                        {
+                            throw new Exception();
+                        }
+                        else if (error == 0 && isUpdated > 0)
+                        {
+                            MessageBox.Show("good");
+                            return true;
+                        }
+
+                        return false;
                     }
                 }
+            }
 
+
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show("Please contact your administrator");
+                return false;
+
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
+                return false;
             }
         }
     }

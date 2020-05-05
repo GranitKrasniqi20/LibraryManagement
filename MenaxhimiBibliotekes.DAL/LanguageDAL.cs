@@ -35,14 +35,14 @@ namespace MenaxhimiBibliotekes.DAL
 
                         command.Parameters.Add(sqlpa);
 
-                        command.ExecuteNonQuery();
+                        isInserted= command.ExecuteNonQuery();
                         error = (int)sqlpa.Value;
 
-                        if (error == 1)
+                        if (error == 1 )
                         {
                             throw new Exception();
                         }
-                        else if (error == 0)
+                        else if (error == 0 && isInserted > 0)
                         {
                             MessageBox.Show("good");
                             return true;
@@ -54,8 +54,10 @@ namespace MenaxhimiBibliotekes.DAL
             }
             catch (SqlException ex)
             {
+
                 MessageBox.Show("Please contact your administrator");
                 return false;
+
             }
 
             catch (Exception)
@@ -126,37 +128,45 @@ namespace MenaxhimiBibliotekes.DAL
 
         public List<Language> GetAll()
         {
-            List<Language> AllLanguage = new List<Language>();
-            lang = new Language();
-
-            using (SqlConnection sqlconn = DbHelper.GetConnection())
+            try
             {
-                using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetAllLanguages", CommandType.StoredProcedure))
+                List<Language> AllLanguage = new List<Language>();
+                lang = new Language();
+
+                using (SqlConnection sqlconn = DbHelper.GetConnection())
                 {
-                    using (SqlDataReader sqr = command.ExecuteReader())
+                    using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetAllLanguages", CommandType.StoredProcedure))
                     {
-                        if (sqr.HasRows)
+                        using (SqlDataReader sqr = command.ExecuteReader())
                         {
-                            while (sqr.Read())
+                            if (sqr.HasRows)
                             {
-
-                                lang = ToBO(sqr);
-                                if (lang == null)
+                                while (sqr.Read())
                                 {
-                                    throw new Exception();
+
+                                    lang = ToBO(sqr);
+                                    if (lang == null)
+                                    {
+                                        throw new Exception();
+                                    }
+
+
+
+                                    AllLanguage.Add(lang);
+
+
+
                                 }
-
-                               
-
-                                AllLanguage.Add(lang);
-
-
-
                             }
+                            return AllLanguage;
                         }
-                        return AllLanguage;
                     }
                 }
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("There was a problem, please contact your administrator");
+                return null;
             }
 
 
@@ -164,27 +174,60 @@ namespace MenaxhimiBibliotekes.DAL
         public bool Update(Language obj)
         {
             int isUpdated = 0;
-            using (SqlConnection conn = DbHelper.GetConnection())
+            try
             {
-                using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateLanguage", CommandType.StoredProcedure))
+                int error;
+
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    command.Parameters.AddWithValue("LanguageId", obj.LanguageId);
-                    command.Parameters.AddWithValue("Language", obj._Language);
-                    command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
-                    isUpdated = command.ExecuteNonQuery();
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateLanguage", CommandType.StoredProcedure))
+                    {
+                        command.Parameters.AddWithValue("LanguageId", obj.LanguageId);
+                        command.Parameters.AddWithValue("Language", obj._Language);
+                        command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
 
-                    if (isUpdated > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        throw new Exception();
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
+
+                        command.Parameters.Add(sqlpa);
+
+                        isUpdated = command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+                        if (error == 1 && isUpdated > 0)
+                        {
+                            throw new Exception();
+                        }
+                        else if (error == 0)
+                        {
+                            MessageBox.Show("good");
+                            return true;
+                        }
+
+                        return false;
                     }
                 }
             }
+        
+
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show("Please contact your administrator");
+                return false;
+
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
+                return false;
+            }
         }
+
         public Language ToBO(SqlDataReader reader)
         {
 
