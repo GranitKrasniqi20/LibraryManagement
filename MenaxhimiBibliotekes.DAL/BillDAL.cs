@@ -10,7 +10,7 @@ using System.Data;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class BillDAL : ICrud<Bill>, IConvertToBO<Bill>
+    public class BillDAL : ICreate<Bill>, IUpdate<Bill>, IDelete, IRead<Bill>, IConvertToBO<Bill>
     {
         Bill bill;
 

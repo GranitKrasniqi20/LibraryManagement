@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BLL.Validate
 {
-    public class LanguageValidation : Validation
+    public class LanguageValidation : Validation<string>
     {
         public  bool validateLanguage(string text)
         {
-            if (AllowedString(text) && ValidateStringLength(text))
+            if (AllowedObj(text) && ValidateStringLength(text, 30))
             {
                 return true;
 
@@ -19,7 +19,7 @@ namespace MenaxhimiBibliotekes.BLL.Validate
             return false;
         }
 
-        public override bool AllowedString(string text)
+        public override bool AllowedObj(string text)
         {
             Regex re = new Regex("^[a-zA-Z0-9_.\\)\\(-]+( [a-zA-Z0-9_\\)\\(]+)*$");
             if (re.IsMatch(text))
@@ -31,9 +31,9 @@ namespace MenaxhimiBibliotekes.BLL.Validate
             return false;
         }
 
-        public override bool ValidateStringLength(string text)
+        public override bool ValidateStringLength(string text, int Length)
         {
-            if (text.Length >= 3 && text.Length< 30)
+            if (text.Length >= 3 && text.Length< Length)
             {
                 return true;
             }

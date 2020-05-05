@@ -9,7 +9,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class SubscriberBLL : ICrud<Subscriber>
+    public class SubscriberBLL : ICreate<Subscriber>, IUpdate<Subscriber>, IDelete, IRead<Subscriber>
     {
         SubscriberDAL subscriberDAL = new SubscriberDAL();
 
@@ -22,6 +22,8 @@ namespace MenaxhimiBibliotekes.BLL
         {
             return subscriberDAL.Delete(Id);
         }
+
+
 
         public Subscriber Get(int Id)
         {

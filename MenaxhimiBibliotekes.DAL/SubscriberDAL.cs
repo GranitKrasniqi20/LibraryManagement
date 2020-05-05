@@ -11,7 +11,7 @@ using System.Data;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class SubscriberDAL : ICrud<Subscriber>, IConvertToBO<Subscriber>
+    public class SubscriberDAL : ICreate<Subscriber>, IUpdate<Subscriber>, IDelete, IRead<Subscriber>, IConvertToBO<Subscriber>
     {
         Subscriber subscriber;
 

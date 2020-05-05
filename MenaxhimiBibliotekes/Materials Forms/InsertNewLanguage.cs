@@ -36,32 +36,32 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                 lang._Language = txtInsert.Text;
                     lang.InsBy = 80;//FormLoggedUser.Id;
-                   // langbll.Add(lang);
-                    if (langbll.Add(lang))
+
+                    int error = langbll.Add(lang);
+                    if (error == 0)
                     {
                         this.Close();
                     }
-                    else
+
+                    else if (error == 1)
                     {
-                        throw new Exception();
+                        MessageBox.Show("Genre name  should be uniqe, please if this material type is deactivated update it");
                     }
                 }
-
                 else
                 {
                     throw new FormatException();
                 }
             }
-
             catch (FormatException)
             {
-                MessageBox.Show("Language is not valid");
+                MessageBox.Show("Genre is not valid");
             }
             catch (Exception)
             {
-
-                MessageBox.Show("Language not inserted please contact your administrator");
+                MessageBox.Show("Genre is not inserted please contact your administrator");
             }
+
 
         }
     }

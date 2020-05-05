@@ -37,13 +37,15 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     ge._Genre = txtInsert.Text.Trim();
                     ge.InsBy = 80; //FormLoggedUser.Id;
 
-                    if (genBLL.Add(ge))
+                    int error = genBLL.Add(ge);
+                    if (error == 0)
                     {
                         this.Close();
                     }
-                    else
+
+                    else if (error == 1)
                     {
-                        throw new Exception();
+                        MessageBox.Show("Genre name  should be uniqe, please if this material type is deactivated update it");
                     }
                 }
                 else
@@ -57,8 +59,13 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
             catch (Exception)
             {
-                MessageBox.Show("This Genre exists. If its not activated, please update it!");
+                MessageBox.Show("Genre is not inserted please contact your administrator");
             }
+
+
         }
     }
+
+
+
 }

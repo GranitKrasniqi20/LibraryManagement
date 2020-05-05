@@ -11,7 +11,7 @@ using System.Data;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class BillTypeDAL : ICrud<BillType>, IConvertToBO<BillType>
+    public class BillTypeDAL : ICreate<BillType>, IUpdate<BillType>, IDelete, IRead<BillType>, IConvertToBO<BillType>
     {
         private BillType billType;
 

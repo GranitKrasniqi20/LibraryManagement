@@ -9,7 +9,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class BillTypeBLL : ICrud<BillType>
+    public class BillTypeBLL :  ICreate<Genre>, IUpdate<Genre>, IDelete, IRead<Genre>
     {
         BillTypeDAL billTypeDAL = new BillTypeDAL();
 
@@ -28,10 +28,7 @@ namespace MenaxhimiBibliotekes.BLL
             return Get(Id);
         }
 
-        public BillType Get(BillType obj)
-        {
-            return Get(obj);
-        }
+
 
         public List<BillType> GetAll()
         {

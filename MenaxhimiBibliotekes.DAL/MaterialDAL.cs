@@ -10,10 +10,10 @@ using System.Data.SqlClient;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class MaterialDAL : ICrud<Material>, IConvertToBO<Material>
+    public class MaterialDAL : ICreate<Material>, IUpdate<Material>, IDelete, IRead<Material>, IConvertToBO<Material>
     {
         private Material material;
-        public bool Add(Material obj)
+        public int Add(Material obj)
         {
 
            
@@ -100,7 +100,7 @@ namespace MenaxhimiBibliotekes.DAL
 
 
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             try
             {
@@ -214,7 +214,7 @@ namespace MenaxhimiBibliotekes.DAL
 
 
 
-        public bool Update(Material obj)
+        public int Update(Material obj)
         {
 
             try
@@ -359,27 +359,27 @@ namespace MenaxhimiBibliotekes.DAL
 
 
 
-        public bool UpdateMaterialLocation(SqlConnection conn, int materialId, int currentShelfId, Shelf ml)
-        {
-            int rowaffecte;
-            using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateMaterialAuthor", CommandType.StoredProcedure))
-            {
-                command.Parameters.AddWithValue("MaterialId", materialId);
-                command.Parameters.AddWithValue("MaterialId", materialId);
-                command.Parameters.AddWithValue("RaftiId", ml.ShelfId);
-                command.Parameters.AddWithValue("updBy", ml.UpdBy);
-                rowaffecte = command.ExecuteNonQuery();
-            }
+        //public int UpdateMaterialLocation(SqlConnection conn, int materialId, int currentShelfId, Shelf ml)
+        //{
+        //    int rowaffecte;
+        //    using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateMaterialAuthor", CommandType.StoredProcedure))
+        //    {
+        //        command.Parameters.AddWithValue("MaterialId", materialId);
+        //        command.Parameters.AddWithValue("MaterialId", materialId);
+        //        command.Parameters.AddWithValue("RaftiId", ml.ShelfId);
+        //        command.Parameters.AddWithValue("updBy", ml.UpdBy);
+        //        rowaffecte = command.ExecuteNonQuery();
+        //    }
 
-            if (rowaffecte > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+        //    if (rowaffecte > 0)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
 
-        }
+        //}
     }
 }

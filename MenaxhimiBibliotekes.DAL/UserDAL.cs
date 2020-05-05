@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class UserDAL : ICrud<User>,IConvertToBO<User>
+    public class UserDAL : ICreate<User>, IUpdate<User>, IDelete, IRead<User>, IConvertToBO<User>
     {
 
         User usr = new User();
@@ -57,7 +57,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-        public bool Add(User obj) 
+        public int Add(User obj) 
         {
             int rowsAffected = 0;
             try
@@ -118,7 +118,7 @@ namespace MenaxhimiBibliotekes.DAL
 
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             int rowsAffected = 0;
             try
@@ -269,7 +269,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Update(User obj)
+        public int Update(User obj)
         {
             int rowsAffected = 0;
             try

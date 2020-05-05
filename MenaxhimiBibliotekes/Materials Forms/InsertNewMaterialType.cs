@@ -35,35 +35,33 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 {
                     mt._MaterialType = txtInsert.Text.Trim();
                     mt.InsBy = 80;//FormLoggedUser.Id;
-                    
-                    if (mtbll.Add(mt))
+
+                    int error = mtbll.Add(mt);
+                    if (error == 0)
                     {
                         this.Close();
                     }
-                    else
+
+                    else if (error == 1)
                     {
-                        throw new Exception();
+                        MessageBox.Show("MaterialType name  should be uniqe, please if this material type is deactivated update it");
                     }
-
                 }
-
-                
-
                 else
                 {
                     throw new FormatException();
                 }
             }
-
             catch (FormatException)
             {
-                MessageBox.Show("Language is not valid");
+                MessageBox.Show("MaterialType is not valid");
             }
             catch (Exception)
             {
-
-                MessageBox.Show("Language not inserted please contact your administrator");
+                MessageBox.Show("MaterialType is not inserted please contact your administrator");
             }
+
+
         }
     }
 }
