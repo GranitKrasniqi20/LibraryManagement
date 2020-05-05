@@ -113,7 +113,7 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = DbHelper.Command(conn, "usp_GetShelfAllShelves", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_GetAllShelves", CommandType.StoredProcedure))
                     {
 
                         using (SqlDataReader reader = command.ExecuteReader())

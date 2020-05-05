@@ -15,23 +15,17 @@ namespace test
         {
 
 
-            User mtbll = new User();
-            UserBLL ma = new UserBLL();
+            Shelf mtbll = new Shelf();
+            ShelfBLL ma = new ShelfBLL();
 
 
 
-            mtbll.UserID = 1085;
-
-            mtbll.Username = "dityfdf";
-            mtbll.Password = "asdadsss";
-            mtbll.Name = "eas";
-            mtbll.LastName = "asdasd";
-            mtbll.Email = "asdas@sadas.com";
-            mtbll.RoleID = 1;
-            mtbll.UpdBy = 80;
+            foreach (var item in ma.GetAll())
+            {
+                Console.WriteLine(item.Location  + "\n");
+            }
 
 
-            ma.Update(mtbll);
         }
     }
 }
