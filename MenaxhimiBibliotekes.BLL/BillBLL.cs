@@ -9,7 +9,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class BillBLL : ICreate<Genre>, IUpdate<Genre>, IDelete, IRead<Genre>
+    public class BillBLL : ICreate<Bill>, IUpdate<Bill>, IDelete, IRead<Bill>
     {
         BillDAL billDAL = new BillDAL();
 

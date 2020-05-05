@@ -34,7 +34,7 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
             RuleFor(m => m.Description)
-                .Length(2, 20).WithMessage("Not shorter than 2 and not longer than 50");
+                .Length(2, 50).WithMessage("Not shorter than 2 and not longer than 50");
 
         }
     }

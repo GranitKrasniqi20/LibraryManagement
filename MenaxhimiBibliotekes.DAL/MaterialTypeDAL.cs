@@ -195,7 +195,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
             catch (Exception)
             {
-                return -
+                return -1;
             }
 
 
