@@ -66,7 +66,7 @@ namespace MenaxhimiBibliotekes.DAL
                         if (rows > 0)
                         {
                             return
-                                 true;
+                                 0;
                         }
 
                         else
@@ -88,7 +88,7 @@ namespace MenaxhimiBibliotekes.DAL
 
             catch (Exception)
             {
-                return false;
+                return -1;
             }
 
 
@@ -113,11 +113,11 @@ namespace MenaxhimiBibliotekes.DAL
 
                         if (Affected > 0)
                         {
-                            return true;
+                            return 0;
                         }
                         else
                         {
-                            return false;
+                            return -1;
                         }
                     }
 
@@ -126,7 +126,7 @@ namespace MenaxhimiBibliotekes.DAL
             catch (Exception)
             {
 
-                return false;
+                return -1;
             }
         }
 
@@ -263,7 +263,7 @@ namespace MenaxhimiBibliotekes.DAL
 
                     }
 
-                    return true;
+                    return 0;
                 }
             }
 
@@ -275,7 +275,7 @@ namespace MenaxhimiBibliotekes.DAL
 
             catch (Exception)
             {
-                return false;
+                return -1;
             }
         }
 

@@ -43,7 +43,7 @@ namespace test
             //usr.RoleID = usr._role.UserRoleId;
 
             UsersValidation usrval = new UsersValidation();
-            usrval.validateUser();
+            usrval.validateCreateUser();
             ValidationResult vres = usrval.Validate(usr);
 
             if (vres.IsValid == false)
