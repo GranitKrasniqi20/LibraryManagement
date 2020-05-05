@@ -70,10 +70,9 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             languageList = languageBllList.GetAll();
             comboLanguage.Items.Add("Other");
 
-            foreach (var item in languageList)
-            {
-                comboLanguage.Items.Add(item._Language);
-            }
+
+            comboLanguage.DataSource = languageList;
+            comboLanguage.DisplayMember = "_Language";
 
 
             //Combobox MATERIAL LOCATION fill
@@ -83,10 +82,9 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             shelfList = shelfBLLList.GetAll();
             comboMaterialLocation.Items.Add("Other");
 
-            foreach (var item in shelfList)
-            {
-                comboMaterialLocation.Items.Add(item.Location);
-            }
+
+            comboMaterialLocation.DataSource = shelfList;
+            comboMaterialLocation.DisplayMember = "Location";
 
 
         }
@@ -246,7 +244,12 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 //    }
                 //    else
                 //    {
-                //        material.ISBN = txtISBN.Text;
+
+                material.ISBN =txtISBN.Text;
+
+
+
+
                 //    }
                 //}
                 //else
@@ -254,14 +257,24 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 //    material.ISBN = "";
                 //}
 
-                foreach (var item in shelfList)
-                {
-                    if (item.Location == comboMaterialLocation.SelectedItem.ToString())
-                    {
-                        material._Shelf.ShelfId = item.ShelfId;
-                        material.ShelfId = item.ShelfId;
-                    }
-                }
+                //foreach (var item in shelfList)
+                //{
+                //    if (item.Location == comboMaterialLocation.SelectedItem.ToString())
+                //    {
+                //        material._Shelf.ShelfId = item.ShelfId;
+                //        material.ShelfId = item.ShelfId;
+                //    }
+                //}
+
+
+                Shelf shelf = getShelf();
+
+                material._Shelf = shelf;
+                material.ShelfId = shelf.ShelfId;
+
+
+
+
 
                 foreach (var item in materialtypeList)
                 {
@@ -280,7 +293,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 //    }
                 //    else
                 //    {
-                //        material._PublishHouse._PublishHouse = txtPublishHouse.Text;
+                        material._PublishHouse._PublishHouse = txtPublishHouse.Text;
                 //    }
                 //}
                 //else
@@ -319,7 +332,15 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                 MaterialValidation materialValidator = new MaterialValidation();
 
+                materialValidator.material = material;
+
+                materialValidator.ValidateMaterial();
+
+
                 ValidationResult results = materialValidator.Validate(material);
+
+
+
 
 
                 if (results.IsValid == false)
@@ -341,105 +362,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void txtTitle_Validating_1(object sender, CancelEventArgs e)
+        public Shelf getShelf()
         {
-            if (string.IsNullOrEmpty(txtTitle.Text))
-            {
-                txtTitle.Text = $"{lblTitle.Text} should not be empty";
-                txtTitle.ForeColor = Color.DarkRed;
-            }
+            return comboMaterialLocation.SelectedItem as Shelf;
         }
 
-        private void txtTitle_Enter_1(object sender, EventArgs e)
-        {
-            if (txtTitle.Text == $"{lblTitle.Text} should not be empty")
-            {
-                txtTitle.Text = string.Empty;
-                txtTitle.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtAuthor_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtAuthor.Text))
-            {
-                txtAuthor.Text = $"{lblAuthor.Text} should not be empty";
-                txtAuthor.ForeColor = Color.DarkRed;
-            }
-        }
-
-        private void txtAuthor_Enter(object sender, EventArgs e)
-        {
-            if (txtAuthor.Text == $"{lblAuthor.Text} should not be empty")
-            {
-                txtAuthor.Text = string.Empty;
-                txtAuthor.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtPublishHouse_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtPublishHouse.Text))
-            {
-                txtPublishHouse.Text = $"{lblPublishHouse.Text} should not be empty";
-                txtPublishHouse.ForeColor = Color.DarkRed;
-            }
-        }
-
-        private void txtPublishHouse_Enter(object sender, EventArgs e)
-        {
-            if (txtPublishHouse.Text == $"{lblPublishHouse.Text} should not be empty")
-            {
-                txtPublishHouse.Text = string.Empty;
-                txtPublishHouse.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtPublishDate_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtPublishDate.Text))
-            {
-                txtPublishDate.Text = $"{lblPublishDate.Text} should not be empty";
-                txtPublishDate.ForeColor = Color.DarkRed;
-            }
-        }
-
-        private void txtPublishDate_Enter(object sender, EventArgs e)
-        {
-            if (txtPublishDate.Text == $"{lblPublishDate.Text} should not be empty")
-            {
-                txtPublishDate.Text = string.Empty;
-                txtPublishDate.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtPublishPlace_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtPublishPlace.Text))
-            {
-                txtPublishPlace.Text = $"{lblPublishPlace.Text} should not be empty";
-                txtPublishPlace.ForeColor = Color.DarkRed;
-            }
-        }
-
-        private void txtPublishPlace_Enter(object sender, EventArgs e)
-        {
-            if (txtPublishPlace.Text == $"{lblPublishPlace.Text} should not be empty")
-            {
-                txtPublishPlace.Text = string.Empty;
-                txtPublishPlace.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtQuantity_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtQuantity.Text))
-            {
-                txtQuantity.Text = $"{lblPublishDate.Text} should not be empty";
-                txtQuantity.ForeColor = Color.DarkRed;
-            }
-        }
 
         private void TxtTitle_TextChanged(object sender, EventArgs e)
         {

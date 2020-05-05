@@ -15,6 +15,11 @@ namespace MenaxhimiBibliotekes.BLL.Validate
 
         public MaterialValidation()
         {
+            material = new Material();
+        }
+
+        public void ValidateMaterial()
+        {
             ////material = new Material();
 
             ValidatorOptions.CascadeMode = CascadeMode.StopOnFirstFailure;
@@ -32,7 +37,7 @@ namespace MenaxhimiBibliotekes.BLL.Validate
             RuleFor(m => m._Language)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
-            if (material.ISBN != "")
+            if (material.ISBN.Length != 0)
             {
                 RuleFor(m => m.ISBN)
                 .Length(13, 13).WithMessage("Length of {PropertyName} should be exact 13!")
@@ -66,7 +71,6 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .GreaterThan(0).WithMessage("Amount unacceptable. Greater Number of Pages!");
 
         }
-
         protected bool BeAValidAuthorName (Author name)
         {
             Regex r = new Regex("^[a-zA-Z]+( [a-zA-Z]+)*$");
