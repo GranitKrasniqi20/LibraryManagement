@@ -9,16 +9,16 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class BillBLL : ICrud<Bill>
+    public class BillBLL : ICreate<Genre>, IUpdate<Genre>, IDelete, IRead<Genre>
     {
         BillDAL billDAL = new BillDAL();
 
-        public bool Add(Bill obj)
+        public int Add(Bill obj)
         {
             return billDAL.Add(obj);
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             return billDAL.Delete(Id);
         }
@@ -35,7 +35,7 @@ namespace MenaxhimiBibliotekes.BLL
             return GetAll();
         }
 
-        public bool Update(Bill obj)
+        public int Update(Bill obj)
         {
             return billDAL.Update(obj);
         }

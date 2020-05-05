@@ -10,11 +10,11 @@ using System.Data;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class BillDAL : ICrud<Bill>, IConvertToBO<Bill>
+    public class BillDAL : ICreate<Bill>, IUpdate<Bill>, IDelete, IRead<Bill>, IConvertToBO<Bill>
     {
         Bill bill;
 
-        public bool Add(Bill obj)
+        public int Add(Bill obj)
         {
             int rowsAffected = 0;
             try
@@ -51,7 +51,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             try
             {
@@ -192,7 +192,7 @@ namespace MenaxhimiBibliotekes.DAL
             return bill;
         }
 
-        public bool Update(Bill obj)
+        public int Update(Bill obj)
         {
             int rowsAffected = 0;
             try

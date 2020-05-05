@@ -9,15 +9,15 @@ using MenaxhimiBibliotekes.BO;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class ShelfBLL : ICrud<Shelf>
+    public class ShelfBLL : ICreate<Shelf>, IUpdate<Shelf>, IDelete, IRead<Shelf>
     {
         ShelfDAL ShelDAL = new ShelfDAL();
-        public bool Add(Shelf obj)
+        public int Add(Shelf obj)
         {
           return  ShelDAL.Add(obj);
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             return ShelDAL.Delete(Id);
         }
@@ -32,7 +32,7 @@ namespace MenaxhimiBibliotekes.BLL
             return ShelDAL.GetAll();
         }
 
-        public bool Update(Shelf obj)
+        public int Update(Shelf obj)
         {
             return ShelDAL.Update(obj);
         }

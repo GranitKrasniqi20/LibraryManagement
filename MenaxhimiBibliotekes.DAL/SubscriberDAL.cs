@@ -11,11 +11,11 @@ using System.Data;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class SubscriberDAL : ICrud<Subscriber>, IConvertToBO<Subscriber>
+    public class SubscriberDAL : ICreate<Subscriber>, IUpdate<Subscriber>, IDelete, IRead<Subscriber>, IConvertToBO<Subscriber>
     {
         Subscriber subscriber;
 
-        public bool Add(Subscriber obj)
+        public int Add(Subscriber obj)
         {
             int isInserted = 0;
             try
@@ -57,7 +57,7 @@ namespace MenaxhimiBibliotekes.DAL
         }
          
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             try
             {
@@ -212,7 +212,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Update(Subscriber obj)
+        public int Update(Subscriber obj)
         {
             int rowsAffected = 0;
             try

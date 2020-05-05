@@ -11,11 +11,11 @@ using System.Data;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class BillTypeDAL : ICrud<BillType>, IConvertToBO<BillType>
+    public class BillTypeDAL : ICreate<BillType>, IUpdate<BillType>, IDelete, IRead<BillType>, IConvertToBO<BillType>
     {
         private BillType billType;
 
-        public bool Add(BillType obj)
+        public int Add(BillType obj)
         {
             int isInserted = 0;
             try
@@ -46,7 +46,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             try
             {
@@ -175,7 +175,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Update(BillType obj)
+        public int Update(BillType obj)
         {
             int isUpdated = 0;
             using (SqlConnection conn = DbHelper.GetConnection())

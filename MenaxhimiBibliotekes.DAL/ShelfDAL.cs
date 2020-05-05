@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class ShelfDAL : ICrud<Shelf>, IConvertToBO<Shelf>
+    public class ShelfDAL : ICreate<Shelf>, IUpdate<Shelf>, IDelete, IRead<Shelf>, IConvertToBO<Shelf>
     {
 
 
 
 
 
-        public bool Add(Shelf obj)
+        public int Add(Shelf obj)
         {
             int isInserted = 0;
             try
@@ -44,34 +44,24 @@ namespace MenaxhimiBibliotekes.DAL
                         command.ExecuteNonQuery();
                         error = (int)sqlpa.Value;
 
-                        if (error == 1)
-                        {
-                            throw new Exception();
-                        }
-                        else if (error == 0)
-                        {
-                            MessageBox.Show("good");
-                            return true;
-                        }
-
-                        return false;
+                        return error;
                     }
                 }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Please contact your administrator");
-                return false;
+                MessageBox.Show("Shelf has an error, please contact your administrator");
+                return -1;
             }
             catch (Exception)
             {
-                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
-                return false;
+                MessageBox.Show("Shelf has an error, please contact your administrator");
+                return -1;
             }
 
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
             throw new NotImplementedException();
         }
@@ -182,7 +172,7 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-        public bool Update(Shelf obj)
+        public int Update(Shelf obj)
         {
             int isUpdated = 0;
             try
@@ -208,30 +198,19 @@ namespace MenaxhimiBibliotekes.DAL
 
                         command.ExecuteNonQuery();
                         error = (int)sqlpa.Value;
-
-                        if (error == 1)
-                        {
-                            throw new Exception();
-                        }
-                        else if (error == 0)
-                        {
-                            MessageBox.Show("good");
-                            return true;
-                        }
-
-                        return false;
+                        return error;
                     }
                 }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Please contact your administrator");
-                return false;
+                MessageBox.Show("Shelf has an error, please contact your administrator");
+                return -1;
             }
             catch (Exception)
             {
-                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
-                return false;
+                MessageBox.Show("Shelf has an error, please contact your administrator");
+                return -1;
             }
 
         }

@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BO.Interfaces
 {
-    public interface ICrud<T>
+    public interface IUpdate<T>
     {
-        bool Add(T obj);
-        bool Update(T obj);
-        bool Delete(int Id);
-        T Get(int Id);
-        List<T> GetAll();
+        int Update(T obj);
+
     }
 }

@@ -20,6 +20,7 @@ namespace MenaxhimiBibliotekes.BLL.Validate
 
             RuleFor(m => m._Author)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
+
                 .Must(BeAValidAuthorName).WithMessage("{PropertyName} not entered properly!");
 
             RuleFor(m => m._Genre)

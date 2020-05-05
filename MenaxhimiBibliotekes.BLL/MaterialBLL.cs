@@ -10,15 +10,15 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class MaterialBLL : ICrud<Material>
+    public class MaterialBLL : ICreate<Material>, IUpdate<Material>, IDelete, IRead<Material>
     {
         MaterialDAL _materialDAL = new MaterialDAL();
-        public bool Add(Material obj)
+        public int Add(Material obj)
         {
            return _materialDAL.Add(obj);
         }
 
-        public bool Delete(int Id)
+        public int Delete(int Id)
         {
            return _materialDAL.Delete(Id);
         }
@@ -35,7 +35,7 @@ namespace MenaxhimiBibliotekes.BLL
             return GetAll();
         }
 
-        public bool Update(Material obj)
+        public int Update(Material obj)
         {
             return _materialDAL.Update(obj);
         }

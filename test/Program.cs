@@ -7,6 +7,9 @@ using MenaxhimiBibliotekes.BLL;
 using MenaxhimiBibliotekes.BO;
 using MenaxhimiBibliotekes.BO.Interfaces;
 using MenaxhimiBibliotekes.BLL.Validate;
+using FluentValidation.Results;
+using System.Windows.Forms;
+
 namespace test
 {
     class Program
@@ -14,18 +17,54 @@ namespace test
         static void Main(string[] args)
         {
 
+            RoleBLL rolebll;
+            List<Role> role;
+            rolebll = new RoleBLL();
 
-            Shelf mtbll = new Shelf();
-            ShelfBLL ma = new ShelfBLL();
+            role = rolebll.GetAllRoles();
+
+
+            //comboRoleCreate.DataSource = role;
+
+
+            string errors = "";
 
 
 
-            foreach (var item in ma.GetAll())
+            User usr = new User();
+
+            usr.Name = "a";
+            usr.LastName = "a";
+            usr.Email = "a";
+            usr.Username = "a";
+            usr.InsBy = FormLoggedUser.Id;
+            usr.Password = "a";
+            //usr._role = getRole();
+            //usr.RoleID = usr._role.UserRoleId;
+
+            UsersValidation usrval = new UsersValidation();
+            usrval.validateUser();
+            ValidationResult vres = usrval.Validate(usr);
+
+            if (vres.IsValid == false)
             {
-                Console.WriteLine(item.Location  + "\n");
+
+                foreach (ValidationFailure item in vres.Errors)
+                {
+                    errors += $"       {item.ErrorMessage}        \n \n";
+                }
+
+                MessageBox.Show(errors,"ERROR WARNING",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
-
-
         }
+
+        //public Role getRole()
+        //{
+        //    return comboRoleCreate.SelectedItem as Role;
+        //}
+
     }
+
+
+
 }

@@ -44,13 +44,16 @@
     <Compile Include="Audit.cs" />
     <Compile Include="FormLoggedUser.cs" />
     <Compile Include="Interfaces\IConvertToBO.cs" />
+    <Compile Include="Interfaces\IDelete.cs" />
     <Compile Include="Interfaces\ILogIn.cs" />
+    <Compile Include="Interfaces\IRead.cs" />
+    <Compile Include="Interfaces\IUpdate.cs" />
     <Compile Include="Subscriber.cs" />
     <Compile Include="Author.cs" />
     <Compile Include="Bill.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Borrow.cs" />
-    <Compile Include="Interfaces\ICrud.cs" />
+    <Compile Include="Interfaces\ICreate.cs" />
     <Compile Include="MaterialType.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
