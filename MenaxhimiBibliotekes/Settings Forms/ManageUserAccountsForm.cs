@@ -16,5 +16,10 @@ namespace MenaxhimiBibliotekes.Settings_Forms
         {
             InitializeComponent();
         }
+
+        private void BtnCreate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

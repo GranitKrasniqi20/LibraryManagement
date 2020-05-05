@@ -7,6 +7,7 @@ using MenaxhimiBibliotekes.BO.Interfaces;
 using MenaxhimiBibliotekes.BO;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
@@ -31,25 +32,43 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("Description", obj.Description);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
 
-                        isInserted = command.ExecuteNonQuery();
+                        int error;
 
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
 
-                        if (isInserted > 0)
-                        {
-                            return true;
-                        }
-                        else
+                        command.Parameters.Add(sqlpa);
+
+                        command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+                        if (error == 1)
                         {
                             throw new Exception();
                         }
+                        else if (error == 0)
+                        {
+                            MessageBox.Show("good");
+                            return true;
+                        }
+
+                        return false;
                     }
                 }
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
-
+                MessageBox.Show("Please contact your administrator");
                 return false;
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
+                return false;
+            }
+
         }
 
         public bool Delete(int Id)
@@ -151,15 +170,15 @@ namespace MenaxhimiBibliotekes.DAL
                     shelf.UpdDate = (DateTime)reader["UpdDate"];
                 }
 
-                    shelf.UpdNo = int.Parse(reader["UpdNo"].ToString());
-               
+                shelf.UpdNo = int.Parse(reader["UpdNo"].ToString());
+
 
                 return shelf;
             }
             catch (Exception)
             {
 
-                return null ;
+                return null;
             }
         }
 
@@ -178,29 +197,44 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("Description", obj.Description);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
-                        isUpdated = command.ExecuteNonQuery();
+                        int error;
 
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
 
-                        if (isUpdated > 0)
-                        {
-                            return true;
-                        }
-                        else
+                        command.Parameters.Add(sqlpa);
+
+                        command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+                        if (error == 1)
                         {
                             throw new Exception();
                         }
+                        else if (error == 0)
+                        {
+                            MessageBox.Show("good");
+                            return true;
+                        }
+
+                        return false;
                     }
                 }
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
-
+                MessageBox.Show("Please contact your administrator");
                 return false;
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
+                return false;
+            }
+
         }
-
-
-
     }
 
 }

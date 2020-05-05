@@ -279,6 +279,9 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
         }
 
-        
+        private void TxtTitle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
