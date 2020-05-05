@@ -53,6 +53,7 @@ namespace MenaxhimiBibliotekes.Login_Forms
 
                 else if (usr.Password == pw)
                 {
+                    FormLoggedUser.Id = usr.UserID;
                     FormLoggedUser.Name = usr.Name;
                     FormLoggedUser.LastName = usr.LastName;
                     FormLoggedUser.Username = txtUsernameLogin.Text;

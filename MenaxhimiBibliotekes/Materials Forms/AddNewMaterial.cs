@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FluentValidation.Results;
@@ -230,8 +231,28 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     }
                 }
 
+                //bool isISBNvalid = Regex.IsMatch(txtISBN.Text, "^\\d{13}$");
 
-                material.ISBN = txtISBN.Text;
+                //if (txtISBN.Text != "")
+                //{
+                //    if (txtISBN.Text.Length != 13)
+                //    {
+                //        MessageBox.Show($"Length of ISBN should be exact 13!", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                //    }
+                //    else if (!isISBNvalid)
+                //    {
+                //        MessageBox.Show($"Please enter only digit numbers for ISBN!", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    }
+                //    else
+                //    {
+                //        material.ISBN = txtISBN.Text;
+                //    }
+                //}
+                //else
+                //{
+                //    material.ISBN = "";
+                //}
 
                 foreach (var item in shelfList)
                 {
@@ -251,7 +272,21 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     }
                 }
 
-                material._PublishHouse._PublishHouse = txtPublishHouse.Text;
+                //if (txtPublishHouse.Text != "")
+                //{
+                //    if (txtPublishHouse.Text.Length < 2 || txtPublishHouse.Text.Length > 50)
+                //    {
+                //        MessageBox.Show($"Publish House Length is not acceptable. Lower than 50 and greater than 3 characters!", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    }
+                //    else
+                //    {
+                //        material._PublishHouse._PublishHouse = txtPublishHouse.Text;
+                //    }
+                //}
+                //else
+                //{
+                //    material._PublishHouse._PublishHouse = "";
+                //}
 
                 int n;
                 bool isNumeric = int.TryParse(txtPublishDate.Text, out n);
@@ -264,8 +299,19 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     material.PublishYear = new DateTime(int.Parse(txtPublishDate.Text), 1, 1);
                 }
 
+
+                //if (txtPublishPlace.Text != "")
+                //{
+
+                //}
+
+                material.PublishPlace = txtPublishPlace.Text;
+
                 material.Quantity = Convert.ToInt32(txtQuantity.Text);
+
                 material.NumberOfPages = Convert.ToInt32(txtPages.Text);
+
+                material.IsActive = true;
 
                 material.InsBy = FormLoggedUser.Id;
 
