@@ -51,15 +51,24 @@ namespace MenaxhimiBibliotekes.BLL.Validate
             RuleFor(m => m._MaterialType)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
 
-            RuleFor(m => m._PublishHouse)
+            if (material._PublishHouse._PublishHouse.Length != 0)
+            {
+                RuleFor(m => m._PublishHouse)
                 .Must(m => m._PublishHouse.Length >= 2 && m._PublishHouse.Length < 50)
                 .WithMessage("(PropertyName) is not acceptable. Lower than 50 characters!");
+            }
 
-            RuleFor(m => m.PublishYear)
+            if (material.PublishYear != null)
+            {
+                RuleFor(m => m.PublishYear)
                 .Must(BeAValidYear).WithMessage("Invalid Date!");
+            }
 
-            RuleFor(m => m.PublishPlace)
+            if (material.PublishPlace.Length != 0)
+            {
+                RuleFor(m => m.PublishPlace)
                 .Must(AcceptablePublishPlaceLength).WithMessage("{PropertyName} character length should be lower than 50!");
+            }
 
             RuleFor(m => m.Quantity)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")

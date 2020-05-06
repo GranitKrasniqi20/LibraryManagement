@@ -18,6 +18,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
     public partial class AddNewMaterial : Form
     {
         //Global Variables and Instances
+        bool openFormG, openFormL, openFormSH, openFormMT;
+
         Material material;
         MaterialBLL materialBLL;
 
@@ -37,39 +39,44 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
             InitializeComponent();
 
+            openFormG = openFormL = openFormSH = openFormMT = false;
+
             //Combobox GENRE fill
             comboGenre.Items.Clear();
 
             genreBllList = new GenreBLL();
+            Genre g = new Genre();
             genreList = genreBllList.GetAll();
-            comboGenre.Items.Add("Other");
+            g = genreList[0];
+            genreList[0] = new Genre() { GenreId = 0, _Genre = "Other" };
+            genreList.Add(g);
 
-            foreach (var item in genreList)
-            {
-                comboGenre.Items.Add(item._Genre);
-            }
+            comboGenre.DataSource = genreList;
+            comboGenre.DisplayMember = "_Genre";
 
 
             //Combobox MATERIAL TYPE fill
             comboMaterialType.Items.Clear();
 
             materialtypeBllList = new MaterialTypeBLL();
+            MaterialType mt = new MaterialType();
             materialtypeList = materialtypeBllList.GetAll();
-            comboMaterialType.Items.Add("Other");
+            mt = materialtypeList[0];
+            materialtypeList[0] = new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" };
+            materialtypeList.Add(mt);
 
-            foreach (var item in materialtypeList)
-            {
-                comboMaterialType.Items.Add(item._MaterialType);
-            }
+            comboMaterialType.DataSource = materialtypeList;
+            comboMaterialType.DisplayMember = "_MaterialType";
 
 
             //Combobox LANGUAGES fill
             comboLanguage.Items.Clear();
 
             languageBllList = new LanguageBLL();
+            Language l = new Language();
             languageList = languageBllList.GetAll();
-            comboLanguage.Items.Add("Other");
-
+            l = languageList[0];
+            languageList[0] = new Language() { LanguageId = 0, _Language = "Other" };
 
             comboLanguage.DataSource = languageList;
             comboLanguage.DisplayMember = "_Language";
@@ -79,14 +86,13 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             comboMaterialLocation.Items.Clear();
 
             shelfBLLList = new ShelfBLL();
+            Shelf sh = new Shelf();
             shelfList = shelfBLLList.GetAll();
-            comboMaterialLocation.Items.Add("Other");
-
+            sh = shelfList[0];
+            shelfList[0] = new Shelf() { ShelfId = 0, Location = "Other" };
 
             comboMaterialLocation.DataSource = shelfList;
             comboMaterialLocation.DisplayMember = "Location";
-
-
         }
 
 
@@ -138,42 +144,75 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         //Events
         private void comboMaterialType_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (comboMaterialType.SelectedItem == "Other")
-            {
-                InsertNewMaterialType materialtypeForm = new InsertNewMaterialType();
-                materialtypeForm.ShowDialog();
+            MaterialType cmt = comboMaterialType.SelectedItem as MaterialType;
 
-                DisabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
+            if (cmt.MaterialTypeId == 0)
+            {
+                if (openFormMT)
+                {
+                    InsertNewMaterialType materialtypeForm = new InsertNewMaterialType();
+                    materialtypeForm.ShowDialog();
+
+                    DisabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
+                }
+                openFormMT = true;
 
             }
-            else if (comboMaterialType.SelectedItem == "Book")
-            {
-                EnabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
-            }
+            //else if (comboMaterialType.SelectedItem == "Book")
+            //{
+            //    EnabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
+            //}
             else
             {
                 EnabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
                 
-                txtISBN.Enabled = false;
+                //txtISBN.Enabled = false;
             }
         }
 
         private void comboGenre_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            Genre cg = comboGenre.SelectedItem as Genre;
 
-            if (comboGenre.SelectedItem == "Other")
+            if (cg.GenreId == 0)
             {
-                InsertNewGenre genreForm = new InsertNewGenre();
-                genreForm.ShowDialog();
+                if (openFormG)
+                {
+                    InsertNewGenre genreForm = new InsertNewGenre();
+                    genreForm.ShowDialog();
+                }
+                openFormG = true;
+                
             }
         }
 
         private void comboLanguage_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (comboLanguage.SelectedItem == "Other")
+            Language cl = comboLanguage.SelectedItem as Language;
+
+            if (cl.LanguageId == 0)
             {
-                InsertNewLanguage languageForm = new InsertNewLanguage();
-                languageForm.ShowDialog();
+                if (openFormL)
+                {
+                    InsertNewLanguage languageForm = new InsertNewLanguage();
+                    languageForm.ShowDialog();
+                }
+                openFormL = true;
+            }
+        }
+
+        private void comboMaterialLocation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Shelf cml = comboMaterialLocation.SelectedItem as Shelf;
+
+            if (cml.ShelfId == 0)
+            {
+                if (openFormSH)
+                {
+                    MaterialLocation locationForm = new MaterialLocation();
+                    locationForm.ShowDialog();
+                }
+                openFormSH = true;
             }
         }
 
@@ -206,100 +245,30 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 material = new Material();
                 materialBLL = new MaterialBLL();
 
-                //DateTime d = new DateTime();
+             // ------------------------------ //
 
                 material.Title = txtTitle.Text;
                 material._Author.AuthorName = txtAuthor.Text;
 
-                foreach (var item in genreList)
-                {
-                    if (item._Genre == comboGenre.SelectedItem.ToString())
-                    {
-                        material._Genre.GenreId = item.GenreId;
-                        material.GenreId = item.GenreId;
-                    }
-                }
+                Genre gen = getGenre();
+                material._Genre = gen;
+                material.GenreId = gen.GenreId;
 
-                foreach (var item in languageList)
-                {
-                    if (item._Language == comboLanguage.SelectedItem.ToString())
-                    {
-                        material._Language.LanguageId = item.LanguageId;
-                        material.LanguageId = item.LanguageId;
-                    }
-                }
-
-                //bool isISBNvalid = Regex.IsMatch(txtISBN.Text, "^\\d{13}$");
-
-                //if (txtISBN.Text != "")
-                //{
-                //    if (txtISBN.Text.Length != 13)
-                //    {
-                //        MessageBox.Show($"Length of ISBN should be exact 13!", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                //    }
-                //    else if (!isISBNvalid)
-                //    {
-                //        MessageBox.Show($"Please enter only digit numbers for ISBN!", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //    }
-                //    else
-                //    {
+                Language lang = getLanguange();
+                material._Language = lang;
+                material.LanguageId = lang.LanguageId;
 
                 material.ISBN =txtISBN.Text;
 
-
-
-
-                //    }
-                //}
-                //else
-                //{
-                //    material.ISBN = "";
-                //}
-
-                //foreach (var item in shelfList)
-                //{
-                //    if (item.Location == comboMaterialLocation.SelectedItem.ToString())
-                //    {
-                //        material._Shelf.ShelfId = item.ShelfId;
-                //        material.ShelfId = item.ShelfId;
-                //    }
-                //}
-
+                material._PublishHouse._PublishHouse = txtPublishHouse.Text;
 
                 Shelf shelf = getShelf();
-
                 material._Shelf = shelf;
                 material.ShelfId = shelf.ShelfId;
 
-
-
-
-
-                foreach (var item in materialtypeList)
-                {
-                    if (item._MaterialType == comboMaterialType.SelectedItem.ToString())
-                    {
-                        material._MaterialType.MaterialTypeId = item.MaterialTypeId;
-                        material.MaterialTypeId = item.MaterialTypeId;
-                    }
-                }
-
-                //if (txtPublishHouse.Text != "")
-                //{
-                //    if (txtPublishHouse.Text.Length < 2 || txtPublishHouse.Text.Length > 50)
-                //    {
-                //        MessageBox.Show($"Publish House Length is not acceptable. Lower than 50 and greater than 3 characters!", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //    }
-                //    else
-                //    {
-                        material._PublishHouse._PublishHouse = txtPublishHouse.Text;
-                //    }
-                //}
-                //else
-                //{
-                //    material._PublishHouse._PublishHouse = "";
-                //}
+                MaterialType materialtype = getMaterialType();
+                material._MaterialType = materialtype;
+                material.MaterialTypeId = materialtype.MaterialTypeId;
 
                 int n;
                 bool isNumeric = int.TryParse(txtPublishDate.Text, out n);
@@ -311,12 +280,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                     material.PublishYear = new DateTime(int.Parse(txtPublishDate.Text), 1, 1);
                 }
-
-
-                //if (txtPublishPlace.Text != "")
-                //{
-
-                //}
 
                 material.PublishPlace = txtPublishPlace.Text;
 
@@ -330,15 +293,14 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
 
+
                 MaterialValidation materialValidator = new MaterialValidation();
 
                 materialValidator.material = material;
 
                 materialValidator.ValidateMaterial();
 
-
                 ValidationResult results = materialValidator.Validate(material);
-
 
 
 
@@ -362,9 +324,25 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
         public Shelf getShelf()
         {
             return comboMaterialLocation.SelectedItem as Shelf;
+        }
+
+        public MaterialType getMaterialType()
+        {
+            return comboMaterialType.SelectedItem as MaterialType;
+        }
+
+        public Language getLanguange()
+        {
+            return comboLanguage.SelectedItem as Language;
+        }
+
+        public Genre getGenre()
+        {
+            return comboGenre.SelectedItem as Genre;
         }
 
 
