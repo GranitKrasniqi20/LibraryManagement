@@ -70,8 +70,16 @@ namespace MenaxhimiBibliotekes.Members_Forms
                 }
                 else
                 {
+                    //if (subscriberBLL.Add(subscriber) == 0)
+                    //{ 
                     subscriberBLL.Add(subscriber);
                     MessageBox.Show("The subscriber is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //}
+                    //else
+                    //{
+                    //    throw new Exception();
+                    //}
                 }
 
 
