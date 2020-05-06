@@ -600,6 +600,7 @@
             this.btnSearchMaterial.TabIndex = 2;
             this.btnSearchMaterial.Text = "Search Specific Material";
             this.btnSearchMaterial.UseVisualStyleBackColor = false;
+            this.btnSearchMaterial.Click += new System.EventHandler(this.btnSearchMaterial_Click);
             // 
             // tableLayoutPanel6
             // 

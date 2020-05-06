@@ -281,7 +281,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             MaterialBLL mbll = new MaterialBLL();
             List<Material> list = mbll.GetAll();
 
-            material = materialBLL.Get(Convert.ToInt32(txtMaterialID.Text));
+            material = mbll.Get(Convert.ToInt32(txtMaterialID.Text));
 
 
 
