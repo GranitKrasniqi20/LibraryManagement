@@ -4,14 +4,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BLL.Validate
 {
     class SubscriberValidation : AbstractValidator<Subscriber>
     {
+        public Subscriber subscriber { get; set; }
+
         public SubscriberValidation()
         {
+            subscriber = new Subscriber();
+        }
+        
+        public void ValidateSubscriber()
+        { 
             ValidatorOptions.CascadeMode = CascadeMode.StopOnFirstFailure;
 
             RuleFor(m => m.Name)
@@ -26,16 +34,22 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .Length(2, 20).WithMessage("Not shorter than 10 and not longer than 20");
 
-            //RuleFor(m => m.Birthday)
-            //    .Must(BeAValidDate).WithMessage("{PropertyName} not entered properly!");
+            if(subscriber.Birthday != null)
+            {
+                RuleFor(m => m.Birthday)
+                .Must(BeAValidDate).WithMessage("{PropertyName} not entered properly!");
+            }
 
-            //RuleFor(m => m.PersonalNo)
-            //   .Matches($"[0 - 9]").WithMessage("Enter only numbers")
-            //   .Length(10, 10).WithMessage("No longer and not shorter than 10 charachters");
+            if(subscriber.PersonalNo != null)
+            {
+                RuleFor(m => m.PersonalNo)
+                   .Matches("^[0 - 9]").WithMessage("Enter only numbers")
+                   .Length(10, 10).WithMessage("No longer and not shorter than 10 charachters");
+            }
 
             RuleFor(m => m.PhoneNo)
                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
-               .Matches($"[0 - 9]").WithMessage("Enter only numbers")
+               .Matches("^[0 - 9]").WithMessage("Enter only numbers")
                .Length(2, 20).WithMessage("Not shorter than 6 and not longer than 20");
 
             RuleFor(m => m.Email)
@@ -48,12 +62,12 @@ namespace MenaxhimiBibliotekes.BLL.Validate
 
         }
 
-        //protected bool BeAValidDate(DateTime date)
-        //{
-        //    DateTime d = DateTime.Now;
-        //    DateTime min = new DateTime(1, 1, 1);
+        protected bool BeAValidDate(DateTime date)
+        {
+            DateTime d = DateTime.Now;
+            DateTime min = new DateTime(1, 1, 1);
 
-        //    return date <= d && date >= min;
-        //}
+            return date <= d && date >= min;
+        }
     }
 }

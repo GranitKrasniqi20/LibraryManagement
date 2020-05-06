@@ -269,7 +269,7 @@
             // 
             this.txtFirstName.AutoSize = true;
             this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(129, -3);
+            this.txtFirstName.Location = new System.Drawing.Point(129, 0);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(36, 25);
             this.txtFirstName.TabIndex = 0;
@@ -600,6 +600,7 @@
             this.btnSearchMember.TabIndex = 2;
             this.btnSearchMember.Text = "Search Specific Member";
             this.btnSearchMember.UseVisualStyleBackColor = false;
+            this.btnSearchMember.Click += new System.EventHandler(this.btnSearchMember_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -637,6 +638,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete Member";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // DeleteMemberForm
             // 
