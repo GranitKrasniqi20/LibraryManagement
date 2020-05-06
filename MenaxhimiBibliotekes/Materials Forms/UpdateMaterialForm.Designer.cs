@@ -273,6 +273,7 @@
             this.comboMaterialLocation.Name = "comboMaterialLocation";
             this.comboMaterialLocation.Size = new System.Drawing.Size(356, 33);
             this.comboMaterialLocation.TabIndex = 3;
+            this.comboMaterialLocation.SelectedIndexChanged += new System.EventHandler(this.comboMaterialLocation_SelectedIndexChanged);
             // 
             // lblMaterialID
             // 
@@ -449,6 +450,7 @@
             this.comboGenre.Name = "comboGenre";
             this.comboGenre.Size = new System.Drawing.Size(356, 33);
             this.comboGenre.TabIndex = 6;
+            this.comboGenre.SelectedIndexChanged += new System.EventHandler(this.comboGenre_SelectedIndexChanged);
             // 
             // comboLanguage
             // 
@@ -464,6 +466,7 @@
             this.comboLanguage.Name = "comboLanguage";
             this.comboLanguage.Size = new System.Drawing.Size(356, 33);
             this.comboLanguage.TabIndex = 8;
+            this.comboLanguage.SelectedIndexChanged += new System.EventHandler(this.comboLanguage_SelectedIndexChanged);
             // 
             // txtISBN
             // 
@@ -564,6 +567,7 @@
             this.comboMaterialType.Name = "comboMaterialType";
             this.comboMaterialType.Size = new System.Drawing.Size(356, 33);
             this.comboMaterialType.TabIndex = 3;
+            this.comboMaterialType.SelectedIndexChanged += new System.EventHandler(this.comboMaterialType_SelectedIndexChanged);
             // 
             // tableLayoutPanel6
             // 
@@ -618,6 +622,7 @@
             this.Name = "UpdateMaterialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Materials (Stackbooks)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateMaterialForm_FormClosing);
             this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

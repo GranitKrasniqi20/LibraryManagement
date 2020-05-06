@@ -156,17 +156,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     DisabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
                 }
                 openFormMT = true;
-
             }
-            //else if (comboMaterialType.SelectedItem == "Book")
-            //{
-            //    EnabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
-            //}
             else
             {
                 EnabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
-                
-                //txtISBN.Enabled = false;
             }
         }
 
