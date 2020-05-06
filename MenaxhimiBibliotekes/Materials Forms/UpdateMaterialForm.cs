@@ -20,11 +20,14 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
         Material material;
-        MaterialBLL materialBLL;
         List<Material> materialList;
+
+        MaterialBLL mbll;
 
         MaterialTypeBLL materialtypeBllList;
         List<MaterialType> materialtypeList;
+        List<Material> list;
+
 
         GenreBLL genreBllList;
         List<Genre> genreList;
@@ -44,8 +47,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
             material = new Material();
-            materialBLL = new MaterialBLL();
-            materialList = new List<Material>();
+             mbll = new MaterialBLL();
+            list = mbll.GetAll();
 
 
             //Combobox GENRE fill
@@ -272,9 +275,17 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         }
 
+        
         private void txtMaterialID_TextChanged(object sender, EventArgs e)
         {
+            MaterialBLL mbll = new MaterialBLL();
+            List<Material> list = mbll.GetAll();
+
             material = materialBLL.Get(Convert.ToInt32(txtMaterialID.Text));
+
+
+
+
         }
     }
 }
