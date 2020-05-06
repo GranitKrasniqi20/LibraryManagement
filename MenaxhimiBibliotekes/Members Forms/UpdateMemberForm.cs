@@ -1,6 +1,4 @@
-﻿using MenaxhimiBibliotekes.BLL;
-using MenaxhimiBibliotekes.BO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -100,8 +98,11 @@ namespace MenaxhimiBibliotekes.Members_Forms
             }
             else
             {
-                //subcriberBLL.Update(subcriber);
-                MessageBox.Show("The material is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //if (subscriberBLL.Update(subscriber) == 0)
+                //{
+                //    MessageBox.Show("The subscriber is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //}
             }
 
         }
