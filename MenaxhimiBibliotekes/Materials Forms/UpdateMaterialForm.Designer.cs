@@ -618,7 +618,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(808, 858);
+            this.MinimumSize = new System.Drawing.Size(808, 726);
             this.Name = "UpdateMaterialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Materials (Stackbooks)";

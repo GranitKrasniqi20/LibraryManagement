@@ -311,14 +311,23 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 }
                 else
                 {
-                    materialBLL.Add(material);
-                    MessageBox.Show("The material is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    if (materialBLL.Add(material) == 0)
+                    {
+                        MessageBox.Show("The material is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+
                 }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Material is not inserted please contact your adminsitrator");
             }
         }
 
