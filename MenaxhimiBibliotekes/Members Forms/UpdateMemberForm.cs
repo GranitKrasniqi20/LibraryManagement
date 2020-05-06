@@ -100,7 +100,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
             }
             else
             {
-                subcriberBLL.Update(subcriber);
+                //subcriberBLL.Update(subcriber);
                 MessageBox.Show("The material is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 

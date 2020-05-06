@@ -67,12 +67,12 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
+            this.dtPickerBirthdate = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdateMemberSubscription = new System.Windows.Forms.Button();
-            this.dtPickerBirthdate = new System.Windows.Forms.DateTimePicker();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -549,6 +549,14 @@
             this.lblLastName.TabIndex = 0;
             this.lblLastName.Text = "Last Name";
             // 
+            // dtPickerBirthdate
+            // 
+            this.dtPickerBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPickerBirthdate.Location = new System.Drawing.Point(409, 233);
+            this.dtPickerBirthdate.Name = "dtPickerBirthdate";
+            this.dtPickerBirthdate.Size = new System.Drawing.Size(356, 29);
+            this.dtPickerBirthdate.TabIndex = 12;
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 5;
@@ -612,14 +620,6 @@
             this.btnUpdateMemberSubscription.Text = "Update Member Subscription";
             this.btnUpdateMemberSubscription.UseVisualStyleBackColor = false;
             this.btnUpdateMemberSubscription.Click += new System.EventHandler(this.btnUpdateMemberSubscription_Click);
-            // 
-            // dtPickerBirthdate
-            // 
-            this.dtPickerBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtPickerBirthdate.Location = new System.Drawing.Point(409, 233);
-            this.dtPickerBirthdate.Name = "dtPickerBirthdate";
-            this.dtPickerBirthdate.Size = new System.Drawing.Size(356, 29);
-            this.dtPickerBirthdate.TabIndex = 12;
             // 
             // UpdateMemberForm
             // 
