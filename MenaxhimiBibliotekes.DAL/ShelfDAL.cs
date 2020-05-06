@@ -70,6 +70,7 @@ namespace MenaxhimiBibliotekes.DAL
 
         public Shelf Get(int Id)
         {
+
             using (var conn = DbHelper.GetConnection())
             {
                 using (var command = DbHelper.Command(conn, "usp_GetShelfById", CommandType.StoredProcedure))

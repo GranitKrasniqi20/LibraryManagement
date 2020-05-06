@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-    public class UserDAL : ICreate<User>, IUpdate<User>, IDelete, IRead<User>, IConvertToBO<User>
+    public class UserDAL : ICreate<User>, IUpdate<User>, IDelete, IRead<User>, IConvertToBO<User>, IChangePassword
     {
 
         User usr = new User();
@@ -160,8 +160,9 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 using (var conn = DbHelper.GetConnection())
                 {
-                    using (var command = DbHelper.Command(conn, "usp_GetUserById", CommandType.StoredProcedure))
+                    using (var command = DbHelper.Command(conn, "usp_GetUser", CommandType.StoredProcedure))
                     {
+
                         command.Parameters.AddWithValue("@UserId",Id);
 
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -201,6 +202,7 @@ namespace MenaxhimiBibliotekes.DAL
             usr = new User();
             try
             {
+
                 List<User> AllUsers = new List<User>();
                 using (var conn = DbHelper.GetConnection())
                 {
@@ -246,14 +248,20 @@ namespace MenaxhimiBibliotekes.DAL
             try
             {
                 User usr = new User();
-                usr.UserID = int.Parse(reader["UserID"].ToString());
+
                 usr.Username = reader["Username"].ToString();
-                usr.Password = reader["Password"].ToString();
+                if (reader["Password"] != DBNull.Value)
+                {
+                    usr.Password = reader["Password"].ToString();
+
+
+                }
                 usr.Name = reader["Name"].ToString();
+                usr.UserID = (int)reader["UserId"];
                 usr.LastName = reader["LastName"].ToString();
                 usr.RoleID = int.Parse(reader["RoleId"].ToString());
-               // usr._role.UserRoleId = int.Parse(reader["RoleId"].ToString());
-               // usr._role.UserRole = reader["Role"].ToString();
+                usr._role.UserRoleId = usr.RoleID;
+                usr._role.UserRole = reader["Role"].ToString();
                 usr.Email = reader["Email"].ToString();
 
 
@@ -269,6 +277,9 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
+        
+
+
         public int Update(User obj)
         {
             int rowsAffected = 0;
@@ -279,13 +290,12 @@ namespace MenaxhimiBibliotekes.DAL
                     using (var command = DbHelper.Command(conn, "usp_UpdateUser", CommandType.StoredProcedure))
                     {
                         command.Parameters.AddWithValue("UserName", obj.Username);
-                        command.Parameters.AddWithValue("Password", obj.Password);
                         command.Parameters.AddWithValue("Name", obj.Name);
                         command.Parameters.AddWithValue("LastName", obj.LastName);
                         command.Parameters.AddWithValue("RoleId", obj.RoleID);
                         command.Parameters.AddWithValue("Email", obj.Email);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);//gabimmmmmm
-
+                        command.Parameters.AddWithValue("IsActive", obj.IsActive);
                         int error;
 
                         SqlParameter sqlpa = new SqlParameter();
@@ -326,6 +336,38 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
 
+        }
+
+        public int ChangePassword(int UserId, string password,int UpdBy)
+        {
+            int rowsAffected = 0;
+            try
+            {
+                using (var conn = DbHelper.GetConnection())
+                {
+                    using (var command = DbHelper.Command(conn, "usp_ChangeUserPassword", CommandType.StoredProcedure))
+                    {
+                        command.Parameters.AddWithValue("UserId", UserId);
+                        command.Parameters.AddWithValue("Password", password);
+                        command.Parameters.AddWithValue("UpdBy", UpdBy);
+
+                        rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            return 0;
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
         }
     }
 }

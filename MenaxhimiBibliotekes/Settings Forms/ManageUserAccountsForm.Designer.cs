@@ -57,10 +57,10 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.comboRoleEdit = new System.Windows.Forms.ComboBox();
-            this.txtUsernameEdit = new System.Windows.Forms.TextBox();
+            this.txtIsActiveEdit = new System.Windows.Forms.TextBox();
             this.txtEmailEdit = new System.Windows.Forms.TextBox();
             this.txtLastNameEdit = new System.Windows.Forms.TextBox();
-            this.txtIDEdit = new System.Windows.Forms.TextBox();
+            this.txtUsernameEdit = new System.Windows.Forms.TextBox();
             this.txtNameEdit = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -71,27 +71,27 @@
             this.tabDeleteAccount = new System.Windows.Forms.TabPage();
             this.btnSearchToDelete = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.txtIDDelete = new System.Windows.Forms.TextBox();
+            this.txtDelete = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtUsernameDelete = new System.Windows.Forms.Label();
+            this.txtIsActiveDelete = new System.Windows.Forms.Label();
             this.txtEmailDelete = new System.Windows.Forms.Label();
             this.txtLastNameDelete = new System.Windows.Forms.Label();
             this.txtNameDelete = new System.Windows.Forms.Label();
             this.txtRoleDelete = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.tabChangePassword = new System.Windows.Forms.TabPage();
+            this.btnUpdatePassword = new System.Windows.Forms.Button();
+            this.txtUsernameChangePassword = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.btnEditChangePassword = new System.Windows.Forms.Button();
+            this.txtUserSearchChangePassword = new System.Windows.Forms.TextBox();
+            this.lbl = new System.Windows.Forms.Label();
             this.txtPasswordChangePassword = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnEditChangePassword = new System.Windows.Forms.Button();
-            this.txtIDChangePassword = new System.Windows.Forms.TextBox();
-            this.lbl = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtUsernameChangePassword = new System.Windows.Forms.Label();
-            this.btnUpdatePassword = new System.Windows.Forms.Button();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -367,10 +367,10 @@
             this.tabEditAccount.Controls.Add(this.btnEdit);
             this.tabEditAccount.Controls.Add(this.btnUpdateAccount);
             this.tabEditAccount.Controls.Add(this.comboRoleEdit);
-            this.tabEditAccount.Controls.Add(this.txtUsernameEdit);
+            this.tabEditAccount.Controls.Add(this.txtIsActiveEdit);
             this.tabEditAccount.Controls.Add(this.txtEmailEdit);
             this.tabEditAccount.Controls.Add(this.txtLastNameEdit);
-            this.tabEditAccount.Controls.Add(this.txtIDEdit);
+            this.tabEditAccount.Controls.Add(this.txtUsernameEdit);
             this.tabEditAccount.Controls.Add(this.txtNameEdit);
             this.tabEditAccount.Controls.Add(this.label9);
             this.tabEditAccount.Controls.Add(this.label10);
@@ -400,6 +400,7 @@
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnUpdateAccount
             // 
@@ -412,6 +413,7 @@
             this.btnUpdateAccount.TabIndex = 16;
             this.btnUpdateAccount.Text = "Update Account";
             this.btnUpdateAccount.UseVisualStyleBackColor = false;
+            this.btnUpdateAccount.Click += new System.EventHandler(this.BtnUpdateAccount_Click);
             // 
             // comboRoleEdit
             // 
@@ -423,13 +425,14 @@
             this.comboRoleEdit.Name = "comboRoleEdit";
             this.comboRoleEdit.Size = new System.Drawing.Size(226, 29);
             this.comboRoleEdit.TabIndex = 10;
+            this.comboRoleEdit.SelectedIndexChanged += new System.EventHandler(this.ComboRoleEdit_SelectedIndexChanged);
             // 
-            // txtUsernameEdit
+            // txtIsActiveEdit
             // 
-            this.txtUsernameEdit.Location = new System.Drawing.Point(157, 311);
-            this.txtUsernameEdit.Name = "txtUsernameEdit";
-            this.txtUsernameEdit.Size = new System.Drawing.Size(226, 29);
-            this.txtUsernameEdit.TabIndex = 14;
+            this.txtIsActiveEdit.Location = new System.Drawing.Point(157, 311);
+            this.txtIsActiveEdit.Name = "txtIsActiveEdit";
+            this.txtIsActiveEdit.Size = new System.Drawing.Size(226, 29);
+            this.txtIsActiveEdit.TabIndex = 14;
             // 
             // txtEmailEdit
             // 
@@ -445,12 +448,12 @@
             this.txtLastNameEdit.Size = new System.Drawing.Size(226, 29);
             this.txtLastNameEdit.TabIndex = 12;
             // 
-            // txtIDEdit
+            // txtUsernameEdit
             // 
-            this.txtIDEdit.Location = new System.Drawing.Point(157, 43);
-            this.txtIDEdit.Name = "txtIDEdit";
-            this.txtIDEdit.Size = new System.Drawing.Size(226, 29);
-            this.txtIDEdit.TabIndex = 8;
+            this.txtUsernameEdit.Location = new System.Drawing.Point(157, 43);
+            this.txtUsernameEdit.Name = "txtUsernameEdit";
+            this.txtUsernameEdit.Size = new System.Drawing.Size(226, 29);
+            this.txtUsernameEdit.TabIndex = 8;
             // 
             // txtNameEdit
             // 
@@ -464,9 +467,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(47, 314);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 21);
+            this.label9.Size = new System.Drawing.Size(68, 21);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Username:";
+            this.label9.Text = "Is hired:";
             // 
             // label10
             // 
@@ -489,11 +492,11 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(29, 46);
+            this.lblID.Location = new System.Drawing.Point(11, 47);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(105, 21);
+            this.lblID.Size = new System.Drawing.Size(140, 21);
             this.lblID.TabIndex = 0;
-            this.lblID.Text = "Search by ID:";
+            this.lblID.Text = "Search Username:";
             // 
             // label12
             // 
@@ -517,13 +520,13 @@
             // 
             this.tabDeleteAccount.Controls.Add(this.btnSearchToDelete);
             this.tabDeleteAccount.Controls.Add(this.btnDelete);
-            this.tabDeleteAccount.Controls.Add(this.txtIDDelete);
+            this.tabDeleteAccount.Controls.Add(this.txtDelete);
             this.tabDeleteAccount.Controls.Add(this.label14);
             this.tabDeleteAccount.Controls.Add(this.label15);
             this.tabDeleteAccount.Controls.Add(this.label16);
             this.tabDeleteAccount.Controls.Add(this.label17);
             this.tabDeleteAccount.Controls.Add(this.label18);
-            this.tabDeleteAccount.Controls.Add(this.txtUsernameDelete);
+            this.tabDeleteAccount.Controls.Add(this.txtIsActiveDelete);
             this.tabDeleteAccount.Controls.Add(this.txtEmailDelete);
             this.tabDeleteAccount.Controls.Add(this.txtLastNameDelete);
             this.tabDeleteAccount.Controls.Add(this.txtNameDelete);
@@ -549,6 +552,7 @@
             this.btnSearchToDelete.TabIndex = 18;
             this.btnSearchToDelete.Text = "Search";
             this.btnSearchToDelete.UseVisualStyleBackColor = false;
+            this.btnSearchToDelete.Click += new System.EventHandler(this.BtnSearchToDelete_Click);
             // 
             // btnDelete
             // 
@@ -561,22 +565,23 @@
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "Delete Account";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
-            // txtIDDelete
+            // txtDelete
             // 
-            this.txtIDDelete.Location = new System.Drawing.Point(157, 43);
-            this.txtIDDelete.Name = "txtIDDelete";
-            this.txtIDDelete.Size = new System.Drawing.Size(226, 29);
-            this.txtIDDelete.TabIndex = 17;
+            this.txtDelete.Location = new System.Drawing.Point(157, 43);
+            this.txtDelete.Name = "txtDelete";
+            this.txtDelete.Size = new System.Drawing.Size(226, 29);
+            this.txtDelete.TabIndex = 17;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(47, 285);
+            this.label14.Location = new System.Drawing.Point(66, 285);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 21);
+            this.label14.Size = new System.Drawing.Size(68, 21);
             this.label14.TabIndex = 0;
-            this.label14.Text = "Username:";
+            this.label14.Text = "Is hired:";
             // 
             // label15
             // 
@@ -599,11 +604,11 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(29, 46);
+            this.label17.Location = new System.Drawing.Point(11, 46);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(105, 21);
+            this.label17.Size = new System.Drawing.Size(140, 21);
             this.label17.TabIndex = 0;
-            this.label17.Text = "Search by ID:";
+            this.label17.Text = "Search Username:";
             // 
             // label18
             // 
@@ -614,14 +619,14 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Name:";
             // 
-            // txtUsernameDelete
+            // txtIsActiveDelete
             // 
-            this.txtUsernameDelete.AutoSize = true;
-            this.txtUsernameDelete.Location = new System.Drawing.Point(153, 285);
-            this.txtUsernameDelete.Name = "txtUsernameDelete";
-            this.txtUsernameDelete.Size = new System.Drawing.Size(28, 21);
-            this.txtUsernameDelete.TabIndex = 0;
-            this.txtUsernameDelete.Text = "---";
+            this.txtIsActiveDelete.AutoSize = true;
+            this.txtIsActiveDelete.Location = new System.Drawing.Point(153, 285);
+            this.txtIsActiveDelete.Name = "txtIsActiveDelete";
+            this.txtIsActiveDelete.Size = new System.Drawing.Size(28, 21);
+            this.txtIsActiveDelete.TabIndex = 0;
+            this.txtIsActiveDelete.Text = "---";
             // 
             // txtEmailDelete
             // 
@@ -674,7 +679,7 @@
             this.tabChangePassword.Controls.Add(this.txtUsernameChangePassword);
             this.tabChangePassword.Controls.Add(this.label20);
             this.tabChangePassword.Controls.Add(this.btnEditChangePassword);
-            this.tabChangePassword.Controls.Add(this.txtIDChangePassword);
+            this.tabChangePassword.Controls.Add(this.txtUserSearchChangePassword);
             this.tabChangePassword.Controls.Add(this.lbl);
             this.tabChangePassword.Controls.Add(this.txtPasswordChangePassword);
             this.tabChangePassword.Controls.Add(this.label8);
@@ -685,6 +690,69 @@
             this.tabChangePassword.TabIndex = 3;
             this.tabChangePassword.Text = "Change Password";
             this.tabChangePassword.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdatePassword
+            // 
+            this.btnUpdatePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnUpdatePassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePassword.ForeColor = System.Drawing.Color.White;
+            this.btnUpdatePassword.Location = new System.Drawing.Point(420, 171);
+            this.btnUpdatePassword.Name = "btnUpdatePassword";
+            this.btnUpdatePassword.Size = new System.Drawing.Size(210, 84);
+            this.btnUpdatePassword.TabIndex = 22;
+            this.btnUpdatePassword.Text = "Update Password";
+            this.btnUpdatePassword.UseVisualStyleBackColor = false;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.BtnUpdatePassword_Click);
+            // 
+            // txtUsernameChangePassword
+            // 
+            this.txtUsernameChangePassword.AutoSize = true;
+            this.txtUsernameChangePassword.Location = new System.Drawing.Point(153, 171);
+            this.txtUsernameChangePassword.Name = "txtUsernameChangePassword";
+            this.txtUsernameChangePassword.Size = new System.Drawing.Size(28, 21);
+            this.txtUsernameChangePassword.TabIndex = 21;
+            this.txtUsernameChangePassword.Text = "---";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(47, 171);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(87, 21);
+            this.label20.TabIndex = 21;
+            this.label20.Text = "Username:";
+            // 
+            // btnEditChangePassword
+            // 
+            this.btnEditChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnEditChangePassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditChangePassword.ForeColor = System.Drawing.Color.White;
+            this.btnEditChangePassword.Image = ((System.Drawing.Image)(resources.GetObject("btnEditChangePassword.Image")));
+            this.btnEditChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditChangePassword.Location = new System.Drawing.Point(420, 29);
+            this.btnEditChangePassword.Name = "btnEditChangePassword";
+            this.btnEditChangePassword.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEditChangePassword.Size = new System.Drawing.Size(210, 56);
+            this.btnEditChangePassword.TabIndex = 20;
+            this.btnEditChangePassword.Text = "Edit";
+            this.btnEditChangePassword.UseVisualStyleBackColor = false;
+            this.btnEditChangePassword.Click += new System.EventHandler(this.BtnEditChangePassword_Click);
+            // 
+            // txtUserSearchChangePassword
+            // 
+            this.txtUserSearchChangePassword.Location = new System.Drawing.Point(157, 43);
+            this.txtUserSearchChangePassword.Name = "txtUserSearchChangePassword";
+            this.txtUserSearchChangePassword.Size = new System.Drawing.Size(226, 29);
+            this.txtUserSearchChangePassword.TabIndex = 19;
+            // 
+            // lbl
+            // 
+            this.lbl.AutoSize = true;
+            this.lbl.Location = new System.Drawing.Point(11, 46);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(140, 21);
+            this.lbl.TabIndex = 18;
+            this.lbl.Text = "Search Username:";
             // 
             // txtPasswordChangePassword
             // 
@@ -701,67 +769,6 @@
             this.label8.Size = new System.Drawing.Size(83, 21);
             this.label8.TabIndex = 16;
             this.label8.Text = "Password:";
-            // 
-            // btnEditChangePassword
-            // 
-            this.btnEditChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnEditChangePassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btnEditChangePassword.Image = ((System.Drawing.Image)(resources.GetObject("btnEditChangePassword.Image")));
-            this.btnEditChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditChangePassword.Location = new System.Drawing.Point(420, 29);
-            this.btnEditChangePassword.Name = "btnEditChangePassword";
-            this.btnEditChangePassword.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEditChangePassword.Size = new System.Drawing.Size(210, 56);
-            this.btnEditChangePassword.TabIndex = 20;
-            this.btnEditChangePassword.Text = "Edit";
-            this.btnEditChangePassword.UseVisualStyleBackColor = false;
-            // 
-            // txtIDChangePassword
-            // 
-            this.txtIDChangePassword.Location = new System.Drawing.Point(157, 43);
-            this.txtIDChangePassword.Name = "txtIDChangePassword";
-            this.txtIDChangePassword.Size = new System.Drawing.Size(226, 29);
-            this.txtIDChangePassword.TabIndex = 19;
-            // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(29, 46);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(105, 21);
-            this.lbl.TabIndex = 18;
-            this.lbl.Text = "Search by ID:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(47, 171);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(87, 21);
-            this.label20.TabIndex = 21;
-            this.label20.Text = "Username:";
-            // 
-            // txtUsernameChangePassword
-            // 
-            this.txtUsernameChangePassword.AutoSize = true;
-            this.txtUsernameChangePassword.Location = new System.Drawing.Point(153, 171);
-            this.txtUsernameChangePassword.Name = "txtUsernameChangePassword";
-            this.txtUsernameChangePassword.Size = new System.Drawing.Size(28, 21);
-            this.txtUsernameChangePassword.TabIndex = 21;
-            this.txtUsernameChangePassword.Text = "---";
-            // 
-            // btnUpdatePassword
-            // 
-            this.btnUpdatePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnUpdatePassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePassword.ForeColor = System.Drawing.Color.White;
-            this.btnUpdatePassword.Location = new System.Drawing.Point(420, 171);
-            this.btnUpdatePassword.Name = "btnUpdatePassword";
-            this.btnUpdatePassword.Size = new System.Drawing.Size(210, 84);
-            this.btnUpdatePassword.TabIndex = 22;
-            this.btnUpdatePassword.Text = "Update Password";
-            this.btnUpdatePassword.UseVisualStyleBackColor = false;
             // 
             // ManageUserAccountsForm
             // 
@@ -828,10 +835,10 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnUpdateAccount;
         private System.Windows.Forms.ComboBox comboRoleEdit;
-        private System.Windows.Forms.TextBox txtUsernameEdit;
+        private System.Windows.Forms.TextBox txtIsActiveEdit;
         private System.Windows.Forms.TextBox txtEmailEdit;
         private System.Windows.Forms.TextBox txtLastNameEdit;
-        private System.Windows.Forms.TextBox txtIDEdit;
+        private System.Windows.Forms.TextBox txtUsernameEdit;
         private System.Windows.Forms.TextBox txtNameEdit;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -841,13 +848,13 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnSearchToDelete;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.TextBox txtIDDelete;
+        private System.Windows.Forms.TextBox txtDelete;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label txtUsernameDelete;
+        private System.Windows.Forms.Label txtIsActiveDelete;
         private System.Windows.Forms.Label txtEmailDelete;
         private System.Windows.Forms.Label txtLastNameDelete;
         private System.Windows.Forms.Label txtNameDelete;
@@ -858,7 +865,7 @@
         private System.Windows.Forms.Label txtUsernameChangePassword;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnEditChangePassword;
-        private System.Windows.Forms.TextBox txtIDChangePassword;
+        private System.Windows.Forms.TextBox txtUserSearchChangePassword;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.TextBox txtPasswordChangePassword;
         private System.Windows.Forms.Label label8;

@@ -12,7 +12,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class UserBLL : ICreate<User>, IUpdate<User>, IDelete, IRead<User>
+    public class UserBLL : ICreate<User>, IUpdate<User>, IDelete, IRead<User>,IChangePassword
     {
         UserDAL usr = new UserDAL();
 
@@ -50,6 +50,9 @@ namespace MenaxhimiBibliotekes.BLL
             return usr.Update(obj);
         }
 
-
+        public int ChangePassword(int UserId, string password,int UpdBy)
+        {
+          return  usr.ChangePassword( UserId,  password,  UpdBy);
+        }
     }
 }

@@ -40,7 +40,7 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboMaterialLocation = new System.Windows.Forms.ComboBox();
+            this.comboMaterialType = new System.Windows.Forms.ComboBox();
             this.lblMaterialID = new System.Windows.Forms.Label();
             this.txtMaterialID = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -62,12 +62,10 @@
             this.lblPublishPlace = new System.Windows.Forms.Label();
             this.lblPublishDate = new System.Windows.Forms.Label();
             this.lblPublishHouse = new System.Windows.Forms.Label();
-            this.lblMaterialLocation = new System.Windows.Forms.Label();
+            this.lblMaterialType = new System.Windows.Forms.Label();
             this.txtPublishHouse = new System.Windows.Forms.TextBox();
             this.txtPublishDate = new System.Windows.Forms.TextBox();
             this.txtPublishPlace = new System.Windows.Forms.TextBox();
-            this.lblMaterialType = new System.Windows.Forms.Label();
-            this.comboMaterialType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -185,7 +183,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.lblFooterTitle, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 801);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 810);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -212,7 +210,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.comboMaterialLocation, 3, 4);
+            this.tableLayoutPanel3.Controls.Add(this.comboMaterialType, 3, 4);
             this.tableLayoutPanel3.Controls.Add(this.lblMaterialID, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtMaterialID, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 3, 16);
@@ -230,12 +228,10 @@
             this.tableLayoutPanel3.Controls.Add(this.lblPublishPlace, 3, 12);
             this.tableLayoutPanel3.Controls.Add(this.lblPublishDate, 3, 9);
             this.tableLayoutPanel3.Controls.Add(this.lblPublishHouse, 3, 6);
-            this.tableLayoutPanel3.Controls.Add(this.lblMaterialLocation, 3, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lblMaterialType, 3, 3);
             this.tableLayoutPanel3.Controls.Add(this.txtPublishHouse, 3, 7);
             this.tableLayoutPanel3.Controls.Add(this.txtPublishDate, 3, 10);
             this.tableLayoutPanel3.Controls.Add(this.txtPublishPlace, 3, 13);
-            this.tableLayoutPanel3.Controls.Add(this.lblMaterialType, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboMaterialType, 3, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 164);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -260,25 +256,25 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(792, 564);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // comboMaterialLocation
+            // comboMaterialType
             // 
-            this.comboMaterialLocation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboMaterialLocation.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.comboMaterialLocation.FormattingEnabled = true;
-            this.comboMaterialLocation.Items.AddRange(new object[] {
+            this.comboMaterialType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboMaterialType.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.comboMaterialType.FormattingEnabled = true;
+            this.comboMaterialType.Items.AddRange(new object[] {
             "Other",
             "Book",
             "Journal"});
-            this.comboMaterialLocation.Location = new System.Drawing.Point(409, 137);
-            this.comboMaterialLocation.Name = "comboMaterialLocation";
-            this.comboMaterialLocation.Size = new System.Drawing.Size(356, 33);
-            this.comboMaterialLocation.TabIndex = 3;
+            this.comboMaterialType.Location = new System.Drawing.Point(409, 137);
+            this.comboMaterialType.Name = "comboMaterialType";
+            this.comboMaterialType.Size = new System.Drawing.Size(356, 33);
+            this.comboMaterialType.TabIndex = 3;
+            this.comboMaterialType.SelectedIndexChanged += new System.EventHandler(this.ComboMaterialType_SelectedIndexChanged);
             // 
             // lblMaterialID
             // 
             this.lblMaterialID.AutoSize = true;
             this.lblMaterialID.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(127)))), ((int)(((byte)(120)))));
             this.lblMaterialID.Location = new System.Drawing.Point(23, 0);
             this.lblMaterialID.Name = "lblMaterialID";
             this.lblMaterialID.Size = new System.Drawing.Size(109, 25);
@@ -293,7 +289,6 @@
             this.txtMaterialID.Name = "txtMaterialID";
             this.txtMaterialID.Size = new System.Drawing.Size(356, 33);
             this.txtMaterialID.TabIndex = 1;
-            this.txtMaterialID.TextChanged += new System.EventHandler(this.txtMaterialID_TextChanged);
             // 
             // tableLayoutPanel4
             // 
@@ -504,15 +499,15 @@
             this.lblPublishHouse.TabIndex = 0;
             this.lblPublishHouse.Text = "Publish House";
             // 
-            // lblMaterialLocation
+            // lblMaterialType
             // 
-            this.lblMaterialLocation.AutoSize = true;
-            this.lblMaterialLocation.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialLocation.Location = new System.Drawing.Point(409, 96);
-            this.lblMaterialLocation.Name = "lblMaterialLocation";
-            this.lblMaterialLocation.Size = new System.Drawing.Size(162, 25);
-            this.lblMaterialLocation.TabIndex = 0;
-            this.lblMaterialLocation.Text = "Material Location";
+            this.lblMaterialType.AutoSize = true;
+            this.lblMaterialType.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterialType.Location = new System.Drawing.Point(409, 96);
+            this.lblMaterialType.Name = "lblMaterialType";
+            this.lblMaterialType.Size = new System.Drawing.Size(129, 25);
+            this.lblMaterialType.TabIndex = 0;
+            this.lblMaterialType.Text = "Material Type";
             // 
             // txtPublishHouse
             // 
@@ -541,30 +536,6 @@
             this.txtPublishPlace.Size = new System.Drawing.Size(356, 33);
             this.txtPublishPlace.TabIndex = 9;
             // 
-            // lblMaterialType
-            // 
-            this.lblMaterialType.AutoSize = true;
-            this.lblMaterialType.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialType.Location = new System.Drawing.Point(409, 0);
-            this.lblMaterialType.Name = "lblMaterialType";
-            this.lblMaterialType.Size = new System.Drawing.Size(129, 25);
-            this.lblMaterialType.TabIndex = 0;
-            this.lblMaterialType.Text = "Material Type";
-            // 
-            // comboMaterialType
-            // 
-            this.comboMaterialType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboMaterialType.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.comboMaterialType.FormattingEnabled = true;
-            this.comboMaterialType.Items.AddRange(new object[] {
-            "Other",
-            "Book",
-            "Journal"});
-            this.comboMaterialType.Location = new System.Drawing.Point(409, 41);
-            this.comboMaterialType.Name = "comboMaterialType";
-            this.comboMaterialType.Size = new System.Drawing.Size(356, 33);
-            this.comboMaterialType.TabIndex = 3;
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 3;
@@ -577,14 +548,14 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(792, 73);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(792, 82);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel13
             // 
             this.panel13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel13.Controls.Add(this.btnUpdate);
-            this.panel13.Location = new System.Drawing.Point(218, 10);
+            this.panel13.Location = new System.Drawing.Point(218, 15);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(356, 52);
             this.panel13.TabIndex = 0;
@@ -601,20 +572,20 @@
             this.btnUpdate.TabIndex = 13;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // UpdateMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 828);
+            this.ClientSize = new System.Drawing.Size(792, 837);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(808, 867);
+            this.MinimumSize = new System.Drawing.Size(808, 726);
             this.Name = "UpdateMaterialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Materials (Stackbooks)";
@@ -666,13 +637,13 @@
         private System.Windows.Forms.ComboBox comboGenre;
         private System.Windows.Forms.ComboBox comboLanguage;
         private System.Windows.Forms.TextBox txtISBN;
-        private System.Windows.Forms.Label lblMaterialLocation;
+        private System.Windows.Forms.Label lblMaterialType;
         private System.Windows.Forms.Label lblPublishHouse;
         private System.Windows.Forms.Label lblPublishDate;
         private System.Windows.Forms.Label lblPublishPlace;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Label lblPages;
-        private System.Windows.Forms.ComboBox comboMaterialLocation;
+        private System.Windows.Forms.ComboBox comboMaterialType;
         private System.Windows.Forms.TextBox txtPublishHouse;
         private System.Windows.Forms.TextBox txtPublishDate;
         private System.Windows.Forms.TextBox txtPublishPlace;
@@ -681,7 +652,5 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Label lblMaterialType;
-        private System.Windows.Forms.ComboBox comboMaterialType;
     }
 }

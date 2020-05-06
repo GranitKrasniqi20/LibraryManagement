@@ -14,44 +14,39 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 {
     public partial class UpdateMaterialForm : Form
     {
-        // Global Variables
-        Material material;
-        MaterialBLL materialBLL;
-        List<Material> materialList;
-
-        GenreBLL genreBLL;
-        List<Genre> genreList;
-
-
+        MaterialTypeBLL mtbll;
+        List<MaterialType> allMt;
         public UpdateMaterialForm()
         {
             InitializeComponent();
-            material = new Material();
-            materialBLL = new MaterialBLL();
-            materialList = new List<Material>();
+             mtbll = new MaterialTypeBLL();
 
-            comboGenre.Items.Clear();
-            genreBLL = new GenreBLL();
-            genreList = genreBLL.GetAll();
-            comboGenre.DataSource = genreList;
-            comboGenre.DisplayMember = "_Genre";
+
+
+            mtbll = new MaterialTypeBLL();
+            MaterialType mt = new MaterialType();
+            allMt = mtbll.GetAll();
+            mt = allMt[0];
+            allMt[0] = new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" };
+            allMt.Add(mt);
+
+
+            comboMaterialType.DataSource = allMt;
+            comboMaterialType.DisplayMember = "_MaterialType";
+
+
+
+
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            material = materialBLL.Get(Convert.ToInt32(txtMaterialID.Text));
-
-            //materialList = materialBLL.GetAll();
-
 
         }
 
-        private void txtMaterialID_TextChanged(object sender, EventArgs e)
+        private void ComboMaterialType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            material = materialBLL.Get(Convert.ToInt32(txtMaterialID.Text));
-
-            txtTitle.Text = material.Title;
-            txtAuthor.Text = material._Author.AuthorName;
+            
         }
     }
 }

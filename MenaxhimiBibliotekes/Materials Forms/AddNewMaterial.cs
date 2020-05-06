@@ -170,8 +170,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
         }
 
+
+
         private void comboGenre_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
             Genre cg = comboGenre.SelectedItem as Genre;
 
             if (cg.GenreId == 0)
@@ -184,6 +187,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 openFormG = true;
                 
             }
+
         }
 
         private void comboLanguage_SelectedIndexChanged_1(object sender, EventArgs e)

@@ -30,35 +30,35 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabCreateLocation = new System.Windows.Forms.TabPage();
-            this.tabUpdateLocation = new System.Windows.Forms.TabPage();
             this.btnInsert = new System.Windows.Forms.Button();
             this.richCreateDescription = new System.Windows.Forms.RichTextBox();
             this.txtCreateMaterialLocation = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblUnique = new System.Windows.Forms.Label();
             this.lblMaterialLocationCreate = new System.Windows.Forms.Label();
-            this.tabDeleteLocation = new System.Windows.Forms.TabPage();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.richUpdateDescription = new System.Windows.Forms.RichTextBox();
-            this.txtUpdateSearch = new System.Windows.Forms.TextBox();
-            this.lblUpdateMaterialDescription = new System.Windows.Forms.Label();
+            this.tabUpdateLocation = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblUpdateSearch = new System.Windows.Forms.Label();
             this.btnUpdateSearchLocation = new System.Windows.Forms.Button();
-            this.lblUpdateMaterialLocationNaem = new System.Windows.Forms.Label();
+            this.txtUpdateSearch = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.richUpdateDescription = new System.Windows.Forms.RichTextBox();
             this.txtUpdateMaterialLocation = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblUpdateMaterialLocationNaem = new System.Windows.Forms.Label();
+            this.lblUpdateMaterialDescription = new System.Windows.Forms.Label();
+            this.tabDeleteLocation = new System.Windows.Forms.TabPage();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.lblDeleteMaterialLocation = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblDeleteSearch = new System.Windows.Forms.Label();
             this.btnDeleteSearch = new System.Windows.Forms.Button();
             this.txtDeleteSearch = new System.Windows.Forms.TextBox();
-            this.lblDeleteMaterialLocation = new System.Windows.Forms.Label();
             this.txtDeleteMaterialLocation = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabCreateLocation.SuspendLayout();
             this.tabUpdateLocation.SuspendLayout();
-            this.tabDeleteLocation.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabDeleteLocation.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,22 +91,6 @@
             this.tabCreateLocation.Text = "Create Location";
             this.tabCreateLocation.UseVisualStyleBackColor = true;
             // 
-            // tabUpdateLocation
-            // 
-            this.tabUpdateLocation.Controls.Add(this.panel1);
-            this.tabUpdateLocation.Controls.Add(this.btnUpdate);
-            this.tabUpdateLocation.Controls.Add(this.richUpdateDescription);
-            this.tabUpdateLocation.Controls.Add(this.txtUpdateMaterialLocation);
-            this.tabUpdateLocation.Controls.Add(this.lblUpdateMaterialLocationNaem);
-            this.tabUpdateLocation.Controls.Add(this.lblUpdateMaterialDescription);
-            this.tabUpdateLocation.Location = new System.Drawing.Point(4, 26);
-            this.tabUpdateLocation.Name = "tabUpdateLocation";
-            this.tabUpdateLocation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUpdateLocation.Size = new System.Drawing.Size(578, 656);
-            this.tabUpdateLocation.TabIndex = 1;
-            this.tabUpdateLocation.Text = "Update Location";
-            this.tabUpdateLocation.UseVisualStyleBackColor = true;
-            // 
             // btnInsert
             // 
             this.btnInsert.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,6 +100,7 @@
             this.btnInsert.TabIndex = 9;
             this.btnInsert.Text = "Insert Location";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // richCreateDescription
             // 
@@ -164,56 +149,32 @@
             this.lblMaterialLocationCreate.TabIndex = 6;
             this.lblMaterialLocationCreate.Text = "Material Location Name:";
             // 
-            // tabDeleteLocation
+            // tabUpdateLocation
             // 
-            this.tabDeleteLocation.Controls.Add(this.btnDelete);
-            this.tabDeleteLocation.Controls.Add(this.lblDeleteMaterialLocation);
-            this.tabDeleteLocation.Controls.Add(this.panel2);
-            this.tabDeleteLocation.Controls.Add(this.txtDeleteMaterialLocation);
-            this.tabDeleteLocation.Location = new System.Drawing.Point(4, 26);
-            this.tabDeleteLocation.Name = "tabDeleteLocation";
-            this.tabDeleteLocation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDeleteLocation.Size = new System.Drawing.Size(578, 656);
-            this.tabDeleteLocation.TabIndex = 2;
-            this.tabDeleteLocation.Text = "Delete Location";
-            this.tabDeleteLocation.UseVisualStyleBackColor = true;
+            this.tabUpdateLocation.Controls.Add(this.panel1);
+            this.tabUpdateLocation.Controls.Add(this.btnUpdate);
+            this.tabUpdateLocation.Controls.Add(this.richUpdateDescription);
+            this.tabUpdateLocation.Controls.Add(this.txtUpdateMaterialLocation);
+            this.tabUpdateLocation.Controls.Add(this.lblUpdateMaterialLocationNaem);
+            this.tabUpdateLocation.Controls.Add(this.lblUpdateMaterialDescription);
+            this.tabUpdateLocation.Location = new System.Drawing.Point(4, 26);
+            this.tabUpdateLocation.Name = "tabUpdateLocation";
+            this.tabUpdateLocation.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUpdateLocation.Size = new System.Drawing.Size(578, 656);
+            this.tabUpdateLocation.TabIndex = 1;
+            this.tabUpdateLocation.Text = "Update Location";
+            this.tabUpdateLocation.UseVisualStyleBackColor = true;
             // 
-            // btnUpdate
+            // panel1
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(129, 516);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(316, 58);
-            this.btnUpdate.TabIndex = 14;
-            this.btnUpdate.Text = "Update Location";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // richUpdateDescription
-            // 
-            this.richUpdateDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richUpdateDescription.Location = new System.Drawing.Point(129, 298);
-            this.richUpdateDescription.Name = "richUpdateDescription";
-            this.richUpdateDescription.Size = new System.Drawing.Size(316, 185);
-            this.richUpdateDescription.TabIndex = 13;
-            this.richUpdateDescription.Text = "";
-            // 
-            // txtUpdateSearch
-            // 
-            this.txtUpdateSearch.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUpdateSearch.Location = new System.Drawing.Point(46, 44);
-            this.txtUpdateSearch.Name = "txtUpdateSearch";
-            this.txtUpdateSearch.Size = new System.Drawing.Size(224, 35);
-            this.txtUpdateSearch.TabIndex = 12;
-            // 
-            // lblUpdateMaterialDescription
-            // 
-            this.lblUpdateMaterialDescription.AutoSize = true;
-            this.lblUpdateMaterialDescription.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateMaterialDescription.Location = new System.Drawing.Point(172, 270);
-            this.lblUpdateMaterialDescription.Name = "lblUpdateMaterialDescription";
-            this.lblUpdateMaterialDescription.Size = new System.Drawing.Size(229, 25);
-            this.lblUpdateMaterialDescription.TabIndex = 10;
-            this.lblUpdateMaterialDescription.Text = "Material Location Name:";
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblUpdateSearch);
+            this.panel1.Controls.Add(this.btnUpdateSearchLocation);
+            this.panel1.Controls.Add(this.txtUpdateSearch);
+            this.panel1.Location = new System.Drawing.Point(8, 36);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(551, 100);
+            this.panel1.TabIndex = 15;
             // 
             // lblUpdateSearch
             // 
@@ -235,6 +196,41 @@
             this.btnUpdateSearchLocation.Text = "Search";
             this.btnUpdateSearchLocation.UseVisualStyleBackColor = true;
             // 
+            // txtUpdateSearch
+            // 
+            this.txtUpdateSearch.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpdateSearch.Location = new System.Drawing.Point(46, 44);
+            this.txtUpdateSearch.Name = "txtUpdateSearch";
+            this.txtUpdateSearch.Size = new System.Drawing.Size(224, 35);
+            this.txtUpdateSearch.TabIndex = 12;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(129, 516);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(316, 58);
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "Update Location";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // richUpdateDescription
+            // 
+            this.richUpdateDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richUpdateDescription.Location = new System.Drawing.Point(129, 298);
+            this.richUpdateDescription.Name = "richUpdateDescription";
+            this.richUpdateDescription.Size = new System.Drawing.Size(316, 185);
+            this.richUpdateDescription.TabIndex = 13;
+            this.richUpdateDescription.Text = "";
+            // 
+            // txtUpdateMaterialLocation
+            // 
+            this.txtUpdateMaterialLocation.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpdateMaterialLocation.Location = new System.Drawing.Point(177, 203);
+            this.txtUpdateMaterialLocation.Name = "txtUpdateMaterialLocation";
+            this.txtUpdateMaterialLocation.Size = new System.Drawing.Size(224, 35);
+            this.txtUpdateMaterialLocation.TabIndex = 12;
+            // 
             // lblUpdateMaterialLocationNaem
             // 
             this.lblUpdateMaterialLocationNaem.AutoSize = true;
@@ -245,24 +241,49 @@
             this.lblUpdateMaterialLocationNaem.TabIndex = 11;
             this.lblUpdateMaterialLocationNaem.Text = "Material Location Name:";
             // 
-            // txtUpdateMaterialLocation
+            // lblUpdateMaterialDescription
             // 
-            this.txtUpdateMaterialLocation.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUpdateMaterialLocation.Location = new System.Drawing.Point(177, 203);
-            this.txtUpdateMaterialLocation.Name = "txtUpdateMaterialLocation";
-            this.txtUpdateMaterialLocation.Size = new System.Drawing.Size(224, 35);
-            this.txtUpdateMaterialLocation.TabIndex = 12;
+            this.lblUpdateMaterialDescription.AutoSize = true;
+            this.lblUpdateMaterialDescription.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateMaterialDescription.Location = new System.Drawing.Point(172, 270);
+            this.lblUpdateMaterialDescription.Name = "lblUpdateMaterialDescription";
+            this.lblUpdateMaterialDescription.Size = new System.Drawing.Size(229, 25);
+            this.lblUpdateMaterialDescription.TabIndex = 10;
+            this.lblUpdateMaterialDescription.Text = "Material Location Name:";
             // 
-            // panel1
+            // tabDeleteLocation
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.lblUpdateSearch);
-            this.panel1.Controls.Add(this.btnUpdateSearchLocation);
-            this.panel1.Controls.Add(this.txtUpdateSearch);
-            this.panel1.Location = new System.Drawing.Point(8, 36);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(551, 100);
-            this.panel1.TabIndex = 15;
+            this.tabDeleteLocation.Controls.Add(this.btnDelete);
+            this.tabDeleteLocation.Controls.Add(this.lblDeleteMaterialLocation);
+            this.tabDeleteLocation.Controls.Add(this.panel2);
+            this.tabDeleteLocation.Controls.Add(this.txtDeleteMaterialLocation);
+            this.tabDeleteLocation.Location = new System.Drawing.Point(4, 26);
+            this.tabDeleteLocation.Name = "tabDeleteLocation";
+            this.tabDeleteLocation.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDeleteLocation.Size = new System.Drawing.Size(578, 656);
+            this.tabDeleteLocation.TabIndex = 2;
+            this.tabDeleteLocation.Text = "Delete Location";
+            this.tabDeleteLocation.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(62, 338);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(458, 58);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.Text = "Update Location";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // lblDeleteMaterialLocation
+            // 
+            this.lblDeleteMaterialLocation.AutoSize = true;
+            this.lblDeleteMaterialLocation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteMaterialLocation.Location = new System.Drawing.Point(57, 263);
+            this.lblDeleteMaterialLocation.Name = "lblDeleteMaterialLocation";
+            this.lblDeleteMaterialLocation.Size = new System.Drawing.Size(229, 25);
+            this.lblDeleteMaterialLocation.TabIndex = 17;
+            this.lblDeleteMaterialLocation.Text = "Material Location Name:";
             // 
             // panel2
             // 
@@ -303,16 +324,6 @@
             this.txtDeleteSearch.Size = new System.Drawing.Size(224, 35);
             this.txtDeleteSearch.TabIndex = 12;
             // 
-            // lblDeleteMaterialLocation
-            // 
-            this.lblDeleteMaterialLocation.AutoSize = true;
-            this.lblDeleteMaterialLocation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeleteMaterialLocation.Location = new System.Drawing.Point(57, 263);
-            this.lblDeleteMaterialLocation.Name = "lblDeleteMaterialLocation";
-            this.lblDeleteMaterialLocation.Size = new System.Drawing.Size(229, 25);
-            this.lblDeleteMaterialLocation.TabIndex = 17;
-            this.lblDeleteMaterialLocation.Text = "Material Location Name:";
-            // 
             // txtDeleteMaterialLocation
             // 
             this.txtDeleteMaterialLocation.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -320,16 +331,6 @@
             this.txtDeleteMaterialLocation.Name = "txtDeleteMaterialLocation";
             this.txtDeleteMaterialLocation.Size = new System.Drawing.Size(191, 35);
             this.txtDeleteMaterialLocation.TabIndex = 12;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(62, 338);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(458, 58);
-            this.btnDelete.TabIndex = 18;
-            this.btnDelete.Text = "Update Location";
-            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // MaterialLocation
             // 
@@ -345,10 +346,10 @@
             this.tabCreateLocation.PerformLayout();
             this.tabUpdateLocation.ResumeLayout(false);
             this.tabUpdateLocation.PerformLayout();
-            this.tabDeleteLocation.ResumeLayout(false);
-            this.tabDeleteLocation.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabDeleteLocation.ResumeLayout(false);
+            this.tabDeleteLocation.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

@@ -45,7 +45,7 @@ namespace MenaxhimiBibliotekes.BLL.Validate
 
         public void validateUpdateUser()
         {
-            
+
             RuleFor(p => p.Name).NotEmpty().WithMessage("{PropertyName} is Empty")
                 .Length(2, 30).WithMessage("{PropertyName} must be more than 2 and less than 30 charactes")
                 .Must(ValidateName).WithMessage("{PropertyName} can contain only letters");
@@ -57,6 +57,10 @@ namespace MenaxhimiBibliotekes.BLL.Validate
             RuleFor(p => p.Username).NotEmpty().WithMessage("{PropertyName} is Empty")
          .Length(4, 30).WithMessage("{PropertyName} must be more than 4 and less than 14 charactes")
       .Must(ValidateUsername).WithMessage("{PropertyName} can contain only letters and numbers");
+
+            RuleFor(p => p.Email).NotEmpty().WithMessage("{PropertyName} is Empty")
+.Length(6, 30).WithMessage("{PropertyName} must be more than 6 and less than 30 charactes")
+         .EmailAddress().WithMessage("{PropertyName} is not valid");
 
         }
 

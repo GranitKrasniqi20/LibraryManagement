@@ -17,7 +17,9 @@ namespace MenaxhimiBibliotekes.BO
         public string PhoneNo { get; set; }
         public string Email { get; set; }
         public char Gender { get; set; }
+
         public DateTime ExpirationDate { get; set; }
+
         public bool IsActive { get; set; }
 
     }

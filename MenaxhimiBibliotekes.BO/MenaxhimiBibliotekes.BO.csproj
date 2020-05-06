@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Audit.cs" />
     <Compile Include="FormLoggedUser.cs" />
+    <Compile Include="Interfaces\IChangePassword.cs" />
     <Compile Include="Interfaces\IConvertToBO.cs" />
     <Compile Include="Interfaces\IDelete.cs" />
     <Compile Include="Interfaces\ILogIn.cs" />

@@ -25,8 +25,7 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .LessThan(0).WithMessage("Amount unacceptable. Greater quantity!");
 
 
-            RuleFor(p => p.Description).NotEmpty().WithMessage("{PropertyName} is Empty")
-                .Length(0, 250).WithMessage("{PropertyName} should not have more than 250 characters ");
+
 
         }
 

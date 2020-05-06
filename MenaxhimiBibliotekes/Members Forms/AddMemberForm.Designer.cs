@@ -60,6 +60,7 @@
             this.comboSubscriptionPlan = new System.Windows.Forms.ComboBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFullAddress = new System.Windows.Forms.TextBox();
+            this.txtBirthdate = new System.Windows.Forms.TextBox();
             this.txtPersonalNumber = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnBill = new System.Windows.Forms.Button();
-            this.dtPickerBirthdate = new System.Windows.Forms.DateTimePicker();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -206,10 +206,10 @@
             this.tableLayoutPanel3.Controls.Add(this.comboSubscriptionPlan, 1, 13);
             this.tableLayoutPanel3.Controls.Add(this.txtLastName, 3, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtFullAddress, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.txtBirthdate, 3, 4);
             this.tableLayoutPanel3.Controls.Add(this.txtPersonalNumber, 3, 7);
             this.tableLayoutPanel3.Controls.Add(this.txtEmail, 1, 10);
             this.tableLayoutPanel3.Controls.Add(this.txtPhoneNumber, 3, 10);
-            this.tableLayoutPanel3.Controls.Add(this.dtPickerBirthdate, 3, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 164);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -309,7 +309,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(356, 33);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // radioFemer
             // 
@@ -424,7 +423,6 @@
             this.txtFromDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtFromDate.Location = new System.Drawing.Point(3, 3);
             this.txtFromDate.Name = "txtFromDate";
-            this.txtFromDate.ReadOnly = true;
             this.txtFromDate.Size = new System.Drawing.Size(162, 33);
             this.txtFromDate.TabIndex = 11;
             // 
@@ -435,7 +433,6 @@
             this.txtTillDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtTillDate.Location = new System.Drawing.Point(191, 3);
             this.txtTillDate.Name = "txtTillDate";
-            this.txtTillDate.ReadOnly = true;
             this.txtTillDate.Size = new System.Drawing.Size(162, 33);
             this.txtTillDate.TabIndex = 12;
             // 
@@ -451,7 +448,6 @@
             this.comboSubscriptionPlan.Name = "comboSubscriptionPlan";
             this.comboSubscriptionPlan.Size = new System.Drawing.Size(356, 33);
             this.comboSubscriptionPlan.TabIndex = 10;
-            this.comboSubscriptionPlan.SelectedIndexChanged += new System.EventHandler(this.comboSubscriptionPlan_SelectedIndexChanged);
             // 
             // txtLastName
             // 
@@ -470,6 +466,15 @@
             this.txtFullAddress.Name = "txtFullAddress";
             this.txtFullAddress.Size = new System.Drawing.Size(356, 33);
             this.txtFullAddress.TabIndex = 3;
+            // 
+            // txtBirthdate
+            // 
+            this.txtBirthdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBirthdate.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBirthdate.Location = new System.Drawing.Point(405, 140);
+            this.txtBirthdate.Name = "txtBirthdate";
+            this.txtBirthdate.Size = new System.Drawing.Size(356, 33);
+            this.txtBirthdate.TabIndex = 4;
             // 
             // txtPersonalNumber
             // 
@@ -597,17 +602,6 @@
             this.btnBill.Text = "Bill";
             this.btnBill.UseVisualStyleBackColor = false;
             // 
-            // dtPickerBirthdate
-            // 
-            this.dtPickerBirthdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtPickerBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtPickerBirthdate.Location = new System.Drawing.Point(405, 140);
-            this.dtPickerBirthdate.Name = "dtPickerBirthdate";
-            this.dtPickerBirthdate.Size = new System.Drawing.Size(356, 29);
-            this.dtPickerBirthdate.TabIndex = 1;
-            // 
             // AddMemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -680,6 +674,7 @@
         private System.Windows.Forms.ComboBox comboSubscriptionPlan;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtFullAddress;
+        private System.Windows.Forms.TextBox txtBirthdate;
         private System.Windows.Forms.TextBox txtPersonalNumber;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhoneNumber;
@@ -692,6 +687,5 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnBill;
         private System.Windows.Forms.TextBox txtFromDate;
-        private System.Windows.Forms.DateTimePicker dtPickerBirthdate;
     }
 }
