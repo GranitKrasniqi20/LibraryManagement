@@ -26,7 +26,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
         Subscriber subscriber;
         SubscriberBLL subscriberBLL;
 
-        //public DateTime subscriberRegistrationDate;//me rujt vleren e RegistrationDate
+        public DateTime subscriberRegistrationDate;//me rujt vleren e RegistrationDate
 
         public static List<Subscriber> ManSubscriber = new List<Subscriber>();
         public static List<Subscriber> WomanSubscriber = new List<Subscriber>();
@@ -47,6 +47,34 @@ namespace MenaxhimiBibliotekes.Members_Forms
                 subscriber.PersonalNo = txtPersonalNumber.Text;
                 subscriber.Email = txtEmail.Text;
                 subscriber.PhoneNo = txtPhoneNumber.Text;
+
+                subscriber.IsActive = true;
+
+                subscriber.InsBy = FormLoggedUser.Id;
+
+
+                SubscriberValidation subscriberValidator = new SubscriberValidation();
+
+                subscriberValidator.subscriber = subscriber;
+
+                subscriberValidator.ValidateSubscriber();
+                
+                ValidationResult results = subscriberValidator.Validate(subscriber);
+
+                if (results.IsValid == false)
+                {
+                    foreach (ValidationFailure failure in results.Errors)
+                    {
+                        MessageBox.Show($"{failure.ErrorMessage}", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    subscriberBLL.Add(subscriber);
+                    MessageBox.Show("The subscriber is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
             }
 
             catch (Exception ex)
@@ -67,7 +95,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
                     txtTillDate.Text = DateTime.Now.AddMonths(1).ToShortDateString();
 
-                    //subscriberRegistrationDate = DateTime.Parse(txtFromDate.Text);
+                    subscriberRegistrationDate = DateTime.Parse(txtFromDate.Text);
                     subscriber.ExpirationDate = DateTime.Parse(txtTillDate.Text);
                 }
 
@@ -78,7 +106,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
                     txtTillDate.Text = DateTime.Now.AddYears(1).ToShortDateString();
 
-                    //subscriberRegistrationDate = DateTime.Parse(txtFromDate.Text);
+                    subscriberRegistrationDate = DateTime.Parse(txtFromDate.Text);
                     subscriber.ExpirationDate = DateTime.Parse(txtTillDate.Text);
                 }
 
