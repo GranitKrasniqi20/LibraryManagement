@@ -61,7 +61,6 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblPersonalNumber = new System.Windows.Forms.Label();
             this.txtFullAddress = new System.Windows.Forms.TextBox();
-            this.txtBirthdate = new System.Windows.Forms.TextBox();
             this.lblFullAddress = new System.Windows.Forms.Label();
             this.lblBirthdate = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -73,6 +72,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdateMemberSubscription = new System.Windows.Forms.Button();
+            this.dtPickerBirthdate = new System.Windows.Forms.DateTimePicker();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -231,13 +231,13 @@
             this.tableLayoutPanel3.Controls.Add(this.lblGender, 1, 9);
             this.tableLayoutPanel3.Controls.Add(this.lblPersonalNumber, 3, 9);
             this.tableLayoutPanel3.Controls.Add(this.txtFullAddress, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.txtBirthdate, 3, 7);
             this.tableLayoutPanel3.Controls.Add(this.lblFullAddress, 1, 6);
             this.tableLayoutPanel3.Controls.Add(this.lblBirthdate, 3, 6);
             this.tableLayoutPanel3.Controls.Add(this.txtFirstName, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.txtLastName, 3, 4);
             this.tableLayoutPanel3.Controls.Add(this.lblFirstName, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.lblLastName, 3, 3);
+            this.tableLayoutPanel3.Controls.Add(this.dtPickerBirthdate, 3, 7);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 164);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -280,6 +280,7 @@
             this.txtMemberID.Name = "txtMemberID";
             this.txtMemberID.Size = new System.Drawing.Size(356, 33);
             this.txtMemberID.TabIndex = 1;
+            this.txtMemberID.TextChanged += new System.EventHandler(this.txtMemberID_TextChanged);
             // 
             // comboSubscriptionPlan
             // 
@@ -293,6 +294,7 @@
             this.comboSubscriptionPlan.Name = "comboSubscriptionPlan";
             this.comboSubscriptionPlan.Size = new System.Drawing.Size(356, 33);
             this.comboSubscriptionPlan.TabIndex = 11;
+            this.comboSubscriptionPlan.SelectedIndexChanged += new System.EventHandler(this.comboSubscriptionPlan_SelectedIndexChanged);
             // 
             // lblSubscriptionPlan
             // 
@@ -327,6 +329,7 @@
             this.txtFromDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtFromDate.Location = new System.Drawing.Point(3, 3);
             this.txtFromDate.Name = "txtFromDate";
+            this.txtFromDate.ReadOnly = true;
             this.txtFromDate.Size = new System.Drawing.Size(162, 33);
             this.txtFromDate.TabIndex = 12;
             // 
@@ -337,6 +340,7 @@
             this.txtTillDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtTillDate.Location = new System.Drawing.Point(193, 3);
             this.txtTillDate.Name = "txtTillDate";
+            this.txtTillDate.ReadOnly = true;
             this.txtTillDate.Size = new System.Drawing.Size(162, 33);
             this.txtTillDate.TabIndex = 13;
             // 
@@ -423,6 +427,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(360, 32);
             this.panel4.TabIndex = 11;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // radioFemer
             // 
@@ -485,15 +490,6 @@
             this.txtFullAddress.Name = "txtFullAddress";
             this.txtFullAddress.Size = new System.Drawing.Size(356, 33);
             this.txtFullAddress.TabIndex = 4;
-            // 
-            // txtBirthdate
-            // 
-            this.txtBirthdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBirthdate.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBirthdate.Location = new System.Drawing.Point(409, 233);
-            this.txtBirthdate.Name = "txtBirthdate";
-            this.txtBirthdate.Size = new System.Drawing.Size(356, 33);
-            this.txtBirthdate.TabIndex = 5;
             // 
             // lblFullAddress
             // 
@@ -592,6 +588,7 @@
             this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Update (Information Mistakes)";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel5
             // 
@@ -614,6 +611,15 @@
             this.btnUpdateMemberSubscription.TabIndex = 15;
             this.btnUpdateMemberSubscription.Text = "Update Member Subscription";
             this.btnUpdateMemberSubscription.UseVisualStyleBackColor = false;
+            this.btnUpdateMemberSubscription.Click += new System.EventHandler(this.btnUpdateMemberSubscription_Click);
+            // 
+            // dtPickerBirthdate
+            // 
+            this.dtPickerBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPickerBirthdate.Location = new System.Drawing.Point(409, 233);
+            this.dtPickerBirthdate.Name = "dtPickerBirthdate";
+            this.dtPickerBirthdate.Size = new System.Drawing.Size(356, 29);
+            this.dtPickerBirthdate.TabIndex = 12;
             // 
             // UpdateMemberForm
             // 
@@ -687,7 +693,6 @@
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblPersonalNumber;
         private System.Windows.Forms.TextBox txtFullAddress;
-        private System.Windows.Forms.TextBox txtBirthdate;
         private System.Windows.Forms.Label lblFullAddress;
         private System.Windows.Forms.Label lblBirthdate;
         private System.Windows.Forms.TextBox txtLastName;
@@ -700,5 +705,6 @@
         private System.Windows.Forms.Button btnUpdateMemberSubscription;
         private System.Windows.Forms.TextBox txtMemberID;
         private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.DateTimePicker dtPickerBirthdate;
     }
 }

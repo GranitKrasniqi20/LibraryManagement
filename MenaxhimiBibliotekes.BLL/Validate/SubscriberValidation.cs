@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BLL.Validate
 {
-    class SubscriberValidation : AbstractValidator<Subscriber>
+    public class SubscriberValidation : AbstractValidator<Subscriber>
     {
         public Subscriber subscriber { get; set; }
 

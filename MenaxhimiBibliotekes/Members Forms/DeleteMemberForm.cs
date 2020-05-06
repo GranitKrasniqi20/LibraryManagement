@@ -25,7 +25,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
         Subscriber subscriber;
         SubscriberBLL subscriberBLL;
 
-        //AddMemberForm addMemberForm = new AddMemberForm();
+        AddMemberForm addMemberForm = new AddMemberForm();
 
         private void btnSearchMember_Click(object sender, EventArgs e)
         {
@@ -42,7 +42,8 @@ namespace MenaxhimiBibliotekes.Members_Forms
             txtTillDate.Text = subscriber.ExpirationDate.ToShortDateString();
 
             //txtSubscriptionPlan.Text = txtSubscriptionPlan.Text;
-            //txtFromDate.Text = addMemberForm.subscriberRegistrationDate.ToShortDateString();
+
+            txtFromDate.Text = addMemberForm.subscriberRegistrationDate.ToShortDateString();
 
         }
 

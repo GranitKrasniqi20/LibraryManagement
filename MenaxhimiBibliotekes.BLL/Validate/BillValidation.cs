@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BLL.Validate
 {
-    class BillValidation : AbstractValidator<Bill>
+    public class BillValidation : AbstractValidator<Bill>
     {
         public Bill bill { get; set; }
 

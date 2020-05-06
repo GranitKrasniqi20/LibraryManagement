@@ -64,6 +64,7 @@
             this.txtPersonalNumber = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.dtPickerBirthdate = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitle = new System.Windows.Forms.Label();
@@ -502,6 +503,17 @@
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(356, 33);
             this.txtPhoneNumber.TabIndex = 9;
+            // 
+            // dtPickerBirthdate
+            // 
+            this.dtPickerBirthdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtPickerBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPickerBirthdate.Location = new System.Drawing.Point(405, 140);
+            this.dtPickerBirthdate.Name = "dtPickerBirthdate";
+            this.dtPickerBirthdate.Size = new System.Drawing.Size(356, 29);
+            this.dtPickerBirthdate.TabIndex = 1;
             // 
             // tableLayoutPanel6
             // 
