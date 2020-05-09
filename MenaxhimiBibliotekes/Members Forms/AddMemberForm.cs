@@ -23,8 +23,8 @@ namespace MenaxhimiBibliotekes.Members_Forms
         }
 
         //Global Variables and Instances
-        Subscriber subscriber;
-        SubscriberBLL subscriberBLL;
+        Subscriber subscriber = new Subscriber();
+        SubscriberBLL subscriberBLL= new SubscriberBLL();
 
         public DateTime subscriberRegistrationDate;//me rujt vleren e RegistrationDate
 
@@ -35,8 +35,8 @@ namespace MenaxhimiBibliotekes.Members_Forms
         {
             try
             {
-                subscriber = new Subscriber();
-                subscriberBLL = new SubscriberBLL();
+                //subscriber = new Subscriber();
+                //subscriberBLL = new SubscriberBLL();
 
                 subscriber.Name = txtFirstName.Text;
                 subscriber.LastName = txtLastName.Text;
@@ -92,7 +92,37 @@ namespace MenaxhimiBibliotekes.Members_Forms
             }
         }
 
-        private void comboSubscriptionPlan_SelectedIndexChanged(object sender, EventArgs e)
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            try
+            {
+
+                if (radioMashkull.Checked)
+                {
+                    subscriber.Gender = 'M';
+
+                    ManSubscriber.Add(subscriber);
+                }
+
+                else if(subscriber.Gender != 'M')
+                    MessageBox.Show("Problem me Panelin", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (radioFemer.Checked)
+                {
+                    subscriber.Gender = 'F';
+
+                    WomanSubscriber.Add(subscriber);
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void p(object sender, EventArgs e)
         {
             try
             {
@@ -125,26 +155,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
                 MessageBox.Show(ex.Message);
             }
+
         }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-            if (radioMashkull.Checked)
-            {
-                subscriber.Gender = 'M';
-
-                ManSubscriber.Add(subscriber);
-            }
-
-            if(radioFemer.Checked)
-            {
-                subscriber.Gender = 'F';
-
-                WomanSubscriber.Add(subscriber);
-            }
-        }
-
-       
     }
 }

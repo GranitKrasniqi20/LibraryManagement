@@ -7,7 +7,7 @@ using MenaxhimiBibliotekes.BO.Interfaces;
 using MenaxhimiBibliotekes.BO;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
@@ -17,12 +17,13 @@ namespace MenaxhimiBibliotekes.DAL
 
         public int Add(Subscriber obj)
         {
-            int isInserted = 0;
+            int isInserted ; 
+            //int error;
             try
             {
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscriber_Insert", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscribers_Insert", CommandType.StoredProcedure))
                     {
                         command.Parameters.AddWithValue("Name", obj.Name);
                         command.Parameters.AddWithValue("LastName", obj.LastName);
@@ -35,33 +36,56 @@ namespace MenaxhimiBibliotekes.DAL
 
                         if (obj.PersonalNo != null)
                         {
-                            command.Parameters.AddWithValue("PersonalNo", obj.PersonalNo);
+                            command.Parameters.AddWithValue("PersonalNumber", obj.PersonalNo);
                         }
 
-                        command.Parameters.AddWithValue("PhoneNo", obj.PhoneNo);
+                        command.Parameters.AddWithValue("PhoneNumber", obj.PhoneNo);
                         command.Parameters.AddWithValue("Email", obj.Email);
                         command.Parameters.AddWithValue("Gender", obj.Gender);
-                        command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                        command.Parameters.AddWithValue("EndDate", obj.ExpirationDate);
                         command.Parameters.AddWithValue("IsActive", obj.IsActive);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
 
-                        isInserted = command.ExecuteNonQuery();
+                        MessageBox.Show(
+                            "name:" + obj.Name + "\n" +
+                            "lastName:" + obj.LastName + "\n" +
+                            "adres:" + obj.Address + "\n" +
+                            "birth:" + obj.Birthday + "\n" +
+                            "persNo:" + obj.PersonalNo + "\n" +
+                            "phoneNo:" + obj.PhoneNo + "\n" +
+                            "email:" + obj.Email + "\n" +
+                            "gender:" + obj.Gender + "\n" +
+                            "expDate:" + obj.ExpirationDate + "\n" +
+                            "isActiv:" + obj.IsActive + "\n" +
+                            "insBy:" + obj.InsBy + "\n" , "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        isInserted = command.ExecuteNonQuery();//ketu eshte errori
 
                         if (isInserted > 0)
                         {
                             return 1;
+
                         }
                         else
                         {
                             return -1;
                         }
+
+                        //SqlParameter sqlpa = new SqlParameter();
+                        //sqlpa.ParameterName = "Error";
+                        //sqlpa.SqlDbType = SqlDbType.Int;
+                        //sqlpa.Direction = ParameterDirection.Output;
+                        //command.Parameters.Add(sqlpa);
+                        //command.ExecuteNonQuery();//errori
+                        //error = (int)sqlpa.Value;
+
+                        //return error;
                     }
                 }
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Problem me DAL-in", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return -1;
             }
         }

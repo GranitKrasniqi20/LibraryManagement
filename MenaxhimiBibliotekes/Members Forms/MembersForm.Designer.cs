@@ -287,7 +287,7 @@
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableSearch.Controls.Add(this.textSearchMember, 1, 0);
             this.tableSearch.Controls.Add(this.comboSortMember, 3, 0);
             this.tableSearch.Controls.Add(this.btnSearchMember, 5, 0);
@@ -316,7 +316,7 @@
             this.comboSortMember.FormattingEnabled = true;
             this.comboSortMember.Location = new System.Drawing.Point(308, 3);
             this.comboSortMember.Name = "comboSortMember";
-            this.comboSortMember.Size = new System.Drawing.Size(143, 40);
+            this.comboSortMember.Size = new System.Drawing.Size(142, 40);
             this.comboSortMember.TabIndex = 5;
             // 
             // btnSearchMember
@@ -325,7 +325,7 @@
             this.btnSearchMember.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMember.ForeColor = System.Drawing.Color.White;
-            this.btnSearchMember.Location = new System.Drawing.Point(469, 3);
+            this.btnSearchMember.Location = new System.Drawing.Point(468, 3);
             this.btnSearchMember.Name = "btnSearchMember";
             this.btnSearchMember.Size = new System.Drawing.Size(229, 40);
             this.btnSearchMember.TabIndex = 6;

@@ -63,6 +63,7 @@
             this.txtPersonalNumber = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.dtPickerBirthdate = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitle = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnBill = new System.Windows.Forms.Button();
-            this.dtPickerBirthdate = new System.Windows.Forms.DateTimePicker();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -423,6 +423,7 @@
             this.txtFromDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtFromDate.Location = new System.Drawing.Point(3, 3);
             this.txtFromDate.Name = "txtFromDate";
+            this.txtFromDate.ReadOnly = true;
             this.txtFromDate.Size = new System.Drawing.Size(162, 33);
             this.txtFromDate.TabIndex = 11;
             // 
@@ -433,6 +434,7 @@
             this.txtTillDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtTillDate.Location = new System.Drawing.Point(191, 3);
             this.txtTillDate.Name = "txtTillDate";
+            this.txtTillDate.ReadOnly = true;
             this.txtTillDate.Size = new System.Drawing.Size(162, 33);
             this.txtTillDate.TabIndex = 12;
             // 
@@ -448,6 +450,7 @@
             this.comboSubscriptionPlan.Name = "comboSubscriptionPlan";
             this.comboSubscriptionPlan.Size = new System.Drawing.Size(356, 33);
             this.comboSubscriptionPlan.TabIndex = 10;
+            this.comboSubscriptionPlan.SelectedValueChanged += new System.EventHandler(this.p);
             // 
             // txtLastName
             // 
@@ -493,6 +496,14 @@
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(356, 33);
             this.txtPhoneNumber.TabIndex = 9;
+            // 
+            // dtPickerBirthdate
+            // 
+            this.dtPickerBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPickerBirthdate.Location = new System.Drawing.Point(405, 140);
+            this.dtPickerBirthdate.Name = "dtPickerBirthdate";
+            this.dtPickerBirthdate.Size = new System.Drawing.Size(356, 29);
+            this.dtPickerBirthdate.TabIndex = 11;
             // 
             // tableLayoutPanel6
             // 
@@ -592,14 +603,6 @@
             this.btnBill.TabIndex = 14;
             this.btnBill.Text = "Bill";
             this.btnBill.UseVisualStyleBackColor = false;
-            // 
-            // dtPickerBirthdate
-            // 
-            this.dtPickerBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtPickerBirthdate.Location = new System.Drawing.Point(405, 140);
-            this.dtPickerBirthdate.Name = "dtPickerBirthdate";
-            this.dtPickerBirthdate.Size = new System.Drawing.Size(356, 29);
-            this.dtPickerBirthdate.TabIndex = 11;
             // 
             // AddMemberForm
             // 
