@@ -55,8 +55,8 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.radioFemer = new System.Windows.Forms.RadioButton();
-            this.radioMashkull = new System.Windows.Forms.RadioButton();
+            this.radioFemale = new System.Windows.Forms.RadioButton();
+            this.radioMale = new System.Windows.Forms.RadioButton();
             this.txtPersonalNumber = new System.Windows.Forms.TextBox();
             this.lblGender = new System.Windows.Forms.Label();
             this.lblPersonalNumber = new System.Windows.Forms.Label();
@@ -68,6 +68,7 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.dtPickerBirthdate = new System.Windows.Forms.DateTimePicker();
+            this.btnSearchMember = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -238,6 +239,7 @@
             this.tableLayoutPanel3.Controls.Add(this.lblFirstName, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.lblLastName, 3, 3);
             this.tableLayoutPanel3.Controls.Add(this.dtPickerBirthdate, 3, 7);
+            this.tableLayoutPanel3.Controls.Add(this.btnSearchMember, 3, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 164);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -280,7 +282,6 @@
             this.txtMemberID.Name = "txtMemberID";
             this.txtMemberID.Size = new System.Drawing.Size(356, 33);
             this.txtMemberID.TabIndex = 1;
-            this.txtMemberID.TextChanged += new System.EventHandler(this.txtMemberID_TextChanged);
             // 
             // comboSubscriptionPlan
             // 
@@ -420,38 +421,37 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.radioFemer);
-            this.panel4.Controls.Add(this.radioMashkull);
+            this.panel4.Controls.Add(this.radioFemale);
+            this.panel4.Controls.Add(this.radioMale);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(23, 329);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(360, 32);
             this.panel4.TabIndex = 11;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // radioFemer
+            // radioFemale
             // 
-            this.radioFemer.AutoSize = true;
-            this.radioFemer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioFemer.Location = new System.Drawing.Point(107, 0);
-            this.radioFemer.Name = "radioFemer";
-            this.radioFemer.Size = new System.Drawing.Size(72, 25);
-            this.radioFemer.TabIndex = 7;
-            this.radioFemer.TabStop = true;
-            this.radioFemer.Text = "Femer";
-            this.radioFemer.UseVisualStyleBackColor = true;
+            this.radioFemale.AutoSize = true;
+            this.radioFemale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioFemale.Location = new System.Drawing.Point(107, 0);
+            this.radioFemale.Name = "radioFemale";
+            this.radioFemale.Size = new System.Drawing.Size(78, 25);
+            this.radioFemale.TabIndex = 7;
+            this.radioFemale.Text = "Female";
+            this.radioFemale.UseVisualStyleBackColor = true;
             // 
-            // radioMashkull
+            // radioMale
             // 
-            this.radioMashkull.AutoSize = true;
-            this.radioMashkull.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioMashkull.Location = new System.Drawing.Point(0, 0);
-            this.radioMashkull.Name = "radioMashkull";
-            this.radioMashkull.Size = new System.Drawing.Size(91, 25);
-            this.radioMashkull.TabIndex = 6;
-            this.radioMashkull.TabStop = true;
-            this.radioMashkull.Text = "Mashkull";
-            this.radioMashkull.UseVisualStyleBackColor = true;
+            this.radioMale.AutoSize = true;
+            this.radioMale.Checked = true;
+            this.radioMale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioMale.Location = new System.Drawing.Point(0, 0);
+            this.radioMale.Name = "radioMale";
+            this.radioMale.Size = new System.Drawing.Size(62, 25);
+            this.radioMale.TabIndex = 6;
+            this.radioMale.TabStop = true;
+            this.radioMale.Text = "Male";
+            this.radioMale.UseVisualStyleBackColor = true;
             // 
             // txtPersonalNumber
             // 
@@ -557,6 +557,19 @@
             this.dtPickerBirthdate.Size = new System.Drawing.Size(356, 29);
             this.dtPickerBirthdate.TabIndex = 12;
             // 
+            // btnSearchMember
+            // 
+            this.btnSearchMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(127)))), ((int)(((byte)(50)))));
+            this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchMember.ForeColor = System.Drawing.Color.White;
+            this.btnSearchMember.Location = new System.Drawing.Point(409, 41);
+            this.btnSearchMember.Name = "btnSearchMember";
+            this.btnSearchMember.Size = new System.Drawing.Size(142, 32);
+            this.btnSearchMember.TabIndex = 13;
+            this.btnSearchMember.Text = "Search Member";
+            this.btnSearchMember.UseVisualStyleBackColor = false;
+            this.btnSearchMember.Click += new System.EventHandler(this.btnSearchMember_Click);
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 5;
@@ -596,7 +609,7 @@
             this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Update (Information Mistakes)";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdateInformation_Click);
             // 
             // panel5
             // 
@@ -687,8 +700,8 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.RadioButton radioFemer;
-        private System.Windows.Forms.RadioButton radioMashkull;
+        private System.Windows.Forms.RadioButton radioFemale;
+        private System.Windows.Forms.RadioButton radioMale;
         private System.Windows.Forms.TextBox txtPersonalNumber;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblPersonalNumber;
@@ -706,5 +719,6 @@
         private System.Windows.Forms.TextBox txtMemberID;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.DateTimePicker dtPickerBirthdate;
+        private System.Windows.Forms.Button btnSearchMember;
     }
 }

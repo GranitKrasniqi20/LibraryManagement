@@ -46,8 +46,8 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblPersonalNumber = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.radioFemer = new System.Windows.Forms.RadioButton();
-            this.radioMashkull = new System.Windows.Forms.RadioButton();
+            this.radioFemale = new System.Windows.Forms.RadioButton();
+            this.radioMale = new System.Windows.Forms.RadioButton();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.lblSubscriptionPlan = new System.Windows.Forms.Label();
@@ -302,37 +302,37 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.radioFemer);
-            this.panel3.Controls.Add(this.radioMashkull);
+            this.panel3.Controls.Add(this.radioFemale);
+            this.panel3.Controls.Add(this.radioMale);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(23, 238);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(356, 33);
             this.panel3.TabIndex = 2;
             // 
-            // radioFemer
+            // radioFemale
             // 
-            this.radioFemer.AutoSize = true;
-            this.radioFemer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioFemer.Location = new System.Drawing.Point(107, 0);
-            this.radioFemer.Name = "radioFemer";
-            this.radioFemer.Size = new System.Drawing.Size(72, 25);
-            this.radioFemer.TabIndex = 6;
-            this.radioFemer.TabStop = true;
-            this.radioFemer.Text = "Femer";
-            this.radioFemer.UseVisualStyleBackColor = true;
+            this.radioFemale.AutoSize = true;
+            this.radioFemale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioFemale.Location = new System.Drawing.Point(107, 0);
+            this.radioFemale.Name = "radioFemale";
+            this.radioFemale.Size = new System.Drawing.Size(78, 25);
+            this.radioFemale.TabIndex = 6;
+            this.radioFemale.Text = "Female";
+            this.radioFemale.UseVisualStyleBackColor = true;
             // 
-            // radioMashkull
+            // radioMale
             // 
-            this.radioMashkull.AutoSize = true;
-            this.radioMashkull.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioMashkull.Location = new System.Drawing.Point(0, 0);
-            this.radioMashkull.Name = "radioMashkull";
-            this.radioMashkull.Size = new System.Drawing.Size(91, 25);
-            this.radioMashkull.TabIndex = 5;
-            this.radioMashkull.TabStop = true;
-            this.radioMashkull.Text = "Mashkull";
-            this.radioMashkull.UseVisualStyleBackColor = true;
+            this.radioMale.AutoSize = true;
+            this.radioMale.Checked = true;
+            this.radioMale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioMale.Location = new System.Drawing.Point(0, 0);
+            this.radioMale.Name = "radioMale";
+            this.radioMale.Size = new System.Drawing.Size(62, 25);
+            this.radioMale.TabIndex = 5;
+            this.radioMale.TabStop = true;
+            this.radioMale.Text = "Male";
+            this.radioMale.UseVisualStyleBackColor = true;
             // 
             // lblEmail
             // 
@@ -450,7 +450,7 @@
             this.comboSubscriptionPlan.Name = "comboSubscriptionPlan";
             this.comboSubscriptionPlan.Size = new System.Drawing.Size(356, 33);
             this.comboSubscriptionPlan.TabIndex = 10;
-            this.comboSubscriptionPlan.SelectedValueChanged += new System.EventHandler(this.p);
+            this.comboSubscriptionPlan.SelectedIndexChanged += new System.EventHandler(this.cmbSubscriptionPlan);
             // 
             // txtLastName
             // 
@@ -663,8 +663,8 @@
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblPersonalNumber;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RadioButton radioFemer;
-        private System.Windows.Forms.RadioButton radioMashkull;
+        private System.Windows.Forms.RadioButton radioFemale;
+        private System.Windows.Forms.RadioButton radioMale;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.Label lblSubscriptionPlan;

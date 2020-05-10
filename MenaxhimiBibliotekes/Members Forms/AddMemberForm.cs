@@ -24,9 +24,9 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
         //Global Variables and Instances
         Subscriber subscriber = new Subscriber();
-        SubscriberBLL subscriberBLL= new SubscriberBLL();
+        SubscriberBLL subscriberBLL = new SubscriberBLL();
 
-        public DateTime subscriberRegistrationDate;//me rujt vleren e RegistrationDate
+        public DateTime nRegistrationDate { get; set; }//me rujt vleren e RegistrationDate
 
         public static List<Subscriber> ManSubscriber = new List<Subscriber>();
         public static List<Subscriber> WomanSubscriber = new List<Subscriber>();
@@ -35,9 +35,6 @@ namespace MenaxhimiBibliotekes.Members_Forms
         {
             try
             {
-                //subscriber = new Subscriber();
-                //subscriberBLL = new SubscriberBLL();
-
                 subscriber.Name = txtFirstName.Text;
                 subscriber.LastName = txtLastName.Text;
                 subscriber.Address = txtFullAddress.Text;
@@ -52,13 +49,15 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
                 subscriber.InsBy = FormLoggedUser.Id;
 
+                if (radioMale.Checked) subscriber.Gender = 'M';
+                else subscriber.Gender = 'F';
 
                 SubscriberValidation subscriberValidator = new SubscriberValidation();
 
                 subscriberValidator.subscriber = subscriber;
 
                 subscriberValidator.ValidateSubscriber();
-                
+
                 ValidationResult results = subscriberValidator.Validate(subscriber);
 
                 if (results.IsValid == false)
@@ -69,49 +68,9 @@ namespace MenaxhimiBibliotekes.Members_Forms
                     }
                 }
                 else
-                {
-                    //if (subscriberBLL.Add(subscriber) == 0)
-                    //{ 
+                { 
                     subscriberBLL.Add(subscriber);
                     MessageBox.Show("The subscriber is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //}
-                    //else
-                    //{
-                    //    throw new Exception();
-                    //}
-                }
-
-
-            }
-
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-            try
-            {
-
-                if (radioMashkull.Checked)
-                {
-                    subscriber.Gender = 'M';
-
-                    ManSubscriber.Add(subscriber);
-                }
-
-                else if(subscriber.Gender != 'M')
-                    MessageBox.Show("Problem me Panelin", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                if (radioFemer.Checked)
-                {
-                    subscriber.Gender = 'F';
-
-                    WomanSubscriber.Add(subscriber);
                 }
             }
 
@@ -121,41 +80,37 @@ namespace MenaxhimiBibliotekes.Members_Forms
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void p(object sender, EventArgs e)
+        private void cmbSubscriptionPlan(object sender, EventArgs e)
         {
             try
             {
-                //Abonimi Mujor
                 if (comboSubscriptionPlan.SelectedItem == "Monthly")
                 {
                     txtFromDate.Text = DateTime.Now.ToShortDateString();
 
                     txtTillDate.Text = DateTime.Now.AddMonths(1).ToShortDateString();
 
-                    subscriberRegistrationDate = DateTime.Parse(txtFromDate.Text);
+                    nRegistrationDate = DateTime.Parse(txtFromDate.Text);
                     subscriber.ExpirationDate = DateTime.Parse(txtTillDate.Text);
                 }
 
-                //Abonimi Vjetor
                 if (comboSubscriptionPlan.SelectedItem == "Yearly")
                 {
                     txtFromDate.Text = DateTime.Now.ToShortDateString();
 
                     txtTillDate.Text = DateTime.Now.AddYears(1).ToShortDateString();
 
-                    subscriberRegistrationDate = DateTime.Parse(txtFromDate.Text);
+                    nRegistrationDate = DateTime.Parse(txtFromDate.Text);
                     subscriber.ExpirationDate = DateTime.Parse(txtTillDate.Text);
                 }
-
             }
 
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-
         }
     }
 }
+    
+

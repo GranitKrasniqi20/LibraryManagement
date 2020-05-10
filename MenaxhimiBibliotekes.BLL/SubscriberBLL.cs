@@ -23,21 +23,14 @@ namespace MenaxhimiBibliotekes.BLL
             return subscriberDAL.Delete(Id);
         }
 
-
-
         public Subscriber Get(int Id)
         {
-            return Get(Id);
-        }
-
-        public Subscriber Get(Subscriber obj)
-        {
-            return Get(obj);
+            return subscriberDAL.Get(Id);
         }
 
         public List<Subscriber> GetAll()
         {
-            return GetAll();
+            return subscriberDAL.GetAll();
         }
 
         public int Update(Subscriber obj)

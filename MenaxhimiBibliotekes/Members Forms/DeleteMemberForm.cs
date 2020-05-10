@@ -23,33 +23,53 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
         //Global Variables and Instances
         Subscriber subscriber;
-        SubscriberBLL subscriberBLL;
+        SubscriberBLL subscriberBLL = new SubscriberBLL();
 
         AddMemberForm addMemberForm = new AddMemberForm();
 
         private void btnSearchMember_Click(object sender, EventArgs e)
         {
-            subscriberBLL.Get(int.Parse(txtMemberID.Text));
-                
-            txtFirstName.Text = subscriber.Name;
-            txtLastName.Text = subscriber.LastName;
-            txtFullAddress.Text = subscriber.Address;
-            txtBirthdate.Text = subscriber.Birthday.ToShortDateString();
-            txtGender.Text = subscriber.Gender.ToString();
-            txtPersonalNumber.Text = subscriber.PersonalNo;
-            txtEmail.Text = subscriber.Email;
-            txtPhoneNumber.Text = subscriber.PhoneNo;
-            txtTillDate.Text = subscriber.ExpirationDate.ToShortDateString();
+            try
+            {
+                int id = int.Parse(txtMemberID.Text);
+                subscriber = subscriberBLL.Get(id);//errori
 
-            //txtSubscriptionPlan.Text = txtSubscriptionPlan.Text;
+                txtFirstName.Text = subscriber.Name;
+                txtLastName.Text = subscriber.LastName;
+                txtFullAddress.Text = subscriber.Address;
+                txtBirthdate.Text = subscriber.Birthday.ToShortDateString();
+                txtGender.Text = subscriber.Gender.ToString();
+                txtPersonalNumber.Text = subscriber.PersonalNo;
+                txtEmail.Text = subscriber.Email;
+                txtPhoneNumber.Text = subscriber.PhoneNo;
+                txtTillDate.Text = subscriber.ExpirationDate.ToShortDateString();
+                txtFromDate.Text = DateTime.Now.ToShortDateString();// addMemberForm.subscriberRegistrationDate.ToShortDateString();
 
-            txtFromDate.Text = addMemberForm.subscriberRegistrationDate.ToShortDateString();
+                //txtSubscriptionPlan.Text = "Yearly";
+
+                if(subscriber.ExpirationDate.Month== DateTime.Now.AddMonths(1).Month)
+                {
+                    txtSubscriptionPlan.Text = "Monthly";
+                }
+                else if (subscriber.ExpirationDate.Year == DateTime.Now.AddYears(1).Year)
+                {
+                    txtSubscriptionPlan.Text = "Yearly";
+                }
+            }
+
+            catch (Exception ex)
+            {
+                //MessageBox.Show("errorrrrrrrrr !", "fail!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             subscriberBLL.Delete(int.Parse(txtMemberID.Text));
+            MessageBox.Show("The subscriber is deleted successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
     }
