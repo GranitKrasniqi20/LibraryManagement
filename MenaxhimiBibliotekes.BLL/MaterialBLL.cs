@@ -26,13 +26,13 @@ namespace MenaxhimiBibliotekes.BLL
 
         public Material Get(int Id)
         {
-            return Get(Id);
+            return _materialDAL.Get(Id);
         }
 
 
         public List<Material> GetAll()
         {
-            return GetAll();
+            return _materialDAL.GetAll();
         }
 
         public int Update(Material obj)

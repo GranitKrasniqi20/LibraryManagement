@@ -106,11 +106,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
 
-        //Customized Methods
-        private void MultipleAuthors(string myTextbox, string[] authorsContainer)
-        {
-            authorsContainer = myTextbox.Split('/');
-        }
 
         private void DisabledByMaterialType(Control title, Control author, Control genre, Control language, Control isbn, Control location, Control publish_house, Control publish_date, Control publish_place, Control quantity, Control pages)
         {
@@ -278,10 +273,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         
         private void txtMaterialID_TextChanged(object sender, EventArgs e)
         {
-            MaterialBLL mbll = new MaterialBLL();
-            List<Material> list = mbll.GetAll();
+            //MaterialBLL mbll = new MaterialBLL();
+            //List<Material> list = mbll.GetAll();
 
-            material = materialBLL.Get(Convert.ToInt32(txtMaterialID.Text));
+            //material = mbll.Get(Convert.ToInt32(txtMaterialID.Text));
 
 
 
