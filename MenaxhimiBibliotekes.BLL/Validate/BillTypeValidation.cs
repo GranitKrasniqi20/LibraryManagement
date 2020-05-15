@@ -15,7 +15,7 @@ namespace MenaxhimiBibliotekes.BLL.Validate
 
         public BillTypeValidation()
         {
-           billType = new BillType();
+            billType = new BillType();
         }
 
         public void ValidateBillType()

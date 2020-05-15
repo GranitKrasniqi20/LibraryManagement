@@ -1,6 +1,4 @@
-﻿using MenaxhimiBibliotekes.BLL;
-using MenaxhimiBibliotekes.BO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,113 +16,127 @@ namespace MenaxhimiBibliotekes.Members_Forms
 {
     public partial class UpdateMemberForm : Form
     {
-        Subscriber subscriber;
-        SubscriberBLL subcriberBLL;
-        List<Subscriber> subscriberList;
-
         public UpdateMemberForm()
         {
             InitializeComponent();
 
-            subscriber = new Subscriber();
-            subcriberBLL = new SubscriberBLL();
-            subscriberList = new List<Subscriber>();
-
-
+            //subscriber = new Subscriber();
+            //subcriberBLL = new SubscriberBLL();
+            //subscriberList = new List<Subscriber>();
         }
 
-        AddMemberForm addMemberForm =new AddMemberForm();
+        Subscriber subscriber = new Subscriber();
+        SubscriberBLL subscriberBLL = new SubscriberBLL();
+        List<Subscriber> subscriberList = new List<Subscriber>();
 
-        private void txtMemberID_TextChanged(object sender, EventArgs e)
+        AddMemberForm addMemberForm = new AddMemberForm();
+
+        private void btnSearchMember_Click(object sender, EventArgs e)
         {
-            subscriber = subcriberBLL.Get(int.Parse(txtMemberID.Text));
-
-            txtFirstName.Text = subscriber.Name;
-            txtLastName.Text = subscriber.LastName;
-            txtFullAddress.Text = subscriber.Address;
-            dtPickerBirthdate.Value = subscriber.Birthday;
-
-            if (subscriber.Gender == 'M')
+            try
             {
-                panel4.Enabled = radioMashkull.Checked;
-            }
+                subscriber = subscriberBLL.Get(int.Parse(txtMemberID.Text));
 
-            else if (subscriber.Gender == 'F')
-            {
-                panel4.Enabled = radioFemer.Checked;
-            }
+                txtFirstName.Text = subscriber.Name;
+                txtLastName.Text = subscriber.LastName;
+                txtFullAddress.Text = subscriber.Address;
+                dtPickerBirthdate.Value = subscriber.Birthday;
 
-            txtPersonalNumber.Text = subscriber.PersonalNo;
-            txtEmail.Text = subscriber.Email;
-            txtPhoneNumber.Text = subscriber.PhoneNo;
-            txtTillDate.Text = subscriber.ExpirationDate.ToShortDateString();
-
-            txtFromDate.Text = addMemberForm.subscriberRegistrationDate.ToShortDateString();
-
-            //skemi mundsi me shfaq subscriptionplan
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            //Vlen veq per te dhena, nuk duhet ta lejoje qe ta ndryshoje subscription plan
-            subscriber = subcriberBLL.Get(int.Parse(txtMemberID.Text));
-
-            subscriber.Name = txtFirstName.Text;
-            subscriber.LastName = txtLastName.Text;
-            subscriber.Address = txtFullAddress.Text;
-
-            subscriber.Birthday = dtPickerBirthdate.Value;
-
-            subscriber.PersonalNo = txtPersonalNumber.Text;
-            subscriber.Email = txtEmail.Text;
-            subscriber.PhoneNo = txtPhoneNumber.Text;
-
-            subscriber.IsActive = true;
-
-            subscriber.InsBy = FormLoggedUser.Id;
-
-            SubscriberValidation subscriberValidator = new SubscriberValidation();
-
-            subscriberValidator.subscriber = subscriber;
-
-            subscriberValidator.ValidateSubscriber();
-
-            ValidationResult results = subscriberValidator.Validate(subscriber);
-
-            if (results.IsValid == false)
-            {
-                foreach (ValidationFailure failure in results.Errors)
+                if (subscriber.Gender == 'M')
                 {
-                    MessageBox.Show($"{failure.ErrorMessage}", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    radioMale.Checked = true;
+                }
+
+                else if (subscriber.Gender == 'F')
+                {
+                    radioFemale.Checked = true;
+                }
+
+                txtPersonalNumber.Text = subscriber.PersonalNo;
+                txtEmail.Text = subscriber.Email;
+                txtPhoneNumber.Text = subscriber.PhoneNo;
+                txtTillDate.Text = subscriber.ExpirationDate.ToShortDateString();
+
+                txtFromDate.Text = DateTime.Now.ToShortDateString();//Review
+
+                
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdateInformation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                subscriber = subscriberBLL.Get(int.Parse(txtMemberID.Text));
+
+                subscriber.Name = txtFirstName.Text;
+                subscriber.LastName = txtLastName.Text;
+                subscriber.Address = txtFullAddress.Text;
+
+                subscriber.Birthday = dtPickerBirthdate.Value;
+
+                subscriber.PersonalNo = txtPersonalNumber.Text;
+                subscriber.Email = txtEmail.Text;
+                subscriber.PhoneNo = txtPhoneNumber.Text;
+
+                //subscriber.IsActive = true;
+
+                subscriber.UpdBy = FormLoggedUser.Id;
+
+                if (radioMale.Checked) subscriber.Gender = 'M';
+                else subscriber.Gender = 'F';
+
+                SubscriberValidation subscriberValidator = new SubscriberValidation();
+
+                subscriberValidator.subscriber = subscriber;
+
+                subscriberValidator.ValidateSubscriber();
+
+                ValidationResult results = subscriberValidator.Validate(subscriber);
+
+                if (results.IsValid == false)
+                {
+                    foreach (ValidationFailure failure in results.Errors)
+                    {
+                        MessageBox.Show($"{failure.ErrorMessage}", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    subscriberBLL.Update(subscriber);
+                    MessageBox.Show("The information of subscriber is updated successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                //subcriberBLL.Update(subcriber);
-                MessageBox.Show("The material is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message);
             }
-
         }
-
+        
         private void btnUpdateMemberSubscription_Click(object sender, EventArgs e)
         {
-
-            //Veq per subscriptionPlan, nuk duhet te lejoje qe te i ndryshoje te dhenat tjera
-            addMemberForm.subscriberRegistrationDate = DateTime.Parse(txtFromDate.Text);
-            subscriber.ExpirationDate = DateTime.Parse(txtTillDate.Text);
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-            if (radioMashkull.Checked)
+            try
             {
-                subscriber.Gender = 'M';
+                subscriber = subscriberBLL.Get(int.Parse(txtMemberID.Text));
+                //addMemberForm.nRegistrationDate = DateTime.Parse(txtFromDate.Text);
+                subscriber.ExpirationDate = DateTime.Parse(txtTillDate.Text);
+
+                subscriber.IsActive = true;
+
+                subscriber.UpdBy = FormLoggedUser.Id;
+
+                subscriberBLL.Update(subscriber);
+                MessageBox.Show("The subscription was successfully updated!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            if (radioFemer.Checked)
+            catch (Exception ex)
             {
-                subscriber.Gender = 'F';
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -132,7 +144,6 @@ namespace MenaxhimiBibliotekes.Members_Forms
         {
             try
             {
-                //Abonimi Mujor
                 if (comboSubscriptionPlan.SelectedItem == "Monthly")
                 {
                     txtFromDate.Text = DateTime.Now.ToShortDateString();
@@ -142,8 +153,6 @@ namespace MenaxhimiBibliotekes.Members_Forms
                     //subscriberRegistrationDate = DateTime.Parse(txtFromDate.Text);
                     //subscriber.ExpirationDate = DateTime.Parse(txtTillDate.Text);
                 }
-
-                //Abonimi Vjetor
                 if (comboSubscriptionPlan.SelectedItem == "Yearly")
                 {
                     txtFromDate.Text = DateTime.Now.ToShortDateString();
@@ -153,12 +162,10 @@ namespace MenaxhimiBibliotekes.Members_Forms
                     //subscriberRegistrationDate = DateTime.Parse(txtFromDate.Text);
                    // subscriber.ExpirationDate = DateTime.Parse(txtTillDate.Text);
                 }
-
             }
 
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
