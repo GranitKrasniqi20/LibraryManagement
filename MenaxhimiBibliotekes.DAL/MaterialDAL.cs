@@ -266,8 +266,16 @@ namespace MenaxhimiBibliotekes.DAL
 
                        int row= command.ExecuteNonQuery();
 
-                        return row;
 
+                        if (row > 0)
+                        {
+                            return 1;
+
+                        }
+                        else
+                        {
+                            return -1;
+                        }
 
                     }
 

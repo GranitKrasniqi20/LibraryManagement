@@ -1,4 +1,6 @@
-﻿using MenaxhimiBibliotekes.BLL;
+﻿using FluentValidation.Results;
+using MenaxhimiBibliotekes.BLL;
+using MenaxhimiBibliotekes.BLL.Validate;
 using MenaxhimiBibliotekes.BO;
 using System;
 using System.Collections.Generic;
@@ -47,7 +49,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
             material = new Material();
-             mbll = new MaterialBLL();
+            mbll = new MaterialBLL();
             list = mbll.GetAll();
 
 
@@ -260,7 +262,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
         }
 
-        
+
 
 
 
@@ -269,23 +271,160 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
 
 
+            try
+            {
+                material = new Material();
+                mbll = new MaterialBLL();
 
-            //materialList = materialBLL.GetAll();
+                // ------------------------------ //
+                material.MaterialId = int.Parse(txtMaterialID.Text);
+                material.Title = txtTitle.Text;
+                material._Author.AuthorName = txtAuthor.Text;
+
+                Genre gen = getGenre();
+                material._Genre = gen;
+                material.GenreId = gen.GenreId;
+
+                Language lang = getLanguange();
+                material._Language = lang;
+                material.LanguageId = lang.LanguageId;
+
+                material.ISBN = txtISBN.Text;
+
+                material._PublishHouse._PublishHouse = txtPublishHouse.Text;
+
+                Shelf shelf = getShelf();
+                material._Shelf = shelf;
+                material.ShelfId = shelf.ShelfId;
+
+                MaterialType materialtype = getMaterialType();
+                material._MaterialType = materialtype;
+                material.MaterialTypeId = materialtype.MaterialTypeId;
+
+                int n;
+                bool isNumeric = int.TryParse(txtPublishDate.Text, out n);
+                if (isNumeric)
+                {
+                    //d = new DateTime(int.Parse(txtPublishDate.Text), 1, 1);
+                    //material.PublishYear = Convert.ToDateTime(d.Year);
+                    //string gg = material.PublishYear.ToShortDateString(); 
+
+                    material.PublishYear = new DateTime(int.Parse(txtPublishDate.Text), 1, 1);
+                }
+
+                material.PublishPlace = txtPublishPlace.Text;
+
+                material.Quantity = Convert.ToInt32(txtQuantity.Text);
+
+                material.NumberOfPages = Convert.ToInt32(txtPages.Text);
+
+                material.IsActive = true;
+
+                material.UpdBy = FormLoggedUser.Id;
+
+
+
+
+                MaterialValidation materialValidator = new MaterialValidation();
+
+                materialValidator.material = material;
+
+                materialValidator.ValidateMaterial();
+
+                ValidationResult results = materialValidator.Validate(material);
+
+
+
+
+                if (results.IsValid == false)
+                {
+                    foreach (ValidationFailure failure in results.Errors)
+                    {
+                        MessageBox.Show($"{failure.ErrorMessage}", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+
+                    if (mbll.Update(material) == 0)
+                    {
+                        MessageBox.Show("The material is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Material is not inserted please contact your adminsitrator");
+            }
 
 
         }
 
-        
+
         private void txtMaterialID_TextChanged(object sender, EventArgs e)
         {
-            MaterialBLL mbll = new MaterialBLL();
-            List<Material> list = mbll.GetAll();
-
-            material = mbll.Get(Convert.ToInt32(txtMaterialID.Text));
 
 
+            mbll = new MaterialBLL();
+            material = new Material();
 
+            int n;
+            bool isNumeric = int.TryParse(txtMaterialID.Text, out n);
+
+            if (isNumeric)
+            {
+                material = mbll.Get(n);
+            }
+
+            if (material != null)
+            {
+                txtTitle.Text = material.Title;
+
+                txtAuthor.Text = material._Author.AuthorName;
+                if (material.ISBN.Length > 1)
+                {
+                    txtISBN.Text = material.ISBN;
+                }
+
+                txtPages.Text = material.NumberOfPages.ToString();
+
+                if (true)
+                {
+                    txtPublishDate.Text = material.PublishYear.Year.ToString();
+                }
+
+
+                if (material._PublishHouse._PublishHouse.Length > 1)
+                {
+                    txtPublishHouse.Text = material._PublishHouse._PublishHouse;
+                }
+
+
+                txtQuantity.Text = material.Quantity.ToString();
+
+                if (material.PublishPlace.Length > 1)
+                {
+                    txtPublishPlace.Text = material.PublishPlace;
+                }
+
+
+
+
+
+
+            }
 
         }
+
+
+
     }
 }
+
