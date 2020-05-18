@@ -26,7 +26,7 @@ namespace MenaxhimiBibliotekes.BLL
 
         public Bill Get(int Id)
         {
-            return Get(Id);
+            return billDAL.Get(Id);
         }
 
 
@@ -38,6 +38,11 @@ namespace MenaxhimiBibliotekes.BLL
         public int Update(Bill obj)
         {
             return billDAL.Update(obj);
+        }
+
+        public int MaxBillId()
+        {
+            return billDAL.MaxBillId();
         }
     }
 }
