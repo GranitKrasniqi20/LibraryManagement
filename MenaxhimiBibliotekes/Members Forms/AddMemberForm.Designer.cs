@@ -35,6 +35,7 @@
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPreview = new System.Windows.Forms.Button();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -62,8 +63,8 @@
             this.txtFullAddress = new System.Windows.Forms.TextBox();
             this.txtPersonalNumber = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.dtPickerBirthdate = new System.Windows.Forms.DateTimePicker();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitle = new System.Windows.Forms.Label();
@@ -72,6 +73,8 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnBill = new System.Windows.Forms.Button();
+            this.printDocBill = new System.Drawing.Printing.PrintDocument();
+            this.printPreview = new System.Windows.Forms.PrintPreviewDialog();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -152,12 +155,23 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnPreview);
             this.panel2.Controls.Add(this.lblSubTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(23, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(738, 51);
             this.panel2.TabIndex = 0;
+            // 
+            // btnPreview
+            // 
+            this.btnPreview.Location = new System.Drawing.Point(559, 18);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(75, 23);
+            this.btnPreview.TabIndex = 1;
+            this.btnPreview.Text = "Preview";
+            this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // lblSubTitle
             // 
@@ -208,8 +222,8 @@
             this.tableLayoutPanel3.Controls.Add(this.txtFullAddress, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.txtPersonalNumber, 3, 7);
             this.tableLayoutPanel3.Controls.Add(this.txtEmail, 1, 10);
-            this.tableLayoutPanel3.Controls.Add(this.txtPhoneNumber, 3, 10);
             this.tableLayoutPanel3.Controls.Add(this.dtPickerBirthdate, 3, 4);
+            this.tableLayoutPanel3.Controls.Add(this.txtPhoneNumber, 3, 10);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 164);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -488,6 +502,14 @@
             this.txtEmail.Size = new System.Drawing.Size(356, 33);
             this.txtEmail.TabIndex = 8;
             // 
+            // dtPickerBirthdate
+            // 
+            this.dtPickerBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPickerBirthdate.Location = new System.Drawing.Point(405, 140);
+            this.dtPickerBirthdate.Name = "dtPickerBirthdate";
+            this.dtPickerBirthdate.Size = new System.Drawing.Size(356, 29);
+            this.dtPickerBirthdate.TabIndex = 11;
+            // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -496,14 +518,6 @@
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(356, 33);
             this.txtPhoneNumber.TabIndex = 9;
-            // 
-            // dtPickerBirthdate
-            // 
-            this.dtPickerBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtPickerBirthdate.Location = new System.Drawing.Point(405, 140);
-            this.dtPickerBirthdate.Name = "dtPickerBirthdate";
-            this.dtPickerBirthdate.Size = new System.Drawing.Size(356, 29);
-            this.dtPickerBirthdate.TabIndex = 11;
             // 
             // tableLayoutPanel6
             // 
@@ -527,6 +541,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(784, 27);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
@@ -586,9 +601,9 @@
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.Controls.Add(this.btnBill);
-            this.panel5.Location = new System.Drawing.Point(405, 15);
+            this.panel5.Location = new System.Drawing.Point(406, 15);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(356, 64);
+            this.panel5.Size = new System.Drawing.Size(353, 64);
             this.panel5.TabIndex = 0;
             // 
             // btnBill
@@ -599,10 +614,25 @@
             this.btnBill.ForeColor = System.Drawing.Color.White;
             this.btnBill.Location = new System.Drawing.Point(0, 0);
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(356, 64);
+            this.btnBill.Size = new System.Drawing.Size(353, 64);
             this.btnBill.TabIndex = 14;
             this.btnBill.Text = "Bill";
             this.btnBill.UseVisualStyleBackColor = false;
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
+            // 
+            // printDocBill
+            // 
+            this.printDocBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocBill_PrintPage);
+            // 
+            // printPreview
+            // 
+            this.printPreview.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreview.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreview.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreview.Enabled = true;
+            this.printPreview.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreview.Icon")));
+            this.printPreview.Name = "printPreview";
+            this.printPreview.Visible = false;
             // 
             // AddMemberForm
             // 
@@ -689,5 +719,8 @@
         private System.Windows.Forms.Button btnBill;
         private System.Windows.Forms.TextBox txtFromDate;
         private System.Windows.Forms.DateTimePicker dtPickerBirthdate;
+        private System.Drawing.Printing.PrintDocument printDocBill;
+        private System.Windows.Forms.Button btnPreview;
+        private System.Windows.Forms.PrintPreviewDialog printPreview;
     }
 }

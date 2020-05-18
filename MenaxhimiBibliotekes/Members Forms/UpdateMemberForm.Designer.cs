@@ -37,6 +37,8 @@
             this.lblFooterTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBill = new System.Windows.Forms.Button();
+            this.btnPreview = new System.Windows.Forms.Button();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -74,6 +76,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdateMemberSubscription = new System.Windows.Forms.Button();
+            this.printDocBill = new System.Drawing.Printing.PrintDocument();
+            this.printPreview = new System.Windows.Forms.PrintPreviewDialog();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -179,12 +183,34 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnBill);
+            this.panel2.Controls.Add(this.btnPreview);
             this.panel2.Controls.Add(this.lblSubTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(23, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(746, 51);
             this.panel2.TabIndex = 0;
+            // 
+            // btnBill
+            // 
+            this.btnBill.Location = new System.Drawing.Point(650, 18);
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(75, 23);
+            this.btnBill.TabIndex = 2;
+            this.btnBill.Text = "Print";
+            this.btnBill.UseVisualStyleBackColor = true;
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click_1);
+            // 
+            // btnPreview
+            // 
+            this.btnPreview.Location = new System.Drawing.Point(544, 18);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(75, 23);
+            this.btnPreview.TabIndex = 1;
+            this.btnPreview.Text = "Preview";
+            this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click_1);
             // 
             // lblSubTitle
             // 
@@ -560,11 +586,12 @@
             // btnSearchMember
             // 
             this.btnSearchMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(127)))), ((int)(((byte)(50)))));
+            this.btnSearchMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMember.ForeColor = System.Drawing.Color.White;
             this.btnSearchMember.Location = new System.Drawing.Point(409, 41);
             this.btnSearchMember.Name = "btnSearchMember";
-            this.btnSearchMember.Size = new System.Drawing.Size(142, 32);
+            this.btnSearchMember.Size = new System.Drawing.Size(360, 32);
             this.btnSearchMember.TabIndex = 13;
             this.btnSearchMember.Text = "Search Member";
             this.btnSearchMember.UseVisualStyleBackColor = false;
@@ -633,6 +660,20 @@
             this.btnUpdateMemberSubscription.Text = "Update Member Subscription";
             this.btnUpdateMemberSubscription.UseVisualStyleBackColor = false;
             this.btnUpdateMemberSubscription.Click += new System.EventHandler(this.btnUpdateMemberSubscription_Click);
+            // 
+            // printDocBill
+            // 
+            this.printDocBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocBill_PrintPage_1);
+            // 
+            // printPreview
+            // 
+            this.printPreview.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreview.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreview.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreview.Enabled = true;
+            this.printPreview.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreview.Icon")));
+            this.printPreview.Name = "printPreview";
+            this.printPreview.Visible = false;
             // 
             // UpdateMemberForm
             // 
@@ -720,5 +761,9 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.DateTimePicker dtPickerBirthdate;
         private System.Windows.Forms.Button btnSearchMember;
+        private System.Windows.Forms.Button btnBill;
+        private System.Windows.Forms.Button btnPreview;
+        private System.Drawing.Printing.PrintDocument printDocBill;
+        private System.Windows.Forms.PrintPreviewDialog printPreview;
     }
 }

@@ -37,5 +37,10 @@ namespace MenaxhimiBibliotekes.BLL
         {
             return subscriberDAL.Update(obj);
         }
+
+        public int MaxSubscriberId()
+        {
+            return subscriberDAL.MaxSubscriberId();
+        }
     }
 }

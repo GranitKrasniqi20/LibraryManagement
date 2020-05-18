@@ -7,44 +7,53 @@ using MenaxhimiBibliotekes.BO.Interfaces;
 using MenaxhimiBibliotekes.BO;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
     public class BillDAL : ICreate<Bill>, IUpdate<Bill>, IDelete, IRead<Bill>, IConvertToBO<Bill>
     {
         Bill bill;
-
         public int Add(Bill obj)
         {
-            int rowsAffected = 0;
+            int rowsAffected;
             try
             {
-                using (var conn = DbHelper.GetConnection())
+                using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (var command = DbHelper.Command(conn, "usp_Bill_Insert", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bills_Insert", CommandType.StoredProcedure))
                     {
-                        command.Parameters.AddWithValue("SubscriberId", obj.SubscriberId);
-                        command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
-                        command.Parameters.AddWithValue("BillType", obj.BillTypeId);
-                        command.Parameters.AddWithValue("BillingDate", obj.BillingDate);
-                        command.Parameters.AddWithValue("Price", obj.Price);
-
+                        command.Parameters.AddWithValue("subscriberId", obj.SubscriberId);
+                        command.Parameters.AddWithValue("billingDate", obj.BillingDate);
+                        command.Parameters.AddWithValue("price", obj.Price); 
+                        
                         if (obj.RegistrationDate != null)
                         {
-                            command.Parameters.AddWithValue("RegistrationDate", obj.RegistrationDate);
+                            command.Parameters.AddWithValue("registrationDate", obj.RegistrationDate);
                         }
 
                         if (obj.ExpirationDate != null)
                         {
-                            command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                            command.Parameters.AddWithValue("expirationDate", obj.ExpirationDate);
+                        }
+
+
+                        if (obj.MaterialId != 0)
+                        {
+                            command.Parameters.AddWithValue("materialId", obj.MaterialId);
+                        }
+
+                        if (obj.BillTypeId != 0)
+                        {
+                            command.Parameters.AddWithValue("billTypeId", obj.BillTypeId);
                         }
 
                         if (obj.Description != null)
                         {
-                            command.Parameters.AddWithValue("Description", obj.Description);
+                            command.Parameters.AddWithValue("description", obj.Description);
                         }
-
-                        command.Parameters.AddWithValue("InstBy", obj.InsBy);
+                        //command.Parameters.AddWithValue("isActive", obj.IsActive);
+                        command.Parameters.AddWithValue("insBy", obj.InsBy);
 
                         rowsAffected = command.ExecuteNonQuery();
 
@@ -59,8 +68,9 @@ namespace MenaxhimiBibliotekes.DAL
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                MessageBox.Show(e.Message);
                 return -1;
             }
         }
@@ -71,9 +81,9 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bill_Delete", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bills_Delete", CommandType.StoredProcedure))
                     {
-                        command.Parameters.AddWithValue("BillId", Id);
+                        command.Parameters.AddWithValue("billId", Id);
 
                         int Affected = command.ExecuteNonQuery();
 
@@ -103,13 +113,14 @@ namespace MenaxhimiBibliotekes.DAL
                 bill = new Bill();
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bill_Read", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bills_GetByID", CommandType.StoredProcedure))
                     {
-                        using (SqlDataReader sqr = command.ExecuteReader())
+                        command.Parameters.AddWithValue("BillId", Id);
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            if (sqr.HasRows)
+                            if (reader.Read())
                             {
-                                bill = ToBO(sqr);
+                                bill = ToBO(reader);
                                 if (bill == null)
                                 {
                                     throw new Exception();
@@ -135,7 +146,7 @@ namespace MenaxhimiBibliotekes.DAL
                 bill = new Bill(); 
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bill_Read", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bills_GetAll", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -167,15 +178,15 @@ namespace MenaxhimiBibliotekes.DAL
         {
             bill = new Bill();
 
-            bill.BillId = int.Parse(reader["SubscriberId"].ToString());
-            bill._Subscriber.SubscriberId = int.Parse(reader["SubscriberId"].ToString());
+            bill.BillId = int.Parse(reader["BillId"].ToString());
+            bill.SubscriberId = int.Parse(reader["SubscriberId"].ToString());
            
             if (reader["MaterialId"] != DBNull.Value)
             {
-                bill._Material.MaterialId = int.Parse(reader["MaterialId"].ToString());
+                bill.MaterialId = int.Parse(reader["MaterialId"].ToString());
             }
 
-            bill._BillType.BillTypeId = int.Parse(reader["BillTypeId"].ToString());
+            bill.BillTypeId = int.Parse(reader["BillTypeId"].ToString());
             bill.BillingDate = DateTime.Parse(reader["BillingDate"].ToString());
             bill.Price = decimal.Parse(reader["Price"].ToString());
 
@@ -186,8 +197,10 @@ namespace MenaxhimiBibliotekes.DAL
 
             if (reader["ExpirationDate"] != DBNull.Value)
             {
-                bill.ExpirationDate = DateTime.Parse(reader["ExpirationnDate"].ToString());
+                bill.ExpirationDate = DateTime.Parse(reader["ExpirationDate"].ToString());
             }
+
+            //bill.IsActive = (bool)reader["IsActive"];
 
             bill.InsBy = int.Parse(reader["InsBy"].ToString());
             bill.InsDate = (DateTime)reader["InsDate"];
@@ -215,28 +228,37 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     using (var command = DbHelper.Command(conn, "usp_Bill_Update", CommandType.StoredProcedure))
                     {
-                        command.Parameters.AddWithValue("SubscriberId", obj.SubscriberId);
-                        command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
-                        command.Parameters.AddWithValue("BillTypeId", obj.BillTypeId);
-                        command.Parameters.AddWithValue("BillingDate", obj.BillingDate);
-                        command.Parameters.AddWithValue("Price", obj.Price);
+                        command.Parameters.AddWithValue("subscriberId", obj.SubscriberId);
+
+                        if (obj.MaterialId != 0)
+                        {
+                            command.Parameters.AddWithValue("materialId", obj.MaterialId);
+                        }
+
+                        if (obj.BillTypeId !=0 )
+                        {
+                            command.Parameters.AddWithValue("billTypeId", obj.BillTypeId);
+                        }
+                        command.Parameters.AddWithValue("billingDate", obj.BillingDate);
+                        command.Parameters.AddWithValue("price", obj.Price);
 
                         if (obj.RegistrationDate != null)
                         {
-                            command.Parameters.AddWithValue("RegistrationDate", obj.RegistrationDate);
+                            command.Parameters.AddWithValue("registrationDate", obj.RegistrationDate);
                         }
 
                         if (obj.ExpirationDate != null)
                         {
-                            command.Parameters.AddWithValue("ExpirationDate", obj.ExpirationDate);
+                            command.Parameters.AddWithValue("expirationDate", obj.ExpirationDate);
                         }
 
                         if (obj.Description != null)
                         {
-                            command.Parameters.AddWithValue("Description", obj.Description);
+                            command.Parameters.AddWithValue("description", obj.Description);
                         }
 
-                        command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
+                        command.Parameters.AddWithValue("isActive", obj.IsActive);
+                        command.Parameters.AddWithValue("updBy", obj.UpdBy);
 
                         rowsAffected = command.ExecuteNonQuery();
 
@@ -255,6 +277,38 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 return -1;
             }
+        }
+
+        public int MaxBillId()
+        {
+            try
+            {
+                bill = new Bill();
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "SELECT MAX(BillId) as Id FROM Bills; ",
+                        CommandType.Text))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                bill.BillId = int.Parse(reader["Id"].ToString());
+                                return bill.BillId;
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
         }
     }
 }

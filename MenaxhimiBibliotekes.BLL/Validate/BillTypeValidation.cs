@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BLL.Validate
-{
+{ 
     public class BillTypeValidation : AbstractValidator<BillType>
     {
         public BillType billType { get; set; }
@@ -23,7 +23,8 @@ namespace MenaxhimiBibliotekes.BLL.Validate
             ValidatorOptions.CascadeMode = CascadeMode.StopOnFirstFailure;
 
             RuleFor(m => m._BillType)
-                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!");
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
+                .Length(1, 20).WithMessage("Not shorter than 1 and not longer than 20"); 
         }
     }
 }

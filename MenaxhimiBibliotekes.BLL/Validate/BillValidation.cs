@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace MenaxhimiBibliotekes.BLL.Validate
 {
+
     public class BillValidation : AbstractValidator<Bill>
     {
         public Bill bill { get; set; }
@@ -17,41 +18,39 @@ namespace MenaxhimiBibliotekes.BLL.Validate
         {
             bill = new Bill();
         }
-        
+
         public void ValidateBill()
         {
             ValidatorOptions.CascadeMode = CascadeMode.StopOnFirstFailure;
 
-            RuleFor(m => m.SubscriberId)
-                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
-                .GreaterThan(1).WithMessage("Id unacceptable. Greater Id!");
-                //.Matches("^[0 - 9]").WithMessage("Enter only numbers");
-
             if (bill.MaterialId != 0)
             {
                 RuleFor(m => m.MaterialId)
-                    .GreaterThan(1).WithMessage("Id unacceptable. Greater Id!");
-                    //.Matches("^[0 - 9]").WithMessage("Enter only numbers");
-            }
-
-            RuleFor(m => m.BillTypeId)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .GreaterThan(1).WithMessage("Id unacceptable. Greater Id!");
-                //.Matches("^[0 - 9]").WithMessage("Enter only numbers");
+            }
 
+            RuleFor(m => m.BillingDate)
+                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
+                .Must(BeAValidDate).WithMessage("{PropertyName} not entered properly!");
 
             RuleFor(m => m.Price)
-                .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .LessThan(999).WithMessage("Amount unacceptable. Lower price!")
                 .GreaterThan(0).WithMessage("Amount unacceptable. Greater price!");
-                //.Matches("^[0 - 9]").WithMessage("Enter only numbers"); 
 
             if (bill.Description != null)
             {
                 RuleFor(m => m.Description)
-                   .Length(2, 50).WithMessage("Not shorter than 2 and not longer than 50");
+                   .Length(1, 50).WithMessage("Not shorter than 1 and not longer than 50");
             }
+        }
 
+        protected bool BeAValidDate(DateTime date)
+        {
+            DateTime d = DateTime.Now;
+            DateTime min = new DateTime(1, 1, 1);
+
+            return date <= d && date >= min;
         }
     }
 }
