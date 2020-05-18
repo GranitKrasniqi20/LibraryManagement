@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MenaxhimiBibliotekes.BLL.Validate
 {
     abstract public class Validation<T>
-    {
+    {//asd
 
         public abstract bool AllowedObj(T obj);
         public abstract bool ValidateStringLength(string text,int Length);
