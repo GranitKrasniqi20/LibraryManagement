@@ -62,9 +62,8 @@
       <Name>MenaxhimiBibliotekes.BO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="DBScript\scriptG.sql" />
+    <Content Include="DBScript\script-18 majG.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
