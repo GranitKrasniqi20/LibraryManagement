@@ -14,46 +14,95 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 {
     public partial class DeleteMaterialForm : Form
     {
-        //Global Variables
+        MaterialBLL materialbll;
         Material material;
-        MaterialBLL materialBLL;
-
         public DeleteMaterialForm()
         {
             InitializeComponent();
         }
 
-        private void btnSearchMaterial_Click(object sender, EventArgs e)
+        private void BtnSearchMaterial_Click(object sender, EventArgs e)
         {
-            if (txtMaterialID.Text != string.Empty)
+            try
             {
-                //material = materialBLL.Get(Convert.ToInt32(txtMaterialID.Text));
+                materialbll = new MaterialBLL();
+                material = new Material();
 
-                //txtTitle.Text = material.Title;
-                //txtAuthor.Text = material._Author.AuthorName;
-                //txtGenre.Text = material._Genre._Genre;
-                //txtLanguage.Text = material._Language._Language;
-                //txtISBN.Text = material.ISBN;
-                //txtMaterialType.Text = material._MaterialType._MaterialType;
-                //txtPublishHouse.Text = material._PublishHouse._PublishHouse;
-                //txtPublishDate.Text = material.PublishYear.ToString();
-                //txtPublishPlace.Text = material.PublishPlace;
-                //txtQuantity.Text = material.Quantity.ToString();
-                //txtPages.Text = material.NumberOfPages.ToString();
+                int n;
+                bool isNumeric = int.TryParse(txtMaterialID.Text, out n);
+
+                if (isNumeric)
+                {
+                  material =  materialbll.Get(n);
+                }
+
+                if (material != null)
+                {
+                    txtTitle.Text = material.Title;
+                    txtGenre.Text = material._Genre._Genre;
+                    txtLanguage.Text = material._Language._Language;
+                    txtAuthor.Text = material._Author.AuthorName;
+                    if (material.ISBN.Length > 1)
+                    {
+                        txtISBN.Text = material.ISBN;
+                    }
+                    txtMaterialType.Text = material._MaterialType._MaterialType;
+
+                    txtPages.Text = material.NumberOfPages.ToString();
+
+                    if (true)
+                    {
+                        txtPublishDate.Text = material.PublishYear.Year.ToString();
+                    }
+
+
+                    if (material._PublishHouse._PublishHouse.Length > 1)
+                    {
+                        txtPublishHouse.Text = material._PublishHouse._PublishHouse;
+                    }
+
+
+                    txtQuantity.Text = material.Quantity.ToString();
+
+                    if (material.PublishPlace.Length > 1)
+                    {
+                        txtPublishPlace.Text = material.PublishPlace;
+                    }
+
+                   
+
+
+
+                }
+
             }
-            else
+            catch (Exception)
             {
-                txtTitle.Text = "---";
-                txtAuthor.Text = "---";
-                txtGenre.Text = "---";
-                txtLanguage.Text = "---";
-                txtISBN.Text = "---";
-                txtMaterialType.Text = "---";
-                txtPublishHouse.Text = "---";
-                txtPublishDate.Text = "---";
-                txtPublishPlace.Text = "---";
-                txtQuantity.Text = "---";
-                txtPages.Text = "---";
+
+                throw;
+            }
+
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                if (materialbll.Delete(int.Parse(txtMaterialID.Text)) == 0)
+                {
+                    MessageBox.Show("Deleted successfuly");
+                }
+                else
+                {
+                    MessageBox.Show("error");
+                }
+            }
+
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

@@ -200,7 +200,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.lblFooterTitle, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 734);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 722);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -600,7 +600,7 @@
             this.btnSearchMaterial.TabIndex = 2;
             this.btnSearchMaterial.Text = "Search Specific Material";
             this.btnSearchMaterial.UseVisualStyleBackColor = false;
-            this.btnSearchMaterial.Click += new System.EventHandler(this.btnSearchMaterial_Click);
+            this.btnSearchMaterial.Click += new System.EventHandler(this.BtnSearchMaterial_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -614,14 +614,14 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(841, 100);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(841, 88);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel13
             // 
             this.panel13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel13.Controls.Add(this.btnDelete);
-            this.panel13.Location = new System.Drawing.Point(242, 24);
+            this.panel13.Location = new System.Drawing.Point(242, 18);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(356, 52);
             this.panel13.TabIndex = 0;
@@ -638,19 +638,20 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete Material";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // DeleteMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 761);
+            this.ClientSize = new System.Drawing.Size(841, 749);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(857, 800);
+            this.MinimumSize = new System.Drawing.Size(857, 726);
             this.Name = "DeleteMaterialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Material (Stackbooks)";

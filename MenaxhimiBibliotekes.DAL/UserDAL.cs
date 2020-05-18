@@ -27,6 +27,7 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         command.Parameters.AddWithValue("@UserName", username);
                         command.Parameters.AddWithValue("@Password", password);
+
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
 
@@ -84,6 +85,7 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.Add(sqlpa);
 
                         command.ExecuteNonQuery();
+
                         error = (int)sqlpa.Value;
 
                         if (error == 1)

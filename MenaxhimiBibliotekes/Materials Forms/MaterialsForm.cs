@@ -34,5 +34,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             DeleteMaterialForm delete = new DeleteMaterialForm();
             delete.ShowDialog();
         }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

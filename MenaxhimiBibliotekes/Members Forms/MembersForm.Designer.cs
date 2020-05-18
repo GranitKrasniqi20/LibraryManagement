@@ -29,28 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MembersForm));
-            this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.picTitle = new System.Windows.Forms.PictureBox();
             this.panelFullBody = new System.Windows.Forms.Panel();
             this.tabControlMembersForm = new System.Windows.Forms.TabControl();
             this.tabMainPage = new System.Windows.Forms.TabPage();
             this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvMembers = new System.Windows.Forms.DataGridView();
-            this.IDCOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PersonalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubscriptionPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FromDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InfoColBtn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableBottomSpace = new System.Windows.Forms.TableLayoutPanel();
             this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
             this.textSearchMember = new System.Windows.Forms.TextBox();
@@ -63,66 +45,35 @@
             this.btnDeleteMember = new System.Windows.Forms.Button();
             this.tableSpace1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabExpiredMembers = new System.Windows.Forms.TabPage();
-            this.tableHeader.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
+            this.InfoColBtn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FromDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubscriptionPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMembers = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.picTitle = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.panelFullBody.SuspendLayout();
             this.tabControlMembersForm.SuspendLayout();
             this.tabMainPage.SuspendLayout();
             this.tableDataGridView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.tableSearch.SuspendLayout();
             this.tableSpace2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
+            this.tableHeader.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableHeader
-            // 
-            this.tableHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.tableHeader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableHeader.BackgroundImage")));
-            this.tableHeader.ColumnCount = 3;
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableHeader.Controls.Add(this.panel1, 1, 0);
-            this.tableHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableHeader.Location = new System.Drawing.Point(0, 0);
-            this.tableHeader.Name = "tableHeader";
-            this.tableHeader.RowCount = 1;
-            this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableHeader.Size = new System.Drawing.Size(740, 88);
-            this.tableHeader.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Controls.Add(this.picTitle);
-            this.panel1.Location = new System.Drawing.Point(143, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 82);
-            this.panel1.TabIndex = 0;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(151, 17);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(201, 50);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "MEMBERS";
-            // 
-            // picTitle
-            // 
-            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
-            this.picTitle.Location = new System.Drawing.Point(99, 17);
-            this.picTitle.Name = "picTitle";
-            this.picTitle.Size = new System.Drawing.Size(58, 50);
-            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTitle.TabIndex = 0;
-            this.picTitle.TabStop = false;
             // 
             // panelFullBody
             // 
@@ -176,95 +127,6 @@
             this.tableDataGridView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableDataGridView.Size = new System.Drawing.Size(726, 318);
             this.tableDataGridView.TabIndex = 0;
-            // 
-            // dgvMembers
-            // 
-            this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDCOL,
-            this.FirstName,
-            this.LastName,
-            this.Address,
-            this.Birthdate,
-            this.Gender,
-            this.PersonalNumber,
-            this.Email,
-            this.PhoneNumber,
-            this.SubscriptionPlan,
-            this.FromDate,
-            this.TillDate,
-            this.InfoColBtn});
-            this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMembers.Location = new System.Drawing.Point(23, 3);
-            this.dgvMembers.Name = "dgvMembers";
-            this.dgvMembers.Size = new System.Drawing.Size(680, 312);
-            this.dgvMembers.TabIndex = 7;
-            // 
-            // IDCOL
-            // 
-            this.IDCOL.HeaderText = "ID";
-            this.IDCOL.Name = "IDCOL";
-            // 
-            // FirstName
-            // 
-            this.FirstName.HeaderText = "First Name";
-            this.FirstName.Name = "FirstName";
-            // 
-            // LastName
-            // 
-            this.LastName.HeaderText = "Last Name";
-            this.LastName.Name = "LastName";
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            // 
-            // Birthdate
-            // 
-            this.Birthdate.HeaderText = "Birthdate";
-            this.Birthdate.Name = "Birthdate";
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            // 
-            // PersonalNumber
-            // 
-            this.PersonalNumber.HeaderText = "Personal Number";
-            this.PersonalNumber.Name = "PersonalNumber";
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // PhoneNumber
-            // 
-            this.PhoneNumber.HeaderText = "Phone Number";
-            this.PhoneNumber.Name = "PhoneNumber";
-            // 
-            // SubscriptionPlan
-            // 
-            this.SubscriptionPlan.HeaderText = "Subscription Plan";
-            this.SubscriptionPlan.Name = "SubscriptionPlan";
-            // 
-            // FromDate
-            // 
-            this.FromDate.HeaderText = "From:";
-            this.FromDate.Name = "FromDate";
-            // 
-            // TillDate
-            // 
-            this.TillDate.HeaderText = "Till:";
-            this.TillDate.Name = "TillDate";
-            // 
-            // InfoColBtn
-            // 
-            this.InfoColBtn.HeaderText = "More Info";
-            this.InfoColBtn.Name = "InfoColBtn";
             // 
             // tableBottomSpace
             // 
@@ -429,6 +291,144 @@
             this.tabExpiredMembers.Text = "Expired Members";
             this.tabExpiredMembers.UseVisualStyleBackColor = true;
             // 
+            // InfoColBtn
+            // 
+            this.InfoColBtn.HeaderText = "More Info";
+            this.InfoColBtn.Name = "InfoColBtn";
+            // 
+            // TillDate
+            // 
+            this.TillDate.HeaderText = "Till:";
+            this.TillDate.Name = "TillDate";
+            // 
+            // FromDate
+            // 
+            this.FromDate.HeaderText = "From:";
+            this.FromDate.Name = "FromDate";
+            // 
+            // SubscriptionPlan
+            // 
+            this.SubscriptionPlan.HeaderText = "Subscription Plan";
+            this.SubscriptionPlan.Name = "SubscriptionPlan";
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.HeaderText = "Phone Number";
+            this.PhoneNumber.Name = "PhoneNumber";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // PersonalNumber
+            // 
+            this.PersonalNumber.HeaderText = "Personal Number";
+            this.PersonalNumber.Name = "PersonalNumber";
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            // 
+            // Birthdate
+            // 
+            this.Birthdate.HeaderText = "Birthdate";
+            this.Birthdate.Name = "Birthdate";
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            // 
+            // IDCOL
+            // 
+            this.IDCOL.HeaderText = "ID";
+            this.IDCOL.Name = "IDCOL";
+            // 
+            // dgvMembers
+            // 
+            this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDCOL,
+            this.FirstName,
+            this.LastName,
+            this.Address,
+            this.Birthdate,
+            this.Gender,
+            this.PersonalNumber,
+            this.Email,
+            this.PhoneNumber,
+            this.SubscriptionPlan,
+            this.FromDate,
+            this.TillDate,
+            this.InfoColBtn});
+            this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMembers.Location = new System.Drawing.Point(23, 3);
+            this.dgvMembers.Name = "dgvMembers";
+            this.dgvMembers.Size = new System.Drawing.Size(680, 312);
+            this.dgvMembers.TabIndex = 7;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Controls.Add(this.picTitle);
+            this.panel1.Location = new System.Drawing.Point(143, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(453, 82);
+            this.panel1.TabIndex = 0;
+            // 
+            // picTitle
+            // 
+            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
+            this.picTitle.Location = new System.Drawing.Point(99, 17);
+            this.picTitle.Name = "picTitle";
+            this.picTitle.Size = new System.Drawing.Size(58, 50);
+            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTitle.TabIndex = 0;
+            this.picTitle.TabStop = false;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(151, 17);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(201, 50);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "MEMBERS";
+            // 
+            // tableHeader
+            // 
+            this.tableHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.tableHeader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableHeader.BackgroundImage")));
+            this.tableHeader.ColumnCount = 3;
+            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableHeader.Controls.Add(this.panel1, 1, 0);
+            this.tableHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableHeader.Location = new System.Drawing.Point(0, 0);
+            this.tableHeader.Name = "tableHeader";
+            this.tableHeader.RowCount = 1;
+            this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableHeader.Size = new System.Drawing.Size(740, 88);
+            this.tableHeader.TabIndex = 1;
+            // 
             // MembersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,28 +440,23 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MembersForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.tableHeader.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.panelFullBody.ResumeLayout(false);
             this.tabControlMembersForm.ResumeLayout(false);
             this.tabMainPage.ResumeLayout(false);
             this.tableDataGridView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             this.tableSearch.ResumeLayout(false);
             this.tableSearch.PerformLayout();
             this.tableSpace2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
+            this.tableHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableHeader;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.PictureBox picTitle;
         private System.Windows.Forms.Panel panelFullBody;
         private System.Windows.Forms.TabControl tabControlMembersForm;
         private System.Windows.Forms.TabPage tabMainPage;
@@ -492,5 +487,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FromDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn TillDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn InfoColBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox picTitle;
+        private System.Windows.Forms.TableLayoutPanel tableHeader;
     }
 }

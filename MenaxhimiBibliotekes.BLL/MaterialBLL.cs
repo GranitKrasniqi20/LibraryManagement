@@ -32,7 +32,7 @@ namespace MenaxhimiBibliotekes.BLL
 
         public List<Material> GetAll()
         {
-            return GetAll();
+            return _materialDAL.GetAll();
         }
 
         public int Update(Material obj)
