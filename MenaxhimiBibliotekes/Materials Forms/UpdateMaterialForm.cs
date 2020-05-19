@@ -174,7 +174,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormG)
                 {
-                    InsertNewGenre genreForm = new InsertNewGenre();
+                    GenreForm genreForm = new GenreForm();
                     genreForm.ShowDialog();
                 }
                 openFormG = true;
@@ -190,7 +190,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormL)
                 {
-                    InsertNewLanguage languageForm = new InsertNewLanguage();
+                    LanguageForm languageForm = new LanguageForm();
                     languageForm.ShowDialog();
                 }
                 openFormL = true;
@@ -205,7 +205,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormMT)
                 {
-                    InsertNewMaterialType materialtypeForm = new InsertNewMaterialType();
+                    MaterialTypeForm materialtypeForm = new MaterialTypeForm();
                     materialtypeForm.ShowDialog();
 
                     DisabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
@@ -289,6 +289,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 }
 
             }
+        }
+
+        private void TableHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void UpdateMaterialForm_FormClosing(object sender, FormClosingEventArgs e)
