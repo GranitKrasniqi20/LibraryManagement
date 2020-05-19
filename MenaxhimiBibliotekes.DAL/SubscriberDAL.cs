@@ -44,6 +44,7 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("expirationDate", obj.ExpirationDate);
                         command.Parameters.AddWithValue("isActive", obj.IsActive);
                         command.Parameters.AddWithValue("insBy", obj.InsBy);
+                        //command.Parameters.AddWithValue("insDate", obj.InsDate);
 
                         isInserted = command.ExecuteNonQuery();
                         if (isInserted > 0)
@@ -56,7 +57,6 @@ namespace MenaxhimiBibliotekes.DAL
                         }
                     }
                 }
-
             }
             catch (Exception)
             {
@@ -64,7 +64,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-         
 
         public int Delete(int Id)
         {
@@ -99,25 +98,14 @@ namespace MenaxhimiBibliotekes.DAL
         {
             try
             {
-                subscriber = new Subscriber();
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
                     using (SqlCommand command = DbHelper.Command(conn, "usp_Subscribers_GetByID", CommandType.StoredProcedure))
                     {
-                        command.Parameters.AddWithValue("subscriberId", Id);
+                        command.Parameters.AddWithValue("SubscriberId", Id);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            //    if (sqr.HasRows)
-                            //    {
-                            //        subscriber = ToBO(sqr);
-                            //        if (subscriber == null)
-                            //        {
-                            //            throw new Exception();
-                            //        }
-                            //    }
-                            //    return subscriber;
-
-                            if (reader.HasRows)
+                            if (reader.Read())
                             {
                                 return ToBO(reader);
                             }
@@ -160,7 +148,7 @@ namespace MenaxhimiBibliotekes.DAL
                                     }
 
                                     _AllSubscriber.Add(subscriber);
-}
+                                }
                             }
                             return _AllSubscriber;
                         }
@@ -177,9 +165,8 @@ namespace MenaxhimiBibliotekes.DAL
         {
             try
             {
-                 subscriber = new Subscriber();
+                Subscriber subscriber = new Subscriber();
 
-                //ERRORI I MADH 
                 subscriber.SubscriberId = int.Parse(reader["SubscriberId"].ToString());
                 subscriber.Name = reader["Name"].ToString();
                 subscriber.LastName = reader["LastName"].ToString();
@@ -216,10 +203,6 @@ namespace MenaxhimiBibliotekes.DAL
                 }
 
                 subscriber.UpdNo = int.Parse(reader["UpdNo"].ToString());
-
-                //subscriber.SubscriberId = 20;subscriber.Name = "ee"; subscriber.LastName = "ee";subscriber.Address = "rrr";
-                //subscriber.Birthday = DateTime.Parse("2020/05/10");subscriber.PersonalNo = "rr"; subscriber.PhoneNo = "rr";
-                //subscriber.Email = "rrr"; subscriber.Gender = 'F'; subscriber.ExpirationDate = DateTime.Parse("2020 - 06 - 10");
 
                 return subscriber;
             }
@@ -261,7 +244,6 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("expirationDate", obj.ExpirationDate);
                         command.Parameters.AddWithValue("isActive", obj.IsActive);
                         command.Parameters.AddWithValue("updBy", obj.UpdBy);
-
                         rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
@@ -270,7 +252,7 @@ namespace MenaxhimiBibliotekes.DAL
                         }
                         else
                         {
-                            return -1;
+                            throw new Exception();
                         }
                     }
 
@@ -281,5 +263,39 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
+
+        public int MaxSubscriberId()
+        {
+            try 
+            {
+                subscriber = new Subscriber();
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "SELECT MAX(SubscriberId) as Id FROM Subscribers; ",
+                        CommandType.Text))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                subscriber.SubscriberId = int.Parse(reader["Id"].ToString());
+                                return subscriber.SubscriberId;
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
+        }
+
+        
     }
 }

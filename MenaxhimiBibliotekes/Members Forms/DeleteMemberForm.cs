@@ -25,14 +25,12 @@ namespace MenaxhimiBibliotekes.Members_Forms
         Subscriber subscriber;
         SubscriberBLL subscriberBLL = new SubscriberBLL();
 
-        AddMemberForm addMemberForm = new AddMemberForm();
-
         private void btnSearchMember_Click(object sender, EventArgs e)
         {
             try
             {
                 int id = int.Parse(txtMemberID.Text);
-                subscriber = subscriberBLL.Get(id);//errori
+                subscriber = subscriberBLL.Get(id);
 
                 txtFirstName.Text = subscriber.Name;
                 txtLastName.Text = subscriber.LastName;
@@ -42,16 +40,17 @@ namespace MenaxhimiBibliotekes.Members_Forms
                 txtPersonalNumber.Text = subscriber.PersonalNo;
                 txtEmail.Text = subscriber.Email;
                 txtPhoneNumber.Text = subscriber.PhoneNo;
+
+                if (subscriber.UpdNo == 0) { txtFromDate.Text = subscriber.InsDate.ToShortDateString(); }
+                else { txtFromDate.Text = subscriber.UpdDate.ToShortDateString(); }
+
                 txtTillDate.Text = subscriber.ExpirationDate.ToShortDateString();
-                txtFromDate.Text = DateTime.Now.ToShortDateString();// addMemberForm.subscriberRegistrationDate.ToShortDateString();
 
-                //txtSubscriptionPlan.Text = "Yearly";
-
-                if(subscriber.ExpirationDate.Month== DateTime.Now.AddMonths(1).Month)
+                if (subscriber.ExpirationDate.Month== subscriber.InsDate.AddMonths(1).Month)
                 {
                     txtSubscriptionPlan.Text = "Monthly";
                 }
-                else if (subscriber.ExpirationDate.Year == DateTime.Now.AddYears(1).Year)
+                else if (subscriber.ExpirationDate.Year == subscriber.InsDate.AddYears(1).Year)
                 {
                     txtSubscriptionPlan.Text = "Yearly";
                 }

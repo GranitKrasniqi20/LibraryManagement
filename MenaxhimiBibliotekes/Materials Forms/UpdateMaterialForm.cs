@@ -22,13 +22,13 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
         Material material;
-        List<Material> materialList;
+
 
         MaterialBLL mbll;
 
         MaterialTypeBLL materialtypeBllList;
         List<MaterialType> materialtypeList;
-        List<Material> list;
+
 
 
         GenreBLL genreBllList;
@@ -50,7 +50,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
             material = new Material();
             mbll = new MaterialBLL();
-            list = mbll.GetAll();
+
 
 
             //Combobox GENRE fill
@@ -240,6 +240,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
         }
 
+        private void Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void UpdateMaterialForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (txtTitle.Text != "" ||
@@ -273,13 +278,12 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
             try
             {
-                material = new Material();
                 mbll = new MaterialBLL();
 
                 // ------------------------------ //
                 material.MaterialId = int.Parse(txtMaterialID.Text);
                 material.Title = txtTitle.Text;
-                material._Author.AuthorName = txtAuthor.Text;
+                material._Author.AuthorName = txtAuthor.Text; 
 
                 Genre gen = getGenre();
                 material._Genre = gen;
@@ -346,10 +350,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 else
                 {
 
-                    if (mbll.Update(material) == 0)
+                    if (mbll.Update(material) == 1)
                     {
                         MessageBox.Show("The material is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        mbll = new MaterialBLL();
                     }
                     else
                     {
@@ -361,7 +365,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             catch (Exception ex)
             {
 
-                MessageBox.Show("Material is not inserted please contact your adminsitrator");
+                MessageBox.Show("Material is not updated please contact your adminsitrator");
+                mbll = new MaterialBLL();
             }
 
 

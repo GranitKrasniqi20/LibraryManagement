@@ -28,7 +28,6 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
 
 
-
                         SqlParameter sqlpa = new SqlParameter();
                         sqlpa.ParameterName = "Error";
                         sqlpa.SqlDbType = SqlDbType.Int;
