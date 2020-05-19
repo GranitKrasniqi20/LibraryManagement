@@ -107,13 +107,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
 
-
-        //Customized Methods
-        private void MultipleAuthors(string myTextbox, string[] authorsContainer)
-        {
-            authorsContainer = myTextbox.Split('/');
-        }
-
         private void DisabledByMaterialType(Control title, Control author, Control genre, Control language, Control isbn, Control location, Control publish_house, Control publish_date, Control publish_place, Control quantity, Control pages)
         {
             title.Enabled = false;
@@ -245,6 +238,59 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         }
 
+        private void TableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnSearchUser_Click(object sender, EventArgs e)
+        {
+
+            mbll = new MaterialBLL();
+            material = new Material();
+
+            int n;
+            bool isNumeric = int.TryParse(txtMaterialID.Text, out n);
+
+            if (isNumeric)
+            {
+                material = mbll.Get(n);
+            }
+
+            if (material != null)
+            {
+                txtTitle.Text = material.Title;
+
+                txtAuthor.Text = material._Author.AuthorName;
+                if (material.ISBN.Length > 1)
+                {
+                    txtISBN.Text = material.ISBN;
+                }
+
+                txtPages.Text = material.NumberOfPages.ToString();
+
+                if (true)
+                {
+                    txtPublishDate.Text = material.PublishYear.Year.ToString();
+                }
+
+
+                if (material._PublishHouse._PublishHouse.Length > 1)
+                {
+                    txtPublishHouse.Text = material._PublishHouse._PublishHouse;
+                }
+
+
+                txtQuantity.Text = material.Quantity.ToString();
+
+                if (material.PublishPlace.Length > 1)
+                {
+                    txtPublishPlace.Text = material.PublishPlace;
+                }
+
+            }
+        }
+
         private void UpdateMaterialForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (txtTitle.Text != "" ||
@@ -283,7 +329,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 // ------------------------------ //
                 material.MaterialId = int.Parse(txtMaterialID.Text);
                 material.Title = txtTitle.Text;
-                material._Author.AuthorName = txtAuthor.Text; 
+                material._Author.AuthorName = txtAuthor.Text;
 
                 Genre gen = getGenre();
                 material._Genre = gen;
@@ -377,59 +423,16 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
 
 
-            mbll = new MaterialBLL();
-            material = new Material();
-
-            int n;
-            bool isNumeric = int.TryParse(txtMaterialID.Text, out n);
-
-            if (isNumeric)
-            {
-                material = mbll.Get(n);
-            }
-
-            if (material != null)
-            {
-                txtTitle.Text = material.Title;
-
-                txtAuthor.Text = material._Author.AuthorName;
-                if (material.ISBN.Length > 1)
-                {
-                    txtISBN.Text = material.ISBN;
-                }
-
-                txtPages.Text = material.NumberOfPages.ToString();
-
-                if (true)
-                {
-                    txtPublishDate.Text = material.PublishYear.Year.ToString();
-                }
-
-
-                if (material._PublishHouse._PublishHouse.Length > 1)
-                {
-                    txtPublishHouse.Text = material._PublishHouse._PublishHouse;
-                }
-
-
-                txtQuantity.Text = material.Quantity.ToString();
-
-                if (material.PublishPlace.Length > 1)
-                {
-                    txtPublishPlace.Text = material.PublishPlace;
-                }
 
 
 
-
-
-
-            }
 
         }
 
-
-
     }
+
+
+
 }
+
 

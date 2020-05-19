@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MenaxhimiBibliotekes.BO;
 namespace MenaxhimiBibliotekes.Settings_Forms
 {
     public partial class SettingsForm : Form
@@ -19,8 +19,15 @@ namespace MenaxhimiBibliotekes.Settings_Forms
 
         private void btnManageAccounts_Click(object sender, EventArgs e)
         {
-            ManageUserAccountsForm manage_users = new ManageUserAccountsForm();
-            manage_users.ShowDialog();
+            if (FormLoggedUser.Role.UserRoleId == 1)
+            {
+                MessageBox.Show("You don't have permison to manage users", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                ManageUserAccountsForm manage_users = new ManageUserAccountsForm();
+                manage_users.ShowDialog();
+            }
         }
 
         private void btnMyProfile_Click(object sender, EventArgs e)

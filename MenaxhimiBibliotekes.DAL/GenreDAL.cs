@@ -26,7 +26,7 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         command.Parameters.AddWithValue("Genre", obj._Genre);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
-
+                        command.Parameters.AddWithValue("isActive", obj.InsBy);
 
                         SqlParameter sqlpa = new SqlParameter();
                         sqlpa.ParameterName = "Error";
@@ -65,7 +65,15 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("GenreId", Id);
                         IsDeleted = command.ExecuteNonQuery();
 
-                        return IsDeleted;
+                        if (IsDeleted > 0)
+                        {
+                            return 0;
+                        }
+                        else
+                        {
+                            return 1;
+                        }
+
                     }
 
                 }

@@ -95,14 +95,13 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 }
                 else
                 {
-                    MessageBox.Show("error");
+                    throw new Exception();
                 }
             }
 
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("This material is not deleted please contact your administrator");
             }
         }
     }

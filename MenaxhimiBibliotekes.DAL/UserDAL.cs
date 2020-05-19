@@ -58,6 +58,49 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
+
+        public User GetUserByUsername(string username)
+        {
+            usr = new User();
+            try
+            {
+
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_GetUserByUsername", CommandType.StoredProcedure))
+                    {
+                        command.Parameters.AddWithValue("@UserName", username);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                usr = ToBO(reader);
+                                if (usr != null)
+                                {
+                                    return usr;
+                                }
+                                else
+                                {
+                                    throw new Exception();
+                                }
+                            }
+                            else
+                            {
+                                return null;
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
         public int Add(User obj) 
         {
             int rowsAffected = 0;
@@ -88,22 +131,20 @@ namespace MenaxhimiBibliotekes.DAL
 
                         error = (int)sqlpa.Value;
 
-                        if (error == 1)
-                        {
-                            throw new Exception();
-                        }
-
-                        else if(error == 2)
-                        {
-                            MessageBox.Show("You are not an Admin");
-                            return -1;
-                        }
-                        else if (error == 0)
+                        if (error == 0)
                         {
                             return 0;
                         }
 
-                        return -1;
+                        else if(error == 1)
+                        {
+                            return 1;
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+
                     }
                 }
             }
@@ -152,6 +193,8 @@ namespace MenaxhimiBibliotekes.DAL
 
 
         }
+
+
 
 
 
@@ -298,32 +341,23 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("Email", obj.Email);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);//gabimmmmmm
                         command.Parameters.AddWithValue("IsActive", obj.IsActive);
-                        int error;
-
-                        SqlParameter sqlpa = new SqlParameter();
-                        sqlpa.ParameterName = "Error";
-                        sqlpa.SqlDbType = SqlDbType.Int;
-                        sqlpa.Direction = ParameterDirection.Output;
-
-                        command.Parameters.Add(sqlpa);
-
-                        command.ExecuteNonQuery();
-                        error = (int)sqlpa.Value;
 
 
 
-                         if (error == 2)
+                        rowsAffected= command.ExecuteNonQuery();
+
+
+
+                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("This username doese'nt exist");
-                            return -2;
-                        }
-                        else if (error == 0)
-                        {
-                            MessageBox.Show("good");
                             return 0;
                         }
+                        else
+                        {
+                            return 1;
 
-                        return -1;
+                        }
+
                     }
                 }
             }

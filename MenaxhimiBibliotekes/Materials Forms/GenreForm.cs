@@ -62,5 +62,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 MessageBox.Show("Genre is not inserted please contact your administrator");
             }
         }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,13 +16,14 @@ namespace MenaxhimiBibliotekes.Settings_Forms
         User usr;
         UserBLL usrbll;
         List<User> users;
-        UsersValidation usrval = new UsersValidation();
+        UsersValidation usrval;
 
 
 
         public ManageUserAccountsForm()
         {
             InitializeComponent();
+            usrval = new UsersValidation();
             rolebll = new RoleBLL();
             role = rolebll.GetAllRoles();
 
@@ -33,13 +34,6 @@ namespace MenaxhimiBibliotekes.Settings_Forms
             comboRoleCreate.DataSource = role;
             comboRoleCreate.DisplayMember = "UserRole";
 
-
-
-
-
-
-
-            users = usrbll.GetAll();
 
         }
 
@@ -52,60 +46,63 @@ namespace MenaxhimiBibliotekes.Settings_Forms
             try
             {
 
-
-
-                usr.Name = txtNameCreate.Text;
-                usr.LastName = txtLastNameCreate.Text;
-                usr.Email = txtEmailCreate.Text;
-                usr.Username = txtUsernameCreate.Text;
-                usr.InsBy = FormLoggedUser.Id;
-                usr.Password = Sec.Hash(usr.Username, txtPasswordCreate.Text);
-                usr._role = getRoleCreate();
-                usr.RoleID = usr._role.UserRoleId;
-
-
-                UsersValidation usrval = new UsersValidation();
-                ValidationResult vres = usrval.Validate(usr);
-
-                if (vres.IsValid == false)
+                if (FormLoggedUser.Role.UserRoleId == 1)
                 {
-
-                    foreach (ValidationFailure item in vres.Errors)
-                    {
-                        errors += $"{item.ErrorMessage} + \n";
-                    }
-                    MessageBox.Show(errors);
-                }
-
-                int error = usrbll.Add(usr);
-
-                if (error == 0)
-                {
-                    this.Close();
-                }
-
-                else if (error == 1)
-                {
-                    MessageBox.Show("User username  should be uniqe, please if this material type is deactivated update it");
+                    MessageBox.Show("You don't have permision to create users", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    throw new Exception();
+
+                    usr.Name = txtNameCreate.Text;
+                    usr.LastName = txtLastNameCreate.Text;
+                    usr.Email = txtEmailCreate.Text;
+                    usr.Username = txtUsernameCreate.Text;
+                    usr.InsBy = FormLoggedUser.Id;
+                    usr.Password = Sec.Hash(usr.Username, txtPasswordCreate.Text);
+                    usr._role = getRoleCreate();
+                    usr.RoleID = usr._role.UserRoleId;
+
+
+                    UsersValidation usrval = new UsersValidation();
+                    ValidationResult vres = usrval.Validate(usr);
+
+                    if (vres.IsValid == false)
+                    {
+
+                        foreach (ValidationFailure item in vres.Errors)
+                        {
+                            errors += $"{item.ErrorMessage} + \n";
+                        }
+                        MessageBox.Show(errors);
+                    }
+
+                    int error = usrbll.Add(usr);
+
+                    if (error == 0)
+                    {
+                        this.Close();
+                    }
+
+                    else if (error == 1)
+                    {
+                        MessageBox.Show("This username alreay exists, please if this user is deactivated you can update it");
+                    }
+                    else if (error == -1)
+                    {
+                        throw new Exception();
+                    }
                 }
             }
 
             catch (FormatException)
             {
-                MessageBox.Show("Genre is not valid");
+                MessageBox.Show("User is not valid");
             }
-
-
-
 
 
             catch (Exception)
             {
-                MessageBox.Show("Genre is not inserted please contact your administrator");
+                MessageBox.Show("User is not inserted please contact your administrator");
             }
 
 
@@ -124,51 +121,63 @@ namespace MenaxhimiBibliotekes.Settings_Forms
 
         private void BtnUpdateAccount_Click(object sender, EventArgs e)
         {
-            usr = new User();
 
 
-            usr.Name = txtNameEdit.Text;
-            usr.LastName = txtLastNameEdit.Text;
-            usr.Email = txtEmailEdit.Text;
-            usr.Username = txtUsernameEdit.Text;
-
-            if ("Yes" == txtIsActiveEdit.Text|| "yes" == txtIsActiveEdit.Text)
+            if (FormLoggedUser.Role.UserRoleId == 1)
             {
-
-                usr.IsActive = true;
+                MessageBox.Show("You don't have permision to update users", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                usr.IsActive = false ;
-            }
+                usr = new User();
 
-            usr.InsBy = FormLoggedUser.Id;
-            usr._role = getRoleUpdate();
-            usr.RoleID = usr._role.UserRoleId;
+                usr.Name = txtNameEdit.Text;
+                usr.LastName = txtLastNameEdit.Text;
+                usr.Email = txtEmailEdit.Text;
+                usr.Username = txtUsernameEdit.Text;
 
-
-            usrval.validateUpdateUser();
-            ValidationResult vres = usrval.Validate(usr);
-
-
-
-
-            if (vres.IsValid == false)
-            {
-
-                errors = "";
-                foreach (ValidationFailure item in vres.Errors)
+                if ("Yes" == txtIsActiveEdit.Text || "yes" == txtIsActiveEdit.Text)
                 {
-                    errors += $"       {item.ErrorMessage}        \n \n";
+
+                    usr.IsActive = true;
+                }
+                else
+                {
+                    usr.IsActive = false;
                 }
 
-                MessageBox.Show(errors, "ERROR WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                usr.InsBy = FormLoggedUser.Id;
+                usr._role = getRoleUpdate();
+                usr.RoleID = usr._role.UserRoleId;
 
-            else
-            {
-                usrbll = new UserBLL();
-                usrbll.Update(usr);
+
+                usrval.validateUpdateUser();
+                ValidationResult vres = usrval.Validate(usr);
+
+
+
+
+                if (vres.IsValid == false)
+                {
+
+                    errors = "";
+                    foreach (ValidationFailure item in vres.Errors)
+                    {
+                        errors += $"       {item.ErrorMessage}        \n \n";
+                    }
+
+                    MessageBox.Show(errors, "ERROR WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                else
+                {
+                    usrbll = new UserBLL();
+                    if (usrbll.Update(usr) == 0)
+                    {
+                        MessageBox.Show("User updated succesfuly", "USER UPDATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
             }
 
 
@@ -179,52 +188,61 @@ namespace MenaxhimiBibliotekes.Settings_Forms
             try
             {
 
-
-
-
-
-
-                usr = new User();
-
-                foreach (var item in users)
-                    {
-                        if (item.Username == txtUsernameEdit.Text)
-                        {
-                        usr = item;
-                        }
-                    }
-
-                Role ro = role[0];
-                role[0] = usr._role;
-
-                role.Add(ro);
-
-
-
-                comboRoleEdit.DataSource = role;
-                comboRoleEdit.DisplayMember = "UserRole";
-
-
-
-
-                txtNameEdit.Text= usr.Name ;
-                txtLastNameEdit.Text= usr.LastName;
-                txtEmailEdit.Text = usr.Email;
-
-
-                if (usr.IsActive)
+                if (FormLoggedUser.Role.UserRoleId == 1)
                 {
-                    txtIsActiveEdit.Text ="Yes";
-
+                    MessageBox.Show("You don't have permision to delete users", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    txtIsActiveEdit.Text = "No";
+
+                    usr = new User();
+                    usrbll = new UserBLL();
+
+                    usr = usrbll.GetByUsername(txtUsernameEdit.Text);
+
+
+                    if (usr == null)
+                    {
+                        throw new NullReferenceException();
+                    }
+
+
+
+                    Role ro = role[0];
+                    role[0] = usr._role;
+
+                    role.Add(ro);
+
+
+
+                    comboRoleEdit.DataSource = role;
+                    comboRoleEdit.DisplayMember = "UserRole";
+
+
+
+                    txtNameEdit.Text = usr.Name;
+                    txtLastNameEdit.Text = usr.LastName;
+                    txtEmailEdit.Text = usr.Email;
+
+
+                    if (usr.IsActive)
+                    {
+                        txtIsActiveEdit.Text = "Yes";
+
+                    }
+                    else
+                    {
+                        txtIsActiveEdit.Text = "No";
+                    }
+                    usr._role = usr._role;
+                    usr.RoleID = usr._role.UserRoleId;
+
                 }
-                usr._role = usr._role;
-                usr.RoleID = usr._role.UserRoleId;
 
-
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("User not found !");
             }
             catch (Exception)
             {
@@ -237,36 +255,52 @@ namespace MenaxhimiBibliotekes.Settings_Forms
         {
             try
             {
-                usr = new User();
 
-                foreach (var item in users)
+
+                if (FormLoggedUser.Role.UserRoleId == 1)
                 {
-                    if (item.Username == txtDelete.Text)
-                    {
-                        usr = item;
-                    }
-                }
-
-
-
-
-                txtNameDelete.Text = usr.Name;
-                txtLastNameDelete.Text = usr.LastName;
-                txtEmailDelete.Text = usr.Email;
-                txtIsActiveDelete.Text = usr.Username;
-
-
-                if (usr.IsActive)
-                {
-                    txtIsActiveDelete.Text = "Yes";
+                    MessageBox.Show("You don't have permision to delete users", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    txtIsActiveDelete.Text = "No";
+                    usr = new User();
+
+
+                    usr = usrbll.GetByUsername(txtDelete.Text);
+
+                    if (usr == null)
+                    {
+                        throw new NullReferenceException();
+                    }
+
+
+
+
+
+                    txtDeleteUserId.Text = usr.UserID.ToString();
+                    txtNameDelete.Text = usr.Name;
+                    txtLastNameDelete.Text = usr.LastName;
+                    txtEmailDelete.Text = usr.Email;
+                    txtIsActiveDelete.Text = usr.Username;
+
+
+                    if (usr.IsActive)
+                    {
+                        txtIsActiveDelete.Text = "Yes";
+                    }
+                    else
+                    {
+                        txtIsActiveDelete.Text = "No";
+                    }
+                    txtRoleDelete.Text = usr._role.UserRole;
                 }
-                txtRoleDelete.Text = usr._role.UserRole;
+               
 
 
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("User not found !");
             }
             catch (Exception)
             {
@@ -278,25 +312,65 @@ namespace MenaxhimiBibliotekes.Settings_Forms
         private void BtnDelete_Click(object sender, EventArgs e)
         {
 
-            usr.IsActive = false;
-            usrbll.Delete(usr.UserID);
+            try
+            {
+                if (FormLoggedUser.Role.UserRoleId == 1)
+                {
+                    MessageBox.Show("You don't have permision to delete users", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    if (usrbll.Delete(int.Parse(txtDeleteUserId.Text)) == 0)
+                    {
+                        MessageBox.Show("User deleted succesfuly", "USER DELETED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void BtnEditChangePassword_Click(object sender, EventArgs e)
         {
-
-            usr = new User();
-
-            foreach (var item in users)
+            try
             {
-                if (item.Username == txtUserSearchChangePassword.Text)
+
+                if (FormLoggedUser.Role.UserRoleId == 1)
                 {
-                    usr = item;
+                    MessageBox.Show("You don't have permision to change passwords", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else
+                {
+
+
+                    usr = new User();
+                    usrbll = new UserBLL();
+                    usr = usrbll.GetByUsername(txtUserSearchChangePassword.Text);
+
+                    if (usr == null)
+                    {
+                        throw new NullReferenceException();
+                    }
+
+
+                    txtUsernameChangePassword.Text = usr.Username;
+
+                }
+
             }
 
-
-            txtUsernameChangePassword.Text = usr.Username;
+             catch (NullReferenceException)
+            {
+                MessageBox.Show("User not found !");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("User is not deleted please contact your administrator  !", "WARNING",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
 
 
@@ -304,12 +378,36 @@ namespace MenaxhimiBibliotekes.Settings_Forms
 
         private void BtnUpdatePassword_Click(object sender, EventArgs e)
         {
-            usrbll.ChangePassword( usr.UserID,Sec.Hash(txtUsernameChangePassword.Text, txtPasswordChangePassword.Text),FormLoggedUser.Id);
-            this.Close();
+            try
+            {
+                if (FormLoggedUser.Role.UserRoleId == 1)
+                {
+                    MessageBox.Show("You don't have permision to change passwords", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    usrbll.ChangePassword(usr.UserID, Sec.Hash(txtUsernameChangePassword.Text, txtPasswordChangePassword.Text), FormLoggedUser.Id);
+                    this.Close(); 
+                }
+            }
+
+            catch (Exception)
+            {
+
+                throw;
+            }
             
         }
 
         private void ComboRoleEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        private void Label7_Click(object sender, EventArgs e)
         {
 
         }

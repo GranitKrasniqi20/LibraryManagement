@@ -58,7 +58,8 @@ namespace MenaxhimiBibliotekes.Login_Forms
                     FormLoggedUser.LastName = usr.LastName;
                     FormLoggedUser.Username = txtUsernameLogin.Text;
                     //FormLoggedUser.Password = txtPasswordLogin.Text;
-                   // FormLoggedUser.Role = usr._role;
+                    FormLoggedUser.Role = usr._role;
+                    
 
 
                     //MessageBox.Show($"You logged successfully, {FormLoggedUser.Name} {FormLoggedUser.LastName} ({FormLoggedUser.Username})!", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

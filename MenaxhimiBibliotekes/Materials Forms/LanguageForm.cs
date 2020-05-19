@@ -16,5 +16,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
             InitializeComponent();
         }
+
+        private void BtnInsert_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

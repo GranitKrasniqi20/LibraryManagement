@@ -71,6 +71,7 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSearchUser = new System.Windows.Forms.Button();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -149,6 +150,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnSearchUser);
             this.panel2.Controls.Add(this.lblSubTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(23, 3);
@@ -212,10 +214,9 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel3.Controls.Add(this.comboMaterialLocation, 3, 4);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel3.Controls.Add(this.lblMaterialID, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtMaterialID, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.comboMaterialLocation, 3, 4);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 3, 16);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 3, 15);
             this.tableLayoutPanel3.Controls.Add(this.lblTitle, 1, 3);
@@ -237,6 +238,7 @@
             this.tableLayoutPanel3.Controls.Add(this.txtPublishPlace, 3, 13);
             this.tableLayoutPanel3.Controls.Add(this.lblMaterialType, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboMaterialType, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txtMaterialID, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 164);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -260,6 +262,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(792, 564);
             this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel3_Paint);
             // 
             // comboMaterialLocation
             // 
@@ -608,6 +611,19 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // btnSearchUser
+            // 
+            this.btnSearchUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.btnSearchUser.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchUser.ForeColor = System.Drawing.Color.White;
+            this.btnSearchUser.Location = new System.Drawing.Point(580, 3);
+            this.btnSearchUser.Name = "btnSearchUser";
+            this.btnSearchUser.Size = new System.Drawing.Size(157, 42);
+            this.btnSearchUser.TabIndex = 18;
+            this.btnSearchUser.Text = "Search user";
+            this.btnSearchUser.UseVisualStyleBackColor = false;
+            this.btnSearchUser.Click += new System.EventHandler(this.BtnSearchUser_Click);
+            // 
             // UpdateMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,7 +635,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(808, 860);
+            this.MinimumSize = new System.Drawing.Size(808, 726);
             this.Name = "UpdateMaterialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Materials (Stackbooks)";
@@ -689,5 +705,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblMaterialType;
         private System.Windows.Forms.ComboBox comboMaterialType;
+        private System.Windows.Forms.Button btnSearchUser;
     }
 }

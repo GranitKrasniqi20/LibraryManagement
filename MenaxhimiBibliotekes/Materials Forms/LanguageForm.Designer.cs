@@ -193,6 +193,7 @@
             this.btnInsert.TabIndex = 9;
             this.btnInsert.Text = "Insert Language";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // txtLanguageCreate
             // 

@@ -167,7 +167,7 @@ namespace MenaxhimiBibliotekes.DAL
 
         public int Update(MaterialType obj)
         {
-            int error;
+            int Updated;
             try
             {
 
@@ -181,15 +181,18 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
 
-                        SqlParameter sqlpa = new SqlParameter();
-                        sqlpa.ParameterName = "Error";
-                        sqlpa.SqlDbType = SqlDbType.Int;
-                        sqlpa.Direction = ParameterDirection.Output;
 
-                        command.Parameters.Add(sqlpa);
 
-                        command.ExecuteNonQuery();
-                        return (int)sqlpa.Value;
+                        Updated= command.ExecuteNonQuery();
+
+                        if (Updated > 0)
+                        {
+                            return 0;
+                        }
+                        else
+                        {
+                            return 1;
+                        }
                     }
                 }
             }

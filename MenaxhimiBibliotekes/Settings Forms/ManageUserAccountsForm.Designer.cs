@@ -92,6 +92,8 @@
             this.lbl = new System.Windows.Forms.Label();
             this.txtPasswordChangePassword = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDeleteUserId = new System.Windows.Forms.Label();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -518,6 +520,8 @@
             // 
             // tabDeleteAccount
             // 
+            this.tabDeleteAccount.Controls.Add(this.txtDeleteUserId);
+            this.tabDeleteAccount.Controls.Add(this.label7);
             this.tabDeleteAccount.Controls.Add(this.btnSearchToDelete);
             this.tabDeleteAccount.Controls.Add(this.btnDelete);
             this.tabDeleteAccount.Controls.Add(this.txtDelete);
@@ -577,7 +581,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(66, 285);
+            this.label14.Location = new System.Drawing.Point(60, 314);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(68, 21);
             this.label14.TabIndex = 0;
@@ -586,7 +590,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(82, 238);
+            this.label15.Location = new System.Drawing.Point(76, 267);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(52, 21);
             this.label15.TabIndex = 0;
@@ -595,7 +599,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(44, 194);
+            this.label16.Location = new System.Drawing.Point(38, 223);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(90, 21);
             this.label16.TabIndex = 0;
@@ -613,7 +617,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(77, 150);
+            this.label18.Location = new System.Drawing.Point(71, 179);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(57, 21);
             this.label18.TabIndex = 0;
@@ -622,7 +626,7 @@
             // txtIsActiveDelete
             // 
             this.txtIsActiveDelete.AutoSize = true;
-            this.txtIsActiveDelete.Location = new System.Drawing.Point(153, 285);
+            this.txtIsActiveDelete.Location = new System.Drawing.Point(147, 314);
             this.txtIsActiveDelete.Name = "txtIsActiveDelete";
             this.txtIsActiveDelete.Size = new System.Drawing.Size(28, 21);
             this.txtIsActiveDelete.TabIndex = 0;
@@ -631,7 +635,7 @@
             // txtEmailDelete
             // 
             this.txtEmailDelete.AutoSize = true;
-            this.txtEmailDelete.Location = new System.Drawing.Point(153, 238);
+            this.txtEmailDelete.Location = new System.Drawing.Point(147, 267);
             this.txtEmailDelete.Name = "txtEmailDelete";
             this.txtEmailDelete.Size = new System.Drawing.Size(28, 21);
             this.txtEmailDelete.TabIndex = 0;
@@ -640,7 +644,7 @@
             // txtLastNameDelete
             // 
             this.txtLastNameDelete.AutoSize = true;
-            this.txtLastNameDelete.Location = new System.Drawing.Point(153, 194);
+            this.txtLastNameDelete.Location = new System.Drawing.Point(147, 223);
             this.txtLastNameDelete.Name = "txtLastNameDelete";
             this.txtLastNameDelete.Size = new System.Drawing.Size(28, 21);
             this.txtLastNameDelete.TabIndex = 0;
@@ -649,7 +653,7 @@
             // txtNameDelete
             // 
             this.txtNameDelete.AutoSize = true;
-            this.txtNameDelete.Location = new System.Drawing.Point(153, 150);
+            this.txtNameDelete.Location = new System.Drawing.Point(147, 179);
             this.txtNameDelete.Name = "txtNameDelete";
             this.txtNameDelete.Size = new System.Drawing.Size(28, 21);
             this.txtNameDelete.TabIndex = 0;
@@ -658,7 +662,7 @@
             // txtRoleDelete
             // 
             this.txtRoleDelete.AutoSize = true;
-            this.txtRoleDelete.Location = new System.Drawing.Point(153, 109);
+            this.txtRoleDelete.Location = new System.Drawing.Point(147, 138);
             this.txtRoleDelete.Name = "txtRoleDelete";
             this.txtRoleDelete.Size = new System.Drawing.Size(28, 21);
             this.txtRoleDelete.TabIndex = 0;
@@ -667,7 +671,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(87, 109);
+            this.label19.Location = new System.Drawing.Point(81, 138);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(47, 21);
             this.label19.TabIndex = 0;
@@ -770,6 +774,25 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Password:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(62, 103);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 21);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "User Id:";
+            this.label7.Click += new System.EventHandler(this.Label7_Click);
+            // 
+            // txtDeleteUserId
+            // 
+            this.txtDeleteUserId.AutoSize = true;
+            this.txtDeleteUserId.Location = new System.Drawing.Point(147, 103);
+            this.txtDeleteUserId.Name = "txtDeleteUserId";
+            this.txtDeleteUserId.Size = new System.Drawing.Size(28, 21);
+            this.txtDeleteUserId.TabIndex = 21;
+            this.txtDeleteUserId.Text = "---";
+            // 
             // ManageUserAccountsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -869,5 +892,7 @@
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.TextBox txtPasswordChangePassword;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label txtDeleteUserId;
     }
 }
