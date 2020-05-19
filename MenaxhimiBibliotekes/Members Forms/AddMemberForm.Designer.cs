@@ -35,7 +35,6 @@
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPreview = new System.Windows.Forms.Button();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -73,8 +72,6 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnBill = new System.Windows.Forms.Button();
-            this.printDocBill = new System.Drawing.Printing.PrintDocument();
-            this.printPreview = new System.Windows.Forms.PrintPreviewDialog();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -155,23 +152,12 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.btnPreview);
             this.panel2.Controls.Add(this.lblSubTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(23, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(738, 51);
             this.panel2.TabIndex = 0;
-            // 
-            // btnPreview
-            // 
-            this.btnPreview.Location = new System.Drawing.Point(559, 18);
-            this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(75, 23);
-            this.btnPreview.TabIndex = 1;
-            this.btnPreview.Text = "Preview";
-            this.btnPreview.UseVisualStyleBackColor = true;
-            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // lblSubTitle
             // 
@@ -620,20 +606,6 @@
             this.btnBill.UseVisualStyleBackColor = false;
             this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
-            // printDocBill
-            // 
-            this.printDocBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocBill_PrintPage);
-            // 
-            // printPreview
-            // 
-            this.printPreview.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreview.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreview.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreview.Enabled = true;
-            this.printPreview.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreview.Icon")));
-            this.printPreview.Name = "printPreview";
-            this.printPreview.Visible = false;
-            // 
             // AddMemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,8 +691,5 @@
         private System.Windows.Forms.Button btnBill;
         private System.Windows.Forms.TextBox txtFromDate;
         private System.Windows.Forms.DateTimePicker dtPickerBirthdate;
-        private System.Drawing.Printing.PrintDocument printDocBill;
-        private System.Windows.Forms.Button btnPreview;
-        private System.Windows.Forms.PrintPreviewDialog printPreview;
     }
 }

@@ -143,6 +143,12 @@
     <Compile Include="Bill Forms\BillForm.Designer.cs">
       <DependentUpon>BillForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Members Forms\BillingAddMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members Forms\BillingAddMember.Designer.cs">
+      <DependentUpon>BillingAddMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Members Forms\DeleteMemberForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bill Forms\BillForm.resx">
       <DependentUpon>BillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members Forms\BillingAddMember.resx">
+      <DependentUpon>BillingAddMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Members Forms\DeleteMemberForm.resx">
       <DependentUpon>DeleteMemberForm.cs</DependentUpon>

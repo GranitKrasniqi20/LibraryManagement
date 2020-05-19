@@ -24,13 +24,10 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
         Subscriber subscriber = new Subscriber();
         SubscriberBLL subscriberBLL = new SubscriberBLL();
+        string subscriptionPlanVariable;
 
         Bill bill = new Bill();
         BillBLL billBLL = new BillBLL();
-
-
-        //public static List<Subscriber> ManSubscriber = new List<Subscriber>();
-        //public static List<Subscriber> WomanSubscriber = new List<Subscriber>();
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -131,6 +128,8 @@ namespace MenaxhimiBibliotekes.Members_Forms
                     txtFromDate.Text = DateTime.Now.ToShortDateString();
 
                     txtTillDate.Text = DateTime.Now.AddMonths(1).ToShortDateString();
+
+                    subscriptionPlanVariable = "Monthly";
                 }
 
                 if (comboSubscriptionPlan.SelectedItem == "Yearly")
@@ -138,6 +137,8 @@ namespace MenaxhimiBibliotekes.Members_Forms
                     txtFromDate.Text = DateTime.Now.ToShortDateString();
 
                     txtTillDate.Text = DateTime.Now.AddYears(1).ToShortDateString();
+                    
+                    subscriptionPlanVariable = "Yealy";
                 }
             }
 
@@ -147,51 +148,19 @@ namespace MenaxhimiBibliotekes.Members_Forms
             }
         }
 
-
-        //Dizajnimi i Fatures
-        private void printDocBill_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            string p;
-            if (bill.Price == 10)
-            {
-                p = "Monthly";
-            }
-            else p = "Yearly";
-
-            int Id = subscriberBLL.MaxSubscriberId();
-            string sID = "SL" + Id.ToString("00000");
-
-            string s = "Subscription    Bill";
-            string h = "_______________________________";
-            string v = "-------------------------------------------------";
-
-            e.Graphics.DrawString(s, new Font("Arial", 18, FontStyle.Bold), Brushes.Black, new Point(100, 80));
-            e.Graphics.DrawString(h, new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(100, 100));
-            e.Graphics.DrawString(
-                "Subscriber:\t"+ subscriber.Name+"  "+ subscriber.LastName+"\n"+v+"\n"+
-                "Number ID:\t"+ subscriber.PersonalNo+"\n"+v+"\n"+
-                "Subscriber ID:\t"+sID+"\n"+v+"\n"+
-                "Subscription:\t"+p+"\n"+v+"\n"+
-                "Expires:\t"+ bill.ExpirationDate.ToShortDateString()+"\n"+v+"\n\n"+
-                "Price:\t\t"+ bill.Price+ " €\n" + h+"\n\n\n\n\n"+
-                "Date:\t\t" + bill.BillingDate + "\n\n" +
-                "Cashier:\t" +FormLoggedUser.Name+"\t"+FormLoggedUser.LastName+"\n\n\n"+
-                "Signature:\t"+"_________________\n\n\n\n\n\n\n"+
-                "\t\tV.V",
-                new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(100, 130));
-        }
-
-        // "Inicializimi" i Print Preview
-        private void btnPreview_Click(object sender, EventArgs e)
-        {
-            printPreview.Document = printDocBill;
-            printPreview.ShowDialog();
-        }
-
-        // "Inicializimi" i Print-it
         private void btnBill_Click(object sender, EventArgs e)
         {
-            printDocBill.Print();
+            CookieSubscriber.ID = subscriberBLL.MaxSubscriberId();
+            CookieSubscriber.FullName = subscriber.Name + "\t" + subscriber.LastName;
+            CookieSubscriber.PersonalNumber = subscriber.PersonalNo;
+            CookieSubscriber.SubscriptionPlan = subscriptionPlanVariable;
+            CookieSubscriber.BillingDate = bill.BillingDate;
+            CookieSubscriber.ExpirationDate = subscriber.ExpirationDate;
+            CookieSubscriber.Price = bill.Price;
+            CookieSubscriber.Cashier = FormLoggedUser.Name + "\t " + FormLoggedUser.LastName;
+
+            BillingAddMember billAdd = new BillingAddMember();
+            billAdd.ShowDialog();
         }
     }
 }

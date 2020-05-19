@@ -146,7 +146,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.lblFooterTitle, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 810);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 804);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -612,14 +612,14 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(792, 82);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(792, 76);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.Controls.Add(this.btnUpdate);
-            this.panel3.Location = new System.Drawing.Point(25, 15);
+            this.panel3.Location = new System.Drawing.Point(25, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(356, 52);
             this.panel3.TabIndex = 0;
@@ -642,7 +642,7 @@
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.Controls.Add(this.btnUpdateMemberSubscription);
-            this.panel5.Location = new System.Drawing.Point(411, 15);
+            this.panel5.Location = new System.Drawing.Point(411, 12);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(356, 52);
             this.panel5.TabIndex = 0;
@@ -679,14 +679,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 837);
+            this.ClientSize = new System.Drawing.Size(792, 831);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(808, 726);
+            this.MinimumSize = new System.Drawing.Size(808, 870);
             this.Name = "UpdateMemberForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Member (Stackbooks)";
