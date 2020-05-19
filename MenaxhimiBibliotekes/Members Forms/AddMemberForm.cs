@@ -138,7 +138,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
                     txtTillDate.Text = DateTime.Now.AddYears(1).ToShortDateString();
                     
-                    subscriptionPlanVariable = "Yealy";
+                    subscriptionPlanVariable = "Yearly";
                 }
             }
 
@@ -155,12 +155,12 @@ namespace MenaxhimiBibliotekes.Members_Forms
             CookieSubscriber.PersonalNumber = subscriber.PersonalNo;
             CookieSubscriber.SubscriptionPlan = subscriptionPlanVariable;
             CookieSubscriber.BillingDate = bill.BillingDate;
-            CookieSubscriber.ExpirationDate = subscriber.ExpirationDate;
+            CookieSubscriber.ExpirationDate = bill.ExpirationDate;
             CookieSubscriber.Price = bill.Price;
             CookieSubscriber.Cashier = FormLoggedUser.Name + "\t " + FormLoggedUser.LastName;
 
-            BillingAddMember billAdd = new BillingAddMember();
-            billAdd.ShowDialog();
+            BillingAddMember billingAddMember = new BillingAddMember();
+            billingAddMember.ShowDialog();
         }
     }
 }

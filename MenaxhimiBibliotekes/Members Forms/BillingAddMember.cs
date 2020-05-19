@@ -37,19 +37,19 @@ namespace MenaxhimiBibliotekes.Members_Forms
             string sID = "SL" + Id.ToString("00000");
 
             string s = "Membership    Bill";
-            string h = "_______________________________";
-            string v = "-------------------------------------------------";
+            string h = "_________________________________________________";
+            string v = "-----------------------------------------------------------------------";
 
             e.Graphics.DrawString(s, new Font("Arial", 18, FontStyle.Bold), Brushes.Black, new Point(100, 80));
             e.Graphics.DrawString(h, new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(100, 100));
             e.Graphics.DrawString(
-                "Subscriber:\t" + txtFullName.Text + "\n" + v + "\n" +
-                "Number ID:\t" + txtPersonalNumber.Text + "\n" + v + "\n" +
-                "Subscriber ID:\t" + sID + "\n" + v + "\n" +
-                "Subscription:\t" + txtSubscriptionPlan.Text + "\n" + v + "\n" +
-                "Registration Date:\t" + txtBillingDate.Text + "\n\n" +
-                "Expiration Date:\t" + txtExpirationDate + "\n" + v + "\n\n" +
-                "Price:\t\t" + txtPrice.Text + " €\n" + h + "\n\n\n\n\n" +
+                "Subscriber:\t\t" + txtFullName.Text + "\n" + v + "\n" +
+                "Number ID:\t\t" + txtPersonalNumber.Text + "\n" + v + "\n" +
+                "Subscriber ID:\t\t" + sID + "\n" + v + "\n" +
+                "Subscription:\t\t" + txtSubscriptionPlan.Text + "\n" + v + "\n" +
+                "Registration Date:\t" + txtBillingDate.Text + "\n" + v + "\n" +
+                "Expiration Date:\t\t" + txtExpirationDate.Text + "\n" + v + "\n\n" +
+                "Price:\t\t\t" + txtPrice.Text + " €\n" + h + "\n\n\n\n\n" +
                 "Cashier:\t" + txtCashier.Text + "\n\n\n" +
                 "Signature:\t" + "_________________\n\n\n\n\n\n\n" +
                 "\t\t©Stackbooks Co.",
