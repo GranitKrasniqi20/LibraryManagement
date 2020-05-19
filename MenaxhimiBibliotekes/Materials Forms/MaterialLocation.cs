@@ -42,9 +42,9 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
             try
             {
-                shelf.Location = txtCreateMaterialLocation.Text;
-                shelf.Quantity = Convert.ToInt32(txtCreateShelfQuantity.Text);
-                shelf.Description = richCreateDescription.Text;
+                shelf.Location = txtMaterialLocationCreate.Text;
+                shelf.Quantity = Convert.ToInt32(txtShelfQuantityCreate.Text);
+                shelf.Description = richLocationDescriptionCreate.Text;
                 shelf.InsBy = FormLoggedUser.Id;
 
                 ShelfValidation shelfValidator = new ShelfValidation();
@@ -74,13 +74,13 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
             try
             {
-                if (txtUpdateSearch.Text != string.Empty)
+                if (txtSearchMaterialLocationUpdate.Text != string.Empty)
                 {
                     storedShelf = shelfBLL.GetAll();
 
                     foreach (var specifiedShelf in storedShelf)
                     {
-                        if (specifiedShelf.Location == txtUpdateSearch.Text)
+                        if (specifiedShelf.Location == txtSearchMaterialLocationUpdate.Text)
                         {
                             shelf = specifiedShelf;
                         }
@@ -88,15 +88,15 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                     //shelf = shelfBLL.Get(Convert.ToInt32(txtUpdateSearch.Text));
 
-                    txtUpdateMaterialLocation.Text = shelf.Location;
-                    txtUpdateShelfQuantity.Text = shelf.Quantity.ToString();
-                    richUpdateDescription.Text = shelf.Description;
+                    txtMaterialLocationUpdate.Text = shelf.Location;
+                    txtShelfQuantityUpdate.Text = shelf.Quantity.ToString();
+                    richLocationDescriptionUpdate.Text = shelf.Description;
                 }
                 else
                 {
-                    txtUpdateMaterialLocation.Text = string.Empty;
-                    txtUpdateShelfQuantity.Text = string.Empty;
-                    richUpdateDescription.Text = string.Empty;
+                    txtMaterialLocationUpdate.Text = string.Empty;
+                    txtShelfQuantityUpdate.Text = string.Empty;
+                    richLocationDescriptionUpdate.Text = string.Empty;
                 }
             }
             catch (Exception ex)
@@ -111,9 +111,9 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
             try
             {
-                shelf.Location = txtUpdateMaterialLocation.Text;
-                shelf.Quantity = Convert.ToInt32(txtUpdateShelfQuantity.Text);
-                shelf.Description = richUpdateDescription.Text;
+                shelf.Location = txtMaterialLocationUpdate.Text;
+                shelf.Quantity = Convert.ToInt32(txtShelfQuantityUpdate.Text);
+                shelf.Description = richLocationDescriptionUpdate.Text;
                 shelf.UpdBy = FormLoggedUser.Id;
 
                 ShelfValidation shelfValidator = new ShelfValidation();
@@ -137,11 +137,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void BtnInsert_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

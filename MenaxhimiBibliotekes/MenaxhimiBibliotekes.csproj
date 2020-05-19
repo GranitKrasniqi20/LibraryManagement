@@ -77,6 +77,12 @@
     <Compile Include="Materials Forms\DeleteMaterialForm.Designer.cs">
       <DependentUpon>DeleteMaterialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials Forms\GenreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\GenreForm.Designer.cs">
+      <DependentUpon>GenreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materials Forms\InsertNewGenre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,12 @@
     <Compile Include="Materials Forms\InsertNewMaterialType.Designer.cs">
       <DependentUpon>InsertNewMaterialType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials Forms\LanguageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\LanguageForm.Designer.cs">
+      <DependentUpon>LanguageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materials Forms\MaterialLocation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,12 @@
     </Compile>
     <Compile Include="Materials Forms\MaterialsForm.Designer.cs">
       <DependentUpon>MaterialsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\MaterialTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\MaterialTypeForm.Designer.cs">
+      <DependentUpon>MaterialTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Materials Forms\UpdateMaterialForm.cs">
       <SubType>Form</SubType>
@@ -193,6 +211,9 @@
     <EmbeddedResource Include="Materials Forms\DeleteMaterialForm.resx">
       <DependentUpon>DeleteMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\GenreForm.resx">
+      <DependentUpon>GenreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\InsertNewGenre.resx">
       <DependentUpon>InsertNewGenre.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,11 +223,17 @@
     <EmbeddedResource Include="Materials Forms\InsertNewMaterialType.resx">
       <DependentUpon>InsertNewMaterialType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\LanguageForm.resx">
+      <DependentUpon>LanguageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\MaterialLocation.resx">
       <DependentUpon>MaterialLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\MaterialsForm.resx">
       <DependentUpon>MaterialsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\MaterialTypeForm.resx">
+      <DependentUpon>MaterialTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\UpdateMaterialForm.resx">
       <DependentUpon>UpdateMaterialForm.cs</DependentUpon>
