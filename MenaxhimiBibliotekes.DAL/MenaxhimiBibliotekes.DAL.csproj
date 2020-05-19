@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="DBScript\scriptG.sql" />
+    <Content Include="DBScript\19Maj-GK.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
