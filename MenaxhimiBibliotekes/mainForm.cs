@@ -109,5 +109,77 @@ namespace MenaxhimiBibliotekes
 
             loginform.ShowDialog();
         }
+
+        private void openMyProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings_Forms.MyProfileForm myProfile = new Settings_Forms.MyProfileForm();
+            myProfile.ShowDialog();
+        }
+
+        private void editUserAccountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings_Forms.ManageUserAccountsForm manageAccounts = new Settings_Forms.ManageUserAccountsForm();
+            manageAccounts.ShowDialog();
+        }
+
+        private void createMemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Members_Forms.AddMemberForm addMember = new Members_Forms.AddMemberForm();
+            addMember.ShowDialog();
+        }
+
+        private void updateMemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Members_Forms.UpdateMemberForm updateMember = new Members_Forms.UpdateMemberForm();
+            updateMember.ShowDialog();
+        }
+
+        private void deleteMemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Members_Forms.DeleteMemberForm deleteMember = new Members_Forms.DeleteMemberForm();
+            deleteMember.ShowDialog();
+        }
+
+        private void createMaterialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Materials_Forms.AddNewMaterial addMaterial = new Materials_Forms.AddNewMaterial();
+            addMaterial.ShowDialog();
+        }
+
+        private void updateMaterialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Materials_Forms.UpdateMaterialForm updateMaterial = new Materials_Forms.UpdateMaterialForm();
+            updateMaterial.ShowDialog();
+        }
+
+        private void deleteMaterialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Materials_Forms.DeleteMaterialForm deleteMaterial = new Materials_Forms.DeleteMaterialForm();
+            deleteMaterial.ShowDialog();
+        }
+
+        private void alterMaterialTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Materials_Forms.MaterialTypeForm alterMaterialType = new Materials_Forms.MaterialTypeForm();
+            alterMaterialType.ShowDialog();
+        }
+
+        private void alterMaterialLocationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Materials_Forms.MaterialLocation alterMaterialLocation = new Materials_Forms.MaterialLocation();
+            alterMaterialLocation.ShowDialog();
+        }
+
+        private void alterGenresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Materials_Forms.GenreForm alterGenres = new Materials_Forms.GenreForm();
+            alterGenres.ShowDialog();
+        }
+
+        private void alterLanguagesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Materials_Forms.LanguageForm alterLanguages = new Materials_Forms.LanguageForm();
+            alterLanguages.ShowDialog();
+        }
     }
 }
