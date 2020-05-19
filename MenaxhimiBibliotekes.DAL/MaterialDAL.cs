@@ -233,9 +233,10 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
                         command.Parameters.AddWithValue("GenreId", obj._Genre.GenreId);
                         command.Parameters.AddWithValue("Title", obj.Title);
-                        if (obj.PublishPlace.Length > 0)
+                        if (obj._PublishHouse.PublishHouseId > 0)
                         {
                             command.Parameters.AddWithValue("PublishHouse", obj._PublishHouse._PublishHouse);
+                            command.Parameters.AddWithValue("PublishHouseId", obj._PublishHouse.PublishHouseId);
                         }
 
                         if (obj.PublishPlace.Length > 0)
@@ -259,6 +260,7 @@ namespace MenaxhimiBibliotekes.DAL
                         }
                         command.Parameters.AddWithValue("LanguageId", obj._Language.LanguageId);
 
+                        command.Parameters.AddWithValue("AuthorId", obj._Author.AuthorID);
                         command.Parameters.AddWithValue("Author", obj._Author.AuthorName);
                         command.Parameters.AddWithValue("@AvailableCoppies", obj.AvailableCoppies);
                         command.Parameters.AddWithValue("UpdId", obj.UpdBy);

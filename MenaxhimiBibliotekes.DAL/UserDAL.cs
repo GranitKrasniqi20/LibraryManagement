@@ -29,7 +29,7 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("@Password", password);
 
                         using (SqlDataReader reader = command.ExecuteReader())
-                        {
+                        {//logfgdsgdgsdgsd
 
                             if (reader.Read())
                             {
