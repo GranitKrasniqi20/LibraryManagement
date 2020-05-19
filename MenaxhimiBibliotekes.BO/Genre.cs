@@ -10,5 +10,6 @@ namespace MenaxhimiBibliotekes.BO
     {
         public int GenreId { get; set; }
         public string _Genre { get; set; }
+        public bool isActive { get; set; }
     }
 }

@@ -42,6 +42,7 @@
             this.lblUniqueCreate = new System.Windows.Forms.Label();
             this.lblLanguageCreate = new System.Windows.Forms.Label();
             this.tabUpdateLanguage = new System.Windows.Forms.TabPage();
+            this.comboIsActiveUpdate = new System.Windows.Forms.ComboBox();
             this.panelInfoUpdate = new System.Windows.Forms.Panel();
             this.lblInfoUpdate = new System.Windows.Forms.Label();
             this.panelBottomUpdate = new System.Windows.Forms.Panel();
@@ -50,7 +51,8 @@
             this.btnSearchUpdate = new System.Windows.Forms.Button();
             this.txtLanguageUpdate = new System.Windows.Forms.TextBox();
             this.txtSearchLanguageUpdate = new System.Windows.Forms.TextBox();
-            this.txtGenreIDUpdate = new System.Windows.Forms.Label();
+            this.txtLanguageIDUpdate = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblLanguageUpdate = new System.Windows.Forms.Label();
             this.lblLanguageIDUpdate = new System.Windows.Forms.Label();
             this.lblDisplayDataUpdate = new System.Windows.Forms.Label();
@@ -59,8 +61,8 @@
             this.lblTitleUpdate = new System.Windows.Forms.Label();
             this.tabDeleteLanguage = new System.Windows.Forms.TabPage();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.txtGenreDelete = new System.Windows.Forms.Label();
-            this.txtGenreIDDelete = new System.Windows.Forms.Label();
+            this.txtLanguageDelete = new System.Windows.Forms.Label();
+            this.txtLanguageIDDelete = new System.Windows.Forms.Label();
             this.lblLanguageDelete = new System.Windows.Forms.Label();
             this.lblLanguageIDDelete = new System.Windows.Forms.Label();
             this.lblDisplayDataDelete = new System.Windows.Forms.Label();
@@ -193,6 +195,7 @@
             this.btnInsert.TabIndex = 9;
             this.btnInsert.Text = "Insert Language";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // txtLanguageCreate
             // 
@@ -224,13 +227,15 @@
             // 
             // tabUpdateLanguage
             // 
+            this.tabUpdateLanguage.Controls.Add(this.comboIsActiveUpdate);
             this.tabUpdateLanguage.Controls.Add(this.panelInfoUpdate);
             this.tabUpdateLanguage.Controls.Add(this.panelBottomUpdate);
             this.tabUpdateLanguage.Controls.Add(this.btnUpdate);
             this.tabUpdateLanguage.Controls.Add(this.btnSearchUpdate);
             this.tabUpdateLanguage.Controls.Add(this.txtLanguageUpdate);
             this.tabUpdateLanguage.Controls.Add(this.txtSearchLanguageUpdate);
-            this.tabUpdateLanguage.Controls.Add(this.txtGenreIDUpdate);
+            this.tabUpdateLanguage.Controls.Add(this.txtLanguageIDUpdate);
+            this.tabUpdateLanguage.Controls.Add(this.label1);
             this.tabUpdateLanguage.Controls.Add(this.lblLanguageUpdate);
             this.tabUpdateLanguage.Controls.Add(this.lblLanguageIDUpdate);
             this.tabUpdateLanguage.Controls.Add(this.lblDisplayDataUpdate);
@@ -244,12 +249,25 @@
             this.tabUpdateLanguage.Text = "Update Language";
             this.tabUpdateLanguage.UseVisualStyleBackColor = true;
             // 
+            // comboIsActiveUpdate
+            // 
+            this.comboIsActiveUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboIsActiveUpdate.FormattingEnabled = true;
+            this.comboIsActiveUpdate.Items.AddRange(new object[] {
+            "Active",
+            "Passive"});
+            this.comboIsActiveUpdate.Location = new System.Drawing.Point(200, 451);
+            this.comboIsActiveUpdate.Name = "comboIsActiveUpdate";
+            this.comboIsActiveUpdate.Size = new System.Drawing.Size(341, 33);
+            this.comboIsActiveUpdate.TabIndex = 20;
+            this.comboIsActiveUpdate.SelectedIndexChanged += new System.EventHandler(this.comboIsActiveUpdate_SelectedIndexChanged);
+            // 
             // panelInfoUpdate
             // 
             this.panelInfoUpdate.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelInfoUpdate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelInfoUpdate.Controls.Add(this.lblInfoUpdate);
-            this.panelInfoUpdate.Location = new System.Drawing.Point(29, 229);
+            this.panelInfoUpdate.Location = new System.Drawing.Point(29, 217);
             this.panelInfoUpdate.Name = "panelInfoUpdate";
             this.panelInfoUpdate.Size = new System.Drawing.Size(513, 81);
             this.panelInfoUpdate.TabIndex = 19;
@@ -292,29 +310,31 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(29, 484);
+            this.btnUpdate.Location = new System.Drawing.Point(29, 505);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(512, 69);
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Update Language";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSearchUpdate
             // 
             this.btnSearchUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.btnSearchUpdate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnSearchUpdate.Location = new System.Drawing.Point(302, 136);
+            this.btnSearchUpdate.Location = new System.Drawing.Point(302, 126);
             this.btnSearchUpdate.Name = "btnSearchUpdate";
             this.btnSearchUpdate.Size = new System.Drawing.Size(239, 69);
             this.btnSearchUpdate.TabIndex = 17;
             this.btnSearchUpdate.Text = "Search";
             this.btnSearchUpdate.UseVisualStyleBackColor = false;
+            this.btnSearchUpdate.Click += new System.EventHandler(this.btnSearchUpdate_Click);
             // 
             // txtLanguageUpdate
             // 
             this.txtLanguageUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLanguageUpdate.Location = new System.Drawing.Point(199, 408);
+            this.txtLanguageUpdate.Location = new System.Drawing.Point(199, 398);
             this.txtLanguageUpdate.Name = "txtLanguageUpdate";
             this.txtLanguageUpdate.Size = new System.Drawing.Size(342, 33);
             this.txtLanguageUpdate.TabIndex = 16;
@@ -322,26 +342,36 @@
             // txtSearchLanguageUpdate
             // 
             this.txtSearchLanguageUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchLanguageUpdate.Location = new System.Drawing.Point(29, 170);
+            this.txtSearchLanguageUpdate.Location = new System.Drawing.Point(29, 160);
             this.txtSearchLanguageUpdate.Name = "txtSearchLanguageUpdate";
             this.txtSearchLanguageUpdate.Size = new System.Drawing.Size(227, 35);
             this.txtSearchLanguageUpdate.TabIndex = 16;
             // 
-            // txtGenreIDUpdate
+            // txtLanguageIDUpdate
             // 
-            this.txtGenreIDUpdate.AutoSize = true;
-            this.txtGenreIDUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenreIDUpdate.Location = new System.Drawing.Point(194, 371);
-            this.txtGenreIDUpdate.Name = "txtGenreIDUpdate";
-            this.txtGenreIDUpdate.Size = new System.Drawing.Size(36, 25);
-            this.txtGenreIDUpdate.TabIndex = 15;
-            this.txtGenreIDUpdate.Text = "---";
+            this.txtLanguageIDUpdate.AutoSize = true;
+            this.txtLanguageIDUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLanguageIDUpdate.Location = new System.Drawing.Point(194, 361);
+            this.txtLanguageIDUpdate.Name = "txtLanguageIDUpdate";
+            this.txtLanguageIDUpdate.Size = new System.Drawing.Size(36, 25);
+            this.txtLanguageIDUpdate.TabIndex = 15;
+            this.txtLanguageIDUpdate.Text = "---";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(103, 454);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Is Active?";
             // 
             // lblLanguageUpdate
             // 
             this.lblLanguageUpdate.AutoSize = true;
             this.lblLanguageUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguageUpdate.Location = new System.Drawing.Point(94, 416);
+            this.lblLanguageUpdate.Location = new System.Drawing.Point(94, 406);
             this.lblLanguageUpdate.Name = "lblLanguageUpdate";
             this.lblLanguageUpdate.Size = new System.Drawing.Size(99, 25);
             this.lblLanguageUpdate.TabIndex = 15;
@@ -351,7 +381,7 @@
             // 
             this.lblLanguageIDUpdate.AutoSize = true;
             this.lblLanguageIDUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguageIDUpdate.Location = new System.Drawing.Point(71, 371);
+            this.lblLanguageIDUpdate.Location = new System.Drawing.Point(71, 361);
             this.lblLanguageIDUpdate.Name = "lblLanguageIDUpdate";
             this.lblLanguageIDUpdate.Size = new System.Drawing.Size(122, 25);
             this.lblLanguageIDUpdate.TabIndex = 15;
@@ -361,7 +391,7 @@
             // 
             this.lblDisplayDataUpdate.AutoSize = true;
             this.lblDisplayDataUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplayDataUpdate.Location = new System.Drawing.Point(24, 330);
+            this.lblDisplayDataUpdate.Location = new System.Drawing.Point(24, 320);
             this.lblDisplayDataUpdate.Name = "lblDisplayDataUpdate";
             this.lblDisplayDataUpdate.Size = new System.Drawing.Size(127, 25);
             this.lblDisplayDataUpdate.TabIndex = 15;
@@ -371,7 +401,7 @@
             // 
             this.lblSearchLanguageUpdate.AutoSize = true;
             this.lblSearchLanguageUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchLanguageUpdate.Location = new System.Drawing.Point(24, 134);
+            this.lblSearchLanguageUpdate.Location = new System.Drawing.Point(24, 124);
             this.lblSearchLanguageUpdate.Name = "lblSearchLanguageUpdate";
             this.lblSearchLanguageUpdate.Size = new System.Drawing.Size(169, 25);
             this.lblSearchLanguageUpdate.TabIndex = 15;
@@ -402,8 +432,8 @@
             // tabDeleteLanguage
             // 
             this.tabDeleteLanguage.Controls.Add(this.btnDelete);
-            this.tabDeleteLanguage.Controls.Add(this.txtGenreDelete);
-            this.tabDeleteLanguage.Controls.Add(this.txtGenreIDDelete);
+            this.tabDeleteLanguage.Controls.Add(this.txtLanguageDelete);
+            this.tabDeleteLanguage.Controls.Add(this.txtLanguageIDDelete);
             this.tabDeleteLanguage.Controls.Add(this.lblLanguageDelete);
             this.tabDeleteLanguage.Controls.Add(this.lblLanguageIDDelete);
             this.tabDeleteLanguage.Controls.Add(this.lblDisplayDataDelete);
@@ -432,26 +462,27 @@
             this.btnDelete.TabIndex = 26;
             this.btnDelete.Text = "Delete Language";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // txtGenreDelete
+            // txtLanguageDelete
             // 
-            this.txtGenreDelete.AutoSize = true;
-            this.txtGenreDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenreDelete.Location = new System.Drawing.Point(194, 427);
-            this.txtGenreDelete.Name = "txtGenreDelete";
-            this.txtGenreDelete.Size = new System.Drawing.Size(36, 25);
-            this.txtGenreDelete.TabIndex = 22;
-            this.txtGenreDelete.Text = "---";
+            this.txtLanguageDelete.AutoSize = true;
+            this.txtLanguageDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLanguageDelete.Location = new System.Drawing.Point(194, 427);
+            this.txtLanguageDelete.Name = "txtLanguageDelete";
+            this.txtLanguageDelete.Size = new System.Drawing.Size(36, 25);
+            this.txtLanguageDelete.TabIndex = 22;
+            this.txtLanguageDelete.Text = "---";
             // 
-            // txtGenreIDDelete
+            // txtLanguageIDDelete
             // 
-            this.txtGenreIDDelete.AutoSize = true;
-            this.txtGenreIDDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenreIDDelete.Location = new System.Drawing.Point(194, 383);
-            this.txtGenreIDDelete.Name = "txtGenreIDDelete";
-            this.txtGenreIDDelete.Size = new System.Drawing.Size(36, 25);
-            this.txtGenreIDDelete.TabIndex = 22;
-            this.txtGenreIDDelete.Text = "---";
+            this.txtLanguageIDDelete.AutoSize = true;
+            this.txtLanguageIDDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLanguageIDDelete.Location = new System.Drawing.Point(194, 383);
+            this.txtLanguageIDDelete.Name = "txtLanguageIDDelete";
+            this.txtLanguageIDDelete.Size = new System.Drawing.Size(36, 25);
+            this.txtLanguageIDDelete.TabIndex = 22;
+            this.txtLanguageIDDelete.Text = "---";
             // 
             // lblLanguageDelete
             // 
@@ -515,6 +546,7 @@
             this.btnSearchDelete.TabIndex = 20;
             this.btnSearchDelete.Text = "Search";
             this.btnSearchDelete.UseVisualStyleBackColor = false;
+            this.btnSearchDelete.Click += new System.EventHandler(this.btnSearchDelete_Click);
             // 
             // txtSearchLanguageDelete
             // 
@@ -640,7 +672,7 @@
         private System.Windows.Forms.Button btnSearchUpdate;
         private System.Windows.Forms.TextBox txtLanguageUpdate;
         private System.Windows.Forms.TextBox txtSearchLanguageUpdate;
-        private System.Windows.Forms.Label txtGenreIDUpdate;
+        private System.Windows.Forms.Label txtLanguageIDUpdate;
         private System.Windows.Forms.Label lblLanguageUpdate;
         private System.Windows.Forms.Label lblLanguageIDUpdate;
         private System.Windows.Forms.Label lblDisplayDataUpdate;
@@ -649,8 +681,8 @@
         private System.Windows.Forms.Label lblTitleUpdate;
         private System.Windows.Forms.TabPage tabDeleteLanguage;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Label txtGenreDelete;
-        private System.Windows.Forms.Label txtGenreIDDelete;
+        private System.Windows.Forms.Label txtLanguageDelete;
+        private System.Windows.Forms.Label txtLanguageIDDelete;
         private System.Windows.Forms.Label lblLanguageDelete;
         private System.Windows.Forms.Label lblLanguageIDDelete;
         private System.Windows.Forms.Label lblDisplayDataDelete;
@@ -663,5 +695,7 @@
         private System.Windows.Forms.Label lblFooterTitleDelete;
         private System.Windows.Forms.Panel panelTopDelete;
         private System.Windows.Forms.Label lblTitleDelete;
+        private System.Windows.Forms.ComboBox comboIsActiveUpdate;
+        private System.Windows.Forms.Label label1;
     }
 }

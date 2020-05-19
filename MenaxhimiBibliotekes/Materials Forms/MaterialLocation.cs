@@ -60,8 +60,16 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 }
                 else
                 {
-                    shelfBLL.Add(shelf);
-                    MessageBox.Show("The Shelf is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int error = shelfBLL.Add(shelf);
+                    if (error == 0)
+                    {
+                        MessageBox.Show("The Shelf is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("This Shelf is already registered!", "This Exists!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             catch (Exception ex)
@@ -70,7 +78,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
         }
 
-        private void btnUpdateSearchLocation_Click(object sender, EventArgs e)
+
+        private void btnSearchUpdate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -85,8 +94,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                             shelf = specifiedShelf;
                         }
                     }
-
-                    //shelf = shelfBLL.Get(Convert.ToInt32(txtUpdateSearch.Text));
 
                     txtMaterialLocationUpdate.Text = shelf.Location;
                     txtShelfQuantityUpdate.Text = shelf.Quantity.ToString();
@@ -104,10 +111,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -137,6 +144,52 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSearchDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtSearchMaterialLocationDelete.Text != string.Empty)
+                {
+                    storedShelf = shelfBLL.GetAll();
+
+                    foreach (var specifiedShelf in storedShelf)
+                    {
+                        if (specifiedShelf.Location == txtSearchMaterialLocationDelete.Text)
+                        {
+                            shelf = specifiedShelf;
+                        }
+                    }
+
+                    txtMaterialLocationDelete.Text = shelf.Location;
+                    txtShelfQuantityDelete.Text = shelf.Quantity.ToString();
+                }
+                else
+                {
+                    txtMaterialLocationDelete.Text = "---";
+                    txtShelfQuantityDelete.Text = "---";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            shelfBLL.Delete(shelf.ShelfId);
+            //little code because Delete Operation is not yet implemented in DAL for Shelf!
         }
     }
 }
