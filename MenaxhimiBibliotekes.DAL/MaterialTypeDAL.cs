@@ -151,7 +151,7 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     mt.UpdDate = (DateTime)reader["UpdDate"];
                 }
-
+                mt.isActive = (bool)reader["IsActive"];
                 mt.UpdNo = int.Parse(reader["UpdNo"].ToString());
 
 
@@ -179,11 +179,11 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("MaterialTypeId", obj.MaterialTypeId);
                         command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
+                        command.Parameters.AddWithValue("@IsActive", obj.isActive) ;
 
 
 
-
-                        Updated= command.ExecuteNonQuery();
+                        Updated = command.ExecuteNonQuery();
 
                         if (Updated > 0)
                         {

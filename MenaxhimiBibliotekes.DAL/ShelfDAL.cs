@@ -218,8 +218,6 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
 
-
-
                         isUpdated= command.ExecuteNonQuery();
 
                         if (isUpdated > 0)
@@ -233,6 +231,7 @@ namespace MenaxhimiBibliotekes.DAL
                     }
                 }
             }
+
             catch (SqlException ex)
             {
                 MessageBox.Show("Shelf has an error, please contact your administrator");

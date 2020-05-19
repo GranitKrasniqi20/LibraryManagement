@@ -79,8 +79,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void btnSearchUpdate_Click(object sender, EventArgs e)
         {
+
+
             try
             {
+                storedMT = new List<MaterialType>();
                 if (txtSearchMaterialTypeUpdate.Text != string.Empty)
                 {
                     storedMT = mtbll.GetAll();
@@ -169,6 +172,24 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtMaterialTypeIDDelete.Text != string.Empty)
+                {
+                    if (mtbll.Delete(int.Parse(txtMaterialTypeIDDelete.Text))==0)
+                    {
+                        MessageBox.Show("Material deleted succesfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Material Type is not deleted please contact your administrator", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
