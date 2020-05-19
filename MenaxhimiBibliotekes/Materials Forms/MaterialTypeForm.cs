@@ -19,6 +19,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         MaterialTypeBLL mtbll;
         MaterialType mt;
         MaterialTypeValidation mtValidate;
+        List<MaterialType> storedMT;
+        bool booleanVariable;
 
         public MaterialTypeForm()
         {
@@ -35,17 +37,17 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 if (mtValidate.ValidateMaterialType(txtMaterialTypeCreate.Text.Trim()))
                 {
                     mt._MaterialType = txtMaterialTypeCreate.Text.Trim();
-                    mt.InsBy = 80;//FormLoggedUser.Id;
+                    mt.InsBy = FormLoggedUser.Id;
+
 
                     int error = mtbll.Add(mt);
                     if (error == 0)
                     {
                         this.Close();
                     }
-
-                    else if (error == 1)
+                    else
                     {
-                        MessageBox.Show("MaterialType name  should be uniqe, please if this material type is deactivated update it");
+                        MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
                     }
                 }
                 else
@@ -63,9 +65,111 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
         }
 
-        private void BtnUpdate_Click(object sender, EventArgs e)
+        private void comboIsActiveUpdate_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboIsActiveUpdate.SelectedItem == "Active")
+            {
+                booleanVariable = true;
+            }
+            else
+            {
+                booleanVariable = false;
+            }
+        }
 
+        private void btnSearchUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtSearchMaterialTypeUpdate.Text != string.Empty)
+                {
+                    storedMT = mtbll.GetAll();
+
+                    foreach (var types in storedMT)
+                    {
+                        if (types._MaterialType == txtSearchMaterialTypeUpdate.Text)
+                        {
+                            mt = types;
+                        }
+                    }
+
+                    txtMaterialTypeIDUpdate.Text = mt.MaterialTypeId.ToString();
+                    txtMaterialTypeUpdate.Text = mt._MaterialType;
+                }
+                else
+                {
+                    txtMaterialTypeIDUpdate.Text = "---";
+                    txtMaterialTypeUpdate.Text = string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (mtValidate.ValidateMaterialType(txtSearchMaterialTypeUpdate.Text.Trim()))
+                {
+                    mt._MaterialType = txtMaterialTypeUpdate.Text;
+                    mt.UpdBy = FormLoggedUser.Id;
+                    mt.isActive = booleanVariable;
+
+                    int error = mtbll.Update(mt);
+                    if (error == 0)
+                    {
+                        MessageBox.Show("This Material Type is updated succesfully!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Material Type could not be Updated!");
+                    }
+                }
+                else
+                {
+                    throw new FormatException();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSearchDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtSearchMaterialTypeDelete.Text != string.Empty)
+                {
+                    storedMT = mtbll.GetAll();
+
+                    foreach (var types in storedMT)
+                    {
+                        if (types._MaterialType == txtSearchMaterialTypeDelete.Text)
+                        {
+                            mt = types;
+                        }
+                    }
+
+                    txtMaterialTypeIDDelete.Text = mt.MaterialTypeId.ToString();
+                    txtMaterialTypeDelete.Text = mt._MaterialType;
+                }
+                else
+                {
+                    txtMaterialTypeIDDelete.Text = "---";
+                    txtMaterialTypeDelete.Text = "---";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

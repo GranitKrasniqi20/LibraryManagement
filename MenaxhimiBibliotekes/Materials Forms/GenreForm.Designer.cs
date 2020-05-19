@@ -73,6 +73,8 @@
             this.lblFooterTitleDelete = new System.Windows.Forms.Label();
             this.panelTopDelete = new System.Windows.Forms.Panel();
             this.lblTitleDelete = new System.Windows.Forms.Label();
+            this.comboIsActiveUpdate = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabCreateGenre.SuspendLayout();
             this.panelBottomCreate.SuspendLayout();
@@ -225,6 +227,8 @@
             // 
             // tabUpdateGenre
             // 
+            this.tabUpdateGenre.Controls.Add(this.comboIsActiveUpdate);
+            this.tabUpdateGenre.Controls.Add(this.label1);
             this.tabUpdateGenre.Controls.Add(this.panelInfoUpdate);
             this.tabUpdateGenre.Controls.Add(this.panelBottomUpdate);
             this.tabUpdateGenre.Controls.Add(this.btnUpdate);
@@ -250,7 +254,7 @@
             this.panelInfoUpdate.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelInfoUpdate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelInfoUpdate.Controls.Add(this.lblInfoUpdate);
-            this.panelInfoUpdate.Location = new System.Drawing.Point(29, 229);
+            this.panelInfoUpdate.Location = new System.Drawing.Point(29, 220);
             this.panelInfoUpdate.Name = "panelInfoUpdate";
             this.panelInfoUpdate.Size = new System.Drawing.Size(513, 81);
             this.panelInfoUpdate.TabIndex = 19;
@@ -293,30 +297,31 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(29, 484);
+            this.btnUpdate.Location = new System.Drawing.Point(29, 504);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(512, 69);
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Update Genre";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSearchUpdate
             // 
             this.btnSearchUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
             this.btnSearchUpdate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnSearchUpdate.Location = new System.Drawing.Point(302, 136);
+            this.btnSearchUpdate.Location = new System.Drawing.Point(302, 127);
             this.btnSearchUpdate.Name = "btnSearchUpdate";
             this.btnSearchUpdate.Size = new System.Drawing.Size(239, 69);
             this.btnSearchUpdate.TabIndex = 17;
             this.btnSearchUpdate.Text = "Search";
             this.btnSearchUpdate.UseVisualStyleBackColor = false;
+            this.btnSearchUpdate.Click += new System.EventHandler(this.btnSearchUpdate_Click);
             // 
             // txtGenreUpdate
             // 
             this.txtGenreUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenreUpdate.Location = new System.Drawing.Point(199, 408);
+            this.txtGenreUpdate.Location = new System.Drawing.Point(199, 399);
             this.txtGenreUpdate.Name = "txtGenreUpdate";
             this.txtGenreUpdate.Size = new System.Drawing.Size(342, 33);
             this.txtGenreUpdate.TabIndex = 16;
@@ -324,7 +329,7 @@
             // txtSearchGenreUpdate
             // 
             this.txtSearchGenreUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchGenreUpdate.Location = new System.Drawing.Point(29, 170);
+            this.txtSearchGenreUpdate.Location = new System.Drawing.Point(29, 161);
             this.txtSearchGenreUpdate.Name = "txtSearchGenreUpdate";
             this.txtSearchGenreUpdate.Size = new System.Drawing.Size(227, 35);
             this.txtSearchGenreUpdate.TabIndex = 16;
@@ -333,7 +338,7 @@
             // 
             this.txtGenreIDUpdate.AutoSize = true;
             this.txtGenreIDUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenreIDUpdate.Location = new System.Drawing.Point(194, 371);
+            this.txtGenreIDUpdate.Location = new System.Drawing.Point(194, 362);
             this.txtGenreIDUpdate.Name = "txtGenreIDUpdate";
             this.txtGenreIDUpdate.Size = new System.Drawing.Size(36, 25);
             this.txtGenreIDUpdate.TabIndex = 15;
@@ -343,7 +348,7 @@
             // 
             this.lblGenreUpdate.AutoSize = true;
             this.lblGenreUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenreUpdate.Location = new System.Drawing.Point(111, 416);
+            this.lblGenreUpdate.Location = new System.Drawing.Point(111, 407);
             this.lblGenreUpdate.Name = "lblGenreUpdate";
             this.lblGenreUpdate.Size = new System.Drawing.Size(67, 25);
             this.lblGenreUpdate.TabIndex = 15;
@@ -353,7 +358,7 @@
             // 
             this.lblGenreIDUpdate.AutoSize = true;
             this.lblGenreIDUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenreIDUpdate.Location = new System.Drawing.Point(88, 371);
+            this.lblGenreIDUpdate.Location = new System.Drawing.Point(88, 362);
             this.lblGenreIDUpdate.Name = "lblGenreIDUpdate";
             this.lblGenreIDUpdate.Size = new System.Drawing.Size(90, 25);
             this.lblGenreIDUpdate.TabIndex = 15;
@@ -363,7 +368,7 @@
             // 
             this.lblDisplayDataUpdate.AutoSize = true;
             this.lblDisplayDataUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplayDataUpdate.Location = new System.Drawing.Point(24, 330);
+            this.lblDisplayDataUpdate.Location = new System.Drawing.Point(24, 321);
             this.lblDisplayDataUpdate.Name = "lblDisplayDataUpdate";
             this.lblDisplayDataUpdate.Size = new System.Drawing.Size(127, 25);
             this.lblDisplayDataUpdate.TabIndex = 15;
@@ -373,7 +378,7 @@
             // 
             this.lblSearchGenreUpdate.AutoSize = true;
             this.lblSearchGenreUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchGenreUpdate.Location = new System.Drawing.Point(24, 134);
+            this.lblSearchGenreUpdate.Location = new System.Drawing.Point(24, 125);
             this.lblSearchGenreUpdate.Name = "lblSearchGenreUpdate";
             this.lblSearchGenreUpdate.Size = new System.Drawing.Size(135, 25);
             this.lblSearchGenreUpdate.TabIndex = 15;
@@ -434,6 +439,7 @@
             this.btnDelete.TabIndex = 26;
             this.btnDelete.Text = "Delete Genre";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtGenreDelete
             // 
@@ -517,6 +523,7 @@
             this.btnSearchDelete.TabIndex = 20;
             this.btnSearchDelete.Text = "Search";
             this.btnSearchDelete.UseVisualStyleBackColor = false;
+            this.btnSearchDelete.Click += new System.EventHandler(this.btnSearchDelete_Click);
             // 
             // txtSearchGenreDelete
             // 
@@ -579,6 +586,29 @@
             this.lblTitleDelete.Size = new System.Drawing.Size(338, 45);
             this.lblTitleDelete.TabIndex = 6;
             this.lblTitleDelete.Text = "Delete Specific Genre";
+            // 
+            // comboIsActiveUpdate
+            // 
+            this.comboIsActiveUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboIsActiveUpdate.FormattingEnabled = true;
+            this.comboIsActiveUpdate.Items.AddRange(new object[] {
+            "Active",
+            "Passive"});
+            this.comboIsActiveUpdate.Location = new System.Drawing.Point(199, 450);
+            this.comboIsActiveUpdate.Name = "comboIsActiveUpdate";
+            this.comboIsActiveUpdate.Size = new System.Drawing.Size(341, 33);
+            this.comboIsActiveUpdate.TabIndex = 22;
+            this.comboIsActiveUpdate.SelectedIndexChanged += new System.EventHandler(this.comboIsActiveUpdate_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(88, 453);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Is Active?";
             // 
             // GenreForm
             // 
@@ -666,5 +696,7 @@
         private System.Windows.Forms.Label lblFooterTitleDelete;
         private System.Windows.Forms.Panel panelTopDelete;
         private System.Windows.Forms.Label lblTitleDelete;
+        private System.Windows.Forms.ComboBox comboIsActiveUpdate;
+        private System.Windows.Forms.Label label1;
     }
 }

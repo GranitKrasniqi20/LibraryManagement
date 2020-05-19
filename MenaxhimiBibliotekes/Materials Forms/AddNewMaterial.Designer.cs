@@ -92,10 +92,11 @@
             this.tableHeader.Controls.Add(this.panel1, 1, 0);
             this.tableHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableHeader.Location = new System.Drawing.Point(0, 0);
+            this.tableHeader.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableHeader.Name = "tableHeader";
             this.tableHeader.RowCount = 1;
             this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableHeader.Size = new System.Drawing.Size(784, 88);
+            this.tableHeader.Size = new System.Drawing.Size(1568, 169);
             this.tableHeader.TabIndex = 1;
             // 
             // panel1
@@ -103,9 +104,10 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.lblTitleTitle);
             this.panel1.Controls.Add(this.picTitle);
-            this.panel1.Location = new System.Drawing.Point(165, 3);
+            this.panel1.Location = new System.Drawing.Point(330, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 82);
+            this.panel1.Size = new System.Drawing.Size(906, 157);
             this.panel1.TabIndex = 0;
             // 
             // lblTitleTitle
@@ -113,18 +115,20 @@
             this.lblTitleTitle.AutoSize = true;
             this.lblTitleTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitleTitle.Location = new System.Drawing.Point(106, 17);
+            this.lblTitleTitle.Location = new System.Drawing.Point(212, 33);
+            this.lblTitleTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitleTitle.Name = "lblTitleTitle";
-            this.lblTitleTitle.Size = new System.Drawing.Size(293, 50);
+            this.lblTitleTitle.Size = new System.Drawing.Size(585, 99);
             this.lblTitleTitle.TabIndex = 0;
             this.lblTitleTitle.Text = "ADD MATERIAL";
             // 
             // picTitle
             // 
             this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
-            this.picTitle.Location = new System.Drawing.Point(54, 17);
+            this.picTitle.Location = new System.Drawing.Point(108, 33);
+            this.picTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.picTitle.Name = "picTitle";
-            this.picTitle.Size = new System.Drawing.Size(58, 50);
+            this.picTitle.Size = new System.Drawing.Size(116, 96);
             this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTitle.TabIndex = 0;
             this.picTitle.TabStop = false;
@@ -132,16 +136,17 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 88);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 169);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 57);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1568, 110);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel2
@@ -149,9 +154,10 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.lblSubTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(23, 3);
+            this.panel2.Location = new System.Drawing.Point(46, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(738, 51);
+            this.panel2.Size = new System.Drawing.Size(1476, 98);
             this.panel2.TabIndex = 0;
             // 
             // lblSubTitle
@@ -159,9 +165,10 @@
             this.lblSubTitle.AutoSize = true;
             this.lblSubTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.lblSubTitle.Location = new System.Drawing.Point(0, 11);
+            this.lblSubTitle.Location = new System.Drawing.Point(0, 21);
+            this.lblSubTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(330, 30);
+            this.lblSubTitle.Size = new System.Drawing.Size(667, 57);
             this.lblSubTitle.TabIndex = 0;
             this.lblSubTitle.Text = "Register New Material in System";
             // 
@@ -170,21 +177,22 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 145);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 279);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(784, 19);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1568, 37);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 5;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.Controls.Add(this.lblTitle, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.lblAuthor, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.lblGenre, 1, 6);
@@ -208,36 +216,38 @@
             this.tableLayoutPanel3.Controls.Add(this.lblMaterialLocation, 1, 15);
             this.tableLayoutPanel3.Controls.Add(this.comboMaterialLocation, 1, 16);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 164);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 316);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 17;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(784, 608);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1568, 1169);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(23, 0);
+            this.lblTitle.Location = new System.Drawing.Point(46, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(49, 25);
+            this.lblTitle.Size = new System.Drawing.Size(97, 51);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
             // 
@@ -245,9 +255,10 @@
             // 
             this.lblAuthor.AutoSize = true;
             this.lblAuthor.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthor.Location = new System.Drawing.Point(23, 104);
+            this.lblAuthor.Location = new System.Drawing.Point(46, 200);
+            this.lblAuthor.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(72, 25);
+            this.lblAuthor.Size = new System.Drawing.Size(143, 51);
             this.lblAuthor.TabIndex = 0;
             this.lblAuthor.Text = "Author";
             // 
@@ -255,9 +266,10 @@
             // 
             this.lblGenre.AutoSize = true;
             this.lblGenre.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(23, 208);
+            this.lblGenre.Location = new System.Drawing.Point(46, 400);
+            this.lblGenre.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(63, 25);
+            this.lblGenre.Size = new System.Drawing.Size(125, 51);
             this.lblGenre.TabIndex = 0;
             this.lblGenre.Text = "Genre";
             // 
@@ -265,9 +277,10 @@
             // 
             this.lblLanguage.AutoSize = true;
             this.lblLanguage.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguage.Location = new System.Drawing.Point(23, 312);
+            this.lblLanguage.Location = new System.Drawing.Point(46, 600);
+            this.lblLanguage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblLanguage.Name = "lblLanguage";
-            this.lblLanguage.Size = new System.Drawing.Size(95, 25);
+            this.lblLanguage.Size = new System.Drawing.Size(191, 51);
             this.lblLanguage.TabIndex = 0;
             this.lblLanguage.Text = "Language";
             // 
@@ -275,9 +288,10 @@
             // 
             this.lblISBN.AutoSize = true;
             this.lblISBN.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblISBN.Location = new System.Drawing.Point(23, 416);
+            this.lblISBN.Location = new System.Drawing.Point(46, 800);
+            this.lblISBN.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblISBN.Name = "lblISBN";
-            this.lblISBN.Size = new System.Drawing.Size(54, 25);
+            this.lblISBN.Size = new System.Drawing.Size(106, 51);
             this.lblISBN.TabIndex = 0;
             this.lblISBN.Text = "ISBN";
             // 
@@ -285,9 +299,10 @@
             // 
             this.lblMaterialType.AutoSize = true;
             this.lblMaterialType.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialType.Location = new System.Drawing.Point(405, 0);
+            this.lblMaterialType.Location = new System.Drawing.Point(810, 0);
+            this.lblMaterialType.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMaterialType.Name = "lblMaterialType";
-            this.lblMaterialType.Size = new System.Drawing.Size(129, 25);
+            this.lblMaterialType.Size = new System.Drawing.Size(256, 51);
             this.lblMaterialType.TabIndex = 0;
             this.lblMaterialType.Text = "Material Type";
             // 
@@ -295,9 +310,10 @@
             // 
             this.lblPublishHouse.AutoSize = true;
             this.lblPublishHouse.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPublishHouse.Location = new System.Drawing.Point(405, 104);
+            this.lblPublishHouse.Location = new System.Drawing.Point(810, 200);
+            this.lblPublishHouse.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPublishHouse.Name = "lblPublishHouse";
-            this.lblPublishHouse.Size = new System.Drawing.Size(133, 25);
+            this.lblPublishHouse.Size = new System.Drawing.Size(266, 51);
             this.lblPublishHouse.TabIndex = 0;
             this.lblPublishHouse.Text = "Publish House";
             // 
@@ -305,9 +321,10 @@
             // 
             this.lblPublishDate.AutoSize = true;
             this.lblPublishDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPublishDate.Location = new System.Drawing.Point(405, 208);
+            this.lblPublishDate.Location = new System.Drawing.Point(810, 400);
+            this.lblPublishDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPublishDate.Name = "lblPublishDate";
-            this.lblPublishDate.Size = new System.Drawing.Size(120, 25);
+            this.lblPublishDate.Size = new System.Drawing.Size(238, 51);
             this.lblPublishDate.TabIndex = 0;
             this.lblPublishDate.Text = "Publish Date";
             // 
@@ -315,9 +332,10 @@
             // 
             this.lblPublishPlace.AutoSize = true;
             this.lblPublishPlace.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPublishPlace.Location = new System.Drawing.Point(405, 312);
+            this.lblPublishPlace.Location = new System.Drawing.Point(810, 600);
+            this.lblPublishPlace.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPublishPlace.Name = "lblPublishPlace";
-            this.lblPublishPlace.Size = new System.Drawing.Size(124, 25);
+            this.lblPublishPlace.Size = new System.Drawing.Size(247, 51);
             this.lblPublishPlace.TabIndex = 0;
             this.lblPublishPlace.Text = "Publish Place";
             // 
@@ -325,25 +343,27 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.lblQuantity, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.lblPages, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(405, 419);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(810, 806);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(356, 36);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(712, 69);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(3, 0);
+            this.lblQuantity.Location = new System.Drawing.Point(6, 0);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(87, 25);
+            this.lblQuantity.Size = new System.Drawing.Size(172, 51);
             this.lblQuantity.TabIndex = 0;
             this.lblQuantity.Text = "Quantity";
             // 
@@ -351,9 +371,10 @@
             // 
             this.lblPages.AutoSize = true;
             this.lblPages.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPages.Location = new System.Drawing.Point(191, 0);
+            this.lblPages.Location = new System.Drawing.Point(382, 0);
+            this.lblPages.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPages.Name = "lblPages";
-            this.lblPages.Size = new System.Drawing.Size(120, 25);
+            this.lblPages.Size = new System.Drawing.Size(238, 51);
             this.lblPages.TabIndex = 0;
             this.lblPages.Text = "No. of Pages";
             // 
@@ -361,43 +382,47 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.txtPages, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtQuantity, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(405, 461);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(810, 887);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(356, 36);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(712, 69);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // txtPages
             // 
             this.txtPages.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPages.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtPages.Location = new System.Drawing.Point(191, 3);
+            this.txtPages.Location = new System.Drawing.Point(382, 6);
+            this.txtPages.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPages.Name = "txtPages";
-            this.txtPages.Size = new System.Drawing.Size(162, 33);
+            this.txtPages.Size = new System.Drawing.Size(320, 58);
             this.txtPages.TabIndex = 11;
             // 
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtQuantity.Location = new System.Drawing.Point(3, 3);
+            this.txtQuantity.Location = new System.Drawing.Point(6, 6);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(162, 33);
+            this.txtQuantity.Size = new System.Drawing.Size(320, 58);
             this.txtQuantity.TabIndex = 10;
             // 
             // txtTitle
             // 
             this.txtTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitle.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtTitle.Location = new System.Drawing.Point(23, 45);
+            this.txtTitle.Location = new System.Drawing.Point(46, 87);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(356, 33);
+            this.txtTitle.Size = new System.Drawing.Size(708, 58);
             this.txtTitle.TabIndex = 1;
             this.txtTitle.TextChanged += new System.EventHandler(this.TxtTitle_TextChanged);
             // 
@@ -405,9 +430,10 @@
             // 
             this.txtAuthor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAuthor.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtAuthor.Location = new System.Drawing.Point(23, 149);
+            this.txtAuthor.Location = new System.Drawing.Point(46, 287);
+            this.txtAuthor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(356, 33);
+            this.txtAuthor.Size = new System.Drawing.Size(708, 58);
             this.txtAuthor.TabIndex = 3;
             // 
             // comboGenre
@@ -422,9 +448,10 @@
             "Mathematics",
             "Biography",
             "Novel"});
-            this.comboGenre.Location = new System.Drawing.Point(23, 253);
+            this.comboGenre.Location = new System.Drawing.Point(46, 487);
+            this.comboGenre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboGenre.Name = "comboGenre";
-            this.comboGenre.Size = new System.Drawing.Size(356, 33);
+            this.comboGenre.Size = new System.Drawing.Size(708, 59);
             this.comboGenre.TabIndex = 5;
             this.comboGenre.SelectedIndexChanged += new System.EventHandler(this.comboGenre_SelectedIndexChanged_1);
             // 
@@ -438,9 +465,10 @@
             "English",
             "Shqip",
             "Deutsch"});
-            this.comboLanguage.Location = new System.Drawing.Point(23, 357);
+            this.comboLanguage.Location = new System.Drawing.Point(46, 687);
+            this.comboLanguage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboLanguage.Name = "comboLanguage";
-            this.comboLanguage.Size = new System.Drawing.Size(356, 33);
+            this.comboLanguage.Size = new System.Drawing.Size(708, 59);
             this.comboLanguage.TabIndex = 7;
             this.comboLanguage.SelectedIndexChanged += new System.EventHandler(this.comboLanguage_SelectedIndexChanged_1);
             // 
@@ -448,9 +476,10 @@
             // 
             this.txtISBN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtISBN.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtISBN.Location = new System.Drawing.Point(23, 461);
+            this.txtISBN.Location = new System.Drawing.Point(46, 887);
+            this.txtISBN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(356, 33);
+            this.txtISBN.Size = new System.Drawing.Size(708, 58);
             this.txtISBN.TabIndex = 8;
             // 
             // comboMaterialType
@@ -462,9 +491,10 @@
             "Other",
             "Book",
             "Journal"});
-            this.comboMaterialType.Location = new System.Drawing.Point(405, 45);
+            this.comboMaterialType.Location = new System.Drawing.Point(810, 87);
+            this.comboMaterialType.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboMaterialType.Name = "comboMaterialType";
-            this.comboMaterialType.Size = new System.Drawing.Size(356, 33);
+            this.comboMaterialType.Size = new System.Drawing.Size(708, 59);
             this.comboMaterialType.TabIndex = 2;
             this.comboMaterialType.SelectedIndexChanged += new System.EventHandler(this.comboMaterialType_SelectedIndexChanged_1);
             // 
@@ -472,36 +502,40 @@
             // 
             this.txtPublishHouse.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPublishHouse.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtPublishHouse.Location = new System.Drawing.Point(405, 149);
+            this.txtPublishHouse.Location = new System.Drawing.Point(810, 287);
+            this.txtPublishHouse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPublishHouse.Name = "txtPublishHouse";
-            this.txtPublishHouse.Size = new System.Drawing.Size(356, 33);
+            this.txtPublishHouse.Size = new System.Drawing.Size(708, 58);
             this.txtPublishHouse.TabIndex = 4;
             // 
             // txtPublishDate
             // 
             this.txtPublishDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPublishDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtPublishDate.Location = new System.Drawing.Point(405, 253);
+            this.txtPublishDate.Location = new System.Drawing.Point(810, 487);
+            this.txtPublishDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPublishDate.Name = "txtPublishDate";
-            this.txtPublishDate.Size = new System.Drawing.Size(356, 33);
+            this.txtPublishDate.Size = new System.Drawing.Size(708, 58);
             this.txtPublishDate.TabIndex = 6;
             // 
             // txtPublishPlace
             // 
             this.txtPublishPlace.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPublishPlace.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtPublishPlace.Location = new System.Drawing.Point(405, 357);
+            this.txtPublishPlace.Location = new System.Drawing.Point(810, 687);
+            this.txtPublishPlace.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPublishPlace.Name = "txtPublishPlace";
-            this.txtPublishPlace.Size = new System.Drawing.Size(356, 33);
+            this.txtPublishPlace.Size = new System.Drawing.Size(708, 58);
             this.txtPublishPlace.TabIndex = 8;
             // 
             // lblMaterialLocation
             // 
             this.lblMaterialLocation.AutoSize = true;
             this.lblMaterialLocation.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialLocation.Location = new System.Drawing.Point(23, 520);
+            this.lblMaterialLocation.Location = new System.Drawing.Point(46, 1000);
+            this.lblMaterialLocation.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMaterialLocation.Name = "lblMaterialLocation";
-            this.lblMaterialLocation.Size = new System.Drawing.Size(162, 25);
+            this.lblMaterialLocation.Size = new System.Drawing.Size(324, 51);
             this.lblMaterialLocation.TabIndex = 0;
             this.lblMaterialLocation.Text = "Material Location";
             // 
@@ -510,9 +544,10 @@
             this.comboMaterialLocation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboMaterialLocation.ForeColor = System.Drawing.Color.Gray;
             this.comboMaterialLocation.FormattingEnabled = true;
-            this.comboMaterialLocation.Location = new System.Drawing.Point(23, 565);
+            this.comboMaterialLocation.Location = new System.Drawing.Point(46, 1087);
+            this.comboMaterialLocation.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboMaterialLocation.Name = "comboMaterialLocation";
-            this.comboMaterialLocation.Size = new System.Drawing.Size(356, 33);
+            this.comboMaterialLocation.Size = new System.Drawing.Size(708, 59);
             this.comboMaterialLocation.TabIndex = 9;
             this.comboMaterialLocation.SelectedIndexChanged += new System.EventHandler(this.comboMaterialLocation_SelectedIndexChanged);
             // 
@@ -522,11 +557,12 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.lblFooterTitle, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 845);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 1640);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(784, 27);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1568, 52);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
             // lblFooterTitle
@@ -534,34 +570,37 @@
             this.lblFooterTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFooterTitle.AutoSize = true;
             this.lblFooterTitle.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterTitle.Location = new System.Drawing.Point(266, 5);
+            this.lblFooterTitle.Location = new System.Drawing.Point(535, 8);
+            this.lblFooterTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblFooterTitle.Name = "lblFooterTitle";
-            this.lblFooterTitle.Size = new System.Drawing.Size(251, 17);
+            this.lblFooterTitle.Size = new System.Drawing.Size(497, 36);
             this.lblFooterTitle.TabIndex = 0;
             this.lblFooterTitle.Text = "All Rights, Stackbooks Management System";
             // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel6.Controls.Add(this.panel13, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 772);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 1485);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(784, 73);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1568, 155);
             this.tableLayoutPanel6.TabIndex = 6;
             // 
             // panel13
             // 
             this.panel13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel13.Controls.Add(this.btnRegister);
-            this.panel13.Location = new System.Drawing.Point(214, 10);
+            this.panel13.Location = new System.Drawing.Point(428, 27);
+            this.panel13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(356, 52);
+            this.panel13.Size = new System.Drawing.Size(712, 100);
             this.panel13.TabIndex = 0;
             // 
             // btnRegister
@@ -571,8 +610,9 @@
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(0, 0);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(356, 52);
+            this.btnRegister.Size = new System.Drawing.Size(712, 100);
             this.btnRegister.TabIndex = 12;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -580,16 +620,17 @@
             // 
             // AddNewMaterial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 872);
+            this.ClientSize = new System.Drawing.Size(1568, 1692);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(800, 726);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MinimumSize = new System.Drawing.Size(1574, 1702);
             this.Name = "AddNewMaterial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Material (Stackbooks)";

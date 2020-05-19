@@ -37,8 +37,6 @@
             this.lblFooterTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnBill = new System.Windows.Forms.Button();
-            this.btnPreview = new System.Windows.Forms.Button();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -76,8 +74,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUpdateMemberSubscription = new System.Windows.Forms.Button();
-            this.printDocBill = new System.Drawing.Printing.PrintDocument();
-            this.printPreview = new System.Windows.Forms.PrintPreviewDialog();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -146,7 +142,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.lblFooterTitle, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 810);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 804);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -183,34 +179,12 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.btnBill);
-            this.panel2.Controls.Add(this.btnPreview);
             this.panel2.Controls.Add(this.lblSubTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(23, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(746, 51);
             this.panel2.TabIndex = 0;
-            // 
-            // btnBill
-            // 
-            this.btnBill.Location = new System.Drawing.Point(650, 18);
-            this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(75, 23);
-            this.btnBill.TabIndex = 2;
-            this.btnBill.Text = "Print";
-            this.btnBill.UseVisualStyleBackColor = true;
-            this.btnBill.Click += new System.EventHandler(this.btnBill_Click_1);
-            // 
-            // btnPreview
-            // 
-            this.btnPreview.Location = new System.Drawing.Point(544, 18);
-            this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(75, 23);
-            this.btnPreview.TabIndex = 1;
-            this.btnPreview.Text = "Preview";
-            this.btnPreview.UseVisualStyleBackColor = true;
-            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click_1);
             // 
             // lblSubTitle
             // 
@@ -612,14 +586,14 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(792, 82);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(792, 76);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.Controls.Add(this.btnUpdate);
-            this.panel3.Location = new System.Drawing.Point(25, 15);
+            this.panel3.Location = new System.Drawing.Point(25, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(356, 52);
             this.panel3.TabIndex = 0;
@@ -642,7 +616,7 @@
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.Controls.Add(this.btnUpdateMemberSubscription);
-            this.panel5.Location = new System.Drawing.Point(411, 15);
+            this.panel5.Location = new System.Drawing.Point(411, 12);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(356, 52);
             this.panel5.TabIndex = 0;
@@ -661,32 +635,18 @@
             this.btnUpdateMemberSubscription.UseVisualStyleBackColor = false;
             this.btnUpdateMemberSubscription.Click += new System.EventHandler(this.btnUpdateMemberSubscription_Click);
             // 
-            // printDocBill
-            // 
-            this.printDocBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocBill_PrintPage_1);
-            // 
-            // printPreview
-            // 
-            this.printPreview.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreview.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreview.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreview.Enabled = true;
-            this.printPreview.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreview.Icon")));
-            this.printPreview.Name = "printPreview";
-            this.printPreview.Visible = false;
-            // 
             // UpdateMemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 837);
+            this.ClientSize = new System.Drawing.Size(792, 831);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(808, 726);
+            this.MinimumSize = new System.Drawing.Size(808, 858);
             this.Name = "UpdateMemberForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Member (Stackbooks)";
@@ -761,9 +721,5 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.DateTimePicker dtPickerBirthdate;
         private System.Windows.Forms.Button btnSearchMember;
-        private System.Windows.Forms.Button btnBill;
-        private System.Windows.Forms.Button btnPreview;
-        private System.Drawing.Printing.PrintDocument printDocBill;
-        private System.Windows.Forms.PrintPreviewDialog printPreview;
     }
 }
