@@ -71,9 +71,25 @@ namespace MenaxhimiBibliotekes.DAL
                     using (SqlCommand command = DbHelper.Command(conn, "usp_DeleteShelf", CommandType.StoredProcedure))
                     {
                         command.Parameters.AddWithValue("ShelfId", Id);
-                        IsDeleted = command.ExecuteNonQuery();
+                        
 
-                        if (IsDeleted > 0)
+
+
+                        int error;
+
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
+
+                        command.Parameters.Add(sqlpa);
+
+                        command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+
+
+                        if (IsDeleted == 0)
                         {
                             return 0;
                         }

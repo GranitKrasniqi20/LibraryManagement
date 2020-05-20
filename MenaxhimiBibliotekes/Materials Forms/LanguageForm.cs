@@ -29,6 +29,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             language = new Language();
             languageBLL = new LanguageBLL();
             storedLanguages = new List<Language>();
+            languageValidation = new LanguageValidation();
         }
 
         private void btnInsert_Click(object sender, EventArgs e)

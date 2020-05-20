@@ -123,63 +123,90 @@ namespace MenaxhimiBibliotekes.Settings_Forms
         {
 
 
-            if (FormLoggedUser.Role.UserRoleId == 1)
+            try
             {
-                MessageBox.Show("You don't have permision to update users", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                usr = new User();
-
-                usr.Name = txtNameEdit.Text;
-                usr.LastName = txtLastNameEdit.Text;
-                usr.Email = txtEmailEdit.Text;
-                usr.Username = txtUsernameEdit.Text;
-
-                if ("Yes" == txtIsActiveEdit.Text || "yes" == txtIsActiveEdit.Text)
+                if (FormLoggedUser.Role.UserRoleId == 1)
                 {
-
-                    usr.IsActive = true;
+                    MessageBox.Show("You don't have permision to update users", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
+                else  
                 {
-                    usr.IsActive = false;
-                }
+                    usr = new User();
 
-                usr.InsBy = FormLoggedUser.Id;
-                usr._role = getRoleUpdate();
-                usr.RoleID = usr._role.UserRoleId;
+                    usr.Name = txtNameEdit.Text;
+                    usr.LastName = txtLastNameEdit.Text;
+                    usr.Email = txtEmailEdit.Text;
+                    usr.Username = txtUsernameEdit.Text;
 
-
-                usrval.validateUpdateUser();
-                ValidationResult vres = usrval.Validate(usr);
-
-
-
-
-                if (vres.IsValid == false)
-                {
-
-                    errors = "";
-                    foreach (ValidationFailure item in vres.Errors)
+                    if ("Yes" == txtIsActiveEdit.Text || "yes" == txtIsActiveEdit.Text)
                     {
-                        errors += $"       {item.ErrorMessage}        \n \n";
+
+                        usr.IsActive = true;
+                    }
+                    else if (txtIsActiveEdit.Text.ToLower() == "no")
+                    {
+                        usr.IsActive = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("IsActive field is not valid please answer with 'yes' or 'no'", "USER UPDATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        throw new Exception();
                     }
 
-                    MessageBox.Show(errors, "ERROR WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
 
-                else
-                {
-                    usrbll = new UserBLL();
-                    if (usrbll.Update(usr) == 0)
+
+                    usr.InsBy = FormLoggedUser.Id;
+                    usr._role = getRoleUpdate();
+                    usr.RoleID = usr._role.UserRoleId;
+
+
+                    usrval.validateUpdateUser();
+                    ValidationResult vres = usrval.Validate(usr);
+
+
+
+
+                    if (vres.IsValid == false)
                     {
-                        MessageBox.Show("User updated succesfuly", "USER UPDATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        errors = "";
+                        foreach (ValidationFailure item in vres.Errors)
+                        {
+                            errors += $"       {item.ErrorMessage}        \n \n";
+                        }
+
+                        MessageBox.Show(errors, "ERROR WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+
+                    else
+                    {
+                        usrbll = new UserBLL();
+                        if (usrbll.Update(usr) == 0)
+                        {
+                            MessageBox.Show("User updated succesfuly", "USER UPDATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+
                 }
+            }
+
+
+
+            catch (Exception)
+            {
 
             }
 
+
+                
+
+
+                
+                
+
+
+
+                
 
         }
 

@@ -38,6 +38,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (gv.ValidateGenre(txtGenreCreate.Text.Trim()))
                 {
+                    ge = new Genre();
                     ge._Genre = txtGenreCreate.Text.Trim();
                     ge.InsBy = FormLoggedUser.Id;
 
@@ -104,6 +105,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (gv.ValidateGenre(txtGenreUpdate.Text.Trim()))
                 {
+                    ge = new Genre();
+
+
+                    ge.GenreId = int.Parse(txtGenreIDUpdate.Text);
                     ge._Genre = txtGenreUpdate.Text.Trim();
                     ge.UpdBy = FormLoggedUser.Id;
                     ge.isActive = booleanVariable;

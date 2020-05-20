@@ -26,7 +26,6 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         command.Parameters.AddWithValue("Genre", obj._Genre);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
-                        command.Parameters.AddWithValue("isActive", obj.InsBy);
 
                         SqlParameter sqlpa = new SqlParameter();
                         sqlpa.ParameterName = "Error";
@@ -175,19 +174,20 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("GenreId", obj.GenreId);
                         command.Parameters.AddWithValue("Genre", obj._Genre);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
+                        command.Parameters.AddWithValue("IsActive", obj.isActive);
 
-
-                        SqlParameter sqlpa = new SqlParameter();
-                        sqlpa.ParameterName = "Error";
-                        sqlpa.SqlDbType = SqlDbType.Int;
-                        sqlpa.Direction = ParameterDirection.Output;
-
-                        command.Parameters.Add(sqlpa);
 
                         isUpdated = command.ExecuteNonQuery();
-                        return (int)sqlpa.Value;
 
+                        if (isUpdated> 0)
+                        {
+                            return 0;
 
+                        }
+                        else
+                        {
+                            return 1;
+                        }
 
                     }
                 }

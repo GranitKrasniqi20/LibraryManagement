@@ -169,6 +169,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 {
                     txtMaterialLocationDelete.Text = "---";
                     txtShelfQuantityDelete.Text = "---";
+
+                    
                 }
             }
             catch (Exception ex)
@@ -177,10 +179,45 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
         }
 
+        public int GetShelfId(string location)
+        {
+            foreach (var item in storedShelf)
+            {
+                if (item.Location == location)
+                {
+                    return item.ShelfId;
+                }
+            }
+            return -1;
+        }
+        
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
+
+
+                shelfBLL = new ShelfBLL();
+
+                int shelfId = GetShelfId(txtMaterialLocationDelete.Text);
+                   
+                if (shelfId >0 )
+                {
+                    int i = shelfBLL.Delete(shelfId);
+                    if (i == 0)
+                    {
+                        MessageBox.Show("Shelf deleted successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (i == 1)
+                    {
+                        MessageBox.Show("Shelf is not deleted, there are still books on this shelf, please kindly change their location", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Shelf is not deleted, Please contact your administrator", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
 
             }
             catch (Exception)
