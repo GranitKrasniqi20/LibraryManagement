@@ -208,8 +208,29 @@ namespace MenaxhimiBibliotekes.Settings_Forms
 
 
 
+                    Role ro = role[0];
+                    Role r = new Role(); ;
+                    foreach (var item in role)
+                    {
+                        if (item.UserRoleId == usr._role.UserRoleId)
+                        {
+                            r = item;
+                        }
+                    }
 
-                    BindDropDownEditUser(usr._role);
+                    role.Remove(r);
+
+                    role[0] = usr._role;
+
+
+
+                    role.Add(ro);
+
+
+
+                    comboRoleEdit.DataSource = role;
+                    comboRoleEdit.DisplayMember = "UserRole";
+
 
 
                     txtNameEdit.Text = usr.Name;
@@ -241,32 +262,6 @@ namespace MenaxhimiBibliotekes.Settings_Forms
 
                 throw;
             }
-        }
-        private void BindDropDownEditUser(Role first)
-        {
-            Role ro = role[0];
-            Role r = new Role();
-            foreach (var item in role)
-            {
-                if (item.UserRoleId == usr._role.UserRoleId)
-                {
-                    r = item;
-                }
-            }
-
-            role.Remove(r);
-
-            role[0] = first;
-
-
-
-            role.Add(ro);
-
-
-
-            comboRoleEdit.DataSource = role;
-            comboRoleEdit.DisplayMember = "UserRole";
-
         }
 
         private void BtnSearchToDelete_Click(object sender, EventArgs e)
