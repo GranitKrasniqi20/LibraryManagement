@@ -33,6 +33,10 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             command.Parameters.AddWithValue("@PublishHouse", obj._PublishHouse._PublishHouse);
                         }
+                        if (obj.PublishYear != null)
+                        {
+                            command.Parameters.AddWithValue("@PublicationYear", obj.PublishYear);
+                        }
 
                         if (obj.PublishPlace != null)
                         {
