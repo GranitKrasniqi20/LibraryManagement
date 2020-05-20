@@ -1,0 +1,366 @@
+CREATE PROCEDURE usp_Subscribers_Update
+	@subscriberId INT,
+	@name VARCHAR(50),
+	@lastName VARCHAR(50),
+	@address VARCHAR(100),
+	@birthday DATE=NULL,
+	@personalNumber VARCHAR(30)=NULL,
+	@phoneNumber VARCHAR(50),
+	@email VARCHAR(50),
+	@gender VARCHAR(1),
+	@expirationDate DATETIME,
+	@isActive BIT,
+	@updBy INT=NULL--,
+	--@insDate INT
+AS
+
+
+--select * from dbo.Subscribers;
+--exec usp_Subscribers_Update 15,'aa','aa','aa','2020-02-02','aa','aa','aa','F', '2029-02-02', 1, 80
+BEGIN TRY
+
+IF(@subscriberId IS NULL)
+BEGIN
+RAISERROR('KY ABONUES NUK EKZISTON',16,1)
+RETURN -1
+END
+
+IF(TRIM(@name) = '')
+BEGIN
+	RAISERROR('EMRI NUK GUXON TE JETE I ZBRAZET',16,1);
+	RETURN -1;
+END
+
+IF(TRIM(@lastName) = '')
+BEGIN
+	RAISERROR('MBIEMRI NUK GUXON TE JETE I ZBRAZET',16,1);
+	RETURN -1;
+END
+
+IF(TRIM(@address) = '')
+BEGIN
+	RAISERROR('ADRESA NUK GUXON TE JETE I ZBRAZET',16,1);
+	RETURN -1;
+END
+
+IF(@birthday>GETDATE())
+BEGIN
+	RAISERROR('DATELINDJA NUK GUXON TE JETE ME E MADHE SE DATA AKTUALE',16,1);
+	RETURN -1;
+END
+
+IF
+(@expirationDate <GETDATE())
+BEGIN
+	RAISERROR('NUK GUXON TE JETE DATA ME E VOGEL SE DATA AKTUALE',16,1);
+	RETURN -1;
+END
+
+
+UPDATE Subscribers 
+           
+SET    
+	Name = @name,  
+    LastName = @lastName,  
+    Address = @address, 
+    Birthday = @birthday,
+	PersonalNumber = @personalNumber,
+	PhoneNumber = @phoneNumber,
+	Email = @email,
+	Gender = @gender,
+	EndDate = @expirationDate,
+	IsActive = 1,
+	--InsDate=@insDate,
+	UpdBy = @updBy,
+	UpdDate = GETDATE(),
+    UpdNo = ISNULL(UpdNo,0)+1    
+				        
+				  
+WHERE  
+	SubscriberId = @subscriberId;
+
+END TRY
+
+BEGIN CATCH
+
+DECLARE @ErrorMsg NVARCHAR(MAX)
+SET @ErrorMsg=ERROR_MESSAGE();
+
+RAISERROR (@ErrorMsg,16,1)
+RETURN -1;
+
+END CATCH
+
+===================================
+
+CREATE PROCEDURE usp_Subscribers_Insert
+	@name VARCHAR(50),
+	@lastName VARCHAR(50),
+	@address VARCHAR(100),
+	@birthday DATETIME=NULL,
+	@personalNumber VARCHAR(30)=NULL,
+	@phoneNumber VARCHAR(50),
+	@email VARCHAR(50),
+	@gender VARCHAR(1),
+	@expirationDate DATETIME,
+	@isActive BIT,
+	@insBy INT,
+
+	@subscriberId INT OUT
+	
+AS
+--delete from dbo.Subscribers where SubscriberId=15;
+--select * from dbo.Subscribers;
+--exec usp_Subscribers_Insert 'aa','aa','aa','2020-02-02','aa','aa','aa','M', '2029-02-02', 1, 80
+BEGIN TRY
+IF(TRIM(@name)= '')
+BEGIN
+	RAISERROR('EMRI NUK GUXON TE JETE I ZBRAZET',16,1);
+	RETURN -1;
+END
+
+IF(TRIM(@lastName) = '')
+BEGIN
+	RAISERROR('MBIEMRI NUK GUXON TE JETE I ZBRAZET',16,1);
+	RETURN -1;
+END
+
+IF(TRIM(@address) = '')
+BEGIN
+	RAISERROR('ADRESA NUK GUXON TE JETE I ZBRAZET',16,1);
+	RETURN -1;
+END
+
+IF(@birthday>GETDATE())
+BEGIN
+	RAISERROR('DATELINDJA NUK GUXON TE JETE ME E MADHE SE DATA AKTUALE',16,1);
+	RETURN -1;
+END
+
+IF
+(@expirationDate<GETDATE())
+BEGIN
+	RAISERROR('NUK GUXON TE JETE DATA ME E VOGEL SE DATA AKTUALE',16,1);
+	RETURN -1;
+END
+
+INSERT INTO dbo.Subscribers
+(
+	Name,
+	LastName,
+	Address,
+	Birthday,
+	PersonalNumber,
+	PhoneNumber,
+	Email,
+	Gender,
+	EndDate,
+	IsActive,
+	InsBy,
+	InsDate
+)
+VALUES
+(	
+	@name, @lastName, @address, @birthday, @personalNumber, @phoneNumber, @email, @gender, @expirationDate, 1,
+	@insBy, GETDATE()
+);
+	
+
+	--SCOPE IDENTITY
+	SET @subscriberId=SCOPE_IDENTITY();
+
+END TRY
+
+BEGIN CATCH
+
+DECLARE @ErrorMsg NVARCHAR(MAX)
+SET @ErrorMsg=ERROR_MESSAGE();
+
+RAISERROR (@ErrorMsg,16,1)
+RETURN -1;
+
+END CATCH
+
+==============================
+
+CREATE PROCEDURE usp_Subscribers_GetByID
+	@subscriberId INT
+AS
+
+--exec usp_Subscribers_GetByID 20
+
+IF(@subscriberId IS NULL)
+BEGIN
+RAISERROR('KY ABONUES NUK EKZISTON', 16, 1)
+RETURN -1
+END
+
+BEGIN
+	SELECT *
+	FROM  dbo.Subscribers
+
+	WHERE SubscriberId=@subscriberId;
+
+END
+======================================
+CREATE PROCEDURE usp_Subscribers_GetAll
+AS
+SELECT *   FROM   dbo.Subscribers AS s;
+
+--exec usp_Subscribers_GetAll
+========================================
+
+create PROCEDURE usp_Subscribers_Delete
+	@subscriberId INT
+
+AS
+
+--select * from dbo.Subscribers;
+--exec usp_Subscribers_Delete 20
+
+IF(@subscriberId IS NULL)
+BEGIN
+RAISERROR('KY ABONUES NUK EKZISTON', 16, 1)
+RETURN -1
+END
+
+UPDATE dbo.Subscribers
+SET
+   dbo.Subscribers.IsActive = 0 
+
+   WHERE  @subscriberId = dbo.Subscribers.SubscriberId;
+
+   --delete from dbo.Subscribers;
+===============================================
+
+CREATE PROCEDURE usp_Bills_Insert
+	@subscriberId INT,
+	@billingDate DATETIME,
+	@price MONEY,
+	@registrationDate DATETIME=NULL,
+	@expirationDate DATETIME=NULL,
+	@materialId INT=NULL,
+	@billTypeId INT=NULL,
+	@description VARCHAR(50)=NULL,
+	@insBy INT,
+
+	@billId INT = NULL
+
+AS
+
+--select * from dbo.Bills;
+--exec usp_Bills_Insert 13, '2020-02-02', 29.7, '2020-02-08','2021-02-02',null,1,'popo',80
+
+BEGIN TRY 
+
+IF(@subscriberId IS NULL)
+BEGIN
+RAISERROR('KY ABONUES NUK EKZISTON',16,1)
+RETURN -1
+END
+
+IF(@price<0)
+BEGIN
+RAISERROR('NUK GUXON TE KETE SASI NEGATIVE', 16, 1)
+RETURN -1
+END
+
+
+IF
+(@registrationDate>GETDATE())
+BEGIN
+	RAISERROR('DATA REGJSTRIMIT TE ABONUESIT NUK GUXON TE JETE ME E MADHE SE DATA AKTUALE', 16, 1);
+	RETURN -1;
+END
+
+IF
+(@expirationDate<GETDATE())
+BEGIN
+	RAISERROR('NUK GUXON TE JETE DATA ME E VOGEL SE DATA AKTUALE', 16, 1);
+	RETURN -1;
+END
+
+IF(@insBy IS NULL)
+BEGIN
+RAISERROR('NUK GUXON TE JETE NULL', 16, 1)
+RETURN -1
+END
+
+INSERT INTO dbo.Bills
+(
+	SubscriberId,
+	BillingDate,
+	Price,
+	RegistrationDate,
+	ExpirationDate,
+	MaterialId,
+	BillTypeId,
+	Description,
+	InsBy,
+	InsDate
+)
+VALUES
+(	
+	@subscriberId, @billingDate, @price, @registrationDate, @expirationDate, @materialId, @billTypeId, @description,
+	@insBy, GETDATE()
+);
+	
+	--SCOPE IDENTITY
+	SET @billId=SCOPE_IDENTITY();
+
+END TRY
+
+BEGIN CATCH
+
+DECLARE @ErrorMsg NVARCHAR(MAX)
+SET @ErrorMsg=ERROR_MESSAGE();
+
+RAISERROR (@ErrorMsg,16,1)
+RETURN -1;
+
+END CATCH
+==========================================
+
+CREATE PROCEDURE usp_Bills_GetByID
+	@billId INT
+AS
+
+--exec usp_Bills_GetByID 6
+
+IF(@billId IS NULL)
+BEGIN
+RAISERROR('KY ABONUES NUK EKZISTON', 16, 1)
+RETURN -1
+END
+
+	SELECT * 
+	FROM  dbo.Bills
+
+	WHERE BillId=@billId;
+
+===========================================
+
+create PROCEDURE usp_Bills_GetAll
+AS
+SELECT * FROM dbo.Bills AS b;
+
+--exec usp_Bills_GetAll
+=============================================
+
+create PROCEDURE usp_Bills_Delete
+@billID INT
+
+AS
+
+--select * from dbo.Bills;
+--exec usp_Bills_Delete 7
+
+IF(@billId IS NULL)
+BEGIN
+RAISERROR('KY ABONUES NUK EKZISTON', 16, 1)
+RETURN -1
+END
+
+   DELETE FROM dbo.Bills  
+
+   WHERE  BillID = @billID;
