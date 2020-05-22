@@ -173,18 +173,18 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
 
-                        SqlParameter sqlpa = new SqlParameter();
-                        sqlpa.ParameterName = "Error";
-                        sqlpa.SqlDbType = SqlDbType.Int;
-                        sqlpa.Direction = ParameterDirection.Output;
 
-                        command.Parameters.Add(sqlpa);
 
                         isUpdated = command.ExecuteNonQuery();
-                        error = (int)sqlpa.Value;
+                        if (isUpdated > 0)
+                        {
+                            return 0;
+                        }
+                        else
+                        {
+                            return 1;
+                        }
 
-
-                        return error;
                     }
                 }
             }

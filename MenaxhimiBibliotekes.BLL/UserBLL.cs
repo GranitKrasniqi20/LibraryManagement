@@ -39,6 +39,10 @@ namespace MenaxhimiBibliotekes.BLL
             return usr.Get(Id);
         }
 
+        public User GetByUsername(string username)
+        {
+            return usr.GetUserByUsername(username);
+        }
 
         public List<User> GetAll()
         {

@@ -535,6 +535,7 @@
             // txtMaterialLocationDelete
             // 
             this.txtMaterialLocationDelete.AutoSize = true;
+            this.txtMaterialLocationDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtMaterialLocationDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaterialLocationDelete.Location = new System.Drawing.Point(194, 299);
             this.txtMaterialLocationDelete.Name = "txtMaterialLocationDelete";
@@ -654,7 +655,7 @@
             this.ClientSize = new System.Drawing.Size(586, 717);
             this.Controls.Add(this.tabControl);
             this.MaximumSize = new System.Drawing.Size(602, 756);
-            this.MinimumSize = new System.Drawing.Size(602, 756);
+            this.MinimumSize = new System.Drawing.Size(602, 726);
             this.Name = "MaterialLocation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alter Data in Material Location (Stackbooks)";

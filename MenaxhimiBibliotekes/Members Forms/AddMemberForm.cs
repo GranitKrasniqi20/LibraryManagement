@@ -151,7 +151,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
         private void btnBill_Click(object sender, EventArgs e)
         {
             CookieSubscriber.ID = subscriberBLL.MaxSubscriberId();
-            CookieSubscriber.FullName = subscriber.Name + "\t" + subscriber.LastName;
+            CookieSubscriber.FullName = subscriber.Name + "\t " + subscriber.LastName;
             CookieSubscriber.PersonalNumber = subscriber.PersonalNo;
             CookieSubscriber.SubscriptionPlan = subscriptionPlanVariable;
             CookieSubscriber.BillingDate = bill.BillingDate;

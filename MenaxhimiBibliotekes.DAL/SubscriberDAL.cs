@@ -44,7 +44,6 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("expirationDate", obj.ExpirationDate);
                         command.Parameters.AddWithValue("isActive", obj.IsActive);
                         command.Parameters.AddWithValue("insBy", obj.InsBy);
-                        //command.Parameters.AddWithValue("insDate", obj.InsDate);
 
                         isInserted = command.ExecuteNonQuery();
                         if (isInserted > 0)

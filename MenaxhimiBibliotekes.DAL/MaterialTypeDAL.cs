@@ -151,7 +151,7 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     mt.UpdDate = (DateTime)reader["UpdDate"];
                 }
-
+                mt.isActive = (bool)reader["IsActive"];
                 mt.UpdNo = int.Parse(reader["UpdNo"].ToString());
 
 
@@ -167,7 +167,7 @@ namespace MenaxhimiBibliotekes.DAL
 
         public int Update(MaterialType obj)
         {
-            int error;
+            int Updated;
             try
             {
 
@@ -179,17 +179,20 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("MaterialTypeId", obj.MaterialTypeId);
                         command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
+                        command.Parameters.AddWithValue("@IsActive", obj.isActive) ;
 
 
-                        SqlParameter sqlpa = new SqlParameter();
-                        sqlpa.ParameterName = "Error";
-                        sqlpa.SqlDbType = SqlDbType.Int;
-                        sqlpa.Direction = ParameterDirection.Output;
 
-                        command.Parameters.Add(sqlpa);
+                        Updated = command.ExecuteNonQuery();
 
-                        command.ExecuteNonQuery();
-                        return (int)sqlpa.Value;
+                        if (Updated > 0)
+                        {
+                            return 0;
+                        }
+                        else
+                        {
+                            return 1;
+                        }
                     }
                 }
             }

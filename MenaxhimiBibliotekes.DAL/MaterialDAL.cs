@@ -33,13 +33,17 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             command.Parameters.AddWithValue("@PublishHouse", obj._PublishHouse._PublishHouse);
                         }
+                        if (obj.PublishYear != null)
+                        {
+                            command.Parameters.AddWithValue("@PublicationYear", obj.PublishYear);
+                        }
 
                         if (obj.PublishPlace != null)
                         {
                             command.Parameters.AddWithValue("@PlaceOfPublication", obj.PublishPlace);
                         }
 
-                        if (obj.ISBN != null)
+                        if (obj.ISBN.Length > 0)
                         {
                             command.Parameters.AddWithValue("@ISBN", obj.ISBN);
                         }
@@ -72,8 +76,8 @@ namespace MenaxhimiBibliotekes.DAL
 
                         else
                         {
-                              
-                               throw new Exception();
+
+                            return 1;
                             
                         }
 
@@ -118,7 +122,7 @@ namespace MenaxhimiBibliotekes.DAL
                         }
                         else
                         {
-                            return -1;
+                            return 1;
                         }
                     }
 
@@ -196,7 +200,7 @@ namespace MenaxhimiBibliotekes.DAL
                                             throw new Exception();
                                         }
 
-                                        //rreshtat e rafteve ne listen brenda materialeve
+                                       
 
                                     _AllMaterials.Add(material);
 
@@ -243,8 +247,11 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             command.Parameters.AddWithValue("PlaceOfPublication", obj.PublishPlace);
                         }
-
-                        if (obj.ISBN!= null)
+                        if (obj.PublishYear != null)
+                        {
+                            command.Parameters.AddWithValue("@PublicationYear", obj.PublishYear);
+                        }
+                        if (obj.ISBN.Length > 0)
                         {
                             command.Parameters.AddWithValue("ISBN", obj.ISBN);
                         }
@@ -264,9 +271,9 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("Author", obj._Author.AuthorName);
                         command.Parameters.AddWithValue("@AvailableCoppies", obj.AvailableCoppies);
                         command.Parameters.AddWithValue("UpdId", obj.UpdBy);
+                        command.Parameters.AddWithValue("IsActive", obj.IsActive);
 
-
-                       int row= command.ExecuteNonQuery();
+                        int row= command.ExecuteNonQuery();
 
 
                         if (row > 0)
@@ -397,27 +404,6 @@ namespace MenaxhimiBibliotekes.DAL
 
 
 
-        //public int UpdateMaterialLocation(SqlConnection conn, int materialId, int currentShelfId, Shelf ml)
-        //{
-        //    int rowaffecte;
-        //    using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateMaterialAuthor", CommandType.StoredProcedure))
-        //    {
-        //        command.Parameters.AddWithValue("MaterialId", materialId);
-        //        command.Parameters.AddWithValue("MaterialId", materialId);
-        //        command.Parameters.AddWithValue("RaftiId", ml.ShelfId);
-        //        command.Parameters.AddWithValue("updBy", ml.UpdBy);
-        //        rowaffecte = command.ExecuteNonQuery();
-        //    }
 
-        //    if (rowaffecte > 0)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-
-        //}
     }
 }

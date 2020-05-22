@@ -42,6 +42,8 @@
             this.lblUniqueCreate = new System.Windows.Forms.Label();
             this.lblMaterialTypeCreate = new System.Windows.Forms.Label();
             this.tabUpdateType = new System.Windows.Forms.TabPage();
+            this.comboIsActiveUpdate = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelInfoUpdate = new System.Windows.Forms.Panel();
             this.lblInfoUpdate = new System.Windows.Forms.Label();
             this.panelBottomUpdate = new System.Windows.Forms.Panel();
@@ -73,8 +75,6 @@
             this.lblFooterTitleDelete = new System.Windows.Forms.Label();
             this.panelTopDelete = new System.Windows.Forms.Panel();
             this.lblTitleDelete = new System.Windows.Forms.Label();
-            this.comboIsActiveUpdate = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabCreateType.SuspendLayout();
             this.panelBottomCreate.SuspendLayout();
@@ -248,6 +248,29 @@
             this.tabUpdateType.TabIndex = 1;
             this.tabUpdateType.Text = "Update Type";
             this.tabUpdateType.UseVisualStyleBackColor = true;
+            // 
+            // comboIsActiveUpdate
+            // 
+            this.comboIsActiveUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboIsActiveUpdate.FormattingEnabled = true;
+            this.comboIsActiveUpdate.Items.AddRange(new object[] {
+            "Active",
+            "Passive"});
+            this.comboIsActiveUpdate.Location = new System.Drawing.Point(199, 445);
+            this.comboIsActiveUpdate.Name = "comboIsActiveUpdate";
+            this.comboIsActiveUpdate.Size = new System.Drawing.Size(341, 33);
+            this.comboIsActiveUpdate.TabIndex = 22;
+            this.comboIsActiveUpdate.SelectedIndexChanged += new System.EventHandler(this.comboIsActiveUpdate_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(87, 448);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Is Active?";
             // 
             // panelInfoUpdate
             // 
@@ -439,6 +462,7 @@
             this.btnDelete.TabIndex = 26;
             this.btnDelete.Text = "Delete Material Type";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // txtMaterialTypeDelete
             // 
@@ -585,29 +609,6 @@
             this.lblTitleDelete.Size = new System.Drawing.Size(455, 45);
             this.lblTitleDelete.TabIndex = 6;
             this.lblTitleDelete.Text = "Delete Specific Material Type";
-            // 
-            // comboIsActiveUpdate
-            // 
-            this.comboIsActiveUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboIsActiveUpdate.FormattingEnabled = true;
-            this.comboIsActiveUpdate.Items.AddRange(new object[] {
-            "Active",
-            "Passive"});
-            this.comboIsActiveUpdate.Location = new System.Drawing.Point(199, 445);
-            this.comboIsActiveUpdate.Name = "comboIsActiveUpdate";
-            this.comboIsActiveUpdate.Size = new System.Drawing.Size(341, 33);
-            this.comboIsActiveUpdate.TabIndex = 22;
-            this.comboIsActiveUpdate.SelectedIndexChanged += new System.EventHandler(this.comboIsActiveUpdate_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(87, 448);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 25);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Is Active?";
             // 
             // MaterialTypeForm
             // 

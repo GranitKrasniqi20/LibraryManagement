@@ -52,7 +52,6 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             command.Parameters.AddWithValue("description", obj.Description);
                         }
-                        //command.Parameters.AddWithValue("isActive", obj.IsActive);
                         command.Parameters.AddWithValue("insBy", obj.InsBy);
 
                         rowsAffected = command.ExecuteNonQuery();
@@ -199,8 +198,6 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 bill.ExpirationDate = DateTime.Parse(reader["ExpirationDate"].ToString());
             }
-
-            //bill.IsActive = (bool)reader["IsActive"];
 
             bill.InsBy = int.Parse(reader["InsBy"].ToString());
             bill.InsDate = (DateTime)reader["InsDate"];

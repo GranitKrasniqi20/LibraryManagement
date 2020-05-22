@@ -35,14 +35,14 @@
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSearchUser = new System.Windows.Forms.Button();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboMaterialLocation = new System.Windows.Forms.ComboBox();
             this.lblMaterialID = new System.Windows.Forms.Label();
-            this.txtMaterialID = new System.Windows.Forms.TextBox();
+            this.comboMaterialLocation = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtPages = new System.Windows.Forms.TextBox();
@@ -68,6 +68,7 @@
             this.txtPublishPlace = new System.Windows.Forms.TextBox();
             this.lblMaterialType = new System.Windows.Forms.Label();
             this.comboMaterialType = new System.Windows.Forms.ComboBox();
+            this.txtMaterialID = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -99,6 +100,7 @@
             this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableHeader.Size = new System.Drawing.Size(792, 88);
             this.tableHeader.TabIndex = 4;
+            this.tableHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.TableHeader_Paint);
             // 
             // panel1
             // 
@@ -149,6 +151,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnSearchUser);
             this.panel2.Controls.Add(this.lblSubTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(23, 3);
@@ -156,6 +159,19 @@
             this.panel2.Size = new System.Drawing.Size(746, 51);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
+            // 
+            // btnSearchUser
+            // 
+            this.btnSearchUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.btnSearchUser.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchUser.ForeColor = System.Drawing.Color.White;
+            this.btnSearchUser.Location = new System.Drawing.Point(580, 3);
+            this.btnSearchUser.Name = "btnSearchUser";
+            this.btnSearchUser.Size = new System.Drawing.Size(157, 42);
+            this.btnSearchUser.TabIndex = 18;
+            this.btnSearchUser.Text = "Search user";
+            this.btnSearchUser.UseVisualStyleBackColor = false;
+            this.btnSearchUser.Click += new System.EventHandler(this.BtnSearchUser_Click);
             // 
             // lblSubTitle
             // 
@@ -212,10 +228,9 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel3.Controls.Add(this.comboMaterialLocation, 3, 4);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel3.Controls.Add(this.lblMaterialID, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtMaterialID, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.comboMaterialLocation, 3, 4);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 3, 16);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 3, 15);
             this.tableLayoutPanel3.Controls.Add(this.lblTitle, 1, 3);
@@ -237,6 +252,7 @@
             this.tableLayoutPanel3.Controls.Add(this.txtPublishPlace, 3, 13);
             this.tableLayoutPanel3.Controls.Add(this.lblMaterialType, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboMaterialType, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txtMaterialID, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 164);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -260,6 +276,18 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(792, 564);
             this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel3_Paint);
+            // 
+            // lblMaterialID
+            // 
+            this.lblMaterialID.AutoSize = true;
+            this.lblMaterialID.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterialID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(127)))), ((int)(((byte)(120)))));
+            this.lblMaterialID.Location = new System.Drawing.Point(23, 0);
+            this.lblMaterialID.Name = "lblMaterialID";
+            this.lblMaterialID.Size = new System.Drawing.Size(109, 25);
+            this.lblMaterialID.TabIndex = 0;
+            this.lblMaterialID.Text = "Material ID";
             // 
             // comboMaterialLocation
             // 
@@ -275,27 +303,6 @@
             this.comboMaterialLocation.Size = new System.Drawing.Size(356, 33);
             this.comboMaterialLocation.TabIndex = 3;
             this.comboMaterialLocation.SelectedIndexChanged += new System.EventHandler(this.comboMaterialLocation_SelectedIndexChanged);
-            // 
-            // lblMaterialID
-            // 
-            this.lblMaterialID.AutoSize = true;
-            this.lblMaterialID.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(127)))), ((int)(((byte)(120)))));
-            this.lblMaterialID.Location = new System.Drawing.Point(23, 0);
-            this.lblMaterialID.Name = "lblMaterialID";
-            this.lblMaterialID.Size = new System.Drawing.Size(109, 25);
-            this.lblMaterialID.TabIndex = 0;
-            this.lblMaterialID.Text = "Material ID";
-            // 
-            // txtMaterialID
-            // 
-            this.txtMaterialID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaterialID.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtMaterialID.Location = new System.Drawing.Point(23, 41);
-            this.txtMaterialID.Name = "txtMaterialID";
-            this.txtMaterialID.Size = new System.Drawing.Size(356, 33);
-            this.txtMaterialID.TabIndex = 1;
-            this.txtMaterialID.TextChanged += new System.EventHandler(this.txtMaterialID_TextChanged);
             // 
             // tableLayoutPanel4
             // 
@@ -570,6 +577,16 @@
             this.comboMaterialType.TabIndex = 3;
             this.comboMaterialType.SelectedIndexChanged += new System.EventHandler(this.comboMaterialType_SelectedIndexChanged);
             // 
+            // txtMaterialID
+            // 
+            this.txtMaterialID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaterialID.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtMaterialID.Location = new System.Drawing.Point(23, 41);
+            this.txtMaterialID.Name = "txtMaterialID";
+            this.txtMaterialID.Size = new System.Drawing.Size(356, 33);
+            this.txtMaterialID.TabIndex = 1;
+            this.txtMaterialID.TextChanged += new System.EventHandler(this.txtMaterialID_TextChanged);
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 3;
@@ -619,7 +636,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableHeader);
-            this.MinimumSize = new System.Drawing.Size(808, 860);
+            this.MinimumSize = new System.Drawing.Size(808, 726);
             this.Name = "UpdateMaterialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Materials (Stackbooks)";
@@ -689,5 +706,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblMaterialType;
         private System.Windows.Forms.ComboBox comboMaterialType;
+        private System.Windows.Forms.Button btnSearchUser;
     }
 }

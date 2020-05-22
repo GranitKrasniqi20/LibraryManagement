@@ -63,7 +63,49 @@ namespace MenaxhimiBibliotekes.DAL
 
         public int Delete(int Id)
         {
-            throw new NotImplementedException();
+            int IsDeleted = 0;
+            try
+            {
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_DeleteShelf", CommandType.StoredProcedure))
+                    {
+                        command.Parameters.AddWithValue("ShelfId", Id);
+                        
+
+
+
+                        int error;
+
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "Error";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
+
+                        command.Parameters.Add(sqlpa);
+
+                        command.ExecuteNonQuery();
+                        error = (int)sqlpa.Value;
+
+
+
+                        if (IsDeleted == 0)
+                        {
+                            return 0;
+                        }
+                        else
+                        {
+                            return 1;
+                        }
+
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
         }
 
 
@@ -95,6 +137,9 @@ namespace MenaxhimiBibliotekes.DAL
 
 
         }
+
+
+
 
 
         public List<Shelf> GetAll()
@@ -188,21 +233,21 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("Description", obj.Description);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
-                        int error;
 
-                        SqlParameter sqlpa = new SqlParameter();
-                        sqlpa.ParameterName = "Error";
-                        sqlpa.SqlDbType = SqlDbType.Int;
-                        sqlpa.Direction = ParameterDirection.Output;
+                        isUpdated= command.ExecuteNonQuery();
 
-                        command.Parameters.Add(sqlpa);
-
-                        command.ExecuteNonQuery();
-                        error = (int)sqlpa.Value;
-                        return error;
+                        if (isUpdated > 0)
+                        {
+                            return 1;
+                        }
+                        else
+                        {
+                            return -1;
+                        }
                     }
                 }
             }
+
             catch (SqlException ex)
             {
                 MessageBox.Show("Shelf has an error, please contact your administrator");
