@@ -76,9 +76,10 @@
             this.panelMenu.Controls.Add(this.appLogo);
             this.panelMenu.Controls.Add(this.appName);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 24);
+            this.panelMenu.Location = new System.Drawing.Point(0, 48);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(273, 632);
+            this.panelMenu.Size = new System.Drawing.Size(546, 1214);
             this.panelMenu.TabIndex = 1;
             // 
             // btnSettings
@@ -89,10 +90,11 @@
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 406);
+            this.btnSettings.Location = new System.Drawing.Point(0, 781);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(273, 67);
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSettings.Size = new System.Drawing.Size(546, 129);
             this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "  Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -109,10 +111,11 @@
             this.btnNotifications.ForeColor = System.Drawing.Color.White;
             this.btnNotifications.Image = ((System.Drawing.Image)(resources.GetObject("btnNotifications.Image")));
             this.btnNotifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotifications.Location = new System.Drawing.Point(0, 336);
+            this.btnNotifications.Location = new System.Drawing.Point(0, 646);
+            this.btnNotifications.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnNotifications.Name = "btnNotifications";
-            this.btnNotifications.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnNotifications.Size = new System.Drawing.Size(273, 67);
+            this.btnNotifications.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnNotifications.Size = new System.Drawing.Size(546, 129);
             this.btnNotifications.TabIndex = 4;
             this.btnNotifications.Text = "  Notifications";
             this.btnNotifications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -128,10 +131,11 @@
             this.btnMaterials.ForeColor = System.Drawing.Color.White;
             this.btnMaterials.Image = ((System.Drawing.Image)(resources.GetObject("btnMaterials.Image")));
             this.btnMaterials.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaterials.Location = new System.Drawing.Point(0, 266);
+            this.btnMaterials.Location = new System.Drawing.Point(0, 512);
+            this.btnMaterials.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnMaterials.Name = "btnMaterials";
-            this.btnMaterials.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnMaterials.Size = new System.Drawing.Size(273, 67);
+            this.btnMaterials.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnMaterials.Size = new System.Drawing.Size(546, 129);
             this.btnMaterials.TabIndex = 3;
             this.btnMaterials.Text = "  Materials";
             this.btnMaterials.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -148,10 +152,11 @@
             this.btnMembers.ForeColor = System.Drawing.Color.White;
             this.btnMembers.Image = ((System.Drawing.Image)(resources.GetObject("btnMembers.Image")));
             this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembers.Location = new System.Drawing.Point(0, 196);
+            this.btnMembers.Location = new System.Drawing.Point(0, 377);
+            this.btnMembers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnMembers.Name = "btnMembers";
-            this.btnMembers.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnMembers.Size = new System.Drawing.Size(273, 67);
+            this.btnMembers.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnMembers.Size = new System.Drawing.Size(546, 129);
             this.btnMembers.TabIndex = 2;
             this.btnMembers.Text = "  Members";
             this.btnMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -168,10 +173,11 @@
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 126);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 242);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(273, 67);
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(546, 129);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "  Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,9 +191,10 @@
             this.panelUser.Controls.Add(this.btnLogout);
             this.panelUser.Controls.Add(this.btnLoggedUser);
             this.panelUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelUser.Location = new System.Drawing.Point(0, 474);
+            this.panelUser.Location = new System.Drawing.Point(0, 910);
+            this.panelUser.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panelUser.Name = "panelUser";
-            this.panelUser.Size = new System.Drawing.Size(273, 158);
+            this.panelUser.Size = new System.Drawing.Size(546, 304);
             this.panelUser.TabIndex = 1;
             // 
             // btnLogout
@@ -198,10 +205,11 @@
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 74);
+            this.btnLogout.Location = new System.Drawing.Point(0, 142);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(273, 84);
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(546, 162);
             this.btnLogout.TabIndex = 7;
             this.btnLogout.Text = "  Log Out";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,10 +226,11 @@
             this.btnLoggedUser.ForeColor = System.Drawing.Color.White;
             this.btnLoggedUser.Image = ((System.Drawing.Image)(resources.GetObject("btnLoggedUser.Image")));
             this.btnLoggedUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoggedUser.Location = new System.Drawing.Point(0, 2);
+            this.btnLoggedUser.Location = new System.Drawing.Point(0, 4);
+            this.btnLoggedUser.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnLoggedUser.Name = "btnLoggedUser";
-            this.btnLoggedUser.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnLoggedUser.Size = new System.Drawing.Size(273, 70);
+            this.btnLoggedUser.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnLoggedUser.Size = new System.Drawing.Size(546, 135);
             this.btnLoggedUser.TabIndex = 6;
             this.btnLoggedUser.Text = "  No Name";
             this.btnLoggedUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,9 +241,10 @@
             // appLogo
             // 
             this.appLogo.Image = ((System.Drawing.Image)(resources.GetObject("appLogo.Image")));
-            this.appLogo.Location = new System.Drawing.Point(21, 22);
+            this.appLogo.Location = new System.Drawing.Point(42, 42);
+            this.appLogo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.appLogo.Name = "appLogo";
-            this.appLogo.Size = new System.Drawing.Size(46, 82);
+            this.appLogo.Size = new System.Drawing.Size(92, 158);
             this.appLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.appLogo.TabIndex = 0;
             this.appLogo.TabStop = false;
@@ -243,15 +253,20 @@
             // appName
             // 
             this.appName.Image = ((System.Drawing.Image)(resources.GetObject("appName.Image")));
-            this.appName.Location = new System.Drawing.Point(74, 22);
+            this.appName.Location = new System.Drawing.Point(148, 42);
+            this.appName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.appName.Name = "appName";
-            this.appName.Size = new System.Drawing.Size(188, 82);
+            this.appName.Size = new System.Drawing.Size(376, 158);
             this.appName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.appName.TabIndex = 0;
             this.appName.TabStop = false;
             // 
             // menuStrip
             // 
+            this.menuStrip.BackColor = System.Drawing.Color.White;
+            this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.preferencesToolStripMenuItem,
             this.editToolStripMenuItem,
@@ -259,7 +274,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1026, 24);
+            this.menuStrip.Size = new System.Drawing.Size(2052, 48);
             this.menuStrip.TabIndex = 5;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -269,20 +284,20 @@
             this.openMyProfileToolStripMenuItem,
             this.editUserAccountsToolStripMenuItem});
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(159, 40);
             this.preferencesToolStripMenuItem.Text = "Preferences";
             // 
             // openMyProfileToolStripMenuItem
             // 
             this.openMyProfileToolStripMenuItem.Name = "openMyProfileToolStripMenuItem";
-            this.openMyProfileToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.openMyProfileToolStripMenuItem.Size = new System.Drawing.Size(394, 44);
             this.openMyProfileToolStripMenuItem.Text = "Open My Profile";
             this.openMyProfileToolStripMenuItem.Click += new System.EventHandler(this.openMyProfileToolStripMenuItem_Click);
             // 
             // editUserAccountsToolStripMenuItem
             // 
             this.editUserAccountsToolStripMenuItem.Name = "editUserAccountsToolStripMenuItem";
-            this.editUserAccountsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.editUserAccountsToolStripMenuItem.Size = new System.Drawing.Size(394, 44);
             this.editUserAccountsToolStripMenuItem.Text = "Manage User Accounts";
             this.editUserAccountsToolStripMenuItem.Click += new System.EventHandler(this.editUserAccountsToolStripMenuItem_Click);
             // 
@@ -296,48 +311,48 @@
             this.updateMaterialToolStripMenuItem,
             this.deleteMaterialToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(75, 40);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // createMemberToolStripMenuItem
             // 
             this.createMemberToolStripMenuItem.Name = "createMemberToolStripMenuItem";
-            this.createMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createMemberToolStripMenuItem.Size = new System.Drawing.Size(324, 44);
             this.createMemberToolStripMenuItem.Text = "Create Member";
             this.createMemberToolStripMenuItem.Click += new System.EventHandler(this.createMemberToolStripMenuItem_Click);
             // 
             // updateMemberToolStripMenuItem
             // 
             this.updateMemberToolStripMenuItem.Name = "updateMemberToolStripMenuItem";
-            this.updateMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateMemberToolStripMenuItem.Size = new System.Drawing.Size(324, 44);
             this.updateMemberToolStripMenuItem.Text = "Update Member";
             this.updateMemberToolStripMenuItem.Click += new System.EventHandler(this.updateMemberToolStripMenuItem_Click);
             // 
             // deleteMemberToolStripMenuItem
             // 
             this.deleteMemberToolStripMenuItem.Name = "deleteMemberToolStripMenuItem";
-            this.deleteMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteMemberToolStripMenuItem.Size = new System.Drawing.Size(324, 44);
             this.deleteMemberToolStripMenuItem.Text = "Delete Member";
             this.deleteMemberToolStripMenuItem.Click += new System.EventHandler(this.deleteMemberToolStripMenuItem_Click);
             // 
             // createMaterialToolStripMenuItem
             // 
             this.createMaterialToolStripMenuItem.Name = "createMaterialToolStripMenuItem";
-            this.createMaterialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createMaterialToolStripMenuItem.Size = new System.Drawing.Size(324, 44);
             this.createMaterialToolStripMenuItem.Text = "Create Material";
             this.createMaterialToolStripMenuItem.Click += new System.EventHandler(this.createMaterialToolStripMenuItem_Click);
             // 
             // updateMaterialToolStripMenuItem
             // 
             this.updateMaterialToolStripMenuItem.Name = "updateMaterialToolStripMenuItem";
-            this.updateMaterialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateMaterialToolStripMenuItem.Size = new System.Drawing.Size(324, 44);
             this.updateMaterialToolStripMenuItem.Text = "Update Material";
             this.updateMaterialToolStripMenuItem.Click += new System.EventHandler(this.updateMaterialToolStripMenuItem_Click);
             // 
             // deleteMaterialToolStripMenuItem
             // 
             this.deleteMaterialToolStripMenuItem.Name = "deleteMaterialToolStripMenuItem";
-            this.deleteMaterialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteMaterialToolStripMenuItem.Size = new System.Drawing.Size(324, 44);
             this.deleteMaterialToolStripMenuItem.Text = "Delete Material";
             this.deleteMaterialToolStripMenuItem.Click += new System.EventHandler(this.deleteMaterialToolStripMenuItem_Click);
             // 
@@ -349,55 +364,55 @@
             this.alterGenresToolStripMenuItem,
             this.alterLanguagesToolStripMenuItem});
             this.extrasToolStripMenuItem.Name = "extrasToolStripMenuItem";
-            this.extrasToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.extrasToolStripMenuItem.Size = new System.Drawing.Size(96, 40);
             this.extrasToolStripMenuItem.Text = "Extras";
             // 
             // alterMaterialTypesToolStripMenuItem
             // 
             this.alterMaterialTypesToolStripMenuItem.Name = "alterMaterialTypesToolStripMenuItem";
-            this.alterMaterialTypesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.alterMaterialTypesToolStripMenuItem.Size = new System.Drawing.Size(390, 44);
             this.alterMaterialTypesToolStripMenuItem.Text = "Alter Material Types";
             this.alterMaterialTypesToolStripMenuItem.Click += new System.EventHandler(this.alterMaterialTypesToolStripMenuItem_Click);
             // 
             // alterMaterialLocationToolStripMenuItem
             // 
             this.alterMaterialLocationToolStripMenuItem.Name = "alterMaterialLocationToolStripMenuItem";
-            this.alterMaterialLocationToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.alterMaterialLocationToolStripMenuItem.Size = new System.Drawing.Size(390, 44);
             this.alterMaterialLocationToolStripMenuItem.Text = "Alter Material Location";
             this.alterMaterialLocationToolStripMenuItem.Click += new System.EventHandler(this.alterMaterialLocationToolStripMenuItem_Click);
             // 
             // alterGenresToolStripMenuItem
             // 
             this.alterGenresToolStripMenuItem.Name = "alterGenresToolStripMenuItem";
-            this.alterGenresToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.alterGenresToolStripMenuItem.Size = new System.Drawing.Size(390, 44);
             this.alterGenresToolStripMenuItem.Text = "Alter Genres";
             this.alterGenresToolStripMenuItem.Click += new System.EventHandler(this.alterGenresToolStripMenuItem_Click);
             // 
             // alterLanguagesToolStripMenuItem
             // 
             this.alterLanguagesToolStripMenuItem.Name = "alterLanguagesToolStripMenuItem";
-            this.alterLanguagesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.alterLanguagesToolStripMenuItem.Size = new System.Drawing.Size(390, 44);
             this.alterLanguagesToolStripMenuItem.Text = "Alter Languages";
             this.alterLanguagesToolStripMenuItem.Click += new System.EventHandler(this.alterLanguagesToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(85, 40);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1026, 656);
+            this.ClientSize = new System.Drawing.Size(2052, 1262);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(1021, 632);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(2016, 1150);
             this.Name = "mainForm";
             this.Text = "Stackbooks Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

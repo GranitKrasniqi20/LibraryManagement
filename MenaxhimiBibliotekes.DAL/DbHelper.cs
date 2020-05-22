@@ -26,7 +26,7 @@ namespace MenaxhimiBibliotekes.DAL
                 conn.Open();
                 return conn;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Cannot connect to Data Base server, please contact your administrator", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
