@@ -57,7 +57,7 @@ namespace MenaxhimiBibliotekes.Login_Forms
                     FormLoggedUser.Name = usr.Name;
                     FormLoggedUser.LastName = usr.LastName;
                     FormLoggedUser.Username = txtUsernameLogin.Text;
-                    //FormLoggedUser.Password = txtPasswordLogin.Text;
+                    FormLoggedUser.Password = txtPasswordLogin.Text;
                     FormLoggedUser.Role = usr._role;
                     
 

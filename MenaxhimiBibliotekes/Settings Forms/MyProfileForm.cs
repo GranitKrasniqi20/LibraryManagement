@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MenaxhimiBibliotekes.BO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,24 @@ namespace MenaxhimiBibliotekes.Settings_Forms
         public MyProfileForm()
         {
             InitializeComponent();
+        }
+
+
+        private void MyProfileForm_Load(object sender, EventArgs e)
+        {
+            txtName.Text = FormLoggedUser.Name + " " + FormLoggedUser.LastName;
+            txtID.Text = FormLoggedUser.Id.ToString();
+            txtEmail.Text = "email@stackbooks.com";
+            txtUsername.Text = FormLoggedUser.Username;
+            txtPassword.Text = FormLoggedUser.Password;
+            txtRole.Text = FormLoggedUser.Role.UserRole;
+        }
+
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            EditMyProfile edit = new EditMyProfile();
+            edit.ShowDialog();
         }
     }
 }
