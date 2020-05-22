@@ -105,6 +105,11 @@ namespace MenaxhimiBibliotekes
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+
             Login_Forms.loginForm loginform = new Login_Forms.loginForm();
 
             loginform.ShowDialog();
