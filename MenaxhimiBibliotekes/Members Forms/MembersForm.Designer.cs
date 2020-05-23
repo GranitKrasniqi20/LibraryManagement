@@ -65,13 +65,13 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableSpace3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableSpaceExpiredInfo = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitleCreate = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tableFooterExpired = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFooterExpired = new System.Windows.Forms.Label();
+            this.tableDataGridViewExpired = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvExpiredMembers = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,10 +98,10 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableHeader.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableSpaceExpiredInfo.SuspendLayout();
+            this.tableFooterExpired.SuspendLayout();
+            this.tableDataGridViewExpired.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExpiredMembers)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFullBody
@@ -431,10 +431,10 @@
             // 
             // tabExpiredMembers
             // 
-            this.tabExpiredMembers.Controls.Add(this.tableLayoutPanel5);
-            this.tabExpiredMembers.Controls.Add(this.tableLayoutPanel4);
-            this.tabExpiredMembers.Controls.Add(this.tableLayoutPanel3);
-            this.tabExpiredMembers.Controls.Add(this.tableLayoutPanel2);
+            this.tabExpiredMembers.Controls.Add(this.tableDataGridViewExpired);
+            this.tabExpiredMembers.Controls.Add(this.tableFooterExpired);
+            this.tabExpiredMembers.Controls.Add(this.tableSpaceExpiredInfo);
+            this.tabExpiredMembers.Controls.Add(this.tableSpace3);
             this.tabExpiredMembers.Location = new System.Drawing.Point(4, 32);
             this.tabExpiredMembers.Name = "tabExpiredMembers";
             this.tabExpiredMembers.Padding = new System.Windows.Forms.Padding(3);
@@ -492,34 +492,34 @@
             this.tableHeader.Size = new System.Drawing.Size(740, 88);
             this.tableHeader.TabIndex = 1;
             // 
-            // tableLayoutPanel2
+            // tableSpace3
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(726, 16);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.tableSpace3.ColumnCount = 1;
+            this.tableSpace3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSpace3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableSpace3.Location = new System.Drawing.Point(3, 3);
+            this.tableSpace3.Name = "tableSpace3";
+            this.tableSpace3.RowCount = 1;
+            this.tableSpace3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSpace3.Size = new System.Drawing.Size(726, 16);
+            this.tableSpace3.TabIndex = 1;
             // 
-            // tableLayoutPanel3
+            // tableSpaceExpiredInfo
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.lblTitleCreate, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(726, 62);
-            this.tableLayoutPanel3.TabIndex = 2;
+            this.tableSpaceExpiredInfo.ColumnCount = 3;
+            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceExpiredInfo.Controls.Add(this.lblTitleCreate, 1, 0);
+            this.tableSpaceExpiredInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableSpaceExpiredInfo.Location = new System.Drawing.Point(3, 19);
+            this.tableSpaceExpiredInfo.Name = "tableSpaceExpiredInfo";
+            this.tableSpaceExpiredInfo.RowCount = 1;
+            this.tableSpaceExpiredInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSpaceExpiredInfo.Size = new System.Drawing.Size(726, 62);
+            this.tableSpaceExpiredInfo.TabIndex = 2;
             // 
             // lblTitleCreate
             // 
@@ -531,52 +531,52 @@
             this.lblTitleCreate.TabIndex = 8;
             this.lblTitleCreate.Text = "This Displays List of Expired Members";
             // 
-            // tableLayoutPanel4
+            // tableFooterExpired
             // 
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.label1, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 474);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(726, 16);
-            this.tableLayoutPanel4.TabIndex = 3;
+            this.tableFooterExpired.ColumnCount = 3;
+            this.tableFooterExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableFooterExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableFooterExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableFooterExpired.Controls.Add(this.lblFooterExpired, 1, 0);
+            this.tableFooterExpired.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableFooterExpired.Location = new System.Drawing.Point(3, 474);
+            this.tableFooterExpired.Name = "tableFooterExpired";
+            this.tableFooterExpired.RowCount = 1;
+            this.tableFooterExpired.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableFooterExpired.Size = new System.Drawing.Size(726, 16);
+            this.tableFooterExpired.TabIndex = 3;
             // 
-            // label1
+            // lblFooterExpired
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(237, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 16);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "All Rights, Stackbooks Management System";
+            this.lblFooterExpired.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFooterExpired.AutoSize = true;
+            this.lblFooterExpired.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooterExpired.Location = new System.Drawing.Point(237, 0);
+            this.lblFooterExpired.Name = "lblFooterExpired";
+            this.lblFooterExpired.Size = new System.Drawing.Size(251, 16);
+            this.lblFooterExpired.TabIndex = 11;
+            this.lblFooterExpired.Text = "All Rights, Stackbooks Management System";
             // 
-            // tableLayoutPanel5
+            // tableDataGridViewExpired
             // 
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.dataGridView1, 1, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 81);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(726, 393);
-            this.tableLayoutPanel5.TabIndex = 4;
+            this.tableDataGridViewExpired.ColumnCount = 3;
+            this.tableDataGridViewExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDataGridViewExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableDataGridViewExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDataGridViewExpired.Controls.Add(this.dgvExpiredMembers, 1, 0);
+            this.tableDataGridViewExpired.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableDataGridViewExpired.Location = new System.Drawing.Point(3, 81);
+            this.tableDataGridViewExpired.Name = "tableDataGridViewExpired";
+            this.tableDataGridViewExpired.RowCount = 1;
+            this.tableDataGridViewExpired.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableDataGridViewExpired.Size = new System.Drawing.Size(726, 393);
+            this.tableDataGridViewExpired.TabIndex = 4;
             // 
-            // dataGridView1
+            // dgvExpiredMembers
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvExpiredMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvExpiredMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExpiredMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -590,11 +590,11 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(680, 387);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvExpiredMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvExpiredMembers.Location = new System.Drawing.Point(23, 3);
+            this.dgvExpiredMembers.Name = "dgvExpiredMembers";
+            this.dgvExpiredMembers.Size = new System.Drawing.Size(680, 387);
+            this.dgvExpiredMembers.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -670,7 +670,7 @@
             this.Controls.Add(this.tableHeader);
             this.Name = "MembersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MembersForm";
+            this.Text = "Members (Stackbooks)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelFullBody.ResumeLayout(false);
             this.tabControlMembersForm.ResumeLayout(false);
@@ -688,12 +688,12 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.tableHeader.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableSpaceExpiredInfo.ResumeLayout(false);
+            this.tableSpaceExpiredInfo.PerformLayout();
+            this.tableFooterExpired.ResumeLayout(false);
+            this.tableFooterExpired.PerformLayout();
+            this.tableDataGridViewExpired.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExpiredMembers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -735,11 +735,11 @@
         private System.Windows.Forms.TableLayoutPanel tableHeader;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblFooterTitleCreate;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableSpaceExpiredInfo;
+        private System.Windows.Forms.TableLayoutPanel tableSpace3;
         private System.Windows.Forms.Label lblTitleCreate;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TableLayoutPanel tableDataGridViewExpired;
+        private System.Windows.Forms.DataGridView dgvExpiredMembers;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -753,7 +753,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tableFooterExpired;
+        private System.Windows.Forms.Label lblFooterExpired;
     }
 }

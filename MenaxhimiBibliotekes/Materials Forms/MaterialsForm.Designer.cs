@@ -46,6 +46,8 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableBottomSpace = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFooterTitleCreate = new System.Windows.Forms.Label();
             this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
             this.textSearchMaterial = new System.Windows.Forms.TextBox();
             this.btnSearchMaterial = new System.Windows.Forms.Button();
@@ -63,12 +65,11 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblFooterTitleCreate = new System.Windows.Forms.Label();
             this.tabMainPage.SuspendLayout();
             this.tableDataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.tableBottomSpace.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.tableSearch.SuspendLayout();
             this.tableComboboxes.SuspendLayout();
             this.tableSpace2.SuspendLayout();
@@ -76,7 +77,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableHeader.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -216,6 +216,32 @@
             this.tableBottomSpace.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableBottomSpace.Size = new System.Drawing.Size(726, 22);
             this.tableBottomSpace.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.lblFooterTitleCreate, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(720, 16);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // lblFooterTitleCreate
+            // 
+            this.lblFooterTitleCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFooterTitleCreate.AutoSize = true;
+            this.lblFooterTitleCreate.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooterTitleCreate.Location = new System.Drawing.Point(234, 0);
+            this.lblFooterTitleCreate.Name = "lblFooterTitleCreate";
+            this.lblFooterTitleCreate.Size = new System.Drawing.Size(251, 16);
+            this.lblFooterTitleCreate.TabIndex = 11;
+            this.lblFooterTitleCreate.Text = "All Rights, Stackbooks Management System";
             // 
             // tableSearch
             // 
@@ -459,32 +485,6 @@
             this.tableHeader.Size = new System.Drawing.Size(740, 88);
             this.tableHeader.TabIndex = 0;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.lblFooterTitleCreate, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(720, 16);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // lblFooterTitleCreate
-            // 
-            this.lblFooterTitleCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFooterTitleCreate.AutoSize = true;
-            this.lblFooterTitleCreate.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterTitleCreate.Location = new System.Drawing.Point(234, 0);
-            this.lblFooterTitleCreate.Name = "lblFooterTitleCreate";
-            this.lblFooterTitleCreate.Size = new System.Drawing.Size(251, 16);
-            this.lblFooterTitleCreate.TabIndex = 11;
-            this.lblFooterTitleCreate.Text = "All Rights, Stackbooks Management System";
-            // 
             // MaterialsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,12 +494,14 @@
             this.Controls.Add(this.tableHeader);
             this.Name = "MaterialsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MaterialsForm";
+            this.Text = "Materials (Stackbooks)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabMainPage.ResumeLayout(false);
             this.tableDataGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             this.tableBottomSpace.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tableSearch.ResumeLayout(false);
             this.tableSearch.PerformLayout();
             this.tableComboboxes.ResumeLayout(false);
@@ -509,8 +511,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.tableHeader.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -34,14 +34,14 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.panelSubHeader = new System.Windows.Forms.Panel();
-            this.lblTitleCreate = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.btnDisplay = new System.Windows.Forms.Button();
             this.comboNotificationType = new System.Windows.Forms.ComboBox();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitleCreate = new System.Windows.Forms.Label();
             this.flowpanelMain = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucNotificationMessages1 = new MenaxhimiBibliotekes.Notifications_Forms.ucNotificationMessages();
+            this.ucNotificationMessages = new MenaxhimiBibliotekes.Notifications_Forms.ucNotificationMessages();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -103,8 +103,8 @@
             // panelSubHeader
             // 
             this.panelSubHeader.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelSubHeader.Controls.Add(this.lblTitleCreate);
-            this.panelSubHeader.Controls.Add(this.button1);
+            this.panelSubHeader.Controls.Add(this.lblInfo);
+            this.panelSubHeader.Controls.Add(this.btnDisplay);
             this.panelSubHeader.Controls.Add(this.comboNotificationType);
             this.panelSubHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubHeader.Location = new System.Drawing.Point(0, 88);
@@ -112,27 +112,27 @@
             this.panelSubHeader.Size = new System.Drawing.Size(740, 132);
             this.panelSubHeader.TabIndex = 2;
             // 
-            // lblTitleCreate
+            // lblInfo
             // 
-            this.lblTitleCreate.AutoSize = true;
-            this.lblTitleCreate.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleCreate.Location = new System.Drawing.Point(64, 15);
-            this.lblTitleCreate.Name = "lblTitleCreate";
-            this.lblTitleCreate.Size = new System.Drawing.Size(537, 37);
-            this.lblTitleCreate.TabIndex = 7;
-            this.lblTitleCreate.Text = "Select Notifications you want to display!";
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(64, 15);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(537, 37);
+            this.lblInfo.TabIndex = 7;
+            this.lblInfo.Text = "Select Notifications you want to display!";
             // 
-            // button1
+            // btnDisplay
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(368, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 42);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Display";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.btnDisplay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisplay.ForeColor = System.Drawing.Color.White;
+            this.btnDisplay.Location = new System.Drawing.Point(368, 73);
+            this.btnDisplay.Name = "btnDisplay";
+            this.btnDisplay.Size = new System.Drawing.Size(137, 42);
+            this.btnDisplay.TabIndex = 1;
+            this.btnDisplay.Text = "Display";
+            this.btnDisplay.UseVisualStyleBackColor = false;
             // 
             // comboNotificationType
             // 
@@ -187,23 +187,23 @@
             // 
             this.flowpanelMain.AutoScroll = true;
             this.flowpanelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowpanelMain.Controls.Add(this.ucNotificationMessages1);
+            this.flowpanelMain.Controls.Add(this.ucNotificationMessages);
             this.flowpanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowpanelMain.Location = new System.Drawing.Point(0, 220);
             this.flowpanelMain.Name = "flowpanelMain";
             this.flowpanelMain.Size = new System.Drawing.Size(740, 369);
             this.flowpanelMain.TabIndex = 4;
             // 
-            // ucNotificationMessages1
+            // ucNotificationMessages
             // 
-            this.ucNotificationMessages1.Category = "Subscribers Notification";
-            this.ucNotificationMessages1.Date = "01/01/2020";
-            this.ucNotificationMessages1.Icon = ((System.Drawing.Image)(resources.GetObject("ucNotificationMessages1.Icon")));
-            this.ucNotificationMessages1.Location = new System.Drawing.Point(3, 3);
-            this.ucNotificationMessages1.Message = "Beis Presheva is registered in the system from 01/01/2020 till 01/01/2021!";
-            this.ucNotificationMessages1.Name = "ucNotificationMessages1";
-            this.ucNotificationMessages1.Size = new System.Drawing.Size(877, 87);
-            this.ucNotificationMessages1.TabIndex = 0;
+            this.ucNotificationMessages.Category = "Subscribers Notification";
+            this.ucNotificationMessages.Date = "01/01/2020";
+            this.ucNotificationMessages.Icon = ((System.Drawing.Image)(resources.GetObject("ucNotificationMessages.Icon")));
+            this.ucNotificationMessages.Location = new System.Drawing.Point(3, 3);
+            this.ucNotificationMessages.Message = "Beis Presheva is registered in the system from 01/01/2020 till 01/01/2021!";
+            this.ucNotificationMessages.Name = "ucNotificationMessages";
+            this.ucNotificationMessages.Size = new System.Drawing.Size(877, 87);
+            this.ucNotificationMessages.TabIndex = 0;
             // 
             // NotificationsForm
             // 
@@ -217,7 +217,7 @@
             this.MinimumSize = new System.Drawing.Size(756, 656);
             this.Name = "NotificationsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NotificationsForm";
+            this.Text = "Notifications (Stackbooks)";
             this.Load += new System.EventHandler(this.NotificationsForm_Load);
             this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -242,10 +242,10 @@
         private System.Windows.Forms.Panel panelSubHeader;
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.FlowLayoutPanel flowpanelMain;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDisplay;
         private System.Windows.Forms.ComboBox comboNotificationType;
-        private ucNotificationMessages ucNotificationMessages1;
-        private System.Windows.Forms.Label lblTitleCreate;
+        private ucNotificationMessages ucNotificationMessages;
+        private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblFooterTitleCreate;
     }

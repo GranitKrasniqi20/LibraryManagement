@@ -23,7 +23,7 @@ namespace MenaxhimiBibliotekes.Settings_Forms
         {
             txtName.Text = FormLoggedUser.Name + " " + FormLoggedUser.LastName;
             txtID.Text = FormLoggedUser.Id.ToString();
-            txtEmail.Text = "email@stackbooks.com";
+            txtEmail.Text = FormLoggedUser.Email;
             txtUsername.Text = FormLoggedUser.Username;
             txtPassword.Text = FormLoggedUser.Password;
             txtRole.Text = FormLoggedUser.Role.UserRole;

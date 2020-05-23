@@ -11,6 +11,7 @@ namespace MenaxhimiBibliotekes.BO
         public static int Id { get; set; }
         public static string Name { get; set; }
         public static string LastName { get; set; }
+        public static string Email { get; set; }
         public static string Username { get; set; }
         public static string Password { get; set; }
         public static Role Role { get; set; }
