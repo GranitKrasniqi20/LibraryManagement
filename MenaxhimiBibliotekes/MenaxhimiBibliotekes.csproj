@@ -179,11 +179,11 @@
     <Compile Include="Notifications Forms\SpecifiedNotificationUC.Designer.cs">
       <DependentUpon>SpecifiedNotificationUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notifications Forms\ucNotificationMessage.cs">
+    <Compile Include="Notifications Forms\ucNotificationMessages.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Notifications Forms\ucNotificationMessage.Designer.cs">
-      <DependentUpon>ucNotificationMessage.cs</DependentUpon>
+    <Compile Include="Notifications Forms\ucNotificationMessages.Designer.cs">
+      <DependentUpon>ucNotificationMessages.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -292,8 +292,8 @@
     <EmbeddedResource Include="Notifications Forms\SpecifiedNotificationUC.resx">
       <DependentUpon>SpecifiedNotificationUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Notifications Forms\ucNotificationMessage.resx">
-      <DependentUpon>ucNotificationMessage.cs</DependentUpon>
+    <EmbeddedResource Include="Notifications Forms\ucNotificationMessages.resx">
+      <DependentUpon>ucNotificationMessages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -303,6 +303,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Settings Forms\EditMyProfile.resx">
       <DependentUpon>EditMyProfile.cs</DependentUpon>
@@ -368,6 +369,8 @@
     <Content Include="brand\logo\full-logo.png" />
     <Content Include="brand\logo\logo-icon.png" />
     <Content Include="brand\logo\logo-name.png" />
+    <None Include="Resources\notificationsSubscribers.png" />
+    <None Include="Resources\notificationsMaterials.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MenaxhimiBibliotekes.BLL\MenaxhimiBibliotekes.BLL.csproj">

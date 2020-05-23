@@ -33,6 +33,20 @@
             this.tabControlMembersForm = new System.Windows.Forms.TabControl();
             this.tabMainPage = new System.Windows.Forms.TabPage();
             this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvMembers = new System.Windows.Forms.DataGridView();
+            this.IDCOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubscriptionPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FromDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InfoColBtn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableBottomSpace = new System.Windows.Forms.TableLayoutPanel();
             this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
             this.textSearchMember = new System.Windows.Forms.TextBox();
@@ -45,34 +59,24 @@
             this.btnDeleteMember = new System.Windows.Forms.Button();
             this.tableSpace1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabExpiredMembers = new System.Windows.Forms.TabPage();
-            this.InfoColBtn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FromDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubscriptionPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PersonalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvMembers = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.picTitle = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFooterTitleCreate = new System.Windows.Forms.Label();
             this.panelFullBody.SuspendLayout();
             this.tabControlMembersForm.SuspendLayout();
             this.tabMainPage.SuspendLayout();
             this.tableDataGridView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
+            this.tableBottomSpace.SuspendLayout();
             this.tableSearch.SuspendLayout();
             this.tableSpace2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableHeader.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFullBody
@@ -128,10 +132,100 @@
             this.tableDataGridView.Size = new System.Drawing.Size(726, 318);
             this.tableDataGridView.TabIndex = 0;
             // 
+            // dgvMembers
+            // 
+            this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDCOL,
+            this.FirstName,
+            this.LastName,
+            this.Address,
+            this.Birthdate,
+            this.Gender,
+            this.PersonalNumber,
+            this.Email,
+            this.PhoneNumber,
+            this.SubscriptionPlan,
+            this.FromDate,
+            this.TillDate,
+            this.InfoColBtn});
+            this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMembers.Location = new System.Drawing.Point(23, 3);
+            this.dgvMembers.Name = "dgvMembers";
+            this.dgvMembers.Size = new System.Drawing.Size(680, 312);
+            this.dgvMembers.TabIndex = 7;
+            // 
+            // IDCOL
+            // 
+            this.IDCOL.HeaderText = "ID";
+            this.IDCOL.Name = "IDCOL";
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            // 
+            // Birthdate
+            // 
+            this.Birthdate.HeaderText = "Birthdate";
+            this.Birthdate.Name = "Birthdate";
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            // 
+            // PersonalNumber
+            // 
+            this.PersonalNumber.HeaderText = "Personal Number";
+            this.PersonalNumber.Name = "PersonalNumber";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.HeaderText = "Phone Number";
+            this.PhoneNumber.Name = "PhoneNumber";
+            // 
+            // SubscriptionPlan
+            // 
+            this.SubscriptionPlan.HeaderText = "Subscription Plan";
+            this.SubscriptionPlan.Name = "SubscriptionPlan";
+            // 
+            // FromDate
+            // 
+            this.FromDate.HeaderText = "From:";
+            this.FromDate.Name = "FromDate";
+            // 
+            // TillDate
+            // 
+            this.TillDate.HeaderText = "Till:";
+            this.TillDate.Name = "TillDate";
+            // 
+            // InfoColBtn
+            // 
+            this.InfoColBtn.HeaderText = "More Info";
+            this.InfoColBtn.Name = "InfoColBtn";
+            // 
             // tableBottomSpace
             // 
             this.tableBottomSpace.ColumnCount = 1;
             this.tableBottomSpace.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableBottomSpace.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableBottomSpace.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableBottomSpace.Location = new System.Drawing.Point(3, 468);
             this.tableBottomSpace.Name = "tableBottomSpace";
@@ -149,7 +243,7 @@
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableSearch.Controls.Add(this.textSearchMember, 1, 0);
             this.tableSearch.Controls.Add(this.comboSortMember, 3, 0);
             this.tableSearch.Controls.Add(this.btnSearchMember, 5, 0);
@@ -168,7 +262,7 @@
             this.textSearchMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSearchMember.Location = new System.Drawing.Point(23, 3);
             this.textSearchMember.Name = "textSearchMember";
-            this.textSearchMember.Size = new System.Drawing.Size(266, 39);
+            this.textSearchMember.Size = new System.Drawing.Size(265, 39);
             this.textSearchMember.TabIndex = 4;
             // 
             // comboSortMember
@@ -176,7 +270,7 @@
             this.comboSortMember.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboSortMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboSortMember.FormattingEnabled = true;
-            this.comboSortMember.Location = new System.Drawing.Point(308, 3);
+            this.comboSortMember.Location = new System.Drawing.Point(307, 3);
             this.comboSortMember.Name = "comboSortMember";
             this.comboSortMember.Size = new System.Drawing.Size(142, 40);
             this.comboSortMember.TabIndex = 5;
@@ -187,7 +281,7 @@
             this.btnSearchMember.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMember.ForeColor = System.Drawing.Color.White;
-            this.btnSearchMember.Location = new System.Drawing.Point(468, 3);
+            this.btnSearchMember.Location = new System.Drawing.Point(467, 3);
             this.btnSearchMember.Name = "btnSearchMember";
             this.btnSearchMember.Size = new System.Drawing.Size(229, 40);
             this.btnSearchMember.TabIndex = 6;
@@ -291,95 +385,6 @@
             this.tabExpiredMembers.Text = "Expired Members";
             this.tabExpiredMembers.UseVisualStyleBackColor = true;
             // 
-            // InfoColBtn
-            // 
-            this.InfoColBtn.HeaderText = "More Info";
-            this.InfoColBtn.Name = "InfoColBtn";
-            // 
-            // TillDate
-            // 
-            this.TillDate.HeaderText = "Till:";
-            this.TillDate.Name = "TillDate";
-            // 
-            // FromDate
-            // 
-            this.FromDate.HeaderText = "From:";
-            this.FromDate.Name = "FromDate";
-            // 
-            // SubscriptionPlan
-            // 
-            this.SubscriptionPlan.HeaderText = "Subscription Plan";
-            this.SubscriptionPlan.Name = "SubscriptionPlan";
-            // 
-            // PhoneNumber
-            // 
-            this.PhoneNumber.HeaderText = "Phone Number";
-            this.PhoneNumber.Name = "PhoneNumber";
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // PersonalNumber
-            // 
-            this.PersonalNumber.HeaderText = "Personal Number";
-            this.PersonalNumber.Name = "PersonalNumber";
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            // 
-            // Birthdate
-            // 
-            this.Birthdate.HeaderText = "Birthdate";
-            this.Birthdate.Name = "Birthdate";
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            // 
-            // LastName
-            // 
-            this.LastName.HeaderText = "Last Name";
-            this.LastName.Name = "LastName";
-            // 
-            // FirstName
-            // 
-            this.FirstName.HeaderText = "First Name";
-            this.FirstName.Name = "FirstName";
-            // 
-            // IDCOL
-            // 
-            this.IDCOL.HeaderText = "ID";
-            this.IDCOL.Name = "IDCOL";
-            // 
-            // dgvMembers
-            // 
-            this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDCOL,
-            this.FirstName,
-            this.LastName,
-            this.Address,
-            this.Birthdate,
-            this.Gender,
-            this.PersonalNumber,
-            this.Email,
-            this.PhoneNumber,
-            this.SubscriptionPlan,
-            this.FromDate,
-            this.TillDate,
-            this.InfoColBtn});
-            this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMembers.Location = new System.Drawing.Point(23, 3);
-            this.dgvMembers.Name = "dgvMembers";
-            this.dgvMembers.Size = new System.Drawing.Size(680, 312);
-            this.dgvMembers.TabIndex = 7;
-            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -391,16 +396,6 @@
             this.panel1.Size = new System.Drawing.Size(453, 82);
             this.panel1.TabIndex = 0;
             // 
-            // picTitle
-            // 
-            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
-            this.picTitle.Location = new System.Drawing.Point(99, 17);
-            this.picTitle.Name = "picTitle";
-            this.picTitle.Size = new System.Drawing.Size(58, 50);
-            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTitle.TabIndex = 0;
-            this.picTitle.TabStop = false;
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -411,6 +406,16 @@
             this.lblTitle.Size = new System.Drawing.Size(201, 50);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "MEMBERS";
+            // 
+            // picTitle
+            // 
+            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
+            this.picTitle.Location = new System.Drawing.Point(99, 17);
+            this.picTitle.Name = "picTitle";
+            this.picTitle.Size = new System.Drawing.Size(58, 50);
+            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTitle.TabIndex = 0;
+            this.picTitle.TabStop = false;
             // 
             // tableHeader
             // 
@@ -429,6 +434,32 @@
             this.tableHeader.Size = new System.Drawing.Size(740, 88);
             this.tableHeader.TabIndex = 1;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.lblFooterTitleCreate, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(720, 16);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // lblFooterTitleCreate
+            // 
+            this.lblFooterTitleCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFooterTitleCreate.AutoSize = true;
+            this.lblFooterTitleCreate.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooterTitleCreate.Location = new System.Drawing.Point(234, 0);
+            this.lblFooterTitleCreate.Name = "lblFooterTitleCreate";
+            this.lblFooterTitleCreate.Size = new System.Drawing.Size(251, 16);
+            this.lblFooterTitleCreate.TabIndex = 11;
+            this.lblFooterTitleCreate.Text = "All Rights, Stackbooks Management System";
+            // 
             // MembersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,14 +475,17 @@
             this.tabControlMembersForm.ResumeLayout(false);
             this.tabMainPage.ResumeLayout(false);
             this.tableDataGridView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
+            this.tableBottomSpace.ResumeLayout(false);
             this.tableSearch.ResumeLayout(false);
             this.tableSearch.PerformLayout();
             this.tableSpace2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.tableHeader.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -491,5 +525,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox picTitle;
         private System.Windows.Forms.TableLayoutPanel tableHeader;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblFooterTitleCreate;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace MenaxhimiBibliotekes.Notifications_Forms
 {
-    partial class ucNotificationMessage
+    partial class ucNotificationMessages
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelBorder = new System.Windows.Forms.Panel();
             this.txtNotificationCategory = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNotificationDate = new System.Windows.Forms.Label();
@@ -38,15 +37,6 @@
             this.panelSquare.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCategory)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelBorder
-            // 
-            this.panelBorder.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelBorder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBorder.Location = new System.Drawing.Point(0, 0);
-            this.panelBorder.Name = "panelBorder";
-            this.panelBorder.Size = new System.Drawing.Size(862, 3);
-            this.panelBorder.TabIndex = 8;
             // 
             // txtNotificationCategory
             // 
@@ -108,18 +98,17 @@
             this.pictureCategory.TabIndex = 0;
             this.pictureCategory.TabStop = false;
             // 
-            // ucNotificationMessage
+            // ucNotificationMessages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelBorder);
             this.Controls.Add(this.txtNotificationCategory);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNotificationDate);
             this.Controls.Add(this.txtNotificationMessage);
             this.Controls.Add(this.panelSquare);
-            this.Name = "ucNotificationMessage";
-            this.Size = new System.Drawing.Size(862, 87);
+            this.Name = "ucNotificationMessages";
+            this.Size = new System.Drawing.Size(877, 87);
             this.panelSquare.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureCategory)).EndInit();
             this.ResumeLayout(false);
@@ -128,8 +117,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelBorder;
         private System.Windows.Forms.Label txtNotificationCategory;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label txtNotificationDate;

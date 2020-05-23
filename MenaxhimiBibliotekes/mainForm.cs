@@ -20,6 +20,7 @@ namespace MenaxhimiBibliotekes
         Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
         Materials_Forms.MaterialsForm materialsform = new Materials_Forms.MaterialsForm();
         Settings_Forms.SettingsForm settingsform = new Settings_Forms.SettingsForm();
+        Notifications_Forms.NotificationsForm notificationsform = new Notifications_Forms.NotificationsForm();
 
 
 
@@ -32,6 +33,7 @@ namespace MenaxhimiBibliotekes
             membersform.Hide();
             materialsform.Hide();
             settingsform.Hide();
+            notificationsform.Hide();
         }
 
 
@@ -185,6 +187,21 @@ namespace MenaxhimiBibliotekes
         {
             Materials_Forms.LanguageForm alterLanguages = new Materials_Forms.LanguageForm();
             alterLanguages.ShowDialog();
+        }
+
+        private void btnNotifications_Click(object sender, EventArgs e)
+        {
+            //This code fixes the -- Cannot access a disposed object -- ERROR! Use it in other forms!
+            if (notificationsform.IsDisposed)
+            {
+                notificationsform = new Notifications_Forms.NotificationsForm();
+            }
+
+            CloseAllWindows();
+
+            notificationsform.MdiParent = this;
+            notificationsform.Show();
+            notificationsform.WindowState = FormWindowState.Maximized;
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.Notifications_Forms
 {
-    public partial class ucNotificationMessage : UserControl
+    public partial class ucNotificationMessages : UserControl
     {
-        public ucNotificationMessage()
+        public ucNotificationMessages()
         {
             InitializeComponent();
         }
