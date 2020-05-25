@@ -11,29 +11,37 @@ namespace MenaxhimiBibliotekes.BLL
 {
     class BorrowBLL : ICreate<Borrow>, IUpdate<Borrow>, IDelete, IRead<Borrow>
     {
+
+        BorrowDAL bd = new BorrowDAL();
+
         public int Add(Borrow obj)
         {
-            throw new NotImplementedException();
+            return bd.Add(obj);
         }
 
         public int Delete(int Id)
         {
-            throw new NotImplementedException();
+            return bd.Delete(Id);
         }
 
         public Borrow Get(int Id)
         {
-            throw new NotImplementedException();
+
+            return bd.Get(Id);
         }
 
         public List<Borrow> GetAll()
         {
-            throw new NotImplementedException();
+            return bd.GetAll();
         }
 
         public int Update(Borrow obj)
         {
-            throw new NotImplementedException();
+            return bd.Update(obj);
         }
+
+
+
+
     }
 }
