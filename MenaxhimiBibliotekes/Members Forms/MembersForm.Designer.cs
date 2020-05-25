@@ -33,7 +33,23 @@
             this.tabControlMembersForm = new System.Windows.Forms.TabControl();
             this.tabMainPage = new System.Windows.Forms.TabPage();
             this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvMembers = new System.Windows.Forms.DataGridView();
+            this.IDCOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubscriptionPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FromDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InfoColBtn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableBottomSpace = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFooterTitleCreate = new System.Windows.Forms.Label();
             this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
             this.textSearchMember = new System.Windows.Forms.TextBox();
             this.comboSortMember = new System.Windows.Forms.ComboBox();
@@ -45,34 +61,47 @@
             this.btnDeleteMember = new System.Windows.Forms.Button();
             this.tableSpace1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabExpiredMembers = new System.Windows.Forms.TabPage();
-            this.InfoColBtn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FromDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubscriptionPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PersonalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvMembers = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.picTitle = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.tableSpace3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableSpaceExpiredInfo = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTitleCreate = new System.Windows.Forms.Label();
+            this.tableFooterExpired = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFooterExpired = new System.Windows.Forms.Label();
+            this.tableDataGridViewExpired = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvExpiredMembers = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelFullBody.SuspendLayout();
             this.tabControlMembersForm.SuspendLayout();
             this.tabMainPage.SuspendLayout();
             this.tableDataGridView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
+            this.tableBottomSpace.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.tableSearch.SuspendLayout();
             this.tableSpace2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
+            this.tabExpiredMembers.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableHeader.SuspendLayout();
+            this.tableSpaceExpiredInfo.SuspendLayout();
+            this.tableFooterExpired.SuspendLayout();
+            this.tableDataGridViewExpired.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExpiredMembers)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFullBody
@@ -128,10 +157,100 @@
             this.tableDataGridView.Size = new System.Drawing.Size(726, 318);
             this.tableDataGridView.TabIndex = 0;
             // 
+            // dgvMembers
+            // 
+            this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDCOL,
+            this.FirstName,
+            this.LastName,
+            this.Address,
+            this.Birthdate,
+            this.Gender,
+            this.PersonalNumber,
+            this.Email,
+            this.PhoneNumber,
+            this.SubscriptionPlan,
+            this.FromDate,
+            this.TillDate,
+            this.InfoColBtn});
+            this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMembers.Location = new System.Drawing.Point(23, 3);
+            this.dgvMembers.Name = "dgvMembers";
+            this.dgvMembers.Size = new System.Drawing.Size(680, 312);
+            this.dgvMembers.TabIndex = 7;
+            // 
+            // IDCOL
+            // 
+            this.IDCOL.HeaderText = "ID";
+            this.IDCOL.Name = "IDCOL";
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            // 
+            // Birthdate
+            // 
+            this.Birthdate.HeaderText = "Birthdate";
+            this.Birthdate.Name = "Birthdate";
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            // 
+            // PersonalNumber
+            // 
+            this.PersonalNumber.HeaderText = "Personal Number";
+            this.PersonalNumber.Name = "PersonalNumber";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.HeaderText = "Phone Number";
+            this.PhoneNumber.Name = "PhoneNumber";
+            // 
+            // SubscriptionPlan
+            // 
+            this.SubscriptionPlan.HeaderText = "Subscription Plan";
+            this.SubscriptionPlan.Name = "SubscriptionPlan";
+            // 
+            // FromDate
+            // 
+            this.FromDate.HeaderText = "From:";
+            this.FromDate.Name = "FromDate";
+            // 
+            // TillDate
+            // 
+            this.TillDate.HeaderText = "Till:";
+            this.TillDate.Name = "TillDate";
+            // 
+            // InfoColBtn
+            // 
+            this.InfoColBtn.HeaderText = "More Info";
+            this.InfoColBtn.Name = "InfoColBtn";
+            // 
             // tableBottomSpace
             // 
             this.tableBottomSpace.ColumnCount = 1;
             this.tableBottomSpace.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableBottomSpace.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableBottomSpace.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableBottomSpace.Location = new System.Drawing.Point(3, 468);
             this.tableBottomSpace.Name = "tableBottomSpace";
@@ -139,6 +258,32 @@
             this.tableBottomSpace.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableBottomSpace.Size = new System.Drawing.Size(726, 22);
             this.tableBottomSpace.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.lblFooterTitleCreate, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(720, 16);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // lblFooterTitleCreate
+            // 
+            this.lblFooterTitleCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFooterTitleCreate.AutoSize = true;
+            this.lblFooterTitleCreate.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooterTitleCreate.Location = new System.Drawing.Point(234, 0);
+            this.lblFooterTitleCreate.Name = "lblFooterTitleCreate";
+            this.lblFooterTitleCreate.Size = new System.Drawing.Size(251, 16);
+            this.lblFooterTitleCreate.TabIndex = 11;
+            this.lblFooterTitleCreate.Text = "All Rights, Stackbooks Management System";
             // 
             // tableSearch
             // 
@@ -149,7 +294,7 @@
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableSearch.Controls.Add(this.textSearchMember, 1, 0);
             this.tableSearch.Controls.Add(this.comboSortMember, 3, 0);
             this.tableSearch.Controls.Add(this.btnSearchMember, 5, 0);
@@ -168,7 +313,7 @@
             this.textSearchMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSearchMember.Location = new System.Drawing.Point(23, 3);
             this.textSearchMember.Name = "textSearchMember";
-            this.textSearchMember.Size = new System.Drawing.Size(266, 39);
+            this.textSearchMember.Size = new System.Drawing.Size(265, 39);
             this.textSearchMember.TabIndex = 4;
             // 
             // comboSortMember
@@ -176,9 +321,12 @@
             this.comboSortMember.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboSortMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboSortMember.FormattingEnabled = true;
-            this.comboSortMember.Location = new System.Drawing.Point(308, 3);
+            this.comboSortMember.Items.AddRange(new object[] {
+            "Ascending Order",
+            "Descending Order"});
+            this.comboSortMember.Location = new System.Drawing.Point(307, 3);
             this.comboSortMember.Name = "comboSortMember";
-            this.comboSortMember.Size = new System.Drawing.Size(142, 40);
+            this.comboSortMember.Size = new System.Drawing.Size(141, 40);
             this.comboSortMember.TabIndex = 5;
             // 
             // btnSearchMember
@@ -187,7 +335,7 @@
             this.btnSearchMember.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMember.ForeColor = System.Drawing.Color.White;
-            this.btnSearchMember.Location = new System.Drawing.Point(468, 3);
+            this.btnSearchMember.Location = new System.Drawing.Point(466, 3);
             this.btnSearchMember.Name = "btnSearchMember";
             this.btnSearchMember.Size = new System.Drawing.Size(229, 40);
             this.btnSearchMember.TabIndex = 6;
@@ -283,6 +431,10 @@
             // 
             // tabExpiredMembers
             // 
+            this.tabExpiredMembers.Controls.Add(this.tableDataGridViewExpired);
+            this.tabExpiredMembers.Controls.Add(this.tableFooterExpired);
+            this.tabExpiredMembers.Controls.Add(this.tableSpaceExpiredInfo);
+            this.tabExpiredMembers.Controls.Add(this.tableSpace3);
             this.tabExpiredMembers.Location = new System.Drawing.Point(4, 32);
             this.tabExpiredMembers.Name = "tabExpiredMembers";
             this.tabExpiredMembers.Padding = new System.Windows.Forms.Padding(3);
@@ -290,95 +442,6 @@
             this.tabExpiredMembers.TabIndex = 1;
             this.tabExpiredMembers.Text = "Expired Members";
             this.tabExpiredMembers.UseVisualStyleBackColor = true;
-            // 
-            // InfoColBtn
-            // 
-            this.InfoColBtn.HeaderText = "More Info";
-            this.InfoColBtn.Name = "InfoColBtn";
-            // 
-            // TillDate
-            // 
-            this.TillDate.HeaderText = "Till:";
-            this.TillDate.Name = "TillDate";
-            // 
-            // FromDate
-            // 
-            this.FromDate.HeaderText = "From:";
-            this.FromDate.Name = "FromDate";
-            // 
-            // SubscriptionPlan
-            // 
-            this.SubscriptionPlan.HeaderText = "Subscription Plan";
-            this.SubscriptionPlan.Name = "SubscriptionPlan";
-            // 
-            // PhoneNumber
-            // 
-            this.PhoneNumber.HeaderText = "Phone Number";
-            this.PhoneNumber.Name = "PhoneNumber";
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // PersonalNumber
-            // 
-            this.PersonalNumber.HeaderText = "Personal Number";
-            this.PersonalNumber.Name = "PersonalNumber";
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            // 
-            // Birthdate
-            // 
-            this.Birthdate.HeaderText = "Birthdate";
-            this.Birthdate.Name = "Birthdate";
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            // 
-            // LastName
-            // 
-            this.LastName.HeaderText = "Last Name";
-            this.LastName.Name = "LastName";
-            // 
-            // FirstName
-            // 
-            this.FirstName.HeaderText = "First Name";
-            this.FirstName.Name = "FirstName";
-            // 
-            // IDCOL
-            // 
-            this.IDCOL.HeaderText = "ID";
-            this.IDCOL.Name = "IDCOL";
-            // 
-            // dgvMembers
-            // 
-            this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDCOL,
-            this.FirstName,
-            this.LastName,
-            this.Address,
-            this.Birthdate,
-            this.Gender,
-            this.PersonalNumber,
-            this.Email,
-            this.PhoneNumber,
-            this.SubscriptionPlan,
-            this.FromDate,
-            this.TillDate,
-            this.InfoColBtn});
-            this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMembers.Location = new System.Drawing.Point(23, 3);
-            this.dgvMembers.Name = "dgvMembers";
-            this.dgvMembers.Size = new System.Drawing.Size(680, 312);
-            this.dgvMembers.TabIndex = 7;
             // 
             // panel1
             // 
@@ -391,16 +454,6 @@
             this.panel1.Size = new System.Drawing.Size(453, 82);
             this.panel1.TabIndex = 0;
             // 
-            // picTitle
-            // 
-            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
-            this.picTitle.Location = new System.Drawing.Point(99, 17);
-            this.picTitle.Name = "picTitle";
-            this.picTitle.Size = new System.Drawing.Size(58, 50);
-            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTitle.TabIndex = 0;
-            this.picTitle.TabStop = false;
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -411,6 +464,16 @@
             this.lblTitle.Size = new System.Drawing.Size(201, 50);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "MEMBERS";
+            // 
+            // picTitle
+            // 
+            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
+            this.picTitle.Location = new System.Drawing.Point(99, 17);
+            this.picTitle.Name = "picTitle";
+            this.picTitle.Size = new System.Drawing.Size(58, 50);
+            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTitle.TabIndex = 0;
+            this.picTitle.TabStop = false;
             // 
             // tableHeader
             // 
@@ -429,6 +492,175 @@
             this.tableHeader.Size = new System.Drawing.Size(740, 88);
             this.tableHeader.TabIndex = 1;
             // 
+            // tableSpace3
+            // 
+            this.tableSpace3.ColumnCount = 1;
+            this.tableSpace3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSpace3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableSpace3.Location = new System.Drawing.Point(3, 3);
+            this.tableSpace3.Name = "tableSpace3";
+            this.tableSpace3.RowCount = 1;
+            this.tableSpace3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSpace3.Size = new System.Drawing.Size(726, 16);
+            this.tableSpace3.TabIndex = 1;
+            // 
+            // tableSpaceExpiredInfo
+            // 
+            this.tableSpaceExpiredInfo.ColumnCount = 3;
+            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceExpiredInfo.Controls.Add(this.lblTitleCreate, 1, 0);
+            this.tableSpaceExpiredInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableSpaceExpiredInfo.Location = new System.Drawing.Point(3, 19);
+            this.tableSpaceExpiredInfo.Name = "tableSpaceExpiredInfo";
+            this.tableSpaceExpiredInfo.RowCount = 1;
+            this.tableSpaceExpiredInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSpaceExpiredInfo.Size = new System.Drawing.Size(726, 62);
+            this.tableSpaceExpiredInfo.TabIndex = 2;
+            // 
+            // lblTitleCreate
+            // 
+            this.lblTitleCreate.AutoSize = true;
+            this.lblTitleCreate.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleCreate.Location = new System.Drawing.Point(23, 0);
+            this.lblTitleCreate.Name = "lblTitleCreate";
+            this.lblTitleCreate.Size = new System.Drawing.Size(501, 37);
+            this.lblTitleCreate.TabIndex = 8;
+            this.lblTitleCreate.Text = "This Displays List of Expired Members";
+            // 
+            // tableFooterExpired
+            // 
+            this.tableFooterExpired.ColumnCount = 3;
+            this.tableFooterExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableFooterExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableFooterExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableFooterExpired.Controls.Add(this.lblFooterExpired, 1, 0);
+            this.tableFooterExpired.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableFooterExpired.Location = new System.Drawing.Point(3, 474);
+            this.tableFooterExpired.Name = "tableFooterExpired";
+            this.tableFooterExpired.RowCount = 1;
+            this.tableFooterExpired.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableFooterExpired.Size = new System.Drawing.Size(726, 16);
+            this.tableFooterExpired.TabIndex = 3;
+            // 
+            // lblFooterExpired
+            // 
+            this.lblFooterExpired.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFooterExpired.AutoSize = true;
+            this.lblFooterExpired.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooterExpired.Location = new System.Drawing.Point(237, 0);
+            this.lblFooterExpired.Name = "lblFooterExpired";
+            this.lblFooterExpired.Size = new System.Drawing.Size(251, 16);
+            this.lblFooterExpired.TabIndex = 11;
+            this.lblFooterExpired.Text = "All Rights, Stackbooks Management System";
+            // 
+            // tableDataGridViewExpired
+            // 
+            this.tableDataGridViewExpired.ColumnCount = 3;
+            this.tableDataGridViewExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDataGridViewExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableDataGridViewExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDataGridViewExpired.Controls.Add(this.dgvExpiredMembers, 1, 0);
+            this.tableDataGridViewExpired.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableDataGridViewExpired.Location = new System.Drawing.Point(3, 81);
+            this.tableDataGridViewExpired.Name = "tableDataGridViewExpired";
+            this.tableDataGridViewExpired.RowCount = 1;
+            this.tableDataGridViewExpired.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableDataGridViewExpired.Size = new System.Drawing.Size(726, 393);
+            this.tableDataGridViewExpired.TabIndex = 4;
+            // 
+            // dgvExpiredMembers
+            // 
+            this.dgvExpiredMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvExpiredMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExpiredMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.dgvExpiredMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvExpiredMembers.Location = new System.Drawing.Point(23, 3);
+            this.dgvExpiredMembers.Name = "dgvExpiredMembers";
+            this.dgvExpiredMembers.Size = new System.Drawing.Size(680, 387);
+            this.dgvExpiredMembers.TabIndex = 7;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "First Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Last Name";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Birthdate";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Gender";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Personal Number";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Phone Number";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Subscription Plan";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "From:";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Till:";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "More Info";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
             // MembersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,20 +670,30 @@
             this.Controls.Add(this.tableHeader);
             this.Name = "MembersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MembersForm";
+            this.Text = "Members (Stackbooks)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelFullBody.ResumeLayout(false);
             this.tabControlMembersForm.ResumeLayout(false);
             this.tabMainPage.ResumeLayout(false);
             this.tableDataGridView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
+            this.tableBottomSpace.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tableSearch.ResumeLayout(false);
             this.tableSearch.PerformLayout();
             this.tableSpace2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
+            this.tabExpiredMembers.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.tableHeader.ResumeLayout(false);
+            this.tableSpaceExpiredInfo.ResumeLayout(false);
+            this.tableSpaceExpiredInfo.PerformLayout();
+            this.tableFooterExpired.ResumeLayout(false);
+            this.tableFooterExpired.PerformLayout();
+            this.tableDataGridViewExpired.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExpiredMembers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,5 +733,27 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox picTitle;
         private System.Windows.Forms.TableLayoutPanel tableHeader;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblFooterTitleCreate;
+        private System.Windows.Forms.TableLayoutPanel tableSpaceExpiredInfo;
+        private System.Windows.Forms.TableLayoutPanel tableSpace3;
+        private System.Windows.Forms.Label lblTitleCreate;
+        private System.Windows.Forms.TableLayoutPanel tableDataGridViewExpired;
+        private System.Windows.Forms.DataGridView dgvExpiredMembers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.TableLayoutPanel tableFooterExpired;
+        private System.Windows.Forms.Label lblFooterExpired;
     }
 }

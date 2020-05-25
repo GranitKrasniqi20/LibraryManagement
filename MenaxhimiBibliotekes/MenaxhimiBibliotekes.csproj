@@ -167,6 +167,24 @@
     <Compile Include="Members Forms\UpdateMemberForm.Designer.cs">
       <DependentUpon>UpdateMemberForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notifications Forms\NotificationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notifications Forms\NotificationsForm.Designer.cs">
+      <DependentUpon>NotificationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications Forms\SpecifiedNotificationUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Notifications Forms\SpecifiedNotificationUC.Designer.cs">
+      <DependentUpon>SpecifiedNotificationUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications Forms\ucNotificationMessages.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Notifications Forms\ucNotificationMessages.Designer.cs">
+      <DependentUpon>ucNotificationMessages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings Forms\EditMyProfile.cs">
@@ -268,6 +286,15 @@
     <EmbeddedResource Include="Members Forms\UpdateMemberForm.resx">
       <DependentUpon>UpdateMemberForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Notifications Forms\NotificationsForm.resx">
+      <DependentUpon>NotificationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications Forms\SpecifiedNotificationUC.resx">
+      <DependentUpon>SpecifiedNotificationUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications Forms\ucNotificationMessages.resx">
+      <DependentUpon>ucNotificationMessages.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -276,6 +303,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Settings Forms\EditMyProfile.resx">
       <DependentUpon>EditMyProfile.cs</DependentUpon>
@@ -314,7 +342,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dashboard Forms\" />
-    <Folder Include="Notifications Forms\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="brand\bg\bg1.jpg" />
@@ -327,6 +354,8 @@
     <Content Include="brand\helping-icons\backArrow-blue.png" />
     <Content Include="brand\helping-icons\backArrow-white.png" />
     <Content Include="brand\helping-icons\edit-small.png" />
+    <Content Include="brand\helping-icons\notificationsMaterials.png" />
+    <Content Include="brand\helping-icons\notificationsSubscribers.png" />
     <Content Include="brand\helping-icons\thisLogout.png" />
     <Content Include="brand\helping-icons\thisUser.png" />
     <Content Include="brand\helping-icons\ucLogo.png" />
@@ -340,6 +369,8 @@
     <Content Include="brand\logo\full-logo.png" />
     <Content Include="brand\logo\logo-icon.png" />
     <Content Include="brand\logo\logo-name.png" />
+    <None Include="Resources\notificationsSubscribers.png" />
+    <None Include="Resources\notificationsMaterials.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MenaxhimiBibliotekes.BLL\MenaxhimiBibliotekes.BLL.csproj">

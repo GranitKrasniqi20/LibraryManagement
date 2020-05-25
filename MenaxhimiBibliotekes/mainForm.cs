@@ -20,6 +20,7 @@ namespace MenaxhimiBibliotekes
         Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
         Materials_Forms.MaterialsForm materialsform = new Materials_Forms.MaterialsForm();
         Settings_Forms.SettingsForm settingsform = new Settings_Forms.SettingsForm();
+        Notifications_Forms.NotificationsForm notificationsform = new Notifications_Forms.NotificationsForm();
 
 
 
@@ -32,6 +33,7 @@ namespace MenaxhimiBibliotekes
             membersform.Hide();
             materialsform.Hide();
             settingsform.Hide();
+            notificationsform.Hide();
         }
 
 
@@ -55,6 +57,11 @@ namespace MenaxhimiBibliotekes
 
         private void btnMembers_Click(object sender, EventArgs e)
         {
+            if (membersform.IsDisposed)
+            {
+                membersform = new Members_Forms.MembersForm();
+            }
+
             CloseAllWindows();
 
             membersform.MdiParent = this;
@@ -64,6 +71,11 @@ namespace MenaxhimiBibliotekes
 
         private void btnMaterials_Click(object sender, EventArgs e)
         {
+            if (materialsform.IsDisposed)
+            {
+                materialsform = new Materials_Forms.MaterialsForm();
+            }
+
             CloseAllWindows();
 
             materialsform.MdiParent = this;
@@ -71,29 +83,44 @@ namespace MenaxhimiBibliotekes
             materialsform.WindowState = FormWindowState.Maximized;
         }
 
+        private void btnNotifications_Click(object sender, EventArgs e)
+        {
+            if (notificationsform.IsDisposed)
+            {
+                notificationsform = new Notifications_Forms.NotificationsForm();
+            }
+
+            CloseAllWindows();
+
+            notificationsform.MdiParent = this;
+            notificationsform.Show();
+            notificationsform.WindowState = FormWindowState.Maximized;
+        }
+
         private void mainForm_Shown(object sender, EventArgs e)
         {
-
             Login_Forms.loginForm loginform = new Login_Forms.loginForm();
 
             loginform.ShowDialog();
-
-            
-            
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            CloseAllWindows();
-
-            settingsform.MdiParent = this;
-            settingsform.Show();
-
         }
 
         private void mainForm_Activated(object sender, EventArgs e)
         {
             btnLoggedUser.Text = $"  {FormLoggedUser.Name} {FormLoggedUser.LastName}";
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            if (settingsform.IsDisposed)
+            {
+                settingsform = new Settings_Forms.SettingsForm();
+            }
+
+            CloseAllWindows();
+
+            settingsform.MdiParent = this;
+            settingsform.Show();
+
         }
 
         private void btnLoggedUser_Click(object sender, EventArgs e)
@@ -105,6 +132,11 @@ namespace MenaxhimiBibliotekes
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+
             Login_Forms.loginForm loginform = new Login_Forms.loginForm();
 
             loginform.ShowDialog();
@@ -181,5 +213,7 @@ namespace MenaxhimiBibliotekes
             Materials_Forms.LanguageForm alterLanguages = new Materials_Forms.LanguageForm();
             alterLanguages.ShowDialog();
         }
+
+        
     }
 }

@@ -118,6 +118,7 @@
             this.btnNotifications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNotifications.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNotifications.UseVisualStyleBackColor = false;
+            this.btnNotifications.Click += new System.EventHandler(this.btnNotifications_Click);
             // 
             // btnMaterials
             // 
@@ -252,6 +253,9 @@
             // 
             // menuStrip
             // 
+            this.menuStrip.BackColor = System.Drawing.Color.White;
+            this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.preferencesToolStripMenuItem,
             this.editToolStripMenuItem,
@@ -259,6 +263,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
             this.menuStrip.Size = new System.Drawing.Size(1026, 24);
             this.menuStrip.TabIndex = 5;
             this.menuStrip.Text = "menuStrip1";
@@ -269,7 +274,7 @@
             this.openMyProfileToolStripMenuItem,
             this.editUserAccountsToolStripMenuItem});
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(80, 22);
             this.preferencesToolStripMenuItem.Text = "Preferences";
             // 
             // openMyProfileToolStripMenuItem
@@ -296,48 +301,48 @@
             this.updateMaterialToolStripMenuItem,
             this.deleteMaterialToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 22);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // createMemberToolStripMenuItem
             // 
             this.createMemberToolStripMenuItem.Name = "createMemberToolStripMenuItem";
-            this.createMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createMemberToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.createMemberToolStripMenuItem.Text = "Create Member";
             this.createMemberToolStripMenuItem.Click += new System.EventHandler(this.createMemberToolStripMenuItem_Click);
             // 
             // updateMemberToolStripMenuItem
             // 
             this.updateMemberToolStripMenuItem.Name = "updateMemberToolStripMenuItem";
-            this.updateMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateMemberToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.updateMemberToolStripMenuItem.Text = "Update Member";
             this.updateMemberToolStripMenuItem.Click += new System.EventHandler(this.updateMemberToolStripMenuItem_Click);
             // 
             // deleteMemberToolStripMenuItem
             // 
             this.deleteMemberToolStripMenuItem.Name = "deleteMemberToolStripMenuItem";
-            this.deleteMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteMemberToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.deleteMemberToolStripMenuItem.Text = "Delete Member";
             this.deleteMemberToolStripMenuItem.Click += new System.EventHandler(this.deleteMemberToolStripMenuItem_Click);
             // 
             // createMaterialToolStripMenuItem
             // 
             this.createMaterialToolStripMenuItem.Name = "createMaterialToolStripMenuItem";
-            this.createMaterialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createMaterialToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.createMaterialToolStripMenuItem.Text = "Create Material";
             this.createMaterialToolStripMenuItem.Click += new System.EventHandler(this.createMaterialToolStripMenuItem_Click);
             // 
             // updateMaterialToolStripMenuItem
             // 
             this.updateMaterialToolStripMenuItem.Name = "updateMaterialToolStripMenuItem";
-            this.updateMaterialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateMaterialToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.updateMaterialToolStripMenuItem.Text = "Update Material";
             this.updateMaterialToolStripMenuItem.Click += new System.EventHandler(this.updateMaterialToolStripMenuItem_Click);
             // 
             // deleteMaterialToolStripMenuItem
             // 
             this.deleteMaterialToolStripMenuItem.Name = "deleteMaterialToolStripMenuItem";
-            this.deleteMaterialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteMaterialToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.deleteMaterialToolStripMenuItem.Text = "Delete Material";
             this.deleteMaterialToolStripMenuItem.Click += new System.EventHandler(this.deleteMaterialToolStripMenuItem_Click);
             // 
@@ -349,7 +354,7 @@
             this.alterGenresToolStripMenuItem,
             this.alterLanguagesToolStripMenuItem});
             this.extrasToolStripMenuItem.Name = "extrasToolStripMenuItem";
-            this.extrasToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.extrasToolStripMenuItem.Size = new System.Drawing.Size(50, 22);
             this.extrasToolStripMenuItem.Text = "Extras";
             // 
             // alterMaterialTypesToolStripMenuItem
@@ -383,7 +388,7 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // mainForm
@@ -396,8 +401,8 @@
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(1021, 632);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(1016, 617);
             this.Name = "mainForm";
             this.Text = "Stackbooks Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

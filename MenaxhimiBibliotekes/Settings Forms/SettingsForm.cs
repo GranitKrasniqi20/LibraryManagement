@@ -35,5 +35,10 @@ namespace MenaxhimiBibliotekes.Settings_Forms
             MyProfileForm profile = new MyProfileForm();
             profile.ShowDialog();
         }
+
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            txtRole.Text = FormLoggedUser.Role.UserRole;
+        }
     }
 }

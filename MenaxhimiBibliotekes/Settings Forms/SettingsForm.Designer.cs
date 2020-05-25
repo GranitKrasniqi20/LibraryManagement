@@ -277,6 +277,7 @@
             this.Name = "SettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings (Stackbooks)";
+            this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
