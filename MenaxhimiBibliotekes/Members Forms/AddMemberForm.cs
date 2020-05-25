@@ -64,6 +64,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
                         MessageBox.Show($"{failure.ErrorMessage}", "Error Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
+
                 else
                 {
                     subscriberBLL.Add(subscriber);
@@ -150,6 +151,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
         private void btnBill_Click(object sender, EventArgs e)
         {
+
             CookieSubscriber.ID = subscriberBLL.MaxSubscriberId();
             CookieSubscriber.FullName = subscriber.Name + "\t " + subscriber.LastName;
             CookieSubscriber.PersonalNumber = subscriber.PersonalNo;

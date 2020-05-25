@@ -42,5 +42,18 @@ namespace MenaxhimiBibliotekes.BLL
         {
             return subscriberDAL.MaxSubscriberId();
         }
+
+
+        public void GetExpiredSubscribersEmail()
+        {
+            EmailService es = new EmailService();
+            foreach (var item in subscriberDAL.GetExpiredSubscribersEmail())
+            {
+                if (item != null && item.Length > 0)
+                {
+                    es.SendMails(item, "Your subscibe will expire in 5 days", "your abonation will expire in 5 days blla blla");
+                }
+            }
+        }
     }
 }

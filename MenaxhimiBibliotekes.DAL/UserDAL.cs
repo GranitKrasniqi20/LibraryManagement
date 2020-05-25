@@ -117,7 +117,6 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("RoleId", obj.RoleID);
                         command.Parameters.AddWithValue("Email", obj.Email);
                         command.Parameters.AddWithValue("InsertBy", obj.InsBy);
-
                         int error;
 
                         SqlParameter sqlpa = new SqlParameter();

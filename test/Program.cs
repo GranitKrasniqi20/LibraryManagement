@@ -17,6 +17,16 @@ namespace test
         static void Main(string[] args)
         {
 
+
+            SubscriberBLL sb = new SubscriberBLL();
+            sb.GetExpiredSubscribersEmail();
+
+
+            //EmailService em = new EmailService();
+
+
+            //em.SendMails("beis.presheva@riinvest.net", "send from c# Endrit Tmava", "Funksionoi dergimi i email nga Library Management");
+            //em.SendMails("granit.krasniqi1@riinvest.net", "send from c# Endrit Tmava", "Funksionoi dergimi i email nga Library Management");
             //    RoleBLL rolebll;
             //    List<Role> role;
             //    rolebll = new RoleBLL();
@@ -64,21 +74,21 @@ namespace test
             //}\
 
 
-            Material mat = new Material();
-            MaterialBLL mbll = new MaterialBLL();
-            mat.MaterialId = 1020;
-            mat.Title = "tryagain";
-            mat._Genre.GenreId = 1;
-            mat._PublishHouse._PublishHouse = "Shpijajem";
-            mat.PublishPlace = "FFK";
-            mat._MaterialType.MaterialTypeId = 1;
-            mat.AvailableCoppies = 4;
-            mat.Quantity = 4;
-            mat._Language.LanguageId = 1;
-            mat.LanguageId = 1;
-            mat.UpdBy = 80;
-            mat._Author.AuthorName = "Endrittmavahe";
-            Console.WriteLine(mbll.Update(mat).ToString()); 
+            //Material mat = new Material();
+            //MaterialBLL mbll = new MaterialBLL();
+            //mat.MaterialId = 1020;
+            //mat.Title = "tryagain";
+            //mat._Genre.GenreId = 1;
+            //mat._PublishHouse._PublishHouse = "Shpijajem";
+            //mat.PublishPlace = "FFK";
+            //mat._MaterialType.MaterialTypeId = 1;
+            //mat.AvailableCoppies = 4;
+            //mat.Quantity = 4;
+            //mat._Language.LanguageId = 1;
+            //mat.LanguageId = 1;
+            //mat.UpdBy = 80;
+            //mat._Author.AuthorName = "Endrittmavahe";
+            //Console.WriteLine(mbll.Update(mat).ToString());
 
 
 

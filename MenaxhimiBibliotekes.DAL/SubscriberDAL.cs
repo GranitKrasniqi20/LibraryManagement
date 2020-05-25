@@ -15,6 +15,59 @@ namespace MenaxhimiBibliotekes.DAL
     {
         Subscriber subscriber;
 
+
+
+
+
+
+
+
+        public List<string> GetExpiredSubscribersEmail()
+        {
+            try
+            {
+                string email;
+                List<string> emails = new List<string>();
+                subscriber = new Subscriber();
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_ExpiredSubscriber", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+
+                                    email = (string)sqr["Email"];
+
+                                    if (email == null)
+                                    {
+                                        throw new Exception();
+                                    }
+
+                                    emails.Add(email);
+                                }
+                            }
+                            return emails;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
+
+
+
+
+
+
         public int Add(Subscriber obj)
         {
             int isInserted ;

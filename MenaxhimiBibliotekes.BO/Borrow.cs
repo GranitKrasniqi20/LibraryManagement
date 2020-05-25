@@ -10,6 +10,7 @@ namespace MenaxhimiBibliotekes.BO
     {
         public int BorrowId { get; set; }
         public int SubscriberId { get; set; }
+        public string  Comment { get; set; }
         public virtual Subscriber _subscriber { get; set; }
         public int ReservationId { get; set; }
         public virtual Reservation _reservation { get; set; }
@@ -17,9 +18,11 @@ namespace MenaxhimiBibliotekes.BO
         public virtual Material _material { get; set; }
         public int shelfId { get; set; }
         public virtual Shelf _shelf { get; set; }
-        public int _typeOfAction { get; set; }
+        public int _typeOfActionId { get; set; }
         public virtual TypeOfAction TypeOfAction { get; set; }
-        public DateTime ReceiptDate { get; set; }
+        public DateTime BorrowDate { get; set; }
         public DateTime ReturnDate { get; set; }
+        public int BillId { get; set; }
+        public Bill bill { get; set; }
     }
 }
