@@ -65,13 +65,13 @@
             this.lblMaterialLocation = new System.Windows.Forms.Label();
             this.txtPublishHouse = new System.Windows.Forms.TextBox();
             this.txtPublishDate = new System.Windows.Forms.TextBox();
-            this.txtPublishPlace = new System.Windows.Forms.TextBox();
             this.lblMaterialType = new System.Windows.Forms.Label();
             this.comboMaterialType = new System.Windows.Forms.ComboBox();
             this.txtMaterialID = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.comboActiveMaterial = new System.Windows.Forms.ComboBox();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -249,10 +249,10 @@
             this.tableLayoutPanel3.Controls.Add(this.lblMaterialLocation, 3, 3);
             this.tableLayoutPanel3.Controls.Add(this.txtPublishHouse, 3, 7);
             this.tableLayoutPanel3.Controls.Add(this.txtPublishDate, 3, 10);
-            this.tableLayoutPanel3.Controls.Add(this.txtPublishPlace, 3, 13);
             this.tableLayoutPanel3.Controls.Add(this.lblMaterialType, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboMaterialType, 3, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtMaterialID, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.comboActiveMaterial, 3, 13);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 164);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -300,7 +300,7 @@
             "Journal"});
             this.comboMaterialLocation.Location = new System.Drawing.Point(408, 137);
             this.comboMaterialLocation.Name = "comboMaterialLocation";
-            this.comboMaterialLocation.Size = new System.Drawing.Size(356, 33);
+            this.comboMaterialLocation.Size = new System.Drawing.Size(359, 33);
             this.comboMaterialLocation.TabIndex = 3;
             this.comboMaterialLocation.SelectedIndexChanged += new System.EventHandler(this.comboMaterialLocation_SelectedIndexChanged);
             // 
@@ -491,9 +491,9 @@
             this.lblPublishPlace.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPublishPlace.Location = new System.Drawing.Point(408, 384);
             this.lblPublishPlace.Name = "lblPublishPlace";
-            this.lblPublishPlace.Size = new System.Drawing.Size(124, 25);
+            this.lblPublishPlace.Size = new System.Drawing.Size(143, 25);
             this.lblPublishPlace.TabIndex = 0;
-            this.lblPublishPlace.Text = "Publish Place";
+            this.lblPublishPlace.Text = "Active Material";
             // 
             // lblPublishDate
             // 
@@ -542,15 +542,6 @@
             this.txtPublishDate.Name = "txtPublishDate";
             this.txtPublishDate.Size = new System.Drawing.Size(356, 33);
             this.txtPublishDate.TabIndex = 7;
-            // 
-            // txtPublishPlace
-            // 
-            this.txtPublishPlace.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPublishPlace.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtPublishPlace.Location = new System.Drawing.Point(408, 425);
-            this.txtPublishPlace.Name = "txtPublishPlace";
-            this.txtPublishPlace.Size = new System.Drawing.Size(356, 33);
-            this.txtPublishPlace.TabIndex = 9;
             // 
             // lblMaterialType
             // 
@@ -625,6 +616,19 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // comboActiveMaterial
+            // 
+            this.comboActiveMaterial.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboActiveMaterial.FormattingEnabled = true;
+            this.comboActiveMaterial.Items.AddRange(new object[] {
+            "Active",
+            "Passive"});
+            this.comboActiveMaterial.Location = new System.Drawing.Point(408, 425);
+            this.comboActiveMaterial.Name = "comboActiveMaterial";
+            this.comboActiveMaterial.Size = new System.Drawing.Size(359, 33);
+            this.comboActiveMaterial.TabIndex = 11;
+            this.comboActiveMaterial.SelectedIndexChanged += new System.EventHandler(this.comboActiveMaterial_SelectedIndexChanged);
+            // 
             // UpdateMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -698,7 +702,6 @@
         private System.Windows.Forms.ComboBox comboMaterialLocation;
         private System.Windows.Forms.TextBox txtPublishHouse;
         private System.Windows.Forms.TextBox txtPublishDate;
-        private System.Windows.Forms.TextBox txtPublishPlace;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtPages;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
@@ -707,5 +710,6 @@
         private System.Windows.Forms.Label lblMaterialType;
         private System.Windows.Forms.ComboBox comboMaterialType;
         private System.Windows.Forms.Button btnSearchUser;
+        private System.Windows.Forms.ComboBox comboActiveMaterial;
     }
 }

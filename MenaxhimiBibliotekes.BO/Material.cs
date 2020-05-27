@@ -31,7 +31,6 @@ namespace MenaxhimiBibliotekes.BO
         public virtual Language _Language { get; set; }
         public string Title { get; set; }
         public DateTime PublishYear { get; set; }
-        public string PublishPlace { get; set; }
         public string ISBN { get; set; }
         public int AvailableCoppies { get; set; }
         public int Quantity { get; set; }

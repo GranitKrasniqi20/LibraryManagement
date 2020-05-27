@@ -18,7 +18,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
     {
         //Global Variables and Instances
         bool openFormG, openFormL, openFormSH, openFormMT;
-
+        bool isActiveMaterial;
 
 
         Material material;
@@ -161,7 +161,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
 
-        private void DisabledByMaterialType(Control title, Control author, Control genre, Control language, Control isbn, Control location, Control publish_house, Control publish_date, Control publish_place, Control quantity, Control pages)
+        private void DisabledByMaterialType(Control title, Control author, Control genre, Control language, Control isbn, Control location, Control publish_house, Control publish_date, Control quantity, Control pages)
         {
             title.Enabled = false;
             author.Enabled = false;
@@ -171,12 +171,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             location.Enabled = false;
             publish_house.Enabled = false;
             publish_date.Enabled = false;
-            publish_place.Enabled = false;
             quantity.Enabled = false;
             pages.Enabled = false;
         }
 
-        private void EnabledByMaterialType(Control title, Control author, Control genre, Control language, Control isbn, Control location, Control publish_house, Control publish_date, Control publish_place, Control quantity, Control pages)
+        private void EnabledByMaterialType(Control title, Control author, Control genre, Control language, Control isbn, Control location, Control publish_house, Control publish_date, Control quantity, Control pages)
         {
             title.Enabled = true;
             author.Enabled = true;
@@ -186,7 +185,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             location.Enabled = true;
             publish_house.Enabled = true;
             publish_date.Enabled = true;
-            publish_place.Enabled = true;
             quantity.Enabled = true;
             pages.Enabled = true;
         }
@@ -263,13 +261,13 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     MaterialTypeForm materialtypeForm = new MaterialTypeForm();
                     materialtypeForm.ShowDialog();
 
-                    DisabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
+                    DisabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtQuantity, txtPages);
                 }
                 openFormMT = true;
             }
             else
             {
-                EnabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtPublishPlace, txtQuantity, txtPages);
+                EnabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtQuantity, txtPages);
             }
         }
 
@@ -338,9 +336,13 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                 txtQuantity.Text = material.Quantity.ToString();
 
-                if (material.PublishPlace.Length > 1)
+                if (material.IsActive == true)
                 {
-                    txtPublishPlace.Text = material.PublishPlace;
+                    comboActiveMaterial.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboActiveMaterial.SelectedIndex = 1;
                 }
 
                 BindDropDownGenre(material._Genre);
@@ -369,7 +371,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 txtISBN.Text != "" ||
                 txtPublishHouse.Text != "" ||
                 txtPublishDate.Text != "" ||
-                txtPublishPlace.Text != "" ||
+                comboActiveMaterial.SelectedIndex != -1 ||
                 txtQuantity.Text != "" ||
                 txtPages.Text != "")
             {
@@ -381,10 +383,17 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
         }
 
-
-
-
-
+        private void comboActiveMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboActiveMaterial.SelectedItem == "Active")
+            {
+                isActiveMaterial = true;
+            }
+            else
+            {
+                isActiveMaterial = false;
+            }
+        }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -430,13 +439,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     material.PublishYear = new DateTime(int.Parse(txtPublishDate.Text), 1, 1);
                 }
 
-                material.PublishPlace = txtPublishPlace.Text;
-
                 material.Quantity = Convert.ToInt32(txtQuantity.Text);
 
                 material.NumberOfPages = Convert.ToInt32(txtPages.Text);
 
-                material.IsActive = true;
+                material.IsActive = isActiveMaterial;
 
                 material.UpdBy = FormLoggedUser.Id;
 

@@ -64,15 +64,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                     txtQuantity.Text = material.Quantity.ToString();
 
-                    if (material.PublishPlace.Length > 1)
-                    {
-                        txtPublishPlace.Text = material.PublishPlace;
-                    }
-
-                   
-
-
-
                 }
 
             }

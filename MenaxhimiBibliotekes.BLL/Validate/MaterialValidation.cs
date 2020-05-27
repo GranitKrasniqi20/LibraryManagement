@@ -64,12 +64,6 @@ namespace MenaxhimiBibliotekes.BLL.Validate
                 .Must(BeAValidYear).WithMessage("Invalid Date!");
             }
 
-            if (material.PublishPlace.Length != 0)
-            {
-                RuleFor(m => m.PublishPlace)
-                .Must(AcceptablePublishPlaceLength).WithMessage("{PropertyName} character length should be lower than 50!");
-            }
-
             RuleFor(m => m.Quantity)
                 .NotEmpty().WithMessage("{PropertyName} is empty! Please fill it!")
                 .LessThan(10000).WithMessage("Amount unacceptable. Lower quantity!")
