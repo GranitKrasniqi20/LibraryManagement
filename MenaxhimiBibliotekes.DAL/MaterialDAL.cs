@@ -242,10 +242,10 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             command.Parameters.AddWithValue("@PublicationYear", obj.PublishYear);
                         }
-                        if (obj.ISBN.Length > 0)
-                        {
-                            command.Parameters.AddWithValue("ISBN", obj.ISBN);
-                        }
+                        //if (obj.ISBN.Length > string.)
+                        //{
+                        //    command.Parameters.AddWithValue("ISBN", obj.ISBN);
+                        //}
 
 
                         command.Parameters.AddWithValue("MaterialTypeId", obj._MaterialType.MaterialTypeId);

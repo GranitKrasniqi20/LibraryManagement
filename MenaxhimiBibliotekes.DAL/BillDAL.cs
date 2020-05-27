@@ -43,10 +43,10 @@ namespace MenaxhimiBibliotekes.DAL
                             command.Parameters.AddWithValue("materialId", obj.MaterialId);
                         }
 
-                        if (obj.BillTypeId != 0)
-                        {
-                            command.Parameters.AddWithValue("billTypeId", obj.BillTypeId);
-                        }
+                        //if (obj.BillTypeId != 0)
+                        //{
+                        //    command.Parameters.AddWithValue("billTypeId", obj.BillTypeId);
+                        //}
 
                         if (obj.Description != null)
                         {

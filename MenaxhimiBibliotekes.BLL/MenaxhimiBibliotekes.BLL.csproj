@@ -51,7 +51,9 @@
   <ItemGroup>
     <Compile Include="BillBLL.cs" />
     <Compile Include="BillTypeBLL.cs" />
+    <Compile Include="BorrowBLL.cs" />
     <Compile Include="CookieSubscriber.cs" />
+    <Compile Include="EmailService.cs" />
     <Compile Include="GenreBLL.cs" />
     <Compile Include="LanguageBLL.cs" />
     <Compile Include="MaterialBLL.cs" />
