@@ -29,18 +29,13 @@ namespace MenaxhimiBibliotekes.DAL
 
                         command.Parameters.AddWithValue("@GenreId", obj._Genre.GenreId);
 
-                        if (obj.PublishPlace != null)
+                        if (obj._PublishHouse != null)
                         {
                             command.Parameters.AddWithValue("@PublishHouse", obj._PublishHouse._PublishHouse);
                         }
                         if (obj.PublishYear != null)
                         {
                             command.Parameters.AddWithValue("@PublicationYear", obj.PublishYear);
-                        }
-
-                        if (obj.PublishPlace != null)
-                        {
-                            command.Parameters.AddWithValue("@PlaceOfPublication", obj.PublishPlace);
                         }
 
                         if (obj.ISBN.Length > 0)
@@ -243,16 +238,11 @@ namespace MenaxhimiBibliotekes.DAL
                             command.Parameters.AddWithValue("PublishHouseId", obj._PublishHouse.PublishHouseId);
                         }
 
-                        if (obj.PublishPlace.Length > 0)
-                        {
-                            command.Parameters.AddWithValue("PlaceOfPublication", obj.PublishPlace);
-                        }
-
                         if (obj.PublishYear != null)
                         {
                             command.Parameters.AddWithValue("@PublicationYear", obj.PublishYear);
                         }
-                        //if (obj.ISBN.Length > string)
+                        //if (obj.ISBN.Length > string.)
                         //{
                         //    command.Parameters.AddWithValue("ISBN", obj.ISBN);
                         //}
@@ -332,10 +322,6 @@ namespace MenaxhimiBibliotekes.DAL
                 if (reader["PublishYear"] != DBNull.Value)
                 {
                     material.PublishYear = (DateTime)reader["PublishYear"];
-                }
-                if (reader["PlaceOfPublication"] != DBNull.Value)
-                {
-                    material.PublishPlace = reader["PlaceOfPublication"].ToString();
                 }
                 if (reader["ISBN"] != DBNull.Value)
                 {

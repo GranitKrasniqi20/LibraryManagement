@@ -75,6 +75,12 @@
     <Compile Include="Materials Forms\AddNewMaterial.Designer.cs">
       <DependentUpon>AddNewMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials Forms\BorrowingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\BorrowingsForm.Designer.cs">
+      <DependentUpon>BorrowingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materials Forms\DeleteMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,24 @@
     <Compile Include="Materials Forms\MaterialTypeForm.Designer.cs">
       <DependentUpon>MaterialTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials Forms\ReservationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\ReservationsForm.Designer.cs">
+      <DependentUpon>ReservationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\ReturningsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\ReturningsForm.Designer.cs">
+      <DependentUpon>ReturningsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\SpecificMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\SpecificMaterialForm.Designer.cs">
+      <DependentUpon>SpecificMaterialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materials Forms\UpdateMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +188,12 @@
     </Compile>
     <Compile Include="Members Forms\MembersForm.Designer.cs">
       <DependentUpon>MembersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members Forms\SpecificMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members Forms\SpecificMemberForm.Designer.cs">
+      <DependentUpon>SpecificMemberForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Members Forms\UpdateMemberForm.cs">
       <SubType>Form</SubType>
@@ -242,6 +272,9 @@
     <EmbeddedResource Include="Materials Forms\AddNewMaterial.resx">
       <DependentUpon>AddNewMaterial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\BorrowingsForm.resx">
+      <DependentUpon>BorrowingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\DeleteMaterialForm.resx">
       <DependentUpon>DeleteMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +302,15 @@
     <EmbeddedResource Include="Materials Forms\MaterialTypeForm.resx">
       <DependentUpon>MaterialTypeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\ReservationsForm.resx">
+      <DependentUpon>ReservationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\ReturningsForm.resx">
+      <DependentUpon>ReturningsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\SpecificMaterialForm.resx">
+      <DependentUpon>SpecificMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\UpdateMaterialForm.resx">
       <DependentUpon>UpdateMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Members Forms\MembersForm.resx">
       <DependentUpon>MembersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members Forms\SpecificMemberForm.resx">
+      <DependentUpon>SpecificMemberForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Members Forms\UpdateMemberForm.resx">
       <DependentUpon>UpdateMemberForm.cs</DependentUpon>

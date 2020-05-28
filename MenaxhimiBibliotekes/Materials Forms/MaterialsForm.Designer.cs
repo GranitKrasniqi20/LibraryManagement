@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialsForm));
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabMainPage = new System.Windows.Forms.TabPage();
             this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
@@ -60,11 +59,38 @@
             this.btnUpdateMaterial = new System.Windows.Forms.Button();
             this.btnDeleteMaterial = new System.Windows.Forms.Button();
             this.tableSpace1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tabControlMaterialsForm = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabReservationsBorrowings = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnBorrowings = new System.Windows.Forms.Button();
+            this.btnReservations = new System.Windows.Forms.Button();
+            this.btnReturns = new System.Windows.Forms.Button();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picTitle = new System.Windows.Forms.PictureBox();
-            this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.tabMainPage.SuspendLayout();
             this.tableDataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
@@ -73,21 +99,17 @@
             this.tableSearch.SuspendLayout();
             this.tableComboboxes.SuspendLayout();
             this.tableSpace2.SuspendLayout();
-            this.tabControlMaterialsForm.SuspendLayout();
+            this.tabControl.SuspendLayout();
+            this.tabReservationsBorrowings.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
-            this.tableHeader.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(732, 493);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Other Tab";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabMainPage
             // 
@@ -267,7 +289,7 @@
             // 
             // textSearchMaterial
             // 
-            this.textSearchMaterial.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textSearchMaterial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textSearchMaterial.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSearchMaterial.Location = new System.Drawing.Point(23, 3);
             this.textSearchMaterial.Name = "textSearchMaterial";
@@ -276,13 +298,13 @@
             // 
             // btnSearchMaterial
             // 
-            this.btnSearchMaterial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.btnSearchMaterial.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSearchMaterial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(185)))));
+            this.btnSearchMaterial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearchMaterial.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMaterial.ForeColor = System.Drawing.Color.White;
             this.btnSearchMaterial.Location = new System.Drawing.Point(472, 3);
             this.btnSearchMaterial.Name = "btnSearchMaterial";
-            this.btnSearchMaterial.Size = new System.Drawing.Size(229, 40);
+            this.btnSearchMaterial.Size = new System.Drawing.Size(229, 47);
             this.btnSearchMaterial.TabIndex = 7;
             this.btnSearchMaterial.Text = "Search";
             this.btnSearchMaterial.UseVisualStyleBackColor = false;
@@ -422,18 +444,321 @@
             this.tableSpace1.Size = new System.Drawing.Size(726, 16);
             this.tableSpace1.TabIndex = 0;
             // 
-            // tabControlMaterialsForm
+            // tabControl
             // 
-            this.tabControlMaterialsForm.Controls.Add(this.tabMainPage);
-            this.tabControlMaterialsForm.Controls.Add(this.tabPage2);
-            this.tabControlMaterialsForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlMaterialsForm.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlMaterialsForm.Location = new System.Drawing.Point(0, 88);
-            this.tabControlMaterialsForm.Name = "tabControlMaterialsForm";
-            this.tabControlMaterialsForm.Padding = new System.Drawing.Point(12, 8);
-            this.tabControlMaterialsForm.SelectedIndex = 0;
-            this.tabControlMaterialsForm.Size = new System.Drawing.Size(740, 529);
-            this.tabControlMaterialsForm.TabIndex = 3;
+            this.tabControl.Controls.Add(this.tabMainPage);
+            this.tabControl.Controls.Add(this.tabReservationsBorrowings);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Location = new System.Drawing.Point(0, 88);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.Padding = new System.Drawing.Point(12, 8);
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(740, 529);
+            this.tabControl.TabIndex = 3;
+            // 
+            // tabReservationsBorrowings
+            // 
+            this.tabReservationsBorrowings.Controls.Add(this.tableLayoutPanel16);
+            this.tabReservationsBorrowings.Controls.Add(this.tableLayoutPanel15);
+            this.tabReservationsBorrowings.Controls.Add(this.tableLayoutPanel14);
+            this.tabReservationsBorrowings.Controls.Add(this.tableLayoutPanel13);
+            this.tabReservationsBorrowings.Controls.Add(this.tableLayoutPanel12);
+            this.tabReservationsBorrowings.Controls.Add(this.tableLayoutPanel11);
+            this.tabReservationsBorrowings.Location = new System.Drawing.Point(4, 32);
+            this.tabReservationsBorrowings.Name = "tabReservationsBorrowings";
+            this.tabReservationsBorrowings.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReservationsBorrowings.Size = new System.Drawing.Size(732, 493);
+            this.tabReservationsBorrowings.TabIndex = 4;
+            this.tabReservationsBorrowings.Text = "Reservations & Borrowings";
+            this.tabReservationsBorrowings.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.ColumnCount = 3;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel16.Controls.Add(this.dataGridView1, 1, 0);
+            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 155);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 1;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(726, 314);
+            this.tableLayoutPanel16.TabIndex = 10;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(23, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(680, 308);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Author";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Material Type";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Genre";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Language";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "ISBN";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Publish House";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Publish Date";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Publish Place";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "No. of Pages";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 3;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel15.Controls.Add(this.label22, 1, 0);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 469);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 1;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(726, 21);
+            this.tableLayoutPanel15.TabIndex = 9;
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(237, 2);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(251, 17);
+            this.label22.TabIndex = 11;
+            this.label22.Text = "All Rights, Stackbooks Management System";
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 7;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel14.Controls.Add(this.button4, 5, 0);
+            this.tableLayoutPanel14.Controls.Add(this.textBox2, 3, 0);
+            this.tableLayoutPanel14.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel14.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 97);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 1;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(726, 58);
+            this.tableLayoutPanel14.TabIndex = 8;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(185)))));
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(493, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(209, 52);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Search";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(258, 3);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(209, 39);
+            this.textBox2.TabIndex = 6;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Search All Materials",
+            "Search Books",
+            "Search Journals"});
+            this.comboBox1.Location = new System.Drawing.Point(23, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(209, 40);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 81);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(726, 16);
+            this.tableLayoutPanel13.TabIndex = 7;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 7;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel12.Controls.Add(this.btnBorrowings, 3, 0);
+            this.tableLayoutPanel12.Controls.Add(this.btnReservations, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.btnReturns, 5, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(726, 62);
+            this.tableLayoutPanel12.TabIndex = 6;
+            // 
+            // btnBorrowings
+            // 
+            this.btnBorrowings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.btnBorrowings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBorrowings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrowings.ForeColor = System.Drawing.Color.White;
+            this.btnBorrowings.Location = new System.Drawing.Point(258, 3);
+            this.btnBorrowings.Name = "btnBorrowings";
+            this.btnBorrowings.Size = new System.Drawing.Size(209, 56);
+            this.btnBorrowings.TabIndex = 3;
+            this.btnBorrowings.Text = "Borrowings";
+            this.btnBorrowings.UseVisualStyleBackColor = false;
+            this.btnBorrowings.Click += new System.EventHandler(this.btnBorrowings_Click);
+            // 
+            // btnReservations
+            // 
+            this.btnReservations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.btnReservations.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReservations.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservations.ForeColor = System.Drawing.Color.White;
+            this.btnReservations.Location = new System.Drawing.Point(23, 3);
+            this.btnReservations.Name = "btnReservations";
+            this.btnReservations.Size = new System.Drawing.Size(209, 56);
+            this.btnReservations.TabIndex = 3;
+            this.btnReservations.Text = "Reservations";
+            this.btnReservations.UseVisualStyleBackColor = false;
+            this.btnReservations.Click += new System.EventHandler(this.btnReservations_Click);
+            // 
+            // btnReturns
+            // 
+            this.btnReturns.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.btnReturns.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReturns.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturns.ForeColor = System.Drawing.Color.White;
+            this.btnReturns.Location = new System.Drawing.Point(493, 3);
+            this.btnReturns.Name = "btnReturns";
+            this.btnReturns.Size = new System.Drawing.Size(209, 56);
+            this.btnReturns.TabIndex = 3;
+            this.btnReturns.Text = "Returns";
+            this.btnReturns.UseVisualStyleBackColor = false;
+            this.btnReturns.Click += new System.EventHandler(this.btnReturns_Click);
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(726, 16);
+            this.tableLayoutPanel11.TabIndex = 1;
+            // 
+            // tableHeader
+            // 
+            this.tableHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.tableHeader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableHeader.BackgroundImage")));
+            this.tableHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tableHeader.ColumnCount = 3;
+            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableHeader.Controls.Add(this.panel1, 1, 0);
+            this.tableHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableHeader.Location = new System.Drawing.Point(0, 0);
+            this.tableHeader.Name = "tableHeader";
+            this.tableHeader.RowCount = 1;
+            this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableHeader.Size = new System.Drawing.Size(740, 88);
+            this.tableHeader.TabIndex = 0;
             // 
             // panel1
             // 
@@ -467,31 +792,14 @@
             this.picTitle.TabIndex = 0;
             this.picTitle.TabStop = false;
             // 
-            // tableHeader
-            // 
-            this.tableHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.tableHeader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableHeader.BackgroundImage")));
-            this.tableHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tableHeader.ColumnCount = 3;
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableHeader.Controls.Add(this.panel1, 1, 0);
-            this.tableHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableHeader.Location = new System.Drawing.Point(0, 0);
-            this.tableHeader.Name = "tableHeader";
-            this.tableHeader.RowCount = 1;
-            this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableHeader.Size = new System.Drawing.Size(740, 88);
-            this.tableHeader.TabIndex = 0;
-            // 
             // MaterialsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 617);
-            this.Controls.Add(this.tabControlMaterialsForm);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.tableHeader);
+            this.MinimumSize = new System.Drawing.Size(756, 656);
             this.Name = "MaterialsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Materials (Stackbooks)";
@@ -506,18 +814,24 @@
             this.tableSearch.PerformLayout();
             this.tableComboboxes.ResumeLayout(false);
             this.tableSpace2.ResumeLayout(false);
-            this.tabControlMaterialsForm.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
+            this.tabReservationsBorrowings.ResumeLayout(false);
+            this.tableLayoutPanel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
-            this.tableHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabMainPage;
         private System.Windows.Forms.TableLayoutPanel tableDataGridView;
         private System.Windows.Forms.DataGridView dgvMembers;
@@ -546,12 +860,39 @@
         private System.Windows.Forms.Button btnUpdateMaterial;
         private System.Windows.Forms.Button btnDeleteMaterial;
         private System.Windows.Forms.TableLayoutPanel tableSpace1;
-        private System.Windows.Forms.TabControl tabControlMaterialsForm;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox picTitle;
         private System.Windows.Forms.TableLayoutPanel tableHeader;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblFooterTitleCreate;
+        private System.Windows.Forms.TabPage tabReservationsBorrowings;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.Button btnBorrowings;
+        private System.Windows.Forms.Button btnReservations;
+        private System.Windows.Forms.Button btnReturns;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label label22;
     }
 }
