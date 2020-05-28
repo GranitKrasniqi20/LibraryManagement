@@ -233,6 +233,17 @@ SET
    --delete from dbo.Subscribers;
 ===============================================
 
+
+
+CREATE PROCEDURE usp_Subscribers_MaxId
+
+AS
+
+SELECT MAX(SubscriberId) as Id
+FROM Subscribers;
+
+=================================================
+
 CREATE PROCEDURE usp_Bills_Insert
 	@subscriberId INT,
 	@billingDate DATETIME,
@@ -364,3 +375,132 @@ END
    DELETE FROM dbo.Bills  
 
    WHERE  BillID = @billID;
+
+============================================
+
+CREATE PROCEDURE usp_Bills_MaxId
+
+AS
+
+SELECT MAX(BillId) as Id
+FROM Bills;
+
+==============================================ALTER PROCEDURE usp_Reservations_Insert
+	@subscriberId INT,
+	@materialId INT,
+	@reservationDate DATE,
+	@insBy INT,
+
+	@reservationId INT
+
+AS
+
+BEGIN TRY
+
+INSERT INTO dbo.Reservations
+(
+	SubscriberId,
+	MaterialId,
+	ReservationDate,
+	InsBy,
+	InsDate
+)
+VALUES
+(	
+	@subscriberId,@materialId,@reservationDate,
+	@insBy, GETDATE()
+);
+
+	--SCOPE IDENTITY
+	SET @reservationId=SCOPE_IDENTITY();
+
+END TRY
+
+
+BEGIN CATCH
+
+DECLARE @ErrorMsg NVARCHAR(MAX)
+SET @ErrorMsg=ERROR_MESSAGE();
+
+RAISERROR (@ErrorMsg,16,1)
+RETURN -1;
+
+END CATCH
+
+================================================
+
+ALTER PROCEDURE usp_Reservations_Update
+	@reservationId INT,
+	@subscriberId INT,
+	@materialId INT,
+	@reservationDate DATE,
+	@updBy INT
+
+AS
+
+BEGIN TRY
+
+UPDATE Reservations 
+           
+SET  
+    SubscriberId=@subscriberId,
+	MaterialId=@materialId,
+	ReservationDate=@reservationDate,
+	UpdBy = @updBy,
+	UpdDate = GETDATE(),
+    UpdNo = ISNULL(UpdNo,0)+1    
+				  
+WHERE  
+	ReservationId = @reservationId
+
+END TRY
+
+BEGIN CATCH
+
+DECLARE @ErrorMsg NVARCHAR(MAX)
+SET @ErrorMsg=ERROR_MESSAGE();
+
+RAISERROR (@ErrorMsg,16,1)
+RETURN -1;
+
+END CATCH
+
+=======================================
+
+ALTER PROCEDURE usp_Reservations_GetByID
+	@reservationId INT
+AS
+
+IF(@reservationId IS NULL)
+BEGIN
+RAISERROR('KY REZERVIM NUK EKZISTON', 16, 1)
+RETURN -1
+END
+
+	SELECT * 
+	FROM  dbo.Reservations
+
+	WHERE ReservationId=@reservationId;
+
+==========================================
+
+ALTER PROCEDURE usp_Reservations_GetAll
+AS
+SELECT * FROM dbo.Reservations AS r;
+
+==========================================
+
+ALTER PROCEDURE usp_Reservations_Delete
+@ReservationID INT
+
+AS
+
+IF(@reservationId IS NULL)
+BEGIN
+RAISERROR('KY REZERVIM NUK EKZISTON', 16, 1)
+RETURN -1
+END
+
+   DELETE FROM dbo.Reservations  
+
+   WHERE  ReservationID = @reservationID;

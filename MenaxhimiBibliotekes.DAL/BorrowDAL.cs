@@ -242,8 +242,8 @@ namespace MenaxhimiBibliotekes.DAL
                 if (reader["reservationId"] != DBNull.Value)
                 {
                     borr.ReservationId = int.Parse(reader["ReservationId"].ToString());
-                    borr._reservation.reservationId = int.Parse(reader["ReservationId"].ToString());
-                    borr._reservation.reservationDate = (DateTime)reader["ReservationDate"];
+                    borr._reservation.ReservationId = int.Parse(reader["ReservationId"].ToString());
+                    borr._reservation.ReservationDate = (DateTime)reader["ReservationDate"];
 
                 }
 
