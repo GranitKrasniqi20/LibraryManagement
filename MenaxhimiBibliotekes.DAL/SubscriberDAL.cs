@@ -15,13 +15,6 @@ namespace MenaxhimiBibliotekes.DAL
     {
         Subscriber subscriber;
 
-
-
-
-
-
-
-
         public List<string> GetExpiredSubscribersEmail()
         {
             try
@@ -110,9 +103,9 @@ namespace MenaxhimiBibliotekes.DAL
                     }
                 }
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Problem me DAL-in", "Fail!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message);
                 return -1;
             }
         }
@@ -323,8 +316,7 @@ namespace MenaxhimiBibliotekes.DAL
                 subscriber = new Subscriber();
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "SELECT MAX(SubscriberId) as Id FROM Subscribers; ",
-                        CommandType.Text))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscribers_MaxId", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {

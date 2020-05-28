@@ -46,12 +46,14 @@
     <Compile Include="BillDAL.cs" />
     <Compile Include="BillTypeDAL.cs" />
     <Compile Include="BorrowDAL.cs" />
+    <Compile Include="BorrowReturnDAL.cs" />
     <Compile Include="DbHelper.cs" />
     <Compile Include="GenreDAL.cs" />
     <Compile Include="LanguageDAL.cs" />
     <Compile Include="MaterialDAL.cs" />
     <Compile Include="MaterialTypeDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationDAL.cs" />
     <Compile Include="RoleDAL.cs" />
     <Compile Include="ShelfDAL.cs" />
     <Compile Include="SubscriberDAL.cs" />
