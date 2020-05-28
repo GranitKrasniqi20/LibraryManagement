@@ -153,7 +153,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
         {
 
             CookieSubscriber.ID = subscriberBLL.MaxSubscriberId();
-            CookieSubscriber.FullName = subscriber.Name + "\t " + subscriber.LastName;
+            CookieSubscriber.FullName = subscriber.Name + " " + subscriber.LastName;
             CookieSubscriber.PersonalNumber = subscriber.PersonalNo;
             CookieSubscriber.SubscriptionPlan = subscriptionPlanVariable;
             CookieSubscriber.BillingDate = bill.BillingDate;

@@ -283,8 +283,7 @@ namespace MenaxhimiBibliotekes.DAL
                 bill = new Bill();
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "SELECT MAX(BillId) as Id FROM Bills; ",
-                        CommandType.Text))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Bills_MaxId", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
