@@ -9,6 +9,7 @@ using MenaxhimiBibliotekes.BO.Interfaces;
 using MenaxhimiBibliotekes.BLL.Validate;
 using FluentValidation.Results;
 using System.Windows.Forms;
+using MenaxhimiBibliotekes.DAL;
 
 namespace test
 {
@@ -18,8 +19,8 @@ namespace test
         {
 
 
-            SubscriberBLL sb = new SubscriberBLL();
-            sb.GetExpiredSubscribersEmail();
+            //SubscriberBLL sb = new SubscriberBLL();
+          //  sb.GetExpiredSubscribersEmail();
 
 
             //EmailService em = new EmailService();
@@ -90,6 +91,24 @@ namespace test
             //mat._Author.AuthorName = "Endrittmavahe";
             //Console.WriteLine(mbll.Update(mat).ToString());
 
+
+
+            BorrowBLL borrow = new BorrowBLL();
+
+
+            BorrowReturn br = new BorrowReturn();
+            br.BorrowReturnId = 3;
+            br.BorrowId = 2;
+            br.ReturnDate = DateTime.Now;
+            br.Comment = "asdenaaa";
+            br.UpdBy = 80;
+            BorrowReturnBLL brb = new BorrowReturnBLL();
+            brb.Update(br);
+
+            //foreach (var item in borrow.GetAll())
+            //{
+            //    Console.WriteLine($"{item.SubscriberId}, {item.materialId}, {item.DeadLine}");
+            //}
 
 
 

@@ -15,13 +15,6 @@ namespace MenaxhimiBibliotekes.DAL
     {
         Subscriber subscriber;
 
-
-
-
-
-
-
-
         public List<string> GetExpiredSubscribersEmail()
         {
             try
@@ -110,9 +103,9 @@ namespace MenaxhimiBibliotekes.DAL
                     }
                 }
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Problem me DAL-in", "Fail!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message);
                 return -1;
             }
         }

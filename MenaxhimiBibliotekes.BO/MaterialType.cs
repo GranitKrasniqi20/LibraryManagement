@@ -10,6 +10,7 @@ namespace MenaxhimiBibliotekes.BO
     {
         public int MaterialTypeId { get; set; }
         public string _MaterialType { get; set; }
+        public decimal MaterialTypeDelayFee { get; set; }
         public bool isActive { get; set; }
     }
 }

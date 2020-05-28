@@ -18,11 +18,16 @@ namespace MenaxhimiBibliotekes.BO
         public virtual Material _material { get; set; }
         public int shelfId { get; set; }
         public virtual Shelf _shelf { get; set; }
-        public int _typeOfActionId { get; set; }
-        public virtual TypeOfAction TypeOfAction { get; set; }
         public DateTime BorrowDate { get; set; }
-        public DateTime ReturnDate { get; set; }
-        public int BillId { get; set; }
-        public Bill bill { get; set; }
+        public DateTime DeadLine { get; set; }
+        public BorrowReturn BorrowReturn { get; set; }
+        public int BorrowReturnId { get; set; }
+        public Borrow()
+        {
+            ;
+            _reservation = new Reservation();
+            _material = new Material();
+            _shelf = new Shelf();
+        }
     }
 }

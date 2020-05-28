@@ -247,11 +247,12 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             command.Parameters.AddWithValue("PlaceOfPublication", obj.PublishPlace);
                         }
+
                         if (obj.PublishYear != null)
                         {
                             command.Parameters.AddWithValue("@PublicationYear", obj.PublishYear);
                         }
-                        //if (obj.ISBN.Length > string.)
+                        //if (obj.ISBN.Length > string)
                         //{
                         //    command.Parameters.AddWithValue("ISBN", obj.ISBN);
                         //}

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audit.cs" />
+    <Compile Include="BorrowReturn.cs" />
     <Compile Include="FormLoggedUser.cs" />
     <Compile Include="Interfaces\IChangePassword.cs" />
     <Compile Include="Interfaces\IConvertToBO.cs" />
@@ -63,7 +64,6 @@
     <Compile Include="Role.cs" />
     <Compile Include="PublishHouse.cs" />
     <Compile Include="BillType.cs" />
-    <Compile Include="TypeOfAction.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Genre.cs" />
   </ItemGroup>

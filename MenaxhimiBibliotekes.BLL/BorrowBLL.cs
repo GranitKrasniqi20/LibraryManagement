@@ -9,7 +9,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    class BorrowBLL : ICreate<Borrow>, IUpdate<Borrow>, IDelete, IRead<Borrow>
+   public class BorrowBLL : ICreate<Borrow>, IUpdate<Borrow>, IDelete, IRead<Borrow>
     {
 
         BorrowDAL bd = new BorrowDAL();

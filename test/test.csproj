@@ -67,6 +67,10 @@
       <Project>{225bc69c-d650-48b8-8c57-f0812ae2a684}</Project>
       <Name>MenaxhimiBibliotekes.BO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MenaxhimiBibliotekes.DAL\MenaxhimiBibliotekes.DAL.csproj">
+      <Project>{DCFB6047-CE15-4C5A-82B6-CCFD884E1DBF}</Project>
+      <Name>MenaxhimiBibliotekes.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

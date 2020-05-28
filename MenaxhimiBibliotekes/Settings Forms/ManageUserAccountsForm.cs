@@ -99,7 +99,6 @@ namespace MenaxhimiBibliotekes.Settings_Forms
                 MessageBox.Show("User is not valid");
             }
 
-
             catch (Exception)
             {
                 MessageBox.Show("User is not inserted please contact your administrator");
