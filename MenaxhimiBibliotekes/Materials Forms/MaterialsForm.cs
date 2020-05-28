@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MenaxhimiBibliotekes.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,13 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         BorrowingsForm borrowingsForm = new BorrowingsForm();
         ReturningsForm returningsForm = new ReturningsForm();
 
+        MaterialBLL materialBLL = new MaterialBLL();
+
         public MaterialsForm()
         {
             InitializeComponent();
+            gridView.OptionsBehavior.AutoPopulateColumns = false;
+            gridMaterials.DataSource = materialBLL.GetAll();
         }
 
         private void btnAddMaterial_Click(object sender, EventArgs e)
@@ -73,6 +78,20 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
 
             returningsForm.ShowDialog();
+        }
+
+        private void btnSearchMaterial_Click(object sender, EventArgs e)
+        {
+            gridMaterials.DataSource = null;
+
+            if (txtSearchMaterial.Text == string.Empty)
+            {
+                gridMaterials.DataSource = materialBLL.GetAll();
+            }
+            else
+            {
+                gridMaterials.DataSource = materialBLL.GetAll().Where(x => x.Title.Contains(txtSearchMaterial.Text));
+            }    
         }
     }
 }

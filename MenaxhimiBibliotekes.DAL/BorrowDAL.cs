@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.DAL
 {
-   public class BorrowDAL : ICreate<Borrow>, IUpdate<Borrow>, IDelete, IRead<Borrow>
+   public class BorrowDAL : ICreate<Borrow> /*IUpdate<Borrow>, IDelete, IRead<Borrow>*/
     {
 
 
@@ -95,98 +95,98 @@ namespace MenaxhimiBibliotekes.DAL
             throw new NotImplementedException();
         }
 
-        public List<Borrow> GetAll()
-        {
+        //public List<Borrow> GetAll()
+        //{
 
-            try
-            {
-                List<Language> AllLanguage = new List<Language>();
-                lang = new Language();
+        //    try
+        //    {
+        //        List<Language> AllLanguage = new List<Language>();
+        //        lang = new Language();
 
-                using (SqlConnection sqlconn = DbHelper.GetConnection())
-                {
-                    using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetAllLanguages", CommandType.StoredProcedure))
-                    {
-                        using (SqlDataReader sqr = command.ExecuteReader())
-                        {
-                            if (sqr.HasRows)
-                            {
-                                while (sqr.Read())
-                                {
+        //        using (SqlConnection sqlconn = DbHelper.GetConnection())
+        //        {
+        //            using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetAllLanguages", CommandType.StoredProcedure))
+        //            {
+        //                using (SqlDataReader sqr = command.ExecuteReader())
+        //                {
+        //                    if (sqr.HasRows)
+        //                    {
+        //                        while (sqr.Read())
+        //                        {
 
-                                    lang = ToBO(sqr);
-                                    if (lang == null)
-                                    {
-                                        throw new Exception();
-                                    }
-
-
-
-                                    AllLanguage.Add(lang);
+        //                            lang = ToBO(sqr);
+        //                            if (lang == null)
+        //                            {
+        //                                throw new Exception();
+        //                            }
 
 
 
-                                }
-                            }
-                            return AllLanguage;
-                        }
-                    }
-                }
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("There was a problem, please contact your administrator");
-                return null;
-            }
-        }
-
-        public int Update(Borrow obj)
-        {
-            int isUpdated = 0;
-            try
-            {
-                int error;
-
-                using (SqlConnection conn = DbHelper.GetConnection())
-                {
-                    using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateLanguage", CommandType.StoredProcedure))
-                    {
-                        command.Parameters.AddWithValue("LanguageId", obj.LanguageId);
-                        command.Parameters.AddWithValue("Language", obj._Language);
-                        command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
+        //                            AllLanguage.Add(lang);
 
 
 
+        //                        }
+        //                    }
+        //                    return AllLanguage;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (SqlException)
+        //    {
+        //        MessageBox.Show("There was a problem, please contact your administrator");
+        //        return null;
+        //    }
+        //}
 
-                        isUpdated = command.ExecuteNonQuery();
-                        if (isUpdated > 0)
-                        {
-                            return 0;
-                        }
-                        else
-                        {
-                            return 1;
-                        }
+        //public int Update(Borrow obj)
+        //{
+        //    int isUpdated = 0;
+        //    try
+        //    {
+        //        int error;
 
-                    }
-                }
-            }
+        //        using (SqlConnection conn = DbHelper.GetConnection())
+        //        {
+        //            using (SqlCommand command = DbHelper.Command(conn, "usp_UpdateLanguage", CommandType.StoredProcedure))
+        //            {
+        //                command.Parameters.AddWithValue("LanguageId", obj.LanguageId);
+        //                command.Parameters.AddWithValue("Language", obj._Language);
+        //                command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
 
 
-            catch (SqlException ex)
-            {
 
-                MessageBox.Show("Please contact your administrator");
-                return -1;
 
-            }
+        //                isUpdated = command.ExecuteNonQuery();
+        //                if (isUpdated > 0)
+        //                {
+        //                    return 0;
+        //                }
+        //                else
+        //                {
+        //                    return 1;
+        //                }
 
-            catch (Exception)
-            {
-                MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
-                return -1;
-            }
-        }
+        //            }
+        //        }
+        //    }
+
+
+        //    catch (SqlException ex)
+        //    {
+
+        //        MessageBox.Show("Please contact your administrator");
+        //        return -1;
+
+        //    }
+
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("Material Type name  should be uniqe, please if this material type is deactivated update it");
+        //        return -1;
+        //    }
+        //}
     }
 
 }

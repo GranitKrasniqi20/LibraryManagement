@@ -9,7 +9,7 @@ using MenaxhimiBibliotekes.DAL;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    class BorrowBLL : ICreate<Borrow>, IUpdate<Borrow>, IDelete, IRead<Borrow>
+    class BorrowBLL : ICreate<Borrow> /*IUpdate<Borrow>, IDelete, IRead<Borrow>*/
     {
 
         BorrowDAL bd = new BorrowDAL();
@@ -30,15 +30,15 @@ namespace MenaxhimiBibliotekes.BLL
             return bd.Get(Id);
         }
 
-        public List<Borrow> GetAll()
-        {
-            return bd.GetAll();
-        }
+        //public List<Borrow> GetAll()
+        //{
+        //    return bd.GetAll();
+        //}
 
-        public int Update(Borrow obj)
-        {
-            return bd.Update(obj);
-        }
+        //public int Update(Borrow obj)
+        //{
+        //    return bd.Update(obj);
+        //}
 
 
 

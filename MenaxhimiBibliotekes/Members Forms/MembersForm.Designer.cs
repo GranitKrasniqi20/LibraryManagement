@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MembersForm));
             this.panelFullBody = new System.Windows.Forms.Panel();
             this.tabControlMembersForm = new System.Windows.Forms.TabControl();
             this.tabMainPage = new System.Windows.Forms.TabPage();
             this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvMembers = new System.Windows.Forms.DataGridView();
+            this.gridMembers = new DevExpress.XtraGrid.GridControl();
+            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBirthday = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonalNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhoneNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGender = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInsDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExpirationDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableBottomSpace = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitleCreate = new System.Windows.Forms.Label();
             this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.textSearchMember = new System.Windows.Forms.TextBox();
             this.comboSortMember = new System.Windows.Forms.ComboBox();
             this.btnSearchMember = new System.Windows.Forms.Button();
+            this.txtSearchMember = new System.Windows.Forms.TextBox();
             this.tableButtons = new System.Windows.Forms.TableLayoutPanel();
             this.tableSpace2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddMember = new System.Windows.Forms.Button();
@@ -50,25 +63,24 @@
             this.tabExpiredMembers = new System.Windows.Forms.TabPage();
             this.tableDataGridViewExpired = new System.Windows.Forms.TableLayoutPanel();
             this.dgvExpiredMembers = new System.Windows.Forms.DataGridView();
+            this.columnIDExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnFirstNameExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnLastNameExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnAddressExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnBirthdateExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnGenderExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPersonalNoExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnEmailExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPhoneNumberExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnSubscriptionPlanExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnFromExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnTillExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableFooterExpired = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterExpired = new System.Windows.Forms.Label();
             this.tableSpaceExpiredInfo = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitleCreate = new System.Windows.Forms.Label();
             this.tableSpace3 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.picTitle = new System.Windows.Forms.PictureBox();
-            this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.tabBills = new System.Windows.Forms.TabPage();
-            this.tableSpace4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableSpaceInfoBills = new System.Windows.Forms.TableLayoutPanel();
-            this.lblInfoBills = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtSearchBills = new System.Windows.Forms.TextBox();
-            this.comboSortBills = new System.Windows.Forms.ComboBox();
-            this.btnSearchBills = new System.Windows.Forms.Button();
-            this.tableBottom3 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblFooter3 = new System.Windows.Forms.Label();
             this.tableDataGridViewBills = new System.Windows.Forms.TableLayoutPanel();
             this.dgvBills = new System.Windows.Forms.DataGridView();
             this.columnIDBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,35 +94,31 @@
             this.columnPriceBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnFromBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnTillBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnIDExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnFirstNameExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnLastNameExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAddressExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnBirthdateExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnGenderExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPersonalNoExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnEmailExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPhoneNumberExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnSubscriptionPlanExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnFromExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnTillExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnBirthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPersonalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnSubscriptionPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnFromDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnTillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableBottom3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFooter3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtSearchBills = new System.Windows.Forms.TextBox();
+            this.comboSortBills = new System.Windows.Forms.ComboBox();
+            this.btnSearchBills = new System.Windows.Forms.Button();
+            this.tableSpaceInfoBills = new System.Windows.Forms.TableLayoutPanel();
+            this.lblInfoBills = new System.Windows.Forms.Label();
+            this.tableSpace4 = new System.Windows.Forms.TableLayoutPanel();
+            this.subscribersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryManagementDataSet1 = new MenaxhimiBibliotekes.LibraryManagementDataSet1();
+            this.subscribersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryManagementDataSet = new MenaxhimiBibliotekes.LibraryManagementDataSet();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.picTitle = new System.Windows.Forms.PictureBox();
+            this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.subscribersTableAdapter = new MenaxhimiBibliotekes.LibraryManagementDataSetTableAdapters.SubscribersTableAdapter();
+            this.subscribersTableAdapter1 = new MenaxhimiBibliotekes.LibraryManagementDataSet1TableAdapters.SubscribersTableAdapter();
             this.panelFullBody.SuspendLayout();
             this.tabControlMembersForm.SuspendLayout();
             this.tabMainPage.SuspendLayout();
             this.tableDataGridView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMembers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.tableBottomSpace.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableSearch.SuspendLayout();
@@ -120,15 +128,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpiredMembers)).BeginInit();
             this.tableFooterExpired.SuspendLayout();
             this.tableSpaceExpiredInfo.SuspendLayout();
+            this.tabBills.SuspendLayout();
+            this.tableDataGridViewBills.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).BeginInit();
+            this.tableBottom3.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableSpaceInfoBills.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subscribersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryManagementDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subscribersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryManagementDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableHeader.SuspendLayout();
-            this.tabBills.SuspendLayout();
-            this.tableSpaceInfoBills.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableBottom3.SuspendLayout();
-            this.tableDataGridViewBills.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFullBody
@@ -176,7 +188,7 @@
             this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableDataGridView.Controls.Add(this.dgvMembers, 1, 0);
+            this.tableDataGridView.Controls.Add(this.gridMembers, 1, 0);
             this.tableDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableDataGridView.Location = new System.Drawing.Point(3, 150);
             this.tableDataGridView.Name = "tableDataGridView";
@@ -185,28 +197,121 @@
             this.tableDataGridView.Size = new System.Drawing.Size(726, 318);
             this.tableDataGridView.TabIndex = 0;
             // 
-            // dgvMembers
+            // gridMembers
             // 
-            this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnID,
-            this.columnFirstName,
-            this.columnLastName,
-            this.columnAddress,
-            this.columnBirthdate,
-            this.columnGender,
-            this.columnPersonalNumber,
-            this.columnEmail,
-            this.columnPhoneNumber,
-            this.columnSubscriptionPlan,
-            this.columnFromDate,
-            this.columnTillDate});
-            this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMembers.Location = new System.Drawing.Point(23, 3);
-            this.dgvMembers.Name = "dgvMembers";
-            this.dgvMembers.Size = new System.Drawing.Size(680, 312);
-            this.dgvMembers.TabIndex = 7;
+            this.gridMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridMembers.Location = new System.Drawing.Point(23, 3);
+            this.gridMembers.MainView = this.gridView;
+            this.gridMembers.Name = "gridMembers";
+            this.gridMembers.Size = new System.Drawing.Size(680, 312);
+            this.gridMembers.TabIndex = 0;
+            this.gridMembers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView});
+            // 
+            // gridView
+            // 
+            this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID,
+            this.colName,
+            this.colLastName,
+            this.colAddress,
+            this.colBirthday,
+            this.colPersonalNo,
+            this.colPhoneNo,
+            this.colEmail,
+            this.colGender,
+            this.colInsDate,
+            this.colExpirationDate});
+            this.gridView.GridControl = this.gridMembers;
+            this.gridView.Name = "gridView";
+            // 
+            // colID
+            // 
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "SubscriberId";
+            this.colID.Name = "colID";
+            this.colID.Visible = true;
+            this.colID.VisibleIndex = 0;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "First Name";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 1;
+            // 
+            // colLastName
+            // 
+            this.colLastName.Caption = "Last Name";
+            this.colLastName.FieldName = "LastName";
+            this.colLastName.Name = "colLastName";
+            this.colLastName.Visible = true;
+            this.colLastName.VisibleIndex = 2;
+            // 
+            // colAddress
+            // 
+            this.colAddress.Caption = "Full Address";
+            this.colAddress.FieldName = "Address";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.Visible = true;
+            this.colAddress.VisibleIndex = 3;
+            // 
+            // colBirthday
+            // 
+            this.colBirthday.Caption = "Birthdate";
+            this.colBirthday.FieldName = "Birthday";
+            this.colBirthday.Name = "colBirthday";
+            this.colBirthday.Visible = true;
+            this.colBirthday.VisibleIndex = 4;
+            // 
+            // colPersonalNo
+            // 
+            this.colPersonalNo.Caption = "Personal Number";
+            this.colPersonalNo.FieldName = "PersonalNo";
+            this.colPersonalNo.Name = "colPersonalNo";
+            this.colPersonalNo.Visible = true;
+            this.colPersonalNo.VisibleIndex = 5;
+            // 
+            // colPhoneNo
+            // 
+            this.colPhoneNo.Caption = "Phone Number";
+            this.colPhoneNo.FieldName = "PhoneNo";
+            this.colPhoneNo.Name = "colPhoneNo";
+            this.colPhoneNo.Visible = true;
+            this.colPhoneNo.VisibleIndex = 6;
+            // 
+            // colEmail
+            // 
+            this.colEmail.Caption = "E-Mail";
+            this.colEmail.FieldName = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.Visible = true;
+            this.colEmail.VisibleIndex = 7;
+            // 
+            // colGender
+            // 
+            this.colGender.Caption = "Gender";
+            this.colGender.FieldName = "Gender";
+            this.colGender.Name = "colGender";
+            this.colGender.Visible = true;
+            this.colGender.VisibleIndex = 8;
+            // 
+            // colInsDate
+            // 
+            this.colInsDate.Caption = "Registration Date";
+            this.colInsDate.FieldName = "InsDate";
+            this.colInsDate.Name = "colInsDate";
+            this.colInsDate.Visible = true;
+            this.colInsDate.VisibleIndex = 9;
+            // 
+            // colExpirationDate
+            // 
+            this.colExpirationDate.Caption = "Expiration Date";
+            this.colExpirationDate.FieldName = "ExpirationDate";
+            this.colExpirationDate.Name = "colExpirationDate";
+            this.colExpirationDate.Visible = true;
+            this.colExpirationDate.VisibleIndex = 10;
             // 
             // tableBottomSpace
             // 
@@ -251,15 +356,15 @@
             // 
             this.tableSearch.ColumnCount = 7;
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.6864F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableSearch.Controls.Add(this.textSearchMember, 1, 0);
-            this.tableSearch.Controls.Add(this.comboSortMember, 3, 0);
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
+            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableSearch.Controls.Add(this.comboSortMember, 1, 0);
             this.tableSearch.Controls.Add(this.btnSearchMember, 5, 0);
+            this.tableSearch.Controls.Add(this.txtSearchMember, 3, 0);
             this.tableSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableSearch.Location = new System.Drawing.Point(3, 97);
@@ -269,26 +374,17 @@
             this.tableSearch.Size = new System.Drawing.Size(726, 53);
             this.tableSearch.TabIndex = 0;
             // 
-            // textSearchMember
-            // 
-            this.textSearchMember.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textSearchMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearchMember.Location = new System.Drawing.Point(23, 3);
-            this.textSearchMember.Name = "textSearchMember";
-            this.textSearchMember.Size = new System.Drawing.Size(264, 39);
-            this.textSearchMember.TabIndex = 4;
-            // 
             // comboSortMember
             // 
-            this.comboSortMember.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboSortMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboSortMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboSortMember.FormattingEnabled = true;
             this.comboSortMember.Items.AddRange(new object[] {
             "Ascending Order",
             "Descending Order"});
-            this.comboSortMember.Location = new System.Drawing.Point(306, 3);
+            this.comboSortMember.Location = new System.Drawing.Point(23, 3);
             this.comboSortMember.Name = "comboSortMember";
-            this.comboSortMember.Size = new System.Drawing.Size(141, 40);
+            this.comboSortMember.Size = new System.Drawing.Size(213, 40);
             this.comboSortMember.TabIndex = 5;
             // 
             // btnSearchMember
@@ -297,12 +393,22 @@
             this.btnSearchMember.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMember.ForeColor = System.Drawing.Color.White;
-            this.btnSearchMember.Location = new System.Drawing.Point(465, 3);
+            this.btnSearchMember.Location = new System.Drawing.Point(493, 3);
             this.btnSearchMember.Name = "btnSearchMember";
-            this.btnSearchMember.Size = new System.Drawing.Size(229, 40);
+            this.btnSearchMember.Size = new System.Drawing.Size(209, 40);
             this.btnSearchMember.TabIndex = 6;
             this.btnSearchMember.Text = "Search";
             this.btnSearchMember.UseVisualStyleBackColor = false;
+            this.btnSearchMember.Click += new System.EventHandler(this.btnSearchMember_Click);
+            // 
+            // txtSearchMember
+            // 
+            this.txtSearchMember.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSearchMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchMember.Location = new System.Drawing.Point(262, 3);
+            this.txtSearchMember.Name = "txtSearchMember";
+            this.txtSearchMember.Size = new System.Drawing.Size(213, 39);
+            this.txtSearchMember.TabIndex = 4;
             // 
             // tableButtons
             // 
@@ -443,6 +549,66 @@
             this.dgvExpiredMembers.Size = new System.Drawing.Size(680, 387);
             this.dgvExpiredMembers.TabIndex = 7;
             // 
+            // columnIDExpired
+            // 
+            this.columnIDExpired.HeaderText = "ID";
+            this.columnIDExpired.Name = "columnIDExpired";
+            // 
+            // columnFirstNameExpired
+            // 
+            this.columnFirstNameExpired.HeaderText = "First Name";
+            this.columnFirstNameExpired.Name = "columnFirstNameExpired";
+            // 
+            // columnLastNameExpired
+            // 
+            this.columnLastNameExpired.HeaderText = "Last Name";
+            this.columnLastNameExpired.Name = "columnLastNameExpired";
+            // 
+            // columnAddressExpired
+            // 
+            this.columnAddressExpired.HeaderText = "Address";
+            this.columnAddressExpired.Name = "columnAddressExpired";
+            // 
+            // columnBirthdateExpired
+            // 
+            this.columnBirthdateExpired.HeaderText = "Birthdate";
+            this.columnBirthdateExpired.Name = "columnBirthdateExpired";
+            // 
+            // columnGenderExpired
+            // 
+            this.columnGenderExpired.HeaderText = "Gender";
+            this.columnGenderExpired.Name = "columnGenderExpired";
+            // 
+            // columnPersonalNoExpired
+            // 
+            this.columnPersonalNoExpired.HeaderText = "Personal Number";
+            this.columnPersonalNoExpired.Name = "columnPersonalNoExpired";
+            // 
+            // columnEmailExpired
+            // 
+            this.columnEmailExpired.HeaderText = "Email";
+            this.columnEmailExpired.Name = "columnEmailExpired";
+            // 
+            // columnPhoneNumberExpired
+            // 
+            this.columnPhoneNumberExpired.HeaderText = "Phone Number";
+            this.columnPhoneNumberExpired.Name = "columnPhoneNumberExpired";
+            // 
+            // columnSubscriptionPlanExpired
+            // 
+            this.columnSubscriptionPlanExpired.HeaderText = "Subscription Plan";
+            this.columnSubscriptionPlanExpired.Name = "columnSubscriptionPlanExpired";
+            // 
+            // columnFromExpired
+            // 
+            this.columnFromExpired.HeaderText = "From:";
+            this.columnFromExpired.Name = "columnFromExpired";
+            // 
+            // columnTillExpired
+            // 
+            this.columnTillExpired.HeaderText = "Till:";
+            this.columnTillExpired.Name = "columnTillExpired";
+            // 
             // tableFooterExpired
             // 
             this.tableFooterExpired.ColumnCount = 3;
@@ -508,55 +674,6 @@
             this.tableSpace3.Size = new System.Drawing.Size(726, 16);
             this.tableSpace3.TabIndex = 1;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Controls.Add(this.picTitle);
-            this.panel1.Location = new System.Drawing.Point(143, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 82);
-            this.panel1.TabIndex = 0;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(151, 17);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(201, 50);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "MEMBERS";
-            // 
-            // picTitle
-            // 
-            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
-            this.picTitle.Location = new System.Drawing.Point(99, 17);
-            this.picTitle.Name = "picTitle";
-            this.picTitle.Size = new System.Drawing.Size(58, 50);
-            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTitle.TabIndex = 0;
-            this.picTitle.TabStop = false;
-            // 
-            // tableHeader
-            // 
-            this.tableHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.tableHeader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableHeader.BackgroundImage")));
-            this.tableHeader.ColumnCount = 3;
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableHeader.Controls.Add(this.panel1, 1, 0);
-            this.tableHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableHeader.Location = new System.Drawing.Point(0, 0);
-            this.tableHeader.Name = "tableHeader";
-            this.tableHeader.RowCount = 1;
-            this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableHeader.Size = new System.Drawing.Size(740, 88);
-            this.tableHeader.TabIndex = 1;
-            // 
             // tabBills
             // 
             this.tabBills.Controls.Add(this.tableDataGridViewBills);
@@ -571,128 +688,6 @@
             this.tabBills.TabIndex = 2;
             this.tabBills.Text = "All Bills";
             this.tabBills.UseVisualStyleBackColor = true;
-            // 
-            // tableSpace4
-            // 
-            this.tableSpace4.ColumnCount = 1;
-            this.tableSpace4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSpace4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableSpace4.Location = new System.Drawing.Point(3, 3);
-            this.tableSpace4.Name = "tableSpace4";
-            this.tableSpace4.RowCount = 1;
-            this.tableSpace4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSpace4.Size = new System.Drawing.Size(726, 16);
-            this.tableSpace4.TabIndex = 2;
-            // 
-            // tableSpaceInfoBills
-            // 
-            this.tableSpaceInfoBills.ColumnCount = 3;
-            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceInfoBills.Controls.Add(this.lblInfoBills, 1, 0);
-            this.tableSpaceInfoBills.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableSpaceInfoBills.Location = new System.Drawing.Point(3, 19);
-            this.tableSpaceInfoBills.Name = "tableSpaceInfoBills";
-            this.tableSpaceInfoBills.RowCount = 1;
-            this.tableSpaceInfoBills.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSpaceInfoBills.Size = new System.Drawing.Size(726, 55);
-            this.tableSpaceInfoBills.TabIndex = 3;
-            // 
-            // lblInfoBills
-            // 
-            this.lblInfoBills.AutoSize = true;
-            this.lblInfoBills.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoBills.Location = new System.Drawing.Point(23, 0);
-            this.lblInfoBills.Name = "lblInfoBills";
-            this.lblInfoBills.Size = new System.Drawing.Size(474, 37);
-            this.lblInfoBills.TabIndex = 8;
-            this.lblInfoBills.Text = "This Displays List of Registered Bills";
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 7;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.6864F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel3.Controls.Add(this.txtSearchBills, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboSortBills, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSearchBills, 5, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 74);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(726, 53);
-            this.tableLayoutPanel3.TabIndex = 4;
-            // 
-            // txtSearchBills
-            // 
-            this.txtSearchBills.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtSearchBills.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchBills.Location = new System.Drawing.Point(23, 3);
-            this.txtSearchBills.Name = "txtSearchBills";
-            this.txtSearchBills.Size = new System.Drawing.Size(264, 39);
-            this.txtSearchBills.TabIndex = 4;
-            // 
-            // comboSortBills
-            // 
-            this.comboSortBills.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboSortBills.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboSortBills.FormattingEnabled = true;
-            this.comboSortBills.Items.AddRange(new object[] {
-            "Ascending Order",
-            "Descending Order"});
-            this.comboSortBills.Location = new System.Drawing.Point(306, 3);
-            this.comboSortBills.Name = "comboSortBills";
-            this.comboSortBills.Size = new System.Drawing.Size(141, 40);
-            this.comboSortBills.TabIndex = 5;
-            // 
-            // btnSearchBills
-            // 
-            this.btnSearchBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.btnSearchBills.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSearchBills.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchBills.ForeColor = System.Drawing.Color.White;
-            this.btnSearchBills.Location = new System.Drawing.Point(465, 3);
-            this.btnSearchBills.Name = "btnSearchBills";
-            this.btnSearchBills.Size = new System.Drawing.Size(229, 40);
-            this.btnSearchBills.TabIndex = 6;
-            this.btnSearchBills.Text = "Search";
-            this.btnSearchBills.UseVisualStyleBackColor = false;
-            // 
-            // tableBottom3
-            // 
-            this.tableBottom3.ColumnCount = 3;
-            this.tableBottom3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableBottom3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableBottom3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableBottom3.Controls.Add(this.lblFooter3, 1, 0);
-            this.tableBottom3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableBottom3.Location = new System.Drawing.Point(3, 474);
-            this.tableBottom3.Name = "tableBottom3";
-            this.tableBottom3.RowCount = 1;
-            this.tableBottom3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableBottom3.Size = new System.Drawing.Size(726, 16);
-            this.tableBottom3.TabIndex = 5;
-            // 
-            // lblFooter3
-            // 
-            this.lblFooter3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFooter3.AutoSize = true;
-            this.lblFooter3.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooter3.Location = new System.Drawing.Point(237, 0);
-            this.lblFooter3.Name = "lblFooter3";
-            this.lblFooter3.Size = new System.Drawing.Size(251, 16);
-            this.lblFooter3.TabIndex = 11;
-            this.lblFooter3.Text = "All Rights, Stackbooks Management System";
             // 
             // tableDataGridViewBills
             // 
@@ -786,125 +781,204 @@
             this.columnTillBill.HeaderText = "Till:";
             this.columnTillBill.Name = "columnTillBill";
             // 
-            // columnIDExpired
+            // tableBottom3
             // 
-            this.columnIDExpired.HeaderText = "ID";
-            this.columnIDExpired.Name = "columnIDExpired";
+            this.tableBottom3.ColumnCount = 3;
+            this.tableBottom3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableBottom3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableBottom3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableBottom3.Controls.Add(this.lblFooter3, 1, 0);
+            this.tableBottom3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableBottom3.Location = new System.Drawing.Point(3, 474);
+            this.tableBottom3.Name = "tableBottom3";
+            this.tableBottom3.RowCount = 1;
+            this.tableBottom3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableBottom3.Size = new System.Drawing.Size(726, 16);
+            this.tableBottom3.TabIndex = 5;
             // 
-            // columnFirstNameExpired
+            // lblFooter3
             // 
-            this.columnFirstNameExpired.HeaderText = "First Name";
-            this.columnFirstNameExpired.Name = "columnFirstNameExpired";
+            this.lblFooter3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFooter3.AutoSize = true;
+            this.lblFooter3.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooter3.Location = new System.Drawing.Point(237, 0);
+            this.lblFooter3.Name = "lblFooter3";
+            this.lblFooter3.Size = new System.Drawing.Size(251, 16);
+            this.lblFooter3.TabIndex = 11;
+            this.lblFooter3.Text = "All Rights, Stackbooks Management System";
             // 
-            // columnLastNameExpired
+            // tableLayoutPanel3
             // 
-            this.columnLastNameExpired.HeaderText = "Last Name";
-            this.columnLastNameExpired.Name = "columnLastNameExpired";
+            this.tableLayoutPanel3.ColumnCount = 7;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.6864F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel3.Controls.Add(this.txtSearchBills, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboSortBills, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSearchBills, 5, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 74);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(726, 53);
+            this.tableLayoutPanel3.TabIndex = 4;
             // 
-            // columnAddressExpired
+            // txtSearchBills
             // 
-            this.columnAddressExpired.HeaderText = "Address";
-            this.columnAddressExpired.Name = "columnAddressExpired";
+            this.txtSearchBills.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtSearchBills.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchBills.Location = new System.Drawing.Point(23, 3);
+            this.txtSearchBills.Name = "txtSearchBills";
+            this.txtSearchBills.Size = new System.Drawing.Size(255, 39);
+            this.txtSearchBills.TabIndex = 4;
             // 
-            // columnBirthdateExpired
+            // comboSortBills
             // 
-            this.columnBirthdateExpired.HeaderText = "Birthdate";
-            this.columnBirthdateExpired.Name = "columnBirthdateExpired";
+            this.comboSortBills.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboSortBills.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboSortBills.FormattingEnabled = true;
+            this.comboSortBills.Items.AddRange(new object[] {
+            "Ascending Order",
+            "Descending Order"});
+            this.comboSortBills.Location = new System.Drawing.Point(297, 3);
+            this.comboSortBills.Name = "comboSortBills";
+            this.comboSortBills.Size = new System.Drawing.Size(137, 40);
+            this.comboSortBills.TabIndex = 5;
             // 
-            // columnGenderExpired
+            // btnSearchBills
             // 
-            this.columnGenderExpired.HeaderText = "Gender";
-            this.columnGenderExpired.Name = "columnGenderExpired";
+            this.btnSearchBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.btnSearchBills.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSearchBills.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchBills.ForeColor = System.Drawing.Color.White;
+            this.btnSearchBills.Location = new System.Drawing.Point(452, 3);
+            this.btnSearchBills.Name = "btnSearchBills";
+            this.btnSearchBills.Size = new System.Drawing.Size(229, 40);
+            this.btnSearchBills.TabIndex = 6;
+            this.btnSearchBills.Text = "Search";
+            this.btnSearchBills.UseVisualStyleBackColor = false;
             // 
-            // columnPersonalNoExpired
+            // tableSpaceInfoBills
             // 
-            this.columnPersonalNoExpired.HeaderText = "Personal Number";
-            this.columnPersonalNoExpired.Name = "columnPersonalNoExpired";
+            this.tableSpaceInfoBills.ColumnCount = 3;
+            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSpaceInfoBills.Controls.Add(this.lblInfoBills, 1, 0);
+            this.tableSpaceInfoBills.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableSpaceInfoBills.Location = new System.Drawing.Point(3, 19);
+            this.tableSpaceInfoBills.Name = "tableSpaceInfoBills";
+            this.tableSpaceInfoBills.RowCount = 1;
+            this.tableSpaceInfoBills.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSpaceInfoBills.Size = new System.Drawing.Size(726, 55);
+            this.tableSpaceInfoBills.TabIndex = 3;
             // 
-            // columnEmailExpired
+            // lblInfoBills
             // 
-            this.columnEmailExpired.HeaderText = "Email";
-            this.columnEmailExpired.Name = "columnEmailExpired";
+            this.lblInfoBills.AutoSize = true;
+            this.lblInfoBills.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoBills.Location = new System.Drawing.Point(23, 0);
+            this.lblInfoBills.Name = "lblInfoBills";
+            this.lblInfoBills.Size = new System.Drawing.Size(474, 37);
+            this.lblInfoBills.TabIndex = 8;
+            this.lblInfoBills.Text = "This Displays List of Registered Bills";
             // 
-            // columnPhoneNumberExpired
+            // tableSpace4
             // 
-            this.columnPhoneNumberExpired.HeaderText = "Phone Number";
-            this.columnPhoneNumberExpired.Name = "columnPhoneNumberExpired";
+            this.tableSpace4.ColumnCount = 1;
+            this.tableSpace4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSpace4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableSpace4.Location = new System.Drawing.Point(3, 3);
+            this.tableSpace4.Name = "tableSpace4";
+            this.tableSpace4.RowCount = 1;
+            this.tableSpace4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableSpace4.Size = new System.Drawing.Size(726, 16);
+            this.tableSpace4.TabIndex = 2;
             // 
-            // columnSubscriptionPlanExpired
+            // subscribersBindingSource1
             // 
-            this.columnSubscriptionPlanExpired.HeaderText = "Subscription Plan";
-            this.columnSubscriptionPlanExpired.Name = "columnSubscriptionPlanExpired";
+            this.subscribersBindingSource1.DataMember = "Subscribers";
+            this.subscribersBindingSource1.DataSource = this.libraryManagementDataSet1;
             // 
-            // columnFromExpired
+            // libraryManagementDataSet1
             // 
-            this.columnFromExpired.HeaderText = "From:";
-            this.columnFromExpired.Name = "columnFromExpired";
+            this.libraryManagementDataSet1.DataSetName = "LibraryManagementDataSet1";
+            this.libraryManagementDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // columnTillExpired
+            // subscribersBindingSource
             // 
-            this.columnTillExpired.HeaderText = "Till:";
-            this.columnTillExpired.Name = "columnTillExpired";
+            this.subscribersBindingSource.DataMember = "Subscribers";
+            this.subscribersBindingSource.DataSource = this.libraryManagementDataSet;
             // 
-            // columnID
+            // libraryManagementDataSet
             // 
-            this.columnID.HeaderText = "ID";
-            this.columnID.Name = "columnID";
+            this.libraryManagementDataSet.DataSetName = "LibraryManagementDataSet";
+            this.libraryManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // columnFirstName
+            // panel1
             // 
-            this.columnFirstName.HeaderText = "First Name";
-            this.columnFirstName.Name = "columnFirstName";
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Controls.Add(this.picTitle);
+            this.panel1.Location = new System.Drawing.Point(143, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(453, 82);
+            this.panel1.TabIndex = 0;
             // 
-            // columnLastName
+            // lblTitle
             // 
-            this.columnLastName.HeaderText = "Last Name";
-            this.columnLastName.Name = "columnLastName";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(151, 17);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(201, 50);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "MEMBERS";
             // 
-            // columnAddress
+            // picTitle
             // 
-            this.columnAddress.HeaderText = "Address";
-            this.columnAddress.Name = "columnAddress";
+            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
+            this.picTitle.Location = new System.Drawing.Point(99, 17);
+            this.picTitle.Name = "picTitle";
+            this.picTitle.Size = new System.Drawing.Size(58, 50);
+            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTitle.TabIndex = 0;
+            this.picTitle.TabStop = false;
             // 
-            // columnBirthdate
+            // tableHeader
             // 
-            this.columnBirthdate.HeaderText = "Birthdate";
-            this.columnBirthdate.Name = "columnBirthdate";
+            this.tableHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.tableHeader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableHeader.BackgroundImage")));
+            this.tableHeader.ColumnCount = 3;
+            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableHeader.Controls.Add(this.panel1, 1, 0);
+            this.tableHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableHeader.Location = new System.Drawing.Point(0, 0);
+            this.tableHeader.Name = "tableHeader";
+            this.tableHeader.RowCount = 1;
+            this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableHeader.Size = new System.Drawing.Size(740, 88);
+            this.tableHeader.TabIndex = 1;
             // 
-            // columnGender
+            // subscribersTableAdapter
             // 
-            this.columnGender.HeaderText = "Gender";
-            this.columnGender.Name = "columnGender";
+            this.subscribersTableAdapter.ClearBeforeFill = true;
             // 
-            // columnPersonalNumber
+            // subscribersTableAdapter1
             // 
-            this.columnPersonalNumber.HeaderText = "Personal Number";
-            this.columnPersonalNumber.Name = "columnPersonalNumber";
-            // 
-            // columnEmail
-            // 
-            this.columnEmail.HeaderText = "Email";
-            this.columnEmail.Name = "columnEmail";
-            // 
-            // columnPhoneNumber
-            // 
-            this.columnPhoneNumber.HeaderText = "Phone Number";
-            this.columnPhoneNumber.Name = "columnPhoneNumber";
-            // 
-            // columnSubscriptionPlan
-            // 
-            this.columnSubscriptionPlan.HeaderText = "Subscription Plan";
-            this.columnSubscriptionPlan.Name = "columnSubscriptionPlan";
-            // 
-            // columnFromDate
-            // 
-            this.columnFromDate.HeaderText = "From:";
-            this.columnFromDate.Name = "columnFromDate";
-            // 
-            // columnTillDate
-            // 
-            this.columnTillDate.HeaderText = "Till:";
-            this.columnTillDate.Name = "columnTillDate";
+            this.subscribersTableAdapter1.ClearBeforeFill = true;
             // 
             // MembersForm
             // 
@@ -917,11 +991,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Members (Stackbooks)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MembersForm_Load);
             this.panelFullBody.ResumeLayout(false);
             this.tabControlMembersForm.ResumeLayout(false);
             this.tabMainPage.ResumeLayout(false);
             this.tableDataGridView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             this.tableBottomSpace.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -935,19 +1011,23 @@
             this.tableFooterExpired.PerformLayout();
             this.tableSpaceExpiredInfo.ResumeLayout(false);
             this.tableSpaceExpiredInfo.PerformLayout();
+            this.tabBills.ResumeLayout(false);
+            this.tableDataGridViewBills.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).EndInit();
+            this.tableBottom3.ResumeLayout(false);
+            this.tableBottom3.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableSpaceInfoBills.ResumeLayout(false);
+            this.tableSpaceInfoBills.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subscribersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryManagementDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subscribersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryManagementDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.tableHeader.ResumeLayout(false);
-            this.tabBills.ResumeLayout(false);
-            this.tableSpaceInfoBills.ResumeLayout(false);
-            this.tableSpaceInfoBills.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableBottom3.ResumeLayout(false);
-            this.tableBottom3.PerformLayout();
-            this.tableDataGridViewBills.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -964,12 +1044,11 @@
         private System.Windows.Forms.Button btnDeleteMember;
         private System.Windows.Forms.TableLayoutPanel tableButtons;
         private System.Windows.Forms.TableLayoutPanel tableSearch;
-        private System.Windows.Forms.TextBox textSearchMember;
+        private System.Windows.Forms.TextBox txtSearchMember;
         private System.Windows.Forms.ComboBox comboSortMember;
         private System.Windows.Forms.Button btnSearchMember;
         private System.Windows.Forms.TableLayoutPanel tableBottomSpace;
         private System.Windows.Forms.TableLayoutPanel tableDataGridView;
-        private System.Windows.Forms.DataGridView dgvMembers;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox picTitle;
@@ -1018,17 +1097,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnSubscriptionPlanExpired;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFromExpired;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnTillExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnLastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnBirthdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnGender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPersonalNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPhoneNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnSubscriptionPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFromDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnTillDate;
+        private LibraryManagementDataSet libraryManagementDataSet;
+        private System.Windows.Forms.BindingSource subscribersBindingSource;
+        private LibraryManagementDataSetTableAdapters.SubscribersTableAdapter subscribersTableAdapter;
+        private LibraryManagementDataSet1 libraryManagementDataSet1;
+        private System.Windows.Forms.BindingSource subscribersBindingSource1;
+        private LibraryManagementDataSet1TableAdapters.SubscribersTableAdapter subscribersTableAdapter1;
+        private DevExpress.XtraGrid.GridControl gridMembers;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colLastName;
+        private DevExpress.XtraGrid.Columns.GridColumn colAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colBirthday;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonalNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhoneNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmail;
+        private DevExpress.XtraGrid.Columns.GridColumn colGender;
+        private DevExpress.XtraGrid.Columns.GridColumn colInsDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colExpirationDate;
     }
 }

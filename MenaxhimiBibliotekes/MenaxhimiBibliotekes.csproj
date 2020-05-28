@@ -33,6 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.8.6.2\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
@@ -53,6 +60,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LibraryManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryManagementDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryManagementDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryManagementDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login Forms\loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +165,12 @@
     </Compile>
     <Compile Include="Materials Forms\SpecificMaterialForm.Designer.cs">
       <DependentUpon>SpecificMaterialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials Forms\TemporaryTestingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\TemporaryTestingForm.Designer.cs">
+      <DependentUpon>TemporaryTestingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Materials Forms\UpdateMaterialForm.cs">
       <SubType>Form</SubType>
@@ -307,6 +330,9 @@
     <EmbeddedResource Include="Materials Forms\SpecificMaterialForm.resx">
       <DependentUpon>SpecificMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\TemporaryTestingForm.resx">
+      <DependentUpon>TemporaryTestingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\UpdateMaterialForm.resx">
       <DependentUpon>UpdateMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +366,7 @@
     <EmbeddedResource Include="Notifications Forms\ucNotificationMessages.resx">
       <DependentUpon>ucNotificationMessages.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -371,6 +398,28 @@
     <EmbeddedResource Include="Submenus-User-Controls\ucMembers.resx">
       <DependentUpon>ucMembers.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="LibraryManagementDataSet.xsc">
+      <DependentUpon>LibraryManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibraryManagementDataSet.xss">
+      <DependentUpon>LibraryManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryManagementDataSet1.xsc">
+      <DependentUpon>LibraryManagementDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryManagementDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryManagementDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibraryManagementDataSet1.xss">
+      <DependentUpon>LibraryManagementDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
