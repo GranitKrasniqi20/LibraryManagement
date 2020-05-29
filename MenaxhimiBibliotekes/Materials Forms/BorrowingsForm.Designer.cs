@@ -215,6 +215,7 @@
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -386,8 +387,6 @@
             this.tableContents.Controls.Add(this.txtEmail, 3, 2);
             this.tableContents.Controls.Add(this.txtPhoneNumber, 3, 3);
             this.tableContents.Controls.Add(this.txtPersonalNumber, 3, 4);
-            this.tableContents.Controls.Add(this.lblMaterialNameReservations, 5, 0);
-            this.tableContents.Controls.Add(this.lblMaterialTypeReservations, 5, 1);
             this.tableContents.Controls.Add(this.lblOverallQuantityReservations, 5, 2);
             this.tableContents.Controls.Add(this.lblStockQuantityReservations, 5, 3);
             this.tableContents.Controls.Add(this.lblAvailabilityReservations, 5, 4);
@@ -396,6 +395,8 @@
             this.tableContents.Controls.Add(this.txtOverallQuantity, 7, 2);
             this.tableContents.Controls.Add(this.txtStockQuantity, 7, 3);
             this.tableContents.Controls.Add(this.txtAvailability, 7, 4);
+            this.tableContents.Controls.Add(this.lblMaterialNameReservations, 5, 0);
+            this.tableContents.Controls.Add(this.lblMaterialTypeReservations, 5, 1);
             this.tableContents.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableContents.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableContents.Location = new System.Drawing.Point(0, 320);
@@ -667,6 +668,7 @@
             this.btnBorrowNow.TabIndex = 2;
             this.btnBorrowNow.Text = "Borrow Now";
             this.btnBorrowNow.UseVisualStyleBackColor = false;
+            this.btnBorrowNow.Click += new System.EventHandler(this.BtnBorrowNow_Click);
             // 
             // tableBottom2
             // 

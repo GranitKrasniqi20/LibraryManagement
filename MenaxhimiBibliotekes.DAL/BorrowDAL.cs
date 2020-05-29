@@ -41,11 +41,7 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             command.Parameters.AddWithValue("Comment", obj.Comment);
                         }
-
-                        //if (obj.BorrowDate != )
-                        //{
-                        //    command.Parameters.AddWithValue("BorrowDate", obj.BorrowDate);
-                        //}
+                            command.Parameters.AddWithValue("BorrowDate", obj.BorrowDate);
 
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
 

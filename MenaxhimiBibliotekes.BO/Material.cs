@@ -8,6 +8,7 @@ namespace MenaxhimiBibliotekes.BO
 {
     public class Material : Audit
     {
+
         public Material()
         {
             _Genre = new Genre();
