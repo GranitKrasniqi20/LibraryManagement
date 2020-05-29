@@ -177,7 +177,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
                         MessageBox.Show("The subscription was successfully updated!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         CookieSubscriber.ID = int.Parse(txtMemberID.Text);
-                        CookieSubscriber.FullName = subscriber.Name + "\t " + subscriber.LastName;
+                        CookieSubscriber.FullName = subscriber.Name + " " + subscriber.LastName;
                         CookieSubscriber.PersonalNumber = subscriber.PersonalNo;
                         CookieSubscriber.SubscriptionPlan = subscriptionPlanVariable;
                         CookieSubscriber.BillingDate = bill.BillingDate;

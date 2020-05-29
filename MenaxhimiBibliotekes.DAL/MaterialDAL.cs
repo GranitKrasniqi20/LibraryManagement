@@ -181,7 +181,7 @@ namespace MenaxhimiBibliotekes.DAL
                 material = new Material();
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "usp_GetMaterial", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_GetAllMaterials", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {

@@ -31,28 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialsForm));
             this.tabMainPage = new System.Windows.Forms.TabPage();
             this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvMembers = new System.Windows.Forms.DataGridView();
-            this.IDCOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaterialType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Language = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PublishHouse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PublishDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PublishPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridMaterials = new DevExpress.XtraGrid.GridControl();
+            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaterialType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTitle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGenre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLanguage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPublishHouse = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPublishYear = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAvailableCoppies = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumberOfPages = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableBottomSpace = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitleCreate = new System.Windows.Forms.Label();
             this.tableSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.textSearchMaterial = new System.Windows.Forms.TextBox();
+            this.txtSearchMaterial = new System.Windows.Forms.TextBox();
             this.btnSearchMaterial = new System.Windows.Forms.Button();
-            this.tableComboboxes = new System.Windows.Forms.TableLayoutPanel();
-            this.comboSortMaterial = new System.Windows.Forms.ComboBox();
-            this.comboMaterialType = new System.Windows.Forms.ComboBox();
             this.tableButtons = new System.Windows.Forms.TableLayoutPanel();
             this.tableSpace2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddMaterial = new System.Windows.Forms.Button();
@@ -93,11 +88,11 @@
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.tabMainPage.SuspendLayout();
             this.tableDataGridView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMaterials)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.tableBottomSpace.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableSearch.SuspendLayout();
-            this.tableComboboxes.SuspendLayout();
             this.tableSpace2.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabReservationsBorrowings.SuspendLayout();
@@ -116,7 +111,6 @@
             this.tabMainPage.Controls.Add(this.tableDataGridView);
             this.tabMainPage.Controls.Add(this.tableBottomSpace);
             this.tabMainPage.Controls.Add(this.tableSearch);
-            this.tabMainPage.Controls.Add(this.tableComboboxes);
             this.tabMainPage.Controls.Add(this.tableButtons);
             this.tabMainPage.Controls.Add(this.tableSpace2);
             this.tabMainPage.Controls.Add(this.tableSpace1);
@@ -134,97 +128,112 @@
             this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableDataGridView.Controls.Add(this.dgvMembers, 1, 0);
+            this.tableDataGridView.Controls.Add(this.gridMaterials, 1, 0);
             this.tableDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableDataGridView.Location = new System.Drawing.Point(3, 203);
+            this.tableDataGridView.Location = new System.Drawing.Point(3, 150);
             this.tableDataGridView.Name = "tableDataGridView";
             this.tableDataGridView.RowCount = 1;
             this.tableDataGridView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDataGridView.Size = new System.Drawing.Size(726, 265);
+            this.tableDataGridView.Size = new System.Drawing.Size(726, 318);
             this.tableDataGridView.TabIndex = 0;
             // 
-            // dgvMembers
+            // gridMaterials
             // 
-            this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDCOL,
-            this.Title,
-            this.Author,
-            this.MaterialType,
-            this.Genre,
-            this.Language,
-            this.ISBN,
-            this.PublishHouse,
-            this.PublishDate,
-            this.PublishPlace,
-            this.Quantity,
-            this.Pages});
-            this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMembers.Location = new System.Drawing.Point(23, 3);
-            this.dgvMembers.Name = "dgvMembers";
-            this.dgvMembers.Size = new System.Drawing.Size(680, 259);
-            this.dgvMembers.TabIndex = 8;
+            this.gridMaterials.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridMaterials.Location = new System.Drawing.Point(23, 3);
+            this.gridMaterials.MainView = this.gridView;
+            this.gridMaterials.Name = "gridMaterials";
+            this.gridMaterials.Size = new System.Drawing.Size(680, 312);
+            this.gridMaterials.TabIndex = 0;
+            this.gridMaterials.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView});
             // 
-            // IDCOL
+            // gridView
             // 
-            this.IDCOL.HeaderText = "ID";
-            this.IDCOL.Name = "IDCOL";
+            this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID,
+            this.colMaterialType,
+            this.colTitle,
+            this.colGenre,
+            this.colLanguage,
+            this.colPublishHouse,
+            this.colPublishYear,
+            this.colAvailableCoppies,
+            this.colNumberOfPages});
+            this.gridView.GridControl = this.gridMaterials;
+            this.gridView.Name = "gridView";
             // 
-            // Title
+            // colID
             // 
-            this.Title.HeaderText = "Title";
-            this.Title.Name = "Title";
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "MaterialId";
+            this.colID.Name = "colID";
+            this.colID.Visible = true;
+            this.colID.VisibleIndex = 0;
             // 
-            // Author
+            // colMaterialType
             // 
-            this.Author.HeaderText = "Author";
-            this.Author.Name = "Author";
+            this.colMaterialType.Caption = "Material Type";
+            this.colMaterialType.FieldName = "_MaterialType._MaterialType";
+            this.colMaterialType.Name = "colMaterialType";
+            this.colMaterialType.Visible = true;
+            this.colMaterialType.VisibleIndex = 2;
             // 
-            // MaterialType
+            // colTitle
             // 
-            this.MaterialType.HeaderText = "Material Type";
-            this.MaterialType.Name = "MaterialType";
+            this.colTitle.Caption = "Title";
+            this.colTitle.FieldName = "Title";
+            this.colTitle.Name = "colTitle";
+            this.colTitle.Visible = true;
+            this.colTitle.VisibleIndex = 1;
             // 
-            // Genre
+            // colGenre
             // 
-            this.Genre.HeaderText = "Genre";
-            this.Genre.Name = "Genre";
+            this.colGenre.Caption = "Genre";
+            this.colGenre.FieldName = "_Genre._Genre";
+            this.colGenre.Name = "colGenre";
+            this.colGenre.Visible = true;
+            this.colGenre.VisibleIndex = 3;
             // 
-            // Language
+            // colLanguage
             // 
-            this.Language.HeaderText = "Language";
-            this.Language.Name = "Language";
+            this.colLanguage.Caption = "Language";
+            this.colLanguage.FieldName = "_Language._Language";
+            this.colLanguage.Name = "colLanguage";
+            this.colLanguage.Visible = true;
+            this.colLanguage.VisibleIndex = 4;
             // 
-            // ISBN
+            // colPublishHouse
             // 
-            this.ISBN.HeaderText = "ISBN";
-            this.ISBN.Name = "ISBN";
+            this.colPublishHouse.Caption = "Publish House";
+            this.colPublishHouse.FieldName = "_PublishHouse._PublishHouse";
+            this.colPublishHouse.Name = "colPublishHouse";
+            this.colPublishHouse.Visible = true;
+            this.colPublishHouse.VisibleIndex = 5;
             // 
-            // PublishHouse
+            // colPublishYear
             // 
-            this.PublishHouse.HeaderText = "Publish House";
-            this.PublishHouse.Name = "PublishHouse";
+            this.colPublishYear.Caption = "Publish Year";
+            this.colPublishYear.FieldName = "PublishYear";
+            this.colPublishYear.Name = "colPublishYear";
+            this.colPublishYear.Visible = true;
+            this.colPublishYear.VisibleIndex = 6;
             // 
-            // PublishDate
+            // colAvailableCoppies
             // 
-            this.PublishDate.HeaderText = "Publish Date";
-            this.PublishDate.Name = "PublishDate";
+            this.colAvailableCoppies.Caption = "Available Coppies";
+            this.colAvailableCoppies.FieldName = "AvailableCoppies";
+            this.colAvailableCoppies.Name = "colAvailableCoppies";
+            this.colAvailableCoppies.Visible = true;
+            this.colAvailableCoppies.VisibleIndex = 7;
             // 
-            // PublishPlace
+            // colNumberOfPages
             // 
-            this.PublishPlace.HeaderText = "Publish Place";
-            this.PublishPlace.Name = "PublishPlace";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            // 
-            // Pages
-            // 
-            this.Pages.HeaderText = "No. of Pages";
-            this.Pages.Name = "Pages";
+            this.colNumberOfPages.Caption = "No. Pages";
+            this.colNumberOfPages.FieldName = "NumberOfPages";
+            this.colNumberOfPages.Name = "colNumberOfPages";
+            this.colNumberOfPages.Visible = true;
+            this.colNumberOfPages.VisibleIndex = 8;
             // 
             // tableBottomSpace
             // 
@@ -275,11 +284,11 @@
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSearch.Controls.Add(this.textSearchMaterial, 1, 0);
+            this.tableSearch.Controls.Add(this.txtSearchMaterial, 1, 0);
             this.tableSearch.Controls.Add(this.btnSearchMaterial, 3, 0);
             this.tableSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableSearch.Location = new System.Drawing.Point(3, 150);
+            this.tableSearch.Location = new System.Drawing.Point(3, 97);
             this.tableSearch.Name = "tableSearch";
             this.tableSearch.RowCount = 1;
             this.tableSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -287,14 +296,14 @@
             this.tableSearch.Size = new System.Drawing.Size(726, 53);
             this.tableSearch.TabIndex = 0;
             // 
-            // textSearchMaterial
+            // txtSearchMaterial
             // 
-            this.textSearchMaterial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textSearchMaterial.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearchMaterial.Location = new System.Drawing.Point(23, 3);
-            this.textSearchMaterial.Name = "textSearchMaterial";
-            this.textSearchMaterial.Size = new System.Drawing.Size(431, 39);
-            this.textSearchMaterial.TabIndex = 6;
+            this.txtSearchMaterial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSearchMaterial.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchMaterial.Location = new System.Drawing.Point(23, 3);
+            this.txtSearchMaterial.Name = "txtSearchMaterial";
+            this.txtSearchMaterial.Size = new System.Drawing.Size(431, 39);
+            this.txtSearchMaterial.TabIndex = 6;
             // 
             // btnSearchMaterial
             // 
@@ -308,54 +317,7 @@
             this.btnSearchMaterial.TabIndex = 7;
             this.btnSearchMaterial.Text = "Search";
             this.btnSearchMaterial.UseVisualStyleBackColor = false;
-            // 
-            // tableComboboxes
-            // 
-            this.tableComboboxes.ColumnCount = 7;
-            this.tableComboboxes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableComboboxes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tableComboboxes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tableComboboxes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableComboboxes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableComboboxes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableComboboxes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableComboboxes.Controls.Add(this.comboSortMaterial, 3, 0);
-            this.tableComboboxes.Controls.Add(this.comboMaterialType, 1, 0);
-            this.tableComboboxes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableComboboxes.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableComboboxes.Location = new System.Drawing.Point(3, 97);
-            this.tableComboboxes.Name = "tableComboboxes";
-            this.tableComboboxes.RowCount = 1;
-            this.tableComboboxes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableComboboxes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tableComboboxes.Size = new System.Drawing.Size(726, 53);
-            this.tableComboboxes.TabIndex = 0;
-            // 
-            // comboSortMaterial
-            // 
-            this.comboSortMaterial.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboSortMaterial.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboSortMaterial.FormattingEnabled = true;
-            this.comboSortMaterial.Items.AddRange(new object[] {
-            "Sort By Asceding",
-            "Sort By Descending"});
-            this.comboSortMaterial.Location = new System.Drawing.Point(286, 3);
-            this.comboSortMaterial.Name = "comboSortMaterial";
-            this.comboSortMaterial.Size = new System.Drawing.Size(168, 40);
-            this.comboSortMaterial.TabIndex = 5;
-            // 
-            // comboMaterialType
-            // 
-            this.comboMaterialType.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboMaterialType.FormattingEnabled = true;
-            this.comboMaterialType.Items.AddRange(new object[] {
-            "Search All Materials",
-            "Search Books",
-            "Search Journals"});
-            this.comboMaterialType.Location = new System.Drawing.Point(23, 3);
-            this.comboMaterialType.Name = "comboMaterialType";
-            this.comboMaterialType.Size = new System.Drawing.Size(244, 40);
-            this.comboMaterialType.TabIndex = 4;
+            this.btnSearchMaterial.Click += new System.EventHandler(this.btnSearchMaterial_Click);
             // 
             // tableButtons
             // 
@@ -647,9 +609,8 @@
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Search All Materials",
-            "Search Books",
-            "Search Journals"});
+            "Reservations",
+            "Borrowings"});
             this.comboBox1.Location = new System.Drawing.Point(23, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 40);
@@ -806,13 +767,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabMainPage.ResumeLayout(false);
             this.tableDataGridView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMaterials)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             this.tableBottomSpace.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableSearch.ResumeLayout(false);
             this.tableSearch.PerformLayout();
-            this.tableComboboxes.ResumeLayout(false);
             this.tableSpace2.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabReservationsBorrowings.ResumeLayout(false);
@@ -834,26 +795,10 @@
         #endregion
         private System.Windows.Forms.TabPage tabMainPage;
         private System.Windows.Forms.TableLayoutPanel tableDataGridView;
-        private System.Windows.Forms.DataGridView dgvMembers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDCOL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaterialType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Language;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ISBN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PublishHouse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PublishDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PublishPlace;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pages;
         private System.Windows.Forms.TableLayoutPanel tableBottomSpace;
         private System.Windows.Forms.TableLayoutPanel tableSearch;
-        private System.Windows.Forms.TextBox textSearchMaterial;
+        private System.Windows.Forms.TextBox txtSearchMaterial;
         private System.Windows.Forms.Button btnSearchMaterial;
-        private System.Windows.Forms.TableLayoutPanel tableComboboxes;
-        private System.Windows.Forms.ComboBox comboSortMaterial;
-        private System.Windows.Forms.ComboBox comboMaterialType;
         private System.Windows.Forms.TableLayoutPanel tableButtons;
         private System.Windows.Forms.TableLayoutPanel tableSpace2;
         private System.Windows.Forms.Button btnAddMaterial;
@@ -894,5 +839,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Label label22;
+        private DevExpress.XtraGrid.GridControl gridMaterials;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaterialType;
+        private DevExpress.XtraGrid.Columns.GridColumn colTitle;
+        private DevExpress.XtraGrid.Columns.GridColumn colGenre;
+        private DevExpress.XtraGrid.Columns.GridColumn colLanguage;
+        private DevExpress.XtraGrid.Columns.GridColumn colPublishHouse;
+        private DevExpress.XtraGrid.Columns.GridColumn colPublishYear;
+        private DevExpress.XtraGrid.Columns.GridColumn colAvailableCoppies;
+        private DevExpress.XtraGrid.Columns.GridColumn colNumberOfPages;
     }
 }

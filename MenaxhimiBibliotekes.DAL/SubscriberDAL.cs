@@ -316,8 +316,7 @@ namespace MenaxhimiBibliotekes.DAL
                 subscriber = new Subscriber();
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "SELECT MAX(SubscriberId) as Id FROM Subscribers; ",
-                        CommandType.Text))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscribers_MaxId", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
