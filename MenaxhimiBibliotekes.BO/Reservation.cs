@@ -12,7 +12,7 @@ namespace MenaxhimiBibliotekes.BO
         public int SubscriberId { get; set; }
         public virtual Subscriber _subscriber { get; set; }
         public int MaterialId { get; set; }
-        public virtual Material _materiald { get; set; }
+        public virtual Material _material { get; set; }
         public DateTime ReservationDate { get; set; }
     }
 }

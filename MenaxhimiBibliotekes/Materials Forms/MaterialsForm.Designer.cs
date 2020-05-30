@@ -63,7 +63,7 @@
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.txtBorrowings = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboChoseGrid = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.btnBorrowings = new System.Windows.Forms.Button();
@@ -521,7 +521,7 @@
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel14.Controls.Add(this.button4, 5, 0);
             this.tableLayoutPanel14.Controls.Add(this.txtBorrowings, 3, 0);
-            this.tableLayoutPanel14.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel14.Controls.Add(this.comboChoseGrid, 1, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel14.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 97);
@@ -555,18 +555,18 @@
             this.txtBorrowings.TabIndex = 6;
             this.txtBorrowings.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
-            // comboBox1
+            // comboChoseGrid
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboChoseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboChoseGrid.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboChoseGrid.FormattingEnabled = true;
+            this.comboChoseGrid.Items.AddRange(new object[] {
             "Reservations",
             "Borrowings"});
-            this.comboBox1.Location = new System.Drawing.Point(23, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 40);
-            this.comboBox1.TabIndex = 8;
+            this.comboChoseGrid.Location = new System.Drawing.Point(23, 3);
+            this.comboChoseGrid.Name = "comboChoseGrid";
+            this.comboChoseGrid.Size = new System.Drawing.Size(209, 40);
+            this.comboChoseGrid.TabIndex = 8;
             // 
             // tableLayoutPanel13
             // 
@@ -1011,7 +1011,7 @@
             this.gridBorrowings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gridBorrowings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridBorrowings.Location = new System.Drawing.Point(0, 0);
-            this.gridBorrowings.MainView = this.gridView3;
+            this.gridBorrowings.MainView = this.gridView1;
             this.gridBorrowings.Name = "gridBorrowings";
             this.gridBorrowings.Size = new System.Drawing.Size(680, 308);
             this.gridBorrowings.TabIndex = 0;
@@ -1092,7 +1092,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtBorrowings;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboChoseGrid;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;

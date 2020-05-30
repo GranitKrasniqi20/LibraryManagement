@@ -37,8 +37,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 borrBLL = new BorrowBLL();
                 borrBO= borrBLL.Get(b);
-                if (borrBO.BorrowId > 0)
+                if (borrBO != null)
                 {
+
+               
+
                     txtMemberID.Text = borrBO._subscriber.SubscriberId.ToString() ;
                     txtMemberFullName.Text = $"{borrBO._subscriber.Name} {borrBO._subscriber.LastName}";
                     txtMaterialName.Text = borrBO._material.Title;
@@ -56,6 +59,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                         txtReturnedInTime.Text = "Yes";
                     }
 
+                  
                 }
             }
         }
@@ -68,9 +72,15 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void BtnCalculateMaterialDamage_Click(object sender, EventArgs e)
         {
-             delayfee = calculateDelays(borrBO.DeadLine) * borrBO._material._MaterialType.MaterialTypeDelayFee;
-            txtDelayFee.Text = $"{String.Format("{0:F2}", delayfee)} $";
-            PayBill = true;
+            if (calculateDelays(borrBO.DeadLine) >= 0)
+            {
+                delayfee = calculateDelays(borrBO.DeadLine) * borrBO._material._MaterialType.MaterialTypeDelayFee;
+                txtDelayFee.Text = $"{String.Format("{0:F2}", delayfee)} $";
+                
+                PayBill = true;
+            }
+            delayfee = 0;
+
         }
 
         private void BtnRegisterReturn_Click(object sender, EventArgs e)

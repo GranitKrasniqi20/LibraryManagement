@@ -30,7 +30,7 @@ namespace MenaxhimiBibliotekes.BLL
 
         public List<Reservation> GetAll()
         {
-            throw new NotImplementedException();
+           return reservationDAL.GetAll();
         }
 
         public int Update(Reservation obj)

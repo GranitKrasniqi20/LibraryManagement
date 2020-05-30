@@ -1,4 +1,5 @@
 ﻿using MenaxhimiBibliotekes.BLL;
+using MenaxhimiBibliotekes.BO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         BorrowingsForm borrowingsForm = new BorrowingsForm();
         ReturningsForm returningsForm = new ReturningsForm();
         BorrowBLL bbll = new BorrowBLL();
-
+        ReservationBLL res;
+        Reservation reservationBO;
         MaterialBLL materialBLL = new MaterialBLL();
 
         public MaterialsForm()
@@ -107,22 +109,55 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            //x => x._subscriber.SubscriberId == 2 ||
 
+            //x => x._subscriber.SubscriberId == 2 ||
             int m;
             bool isNumeric = int.TryParse(txtBorrowings.Text, out m);
 
-            if (isNumeric)
+            if (comboChoseGrid.SelectedItem == "Borrowings")
             {
-                gridBorrowings.DataSource = bbll.GetAll().Where(x => x.SubscriberId == m ||
-x.materialId == m ||x.BorrowId == m);
-            }
-            else
-            {
-                gridBorrowings.DataSource = bbll.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text ||
-x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text || x._shelf.Location == txtBorrowings.Text);
+
+
+
+
+                if (isNumeric)
+                {
+                    gridBorrowings.DataSource = bbll.GetAll().Where(x => x.SubscriberId == m ||
+                    x.materialId == m || x.BorrowId == m);
+                }
+                else
+                {
+                    gridBorrowings.DataSource = bbll.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text ||
+                      x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text || x._shelf.Location == txtBorrowings.Text);
+                }
             }
 
+            else
+            {
+                reservationBO = new Reservation();
+                res = new ReservationBLL();
+
+                if (isNumeric)
+                {
+                    gridBorrowings.MainView = gridView3;
+                    gridBorrowings.DataSource = res.GetAll().Where(x => x.SubscriberId == m ||
+                    x.MaterialId == m || x.MaterialId == m);
+                }
+                else
+                {
+                    gridBorrowings.MainView = gridView1;
+                    if (txtBorrowings.Text == string.Empty)
+                    {
+                        gridBorrowings.DataSource = res.GetAll();
+                    }
+                    else
+                    {
+                        gridBorrowings.DataSource = res.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text||
+                        x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text );
+                    }
+                }
+            }
+            
 
         }
 
