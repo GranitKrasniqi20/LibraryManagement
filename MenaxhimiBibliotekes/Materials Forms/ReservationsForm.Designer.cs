@@ -277,6 +277,7 @@
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tableSpace5
             // 
@@ -314,7 +315,6 @@
             this.tableContents.Controls.Add(this.txtPhoneNumber, 3, 3);
             this.tableContents.Controls.Add(this.txtPersonalNumber, 3, 4);
             this.tableContents.Controls.Add(this.lblMaterialName, 5, 0);
-            this.tableContents.Controls.Add(this.lblMaterialType, 5, 1);
             this.tableContents.Controls.Add(this.lblOverallQuantity, 5, 2);
             this.tableContents.Controls.Add(this.lblStockQuantity, 5, 3);
             this.tableContents.Controls.Add(this.lblAvailability, 5, 4);
@@ -323,6 +323,7 @@
             this.tableContents.Controls.Add(this.txtOverallQuantity, 7, 2);
             this.tableContents.Controls.Add(this.txtStockQuantity, 7, 3);
             this.tableContents.Controls.Add(this.txtAvailability, 7, 4);
+            this.tableContents.Controls.Add(this.lblMaterialType, 5, 1);
             this.tableContents.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableContents.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableContents.Location = new System.Drawing.Point(0, 320);
@@ -693,6 +694,7 @@
             this.btnReserveNow.TabIndex = 2;
             this.btnReserveNow.Text = "Reserve Now";
             this.btnReserveNow.UseVisualStyleBackColor = false;
+            this.btnReserveNow.Click += new System.EventHandler(this.btnReserveNow_Click);
             // 
             // ReservationsForm
             // 

@@ -816,7 +816,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel3.Controls.Add(this.txtSearchBills, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboSortBills, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnSearchBills, 5, 0);
@@ -848,7 +848,7 @@
             "Descending Order"});
             this.comboSortBills.Location = new System.Drawing.Point(297, 3);
             this.comboSortBills.Name = "comboSortBills";
-            this.comboSortBills.Size = new System.Drawing.Size(137, 40);
+            this.comboSortBills.Size = new System.Drawing.Size(136, 40);
             this.comboSortBills.TabIndex = 5;
             // 
             // btnSearchBills
@@ -857,7 +857,7 @@
             this.btnSearchBills.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchBills.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchBills.ForeColor = System.Drawing.Color.White;
-            this.btnSearchBills.Location = new System.Drawing.Point(452, 3);
+            this.btnSearchBills.Location = new System.Drawing.Point(451, 3);
             this.btnSearchBills.Name = "btnSearchBills";
             this.btnSearchBills.Size = new System.Drawing.Size(229, 40);
             this.btnSearchBills.TabIndex = 6;

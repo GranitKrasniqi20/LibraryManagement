@@ -44,9 +44,9 @@ namespace MenaxhimiBibliotekes.Members_Forms
         private void MembersForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'libraryManagementDataSet1.Subscribers' table. You can move, or remove it, as needed.
-            this.subscribersTableAdapter1.Fill(this.libraryManagementDataSet1.Subscribers);
+            //this.subscribersTableAdapter1.Fill(this.libraryManagementDataSet1.Subscribers);
             // TODO: This line of code loads data into the 'libraryManagementDataSet.Subscribers' table. You can move, or remove it, as needed.
-            this.subscribersTableAdapter.Fill(this.libraryManagementDataSet.Subscribers);
+            //this.subscribersTableAdapter.Fill(this.libraryManagementDataSet.Subscribers);
 
         }
 

@@ -55,12 +55,6 @@ namespace MenaxhimiBibliotekes.DAL
         }
 
 
-
-
-
-
-
-
         public int Add(Subscriber obj)
         {
             int isInserted ;
@@ -137,8 +131,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
-
-
         public Subscriber Get(int Id)
         {
             try
@@ -168,7 +160,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
 
         public List<Subscriber> GetAll()
         {
@@ -341,5 +332,142 @@ namespace MenaxhimiBibliotekes.DAL
         }
 
         
+        #region
+        public int NumberOfActiveSubscribers()
+        {
+            int n;
+            try
+            {
+                subscriber = new Subscriber();
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_NumberOfActiveSubscriber", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                n = int.Parse(reader["Id"].ToString());
+                                return n;
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
+        }
+
+        public int NumberOfNonActiveSubscribers()
+        {
+            int n;
+            try
+            {
+                subscriber = new Subscriber();
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_NumberOfNonActiveSubscriber", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                n = int.Parse(reader["Id"].ToString());
+                                return n;
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
+        }
+
+        public List<Subscriber> Get5LastSubscribers()
+        {
+            try
+            {
+                List<Subscriber> _nSubscriber = new List<Subscriber>();
+                subscriber = new Subscriber();
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Get5LastSubscriber", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+                                    subscriber = ToBO(sqr);
+                                    if (subscriber == null)
+                                    {
+                                        throw new Exception();
+                                    }
+
+                                    _nSubscriber.Add(subscriber);
+                                }
+                            }
+                            return _nSubscriber;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public List<Subscriber> Get10LastSubscribers()
+        {
+            try
+            {
+                List<Subscriber> _nSubscriber = new List<Subscriber>();
+                subscriber = new Subscriber();
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Get10LastSubscriber", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+                                    subscriber = ToBO(sqr);
+                                    if (subscriber == null)
+                                    {
+                                        throw new Exception();
+                                    }
+
+                                    _nSubscriber.Add(subscriber);
+                                }
+                            }
+                            return _nSubscriber;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        #endregion
     }
 }
