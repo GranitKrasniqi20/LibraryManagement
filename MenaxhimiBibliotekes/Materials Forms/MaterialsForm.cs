@@ -17,6 +17,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         ReservationsForm reservationForm = new ReservationsForm();
         BorrowingsForm borrowingsForm = new BorrowingsForm();
         ReturningsForm returningsForm = new ReturningsForm();
+        BorrowBLL bbll = new BorrowBLL();
 
         MaterialBLL materialBLL = new MaterialBLL();
 
@@ -90,8 +91,44 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
             else
             {
-                gridMaterials.DataSource = materialBLL.GetAll().Where(x => x.Title.Contains(txtSearchMaterial.Text));
+                gridMaterials.DataSource = materialBLL.GetAll().Where(x => x.Title.Contains(txtSearchMaterial.Text)  );
             }    
+        }
+
+        private void TableLayoutPanel16_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GridSplitContainer1Grid_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            //x => x._subscriber.SubscriberId == 2 ||
+
+            int m;
+            bool isNumeric = int.TryParse(txtBorrowings.Text, out m);
+
+            if (isNumeric)
+            {
+                gridBorrowings.DataSource = bbll.GetAll().Where(x => x.SubscriberId == m ||
+x.materialId == m ||x.BorrowId == m);
+            }
+            else
+            {
+                gridBorrowings.DataSource = bbll.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text ||
+x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text || x._shelf.Location == txtBorrowings.Text);
+            }
+
+
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

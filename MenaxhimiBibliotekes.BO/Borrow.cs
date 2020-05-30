@@ -24,7 +24,7 @@ namespace MenaxhimiBibliotekes.BO
         public int BorrowReturnId { get; set; }
         public Borrow()
         {
-            ;
+            
             _reservation = new Reservation();
             _material = new Material();
             _shelf = new Shelf();

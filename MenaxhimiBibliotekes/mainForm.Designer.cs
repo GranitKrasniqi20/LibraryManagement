@@ -401,12 +401,13 @@
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1016, 617);
             this.Name = "mainForm";
             this.Text = "Stackbooks Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.mainForm_Activated);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.mainForm_Shown);
             this.panelMenu.ResumeLayout(false);
             this.panelUser.ResumeLayout(false);

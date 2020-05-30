@@ -209,8 +209,9 @@ namespace MenaxhimiBibliotekes.DAL
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return null;
             }
         }

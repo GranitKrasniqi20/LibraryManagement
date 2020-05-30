@@ -21,6 +21,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
             InitializeComponent();
             gridView.OptionsBehavior.AutoPopulateColumns = false;
             gridMembers.DataSource = subcriberBLL.GetAll();
+
         }
 
         private void btnAddMember_Click(object sender, EventArgs e)
@@ -43,27 +44,48 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
         private void MembersForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'libraryManagementDataSet1.Subscribers' table. You can move, or remove it, as needed.
-            this.subscribersTableAdapter1.Fill(this.libraryManagementDataSet1.Subscribers);
-            // TODO: This line of code loads data into the 'libraryManagementDataSet.Subscribers' table. You can move, or remove it, as needed.
-            this.subscribersTableAdapter.Fill(this.libraryManagementDataSet.Subscribers);
+            //// TODO: This line of code loads data into the 'libraryManagementDataSet1.Subscribers' table. You can move, or remove it, as needed.
+            //this.subscribersTableAdapter1.Fill(this.libraryManagementDataSet1.Subscribers);
+            //// TODO: This line of code loads data into the 'libraryManagementDataSet.Subscribers' table. You can move, or remove it, as needed.
+            //this.subscribersTableAdapter.Fill(this.libraryManagementDataSet.Subscribers);
 
         }
 
         private void btnSearchMember_Click(object sender, EventArgs e)
         {
+
+            if (comboSortMember.SelectedItem == "Active Members")
+            {
+                BindDataGrid(true);
+            }
+            else
+            {
+                BindDataGrid(false);
+            }
+
+
+           
+        }
+        void BindDataGrid(bool i)
+        {
+           // string[] FullNameArray = txtSearchMember.Text.Split(' ');
             gridMembers.DataSource = null;
 
             if (txtSearchMember.Text == string.Empty)
             {
-                gridMembers.DataSource = subcriberBLL.GetAll();
+                gridMembers.DataSource = subcriberBLL.GetAll().Where(x => x.IsActive == i);
             }
             else
             {
-                string[] FullNameArray = txtSearchMember.Text.Split(' ');
-                gridMembers.DataSource = subcriberBLL.GetAll().Where(x => x.Name.Contains(FullNameArray[0])
-                                         && x.LastName.Contains(FullNameArray[1]));
+                gridMembers.DataSource = subcriberBLL.GetAll().Where(x => (x.Name.Contains(txtSearchMember.Text.Trim())
+                                     || x.LastName.Contains(txtSearchMember.Text.Trim()) || 
+                                     $"{x.Name} {x.LastName}".Contains(txtSearchMember.Text.Trim())) && x.IsActive == i);
             }
+        }
+
+        private void ComboSortMember_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

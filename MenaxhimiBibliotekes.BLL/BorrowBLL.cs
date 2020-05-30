@@ -39,9 +39,34 @@ namespace MenaxhimiBibliotekes.BLL
         {
             return bd.Update(obj);
         }
+        public void EmailBorrowsToReturn()
+        {
+
+            EmailService es = new EmailService();
+            List<Borrow> emails = bd.EmailsToExpire();
+            if (emails.Count > 0)
+            {
+                foreach (var item in bd.EmailsToExpire())
+                {
+                        es.SendMails(item._subscriber.Email, "Your Borrow is about to expire", $"Your {item._material._MaterialType._MaterialType} will expire in 5 days," +
+                            $"we hope you enjoyed reading {item._material.Title} from author {item._material._Author.AuthorName}");
+                }
+            }
 
 
 
+        }
+
+        public void EmailBorrows(Borrow b)
+        {
+
+            EmailService es = new EmailService();
+
+                    es.SendMails(b._subscriber.Email, $"Your have borrowed {b._material.Title}", $"Your {b._material._MaterialType._MaterialType} will expire at {b.DeadLine.ToShortDateString()}," +
+                        $"we hope you will enjoy reading {b._material.Title} from author {b._material._Author.AuthorName}"
+
+                        );
+        }
 
     }
 }

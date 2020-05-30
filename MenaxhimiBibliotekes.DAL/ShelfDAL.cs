@@ -187,7 +187,7 @@ namespace MenaxhimiBibliotekes.DAL
 
                 shelf.ShelfId = int.Parse(reader["ShelfId"].ToString());
                 shelf.Location = reader["Location"].ToString();
-                shelf.Quantity = int.Parse(reader["Quantity"].ToString());
+                shelf.Quantity = int.Parse(reader["QuantityOfShelf"].ToString());
 
                 if (reader["Description"] != DBNull.Value)
                 {

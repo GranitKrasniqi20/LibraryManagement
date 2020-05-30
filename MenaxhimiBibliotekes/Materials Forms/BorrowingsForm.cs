@@ -29,6 +29,66 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         private void BtnSearch_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void BtnBorrowNow_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void BtnBorrowNow_Click_1(object sender, EventArgs e)
+        {
+            if (sbo != null && mbo != null)
+            {
+                Bbll = new BorrowBLL();
+                Bbo = new Borrow();
+
+                Bbo.SubscriberId = sbo.SubscriberId;
+                Bbo.materialId = mbo.MaterialId;
+                Bbo.DeadLine = DateTime.Parse(dateTill.Text);
+                Bbo.BorrowDate = DateTime.Parse(dateFrom.Text);
+                Bbo.shelfId = mbo.ShelfId;
+                Bbo.InsBy = FormLoggedUser.Id;
+                Bbo._material.Title = txtMaterialName.Text;
+                Bbo._material._MaterialType._MaterialType = txtMaterialType.Text;
+                Bbo._material._Author.AuthorName = txtAuthor.Text;
+                Bbo._subscriber = new Subscriber();
+                Bbo._subscriber.Email = txtEmail.Text;
+                int ee = Bbll.Add(Bbo);
+
+                if (ee > 0)
+                {
+                    MessageBox.Show($"{mbo.Title} borrowed by {sbo.Name} {sbo.LastName}", $"{mbo.Title.ToUpper()} BORROWED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Bbll.EmailBorrows(Bbo);
+                }
+                else
+                {
+                    MessageBox.Show($"Material is not borrowed please check your information or Call your administrator", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                Bbll = new BorrowBLL();
+                Bbo = new Borrow();
+            }
+            else
+            {
+                if (sbo == null && mbo.MaterialId < 1)
+                {
+                    MessageBox.Show($"Material and Subscriber are not found", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (sbo == null)
+                {
+                    MessageBox.Show($"Subscriber is not found", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (mbo.MaterialId < 1)
+                {
+                    MessageBox.Show($"Material is not found", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void BtnSearch_Click_1(object sender, EventArgs e)
+        {
             int n;
             bool isNumeric = int.TryParse(txtSubscriberID.Text, out n);
 
@@ -37,11 +97,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
             if (isNumeric && isMaterialId)
             {
-               sbll = new SubscriberBLL();
+                sbll = new SubscriberBLL();
 
                 mbll = new MaterialBLL();
-              mbo=  mbll.Get(m);
-                sbo= sbll.Get(n);
+                mbo = mbll.Get(m);
+                sbo = sbll.Get(n);
 
 
                 if (sbo != null && mbo.MaterialId > 0)
@@ -54,8 +114,20 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                     txtMaterialName.Text = mbo.Title;
                     txtMaterialType.Text = mbo._MaterialType._MaterialType;
-                    txtOverallQuantity.Text = mbo.Quantity.ToString();
-                    txtStockQuantity.Text = mbo.AvailableCoppies.ToString();
+                    txtAuthor.Text = mbo._Author.AuthorName;
+                    txtLocated.Text = mbo._Shelf.Location;
+                    //txtReserved
+
+
+
+                    //if (txtReserved > 0)
+                    //{
+                    //    txtAvailability.Text = "Yes";
+                    //}
+                    //else
+                    //{
+                    //    txtAvailability.Text = "No";
+                    //}
 
                     if (mbo.AvailableCoppies > 0)
                     {
@@ -66,7 +138,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                         txtAvailability.Text = "No";
                     }
 
-                    
+
                 }
                 else
                 {
@@ -100,52 +172,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             else
             {
                 MessageBox.Show($"Material or Subscriber is not valid", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void BtnBorrowNow_Click(object sender, EventArgs e)
-        {
-            if (sbo != null && mbo != null)
-            {
-                Bbll = new BorrowBLL();
-                Bbo = new Borrow();
-
-                Bbo.SubscriberId = sbo.SubscriberId;
-                Bbo.materialId = mbo.MaterialId;
-                Bbo.DeadLine = DateTime.Parse(dateTill.Text);
-                Bbo.BorrowDate = DateTime.Parse(dateFrom.Text);
-                Bbo.shelfId = mbo.ShelfId;
-                Bbo.InsBy = FormLoggedUser.Id;
-
-
-                int ee = Bbll.Add(Bbo);
-
-                if (ee > 0)
-                {
-                    MessageBox.Show($"{mbo.Title} borrowed by {sbo.Name} {sbo.LastName}", $"{mbo.Title.ToUpper()} BORROWED", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show($"Material is not borrowed please check your information or Call your administrator", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-                Bbll = new BorrowBLL();
-                Bbo = new Borrow();
-            }
-            else
-            {
-                if (sbo == null && mbo.MaterialId < 1)
-                {
-                    MessageBox.Show($"Material and Subscriber are not found", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if(sbo == null)
-                {
-                    MessageBox.Show($"Subscriber is not found", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (mbo.MaterialId < 1)
-                {
-                    MessageBox.Show($"Material is not found", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
             }
         }
     }
