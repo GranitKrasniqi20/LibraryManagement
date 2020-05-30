@@ -26,6 +26,7 @@ namespace MenaxhimiBibliotekes.DAL
 
 
                         command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
+                        command.Parameters.AddWithValue("MaterialTypeDelayFee", obj.MaterialTypeDelayFee);
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
                         int error;
 
@@ -45,7 +46,8 @@ namespace MenaxhimiBibliotekes.DAL
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Material Type has an problem, please contact your administrator ");
+
+                MessageBox.Show("Material Type has an problem, please contact your administrator " + " " + ex.Message );
                 return -1;
             }
             catch (Exception)
@@ -139,7 +141,7 @@ namespace MenaxhimiBibliotekes.DAL
 
                 mt.MaterialTypeId = (int)reader["MaterialTypeId"];
                 mt._MaterialType = reader["MaterialType"].ToString();
-
+               mt.MaterialTypeDelayFee= (decimal)reader["MaterialTypeDelayFee"];
                 mt.InsBy = int.Parse(reader["InsBy"].ToString());
                 mt.InsDate = (DateTime)reader["InsDate"];
 
@@ -178,6 +180,7 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         command.Parameters.AddWithValue("MaterialTypeId", obj.MaterialTypeId);
                         command.Parameters.AddWithValue("MaterialType", obj._MaterialType);
+                        command.Parameters.AddWithValue("MaterialTypeDelayFee", obj.MaterialTypeDelayFee);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
                         command.Parameters.AddWithValue("@IsActive", obj.isActive) ;
 

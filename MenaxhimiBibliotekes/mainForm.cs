@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MenaxhimiBibliotekes.BLL;
 using MenaxhimiBibliotekes.BO;
 
 namespace MenaxhimiBibliotekes
@@ -214,6 +215,11 @@ namespace MenaxhimiBibliotekes
             alterLanguages.ShowDialog();
         }
 
-        
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            BorrowBLL borrBLL = new BorrowBLL();
+            borrBLL.EmailBorrowsToReturn();
+            
+        }
     }
 }

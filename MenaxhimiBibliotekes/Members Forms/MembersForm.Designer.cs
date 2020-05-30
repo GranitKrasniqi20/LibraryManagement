@@ -35,6 +35,18 @@
             this.tabMainPage = new System.Windows.Forms.TabPage();
             this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
             this.gridMembers = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -113,11 +125,13 @@
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.subscribersTableAdapter = new MenaxhimiBibliotekes.LibraryManagementDataSetTableAdapters.SubscribersTableAdapter();
             this.subscribersTableAdapter1 = new MenaxhimiBibliotekes.LibraryManagementDataSet1TableAdapters.SubscribersTableAdapter();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelFullBody.SuspendLayout();
             this.tabControlMembersForm.SuspendLayout();
             this.tabMainPage.SuspendLayout();
             this.tableDataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMembers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.tableBottomSpace.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -201,12 +215,119 @@
             // 
             this.gridMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridMembers.Location = new System.Drawing.Point(23, 3);
-            this.gridMembers.MainView = this.gridView;
+            this.gridMembers.MainView = this.gridView1;
             this.gridMembers.Name = "gridMembers";
             this.gridMembers.Size = new System.Drawing.Size(680, 312);
             this.gridMembers.TabIndex = 0;
             this.gridMembers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1,
             this.gridView});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12});
+            this.gridView1.GridControl = this.gridMembers;
+            this.gridView1.Name = "gridView1";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "ID";
+            this.gridColumn1.FieldName = "SubscriberId";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "First Name";
+            this.gridColumn2.FieldName = "Name";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Last Name";
+            this.gridColumn3.FieldName = "LastName";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Full Address";
+            this.gridColumn4.FieldName = "Address";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Birthdate";
+            this.gridColumn5.FieldName = "Birthday";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Personal Number";
+            this.gridColumn6.FieldName = "PersonalNo";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Phone Number";
+            this.gridColumn7.FieldName = "PhoneNo";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "E-Mail";
+            this.gridColumn8.FieldName = "Email";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 7;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Gender";
+            this.gridColumn9.FieldName = "Gender";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 8;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Registration Date";
+            this.gridColumn10.FieldName = "InsDate";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 9;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Expiration Date";
+            this.gridColumn11.FieldName = "ExpirationDate";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 10;
             // 
             // gridView
             // 
@@ -380,12 +501,13 @@
             this.comboSortMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboSortMember.FormattingEnabled = true;
             this.comboSortMember.Items.AddRange(new object[] {
-            "Ascending Order",
-            "Descending Order"});
+            "Active Members",
+            "Expired Members"});
             this.comboSortMember.Location = new System.Drawing.Point(23, 3);
             this.comboSortMember.Name = "comboSortMember";
             this.comboSortMember.Size = new System.Drawing.Size(213, 40);
             this.comboSortMember.TabIndex = 5;
+            this.comboSortMember.SelectedIndexChanged += new System.EventHandler(this.ComboSortMember_SelectedIndexChanged);
             // 
             // btnSearchMember
             // 
@@ -816,7 +938,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel3.Controls.Add(this.txtSearchBills, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboSortBills, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnSearchBills, 5, 0);
@@ -835,7 +957,7 @@
             this.txtSearchBills.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBills.Location = new System.Drawing.Point(23, 3);
             this.txtSearchBills.Name = "txtSearchBills";
-            this.txtSearchBills.Size = new System.Drawing.Size(255, 39);
+            this.txtSearchBills.Size = new System.Drawing.Size(254, 39);
             this.txtSearchBills.TabIndex = 4;
             // 
             // comboSortBills
@@ -846,7 +968,7 @@
             this.comboSortBills.Items.AddRange(new object[] {
             "Ascending Order",
             "Descending Order"});
-            this.comboSortBills.Location = new System.Drawing.Point(297, 3);
+            this.comboSortBills.Location = new System.Drawing.Point(296, 3);
             this.comboSortBills.Name = "comboSortBills";
             this.comboSortBills.Size = new System.Drawing.Size(136, 40);
             this.comboSortBills.TabIndex = 5;
@@ -857,7 +979,7 @@
             this.btnSearchBills.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchBills.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchBills.ForeColor = System.Drawing.Color.White;
-            this.btnSearchBills.Location = new System.Drawing.Point(451, 3);
+            this.btnSearchBills.Location = new System.Drawing.Point(450, 3);
             this.btnSearchBills.Name = "btnSearchBills";
             this.btnSearchBills.Size = new System.Drawing.Size(229, 40);
             this.btnSearchBills.TabIndex = 6;
@@ -980,6 +1102,14 @@
             // 
             this.subscribersTableAdapter1.ClearBeforeFill = true;
             // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Is Active";
+            this.gridColumn12.FieldName = "IsActive";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 11;
+            // 
             // MembersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -997,6 +1127,7 @@
             this.tabMainPage.ResumeLayout(false);
             this.tableDataGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             this.tableBottomSpace.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1116,5 +1247,18 @@
         private DevExpress.XtraGrid.Columns.GridColumn colGender;
         private DevExpress.XtraGrid.Columns.GridColumn colInsDate;
         private DevExpress.XtraGrid.Columns.GridColumn colExpirationDate;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
     }
 }

@@ -41,11 +41,7 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             command.Parameters.AddWithValue("Comment", obj.Comment);
                         }
-
-                        //if (obj.BorrowDate != )
-                        //{
-                        //    command.Parameters.AddWithValue("BorrowDate", obj.BorrowDate);
-                        //}
+                            command.Parameters.AddWithValue("BorrowDate", obj.BorrowDate);
 
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
 
@@ -184,6 +180,47 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
+        public List<Borrow> EmailsToExpire()
+        {
+            try
+            {
+                List<Borrow> borrs = new List<Borrow>();
+                Borrow borr;
+                using (SqlConnection sqlconn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetSubsBorrowReturn", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+                                    borr = new Borrow();
+                                    borr._subscriber = new Subscriber();
+                                    borr._subscriber.Email = sqr["Email"].ToString();
+                                    borr._subscriber.Name = sqr["Name"].ToString();
+                                    borr._subscriber.Name = sqr["LastName"].ToString();
+                                    borr._material.Title = sqr["Title"].ToString();
+                                    borr._material._Author.AuthorName = sqr["AuthorName"].ToString();
+                                    borr._material._MaterialType._MaterialType = sqr["MaterialType"].ToString();
+                                    borrs.Add(borr);
+                                }
+                            }
+
+                            return borrs;
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+
+        }
+
+
         public Borrow ToBO(SqlDataReader reader)
         {
             borr = new Borrow();
@@ -201,14 +238,12 @@ namespace MenaxhimiBibliotekes.DAL
                 borr._material.MaterialTypeId = int.Parse(reader["MaterialTypeId"].ToString());
                 borr._material._MaterialType.MaterialTypeId = int.Parse(reader["MaterialTypeId"].ToString());
                 borr._material._MaterialType._MaterialType = reader["MaterialType"].ToString();
-                borr._material.AuthorId = int.Parse(reader["MaterialTypeId"].ToString());
-                borr._material._Author.AuthorID = int.Parse(reader["MaterialTypeId"].ToString());
-                borr._material._Author.AuthorName = reader["MaterialType"].ToString();
-                // borr._material._MaterialType.MaterialTypeDelayFee = (decimal)reader["MaterialTypeDelayFee"];
-
+                borr._material._MaterialType.MaterialTypeDelayFee = (decimal)reader["MaterialTypeDelayFee"];
                 borr._material.AuthorId = int.Parse(reader["AuthorId"].ToString());
                 borr._material._Author.AuthorID = int.Parse(reader["AuthorId"].ToString());
                 borr._material._Author.AuthorName = reader["AuthorName"].ToString();
+
+
 
                 borr.SubscriberId = int.Parse(reader["SubscriberId"].ToString());
                 borr._subscriber = new Subscriber();
@@ -239,22 +274,31 @@ namespace MenaxhimiBibliotekes.DAL
                     borr.BorrowDate = (DateTime)reader["BorrowDate"];
                 }
 
-                if (reader["reservationId"] != DBNull.Value)
-                {
-                    borr.ReservationId = int.Parse(reader["ReservationId"].ToString());
-                    borr._reservation.ReservationId = int.Parse(reader["ReservationId"].ToString());
-                    borr._reservation.ReservationDate = (DateTime)reader["ReservationDate"];
+                //if (reader["reservationId"] != DBNull.Value)
+                //{
+                //    borr.ReservationId = int.Parse(reader["ReservationId"].ToString());
+                //    borr._reservation.ReservationId = int.Parse(reader["ReservationId"].ToString());
+                //    borr._reservation.ReservationDate = (DateTime)reader["ReservationDate"];
 
-                }
+                //}
 
 
                 if (reader["BorrowReturnId"] != DBNull.Value)
                 {
                     borr.BorrowReturnId = int.Parse(reader["BorrowReturnId"].ToString());
+                    borr.BorrowReturn = new BorrowReturn();
                     borr.BorrowReturn.BorrowReturnId = int.Parse(reader["BorrowReturnId"].ToString());
                     borr.BorrowReturn.ReturnDate = (DateTime)reader["ReturnDate"];
-                    borr.BorrowReturn.BillId = (int)reader["BillId"];
-                    borr.BorrowReturn.Comment = (string)reader["[ReturnComment]"];
+                    if (reader["BillId"] != DBNull.Value)
+                    {
+                        borr.BorrowReturn.BillId = (int)reader["BillId"];
+                    }
+
+                    //if (reader["ReturnComment"] != DBNull.Value)
+                    //{
+                    //    borr.BorrowReturn.Comment = (string)reader["[ReturnComment]"];
+                    //}
+
                 }
 
 
