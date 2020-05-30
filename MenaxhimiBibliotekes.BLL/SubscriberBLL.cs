@@ -55,5 +55,29 @@ namespace MenaxhimiBibliotekes.BLL
                 }
             }
         }
+
+        #region
+        public int NumberOfActiveSubscribers()
+        {
+            return subscriberDAL.NumberOfActiveSubscribers();
+        }
+
+        public int NumberOfNonActiveSubscribers()
+        {
+            return subscriberDAL.NumberOfNonActiveSubscribers();
+        }
+
+        public List<Subscriber> Get5LastSubscribers()
+        {
+            return subscriberDAL.Get5LastSubscribers();
+        }
+
+        public List<Subscriber> Get10LastSubscribers()
+        {
+            return subscriberDAL.Get10LastSubscribers();
+        }
+
+        #endregion
+
     }
 }
