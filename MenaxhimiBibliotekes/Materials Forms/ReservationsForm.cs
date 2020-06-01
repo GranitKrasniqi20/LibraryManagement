@@ -34,7 +34,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
             try
             {
-                //Subscriber Data
+                //Subscriber 
                 subscriber = subscriberBLL.Get(int.Parse(txtSubscriberID.Text));
 
                 txtName.Text = subscriber.Name;
@@ -44,14 +44,14 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 txtPersonalNumber.Text = subscriber.PersonalNo;
 
 
-                //Material Data
-                //material = materialBLL.Get(int.Parse(txtMaterialID.Text));
+                //Material 
+                material = materialBLL.Get(int.Parse(txtMaterialID.Text));
 
-                txtMaterialName.Text = "wer";// material.Title;
-                txtMaterialType.Text = 1.ToString();// material.MaterialTypeId.ToString();
-                txtOverallQuantity.Text = 23.ToString();// material.Quantity.ToString();
-                txtStockQuantity.Text = 19.ToString();//(material.Quantity - material.AvailableCoppies).ToString();
-                txtAvailability.Text = 4.ToString();// material.AvailableCoppies.ToString();
+                txtMaterialName.Text = material.Title;
+                txtMaterialType.Text = material.MaterialTypeId.ToString();
+                txtOverallQuantity.Text = material.Quantity.ToString();
+                txtStockQuantity.Text = 1.ToString();
+                txtAvailability.Text = material.AvailableCoppies.ToString();
 
             }
 
@@ -72,8 +72,16 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     reservation.MaterialId = material.MaterialId;
 
                     reservation.ReservationDate = dateTill.Value;
+                    reservation.InsBy = FormLoggedUser.Id;
 
                     reservationBLL.Add(reservation);
+                    material.AvailableCoppies--;
+                    MessageBox.Show("The Reservation is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                else
+                {
+                    MessageBox.Show("Fail!", "Fail!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }

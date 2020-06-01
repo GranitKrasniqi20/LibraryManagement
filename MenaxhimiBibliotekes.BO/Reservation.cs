@@ -14,5 +14,6 @@ namespace MenaxhimiBibliotekes.BO
         public int MaterialId { get; set; }
         public virtual Material _material { get; set; }
         public DateTime ReservationDate { get; set; }
+        public bool IsNotified { get; set; }
     }
 }
