@@ -56,6 +56,17 @@ namespace MenaxhimiBibliotekes.BLL
             }
         }
 
+        public void SubscriberRegisterdEmail(Subscriber sub)
+        {
+
+            EmailService es = new EmailService();
+
+            es.SendMails(sub.Email, $"Welcome to Stack Books", $"Congratulations  you registered to Stack Book," +
+                $"we hope you will enjoy reading our Books. Your subscription will end at {sub.ExpirationDate}. We will you all the bests," +
+                $"Stack Books staff");
+
+        }
+
         #region
         public int NumberOfActiveSubscribers()
         {

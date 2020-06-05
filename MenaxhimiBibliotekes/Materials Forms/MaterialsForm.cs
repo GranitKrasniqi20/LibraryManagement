@@ -117,18 +117,29 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             if (comboChoseGrid.SelectedItem == "Borrowings")
             {
 
+                if (txtBorrowings.Text == string.Empty)
+                {
+                    gridBorrowings.DataSource = bbll.GetAll();
+                }
 
-
-
-                if (isNumeric)
+                else if (isNumeric)
                 {
                     gridBorrowings.DataSource = bbll.GetAll().Where(x => x.SubscriberId == m ||
                     x.materialId == m || x.BorrowId == m);
                 }
                 else
                 {
+                    if (txtBorrowings.Text == string.Empty)
+                    {
+                        gridBorrowings.DataSource = bbll.GetAll();
+                    }
+                    else
+                    {
+
+                    
                     gridBorrowings.DataSource = bbll.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text ||
                       x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text || x._shelf.Location == txtBorrowings.Text);
+                    }
                 }
             }
 

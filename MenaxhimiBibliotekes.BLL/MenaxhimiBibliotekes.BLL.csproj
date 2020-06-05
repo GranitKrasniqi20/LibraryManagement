@@ -54,6 +54,7 @@
     <Compile Include="BorrowBLL.cs" />
     <Compile Include="BorrowReturnBLL.cs" />
     <Compile Include="CookieSubscriber.cs" />
+    <Compile Include="Custom Exception\UniqueException.cs" />
     <Compile Include="EmailService.cs" />
     <Compile Include="GenreBLL.cs" />
     <Compile Include="LanguageBLL.cs" />

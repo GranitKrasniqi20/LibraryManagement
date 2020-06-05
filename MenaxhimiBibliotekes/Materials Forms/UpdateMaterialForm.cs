@@ -53,13 +53,9 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
 
-            comboMaterialType.Items.Clear();
             BindDropDownGenre(new Genre() { GenreId = 0, _Genre = "Other" });
-                         comboMaterialType.Items.Clear();
             BindDropdownMaterialType(new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" });
-            comboMaterialLocation.Items.Clear();
             BindDrobdownMaterialLocation(new Shelf() { ShelfId = 0, Location = "Other" });
-            comboLanguage.Items.Clear();
             BindDrobdownLanguage(new Language() { LanguageId = 0, _Language = "Other" });
 
 
@@ -139,7 +135,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         public void BindDrobdownLanguage(Language first)
         {
             languageBllList = new LanguageBLL();
-            Language l = new Language();
+            Language l = new Language(); 
             languageList = languageBllList.GetAll();
             foreach (var item in languageList)
             {
@@ -226,14 +222,25 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormG)
                 {
+                    openFormG = false;
                     GenreForm genreForm = new GenreForm();
                     genreForm.ShowDialog();
+                    BindDropDownGenre(new Genre() { GenreId = 0, _Genre = "Other" });
                 }
 
-                openFormG = true;
+                else
+                {
+                    openFormG = true;
+                }
+
 
             }
         }
+
+        
+            
+           
+           
 
         private void comboLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -243,10 +250,15 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormL)
                 {
+                    openFormL = false ;
                     LanguageForm languageForm = new LanguageForm();
                     languageForm.ShowDialog();
+                    BindDrobdownLanguage(new Language() { LanguageId = 0, _Language = "Other" });
                 }
-                openFormL = true;
+                else
+                {
+                    openFormL = true;
+                }
             }
         }
 
@@ -258,12 +270,18 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormMT)
                 {
+                    openFormMT = false;
                     MaterialTypeForm materialtypeForm = new MaterialTypeForm();
                     materialtypeForm.ShowDialog();
+                    BindDrobdownMaterialLocation(new Shelf() { ShelfId = 0, Location = "Other" });
 
                     DisabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtQuantity, txtPages);
                 }
-                openFormMT = true;
+                else
+                {
+                    openFormMT = true;
+                }
+
             }
             else
             {
@@ -279,10 +297,16 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormSH)
                 {
+                    openFormMT = false;
                     MaterialLocation locationForm = new MaterialLocation();
                     locationForm.ShowDialog();
+                    BindDropdownMaterialType(new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" });
+
                 }
-                openFormSH = true;
+                else
+                {
+                    openFormSH = true;
+                }
             }
         }
 
@@ -397,12 +421,13 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            
 
             try
             {
-                mbll = new MaterialBLL();
 
+                mbll = new MaterialBLL();
+                int quantity = 0;
                 // ------------------------------ //
                 material.MaterialId = int.Parse(txtMaterialID.Text);
                 material.Title = txtTitle.Text;
@@ -439,8 +464,9 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     material.PublishYear = new DateTime(int.Parse(txtPublishDate.Text), 1, 1);
                 }
 
-                material.Quantity = Convert.ToInt32(txtQuantity.Text);
 
+                material.Quantity = Convert.ToInt32(txtQuantity.Text);
+                material.AvailableCoppies = GetAvaliableCoppies(quantity, material.Quantity, material.AvailableCoppies);
                 material.NumberOfPages = Convert.ToInt32(txtPages.Text);
 
                 material.IsActive = isActiveMaterial;
@@ -491,6 +517,22 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
 
 
+        }
+
+        private int GetAvaliableCoppies(int Oldquantity, int newQuantity, int availableCoppies)
+        {
+            if (Oldquantity == newQuantity)
+            {
+                return availableCoppies;
+            }
+            else if (Oldquantity > newQuantity)
+            {
+                return availableCoppies - (Oldquantity - newQuantity);
+            }
+            else
+            {
+                return availableCoppies + ( newQuantity - Oldquantity);
+            }
         }
 
         public void deleteGenreFromList(int GenreId)
