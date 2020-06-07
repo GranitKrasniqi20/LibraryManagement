@@ -18,6 +18,7 @@ namespace MenaxhimiBibliotekes
         /// <summary>
         /// Global Variables & Instances
         /// </summary>
+        Dashboard_Forms.DashboardForm dashboardform = new Dashboard_Forms.DashboardForm();
         Members_Forms.MembersForm membersform = new Members_Forms.MembersForm();
         Materials_Forms.MaterialsForm materialsform = new Materials_Forms.MaterialsForm();
         Settings_Forms.SettingsForm settingsform = new Settings_Forms.SettingsForm();
@@ -31,6 +32,7 @@ namespace MenaxhimiBibliotekes
 
         private void CloseAllWindows()
         {
+            dashboardform.Hide();
             membersform.Hide();
             materialsform.Hide();
             settingsform.Hide();
@@ -54,6 +56,16 @@ namespace MenaxhimiBibliotekes
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
+            if (dashboardform.IsDisposed)
+            {
+                dashboardform = new Dashboard_Forms.DashboardForm();
+            }
+
+            CloseAllWindows();
+
+            dashboardform.MdiParent = this;
+            dashboardform.Show();
+            dashboardform.WindowState = FormWindowState.Maximized;
         }
 
         private void btnMembers_Click(object sender, EventArgs e)
