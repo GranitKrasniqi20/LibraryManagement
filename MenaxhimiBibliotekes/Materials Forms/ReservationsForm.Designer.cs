@@ -57,7 +57,6 @@
             this.txtPhoneNumber = new System.Windows.Forms.Label();
             this.txtPersonalNumber = new System.Windows.Forms.Label();
             this.lblMaterialName = new System.Windows.Forms.Label();
-            this.lblMaterialType = new System.Windows.Forms.Label();
             this.lblOverallQuantity = new System.Windows.Forms.Label();
             this.lblStockQuantity = new System.Windows.Forms.Label();
             this.lblAvailability = new System.Windows.Forms.Label();
@@ -66,6 +65,7 @@
             this.txtOverallQuantity = new System.Windows.Forms.Label();
             this.txtStockQuantity = new System.Windows.Forms.Label();
             this.txtAvailability = new System.Windows.Forms.Label();
+            this.lblMaterialType = new System.Windows.Forms.Label();
             this.tableSpace6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableDatesReservations = new System.Windows.Forms.TableLayoutPanel();
             this.lblFrom = new System.Windows.Forms.Label();
@@ -277,6 +277,7 @@
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tableSpace5
             // 
@@ -314,7 +315,6 @@
             this.tableContents.Controls.Add(this.txtPhoneNumber, 3, 3);
             this.tableContents.Controls.Add(this.txtPersonalNumber, 3, 4);
             this.tableContents.Controls.Add(this.lblMaterialName, 5, 0);
-            this.tableContents.Controls.Add(this.lblMaterialType, 5, 1);
             this.tableContents.Controls.Add(this.lblOverallQuantity, 5, 2);
             this.tableContents.Controls.Add(this.lblStockQuantity, 5, 3);
             this.tableContents.Controls.Add(this.lblAvailability, 5, 4);
@@ -323,6 +323,7 @@
             this.tableContents.Controls.Add(this.txtOverallQuantity, 7, 2);
             this.tableContents.Controls.Add(this.txtStockQuantity, 7, 3);
             this.tableContents.Controls.Add(this.txtAvailability, 7, 4);
+            this.tableContents.Controls.Add(this.lblMaterialType, 5, 1);
             this.tableContents.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableContents.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableContents.Location = new System.Drawing.Point(0, 320);
@@ -457,17 +458,6 @@
             this.lblMaterialName.TabIndex = 1;
             this.lblMaterialName.Text = "Material Name:";
             // 
-            // lblMaterialType
-            // 
-            this.lblMaterialType.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblMaterialType.AutoSize = true;
-            this.lblMaterialType.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialType.Location = new System.Drawing.Point(352, 27);
-            this.lblMaterialType.Name = "lblMaterialType";
-            this.lblMaterialType.Size = new System.Drawing.Size(89, 27);
-            this.lblMaterialType.TabIndex = 1;
-            this.lblMaterialType.Text = "Material Type:";
-            // 
             // lblOverallQuantity
             // 
             this.lblOverallQuantity.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -555,6 +545,17 @@
             this.txtAvailability.Size = new System.Drawing.Size(36, 25);
             this.txtAvailability.TabIndex = 1;
             this.txtAvailability.Text = "---";
+            // 
+            // lblMaterialType
+            // 
+            this.lblMaterialType.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblMaterialType.AutoSize = true;
+            this.lblMaterialType.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterialType.Location = new System.Drawing.Point(352, 27);
+            this.lblMaterialType.Name = "lblMaterialType";
+            this.lblMaterialType.Size = new System.Drawing.Size(89, 27);
+            this.lblMaterialType.TabIndex = 1;
+            this.lblMaterialType.Text = "Material Type:";
             // 
             // tableSpace6
             // 
@@ -693,6 +694,7 @@
             this.btnReserveNow.TabIndex = 2;
             this.btnReserveNow.Text = "Reserve Now";
             this.btnReserveNow.UseVisualStyleBackColor = false;
+            this.btnReserveNow.Click += new System.EventHandler(this.btnReserveNow_Click);
             // 
             // ReservationsForm
             // 

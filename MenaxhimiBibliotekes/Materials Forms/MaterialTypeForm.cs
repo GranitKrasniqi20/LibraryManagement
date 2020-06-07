@@ -21,6 +21,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         MaterialTypeValidation mtValidate;
         List<MaterialType> storedMT;
         bool booleanVariable;
+        decimal delayFeeDefault = 2.00M;
 
         public MaterialTypeForm()
         {
@@ -37,6 +38,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 if (mtValidate.ValidateMaterialType(txtMaterialTypeCreate.Text.Trim()))
                 {
                     mt._MaterialType = txtMaterialTypeCreate.Text.Trim();
+                    mt.MaterialTypeDelayFee = delayFeeDefault;
                     mt.InsBy = FormLoggedUser.Id;
 
 

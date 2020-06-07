@@ -1,4 +1,5 @@
 ﻿using MenaxhimiBibliotekes.BLL;
+using MenaxhimiBibliotekes.BO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,9 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         ReservationsForm reservationForm = new ReservationsForm();
         BorrowingsForm borrowingsForm = new BorrowingsForm();
         ReturningsForm returningsForm = new ReturningsForm();
-
+        BorrowBLL bbll = new BorrowBLL();
+        ReservationBLL res;
+        Reservation reservationBO;
         MaterialBLL materialBLL = new MaterialBLL();
 
         public MaterialsForm()
@@ -90,8 +93,77 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             }
             else
             {
-                gridMaterials.DataSource = materialBLL.GetAll().Where(x => x.Title.Contains(txtSearchMaterial.Text));
+                gridMaterials.DataSource = materialBLL.GetAll().Where(x => x.Title.Contains(txtSearchMaterial.Text)  );
             }    
+        }
+
+        private void TableLayoutPanel16_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GridSplitContainer1Grid_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+
+            //x => x._subscriber.SubscriberId == 2 ||
+            int m;
+            bool isNumeric = int.TryParse(txtBorrowings.Text, out m);
+
+            if (comboChoseGrid.SelectedItem == "Borrowings")
+            {
+
+
+
+
+                if (isNumeric)
+                {
+                    gridBorrowings.DataSource = bbll.GetAll().Where(x => x.SubscriberId == m ||
+                    x.materialId == m || x.BorrowId == m);
+                }
+                else
+                {
+                    gridBorrowings.DataSource = bbll.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text ||
+                      x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text || x._shelf.Location == txtBorrowings.Text);
+                }
+            }
+
+            else
+            {
+                reservationBO = new Reservation();
+                res = new ReservationBLL();
+
+                if (isNumeric)
+                {
+                    gridBorrowings.MainView = gridView3;
+                    gridBorrowings.DataSource = res.GetAll().Where(x => x.SubscriberId == m ||
+                    x.MaterialId == m || x.MaterialId == m);
+                }
+                else
+                {
+                    gridBorrowings.MainView = gridView1;
+                    if (txtBorrowings.Text == string.Empty)
+                    {
+                        gridBorrowings.DataSource = res.GetAll();
+                    }
+                    else
+                    {
+                        gridBorrowings.DataSource = res.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text||
+                        x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text );
+                    }
+                }
+            }
+            
+
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

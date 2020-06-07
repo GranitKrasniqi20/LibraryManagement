@@ -32,6 +32,7 @@
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableSpace3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableInfoTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblInfo = new System.Windows.Forms.Label();
@@ -78,9 +79,9 @@
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTill = new System.Windows.Forms.DateTimePicker();
-            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableInfoTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -89,7 +90,6 @@
             this.tableBottom2.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.tableContents.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.SuspendLayout();
             // 
             // tableHeader
@@ -130,6 +130,16 @@
             this.lblTitle.Size = new System.Drawing.Size(275, 50);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "BORROWINGS";
+            // 
+            // picTitle
+            // 
+            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
+            this.picTitle.Location = new System.Drawing.Point(61, 17);
+            this.picTitle.Name = "picTitle";
+            this.picTitle.Size = new System.Drawing.Size(58, 50);
+            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTitle.TabIndex = 0;
+            this.picTitle.TabStop = false;
             // 
             // tableSpace3
             // 
@@ -207,6 +217,7 @@
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click_1);
             // 
             // tableLayoutPanel6
             // 
@@ -308,6 +319,7 @@
             this.btnBorrowNow.TabIndex = 2;
             this.btnBorrowNow.Text = "Borrow Now";
             this.btnBorrowNow.UseVisualStyleBackColor = false;
+            this.btnBorrowNow.Click += new System.EventHandler(this.BtnBorrowNow_Click_1);
             // 
             // tableBottom2
             // 
@@ -704,16 +716,6 @@
             this.dateTill.Size = new System.Drawing.Size(177, 33);
             this.dateTill.TabIndex = 2;
             // 
-            // picTitle
-            // 
-            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
-            this.picTitle.Location = new System.Drawing.Point(61, 17);
-            this.picTitle.Name = "picTitle";
-            this.picTitle.Size = new System.Drawing.Size(58, 50);
-            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTitle.TabIndex = 0;
-            this.picTitle.TabStop = false;
-            // 
             // BorrowingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -736,6 +738,7 @@
             this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.tableInfoTitle.ResumeLayout(false);
             this.tableInfoTitle.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -748,7 +751,6 @@
             this.panelMain.ResumeLayout(false);
             this.tableContents.ResumeLayout(false);
             this.tableContents.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -764,7 +766,6 @@
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.TableLayoutPanel tableSpace4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label lblSubscriberID;
         private System.Windows.Forms.Label lblMaterialID;
@@ -805,5 +806,6 @@
         private System.Windows.Forms.DateTimePicker dateFrom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTill;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

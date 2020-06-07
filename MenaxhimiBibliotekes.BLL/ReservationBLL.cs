@@ -20,22 +20,22 @@ namespace MenaxhimiBibliotekes.BLL
 
         public int Delete(int Id)
         {
-            throw new NotImplementedException();
+            return reservationDAL.Delete(Id);
         }
 
         public Reservation Get(int Id)
         {
-            throw new NotImplementedException();
+            return reservationDAL.Get(Id);
         }
 
         public List<Reservation> GetAll()
         {
-            throw new NotImplementedException();
+            return reservationDAL.GetAll();
         }
 
         public int Update(Reservation obj)
         {
-            throw new NotImplementedException();
+            return reservationDAL.Update(obj);
         }
     }
 }

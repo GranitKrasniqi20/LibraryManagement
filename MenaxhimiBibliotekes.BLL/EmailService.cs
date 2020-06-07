@@ -21,17 +21,24 @@ namespace MenaxhimiBibliotekes.BLL
 
         public void SendMails(string to, string subject,string message)
         {
-            client = new SmtpClient(smtpserver, port);
-            client.EnableSsl = EnableSsl;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials =false;
-            client.Credentials = new NetworkCredential("endrit.tmava@gmail.com", "Flaka121.");
-            MailMessage msg =new MailMessage();
-            msg.To.Add(to);
-            msg.From = new MailAddress("endrit.tmava@riinvest.com");
-            msg.Subject = subject;
-            msg.Body = message;
-            client.Send(msg);
+            try
+            {
+                client = new SmtpClient(smtpserver, port);
+                client.EnableSsl = EnableSsl;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential("endrit.tmava@gmail.com", "Flaka121.");
+                MailMessage msg = new MailMessage();
+                msg.To.Add(to);
+                msg.From = new MailAddress("endrit.tmava@riinvest.com");
+                msg.Subject = subject;
+                msg.Body = message;
+                client.Send(msg);
+            }
+            catch (Exception)
+            {
+
+            }
             
 
         }

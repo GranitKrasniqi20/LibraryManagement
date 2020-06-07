@@ -17,6 +17,7 @@ namespace MenaxhimiBibliotekes.DAL
         public int Add(Bill obj)
         {
             int rowsAffected;
+            int billId;
             try
             {
                 using (SqlConnection conn = DbHelper.GetConnection())
@@ -27,12 +28,12 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("billingDate", obj.BillingDate);
                         command.Parameters.AddWithValue("price", obj.Price); 
                         
-                        if (obj.RegistrationDate != null)
+                        if (obj.RegistrationDate > DateTime.Parse("1/1/1973"))
                         {
                             command.Parameters.AddWithValue("registrationDate", obj.RegistrationDate);
                         }
 
-                        if (obj.ExpirationDate != null)
+                        if (obj.ExpirationDate > DateTime.Parse("1/1/1973"))
                         {
                             command.Parameters.AddWithValue("expirationDate", obj.ExpirationDate);
                         }
@@ -53,12 +54,23 @@ namespace MenaxhimiBibliotekes.DAL
                             command.Parameters.AddWithValue("description", obj.Description);
                         }
                         command.Parameters.AddWithValue("insBy", obj.InsBy);
+                        SqlParameter sqlpa = new SqlParameter();
+                        sqlpa.ParameterName = "BillId";
+                        sqlpa.SqlDbType = SqlDbType.Int;
+                        sqlpa.Direction = ParameterDirection.Output;
+
+                        command.Parameters.Add(sqlpa);
+
+                        command.ExecuteNonQuery();
+                        billId = (int)sqlpa.Value;
+
+
 
                         rowsAffected = command.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
+                        if (billId > 0 && rowsAffected > 0)
                         {
-                            return 1;
+                            return billId;
                         }
                         else
                         {

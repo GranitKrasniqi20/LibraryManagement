@@ -315,7 +315,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 txtTitle.Text = material.Title;
 
                 txtAuthor.Text = material._Author.AuthorName;
-                if (material.ISBN.Length > 1)
+                if (material.ISBN != string.Empty || material.ISBN.Length != null)
                 {
                     txtISBN.Text = material.ISBN;
                 }
@@ -328,7 +328,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 }
 
 
-                if (material._PublishHouse._PublishHouse.Length > 1)
+                if (material._PublishHouse._PublishHouse != string.Empty || material._PublishHouse._PublishHouse != null)
                 {
                     txtPublishHouse.Text = material._PublishHouse._PublishHouse;
                 }
