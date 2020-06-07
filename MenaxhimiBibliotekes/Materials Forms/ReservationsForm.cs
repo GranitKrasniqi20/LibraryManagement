@@ -75,8 +75,15 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     reservation.InsBy = FormLoggedUser.Id;
 
                     reservationBLL.Add(reservation);
+
+                    reservation._subscriber = subscriber;
+                    reservation._material = material;
+
                     material.AvailableCoppies--;
                     MessageBox.Show("The Reservation is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    reservationBLL.EmailReservation(reservation);
                 }
 
                 else

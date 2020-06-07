@@ -57,10 +57,14 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 Bbo._subscriber.Email = txtEmail.Text;
                 int ee = Bbll.Add(Bbo);
 
-                if (ee > 0)
+                if (ee == 0)
                 {
                     MessageBox.Show($"{mbo.Title} borrowed by {sbo.Name} {sbo.LastName}", $"{mbo.Title.ToUpper()} BORROWED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Bbll.EmailBorrows(Bbo);
+                }
+                else if(ee == 1)
+                {
+                    MessageBox.Show($"Material is not borrowed, there are no available coppies of {Bbo._material.Title}", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

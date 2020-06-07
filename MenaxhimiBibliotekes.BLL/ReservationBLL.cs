@@ -12,7 +12,7 @@ namespace MenaxhimiBibliotekes.BLL
     public class ReservationBLL : ICreate<Reservation>, IUpdate<Reservation>, IDelete, IRead<Reservation>
     {
         ReservationDAL reservationDAL = new ReservationDAL();
-
+        EmailService es;
         public int Add(Reservation obj)
         {
             return reservationDAL.Add(obj);
@@ -36,6 +36,15 @@ namespace MenaxhimiBibliotekes.BLL
         public int Update(Reservation obj)
         {
             return reservationDAL.Update(obj);
+        }
+        public void EmailReservation(Reservation b)
+        {
+
+            es = new EmailService();
+
+            es.SendMails(b._subscriber.Email, $"Your have reserved {b._material.Title} from author {b._material._Author.AuthorName}", 
+                $"Your {b._material._MaterialType._MaterialType} will expire at {b.ReservationDate.ToShortDateString()}"
+                ) ;
         }
     }
 }

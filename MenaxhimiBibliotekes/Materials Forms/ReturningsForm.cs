@@ -36,6 +36,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             if (isBorrowId)
             {
                 borrBLL = new BorrowBLL();
+                borrBO = new Borrow();
                 borrBO= borrBLL.Get(b);
                 if (borrBO != null)
                 {

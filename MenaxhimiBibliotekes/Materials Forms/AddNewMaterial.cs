@@ -35,14 +35,36 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         ShelfBLL shelfBLLList;
         List<Shelf> shelfList;
 
+
         public AddNewMaterial()
         {
             InitializeComponent();
-
             openFormG = openFormL = openFormSH = openFormMT = false;
 
+
             //Combobox GENRE fill
-            comboGenre.Items.Clear();
+            BindGenre();
+            //Combobox LANGUAGES fill
+            BindLanguage();
+            //Combobox MATERIAL TYPE fill
+            BindMaterialType();
+            //Combobox MATERIAL LOCATION fill
+            BindShelf();
+        }
+        private void BindLanguage()
+        {
+
+            languageBllList = new LanguageBLL();
+            Language l = new Language();
+            languageList = languageBllList.GetAll();
+            l = languageList[0];
+            languageList[0] = new Language() { LanguageId = 0, _Language = "Other" };
+
+            comboLanguage.DataSource = languageList;
+            comboLanguage.DisplayMember = "_Language";
+        }
+        private void BindGenre()
+        {
 
             genreBllList = new GenreBLL();
             Genre g = new Genre();
@@ -53,37 +75,9 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
             comboGenre.DataSource = genreList;
             comboGenre.DisplayMember = "_Genre";
-
-
-            //Combobox MATERIAL TYPE fill
-            comboMaterialType.Items.Clear();
-
-            materialtypeBllList = new MaterialTypeBLL();
-            MaterialType mt = new MaterialType();
-            materialtypeList = materialtypeBllList.GetAll();
-            mt = materialtypeList[0];
-            materialtypeList[0] = new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" };
-            materialtypeList.Add(mt);
-
-            comboMaterialType.DataSource = materialtypeList;
-            comboMaterialType.DisplayMember = "_MaterialType";
-
-
-            //Combobox LANGUAGES fill
-            comboLanguage.Items.Clear();
-
-            languageBllList = new LanguageBLL();
-            Language l = new Language();
-            languageList = languageBllList.GetAll();
-            l = languageList[0];
-            languageList[0] = new Language() { LanguageId = 0, _Language = "Other" };
-
-            comboLanguage.DataSource = languageList;
-            comboLanguage.DisplayMember = "_Language";
-
-
-            //Combobox MATERIAL LOCATION fill
-            comboMaterialLocation.Items.Clear();
+        }
+        private void BindShelf()
+        {
 
             shelfBLLList = new ShelfBLL();
             Shelf sh = new Shelf();
@@ -95,8 +89,20 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             comboMaterialLocation.DisplayMember = "Location";
         }
 
+        private void BindMaterialType()
+        {
+            
 
+            materialtypeBllList = new MaterialTypeBLL();
+            MaterialType mt = new MaterialType();
+            materialtypeList = materialtypeBllList.GetAll();
+            mt = materialtypeList[0];
+            materialtypeList[0] = new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" };
+            materialtypeList.Add(mt);
 
+            comboMaterialType.DataSource = materialtypeList;
+            comboMaterialType.DisplayMember = "_MaterialType";
+        }
 
 
         //Customized Methods
@@ -148,12 +154,21 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormMT)
                 {
+                    openFormMT = false;
                     MaterialTypeForm materialtypeForm = new MaterialTypeForm();
                     materialtypeForm.ShowDialog();
-
+                    BindMaterialType();
                     DisabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtQuantity, txtPages);
+
                 }
-                openFormMT = true;
+
+
+
+                else
+                {
+                    openFormMT = true;
+                }
+
             }
             else
             {
@@ -172,10 +187,15 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormG)
                 {
+                    openFormG = true;
                     GenreForm genreForm = new GenreForm();
                     genreForm.ShowDialog();
+                    BindGenre();
                 }
-                openFormG = true;
+                else
+                {
+                    openFormG = false;
+                }
                 
             }
 
@@ -189,10 +209,15 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormL)
                 {
+                    openFormL = true;
                     LanguageForm languageForm = new LanguageForm();
                     languageForm.ShowDialog();
+                    BindLanguage();
                 }
-                openFormL = true;
+                else
+                {
+                    openFormL = false;
+                }
             }
         }
 
@@ -204,10 +229,16 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 if (openFormSH)
                 {
+                    openFormSH = true;
                     MaterialLocation locationForm = new MaterialLocation();
                     locationForm.ShowDialog();
+                    BindShelf();
                 }
-                openFormSH = true;
+                else
+                {
+                    openFormSH = false;
+                }
+
             }
         }
 

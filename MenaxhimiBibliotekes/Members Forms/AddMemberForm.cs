@@ -70,6 +70,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
                     subscriberBLL.Add(subscriber);
                     //MessageBox.Show("The subscriber is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    subscriberBLL.SubscriberRegisterdEmail(subscriber);
 
                     #region BILL///////////////////////////////////////////////////////////////////////////////////////////
                     bill.BillingDate = DateTime.Now;

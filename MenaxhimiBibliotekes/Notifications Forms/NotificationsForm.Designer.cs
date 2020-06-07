@@ -202,7 +202,7 @@
             this.ucNotificationMessages.Location = new System.Drawing.Point(3, 3);
             this.ucNotificationMessages.Message = "Beis Presheva is registered in the system from 01/01/2020 till 01/01/2021!";
             this.ucNotificationMessages.Name = "ucNotificationMessages";
-            this.ucNotificationMessages.Size = new System.Drawing.Size(877, 87);
+            this.ucNotificationMessages.Size = new System.Drawing.Size(735, 87);
             this.ucNotificationMessages.TabIndex = 0;
             // 
             // NotificationsForm

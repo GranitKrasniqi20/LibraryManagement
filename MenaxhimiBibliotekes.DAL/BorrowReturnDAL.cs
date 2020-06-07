@@ -43,15 +43,7 @@ namespace MenaxhimiBibliotekes.DAL
 
                         command.Parameters.AddWithValue("InsBy", obj.InsBy);
 
-                        //SqlParameter sqlpa = new SqlParameter();
-                        //sqlpa.ParameterName = "Error";
-                        //sqlpa.SqlDbType = SqlDbType.Int;
-                        //sqlpa.Direction = ParameterDirection.Output;
 
-                        //command.Parameters.Add(sqlpa);
-
-                        //command.ExecuteNonQuery();
-                        //error = (int)sqlpa.Value;
 
                         return command.ExecuteNonQuery();
                     }
@@ -59,7 +51,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
                 return -1;
             }
         }

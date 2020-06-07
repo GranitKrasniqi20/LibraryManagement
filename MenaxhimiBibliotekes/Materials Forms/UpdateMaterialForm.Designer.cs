@@ -68,10 +68,10 @@
             this.lblMaterialType = new System.Windows.Forms.Label();
             this.comboMaterialType = new System.Windows.Forms.ComboBox();
             this.txtMaterialID = new System.Windows.Forms.TextBox();
+            this.comboActiveMaterial = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.comboActiveMaterial = new System.Windows.Forms.ComboBox();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
@@ -578,6 +578,19 @@
             this.txtMaterialID.TabIndex = 1;
             this.txtMaterialID.TextChanged += new System.EventHandler(this.txtMaterialID_TextChanged);
             // 
+            // comboActiveMaterial
+            // 
+            this.comboActiveMaterial.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboActiveMaterial.FormattingEnabled = true;
+            this.comboActiveMaterial.Items.AddRange(new object[] {
+            "Active",
+            "Passive"});
+            this.comboActiveMaterial.Location = new System.Drawing.Point(408, 425);
+            this.comboActiveMaterial.Name = "comboActiveMaterial";
+            this.comboActiveMaterial.Size = new System.Drawing.Size(359, 33);
+            this.comboActiveMaterial.TabIndex = 11;
+            this.comboActiveMaterial.SelectedIndexChanged += new System.EventHandler(this.comboActiveMaterial_SelectedIndexChanged);
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 3;
@@ -615,19 +628,6 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // comboActiveMaterial
-            // 
-            this.comboActiveMaterial.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboActiveMaterial.FormattingEnabled = true;
-            this.comboActiveMaterial.Items.AddRange(new object[] {
-            "Active",
-            "Passive"});
-            this.comboActiveMaterial.Location = new System.Drawing.Point(408, 425);
-            this.comboActiveMaterial.Name = "comboActiveMaterial";
-            this.comboActiveMaterial.Size = new System.Drawing.Size(359, 33);
-            this.comboActiveMaterial.TabIndex = 11;
-            this.comboActiveMaterial.SelectedIndexChanged += new System.EventHandler(this.comboActiveMaterial_SelectedIndexChanged);
             // 
             // UpdateMaterialForm
             // 

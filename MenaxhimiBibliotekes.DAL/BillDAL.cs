@@ -81,7 +81,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
                 return -1;
             }
         }

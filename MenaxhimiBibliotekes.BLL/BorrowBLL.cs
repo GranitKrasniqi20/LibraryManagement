@@ -13,7 +13,7 @@ namespace MenaxhimiBibliotekes.BLL
     {
 
         BorrowDAL bd = new BorrowDAL();
-
+        EmailService es;
         public int Add(Borrow obj)
         {
             return bd.Add(obj);
@@ -42,7 +42,7 @@ namespace MenaxhimiBibliotekes.BLL
         public void EmailBorrowsToReturn()
         {
 
-            EmailService es = new EmailService();
+             es = new EmailService();
             List<Borrow> emails = bd.EmailsToExpire();
             if (emails.Count > 0)
             {
@@ -60,7 +60,7 @@ namespace MenaxhimiBibliotekes.BLL
         public void EmailBorrows(Borrow b)
         {
 
-            EmailService es = new EmailService();
+             es = new EmailService();
 
                     es.SendMails(b._subscriber.Email, $"Your have borrowed {b._material.Title}", $"Your {b._material._MaterialType._MaterialType} will expire at {b.DeadLine.ToShortDateString()}," +
                         $"we hope you will enjoy reading {b._material.Title} from author {b._material._Author.AuthorName}"
