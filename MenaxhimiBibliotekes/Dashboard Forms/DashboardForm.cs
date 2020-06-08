@@ -21,7 +21,11 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
         MaterialBLL materialBLL = new MaterialBLL();
         SubscriberBLL subscriberBLL;
         List<MonthBorrowStatistic> MonthBorrowStatistics;
+        List<MaterialType> mts;
+        MaterialTypeBLL mtbll;
         BorrowBLL borrbll;
+        List<Material> materials;
+        MaterialBLL mbll;
         public DashboardForm()
         {
             InitializeComponent();
@@ -31,6 +35,12 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
         {
             subscriberBLL = new SubscriberBLL();
             borrbll = new BorrowBLL();
+            mtbll = new MaterialTypeBLL();
+            mbll = new MaterialBLL();
+
+
+            materials = mbll.MostBorrowedBooks();
+            mts = mtbll.MostBorrowedMaterialTypes();
 
             MonthBorrowStatistics = borrbll.Last12MonthBorrowStatistics();
 
@@ -40,14 +50,13 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
             chartMaterials.Dock = DockStyle.Fill;
 
             Series series = new Series("Material", ViewType.Line);
-            series.DataSource = subscribers;
-            series.ArgumentDataMember = "FullName";
-            series.ValueDataMembers.AddRange("BorrowingsNumber");
+            series.DataSource = MonthBorrowStatistics;
+            series.ArgumentDataMember = "Month";
+            series.ValueDataMembers.AddRange("BorrowingsCount");
             chartMaterials.Series.Add(series);
 
             LineSeriesView view = (LineSeriesView)series.View;
             view.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-
 
             series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
             series.Label.ResolveOverlappingMode = ResolveOverlappingMode.HideOverlapped;
@@ -117,9 +126,9 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
             serie.ValueScaleType = ScaleType.Numerical;
 
             serie.ArgumentDataMember = "Title";
-            serie.ValueDataMembers.AddRange("MaterialId");
+            serie.ValueDataMembers.AddRange("Borrowings");
             chartMostBorrowedMaterials.Series.Add(serie);
-            chartMostBorrowedMaterials.DataSource = materialList;
+            chartMostBorrowedMaterials.DataSource = materials;
 
 
 
@@ -127,14 +136,14 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
 
             // PIE CHART =>
 
-            materialList = materialBLL.GetAll();
+            
 
             piechart.Titles.Add(new ChartTitle() { Text = "MaterialTypes" });
 
             Series series1 = new Series("Most borrowed MaterialTypes", ViewType.Pie);
-            series1.DataSource = materialList;
-            series1.ArgumentDataMember = "Title";
-            series1.ValueDataMembers.AddRange("MaterialId");
+            series1.DataSource = mts;
+            series1.ArgumentDataMember = "_MaterialType";
+            series1.ValueDataMembers.AddRange("Borrowings");
 
             piechart.Series.Add(series1);
 

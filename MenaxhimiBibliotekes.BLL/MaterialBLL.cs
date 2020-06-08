@@ -18,6 +18,11 @@ namespace MenaxhimiBibliotekes.BLL
            return _materialDAL.Add(obj);
         }
 
+        public List<Material> MostBorrowedBooks()
+        {
+            return _materialDAL.MostBorrowedBooks();
+        }
+
         public int Delete(int Id)
         {
            return _materialDAL.Delete(Id);

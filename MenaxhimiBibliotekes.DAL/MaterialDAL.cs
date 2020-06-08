@@ -298,6 +298,46 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
+
+        public List<Material> MostBorrowedBooks()
+        {
+            try
+            {
+                List<Material> _AllMaterials = new List<Material>();
+
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_MostBorrowedBooks", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+                                    material = new Material();
+
+                                    material.MaterialId = int.Parse(sqr["MaterialId"].ToString());
+                                    material.Title = sqr["Title"].ToString();
+                                    material.Borrowings = (int)sqr["Borrowings"];
+                                    material._Author.AuthorName = sqr["AuthorName"].ToString();
+
+                                    _AllMaterials.Add(material);
+
+                                }
+                            }
+                            return _AllMaterials;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public Material ToBO(SqlDataReader reader)
         {
             material = new Material();

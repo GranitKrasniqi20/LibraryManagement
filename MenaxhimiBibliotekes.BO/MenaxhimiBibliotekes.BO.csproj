@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Month.cs" />
     <Compile Include="MonthBorrowStatistic.cs" />
     <Compile Include="Audit.cs" />
     <Compile Include="BorrowReturn.cs" />

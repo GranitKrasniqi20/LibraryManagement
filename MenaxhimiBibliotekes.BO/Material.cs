@@ -41,7 +41,7 @@ namespace MenaxhimiBibliotekes.BO
         public bool IsActive { get; set; }
         public int ShelfId { get; set; }
         public virtual Shelf _Shelf { get; set; }
-
+        public int Borrowings { get; set; }
 
     }
 }

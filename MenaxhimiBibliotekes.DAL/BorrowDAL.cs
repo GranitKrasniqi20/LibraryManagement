@@ -210,13 +210,15 @@ namespace MenaxhimiBibliotekes.DAL
                         {
                             if (sqr.HasRows)
                             {
+
                                 while (sqr.Read())
                                 {
                                     borr = new MonthBorrowStatistic();
                                     borr.BorrowingsCount = (int)sqr["borrowings"];
-                                    borr.Month = (int)sqr["month"];
+                                    borr.SetMonths((int)sqr["month"]);
                                     borrs.Add(borr);
                                 }
+
                             }
 
                             return borrs;

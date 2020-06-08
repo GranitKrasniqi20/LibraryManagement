@@ -12,6 +12,12 @@ namespace MenaxhimiBibliotekes.BLL
     public class MaterialTypeBLL : ICreate<MaterialType>, IUpdate<MaterialType>, IDelete, IRead<MaterialType>
     {
         MaterialTypeDAL mt = new MaterialTypeDAL();
+
+
+        public List<MaterialType> MostBorrowedMaterialTypes()
+        {
+            return mt.MostBorrowedMaterialTypes();
+        }
         public int Add(MaterialType obj)
         {
             return mt.Add(obj);
