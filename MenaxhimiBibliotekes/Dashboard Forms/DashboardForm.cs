@@ -39,45 +39,52 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
             mbll = new MaterialBLL();
 
 
-            materials = mbll.MostBorrowedBooks();
-            mts = mtbll.MostBorrowedMaterialTypes();
 
-            MonthBorrowStatistics = borrbll.Last12MonthBorrowStatistics();
 
-            subscribers = subscriberBLL.BestSubscribers().ToList();
-            materialList = materialBLL.GetAll();
+            try
+            {
 
-            chartMaterials.Dock = DockStyle.Fill;
+                MonthBorrowStatistics = borrbll.Last12MonthBorrowStatistics();
 
-            Series series = new Series("Material", ViewType.Line);
-            series.DataSource = MonthBorrowStatistics;
-            series.ArgumentDataMember = "Month";
-            series.ValueDataMembers.AddRange("BorrowingsCount");
-            chartMaterials.Series.Add(series);
+                subscribers = subscriberBLL.BestSubscribers().ToList();
+                materialList = materialBLL.GetAll();
 
-            LineSeriesView view = (LineSeriesView)series.View;
-            view.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+                chartMaterials.Dock = DockStyle.Fill;
 
-            series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series.Label.ResolveOverlappingMode = ResolveOverlappingMode.HideOverlapped;
-            series.Label.TextPattern = "{V:.#}";
+                Series series = new Series("Material", ViewType.Line);
+                series.DataSource = MonthBorrowStatistics;
+                series.ArgumentDataMember = "Month";
+                series.ValueDataMembers.AddRange("BorrowingsCount");
+                chartMaterials.Series.Add(series);
 
-            // Create a chart title.
-            ChartTitle chartTitle = new ChartTitle();
-            chartTitle.Text = "Months Timeline";
-            chartMaterials.Titles.Add(chartTitle);
+                LineSeriesView view = (LineSeriesView)series.View;
+                view.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
 
-            // Customize axes.
-            XYDiagram diagram = chartMaterials.Diagram as XYDiagram;
-            diagram.AxisX.Label.TextPattern = "{A:MMM, d (HH:mm)}";
-            diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Hour;
-            diagram.AxisX.DateTimeScaleOptions.GridSpacing = 9;
-            diagram.AxisX.WholeRange.SideMarginsValue = 0.5;
-            diagram.AxisY.WholeRange.AlwaysShowZeroLevel = false;
+                series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+                series.Label.ResolveOverlappingMode = ResolveOverlappingMode.HideOverlapped;
+                series.Label.TextPattern = "{V:.#}";
 
-            // Hide a legend if necessary.
-            chartMaterials.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+                // Create a chart title.
+                ChartTitle chartTitle = new ChartTitle();
+                chartTitle.Text = "Months Timeline";
+                chartMaterials.Titles.Add(chartTitle);
 
+                // Customize axes.
+                XYDiagram diagram = chartMaterials.Diagram as XYDiagram;
+                diagram.AxisX.Label.TextPattern = "{A:MMM, d (HH:mm)}";
+                diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Hour;
+                diagram.AxisX.DateTimeScaleOptions.GridSpacing = 9;
+                diagram.AxisX.WholeRange.SideMarginsValue = 0.5;
+                diagram.AxisY.WholeRange.AlwaysShowZeroLevel = false;
+
+                // Hide a legend if necessary.
+                chartMaterials.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+
+            }
+            catch (Exception)
+            {
+
+            }
 
 
 
@@ -121,14 +128,23 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
 
 
 
-            Series serie = new Series("Materials", ViewType.Bar);
-            serie.ArgumentScaleType = ScaleType.Qualitative;
-            serie.ValueScaleType = ScaleType.Numerical;
+            try
+            {
+                materials = mbll.MostBorrowedBooks();
 
-            serie.ArgumentDataMember = "Title";
-            serie.ValueDataMembers.AddRange("Borrowings");
-            chartMostBorrowedMaterials.Series.Add(serie);
-            chartMostBorrowedMaterials.DataSource = materials;
+                Series serie = new Series("Materials", ViewType.Bar);
+                serie.ArgumentScaleType = ScaleType.Qualitative;
+                serie.ValueScaleType = ScaleType.Numerical;
+
+                serie.ArgumentDataMember = "Title";
+                serie.ValueDataMembers.AddRange("Borrowings");
+                chartMostBorrowedMaterials.Series.Add(serie);
+                chartMostBorrowedMaterials.DataSource = materials;
+            }
+            catch (Exception)
+            {
+
+            }
 
 
 
@@ -136,42 +152,49 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
 
             // PIE CHART =>
 
-            
 
-            piechart.Titles.Add(new ChartTitle() { Text = "MaterialTypes" });
+            try
+            {
+                mts = mtbll.MostBorrowedMaterialTypes();
+                piechart.Titles.Add(new ChartTitle() { Text = "MaterialTypes" });
 
-            Series series1 = new Series("Most borrowed MaterialTypes", ViewType.Pie);
-            series1.DataSource = mts;
-            series1.ArgumentDataMember = "_MaterialType";
-            series1.ValueDataMembers.AddRange("Borrowings");
+                Series series1 = new Series("Most borrowed MaterialTypes", ViewType.Pie);
+                series1.DataSource = mts;
+                series1.ArgumentDataMember = "_MaterialType";
+                series1.ValueDataMembers.AddRange("Borrowings");
 
-            piechart.Series.Add(series1);
+                piechart.Series.Add(series1);
 
-            series1.LegendTextPattern = "{A}";
-
-
+                series1.LegendTextPattern = "{A}";
 
 
-            ((PieSeriesLabel)series1.Label).Position = PieSeriesLabelPosition.TwoColumns;
 
-            ((PieSeriesLabel)series1.Label).ResolveOverlappingMode = ResolveOverlappingMode.Default;
 
-            PieSeriesView myView = (PieSeriesView)series1.View;
+                ((PieSeriesLabel)series1.Label).Position = PieSeriesLabelPosition.TwoColumns;
 
-            // Specify a data filter to explode points.
-            myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Value_1,
-                DataFilterCondition.GreaterThanOrEqual, 9));
-            myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Argument,
-                DataFilterCondition.NotEqual, "Others"));
-            myView.ExplodeMode = PieExplodeMode.UseFilters;
-            myView.ExplodedDistancePercentage = 30;
-            myView.RuntimeExploding = true;
+                ((PieSeriesLabel)series1.Label).ResolveOverlappingMode = ResolveOverlappingMode.Default;
 
-            // Customize the legend.
-            piechart.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
+                PieSeriesView myView = (PieSeriesView)series1.View;
 
-            // Add the chart to the form.
-            piechart.Dock = DockStyle.Fill;
+                // Specify a data filter to explode points.
+                myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Value_1,
+                    DataFilterCondition.GreaterThanOrEqual, 9));
+                myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Argument,
+                    DataFilterCondition.NotEqual, "Others"));
+                myView.ExplodeMode = PieExplodeMode.UseFilters;
+                myView.ExplodedDistancePercentage = 30;
+                myView.RuntimeExploding = true;
+
+                // Customize the legend.
+                piechart.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
+
+                // Add the chart to the form.
+                piechart.Dock = DockStyle.Fill;
+            }
+            catch (Exception)
+            {
+
+            }
 
 
 
