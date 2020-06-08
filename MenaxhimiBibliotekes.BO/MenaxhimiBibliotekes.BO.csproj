@@ -50,6 +50,7 @@
     <Compile Include="Interfaces\ILogIn.cs" />
     <Compile Include="Interfaces\IRead.cs" />
     <Compile Include="Interfaces\IUpdate.cs" />
+    <Compile Include="Notification.cs" />
     <Compile Include="Subscriber.cs" />
     <Compile Include="Author.cs" />
     <Compile Include="Bill.cs" />
@@ -67,5 +68,6 @@
     <Compile Include="User.cs" />
     <Compile Include="Genre.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,14 +41,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitleCreate = new System.Windows.Forms.Label();
             this.flowpanelMain = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucNotificationMessages = new MenaxhimiBibliotekes.Notifications_Forms.ucNotificationMessages();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.panelSubHeader.SuspendLayout();
             this.panelBottom.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowpanelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableHeader
@@ -133,6 +131,7 @@
             this.btnDisplay.TabIndex = 1;
             this.btnDisplay.Text = "Display";
             this.btnDisplay.UseVisualStyleBackColor = false;
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
             // comboNotificationType
             // 
@@ -187,23 +186,11 @@
             // 
             this.flowpanelMain.AutoScroll = true;
             this.flowpanelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowpanelMain.Controls.Add(this.ucNotificationMessages);
             this.flowpanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowpanelMain.Location = new System.Drawing.Point(0, 220);
             this.flowpanelMain.Name = "flowpanelMain";
             this.flowpanelMain.Size = new System.Drawing.Size(740, 369);
             this.flowpanelMain.TabIndex = 4;
-            // 
-            // ucNotificationMessages
-            // 
-            this.ucNotificationMessages.Category = "Subscribers Notification";
-            this.ucNotificationMessages.Date = "01/01/2020";
-            this.ucNotificationMessages.Icon = ((System.Drawing.Image)(resources.GetObject("ucNotificationMessages.Icon")));
-            this.ucNotificationMessages.Location = new System.Drawing.Point(3, 3);
-            this.ucNotificationMessages.Message = "Beis Presheva is registered in the system from 01/01/2020 till 01/01/2021!";
-            this.ucNotificationMessages.Name = "ucNotificationMessages";
-            this.ucNotificationMessages.Size = new System.Drawing.Size(735, 87);
-            this.ucNotificationMessages.TabIndex = 0;
             // 
             // NotificationsForm
             // 
@@ -218,6 +205,7 @@
             this.Name = "NotificationsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Notifications (Stackbooks)";
+            this.Activated += new System.EventHandler(this.NotificationsForm_Activated);
             this.Load += new System.EventHandler(this.NotificationsForm_Load);
             this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -228,7 +216,6 @@
             this.panelBottom.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowpanelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -244,7 +231,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowpanelMain;
         private System.Windows.Forms.Button btnDisplay;
         private System.Windows.Forms.ComboBox comboNotificationType;
-        private ucNotificationMessages ucNotificationMessages;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblFooterTitleCreate;

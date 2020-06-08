@@ -29,6 +29,9 @@ namespace MenaxhimiBibliotekes.Members_Forms
         Bill bill = new Bill();
         BillBLL billBLL = new BillBLL();
 
+        Notification notification = new Notification();
+        NotificationBLL notificationBLL = new NotificationBLL();
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             try
@@ -108,6 +111,12 @@ namespace MenaxhimiBibliotekes.Members_Forms
                         bill.SubscriberId = subscriberBLL.MaxSubscriberId();
                         billBLL.Add(bill);
                         MessageBox.Show("The Subscriber is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        notification.Message = $"Member {subscriber.Name} {subscriber.LastName} is registered from date {subscriber.InsDate} till {subscriber.ExpirationDate}";
+                        notification.Date = DateTime.Now;
+                        notification.Category = "Subscriber Notification";
+
+                        notificationBLL.Add(notification);
                     }
 
 

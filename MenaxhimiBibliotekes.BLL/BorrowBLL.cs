@@ -14,6 +14,10 @@ namespace MenaxhimiBibliotekes.BLL
 
         BorrowDAL bd = new BorrowDAL();
         EmailService es;
+
+        Notification notification = new Notification();
+        NotificationBLL notificationBLL = new NotificationBLL();
+
         public int Add(Borrow obj)
         {
             return bd.Add(obj);
@@ -42,14 +46,23 @@ namespace MenaxhimiBibliotekes.BLL
         public void EmailBorrowsToReturn()
         {
 
+            notification = new Notification();
+            notificationBLL = new NotificationBLL();
+
              es = new EmailService();
             List<Borrow> emails = bd.EmailsToExpire();
             if (emails.Count > 0)
             {
                 foreach (var item in bd.EmailsToExpire())
                 {
-                        es.SendMails(item._subscriber.Email, "Your Borrow is about to expire", $"Your {item._material._MaterialType._MaterialType} will expire in 5 days," +
-                            $"we hope you enjoyed reading {item._material.Title} from author {item._material._Author.AuthorName}");
+                    es.SendMails(item._subscriber.Email, "Your Borrow is about to expire", $"Your {item._material._MaterialType._MaterialType} will expire in 5 days," +
+                                $"we hope you enjoyed reading {item._material.Title} from author {item._material._Author.AuthorName}");
+
+                    notification.Message = $"Automated Email was sent to {item._subscriber.Name} {item._subscriber.LastName} to inform for the Expiration of the borrowed book!";
+                    notification.Date = DateTime.Now;
+                    notification.Category = "Material Notification";
+
+                    notificationBLL.Add(notification);
                 }
             }
 
@@ -59,13 +72,19 @@ namespace MenaxhimiBibliotekes.BLL
 
         public void EmailBorrows(Borrow b)
         {
+            notification = new Notification();
+            notificationBLL = new NotificationBLL();
 
-             es = new EmailService();
+            es = new EmailService();
 
                     es.SendMails(b._subscriber.Email, $"Your have borrowed {b._material.Title}", $"Your {b._material._MaterialType._MaterialType} will expire at {b.DeadLine.ToShortDateString()}," +
-                        $"we hope you will enjoy reading {b._material.Title} from author {b._material._Author.AuthorName}"
+                        $"we hope you will enjoy reading {b._material.Title} from author {b._material._Author.AuthorName}");
 
-                        );
+            notification.Message = $"Automated Email was sent to {b._subscriber.Email} to inform for the borrowing!";
+            notification.Date = DateTime.Now;
+            notification.Category = "Material Notification";
+
+            notificationBLL.Add(notification);
         }
 
     }

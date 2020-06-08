@@ -15,13 +15,15 @@ namespace MenaxhimiBibliotekes.Members_Forms
     public partial class MembersForm : Form
     {
         SubscriberBLL subcriberBLL = new SubscriberBLL();
+        BillBLL billBLL = new BillBLL();
 
         public MembersForm()
         {
             InitializeComponent();
             gridView.OptionsBehavior.AutoPopulateColumns = false;
             gridMembers.DataSource = subcriberBLL.GetAll();
-
+            gridViewBills.OptionsBehavior.AutoPopulateColumns = false;
+            gridBills.DataSource = billBLL.GetAll();
         }
 
         private void btnAddMember_Click(object sender, EventArgs e)
@@ -83,9 +85,22 @@ namespace MenaxhimiBibliotekes.Members_Forms
             }
         }
 
-        private void ComboSortMember_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnSearchBills_Click(object sender, EventArgs e)
+        {
+            BindBillsGrid(true);
+        }
+
+        private void BindBillsGrid(bool i)
         {
 
+            if (txtSearchBills.Text == string.Empty)
+            {
+                gridBills.DataSource = billBLL.GetAll();
+            }
+            else
+            {
+                gridBills.DataSource = billBLL.GetAll().Where(x => x.BillId == int.Parse(txtSearchBills.Text));
+            }
         }
     }
 }

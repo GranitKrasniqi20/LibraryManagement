@@ -32,7 +32,7 @@ namespace MenaxhimiBibliotekes.BLL
 
         public List<Bill> GetAll()
         {
-            return GetAll();
+            return billDAL.GetAll();
         }
 
         public int Update(Bill obj)

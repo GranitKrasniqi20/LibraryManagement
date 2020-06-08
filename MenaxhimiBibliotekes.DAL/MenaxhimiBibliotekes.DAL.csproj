@@ -52,6 +52,7 @@
     <Compile Include="LanguageDAL.cs" />
     <Compile Include="MaterialDAL.cs" />
     <Compile Include="MaterialTypeDAL.cs" />
+    <Compile Include="NotificationDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservationDAL.cs" />
     <Compile Include="RoleDAL.cs" />
@@ -69,6 +70,8 @@
     <Content Include="DBScript\07.06.2020DBSCRIPTnakatesh.sql" />
     <Content Include="DBScript\DatabazaTi130.05.sql" />
     <Content Include="DBScript\Proc.File.txt" />
+    <Content Include="photo\notificationsMaterials.png" />
+    <Content Include="photo\notificationsSubscribers.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

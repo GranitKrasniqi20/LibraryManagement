@@ -73,45 +73,14 @@
             this.btnUpdateMember = new System.Windows.Forms.Button();
             this.btnDeleteMember = new System.Windows.Forms.Button();
             this.tableSpace1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tabExpiredMembers = new System.Windows.Forms.TabPage();
-            this.tableDataGridViewExpired = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvExpiredMembers = new System.Windows.Forms.DataGridView();
-            this.columnIDExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnFirstNameExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnLastNameExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAddressExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnBirthdateExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnGenderExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPersonalNoExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnEmailExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPhoneNumberExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnSubscriptionPlanExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnFromExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnTillExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableFooterExpired = new System.Windows.Forms.TableLayoutPanel();
-            this.lblFooterExpired = new System.Windows.Forms.Label();
-            this.tableSpaceExpiredInfo = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTitleCreate = new System.Windows.Forms.Label();
-            this.tableSpace3 = new System.Windows.Forms.TableLayoutPanel();
             this.tabBills = new System.Windows.Forms.TabPage();
             this.tableDataGridViewBills = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvBills = new System.Windows.Forms.DataGridView();
-            this.columnIDBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnMemberIDBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnFirstNameBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnLastNameBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPersonalNoBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnEmailBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPhoneNumberBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnSubscriptionPlanBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPriceBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnFromBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnTillBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridBills = new DevExpress.XtraGrid.GridControl();
+            this.gridViewBills = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tableBottom3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooter3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.txtSearchBills = new System.Windows.Forms.TextBox();
-            this.comboSortBills = new System.Windows.Forms.ComboBox();
             this.btnSearchBills = new System.Windows.Forms.Button();
             this.tableSpaceInfoBills = new System.Windows.Forms.TableLayoutPanel();
             this.lblInfoBills = new System.Windows.Forms.Label();
@@ -126,6 +95,13 @@
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.subscribersTableAdapter = new MenaxhimiBibliotekes.LibraryManagementDataSetTableAdapters.SubscribersTableAdapter();
             this.subscribersTableAdapter1 = new MenaxhimiBibliotekes.LibraryManagementDataSet1TableAdapters.SubscribersTableAdapter();
+            this.colBillId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubscriberId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBillingDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRegistrationDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBillExpirationDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelFullBody.SuspendLayout();
             this.tabControlMembersForm.SuspendLayout();
             this.tabMainPage.SuspendLayout();
@@ -137,14 +113,10 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableSearch.SuspendLayout();
             this.tableSpace2.SuspendLayout();
-            this.tabExpiredMembers.SuspendLayout();
-            this.tableDataGridViewExpired.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExpiredMembers)).BeginInit();
-            this.tableFooterExpired.SuspendLayout();
-            this.tableSpaceExpiredInfo.SuspendLayout();
             this.tabBills.SuspendLayout();
             this.tableDataGridViewBills.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBills)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewBills)).BeginInit();
             this.tableBottom3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableSpaceInfoBills.SuspendLayout();
@@ -169,7 +141,6 @@
             // tabControlMembersForm
             // 
             this.tabControlMembersForm.Controls.Add(this.tabMainPage);
-            this.tabControlMembersForm.Controls.Add(this.tabExpiredMembers);
             this.tabControlMembersForm.Controls.Add(this.tabBills);
             this.tabControlMembersForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMembersForm.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -515,7 +486,6 @@
             this.comboSortMember.Name = "comboSortMember";
             this.comboSortMember.Size = new System.Drawing.Size(213, 40);
             this.comboSortMember.TabIndex = 5;
-            this.comboSortMember.SelectedIndexChanged += new System.EventHandler(this.ComboSortMember_SelectedIndexChanged);
             // 
             // btnSearchMember
             // 
@@ -627,183 +597,6 @@
             this.tableSpace1.Size = new System.Drawing.Size(726, 16);
             this.tableSpace1.TabIndex = 0;
             // 
-            // tabExpiredMembers
-            // 
-            this.tabExpiredMembers.Controls.Add(this.tableDataGridViewExpired);
-            this.tabExpiredMembers.Controls.Add(this.tableFooterExpired);
-            this.tabExpiredMembers.Controls.Add(this.tableSpaceExpiredInfo);
-            this.tabExpiredMembers.Controls.Add(this.tableSpace3);
-            this.tabExpiredMembers.Location = new System.Drawing.Point(4, 32);
-            this.tabExpiredMembers.Name = "tabExpiredMembers";
-            this.tabExpiredMembers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabExpiredMembers.Size = new System.Drawing.Size(732, 493);
-            this.tabExpiredMembers.TabIndex = 1;
-            this.tabExpiredMembers.Text = "Expired Members";
-            this.tabExpiredMembers.UseVisualStyleBackColor = true;
-            // 
-            // tableDataGridViewExpired
-            // 
-            this.tableDataGridViewExpired.ColumnCount = 3;
-            this.tableDataGridViewExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableDataGridViewExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDataGridViewExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableDataGridViewExpired.Controls.Add(this.dgvExpiredMembers, 1, 0);
-            this.tableDataGridViewExpired.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableDataGridViewExpired.Location = new System.Drawing.Point(3, 81);
-            this.tableDataGridViewExpired.Name = "tableDataGridViewExpired";
-            this.tableDataGridViewExpired.RowCount = 1;
-            this.tableDataGridViewExpired.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDataGridViewExpired.Size = new System.Drawing.Size(726, 393);
-            this.tableDataGridViewExpired.TabIndex = 4;
-            // 
-            // dgvExpiredMembers
-            // 
-            this.dgvExpiredMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvExpiredMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExpiredMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnIDExpired,
-            this.columnFirstNameExpired,
-            this.columnLastNameExpired,
-            this.columnAddressExpired,
-            this.columnBirthdateExpired,
-            this.columnGenderExpired,
-            this.columnPersonalNoExpired,
-            this.columnEmailExpired,
-            this.columnPhoneNumberExpired,
-            this.columnSubscriptionPlanExpired,
-            this.columnFromExpired,
-            this.columnTillExpired});
-            this.dgvExpiredMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvExpiredMembers.Location = new System.Drawing.Point(23, 3);
-            this.dgvExpiredMembers.Name = "dgvExpiredMembers";
-            this.dgvExpiredMembers.Size = new System.Drawing.Size(680, 387);
-            this.dgvExpiredMembers.TabIndex = 7;
-            // 
-            // columnIDExpired
-            // 
-            this.columnIDExpired.HeaderText = "ID";
-            this.columnIDExpired.Name = "columnIDExpired";
-            // 
-            // columnFirstNameExpired
-            // 
-            this.columnFirstNameExpired.HeaderText = "First Name";
-            this.columnFirstNameExpired.Name = "columnFirstNameExpired";
-            // 
-            // columnLastNameExpired
-            // 
-            this.columnLastNameExpired.HeaderText = "Last Name";
-            this.columnLastNameExpired.Name = "columnLastNameExpired";
-            // 
-            // columnAddressExpired
-            // 
-            this.columnAddressExpired.HeaderText = "Address";
-            this.columnAddressExpired.Name = "columnAddressExpired";
-            // 
-            // columnBirthdateExpired
-            // 
-            this.columnBirthdateExpired.HeaderText = "Birthdate";
-            this.columnBirthdateExpired.Name = "columnBirthdateExpired";
-            // 
-            // columnGenderExpired
-            // 
-            this.columnGenderExpired.HeaderText = "Gender";
-            this.columnGenderExpired.Name = "columnGenderExpired";
-            // 
-            // columnPersonalNoExpired
-            // 
-            this.columnPersonalNoExpired.HeaderText = "Personal Number";
-            this.columnPersonalNoExpired.Name = "columnPersonalNoExpired";
-            // 
-            // columnEmailExpired
-            // 
-            this.columnEmailExpired.HeaderText = "Email";
-            this.columnEmailExpired.Name = "columnEmailExpired";
-            // 
-            // columnPhoneNumberExpired
-            // 
-            this.columnPhoneNumberExpired.HeaderText = "Phone Number";
-            this.columnPhoneNumberExpired.Name = "columnPhoneNumberExpired";
-            // 
-            // columnSubscriptionPlanExpired
-            // 
-            this.columnSubscriptionPlanExpired.HeaderText = "Subscription Plan";
-            this.columnSubscriptionPlanExpired.Name = "columnSubscriptionPlanExpired";
-            // 
-            // columnFromExpired
-            // 
-            this.columnFromExpired.HeaderText = "From:";
-            this.columnFromExpired.Name = "columnFromExpired";
-            // 
-            // columnTillExpired
-            // 
-            this.columnTillExpired.HeaderText = "Till:";
-            this.columnTillExpired.Name = "columnTillExpired";
-            // 
-            // tableFooterExpired
-            // 
-            this.tableFooterExpired.ColumnCount = 3;
-            this.tableFooterExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableFooterExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableFooterExpired.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableFooterExpired.Controls.Add(this.lblFooterExpired, 1, 0);
-            this.tableFooterExpired.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableFooterExpired.Location = new System.Drawing.Point(3, 474);
-            this.tableFooterExpired.Name = "tableFooterExpired";
-            this.tableFooterExpired.RowCount = 1;
-            this.tableFooterExpired.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableFooterExpired.Size = new System.Drawing.Size(726, 16);
-            this.tableFooterExpired.TabIndex = 3;
-            // 
-            // lblFooterExpired
-            // 
-            this.lblFooterExpired.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFooterExpired.AutoSize = true;
-            this.lblFooterExpired.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterExpired.Location = new System.Drawing.Point(237, 0);
-            this.lblFooterExpired.Name = "lblFooterExpired";
-            this.lblFooterExpired.Size = new System.Drawing.Size(251, 16);
-            this.lblFooterExpired.TabIndex = 11;
-            this.lblFooterExpired.Text = "All Rights, Stackbooks Management System";
-            // 
-            // tableSpaceExpiredInfo
-            // 
-            this.tableSpaceExpiredInfo.ColumnCount = 3;
-            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceExpiredInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceExpiredInfo.Controls.Add(this.lblTitleCreate, 1, 0);
-            this.tableSpaceExpiredInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableSpaceExpiredInfo.Location = new System.Drawing.Point(3, 19);
-            this.tableSpaceExpiredInfo.Name = "tableSpaceExpiredInfo";
-            this.tableSpaceExpiredInfo.RowCount = 1;
-            this.tableSpaceExpiredInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSpaceExpiredInfo.Size = new System.Drawing.Size(726, 62);
-            this.tableSpaceExpiredInfo.TabIndex = 2;
-            // 
-            // lblTitleCreate
-            // 
-            this.lblTitleCreate.AutoSize = true;
-            this.lblTitleCreate.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleCreate.Location = new System.Drawing.Point(23, 0);
-            this.lblTitleCreate.Name = "lblTitleCreate";
-            this.lblTitleCreate.Size = new System.Drawing.Size(501, 37);
-            this.lblTitleCreate.TabIndex = 8;
-            this.lblTitleCreate.Text = "This Displays List of Expired Members";
-            // 
-            // tableSpace3
-            // 
-            this.tableSpace3.ColumnCount = 1;
-            this.tableSpace3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSpace3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableSpace3.Location = new System.Drawing.Point(3, 3);
-            this.tableSpace3.Name = "tableSpace3";
-            this.tableSpace3.RowCount = 1;
-            this.tableSpace3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSpace3.Size = new System.Drawing.Size(726, 16);
-            this.tableSpace3.TabIndex = 1;
-            // 
             // tabBills
             // 
             this.tabBills.Controls.Add(this.tableDataGridViewBills);
@@ -825,7 +618,7 @@
             this.tableDataGridViewBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableDataGridViewBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableDataGridViewBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableDataGridViewBills.Controls.Add(this.dgvBills, 1, 0);
+            this.tableDataGridViewBills.Controls.Add(this.gridBills, 1, 0);
             this.tableDataGridViewBills.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableDataGridViewBills.Location = new System.Drawing.Point(3, 127);
             this.tableDataGridViewBills.Name = "tableDataGridViewBills";
@@ -834,82 +627,29 @@
             this.tableDataGridViewBills.Size = new System.Drawing.Size(726, 347);
             this.tableDataGridViewBills.TabIndex = 6;
             // 
-            // dgvBills
+            // gridBills
             // 
-            this.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBills.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnIDBill,
-            this.columnMemberIDBill,
-            this.columnFirstNameBill,
-            this.columnLastNameBill,
-            this.columnPersonalNoBill,
-            this.columnEmailBill,
-            this.columnPhoneNumberBill,
-            this.columnSubscriptionPlanBill,
-            this.columnPriceBill,
-            this.columnFromBill,
-            this.columnTillBill});
-            this.dgvBills.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBills.Location = new System.Drawing.Point(23, 3);
-            this.dgvBills.Name = "dgvBills";
-            this.dgvBills.Size = new System.Drawing.Size(680, 341);
-            this.dgvBills.TabIndex = 7;
+            this.gridBills.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridBills.Location = new System.Drawing.Point(23, 3);
+            this.gridBills.MainView = this.gridViewBills;
+            this.gridBills.Name = "gridBills";
+            this.gridBills.Size = new System.Drawing.Size(680, 341);
+            this.gridBills.TabIndex = 0;
+            this.gridBills.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewBills});
             // 
-            // columnIDBill
+            // gridViewBills
             // 
-            this.columnIDBill.HeaderText = "Bill ID";
-            this.columnIDBill.Name = "columnIDBill";
-            // 
-            // columnMemberIDBill
-            // 
-            this.columnMemberIDBill.HeaderText = "Member ID";
-            this.columnMemberIDBill.Name = "columnMemberIDBill";
-            // 
-            // columnFirstNameBill
-            // 
-            this.columnFirstNameBill.HeaderText = "First Name";
-            this.columnFirstNameBill.Name = "columnFirstNameBill";
-            // 
-            // columnLastNameBill
-            // 
-            this.columnLastNameBill.HeaderText = "Last Name";
-            this.columnLastNameBill.Name = "columnLastNameBill";
-            // 
-            // columnPersonalNoBill
-            // 
-            this.columnPersonalNoBill.HeaderText = "Personal Number";
-            this.columnPersonalNoBill.Name = "columnPersonalNoBill";
-            // 
-            // columnEmailBill
-            // 
-            this.columnEmailBill.HeaderText = "Email";
-            this.columnEmailBill.Name = "columnEmailBill";
-            // 
-            // columnPhoneNumberBill
-            // 
-            this.columnPhoneNumberBill.HeaderText = "Phone Number";
-            this.columnPhoneNumberBill.Name = "columnPhoneNumberBill";
-            // 
-            // columnSubscriptionPlanBill
-            // 
-            this.columnSubscriptionPlanBill.HeaderText = "Subscription Plan";
-            this.columnSubscriptionPlanBill.Name = "columnSubscriptionPlanBill";
-            // 
-            // columnPriceBill
-            // 
-            this.columnPriceBill.HeaderText = "Price";
-            this.columnPriceBill.Name = "columnPriceBill";
-            // 
-            // columnFromBill
-            // 
-            this.columnFromBill.HeaderText = "From:";
-            this.columnFromBill.Name = "columnFromBill";
-            // 
-            // columnTillBill
-            // 
-            this.columnTillBill.HeaderText = "Till:";
-            this.columnTillBill.Name = "columnTillBill";
+            this.gridViewBills.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colBillId,
+            this.colSubscriberId,
+            this.colBillingDate,
+            this.colPrice,
+            this.colRegistrationDate,
+            this.colBillExpirationDate,
+            this.colDescription});
+            this.gridViewBills.GridControl = this.gridBills;
+            this.gridViewBills.Name = "gridViewBills";
             // 
             // tableBottom3
             // 
@@ -939,17 +679,14 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 7;
+            this.tableLayoutPanel3.ColumnCount = 5;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.6864F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel3.Controls.Add(this.txtSearchBills, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboSortBills, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSearchBills, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSearchBills, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 74);
@@ -961,38 +698,26 @@
             // 
             // txtSearchBills
             // 
-            this.txtSearchBills.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtSearchBills.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSearchBills.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBills.Location = new System.Drawing.Point(23, 3);
             this.txtSearchBills.Name = "txtSearchBills";
-            this.txtSearchBills.Size = new System.Drawing.Size(254, 39);
+            this.txtSearchBills.Size = new System.Drawing.Size(459, 39);
             this.txtSearchBills.TabIndex = 4;
-            // 
-            // comboSortBills
-            // 
-            this.comboSortBills.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboSortBills.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboSortBills.FormattingEnabled = true;
-            this.comboSortBills.Items.AddRange(new object[] {
-            "Ascending Order",
-            "Descending Order"});
-            this.comboSortBills.Location = new System.Drawing.Point(296, 3);
-            this.comboSortBills.Name = "comboSortBills";
-            this.comboSortBills.Size = new System.Drawing.Size(135, 40);
-            this.comboSortBills.TabIndex = 5;
             // 
             // btnSearchBills
             // 
             this.btnSearchBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.btnSearchBills.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSearchBills.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearchBills.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchBills.ForeColor = System.Drawing.Color.White;
-            this.btnSearchBills.Location = new System.Drawing.Point(449, 3);
+            this.btnSearchBills.Location = new System.Drawing.Point(508, 3);
             this.btnSearchBills.Name = "btnSearchBills";
-            this.btnSearchBills.Size = new System.Drawing.Size(229, 40);
+            this.btnSearchBills.Size = new System.Drawing.Size(193, 47);
             this.btnSearchBills.TabIndex = 6;
             this.btnSearchBills.Text = "Search";
             this.btnSearchBills.UseVisualStyleBackColor = false;
+            this.btnSearchBills.Click += new System.EventHandler(this.btnSearchBills_Click);
             // 
             // tableSpaceInfoBills
             // 
@@ -1110,6 +835,62 @@
             // 
             this.subscribersTableAdapter1.ClearBeforeFill = true;
             // 
+            // colBillId
+            // 
+            this.colBillId.Caption = "Bill ID";
+            this.colBillId.FieldName = "BillId";
+            this.colBillId.Name = "colBillId";
+            this.colBillId.Visible = true;
+            this.colBillId.VisibleIndex = 0;
+            // 
+            // colSubscriberId
+            // 
+            this.colSubscriberId.Caption = "Subscriber ID";
+            this.colSubscriberId.FieldName = "SubscriberId";
+            this.colSubscriberId.Name = "colSubscriberId";
+            this.colSubscriberId.Visible = true;
+            this.colSubscriberId.VisibleIndex = 1;
+            // 
+            // colBillingDate
+            // 
+            this.colBillingDate.Caption = "Billing Date";
+            this.colBillingDate.FieldName = "BillingDate";
+            this.colBillingDate.Name = "colBillingDate";
+            this.colBillingDate.Visible = true;
+            this.colBillingDate.VisibleIndex = 2;
+            // 
+            // colPrice
+            // 
+            this.colPrice.Caption = "Price";
+            this.colPrice.FieldName = "Price";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.Visible = true;
+            this.colPrice.VisibleIndex = 3;
+            // 
+            // colRegistrationDate
+            // 
+            this.colRegistrationDate.Caption = "Registration Date";
+            this.colRegistrationDate.FieldName = "RegistrationDate";
+            this.colRegistrationDate.Name = "colRegistrationDate";
+            this.colRegistrationDate.Visible = true;
+            this.colRegistrationDate.VisibleIndex = 4;
+            // 
+            // colBillExpirationDate
+            // 
+            this.colBillExpirationDate.Caption = "Expiration Date";
+            this.colBillExpirationDate.FieldName = "ExpirationDate";
+            this.colBillExpirationDate.Name = "colBillExpirationDate";
+            this.colBillExpirationDate.Visible = true;
+            this.colBillExpirationDate.VisibleIndex = 5;
+            // 
+            // colDescription
+            // 
+            this.colDescription.Caption = "Bill Description";
+            this.colDescription.FieldName = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.Visible = true;
+            this.colDescription.VisibleIndex = 6;
+            // 
             // MembersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1135,16 +916,10 @@
             this.tableSearch.ResumeLayout(false);
             this.tableSearch.PerformLayout();
             this.tableSpace2.ResumeLayout(false);
-            this.tabExpiredMembers.ResumeLayout(false);
-            this.tableDataGridViewExpired.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExpiredMembers)).EndInit();
-            this.tableFooterExpired.ResumeLayout(false);
-            this.tableFooterExpired.PerformLayout();
-            this.tableSpaceExpiredInfo.ResumeLayout(false);
-            this.tableSpaceExpiredInfo.PerformLayout();
             this.tabBills.ResumeLayout(false);
             this.tableDataGridViewBills.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBills)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewBills)).EndInit();
             this.tableBottom3.ResumeLayout(false);
             this.tableBottom3.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1167,7 +942,6 @@
         private System.Windows.Forms.Panel panelFullBody;
         private System.Windows.Forms.TabControl tabControlMembersForm;
         private System.Windows.Forms.TabPage tabMainPage;
-        private System.Windows.Forms.TabPage tabExpiredMembers;
         private System.Windows.Forms.TableLayoutPanel tableSpace1;
         private System.Windows.Forms.TableLayoutPanel tableSpace2;
         private System.Windows.Forms.Button btnAddMember;
@@ -1186,48 +960,16 @@
         private System.Windows.Forms.TableLayoutPanel tableHeader;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblFooterTitleCreate;
-        private System.Windows.Forms.TableLayoutPanel tableSpaceExpiredInfo;
-        private System.Windows.Forms.TableLayoutPanel tableSpace3;
-        private System.Windows.Forms.Label lblTitleCreate;
-        private System.Windows.Forms.TableLayoutPanel tableDataGridViewExpired;
-        private System.Windows.Forms.DataGridView dgvExpiredMembers;
-        private System.Windows.Forms.TableLayoutPanel tableFooterExpired;
-        private System.Windows.Forms.Label lblFooterExpired;
         private System.Windows.Forms.TabPage tabBills;
         private System.Windows.Forms.TableLayoutPanel tableDataGridViewBills;
-        private System.Windows.Forms.DataGridView dgvBills;
         private System.Windows.Forms.TableLayoutPanel tableBottom3;
         private System.Windows.Forms.Label lblFooter3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox txtSearchBills;
-        private System.Windows.Forms.ComboBox comboSortBills;
         private System.Windows.Forms.Button btnSearchBills;
         private System.Windows.Forms.TableLayoutPanel tableSpaceInfoBills;
         private System.Windows.Forms.Label lblInfoBills;
         private System.Windows.Forms.TableLayoutPanel tableSpace4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnIDBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnMemberIDBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFirstNameBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnLastNameBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPersonalNoBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnEmailBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPhoneNumberBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnSubscriptionPlanBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPriceBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFromBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnTillBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnIDExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFirstNameExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnLastNameExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAddressExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnBirthdateExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnGenderExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPersonalNoExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnEmailExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPhoneNumberExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnSubscriptionPlanExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFromExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnTillExpired;
         private LibraryManagementDataSet libraryManagementDataSet;
         private System.Windows.Forms.BindingSource subscribersBindingSource;
         private LibraryManagementDataSetTableAdapters.SubscribersTableAdapter subscribersTableAdapter;
@@ -1260,5 +1002,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.GridControl gridBills;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewBills;
+        private DevExpress.XtraGrid.Columns.GridColumn colBillId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubscriberId;
+        private DevExpress.XtraGrid.Columns.GridColumn colBillingDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colRegistrationDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colBillExpirationDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescription;
     }
 }

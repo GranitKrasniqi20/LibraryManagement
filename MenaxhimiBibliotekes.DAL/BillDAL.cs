@@ -172,7 +172,7 @@ namespace MenaxhimiBibliotekes.DAL
 
                                     _AllBill.Add(bill);
                                 }
-                            }
+                            }  
                             return _AllBill;
                         }
                     }
@@ -196,7 +196,11 @@ namespace MenaxhimiBibliotekes.DAL
                 bill.MaterialId = int.Parse(reader["MaterialId"].ToString());
             }
 
-            bill.BillTypeId = int.Parse(reader["BillTypeId"].ToString());
+            if (reader["BillTypeId"] != DBNull.Value)
+            {
+                bill.BillTypeId = int.Parse(reader["BillTypeId"].ToString());
+            }
+            
             bill.BillingDate = DateTime.Parse(reader["BillingDate"].ToString());
             bill.Price = decimal.Parse(reader["Price"].ToString());
 
@@ -208,6 +212,15 @@ namespace MenaxhimiBibliotekes.DAL
             if (reader["ExpirationDate"] != DBNull.Value)
             {
                 bill.ExpirationDate = DateTime.Parse(reader["ExpirationDate"].ToString());
+            }
+
+            if (reader["Description"] != DBNull.Value)
+            {
+                bill.Description = reader["Description"].ToString();
+            }
+            else
+            {
+                bill.Description = "No Description for this Bill...";
             }
 
             bill.InsBy = int.Parse(reader["InsBy"].ToString());

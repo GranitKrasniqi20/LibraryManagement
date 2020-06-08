@@ -108,7 +108,7 @@
             this.Controls.Add(this.txtNotificationMessage);
             this.Controls.Add(this.panelSquare);
             this.Name = "ucNotificationMessages";
-            this.Size = new System.Drawing.Size(877, 87);
+            this.Size = new System.Drawing.Size(1426, 87);
             this.panelSquare.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureCategory)).EndInit();
             this.ResumeLayout(false);
