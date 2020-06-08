@@ -197,6 +197,42 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
+        public List<Subscriber> GetAllExpiredSubscribers()
+        {
+            try
+            {
+                List<Subscriber> _AllSubscriber = new List<Subscriber>();
+                subscriber = new Subscriber();
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscribers_GetAllExpiredSubscribers", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+                                    subscriber = ToBO(sqr);
+                                    if (subscriber == null)
+                                    {
+                                        throw new Exception();
+                                    }
+
+                                    _AllSubscriber.Add(subscriber);
+                                }
+                            }
+                            return _AllSubscriber;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public Subscriber ToBO(SqlDataReader reader)
         {
             try
@@ -246,6 +282,47 @@ namespace MenaxhimiBibliotekes.DAL
             catch (Exception)
             {
                 MessageBox.Show("Problem me ToBo", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+        }
+
+        public IEnumerable<Subscriber> BestSubscribers()
+        {
+            try
+            {
+                List<Subscriber> _AllSubscriber = new List<Subscriber>();
+
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_BestSubscribers", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            int i = 0;
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+                                    subscriber = new Subscriber();
+                                    subscriber.SubscriberId = int.Parse(sqr["SubscriberId"].ToString());
+                                    subscriber.Name = sqr["Name"].ToString();
+                                    subscriber.LastName = sqr["LastName"].ToString();
+                                    subscriber.FullName = $"{subscriber.Name} {subscriber.LastName}{i}";
+                                    subscriber.BorrowingsNumber = (int)sqr["Borrowings"];
+                                    _AllSubscriber.Add(subscriber);
+                                    i++;
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+                return _AllSubscriber;
+
+            }
+            catch (Exception)
+            {
                 return null;
             }
         }

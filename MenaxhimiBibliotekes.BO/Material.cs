@@ -11,12 +11,14 @@ namespace MenaxhimiBibliotekes.BO
 
         public Material()
         {
+
             _Genre = new Genre();
             _PublishHouse = new PublishHouse();
             _Author = new Author();
             _MaterialType = new MaterialType();
             _Language = new Language();
             _Shelf = new Shelf();
+
         }
 
         public int MaterialId { get; set; }
@@ -39,7 +41,7 @@ namespace MenaxhimiBibliotekes.BO
         public bool IsActive { get; set; }
         public int ShelfId { get; set; }
         public virtual Shelf _Shelf { get; set; }
-
+        public int Borrowings { get; set; }
 
     }
 }

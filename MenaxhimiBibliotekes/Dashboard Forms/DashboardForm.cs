@@ -17,7 +17,15 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
     public partial class DashboardForm : Form
     {
         List<Material> materialList = new List<Material>();
+        List<Subscriber> subscribers;
         MaterialBLL materialBLL = new MaterialBLL();
+        SubscriberBLL subscriberBLL;
+        List<MonthBorrowStatistic> MonthBorrowStatistics;
+        List<MaterialType> mts;
+        MaterialTypeBLL mtbll;
+        BorrowBLL borrbll;
+        List<Material> materials;
+        MaterialBLL mbll;
         public DashboardForm()
         {
             InitializeComponent();
@@ -25,27 +33,185 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'libraryManagementDataSet2.Materials' table. You can move, or remove it, as needed.
-            this.materialsTableAdapter.Fill(this.libraryManagementDataSet2.Materials);
+            subscriberBLL = new SubscriberBLL();
+            borrbll = new BorrowBLL();
+            mtbll = new MaterialTypeBLL();
+            mbll = new MaterialBLL();
 
-            //materialList = materialBLL.GetAll();
 
-            //Series materialStock = new Series();
-            //materialStock = chartMaterials.Series["Available Materials"];
 
-            //foreach (var material in materialList)
-            //{
-            //    if (material.AvailableCoppies > 0)
-            //    {
 
-            //        materialStock.Points.AddPoint(material.Title, (double)material.AvailableCoppies);
-            //    }
-            //}
+            try
+            {
 
-            chartMaterials.Series["Available Materials"].Points.AddRange( new SeriesPoint("hello", 3));
-            chartMaterials.Series["Available Materials"].Points.AddPoint("hello2", 5);
-            chartMaterials.Series["Available Materials"].Points.AddPoint("hello3", 8);
-            chartMaterials.Series["Available Materials"].Points.AddPoint("hello4", 2);
+                MonthBorrowStatistics = borrbll.Last12MonthBorrowStatistics();
+
+                subscribers = subscriberBLL.BestSubscribers().ToList();
+                materialList = materialBLL.GetAll();
+
+                chartMaterials.Dock = DockStyle.Fill;
+
+                Series series = new Series("Material", ViewType.Line);
+                series.DataSource = MonthBorrowStatistics;
+                series.ArgumentDataMember = "Month";
+                series.ValueDataMembers.AddRange("BorrowingsCount");
+                chartMaterials.Series.Add(series);
+
+                LineSeriesView view = (LineSeriesView)series.View;
+                view.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+
+                series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+                series.Label.ResolveOverlappingMode = ResolveOverlappingMode.HideOverlapped;
+                series.Label.TextPattern = "{V:.#}";
+
+                // Create a chart title.
+                ChartTitle chartTitle = new ChartTitle();
+                chartTitle.Text = "Months Timeline";
+                chartMaterials.Titles.Add(chartTitle);
+
+                // Customize axes.
+                XYDiagram diagram = chartMaterials.Diagram as XYDiagram;
+                diagram.AxisX.Label.TextPattern = "{A:MMM, d (HH:mm)}";
+                diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Hour;
+                diagram.AxisX.DateTimeScaleOptions.GridSpacing = 9;
+                diagram.AxisX.WholeRange.SideMarginsValue = 0.5;
+                diagram.AxisY.WholeRange.AlwaysShowZeroLevel = false;
+
+                // Hide a legend if necessary.
+                chartMaterials.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+
+
+
+
+
+
+
+            //SideBySide chart
+
+            //ChartControl sideBySideBarChart = chartMaterials;
+
+            //Series series1 = new Series("Side-by-Side Bar Series 1", ViewType.Pie3D);
+            //series1.DataSource = materialList;
+
+            //series1.ArgumentDataMember = "Title";
+            //series1.ValueDataMembers.AddRange("MaterialId");
+
+
+            //sideBySideBarChart.Series.Add(series1);
+
+            //sideBySideBarChart.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
+
+            //((XYDiagram)sideBySideBarChart.Diagram).Rotated = true;
+
+            //ChartTitle chartTitle1 = new ChartTitle();
+            //chartTitle1.Text = "Side-by-Side Bar Chart";
+            //sideBySideBarChart.Titles.Add(chartTitle1);
+
+            //Add the chart to the form.
+            //sideBySideBarChart.Dock = DockStyle.Left;
+
+
+
+
+
+
+
+
+
+
+
+            try
+            {
+                materials = mbll.MostBorrowedBooks();
+
+                Series serie = new Series("Materials", ViewType.Bar);
+                serie.ArgumentScaleType = ScaleType.Qualitative;
+                serie.ValueScaleType = ScaleType.Numerical;
+
+                serie.ArgumentDataMember = "Title";
+                serie.ValueDataMembers.AddRange("Borrowings");
+                chartMostBorrowedMaterials.Series.Add(serie);
+                chartMostBorrowedMaterials.DataSource = materials;
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+
+
+
+            // PIE CHART =>
+
+
+            try
+            {
+                mts = mtbll.MostBorrowedMaterialTypes();
+                piechart.Titles.Add(new ChartTitle() { Text = "MaterialTypes" });
+
+                Series series1 = new Series("Most borrowed MaterialTypes", ViewType.Pie);
+                series1.DataSource = mts;
+                series1.ArgumentDataMember = "_MaterialType";
+                series1.ValueDataMembers.AddRange("Borrowings");
+
+                piechart.Series.Add(series1);
+
+                series1.LegendTextPattern = "{A}";
+
+
+
+
+                ((PieSeriesLabel)series1.Label).Position = PieSeriesLabelPosition.TwoColumns;
+
+                ((PieSeriesLabel)series1.Label).ResolveOverlappingMode = ResolveOverlappingMode.Default;
+
+                PieSeriesView myView = (PieSeriesView)series1.View;
+
+                // Specify a data filter to explode points.
+                myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Value_1,
+                    DataFilterCondition.GreaterThanOrEqual, 9));
+                myView.ExplodedPointsFilters.Add(new SeriesPointFilter(SeriesPointKey.Argument,
+                    DataFilterCondition.NotEqual, "Others"));
+                myView.ExplodeMode = PieExplodeMode.UseFilters;
+                myView.ExplodedDistancePercentage = 30;
+                myView.RuntimeExploding = true;
+
+                // Customize the legend.
+                piechart.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
+
+                // Add the chart to the form.
+                piechart.Dock = DockStyle.Fill;
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+
+        }
+
+        private void ChartMaterials_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Piechart_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
         }
     }
 }

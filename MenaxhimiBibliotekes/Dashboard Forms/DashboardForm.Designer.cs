@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -41,19 +40,18 @@
             this.lblFooterTitleCreate = new System.Windows.Forms.Label();
             this.tableSpace2 = new System.Windows.Forms.TableLayoutPanel();
             this.chartMaterials = new DevExpress.XtraCharts.ChartControl();
-            this.libraryManagementDataSet2 = new MenaxhimiBibliotekes.LibraryManagementDataSet2();
-            this.materialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.materialsTableAdapter = new MenaxhimiBibliotekes.LibraryManagementDataSet2TableAdapters.MaterialsTableAdapter();
+            this.piechart = new DevExpress.XtraCharts.ChartControl();
+            this.chartMostBorrowedMaterials = new DevExpress.XtraCharts.ChartControl();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableSpace2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMaterials)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piechart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryManagementDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMostBorrowedMaterials)).BeginInit();
             this.SuspendLayout();
             // 
             // tableHeader
@@ -69,7 +67,7 @@
             this.tableHeader.Name = "tableHeader";
             this.tableHeader.RowCount = 1;
             this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableHeader.Size = new System.Drawing.Size(740, 88);
+            this.tableHeader.Size = new System.Drawing.Size(802, 88);
             this.tableHeader.TabIndex = 2;
             // 
             // panel1
@@ -78,7 +76,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.picTitle);
-            this.panel1.Location = new System.Drawing.Point(143, 3);
+            this.panel1.Location = new System.Drawing.Point(174, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(453, 82);
             this.panel1.TabIndex = 0;
@@ -113,7 +111,7 @@
             this.tableSpace1.Name = "tableSpace1";
             this.tableSpace1.RowCount = 1;
             this.tableSpace1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSpace1.Size = new System.Drawing.Size(740, 16);
+            this.tableSpace1.Size = new System.Drawing.Size(802, 16);
             this.tableSpace1.TabIndex = 3;
             // 
             // tableLayoutPanel1
@@ -124,11 +122,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.lblFooterTitleCreate, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 592);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 1084);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(740, 25);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(802, 25);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // lblFooterTitleCreate
@@ -136,7 +134,7 @@
             this.lblFooterTitleCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFooterTitleCreate.AutoSize = true;
             this.lblFooterTitleCreate.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterTitleCreate.Location = new System.Drawing.Point(244, 4);
+            this.lblFooterTitleCreate.Location = new System.Drawing.Point(275, 4);
             this.lblFooterTitleCreate.Name = "lblFooterTitleCreate";
             this.lblFooterTitleCreate.Size = new System.Drawing.Size(251, 17);
             this.lblFooterTitleCreate.TabIndex = 11;
@@ -158,48 +156,51 @@
             this.tableSpace2.Name = "tableSpace2";
             this.tableSpace2.RowCount = 1;
             this.tableSpace2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSpace2.Size = new System.Drawing.Size(740, 224);
+            this.tableSpace2.Size = new System.Drawing.Size(802, 224);
             this.tableSpace2.TabIndex = 5;
             // 
             // chartMaterials
             // 
-            this.chartMaterials.DataAdapter = this.materialsTableAdapter;
-            this.chartMaterials.DataSource = this.materialsBindingSource;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartMaterials.Diagram = xyDiagram1;
             this.chartMaterials.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartMaterials.Legend.Name = "Default Legend";
             this.chartMaterials.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.chartMaterials.Location = new System.Drawing.Point(23, 3);
             this.chartMaterials.Name = "chartMaterials";
-            series1.ArgumentDataMember = "Title";
-            series1.Name = "InStock";
-            series1.ValueDataMembersSerializable = "AvailableCoppies";
-            this.chartMaterials.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartMaterials.Size = new System.Drawing.Size(694, 218);
+            this.chartMaterials.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartMaterials.Size = new System.Drawing.Size(756, 218);
             this.chartMaterials.TabIndex = 0;
+            this.chartMaterials.Click += new System.EventHandler(this.ChartMaterials_Click);
             // 
-            // libraryManagementDataSet2
+            // piechart
             // 
-            this.libraryManagementDataSet2.DataSetName = "LibraryManagementDataSet2";
-            this.libraryManagementDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.piechart.Legend.Name = "Default Legend";
+            this.piechart.Location = new System.Drawing.Point(67, 858);
+            this.piechart.Name = "piechart";
+            series1.Name = "s1";
+            series1.View = pieSeriesView1;
+            this.piechart.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.piechart.Size = new System.Drawing.Size(694, 226);
+            this.piechart.TabIndex = 6;
+            this.piechart.Click += new System.EventHandler(this.Piechart_Click);
             // 
-            // materialsBindingSource
+            // chartMostBorrowedMaterials
             // 
-            this.materialsBindingSource.DataMember = "Materials";
-            this.materialsBindingSource.DataSource = this.libraryManagementDataSet2;
-            // 
-            // materialsTableAdapter
-            // 
-            this.materialsTableAdapter.ClearBeforeFill = true;
+            this.chartMostBorrowedMaterials.Legend.Name = "Default Legend";
+            this.chartMostBorrowedMaterials.Location = new System.Drawing.Point(23, 385);
+            this.chartMostBorrowedMaterials.Name = "chartMostBorrowedMaterials";
+            this.chartMostBorrowedMaterials.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartMostBorrowedMaterials.Size = new System.Drawing.Size(756, 260);
+            this.chartMostBorrowedMaterials.TabIndex = 7;
             // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 617);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(819, 659);
+            this.Controls.Add(this.chartMostBorrowedMaterials);
+            this.Controls.Add(this.piechart);
             this.Controls.Add(this.tableSpace2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableSpace1);
@@ -216,11 +217,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableSpace2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMaterials)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryManagementDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piechart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMostBorrowedMaterials)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,9 +236,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblFooterTitleCreate;
         private System.Windows.Forms.TableLayoutPanel tableSpace2;
+        private DevExpress.XtraCharts.ChartControl piechart;
         private DevExpress.XtraCharts.ChartControl chartMaterials;
-        private LibraryManagementDataSet2TableAdapters.MaterialsTableAdapter materialsTableAdapter;
-        private LibraryManagementDataSet2 libraryManagementDataSet2;
-        private System.Windows.Forms.BindingSource materialsBindingSource;
+        private DevExpress.XtraCharts.ChartControl chartMostBorrowedMaterials;
     }
 }

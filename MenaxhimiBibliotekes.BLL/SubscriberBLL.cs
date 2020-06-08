@@ -33,6 +33,11 @@ namespace MenaxhimiBibliotekes.BLL
             return subscriberDAL.GetAll();
         }
 
+        public List<Subscriber> GetAllExpiredSubscribers()
+        {
+            return subscriberDAL.GetAllExpiredSubscribers();
+        }
+
         public int Update(Subscriber obj)
         {
             return subscriberDAL.Update(obj);
@@ -65,6 +70,12 @@ namespace MenaxhimiBibliotekes.BLL
                 $"we hope you will enjoy reading our Books. Your subscription will end at {sub.ExpirationDate}. We will you all the bests," +
                 $"Stack Books staff");
 
+        }
+
+
+        public IEnumerable<Subscriber> BestSubscribers()
+        {
+            return subscriberDAL.BestSubscribers();
         }
 
         #region

@@ -12,5 +12,6 @@ namespace MenaxhimiBibliotekes.BO
         public string _MaterialType { get; set; }
         public decimal MaterialTypeDelayFee { get; set; }
         public bool isActive { get; set; }
+        public int Borrowings { get; set; }
     }
 }

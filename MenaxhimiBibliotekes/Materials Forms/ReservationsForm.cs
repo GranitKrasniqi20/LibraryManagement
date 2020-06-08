@@ -29,7 +29,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         Reservation reservation = new Reservation();
         ReservationBLL reservationBLL = new ReservationBLL();
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
@@ -48,10 +47,19 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 material = materialBLL.Get(int.Parse(txtMaterialID.Text));
 
                 txtMaterialName.Text = material.Title;
-                txtMaterialType.Text = material.MaterialId.ToString();
+                txtMaterialType.Text = material._MaterialType._MaterialType;
                 txtOverallQuantity.Text = material.Quantity.ToString();
-                txtStockQuantity.Text = 1.ToString();
-                txtAvailability.Text = material.AvailableCoppies.ToString();
+                txtStockQuantity.Text = material.AvailableCoppies.ToString();
+
+                if (material.AvailableCoppies>0)
+                {
+                    txtAvailability.Text = "Available";
+                }
+
+                else
+                {
+                    txtAvailability.Text = "Unavailable";
+                }
 
             }
 
@@ -69,7 +77,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 if(material.AvailableCoppies>=1)
                 {
                     reservation.SubscriberId = subscriber.SubscriberId;
-                    reservation.MaterialId = material.MaterialId;
 
                     reservation.ReservationDate = dateTill.Value;
                     reservation.InsBy = FormLoggedUser.Id;
@@ -79,7 +86,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     reservation._subscriber = subscriber;
                     reservation._material = material;
 
-                    material.AvailableCoppies--;
                     MessageBox.Show("The Reservation is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 

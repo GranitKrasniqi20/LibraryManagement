@@ -133,6 +133,41 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
+        public List<MaterialType> MostBorrowedMaterialTypes()
+        {
+            List<MaterialType> AllMaterialType = new List<MaterialType>();
+
+
+            using (SqlConnection sqlconn = DbHelper.GetConnection())
+            {
+                using (SqlCommand command = DbHelper.Command(sqlconn, "usp_MostBorrowedMaterialTypes", CommandType.StoredProcedure))
+                {
+                    using (SqlDataReader sqr = command.ExecuteReader())
+                    {
+                        if (sqr.HasRows)
+                        {
+                            while (sqr.Read())
+                            {
+
+                                mt = new MaterialType();
+                                mt.Borrowings = (int)sqr["borrowings"];
+                                mt._MaterialType = sqr["MaterialType"].ToString();
+
+                                //rreshtat e rafteve ne listen brenda materialeve
+
+                                AllMaterialType.Add(mt);
+
+
+
+                            }
+                        }
+                        return AllMaterialType;
+                    }
+                }
+            }
+        }
+
+
         public MaterialType ToBO(SqlDataReader reader)
         {
             try

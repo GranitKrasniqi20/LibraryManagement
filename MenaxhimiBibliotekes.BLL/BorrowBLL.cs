@@ -70,7 +70,14 @@ namespace MenaxhimiBibliotekes.BLL
 
         }
 
-        public void EmailBorrows(Borrow b)
+        public List<MonthBorrowStatistic> Last12MonthBorrowStatistics()
+        {
+
+
+            return bd.Last12MonthBorrowStatistics();
+        }
+
+            public void EmailBorrows(Borrow b)
         {
             notification = new Notification();
             notificationBLL = new NotificationBLL();
