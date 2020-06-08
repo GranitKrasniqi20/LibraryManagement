@@ -197,6 +197,42 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
+        public List<Subscriber> GetAllExpiredSubscribers()
+        {
+            try
+            {
+                List<Subscriber> _AllSubscriber = new List<Subscriber>();
+                subscriber = new Subscriber();
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Subscribers_GetAllExpiredSubscribers", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+                                    subscriber = ToBO(sqr);
+                                    if (subscriber == null)
+                                    {
+                                        throw new Exception();
+                                    }
+
+                                    _AllSubscriber.Add(subscriber);
+                                }
+                            }
+                            return _AllSubscriber;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public Subscriber ToBO(SqlDataReader reader)
         {
             try

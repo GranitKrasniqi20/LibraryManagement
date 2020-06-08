@@ -946,7 +946,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3136F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel3.Controls.Add(this.txtSearchBills, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboSortBills, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnSearchBills, 5, 0);
@@ -965,7 +965,7 @@
             this.txtSearchBills.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBills.Location = new System.Drawing.Point(23, 3);
             this.txtSearchBills.Name = "txtSearchBills";
-            this.txtSearchBills.Size = new System.Drawing.Size(254, 39);
+            this.txtSearchBills.Size = new System.Drawing.Size(252, 39);
             this.txtSearchBills.TabIndex = 4;
             // 
             // comboSortBills
@@ -976,7 +976,7 @@
             this.comboSortBills.Items.AddRange(new object[] {
             "Ascending Order",
             "Descending Order"});
-            this.comboSortBills.Location = new System.Drawing.Point(296, 3);
+            this.comboSortBills.Location = new System.Drawing.Point(294, 3);
             this.comboSortBills.Name = "comboSortBills";
             this.comboSortBills.Size = new System.Drawing.Size(135, 40);
             this.comboSortBills.TabIndex = 5;
@@ -987,7 +987,7 @@
             this.btnSearchBills.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchBills.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchBills.ForeColor = System.Drawing.Color.White;
-            this.btnSearchBills.Location = new System.Drawing.Point(449, 3);
+            this.btnSearchBills.Location = new System.Drawing.Point(447, 3);
             this.btnSearchBills.Name = "btnSearchBills";
             this.btnSearchBills.Size = new System.Drawing.Size(229, 40);
             this.btnSearchBills.TabIndex = 6;

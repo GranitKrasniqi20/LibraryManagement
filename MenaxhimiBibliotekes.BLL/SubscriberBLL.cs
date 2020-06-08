@@ -33,6 +33,11 @@ namespace MenaxhimiBibliotekes.BLL
             return subscriberDAL.GetAll();
         }
 
+        public List<Subscriber> GetAllExpiredSubscribers()
+        {
+            return subscriberDAL.GetAllExpiredSubscribers();
+        }
+
         public int Update(Subscriber obj)
         {
             return subscriberDAL.Update(obj);
