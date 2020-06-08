@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DBScript\07.06.2020DBSCRIPTnakatesh.sql" />
+    <Content Include="DBScript\08.06.2020.sql" />
     <Content Include="DBScript\DatabazaTi130.05.sql" />
     <Content Include="DBScript\Proc.File.txt" />
   </ItemGroup>
