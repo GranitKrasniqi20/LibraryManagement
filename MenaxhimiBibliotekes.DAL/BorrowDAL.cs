@@ -195,6 +195,42 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
+        public List<MonthBorrowStatistic> Last12MonthBorrowStatistics()
+        {
+            try
+            {
+                List<MonthBorrowStatistic> borrs = new List<MonthBorrowStatistic>();
+                MonthBorrowStatistic borr ;
+
+                using (SqlConnection sqlconn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(sqlconn, "usp_GetBorrowCountLast12Months", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+                                    borr = new MonthBorrowStatistic();
+                                    borr.BorrowingsCount = (int)sqr["borrowings"];
+                                    borr.Month = (int)sqr["month"];
+                                    borrs.Add(borr);
+                                }
+                            }
+
+                            return borrs;
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+
+        }
+
         public List<Borrow> EmailsToExpire()
         {
             try
