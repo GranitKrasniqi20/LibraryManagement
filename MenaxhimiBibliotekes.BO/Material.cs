@@ -11,12 +11,14 @@ namespace MenaxhimiBibliotekes.BO
 
         public Material()
         {
+
             _Genre = new Genre();
             _PublishHouse = new PublishHouse();
             _Author = new Author();
             _MaterialType = new MaterialType();
             _Language = new Language();
             _Shelf = new Shelf();
+
         }
 
         public int MaterialId { get; set; }

@@ -286,6 +286,47 @@ namespace MenaxhimiBibliotekes.DAL
             }
         }
 
+        public IEnumerable<Subscriber> BestSubscribers()
+        {
+            try
+            {
+                List<Subscriber> _AllSubscriber = new List<Subscriber>();
+
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_BestSubscribers", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            int i = 0;
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+                                    subscriber = new Subscriber();
+                                    subscriber.SubscriberId = int.Parse(sqr["SubscriberId"].ToString());
+                                    subscriber.Name = sqr["Name"].ToString();
+                                    subscriber.LastName = sqr["LastName"].ToString();
+                                    subscriber.FullName = $"{subscriber.Name} {subscriber.LastName}{i}";
+                                    subscriber.BorrowingsNumber = (int)sqr["Borrowings"];
+                                    _AllSubscriber.Add(subscriber);
+                                    i++;
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+                return _AllSubscriber;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public int Update(Subscriber obj)
         {
             int rowsAffected = 0;

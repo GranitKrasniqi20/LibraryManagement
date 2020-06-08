@@ -57,14 +57,18 @@ namespace MenaxhimiBibliotekes.BLL
 
         }
 
-        public void EmailBorrows(Borrow b)
+        public List<MonthBorrowStatistic> Last12MonthBorrowStatistics()
         {
 
-             es = new EmailService();
 
+            return bd.Last12MonthBorrowStatistics();
+        }
+
+            public void EmailBorrows(Borrow b)
+        {
+             es = new EmailService();
                     es.SendMails(b._subscriber.Email, $"Your have borrowed {b._material.Title}", $"Your {b._material._MaterialType._MaterialType} will expire at {b.DeadLine.ToShortDateString()}," +
                         $"we hope you will enjoy reading {b._material.Title} from author {b._material._Author.AuthorName}"
-
                         );
         }
 

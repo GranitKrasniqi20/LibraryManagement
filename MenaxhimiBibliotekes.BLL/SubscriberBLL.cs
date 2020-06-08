@@ -72,6 +72,12 @@ namespace MenaxhimiBibliotekes.BLL
 
         }
 
+
+        public IEnumerable<Subscriber> BestSubscribers()
+        {
+            return subscriberDAL.BestSubscribers();
+        }
+
         #region
         public int NumberOfActiveSubscribers()
         {
