@@ -21,6 +21,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         MaterialBLL mbll;
         Borrow Bbo;
         BorrowBLL Bbll;
+        Reservation re;
+      ReservationBLL  rbll ;
         public BorrowingsForm()
         {
             InitializeComponent();
@@ -55,6 +57,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 Bbo._material._Author.AuthorName = txtAuthor.Text;
                 Bbo._subscriber = new Subscriber();
                 Bbo._subscriber.Email = txtEmail.Text;
+
+                if (re.ReservationId > 0 || re != null)
+                {
+                    Bbo.ReservationId = re.ReservationId;
+                }
                 int ee = Bbll.Add(Bbo);
 
                 if (ee == 0)
@@ -102,14 +109,20 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             if (isNumeric && isMaterialId)
             {
                 sbll = new SubscriberBLL();
-
+                rbll = new ReservationBLL();
                 mbll = new MaterialBLL();
+
+
                 mbo = mbll.Get(m);
                 sbo = sbll.Get(n);
 
 
+
+
                 if (sbo != null && mbo.MaterialId > 0)
                 {
+                    re = rbll.GetReservationBySubscriberIdAndMaterialId(sbo.SubscriberId, mbo.MaterialId);
+
                     txtName.Text = $"{sbo.Name} {sbo.LastName}";
                     txtAddress.Text = sbo.Address;
                     txtEmail.Text = sbo.Email;
@@ -120,18 +133,17 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     txtMaterialType.Text = mbo._MaterialType._MaterialType;
                     txtAuthor.Text = mbo._Author.AuthorName;
                     txtLocated.Text = mbo._Shelf.Location;
-                    //txtReserved
+
+                    if (re == null || re.ReservationId < 1)
+                    {
+                        txtReserved.Text = "No";
+                    }
+                    else
+                    {
+                        txtReserved.Text = "Yes";
+                    }
 
 
-
-                    //if (txtReserved > 0)
-                    //{
-                    //    txtAvailability.Text = "Yes";
-                    //}
-                    //else
-                    //{
-                    //    txtAvailability.Text = "No";
-                    //}
 
                     if (mbo.AvailableCoppies > 0)
                     {

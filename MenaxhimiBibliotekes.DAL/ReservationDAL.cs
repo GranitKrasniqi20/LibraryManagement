@@ -42,10 +42,54 @@ namespace MenaxhimiBibliotekes.DAL
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problem me Reservation DAL-in" + ex.Message, "Fail!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return -1;
+            }
+        }
+
+        public Reservation GetReservationBySubscriberIdAndMaterialId(int SubscriberId, int MaterialId)
+        {
+
+
+                //throw new Exception();
+            try
+            {
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_GetReservationBySubscriberIdAndMaterialId", CommandType.StoredProcedure))
+                    {
+                        command.Parameters.AddWithValue("SubscriberId", SubscriberId);
+                        command.Parameters.AddWithValue("MaterialId", MaterialId);
+
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.Read())
+                            {
+
+                                    reservation = new Reservation();
+                                    reservation = ToBO(sqr);
+                                    if (reservation != null)
+                                    {
+                                    return reservation;
+                                    }
+                                else
+                                {
+                                    return null;
+                                }
+                                    
+                                
+                            }
+                            return null;
+
+                        }
+                    }
+                }
+            }
             catch (Exception)
             {
-                MessageBox.Show("Problem me Reservation DAL-in", "Fail!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return -1;
+                return null;
             }
         }
 
@@ -124,7 +168,7 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 Reservation reservation = new Reservation();
 
-                reservation.ReservationId = int.Parse(reader["ReservationId"].ToString());
+                reservation.ReservationId = int.Parse(reader["Id"].ToString());
                 reservation.SubscriberId = int.Parse(reader["SubscriberId"].ToString());
                 reservation.MaterialId = int.Parse(reader["MaterialId"].ToString());
                 reservation.ReservationDate = DateTime.Parse(reader["ReservationDate"].ToString());

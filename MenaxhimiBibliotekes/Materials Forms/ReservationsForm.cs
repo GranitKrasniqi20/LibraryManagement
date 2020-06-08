@@ -80,7 +80,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                     reservation.ReservationDate = dateTill.Value;
                     reservation.InsBy = FormLoggedUser.Id;
-
+                    reservation.MaterialId = material.MaterialId;
                     reservationBLL.Add(reservation);
 
                     reservation._subscriber = subscriber;
