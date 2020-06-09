@@ -119,6 +119,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                 if (txtBorrowings.Text == string.Empty)
                 {
+                    gridBorrowings.MainView = gridView3;
                     gridBorrowings.DataSource = bbll.GetAll();
                 }
 
@@ -131,13 +132,15 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 {
                     if (txtBorrowings.Text == string.Empty)
                     {
+                        gridBorrowings.MainView = gridView3;
                         gridBorrowings.DataSource = bbll.GetAll();
                     }
                     else
                     {
 
-                    
-                    gridBorrowings.DataSource = bbll.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text ||
+                        gridBorrowings.MainView = gridView3;
+                        gridBorrowings.DataSource = bbll.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text || $"{ x._subscriber.LastName}" == txtBorrowings.Text ||
+                    $"{ x._subscriber.Name}" == txtBorrowings.Text ||
                       x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text || x._shelf.Location == txtBorrowings.Text);
                     }
                 }
@@ -148,9 +151,15 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 reservationBO = new Reservation();
                 res = new ReservationBLL();
 
-                if (isNumeric)
+                if (txtBorrowings.Text == string.Empty)
                 {
-                    gridBorrowings.MainView = gridView3;
+                    gridBorrowings.MainView = gridView1;
+                    gridBorrowings.DataSource = res.GetAll();
+                }
+
+               else if (isNumeric)
+                {
+                    gridBorrowings.MainView = gridView1;
                     gridBorrowings.DataSource = res.GetAll().Where(x => x.SubscriberId == m ||
                     x.MaterialId == m || x.MaterialId == m);
                 }
@@ -164,7 +173,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     else
                     {
                         gridBorrowings.DataSource = res.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text||
-                        x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text );
+                        x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text ) ;
                     }
                 }
             }

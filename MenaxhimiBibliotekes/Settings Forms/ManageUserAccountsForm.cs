@@ -46,7 +46,7 @@ namespace MenaxhimiBibliotekes.Settings_Forms
             try
             {
 
-                if (FormLoggedUser.Role.UserRoleId == 1)
+                if (FormLoggedUser.Role.UserRoleId == 2)
                 {
                     MessageBox.Show("You don't have permision to create users", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

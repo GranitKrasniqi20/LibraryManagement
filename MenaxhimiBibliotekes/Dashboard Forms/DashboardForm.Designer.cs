@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView3 = new DevExpress.XtraCharts.PieSeriesView();
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -49,8 +49,8 @@
             this.tableSpace2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMaterials)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piechart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMostBorrowedMaterials)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,10 +176,10 @@
             this.piechart.Legend.Name = "Default Legend";
             this.piechart.Location = new System.Drawing.Point(67, 858);
             this.piechart.Name = "piechart";
-            series1.Name = "s1";
-            series1.View = pieSeriesView1;
+            series3.Name = "s1";
+            series3.View = pieSeriesView3;
             this.piechart.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
+        series3};
             this.piechart.Size = new System.Drawing.Size(694, 226);
             this.piechart.TabIndex = 6;
             this.piechart.Click += new System.EventHandler(this.Piechart_Click);
@@ -218,8 +218,8 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableSpace2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartMaterials)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piechart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMostBorrowedMaterials)).EndInit();
             this.ResumeLayout(false);

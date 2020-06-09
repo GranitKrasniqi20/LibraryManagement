@@ -58,7 +58,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 Bbo._subscriber = new Subscriber();
                 Bbo._subscriber.Email = txtEmail.Text;
 
-                if (re.ReservationId > 0 || re != null)
+                if (re != null)
                 {
                     Bbo.ReservationId = re.ReservationId;
                 }
@@ -134,7 +134,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     txtAuthor.Text = mbo._Author.AuthorName;
                     txtLocated.Text = mbo._Shelf.Location;
 
-                    if (re == null || re.ReservationId < 1)
+                    if (re == null)
                     {
                         txtReserved.Text = "No";
                     }

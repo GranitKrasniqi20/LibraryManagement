@@ -19,7 +19,7 @@ namespace MenaxhimiBibliotekes.Settings_Forms
 
         private void btnManageAccounts_Click(object sender, EventArgs e)
         {
-            if (FormLoggedUser.Role.UserRoleId == 1)
+            if (FormLoggedUser.Role.UserRoleId == 2)
             {
                 MessageBox.Show("You don't have permison to manage users", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
