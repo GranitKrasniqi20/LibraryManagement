@@ -72,6 +72,7 @@
     <Content Include="DBScript\cleanedDbScript09.06.sql" />
     <Content Include="DBScript\DatabazaTi130.05.sql" />
     <Content Include="DBScript\Proc.File.txt" />
+    <Content Include="DBScript\scriptFinal 9Qershor.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

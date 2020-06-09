@@ -52,8 +52,8 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
                 bill = billBLL.Get(int.Parse(txtMemberID.Text));
 
-                if ((subscriber.UpdNo - n) == 0) { txtFromDate.Text = subscriber.InsDate.ToShortDateString(); }
-                else { txtFromDate.Text = subscriber.UpdDate.ToShortDateString(); }
+                txtFromDate.Text = subscriber.InsDate.ToShortDateString(); 
+                txtFromDate.Text = subscriber.UpdDate.ToShortDateString(); 
 
                 txtTillDate.Text = subscriber.ExpirationDate.ToShortDateString();
             }

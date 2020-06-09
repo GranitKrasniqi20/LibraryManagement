@@ -507,7 +507,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                     if (mbll.Update(material) == 1)
                     {
-                        MessageBox.Show("The material is registered successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("The material is updated successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         mbll = new MaterialBLL();
                     }
                     else

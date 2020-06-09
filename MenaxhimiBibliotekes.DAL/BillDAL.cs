@@ -160,9 +160,7 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
-                            if (sqr.HasRows)
-                            {
-                                while (sqr.Read())
+                            while (sqr.Read())
                                 {
                                     bill = ToBO(sqr);
                                     if (bill == null)
@@ -172,7 +170,7 @@ namespace MenaxhimiBibliotekes.DAL
 
                                     _AllBill.Add(bill);
                                 }
-                            }
+                            
                             return _AllBill;
                         }
                     }
