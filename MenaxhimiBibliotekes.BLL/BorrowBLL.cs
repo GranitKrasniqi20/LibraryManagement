@@ -18,6 +18,7 @@ namespace MenaxhimiBibliotekes.BLL
         Notification notification = new Notification();
         NotificationBLL notificationBLL = new NotificationBLL();
 
+
         public int Add(Borrow obj)
         {
             return bd.Add(obj);
@@ -30,7 +31,6 @@ namespace MenaxhimiBibliotekes.BLL
 
         public Borrow Get(int Id)
         {
-
             return bd.Get(Id);
         }
 
@@ -43,14 +43,25 @@ namespace MenaxhimiBibliotekes.BLL
         {
             return bd.Update(obj);
         }
+
+        public List<MonthBorrowStatistic> Last12MonthBorrowStatistics()
+        {
+            return bd.Last12MonthBorrowStatistics();
+        }
+
+        public int GetTotalCountBorrowings()
+        {
+            return bd.GetTotalCountBorrowings();
+        }
+
         public void EmailBorrowsToReturn()
         {
-
             notification = new Notification();
             notificationBLL = new NotificationBLL();
 
-             es = new EmailService();
+            es = new EmailService();
             List<Borrow> emails = bd.EmailsToExpire();
+
             if (emails.Count > 0)
             {
                 foreach (var item in bd.EmailsToExpire())
@@ -65,19 +76,9 @@ namespace MenaxhimiBibliotekes.BLL
                     notificationBLL.Add(notification);
                 }
             }
-
-
-
         }
 
-        public List<MonthBorrowStatistic> Last12MonthBorrowStatistics()
-        {
-
-
-            return bd.Last12MonthBorrowStatistics();
-        }
-
-            public void EmailBorrows(Borrow b)
+        public void EmailBorrows(Borrow b)
         {
             notification = new Notification();
             notificationBLL = new NotificationBLL();
@@ -93,6 +94,5 @@ namespace MenaxhimiBibliotekes.BLL
 
             notificationBLL.Add(notification);
         }
-
     }
 }

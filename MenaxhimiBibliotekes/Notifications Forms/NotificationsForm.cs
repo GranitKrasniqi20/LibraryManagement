@@ -57,8 +57,10 @@ namespace MenaxhimiBibliotekes.Notifications_Forms
                     });
                 }
             }
-            
+        }
 
+        private void DisplayAll()
+        {
             if (flowpanelMain.Controls.Count < 0)
             {
                 flowpanelMain.Controls.Clear();
@@ -72,85 +74,72 @@ namespace MenaxhimiBibliotekes.Notifications_Forms
             }
         }
 
-        private void PopulateSubscribersNotifications()
+        private void DisplaySubscribers()
         {
-            notificationsList.Clear();
             flowpanelMain.Controls.Clear();
-
-            foreach (var notification in notificationBLL.GetAll())
-            {
-                if (notification.Category == "Subscriber Notification")
-                {
-                    notificationsList.Add(new ucNotificationMessages()
-                    {
-                        Category = notification.Category,
-                        Message = notification.Message,
-                        Date = notification.Date.ToShortDateString(),
-                        Icon = Resources.notificationsSubscribers
-                    });
-                }
-            }
 
             foreach (var message in notificationsList)
             {
-                flowpanelMain.Controls.Add(message);
+                if (message.Category == "Subscriber Notification")
+                {
+                    flowpanelMain.Controls.Add(message);
+                }
             }
         }
 
-        private void PopulateMaterialsNotifications()
+        private void DisplayMaterials()
         {
-            notificationsList.Clear();
             flowpanelMain.Controls.Clear();
-
-            foreach (var notification in notificationBLL.GetAll())
-            {
-                if (notification.Category == "Material Notification")
-                {
-                    notificationsList.Add(new ucNotificationMessages()
-                    {
-                        Category = notification.Category,
-                        Message = notification.Message,
-                        Date = notification.Date.ToShortDateString(),
-                        Icon = Resources.notificationsMaterials
-                    });
-                }
-            }
 
             foreach (var message in notificationsList)
             {
-                flowpanelMain.Controls.Add(message);
+                if (message.Category == "Material Notification")
+                {
+                    flowpanelMain.Controls.Add(message);
+                }
+                
             }
         }
 
         private void NotificationsForm_Activated(object sender, EventArgs e)
         {
+            flowpanelMain.Controls.Clear();
+
             if (comboNotificationType.SelectedIndex == 0)
             {
                 PopulateNotifications();
+                DisplayAll();
             }
             else if (comboNotificationType.SelectedIndex == 1)
             {
-                PopulateSubscribersNotifications();
+                PopulateNotifications();
+                DisplaySubscribers();
             }
             else if (comboNotificationType.SelectedIndex == 2)
             {
-                PopulateMaterialsNotifications();
+                PopulateNotifications();
+                DisplayMaterials();
             }
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
+            flowpanelMain.Controls.Clear();
+
             if (comboNotificationType.SelectedIndex == 0)
             {
                 PopulateNotifications();
+                DisplayAll();
             }
             else if (comboNotificationType.SelectedIndex == 1)
             {
-                PopulateSubscribersNotifications();
+                PopulateNotifications();
+                DisplaySubscribers();
             }
             else if (comboNotificationType.SelectedIndex == 2)
             {
-                PopulateMaterialsNotifications();
+                PopulateNotifications();
+                DisplayMaterials();
             }
         }
     }

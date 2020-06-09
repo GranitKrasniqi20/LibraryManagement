@@ -12,6 +12,8 @@ namespace MenaxhimiBibliotekes.BLL
    public class BorrowReturnBLL : ICreate<BorrowReturn>, IUpdate<BorrowReturn>, IDelete, IRead<BorrowReturn>
     {
         BorrowReturnDAL brd = new BorrowReturnDAL();
+
+
         public int Add(BorrowReturn obj)
         {
             return brd.Add(obj);

@@ -16,23 +16,21 @@ namespace MenaxhimiBibliotekes.BLL
     {
         UserDAL usr = new UserDAL();
 
+
         public User LogIn(string username, string password)
         {
            return usr.LogIn(username, password);
         }
+
         public int Add(User obj)
         {
            return usr.Add(obj);
-
         }
 
         public int Delete(int Id)
         {
            return usr.Delete(Id);
-         
         }
-
-
 
         public User Get(int Id)
         {

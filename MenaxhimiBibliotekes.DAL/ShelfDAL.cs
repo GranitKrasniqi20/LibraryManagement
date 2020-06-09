@@ -13,11 +13,6 @@ namespace MenaxhimiBibliotekes.DAL
 {
     public class ShelfDAL : ICreate<Shelf>, IUpdate<Shelf>, IDelete, IRead<Shelf>, IConvertToBO<Shelf>
     {
-
-
-
-
-
         public int Add(Shelf obj)
         {
             int isInserted = 0;
@@ -60,7 +55,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
         public int Delete(int Id)
         {
             int IsDeleted = 0;
@@ -107,9 +101,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
-
-
         public Shelf Get(int Id)
         {
 
@@ -137,11 +128,6 @@ namespace MenaxhimiBibliotekes.DAL
 
 
         }
-
-
-
-
-
         public List<Shelf> GetAll()
         {
             List<Shelf> shelves = new List<Shelf>();
@@ -178,7 +164,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public Shelf ToBO(SqlDataReader reader)
         {
             try
@@ -217,7 +202,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public int Update(Shelf obj)
         {
             int isUpdated = 0;
@@ -261,6 +245,5 @@ namespace MenaxhimiBibliotekes.DAL
 
         }
     }
-
 }
 

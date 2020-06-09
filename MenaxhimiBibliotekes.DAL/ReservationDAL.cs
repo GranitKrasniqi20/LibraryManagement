@@ -15,6 +15,7 @@ namespace MenaxhimiBibliotekes.DAL
     {
         Reservation reservation;
 
+
         public int Add(Reservation obj)
         {
             int isInserted;
@@ -48,7 +49,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public Reservation GetReservationBySubscriberIdAndMaterialId(int SubscriberId, int MaterialId)
         {
 
@@ -92,7 +92,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public int Delete(int Id)
         {
             try
@@ -119,12 +118,10 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public Reservation Get(int Id)
         {
             throw new NotImplementedException();
         }
-
         public List<Reservation> GetAll()
         {
             //throw new Exception();
@@ -163,7 +160,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public Reservation ToBO(SqlDataReader reader)
         {
             try
@@ -224,7 +220,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public int Update(Reservation obj)
         {
 

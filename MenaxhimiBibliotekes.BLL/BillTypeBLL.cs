@@ -13,6 +13,7 @@ namespace MenaxhimiBibliotekes.BLL
     {
         BillTypeDAL billTypeDAL = new BillTypeDAL();
 
+        
         public int Add(BillType obj)
         {
             return billTypeDAL.Add(obj);
@@ -27,8 +28,6 @@ namespace MenaxhimiBibliotekes.BLL
         {
             return Get(Id);
         }
-
-
 
         public List<BillType> GetAll()
         {

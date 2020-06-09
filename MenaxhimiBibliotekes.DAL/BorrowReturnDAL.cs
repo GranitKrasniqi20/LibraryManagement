@@ -14,6 +14,8 @@ namespace MenaxhimiBibliotekes.DAL
     public class BorrowReturnDAL: ICreate<BorrowReturn>, IUpdate<BorrowReturn>, IDelete, IRead<BorrowReturn>, IConvertToBO<BorrowReturn>
     {
         BorrowReturn br = new BorrowReturn();
+
+
         public int Add(BorrowReturn obj)
         {
 
@@ -54,7 +56,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public int Delete(int Id)
         {
             try
@@ -84,7 +85,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public BorrowReturn Get(int Id)
         {
             try
@@ -124,7 +124,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public List<BorrowReturn> GetAll()
         {
             try
@@ -164,7 +163,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public BorrowReturn ToBO(SqlDataReader reader)
         {
             br = new BorrowReturn();
@@ -211,7 +209,6 @@ namespace MenaxhimiBibliotekes.DAL
                 ;
             }
         }
-
         public int Update(BorrowReturn obj)
         {
 

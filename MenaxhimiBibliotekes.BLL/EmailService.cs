@@ -11,12 +11,10 @@ namespace MenaxhimiBibliotekes.BLL
 {
     public class EmailService
     {
-
         SmtpClient client;
         string smtpserver = "smtp.gmail.com";
         int port = 587;
         bool EnableSsl = true;
-
 
 
         public void SendMails(string to, string subject,string message)

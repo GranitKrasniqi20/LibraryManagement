@@ -12,6 +12,7 @@ namespace MenaxhimiBibliotekes.BLL
     public class SubscriberBLL : ICreate<Subscriber>, IUpdate<Subscriber>, IDelete, IRead<Subscriber>
     {
         SubscriberDAL subscriberDAL = new SubscriberDAL();
+        
 
         public int Add(Subscriber obj)
         {
@@ -48,7 +49,6 @@ namespace MenaxhimiBibliotekes.BLL
             return subscriberDAL.MaxSubscriberId();
         }
 
-
         public void GetExpiredSubscribersEmail()
         {
             EmailService es = new EmailService();
@@ -72,13 +72,12 @@ namespace MenaxhimiBibliotekes.BLL
 
         }
 
-
         public IEnumerable<Subscriber> BestSubscribers()
         {
             return subscriberDAL.BestSubscribers();
         }
 
-        #region
+        #region STATISTICS
         public int NumberOfActiveSubscribers()
         {
             return subscriberDAL.NumberOfActiveSubscribers();
@@ -97,6 +96,11 @@ namespace MenaxhimiBibliotekes.BLL
         public List<Subscriber> Get10LastSubscribers()
         {
             return subscriberDAL.Get10LastSubscribers();
+        }
+
+        public int GetTotalCountSubscribers()
+        {
+            return subscriberDAL.GetTotalCountSubscribers();
         }
 
         #endregion

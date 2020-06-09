@@ -21,6 +21,5 @@ namespace MenaxhimiBibliotekes.BO
         public bool IsActive { get; set; }
         public int BorrowingsNumber { get; set; }
         public string FullName { get; set; }
-
     }
 }

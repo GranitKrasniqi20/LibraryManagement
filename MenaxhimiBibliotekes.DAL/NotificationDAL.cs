@@ -14,6 +14,8 @@ namespace MenaxhimiBibliotekes.DAL
     public class NotificationDAL : ICreate<Notification>,  IRead<Notification>, IConvertToBO<Notification>
     {
         private Notification notification;
+
+
         public int Add(Notification obj)
         {
             try
@@ -50,12 +52,10 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public Notification Get(int Id)
         {
             throw new NotImplementedException();
         }
-
         public List<Notification> GetAll()
         {
             try
@@ -95,7 +95,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public Notification ToBO(SqlDataReader reader)
         {
             notification = new Notification();

@@ -14,6 +14,8 @@ namespace MenaxhimiBibliotekes.DAL
     public class LanguageDAL : ICreate<Language>, IUpdate<Language>, IDelete, IRead<Language>, IConvertToBO<Language>
     {
         Language lang;
+
+
         public int Add(Language obj)
         {
             int isInserted = 0;
@@ -49,7 +51,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public int Delete(int Id)
         {
             int IsDeleted = 0;
@@ -83,8 +84,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
-
         public Language Get(int Id)
         {
 
@@ -109,9 +108,6 @@ namespace MenaxhimiBibliotekes.DAL
             //}
             throw new NotImplementedException();
         }
-
-
-
         public List<Language> GetAll()
         {
             try
@@ -204,7 +200,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public Language ToBO(SqlDataReader reader)
         {
 
@@ -241,11 +236,5 @@ namespace MenaxhimiBibliotekes.DAL
                 throw;
             }
         }
-
-
-
     }
-
-
-    
 }

@@ -15,6 +15,7 @@ namespace MenaxhimiBibliotekes.DAL
     {
         private BillType billType;
 
+
         public int Add(BillType obj)
         {
             int isInserted = 0;
@@ -45,7 +46,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public int Delete(int Id)
         {
             try
@@ -75,7 +75,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public BillType Get(int Id)
         {
             try
@@ -105,7 +104,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public List<BillType> GetAll()
         {
             List<BillType> _AllBillType = new List<BillType>();
@@ -137,7 +135,6 @@ namespace MenaxhimiBibliotekes.DAL
                 }
             }
         }
-
         public BillType ToBO(SqlDataReader reader)
         {
             try
@@ -169,7 +166,6 @@ namespace MenaxhimiBibliotekes.DAL
                 throw;
             }
         }
-
         public int Update(BillType obj)
         {
             int isUpdated=0;

@@ -11,8 +11,9 @@ namespace MenaxhimiBibliotekes.BLL
 {
     public class LanguageBLL : ICreate<Language>, IUpdate<Language>, IDelete, IRead<Language>
     {
-
         LanguageDAL lang = new LanguageDAL();
+
+
         public int Add(Language obj)
         {
             return lang.Add(obj);
@@ -22,8 +23,6 @@ namespace MenaxhimiBibliotekes.BLL
         {
             return lang.Delete(Id);
         }
-
-
 
         public Language Get(int Id)
         {

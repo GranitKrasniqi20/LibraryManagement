@@ -14,6 +14,8 @@ namespace MenaxhimiBibliotekes.DAL
     public class BillDAL : ICreate<Bill>, IUpdate<Bill>, IDelete, IRead<Bill>, IConvertToBO<Bill>
     {
         Bill bill;
+
+
         public int Add(Bill obj)
         {
             int rowsAffected;
@@ -84,7 +86,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public int Delete(int Id)
         {
             try
@@ -114,8 +115,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
-
         public Bill Get(int Id)
         {
             try
@@ -146,8 +145,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
-
         public List<Bill> GetAll()
         {
             try
@@ -183,7 +180,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public Bill ToBO(SqlDataReader reader)
         {
             bill = new Bill();
@@ -239,7 +235,6 @@ namespace MenaxhimiBibliotekes.DAL
 
             return bill;
         }
-
         public int Update(Bill obj)
         {
             int rowsAffected = 0;
@@ -299,7 +294,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public int MaxBillId()
         {
             try

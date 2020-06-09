@@ -15,6 +15,8 @@ namespace MenaxhimiBibliotekes.DAL
    public class GenreDAL : ICreate<Genre>, IUpdate<Genre>, IDelete, IRead<Genre>, IConvertToBO<Genre>
     {
         Genre gen;
+
+
         public int Add(Genre obj)
         {
             int error ;
@@ -48,10 +50,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
-
-
-
         public int Delete(int Id)
         {
             int IsDeleted = 0;
@@ -82,16 +80,10 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
-
-
         public Genre Get(int Id)
         {
             throw new NotImplementedException();
         }
-
-
-
         public List<Genre> GetAll()
         {
             List<Genre> AllGenres = new List<Genre>();
@@ -126,7 +118,6 @@ namespace MenaxhimiBibliotekes.DAL
                 }
             }
         }
-
         public Genre ToBO(SqlDataReader reader)
         {
             try
@@ -160,7 +151,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public int Update(Genre obj)
         {
             int isUpdated = 0;
@@ -202,9 +192,5 @@ namespace MenaxhimiBibliotekes.DAL
 
         
         }
-                
-
-
-        
     }
 }

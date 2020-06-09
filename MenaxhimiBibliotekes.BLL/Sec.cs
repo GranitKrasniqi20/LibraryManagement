@@ -9,14 +9,10 @@ namespace MenaxhimiBibliotekes.BLL
 {
    public class Sec
     {
-
         public static string Hash(string username,string password)
         {
-
             return ComputeHash(SaltPassword(username,password)).Substring(0,40);
-
         }
-
 
         private static string ComputeHash(string password)
         {
@@ -29,7 +25,6 @@ namespace MenaxhimiBibliotekes.BLL
 
         private static string SaltPassword(string username, string password )
         {
-
             char[] userchar = username.ToCharArray();
 
             for (int i = 0; i < userchar.Length; i++)
@@ -42,13 +37,11 @@ namespace MenaxhimiBibliotekes.BLL
                 {
                     break;
                 }
-                password = password + userchar[i];
 
+                password = password + userchar[i];
             }
 
             return password;
-
         }
-
     }
 }

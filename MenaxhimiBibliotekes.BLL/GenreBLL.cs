@@ -11,12 +11,12 @@ namespace MenaxhimiBibliotekes.BLL
 {
     public class GenreBLL : ICreate<Genre>,IUpdate<Genre>,IDelete,IRead<Genre>
     {
-
         GenreDAL gen = new GenreDAL();
+
+
         public int Add(Genre obj)
         {
             return gen.Add(obj);
-
         }
 
         public int Delete(int Id)

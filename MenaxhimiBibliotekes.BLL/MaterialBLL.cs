@@ -13,6 +13,8 @@ namespace MenaxhimiBibliotekes.BLL
     public class MaterialBLL : ICreate<Material>, IUpdate<Material>, IDelete, IRead<Material>
     {
         MaterialDAL _materialDAL = new MaterialDAL();
+
+
         public int Add(Material obj)
         {
            return _materialDAL.Add(obj);
@@ -28,12 +30,10 @@ namespace MenaxhimiBibliotekes.BLL
            return _materialDAL.Delete(Id);
         }
 
-
         public Material Get(int Id)
         {
             return _materialDAL.Get(Id);
         }
-
 
         public List<Material> GetAll()
         {
@@ -43,6 +43,11 @@ namespace MenaxhimiBibliotekes.BLL
         public int Update(Material obj)
         {
             return _materialDAL.Update(obj);
+        }
+
+        public int GetTotalCountMaterials()
+        {
+            return _materialDAL.GetTotalCountMaterials();
         }
     }
 }

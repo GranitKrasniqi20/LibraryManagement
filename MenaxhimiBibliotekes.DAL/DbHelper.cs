@@ -14,6 +14,7 @@ namespace MenaxhimiBibliotekes.DAL
     {
         private static string ConnectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
 
+
         public static SqlConnection GetConnection()
         {
 
@@ -29,7 +30,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public static SqlCommand Command(SqlConnection connection, string cmdText, CommandType commandType)
         {
             try
@@ -43,9 +43,5 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
- 
-
-
     }
 }

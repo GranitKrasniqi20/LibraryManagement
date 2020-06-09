@@ -56,7 +56,5 @@ namespace MenaxhimiBibliotekes.BO
 
             }
         }
-
-
     }
 }

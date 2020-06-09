@@ -22,6 +22,8 @@ namespace MenaxhimiBibliotekes.BO
         public DateTime DeadLine { get; set; }
         public BorrowReturn BorrowReturn { get; set; }
         public int BorrowReturnId { get; set; }
+
+
         public Borrow()
         {
             

@@ -13,6 +13,7 @@ namespace MenaxhimiBibliotekes.BLL
     {
         NotificationDAL notificationDAL = new NotificationDAL();
 
+
         public int Add(Notification obj)
         {
             return notificationDAL.Add(obj);
