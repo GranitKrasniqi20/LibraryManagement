@@ -12,9 +12,11 @@ namespace MenaxhimiBibliotekes.BLL
     public class ShelfBLL : ICreate<Shelf>, IUpdate<Shelf>, IDelete, IRead<Shelf>
     {
         ShelfDAL ShelDAL = new ShelfDAL();
+
+
         public int Add(Shelf obj)
         {
-          return  ShelDAL.Add(obj);
+            return  ShelDAL.Add(obj);
         }
 
         public int Delete(int Id)

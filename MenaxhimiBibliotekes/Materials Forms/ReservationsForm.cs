@@ -45,9 +45,8 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
                 //Material 
                 material = materialBLL.Get(int.Parse(txtMaterialID.Text));
-
                 txtMaterialName.Text = material.Title;
-                txtMaterialType.Text = material._MaterialType._MaterialType;
+                txtMaterialType.Text = material.MaterialId.ToString();
                 txtOverallQuantity.Text = material.Quantity.ToString();
                 txtStockQuantity.Text = material.AvailableCoppies.ToString();
 

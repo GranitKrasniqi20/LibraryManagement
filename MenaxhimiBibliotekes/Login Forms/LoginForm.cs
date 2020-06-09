@@ -66,7 +66,5 @@ namespace MenaxhimiBibliotekes.Login_Forms
         {
             Application.Exit();
         }
-
-
     }
 }

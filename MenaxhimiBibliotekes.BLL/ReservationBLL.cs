@@ -13,6 +13,8 @@ namespace MenaxhimiBibliotekes.BLL
     {
         ReservationDAL reservationDAL = new ReservationDAL();
         EmailService es;
+
+
         public int Add(Reservation obj)
         {
             return reservationDAL.Add(obj);
@@ -37,6 +39,7 @@ namespace MenaxhimiBibliotekes.BLL
         {
             return reservationDAL.Update(obj);
         }
+
         public void EmailReservation(Reservation b)
         {
 

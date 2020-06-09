@@ -11,12 +11,10 @@ namespace MenaxhimiBibliotekes.BLL
 {
     public class EmailService
     {
-
         SmtpClient client;
         string smtpserver = "smtp.gmail.com";
         int port = 587;
         bool EnableSsl = true;
-
 
 
         public void SendMails(string to, string subject,string message)
@@ -27,10 +25,10 @@ namespace MenaxhimiBibliotekes.BLL
                 client.EnableSsl = EnableSsl;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("endrit.tmava@gmail.com", "Flaka121.");
+                client.Credentials = new NetworkCredential("stackbooks.corporations@gmail.com", "stackbooks123");
                 MailMessage msg = new MailMessage();
                 msg.To.Add(to);
-                msg.From = new MailAddress("endrit.tmava@riinvest.com");
+                msg.From = new MailAddress("stackbooks.corporations@gmail.com");
                 msg.Subject = subject;
                 msg.Body = message;
                 client.Send(msg);

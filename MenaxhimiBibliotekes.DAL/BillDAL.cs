@@ -14,6 +14,8 @@ namespace MenaxhimiBibliotekes.DAL
     public class BillDAL : ICreate<Bill>, IUpdate<Bill>, IDelete, IRead<Bill>, IConvertToBO<Bill>
     {
         Bill bill;
+
+
         public int Add(Bill obj)
         {
             int rowsAffected;
@@ -84,7 +86,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public int Delete(int Id)
         {
             try
@@ -114,8 +115,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
-
         public Bill Get(int Id)
         {
             try
@@ -146,8 +145,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
-
         public List<Bill> GetAll()
         {
             try
@@ -160,7 +157,9 @@ namespace MenaxhimiBibliotekes.DAL
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
-                            while (sqr.Read())
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
                                 {
                                     bill = ToBO(sqr);
                                     if (bill == null)
@@ -170,7 +169,7 @@ namespace MenaxhimiBibliotekes.DAL
 
                                     _AllBill.Add(bill);
                                 }
-                            
+                            }  
                             return _AllBill;
                         }
                     }
@@ -181,7 +180,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public Bill ToBO(SqlDataReader reader)
         {
             bill = new Bill();
@@ -194,7 +192,11 @@ namespace MenaxhimiBibliotekes.DAL
                 bill.MaterialId = int.Parse(reader["MaterialId"].ToString());
             }
 
-            bill.BillTypeId = int.Parse(reader["BillTypeId"].ToString());
+            if (reader["BillTypeId"] != DBNull.Value)
+            {
+                bill.BillTypeId = int.Parse(reader["BillTypeId"].ToString());
+            }
+            
             bill.BillingDate = DateTime.Parse(reader["BillingDate"].ToString());
             bill.Price = decimal.Parse(reader["Price"].ToString());
 
@@ -206,6 +208,15 @@ namespace MenaxhimiBibliotekes.DAL
             if (reader["ExpirationDate"] != DBNull.Value)
             {
                 bill.ExpirationDate = DateTime.Parse(reader["ExpirationDate"].ToString());
+            }
+
+            if (reader["Description"] != DBNull.Value)
+            {
+                bill.Description = reader["Description"].ToString();
+            }
+            else
+            {
+                bill.Description = "No Description for this Bill...";
             }
 
             bill.InsBy = int.Parse(reader["InsBy"].ToString());
@@ -224,7 +235,6 @@ namespace MenaxhimiBibliotekes.DAL
 
             return bill;
         }
-
         public int Update(Bill obj)
         {
             int rowsAffected = 0;
@@ -284,7 +294,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public int MaxBillId()
         {
             try

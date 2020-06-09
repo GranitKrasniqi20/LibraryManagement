@@ -13,6 +13,7 @@ namespace MenaxhimiBibliotekes.BLL
     {
         BillDAL billDAL = new BillDAL();
 
+
         public int Add(Bill obj)
         {
             return billDAL.Add(obj);
@@ -23,16 +24,14 @@ namespace MenaxhimiBibliotekes.BLL
             return billDAL.Delete(Id);
         }
 
-
         public Bill Get(int Id)
         {
             return billDAL.Get(Id);
         }
 
-
         public List<Bill> GetAll()
         {
-            return GetAll();
+            return billDAL.GetAll();
         }
 
         public int Update(Bill obj)

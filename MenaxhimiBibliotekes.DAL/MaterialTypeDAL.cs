@@ -14,6 +14,8 @@ namespace MenaxhimiBibliotekes.DAL
     public class MaterialTypeDAL : ICreate<MaterialType>, IUpdate<MaterialType>, IDelete, IRead<MaterialType>, IConvertToBO<MaterialType>
     {
         MaterialType mt;
+
+
         public int Add(MaterialType obj)
         {
 
@@ -57,7 +59,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
         public int Delete(int Id)
         {
             int IsDeleted = 0;
@@ -88,15 +89,10 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
-
-
         public MaterialType Get(int Id)
         {
             throw new NotImplementedException();
         }
-
-
         public List<MaterialType> GetAll()
         {
             List<MaterialType> AllMaterialType = new List<MaterialType>();
@@ -132,7 +128,6 @@ namespace MenaxhimiBibliotekes.DAL
                 }
             }
         }
-
         public List<MaterialType> MostBorrowedMaterialTypes()
         {
             List<MaterialType> AllMaterialType = new List<MaterialType>();
@@ -166,8 +161,6 @@ namespace MenaxhimiBibliotekes.DAL
                 }
             }
         }
-
-
         public MaterialType ToBO(SqlDataReader reader)
         {
             try
@@ -201,7 +194,6 @@ namespace MenaxhimiBibliotekes.DAL
                 throw;
             }
         }
-
         public int Update(MaterialType obj)
         {
             int Updated;
@@ -242,8 +234,6 @@ namespace MenaxhimiBibliotekes.DAL
 
         }
     }
-
-
 }
     
 

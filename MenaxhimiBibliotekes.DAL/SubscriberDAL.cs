@@ -15,6 +15,7 @@ namespace MenaxhimiBibliotekes.DAL
     {
         Subscriber subscriber;
 
+        
         public List<string> GetExpiredSubscribersEmail()
         {
             try
@@ -53,8 +54,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
-
         public int Add(Subscriber obj)
         {
             int isInserted ;
@@ -103,7 +102,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public int Delete(int Id)
         {
             try
@@ -130,7 +128,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public Subscriber Get(int Id)
         {
             try
@@ -160,7 +157,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
         public List<Subscriber> GetAll()
         {
             try
@@ -196,7 +192,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public List<Subscriber> GetAllExpiredSubscribers()
         {
             try
@@ -232,7 +227,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public Subscriber ToBO(SqlDataReader reader)
         {
             try
@@ -285,7 +279,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public IEnumerable<Subscriber> BestSubscribers()
         {
             try
@@ -326,7 +319,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public int Update(Subscriber obj)
         {
             int rowsAffected = 0;
@@ -376,7 +368,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public int MaxSubscriberId()
         {
             try 
@@ -408,8 +399,8 @@ namespace MenaxhimiBibliotekes.DAL
 
         }
 
-        
-        #region
+
+        #region STATISTICS
         public int NumberOfActiveSubscribers()
         {
             int n;
@@ -441,7 +432,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
         public int NumberOfNonActiveSubscribers()
         {
             int n;
@@ -473,7 +463,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
         public List<Subscriber> Get5LastSubscribers()
         {
             try
@@ -482,7 +471,43 @@ namespace MenaxhimiBibliotekes.DAL
                 subscriber = new Subscriber();
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "usp_Get5LastSubscriber", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Get5TopSubscribers", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.HasRows)
+                            {
+                                while (sqr.Read())
+                                {
+                                    subscriber = ToBO(sqr);
+                                    if (subscriber == null)
+                                    {
+                                        throw new Exception();
+                                    }
+
+                                    _nSubscriber.Add(subscriber);
+                                }
+                            }
+                            return _nSubscriber;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        public List<Subscriber> Get10LastSubscribers()
+        {
+            try
+            {
+                List<Subscriber> _nSubscriber = new List<Subscriber>();
+                subscriber = new Subscriber();
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Get10TopSubscribers", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -509,40 +534,35 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
-        public List<Subscriber> Get10LastSubscribers()
+        public int GetTotalCountSubscribers()
         {
+            int n;
+
             try
             {
-                List<Subscriber> _nSubscriber = new List<Subscriber>();
                 subscriber = new Subscriber();
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "usp_Get10LastSubscriber", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_GetTotalCountSubscribers", CommandType.StoredProcedure))
                     {
-                        using (SqlDataReader sqr = command.ExecuteReader())
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            if (sqr.HasRows)
+                            if (reader.Read())
                             {
-                                while (sqr.Read())
-                                {
-                                    subscriber = ToBO(sqr);
-                                    if (subscriber == null)
-                                    {
-                                        throw new Exception();
-                                    }
-
-                                    _nSubscriber.Add(subscriber);
-                                }
+                                n = int.Parse(reader["Id"].ToString());
+                                return n;
                             }
-                            return _nSubscriber;
+                            else
+                            {
+                                return 0;
+                            }
                         }
                     }
                 }
             }
             catch (Exception)
             {
-                return null;
+                return 0;
             }
         }
         #endregion

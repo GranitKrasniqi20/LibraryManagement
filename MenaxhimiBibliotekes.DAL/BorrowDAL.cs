@@ -10,9 +10,9 @@ namespace MenaxhimiBibliotekes.DAL
 {
    public class BorrowDAL : ICreate<Borrow>, IUpdate<Borrow>, IDelete, IRead<Borrow>,IConvertToBO<Borrow>
     {
-
-
         Borrow borr;
+
+
         public int Add(Borrow obj)
         {
             int error;
@@ -81,10 +81,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
-
-
-
         public int Delete(int Id)
         {
             try
@@ -114,7 +110,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
         public Borrow Get(int Id)
         {
             try
@@ -154,7 +149,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public List<Borrow> GetAll()
         {
             try
@@ -194,7 +188,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public List<MonthBorrowStatistic> Last12MonthBorrowStatistics()
         {
             try
@@ -232,7 +225,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
         public List<Borrow> EmailsToExpire()
         {
             try
@@ -272,8 +264,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
-
         public Borrow ToBO(SqlDataReader reader)
         {
             borr = new Borrow();
@@ -390,7 +380,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public int Update(Borrow obj)
         {
             int isUpdated = 0;
@@ -460,6 +449,38 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 MessageBox.Show(ex.Message);
                 return -1;
+            }
+        }
+        public int GetTotalCountBorrowings()
+        {
+            int n;
+
+            try
+            {
+                borr = new Borrow();
+
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_GetTotalCountBorrowings", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                n = int.Parse(reader["Id"].ToString());
+                                return n;
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return 0;
             }
         }
     }

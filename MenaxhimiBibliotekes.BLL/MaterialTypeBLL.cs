@@ -18,6 +18,7 @@ namespace MenaxhimiBibliotekes.BLL
         {
             return mt.MostBorrowedMaterialTypes();
         }
+
         public int Add(MaterialType obj)
         {
             return mt.Add(obj);
@@ -28,14 +29,10 @@ namespace MenaxhimiBibliotekes.BLL
            return mt.Delete(Id);
         }
 
-
-
         public MaterialType Get(int Id)
         {
             throw new NotImplementedException();
         }
-
-
 
         public List<MaterialType> GetAll()
         {

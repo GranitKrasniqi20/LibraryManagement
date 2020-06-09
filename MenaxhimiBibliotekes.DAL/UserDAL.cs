@@ -13,8 +13,9 @@ namespace MenaxhimiBibliotekes.DAL
 {
     public class UserDAL : ICreate<User>, IUpdate<User>, IDelete, IRead<User>, IConvertToBO<User>, IChangePassword
     {
-
         User usr = new User();
+
+
         public User LogIn(string username, string password)
         {
             usr = new User();
@@ -58,7 +59,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
         public User GetUserByUsername(string username)
         {
             usr = new User();
@@ -99,8 +99,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
-
         public int Add(User obj) 
         {
             int rowsAffected = 0;
@@ -159,7 +157,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
         public int Delete(int Id)
         {
             int rowsAffected = 0;
@@ -192,11 +189,6 @@ namespace MenaxhimiBibliotekes.DAL
 
 
         }
-
-
-
-
-
         public User Get(int Id)
         {
             usr = new User();
@@ -239,8 +231,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
-
         public List<User> GetAll()
         {
             usr = new User();
@@ -286,7 +276,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public User ToBO(SqlDataReader reader)
         {
             try
@@ -320,10 +309,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
-        
-
-
         public int Update(User obj)
         {
             int rowsAffected = 0;
@@ -372,7 +357,6 @@ namespace MenaxhimiBibliotekes.DAL
             }
 
         }
-
         public int ChangePassword(int UserId, string password,int UpdBy)
         {
             int rowsAffected = 0;

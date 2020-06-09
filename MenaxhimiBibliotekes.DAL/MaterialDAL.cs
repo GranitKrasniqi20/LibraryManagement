@@ -14,6 +14,8 @@ namespace MenaxhimiBibliotekes.DAL
     public class MaterialDAL : ICreate<Material>, IUpdate<Material>, IDelete, IRead<Material>, IConvertToBO<Material>
     {
         private Material material;
+
+
         public int Add(Material obj)
         {
 
@@ -94,12 +96,6 @@ namespace MenaxhimiBibliotekes.DAL
 
 
         }
-
-
-
-
-
-
         public int Delete(int Id)
         {
             try
@@ -129,9 +125,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
-
-
         public Material Get(int Id)
         {
             try
@@ -171,8 +164,6 @@ namespace MenaxhimiBibliotekes.DAL
 
 
         }
-
-
         public List<Material> GetAll()
         {
             try
@@ -215,10 +206,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
-
-
-
         public int Update(Material obj)
         {
 
@@ -299,8 +286,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return -1;
             }
         }
-
-
         public List<Material> MostBorrowedBooks()
         {
             try
@@ -339,7 +324,6 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
         public Material ToBO(SqlDataReader reader)
         {
             material = new Material();
@@ -432,9 +416,37 @@ namespace MenaxhimiBibliotekes.DAL
 
 
         }
+        public int GetTotalCountMaterials()
+        {
+            int n;
 
+            try
+            {
+                material = new Material();
 
-
-
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_GetTotalCountMaterials", CommandType.StoredProcedure))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                n = int.Parse(reader["Id"].ToString());
+                                return n;
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }

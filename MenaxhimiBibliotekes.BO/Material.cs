@@ -8,7 +8,6 @@ namespace MenaxhimiBibliotekes.BO
 {
     public class Material : Audit
     {
-
         public Material()
         {
 
@@ -20,6 +19,7 @@ namespace MenaxhimiBibliotekes.BO
             _Shelf = new Shelf();
 
         }
+
 
         public int MaterialId { get; set; }
         public int GenreId { get; set; }

@@ -11,6 +11,8 @@ namespace MenaxhimiBibliotekes.BLL
     public class RoleBLL
     {
         RoleDAL roledal = new RoleDAL();
+
+
         public List<Role> GetAllRoles()
         {
             return roledal.GetAll();

@@ -52,6 +52,7 @@
     <Compile Include="LanguageDAL.cs" />
     <Compile Include="MaterialDAL.cs" />
     <Compile Include="MaterialTypeDAL.cs" />
+    <Compile Include="NotificationDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservationDAL.cs" />
     <Compile Include="RoleDAL.cs" />

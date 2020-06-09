@@ -16,19 +16,28 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
 {
     public partial class DashboardForm : Form
     {
+        #region GLOBAL VARIABLES
+
+        //Global Variables
+
         List<Material> materialList = new List<Material>();
         List<Subscriber> subscribers;
         MaterialBLL materialBLL = new MaterialBLL();
-        SubscriberBLL subscriberBLL;
+        SubscriberBLL subscriberBLL = new SubscriberBLL();
         List<MonthBorrowStatistic> MonthBorrowStatistics;
         List<MaterialType> mts;
         MaterialTypeBLL mtbll;
         BorrowBLL borrbll;
         List<Material> materials;
         MaterialBLL mbll;
+
+        #endregion
+
         public DashboardForm()
         {
             InitializeComponent();
+            gridMembers.DataSource = subscriberBLL.GetAll();
+            gridViewMembers.OptionsBehavior.AutoPopulateColumns = false;
         }
 
         private void DashboardForm_Load(object sender, EventArgs e)
@@ -38,12 +47,8 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
             mtbll = new MaterialTypeBLL();
             mbll = new MaterialBLL();
 
-
-
-
             try
             {
-
                 MonthBorrowStatistics = borrbll.Last12MonthBorrowStatistics();
 
                 subscribers = subscriberBLL.BestSubscribers().ToList();
@@ -86,14 +91,6 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
 
             }
 
-
-
-
-
-
-
-
-
             //SideBySide chart
 
             //ChartControl sideBySideBarChart = chartMaterials;
@@ -118,16 +115,6 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
             //Add the chart to the form.
             //sideBySideBarChart.Dock = DockStyle.Left;
 
-
-
-
-
-
-
-
-
-
-
             try
             {
                 materials = mbll.MostBorrowedBooks();
@@ -146,12 +133,7 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
 
             }
 
-
-
-
-
             // PIE CHART =>
-
 
             try
             {
@@ -195,9 +177,19 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
             {
 
             }
+        }
 
+        private void DashboardForm_Activated(object sender, EventArgs e)
+        {
+            subscriberBLL = new SubscriberBLL();
+            materialBLL = new MaterialBLL();
+            borrbll = new BorrowBLL();
 
+            comboMembers.SelectedIndex = 0;
 
+            txtTotalMembers.Text = subscriberBLL.GetTotalCountSubscribers().ToString();
+            txtTotalMaterials.Text = materialBLL.GetTotalCountMaterials().ToString();
+            txtTotalBorrowings.Text = borrbll.GetTotalCountBorrowings().ToString();
         }
 
         private void ChartMaterials_Click(object sender, EventArgs e)
@@ -208,10 +200,25 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
         private void Piechart_Click(object sender, EventArgs e)
         {
 
+        }
 
+        private void btnDisplayTable_Click_1(object sender, EventArgs e)
+        {
+            subscriberBLL = new SubscriberBLL();
+            gridMembers.DataSource = null;
 
-
-
+            if (comboMembers.SelectedIndex == 0)
+            {
+                gridMembers.DataSource = subscriberBLL.GetAll().Where(x => x.IsActive == true);
+            }
+            else if (comboMembers.SelectedIndex == 1)
+            {
+                gridMembers.DataSource = subscriberBLL.Get5LastSubscribers().Where(x => x.IsActive == true);
+            }
+            else if (comboMembers.SelectedIndex == 2)
+            {
+                gridMembers.DataSource = subscriberBLL.Get10LastSubscribers().Where(x => x.IsActive == true);
+            }
         }
     }
 }

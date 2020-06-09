@@ -12,6 +12,8 @@ namespace MenaxhimiBibliotekes.DAL
     public class RoleDAL 
     {
         Role role;
+
+
         public List<Role> GetAll()
         {
             List<Role> AllRoles = new List<Role>();
@@ -45,7 +47,6 @@ namespace MenaxhimiBibliotekes.DAL
                 }
             }
         }
-
         public Role ToBO(SqlDataReader reader)
         {
             try
@@ -78,6 +79,5 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
     }
 }
