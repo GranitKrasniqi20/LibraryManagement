@@ -482,7 +482,7 @@ namespace MenaxhimiBibliotekes.DAL
                 subscriber = new Subscriber();
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "usp_Get5LastSubscriber", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Get5TopSubscribers", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {
@@ -518,7 +518,7 @@ namespace MenaxhimiBibliotekes.DAL
                 subscriber = new Subscriber();
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
-                    using (SqlCommand command = DbHelper.Command(conn, "usp_Get10LastSubscriber", CommandType.StoredProcedure))
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_Get10TopSubscribers", CommandType.StoredProcedure))
                     {
                         using (SqlDataReader sqr = command.ExecuteReader())
                         {

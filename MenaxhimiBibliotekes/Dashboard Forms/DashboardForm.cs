@@ -19,16 +19,20 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
         List<Material> materialList = new List<Material>();
         List<Subscriber> subscribers;
         MaterialBLL materialBLL = new MaterialBLL();
-        SubscriberBLL subscriberBLL;
+        SubscriberBLL subscriberBLL = new SubscriberBLL();
         List<MonthBorrowStatistic> MonthBorrowStatistics;
         List<MaterialType> mts;
         MaterialTypeBLL mtbll;
         BorrowBLL borrbll;
         List<Material> materials;
         MaterialBLL mbll;
+
+
         public DashboardForm()
         {
             InitializeComponent();
+            gridMembers.DataSource = subscriberBLL.GetAll();
+            gridViewMembers.OptionsBehavior.AutoPopulateColumns = false;
         }
 
         private void DashboardForm_Load(object sender, EventArgs e)
@@ -212,6 +216,32 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
 
 
 
+        }
+
+        private void btnDisplayTable_Click(object sender, EventArgs e)
+        {
+            subscriberBLL = new SubscriberBLL();
+            gridMembers.DataSource = null;
+
+            if (comboMembers.SelectedIndex == 0)
+            {
+                gridMembers.DataSource = subscriberBLL.GetAll().Where(x => x.IsActive == true);
+            }
+            else if (comboMembers.SelectedIndex == 1)
+            {
+                gridMembers.DataSource = subscriberBLL.Get5LastSubscribers().Where(x => x.IsActive == true);
+            }
+            else if (comboMembers.SelectedIndex == 2)
+            {
+                gridMembers.DataSource = subscriberBLL.Get10LastSubscribers().Where(x => x.IsActive == true);
+            }
+        }
+
+        private void DashboardForm_Activated(object sender, EventArgs e)
+        {
+            comboMembers.SelectedIndex = 0;
+
+            gridMembers.DataSource = subscriberBLL.GetAll().Where(x => x.IsActive == true);
         }
     }
 }
