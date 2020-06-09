@@ -42,10 +42,54 @@ namespace MenaxhimiBibliotekes.DAL
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problem me Reservation DAL-in" + ex.Message, "Fail!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return -1;
+            }
+        }
+
+        public Reservation GetReservationBySubscriberIdAndMaterialId(int SubscriberId, int MaterialId)
+        {
+
+
+                //throw new Exception();
+            try
+            {
+                using (SqlConnection conn = DbHelper.GetConnection())
+                {
+                    using (SqlCommand command = DbHelper.Command(conn, "usp_GetReservationBySubscriberIdAndMaterialId", CommandType.StoredProcedure))
+                    {
+                        command.Parameters.AddWithValue("SubscriberId", SubscriberId);
+                        command.Parameters.AddWithValue("MaterialId", MaterialId);
+
+                        using (SqlDataReader sqr = command.ExecuteReader())
+                        {
+                            if (sqr.Read())
+                            {
+
+                                    reservation = new Reservation();
+                                    reservation = ToBO(sqr);
+                                    if (reservation != null)
+                                    {
+                                    return reservation;
+                                    }
+                                else
+                                {
+                                    return null;
+                                }
+                                    
+                                
+                            }
+                            return null;
+
+                        }
+                    }
+                }
+            }
             catch (Exception)
             {
-                MessageBox.Show("Problem me Reservation DAL-in", "Fail!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return -1;
+                return null;
             }
         }
 
@@ -87,7 +131,7 @@ namespace MenaxhimiBibliotekes.DAL
             try
             {
                 List<Reservation> _AllReservation = new List<Reservation>();
-                reservation = new Reservation();
+
                 using (SqlConnection conn = DbHelper.GetConnection())
                 {
                     using (SqlCommand command = DbHelper.Command(conn, "usp_Reservations_GetAll", CommandType.StoredProcedure))
@@ -98,6 +142,8 @@ namespace MenaxhimiBibliotekes.DAL
                             {
                                 while (sqr.Read())
                                 {
+                                    reservation = new Reservation();
+
                                     reservation = ToBO(sqr);
                                     if (reservation == null)
                                     {
@@ -124,7 +170,7 @@ namespace MenaxhimiBibliotekes.DAL
             {
                 Reservation reservation = new Reservation();
 
-                reservation.ReservationId = int.Parse(reader["ReservationId"].ToString());
+                reservation.ReservationId = int.Parse(reader["Id"].ToString());
                 reservation.SubscriberId = int.Parse(reader["SubscriberId"].ToString());
                 reservation.MaterialId = int.Parse(reader["MaterialId"].ToString());
                 reservation.ReservationDate = DateTime.Parse(reader["ReservationDate"].ToString());
@@ -141,7 +187,33 @@ namespace MenaxhimiBibliotekes.DAL
                     reservation.UpdDate = DateTime.Parse(reader["UpdDate"].ToString());
                 }
 
+                reservation.MaterialId = (int)reader["MaterialId"];
+
+                reservation.SubscriberId = (int)reader["SubscriberId"];
+
                 reservation.UpdNo = int.Parse(reader["UpdNo"].ToString());
+
+                if (reader["Title"] != DBNull.Value)
+                {
+
+                    reservation._material = new Material();
+                    reservation._material.MaterialId = int.Parse(reader["MaterialId"].ToString());
+                    reservation._material.Title = reader["Title"].ToString();
+                    reservation._material._MaterialType._MaterialType = reader["MaterialType"].ToString();
+                    reservation._material.AuthorId = (int)reader["AuthorId"];
+                    reservation._material._Author.AuthorName = reader["AuthorName"].ToString();
+                    reservation._material._Shelf.Location = reader["Location"].ToString();
+                }
+
+                if (reader["Name"] != DBNull.Value)
+                {
+                    reservation._subscriber = new Subscriber();
+                    reservation._subscriber.SubscriberId = (int)reader["SubscriberId"];
+                    reservation._subscriber.Name = reader["Name"].ToString();
+                    reservation._subscriber.LastName = reader["LastName"].ToString();
+                    reservation._subscriber.PhoneNo = reader["PhoneNumber"].ToString();
+                    reservation._subscriber.Email = reader["Email"].ToString();
+                }
 
                 return reservation;
             }

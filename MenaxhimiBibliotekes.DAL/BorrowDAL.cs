@@ -327,13 +327,13 @@ namespace MenaxhimiBibliotekes.DAL
                     borr.BorrowDate = (DateTime)reader["BorrowDate"];
                 }
 
-                //if (reader["reservationId"] != DBNull.Value)
-                //{
-                //    borr.ReservationId = int.Parse(reader["ReservationId"].ToString());
-                //    borr._reservation.ReservationId = int.Parse(reader["ReservationId"].ToString());
-                //    borr._reservation.ReservationDate = (DateTime)reader["ReservationDate"];
+                if (reader["reservationId"] != DBNull.Value)
+                {
+                    borr.ReservationId = int.Parse(reader["reservationId"].ToString());
+                    borr._reservation.ReservationId = int.Parse(reader["reservationId"].ToString());
+                    borr._reservation.ReservationDate = (DateTime)reader["ReservationDate"];
 
-                //}
+                }
 
 
                 if (reader["BorrowReturnId"] != DBNull.Value)

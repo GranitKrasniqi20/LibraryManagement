@@ -65,26 +65,34 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         private void BindDropDownGenre(Genre first)
         {
 
-
-            genreBllList = new GenreBLL();
-            Genre g = new Genre();
-            genreList = genreBllList.GetAll();
-
-
-            foreach (var item in genreList)
+            try
             {
-                if (first.GenreId == item.GenreId)
-                {
-                    g = item;
-                }
-            }
 
-            genreList.Remove(g);
-            g = genreList[0];
-            genreList[0] = first;
-            genreList.Add(g);
-            comboGenre.DataSource = genreList;
-            comboGenre.DisplayMember = "_Genre";
+                genreBllList = new GenreBLL();
+                Genre g = new Genre();
+                genreList = genreBllList.GetAll();
+
+
+                foreach (var item in genreList)
+                {
+                    if (first.GenreId == item.GenreId)
+                    {
+                        g = item;
+                    }
+                }
+
+                genreList.Remove(g);
+
+                g = genreList[0];
+                genreList[0] = first;
+                genreList.Add(g);
+                comboGenre.DataSource = genreList;
+                comboGenre.DisplayMember = "_Genre";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Material is not updated please contact your adminsitrator");
+            }
         }
         public void BindDropdownMaterialType(MaterialType first)
         {
@@ -464,7 +472,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     material.PublishYear = new DateTime(int.Parse(txtPublishDate.Text), 1, 1);
                 }
 
-
+                quantity = material.Quantity;
                 material.Quantity = Convert.ToInt32(txtQuantity.Text);
                 material.AvailableCoppies = GetAvaliableCoppies(quantity, material.Quantity, material.AvailableCoppies);
                 material.NumberOfPages = Convert.ToInt32(txtPages.Text);

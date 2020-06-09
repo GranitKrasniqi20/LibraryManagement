@@ -59,7 +59,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             languageList = languageBllList.GetAll();
             l = languageList[0];
             languageList[0] = new Language() { LanguageId = 0, _Language = "Other" };
-
+            languageList.Add(l);
             comboLanguage.DataSource = languageList;
             comboLanguage.DisplayMember = "_Language";
         }
@@ -84,7 +84,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             shelfList = shelfBLLList.GetAll();
             sh = shelfList[0];
             shelfList[0] = new Shelf() { ShelfId = 0, Location = "Other" };
-
+            shelfList.Add(sh);
             comboMaterialLocation.DataSource = shelfList;
             comboMaterialLocation.DisplayMember = "Location";
         }

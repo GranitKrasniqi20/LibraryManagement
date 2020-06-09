@@ -231,40 +231,42 @@ namespace MenaxhimiBibliotekes.DAL
 
 
 
-                        command.Parameters.AddWithValue("MaterialId", obj.MaterialId);
-                        command.Parameters.AddWithValue("GenreId", obj._Genre.GenreId);
-                        command.Parameters.AddWithValue("Title", obj.Title);
+                        command.Parameters.AddWithValue("@MaterialId", obj.MaterialId);
+                        command.Parameters.AddWithValue("@GenreId", obj._Genre.GenreId);
+                        command.Parameters.AddWithValue("@Title", obj.Title);
                         if (obj._PublishHouse.PublishHouseId > 0)
                         {
-                            command.Parameters.AddWithValue("PublishHouse", obj._PublishHouse._PublishHouse);
-                            command.Parameters.AddWithValue("PublishHouseId", obj._PublishHouse.PublishHouseId);
+                            command.Parameters.AddWithValue("@PublishHouse", obj._PublishHouse._PublishHouse);
+                            command.Parameters.AddWithValue("@PublishHouseId", obj._PublishHouse.PublishHouseId);
                         }
 
                         if (obj.PublishYear != null)
                         {
                             command.Parameters.AddWithValue("@PublicationYear", obj.PublishYear);
                         }
-                        //if (obj.ISBN.Length > string.)
-                        //{
-                        //    command.Parameters.AddWithValue("ISBN", obj.ISBN);
-                        //}
+                        if (obj.ISBN != string.Empty)
+                        {
+                            command.Parameters.AddWithValue("@ISBN", obj.ISBN);
+                        }
 
 
-                        command.Parameters.AddWithValue("MaterialTypeId", obj._MaterialType.MaterialTypeId);
+                        command.Parameters.AddWithValue("@MaterialTypeId", obj._MaterialType.MaterialTypeId);
 
-                        command.Parameters.AddWithValue("Quantity", obj.Quantity);// nese ne sql egziston mu mbledh kuantiteti
+                        command.Parameters.AddWithValue("@Quantity", obj.Quantity);
 
                         if (obj.NumberOfPages > 0)
                         {
-                            command.Parameters.AddWithValue("NumberOfPages", obj.NumberOfPages);
+                            command.Parameters.AddWithValue("@NumberOfPages", obj.NumberOfPages);
                         }
-                        command.Parameters.AddWithValue("LanguageId", obj._Language.LanguageId);
+                        command.Parameters.AddWithValue("@LanguageId", obj._Language.LanguageId);
 
-                        command.Parameters.AddWithValue("AuthorId", obj._Author.AuthorID);
-                        command.Parameters.AddWithValue("Author", obj._Author.AuthorName);
+                        command.Parameters.AddWithValue("@AuthorId", obj._Author.AuthorID);
+                        command.Parameters.AddWithValue("@Author", obj._Author.AuthorName);
                         command.Parameters.AddWithValue("@AvailableCoppies", obj.AvailableCoppies);
-                        command.Parameters.AddWithValue("UpdId", obj.UpdBy);
-                        command.Parameters.AddWithValue("IsActive", obj.IsActive);
+                        command.Parameters.AddWithValue("@UpdId", obj.UpdBy);
+                        command.Parameters.AddWithValue("@IsActive", obj.IsActive);
+
+                        command.Parameters.AddWithValue("@ShelfId", obj.ShelfId);
 
                         int row= command.ExecuteNonQuery();
 

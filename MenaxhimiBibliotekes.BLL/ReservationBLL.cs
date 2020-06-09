@@ -46,5 +46,10 @@ namespace MenaxhimiBibliotekes.BLL
                 $"Your {b._material._MaterialType._MaterialType} will expire at {b.ReservationDate.ToShortDateString()}"
                 ) ;
         }
+
+        public Reservation GetReservationBySubscriberIdAndMaterialId(int subscriberId, int MaterialId)
+        {
+            return reservationDAL.GetReservationBySubscriberIdAndMaterialId(subscriberId, MaterialId);
+        }
     }
 }
