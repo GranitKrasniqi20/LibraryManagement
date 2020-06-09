@@ -42,9 +42,7 @@
             this.tableContents = new System.Windows.Forms.TableLayoutPanel();
             this.lblOverallTotalStatistics = new System.Windows.Forms.Label();
             this.lblMonthlyBorrowedStatistics = new System.Windows.Forms.Label();
-            this.chartMostBorrowedMaterials = new DevExpress.XtraCharts.ChartControl();
             this.lblTop10BorrowedStatistics = new System.Windows.Forms.Label();
-            this.piechart = new DevExpress.XtraCharts.ChartControl();
             this.gridMembers = new DevExpress.XtraGrid.GridControl();
             this.gridViewMembers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSubscriberId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,6 +68,8 @@
             this.panelBorrowingsCount = new System.Windows.Forms.Panel();
             this.txtTotalBorrowings = new System.Windows.Forms.Label();
             this.lblTotalBorrowings = new System.Windows.Forms.Label();
+            this.piechart = new DevExpress.XtraCharts.ChartControl();
+            this.chartMostBorrowedMaterials = new DevExpress.XtraCharts.ChartControl();
             this.chartMaterials = new DevExpress.XtraCharts.ChartControl();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,10 +77,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableContents.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMostBorrowedMaterials)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piechart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMembers)).BeginInit();
             this.panel3.SuspendLayout();
@@ -88,6 +84,10 @@
             this.panelSubscribersCount.SuspendLayout();
             this.panelMaterialsCount.SuspendLayout();
             this.panelBorrowingsCount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.piechart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMostBorrowedMaterials)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMaterials)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,10 +200,10 @@
             this.tableContents.Controls.Add(this.gridMembers, 1, 13);
             this.tableContents.Controls.Add(this.panel3, 1, 12);
             this.tableContents.Controls.Add(this.lblMostBorrowedTypesStatistics, 1, 9);
-            this.tableContents.Controls.Add(this.tableOverallTotalStatistics, 1, 1);
             this.tableContents.Controls.Add(this.piechart, 1, 10);
             this.tableContents.Controls.Add(this.chartMostBorrowedMaterials, 1, 7);
             this.tableContents.Controls.Add(this.chartMaterials, 1, 4);
+            this.tableContents.Controls.Add(this.tableOverallTotalStatistics, 1, 1);
             this.tableContents.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableContents.Location = new System.Drawing.Point(0, 0);
             this.tableContents.Name = "tableContents";
@@ -246,15 +246,6 @@
             this.lblMonthlyBorrowedStatistics.TabIndex = 4;
             this.lblMonthlyBorrowedStatistics.Text = "Monthly Statistics of Most Borrowed Materials (Line Chart)";
             // 
-            // chartMostBorrowedMaterials
-            // 
-            this.chartMostBorrowedMaterials.Legend.Name = "Default Legend";
-            this.chartMostBorrowedMaterials.Location = new System.Drawing.Point(23, 828);
-            this.chartMostBorrowedMaterials.Name = "chartMostBorrowedMaterials";
-            this.chartMostBorrowedMaterials.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartMostBorrowedMaterials.Size = new System.Drawing.Size(756, 359);
-            this.chartMostBorrowedMaterials.TabIndex = 9;
-            // 
             // lblTop10BorrowedStatistics
             // 
             this.lblTop10BorrowedStatistics.AutoSize = true;
@@ -264,18 +255,6 @@
             this.lblTop10BorrowedStatistics.Size = new System.Drawing.Size(447, 30);
             this.lblTop10BorrowedStatistics.TabIndex = 4;
             this.lblTop10BorrowedStatistics.Text = "Top 10 Most Borrowed Materials (Bar Chart)";
-            // 
-            // piechart
-            // 
-            this.piechart.Legend.Name = "Default Legend";
-            this.piechart.Location = new System.Drawing.Point(23, 1293);
-            this.piechart.Name = "piechart";
-            series1.Name = "s1";
-            series1.View = pieSeriesView1;
-            this.piechart.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.piechart.Size = new System.Drawing.Size(756, 359);
-            this.piechart.TabIndex = 10;
             // 
             // gridMembers
             // 
@@ -434,6 +413,7 @@
             this.tableOverallTotalStatistics.Controls.Add(this.panelSubscribersCount, 0, 0);
             this.tableOverallTotalStatistics.Controls.Add(this.panelMaterialsCount, 2, 0);
             this.tableOverallTotalStatistics.Controls.Add(this.panelBorrowingsCount, 4, 0);
+            this.tableOverallTotalStatistics.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableOverallTotalStatistics.Location = new System.Drawing.Point(23, 63);
             this.tableOverallTotalStatistics.Name = "tableOverallTotalStatistics";
             this.tableOverallTotalStatistics.RowCount = 1;
@@ -537,6 +517,29 @@
             this.lblTotalBorrowings.TabIndex = 0;
             this.lblTotalBorrowings.Text = "Total Borrowings";
             // 
+            // piechart
+            // 
+            this.piechart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.piechart.Legend.Name = "Default Legend";
+            this.piechart.Location = new System.Drawing.Point(23, 1293);
+            this.piechart.Name = "piechart";
+            series1.Name = "s1";
+            series1.View = pieSeriesView1;
+            this.piechart.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.piechart.Size = new System.Drawing.Size(756, 359);
+            this.piechart.TabIndex = 10;
+            // 
+            // chartMostBorrowedMaterials
+            // 
+            this.chartMostBorrowedMaterials.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartMostBorrowedMaterials.Legend.Name = "Default Legend";
+            this.chartMostBorrowedMaterials.Location = new System.Drawing.Point(23, 828);
+            this.chartMostBorrowedMaterials.Name = "chartMostBorrowedMaterials";
+            this.chartMostBorrowedMaterials.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartMostBorrowedMaterials.Size = new System.Drawing.Size(756, 359);
+            this.chartMostBorrowedMaterials.TabIndex = 9;
+            // 
             // chartMaterials
             // 
             this.chartMaterials.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -573,10 +576,6 @@
             this.panel2.ResumeLayout(false);
             this.tableContents.ResumeLayout(false);
             this.tableContents.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMostBorrowedMaterials)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piechart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMembers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMembers)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -588,6 +587,10 @@
             this.panelMaterialsCount.PerformLayout();
             this.panelBorrowingsCount.ResumeLayout(false);
             this.panelBorrowingsCount.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piechart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMostBorrowedMaterials)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMaterials)).EndInit();
             this.ResumeLayout(false);
 

@@ -52,7 +52,7 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
                 MonthBorrowStatistics = borrbll.Last12MonthBorrowStatistics();
 
                 subscribers = subscriberBLL.BestSubscribers().ToList();
-                materialList = materialBLL.GetAll();
+                materialList = mbll.GetAll();
 
                 chartMaterials.Dock = DockStyle.Fill;
 
