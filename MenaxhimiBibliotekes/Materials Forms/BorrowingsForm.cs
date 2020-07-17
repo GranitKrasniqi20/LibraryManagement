@@ -194,7 +194,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void BorrowingsForm_Load(object sender, EventArgs e)
         {
-            BLL.ChooseLanguage<BorrowingsForm,mainForm>.ChangeLanguage("sq", this);
+            BLL.ChooseLanguage<BorrowingsForm>.ChangeLanguage("sq", this);
         }
     }
 }
