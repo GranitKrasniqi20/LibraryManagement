@@ -26,12 +26,12 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             
             if (rBAlbanish.Checked)
             {
-                BLL.ChooseLanguage<ChooseLangauge,mainForm>.ChangeLanguage("sq", this);
+                BLL.ChooseLanguage<ChooseLangauge>.ChangeLanguage("sq", this);
             }
 
             else
             {
-                BLL.ChooseLanguage<ChooseLangauge, mainForm>.ChangeLanguage("en-US", this);
+                BLL.ChooseLanguage<ChooseLangauge>.ChangeLanguage("en-US", this);
             }
             this.Close();
             

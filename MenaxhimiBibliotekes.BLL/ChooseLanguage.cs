@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MenaxhimiBibliotekes.BLL
 {
-    public class ChooseLanguage<T,U> : Form
+    public class ChooseLanguage<T> : Form
     {
         public static void ChangeLanguage(string langCode, Form form)
         {
@@ -34,8 +34,6 @@ namespace MenaxhimiBibliotekes.BLL
                         }
                     }
                 }
-
-
 
             }
 
