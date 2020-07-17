@@ -26,6 +26,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         public BorrowingsForm()
         {
             InitializeComponent();
+
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -189,6 +190,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 MessageBox.Show($"Material or Subscriber is not valid", $"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void BorrowingsForm_Load(object sender, EventArgs e)
+        {
+            BLL.ChooseLanguage<BorrowingsForm,mainForm>.ChangeLanguage("sq", this);
         }
     }
 }

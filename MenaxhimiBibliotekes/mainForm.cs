@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MenaxhimiBibliotekes.BLL;
 using MenaxhimiBibliotekes.BO;
+using MenaxhimiBibliotekes.Materials_Forms;
 
 namespace MenaxhimiBibliotekes
 {
@@ -56,6 +57,7 @@ namespace MenaxhimiBibliotekes
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
+            dashboardform.Close();
             if (dashboardform.IsDisposed)
             {
                 dashboardform = new Dashboard_Forms.DashboardForm();
@@ -70,6 +72,7 @@ namespace MenaxhimiBibliotekes
 
         private void btnMembers_Click(object sender, EventArgs e)
         {
+            membersform.Close();
             if (membersform.IsDisposed)
             {
                 membersform = new Members_Forms.MembersForm();
@@ -84,6 +87,7 @@ namespace MenaxhimiBibliotekes
 
         private void btnMaterials_Click(object sender, EventArgs e)
         {
+            materialsform.Close();
             if (materialsform.IsDisposed)
             {
                 materialsform = new Materials_Forms.MaterialsForm();
@@ -98,6 +102,7 @@ namespace MenaxhimiBibliotekes
 
         private void btnNotifications_Click(object sender, EventArgs e)
         {
+            notificationsform.Close();
             if (notificationsform.IsDisposed)
             {
                 notificationsform = new Notifications_Forms.NotificationsForm();
@@ -124,6 +129,7 @@ namespace MenaxhimiBibliotekes
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            settingsform.Close();
             if (settingsform.IsDisposed)
             {
                 settingsform = new Settings_Forms.SettingsForm();
@@ -232,6 +238,16 @@ namespace MenaxhimiBibliotekes
             BorrowBLL borrBLL = new BorrowBLL();
             borrBLL.EmailBorrowsToReturn();
             
+        }
+
+        private void PreferencesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProgressPanel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

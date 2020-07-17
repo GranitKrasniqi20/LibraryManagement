@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageUserAccountsForm));
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitleTitle = new System.Windows.Forms.Label();
-            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooterTitle = new System.Windows.Forms.Label();
             this.tabControlSettings = new System.Windows.Forms.TabControl();
@@ -54,7 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabEditAccount = new System.Windows.Forms.TabPage();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.comboRoleEdit = new System.Windows.Forms.ComboBox();
             this.txtIsActiveEdit = new System.Windows.Forms.TextBox();
@@ -69,6 +66,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabDeleteAccount = new System.Windows.Forms.TabPage();
+            this.txtDeleteUserId = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSearchToDelete = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtDelete = new System.Windows.Forms.TextBox();
@@ -87,16 +86,16 @@
             this.btnUpdatePassword = new System.Windows.Forms.Button();
             this.txtUsernameChangePassword = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.btnEditChangePassword = new System.Windows.Forms.Button();
             this.txtUserSearchChangePassword = new System.Windows.Forms.TextBox();
             this.lbl = new System.Windows.Forms.Label();
             this.txtPasswordChangePassword = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtDeleteUserId = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.picTitle = new System.Windows.Forms.PictureBox();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnEditChangePassword = new System.Windows.Forms.Button();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.tabControlSettings.SuspendLayout();
             this.tabCreateAccount.SuspendLayout();
@@ -104,110 +103,54 @@
             this.tabEditAccount.SuspendLayout();
             this.tabDeleteAccount.SuspendLayout();
             this.tabChangePassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.SuspendLayout();
             // 
             // tableHeader
             // 
+            resources.ApplyResources(this.tableHeader, "tableHeader");
             this.tableHeader.BackColor = System.Drawing.SystemColors.Control;
-            this.tableHeader.ColumnCount = 3;
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableHeader.Controls.Add(this.button1, 0, 0);
             this.tableHeader.Controls.Add(this.panel1, 1, 0);
-            this.tableHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableHeader.Location = new System.Drawing.Point(0, 0);
             this.tableHeader.Name = "tableHeader";
-            this.tableHeader.RowCount = 1;
-            this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableHeader.Size = new System.Drawing.Size(717, 88);
-            this.tableHeader.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(5, 16);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 55);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.lblTitleTitle);
             this.panel1.Controls.Add(this.picTitle);
-            this.panel1.Location = new System.Drawing.Point(74, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(567, 82);
-            this.panel1.TabIndex = 0;
             // 
             // lblTitleTitle
             // 
-            this.lblTitleTitle.AutoSize = true;
-            this.lblTitleTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lblTitleTitle, "lblTitleTitle");
             this.lblTitleTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.lblTitleTitle.Location = new System.Drawing.Point(67, 18);
             this.lblTitleTitle.Name = "lblTitleTitle";
-            this.lblTitleTitle.Size = new System.Drawing.Size(493, 50);
-            this.lblTitleTitle.TabIndex = 0;
-            this.lblTitleTitle.Text = "MANAGE USER ACCOUNTS";
-            // 
-            // picTitle
-            // 
-            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
-            this.picTitle.Location = new System.Drawing.Point(15, 18);
-            this.picTitle.Name = "picTitle";
-            this.picTitle.Size = new System.Drawing.Size(58, 50);
-            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTitle.TabIndex = 0;
-            this.picTitle.TabStop = false;
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.ColumnCount = 1;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            resources.ApplyResources(this.tableLayoutPanel7, "tableLayoutPanel7");
             this.tableLayoutPanel7.Controls.Add(this.lblFooterTitle, 0, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 559);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(717, 27);
-            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // lblFooterTitle
             // 
-            this.lblFooterTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFooterTitle.AutoSize = true;
-            this.lblFooterTitle.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterTitle.Location = new System.Drawing.Point(233, 5);
+            resources.ApplyResources(this.lblFooterTitle, "lblFooterTitle");
             this.lblFooterTitle.Name = "lblFooterTitle";
-            this.lblFooterTitle.Size = new System.Drawing.Size(251, 17);
-            this.lblFooterTitle.TabIndex = 0;
-            this.lblFooterTitle.Text = "All Rights, Stackbooks Management System";
             // 
             // tabControlSettings
             // 
+            resources.ApplyResources(this.tabControlSettings, "tabControlSettings");
             this.tabControlSettings.Controls.Add(this.tabCreateAccount);
             this.tabControlSettings.Controls.Add(this.tabEditAccount);
             this.tabControlSettings.Controls.Add(this.tabDeleteAccount);
             this.tabControlSettings.Controls.Add(this.tabChangePassword);
-            this.tabControlSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlSettings.ItemSize = new System.Drawing.Size(120, 30);
-            this.tabControlSettings.Location = new System.Drawing.Point(0, 88);
             this.tabControlSettings.Name = "tabControlSettings";
             this.tabControlSettings.SelectedIndex = 0;
-            this.tabControlSettings.Size = new System.Drawing.Size(717, 471);
-            this.tabControlSettings.TabIndex = 12;
             // 
             // tabCreateAccount
             // 
+            resources.ApplyResources(this.tabCreateAccount, "tabCreateAccount");
             this.tabCreateAccount.Controls.Add(this.panel2);
             this.tabCreateAccount.Controls.Add(this.btnCreate);
             this.tabCreateAccount.Controls.Add(this.comboRoleCreate);
@@ -222,150 +165,98 @@
             this.tabCreateAccount.Controls.Add(this.label3);
             this.tabCreateAccount.Controls.Add(this.label2);
             this.tabCreateAccount.Controls.Add(this.label1);
-            this.tabCreateAccount.Location = new System.Drawing.Point(4, 34);
             this.tabCreateAccount.Name = "tabCreateAccount";
-            this.tabCreateAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCreateAccount.Size = new System.Drawing.Size(709, 433);
-            this.tabCreateAccount.TabIndex = 0;
-            this.tabCreateAccount.Text = "Create Account";
             this.tabCreateAccount.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.lblInfo);
-            this.panel2.Location = new System.Drawing.Point(440, 67);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(210, 158);
-            this.panel2.TabIndex = 0;
             // 
             // lblInfo
             // 
-            this.lblInfo.AutoSize = true;
-            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(20, 25);
+            resources.ApplyResources(this.lblInfo, "lblInfo");
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(159, 102);
-            this.lblInfo.TabIndex = 0;
-            this.lblInfo.Text = "An Admin should be able\r\nto add other admins and\r\nusers in the system.\r\n\r\nContact" +
-    " support:\r\nsupport@stackbooks.com";
             // 
             // btnCreate
             // 
+            resources.ApplyResources(this.btnCreate, "btnCreate");
             this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(440, 272);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(210, 72);
-            this.btnCreate.TabIndex = 7;
-            this.btnCreate.Text = "Create Account";
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // comboRoleCreate
             // 
+            resources.ApplyResources(this.comboRoleCreate, "comboRoleCreate");
             this.comboRoleCreate.FormattingEnabled = true;
             this.comboRoleCreate.Items.AddRange(new object[] {
-            "Admin",
-            "User"});
-            this.comboRoleCreate.Location = new System.Drawing.Point(157, 67);
+            resources.GetString("comboRoleCreate.Items"),
+            resources.GetString("comboRoleCreate.Items1")});
             this.comboRoleCreate.Name = "comboRoleCreate";
-            this.comboRoleCreate.Size = new System.Drawing.Size(226, 29);
-            this.comboRoleCreate.TabIndex = 1;
             // 
             // txtPasswordCreate
             // 
-            this.txtPasswordCreate.Location = new System.Drawing.Point(157, 315);
+            resources.ApplyResources(this.txtPasswordCreate, "txtPasswordCreate");
             this.txtPasswordCreate.Name = "txtPasswordCreate";
-            this.txtPasswordCreate.Size = new System.Drawing.Size(226, 29);
-            this.txtPasswordCreate.TabIndex = 6;
             // 
             // txtUsernameCreate
             // 
-            this.txtUsernameCreate.Location = new System.Drawing.Point(157, 272);
+            resources.ApplyResources(this.txtUsernameCreate, "txtUsernameCreate");
             this.txtUsernameCreate.Name = "txtUsernameCreate";
-            this.txtUsernameCreate.Size = new System.Drawing.Size(226, 29);
-            this.txtUsernameCreate.TabIndex = 5;
             // 
             // txtEmailCreate
             // 
-            this.txtEmailCreate.Location = new System.Drawing.Point(157, 196);
+            resources.ApplyResources(this.txtEmailCreate, "txtEmailCreate");
             this.txtEmailCreate.Name = "txtEmailCreate";
-            this.txtEmailCreate.Size = new System.Drawing.Size(226, 29);
-            this.txtEmailCreate.TabIndex = 4;
             // 
             // txtLastNameCreate
             // 
-            this.txtLastNameCreate.Location = new System.Drawing.Point(157, 152);
+            resources.ApplyResources(this.txtLastNameCreate, "txtLastNameCreate");
             this.txtLastNameCreate.Name = "txtLastNameCreate";
-            this.txtLastNameCreate.Size = new System.Drawing.Size(226, 29);
-            this.txtLastNameCreate.TabIndex = 3;
             // 
             // txtNameCreate
             // 
-            this.txtNameCreate.Location = new System.Drawing.Point(157, 108);
+            resources.ApplyResources(this.txtNameCreate, "txtNameCreate");
             this.txtNameCreate.Name = "txtNameCreate";
-            this.txtNameCreate.Size = new System.Drawing.Size(226, 29);
-            this.txtNameCreate.TabIndex = 2;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(51, 318);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 21);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Password:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 275);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 21);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Username:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(71, 199);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 21);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Email:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 155);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Last Name:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 111);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Name:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 70);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Role:";
             // 
             // tabEditAccount
             // 
+            resources.ApplyResources(this.tabEditAccount, "tabEditAccount");
             this.tabEditAccount.Controls.Add(this.btnEdit);
             this.tabEditAccount.Controls.Add(this.btnUpdateAccount);
             this.tabEditAccount.Controls.Add(this.comboRoleEdit);
@@ -380,146 +271,86 @@
             this.tabEditAccount.Controls.Add(this.lblID);
             this.tabEditAccount.Controls.Add(this.label12);
             this.tabEditAccount.Controls.Add(this.label13);
-            this.tabEditAccount.Location = new System.Drawing.Point(4, 34);
             this.tabEditAccount.Name = "tabEditAccount";
-            this.tabEditAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEditAccount.Size = new System.Drawing.Size(709, 433);
-            this.tabEditAccount.TabIndex = 1;
-            this.tabEditAccount.Text = "Edit Account";
             this.tabEditAccount.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(420, 29);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEdit.Size = new System.Drawing.Size(210, 56);
-            this.btnEdit.TabIndex = 9;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnUpdateAccount
             // 
+            resources.ApplyResources(this.btnUpdateAccount, "btnUpdateAccount");
             this.btnUpdateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnUpdateAccount.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateAccount.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateAccount.Location = new System.Drawing.Point(420, 290);
             this.btnUpdateAccount.Name = "btnUpdateAccount";
-            this.btnUpdateAccount.Size = new System.Drawing.Size(210, 72);
-            this.btnUpdateAccount.TabIndex = 16;
-            this.btnUpdateAccount.Text = "Update Account";
             this.btnUpdateAccount.UseVisualStyleBackColor = false;
             this.btnUpdateAccount.Click += new System.EventHandler(this.BtnUpdateAccount_Click);
             // 
             // comboRoleEdit
             // 
+            resources.ApplyResources(this.comboRoleEdit, "comboRoleEdit");
             this.comboRoleEdit.FormattingEnabled = true;
             this.comboRoleEdit.Items.AddRange(new object[] {
-            "Admin",
-            "User"});
-            this.comboRoleEdit.Location = new System.Drawing.Point(157, 106);
+            resources.GetString("comboRoleEdit.Items"),
+            resources.GetString("comboRoleEdit.Items1")});
             this.comboRoleEdit.Name = "comboRoleEdit";
-            this.comboRoleEdit.Size = new System.Drawing.Size(226, 29);
-            this.comboRoleEdit.TabIndex = 10;
             this.comboRoleEdit.SelectedIndexChanged += new System.EventHandler(this.ComboRoleEdit_SelectedIndexChanged);
             // 
             // txtIsActiveEdit
             // 
-            this.txtIsActiveEdit.Location = new System.Drawing.Point(157, 311);
+            resources.ApplyResources(this.txtIsActiveEdit, "txtIsActiveEdit");
             this.txtIsActiveEdit.Name = "txtIsActiveEdit";
-            this.txtIsActiveEdit.Size = new System.Drawing.Size(226, 29);
-            this.txtIsActiveEdit.TabIndex = 14;
             // 
             // txtEmailEdit
             // 
-            this.txtEmailEdit.Location = new System.Drawing.Point(157, 235);
+            resources.ApplyResources(this.txtEmailEdit, "txtEmailEdit");
             this.txtEmailEdit.Name = "txtEmailEdit";
-            this.txtEmailEdit.Size = new System.Drawing.Size(226, 29);
-            this.txtEmailEdit.TabIndex = 13;
             // 
             // txtLastNameEdit
             // 
-            this.txtLastNameEdit.Location = new System.Drawing.Point(157, 191);
+            resources.ApplyResources(this.txtLastNameEdit, "txtLastNameEdit");
             this.txtLastNameEdit.Name = "txtLastNameEdit";
-            this.txtLastNameEdit.Size = new System.Drawing.Size(226, 29);
-            this.txtLastNameEdit.TabIndex = 12;
             // 
             // txtUsernameEdit
             // 
-            this.txtUsernameEdit.Location = new System.Drawing.Point(157, 43);
+            resources.ApplyResources(this.txtUsernameEdit, "txtUsernameEdit");
             this.txtUsernameEdit.Name = "txtUsernameEdit";
-            this.txtUsernameEdit.Size = new System.Drawing.Size(226, 29);
-            this.txtUsernameEdit.TabIndex = 8;
             // 
             // txtNameEdit
             // 
-            this.txtNameEdit.Location = new System.Drawing.Point(157, 147);
+            resources.ApplyResources(this.txtNameEdit, "txtNameEdit");
             this.txtNameEdit.Name = "txtNameEdit";
-            this.txtNameEdit.Size = new System.Drawing.Size(226, 29);
-            this.txtNameEdit.TabIndex = 11;
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(47, 314);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 21);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Is hired:";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(82, 238);
+            resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 21);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Email:";
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(44, 194);
+            resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 21);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Last Name:";
             // 
             // lblID
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(11, 47);
+            resources.ApplyResources(this.lblID, "lblID");
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(140, 21);
-            this.lblID.TabIndex = 0;
-            this.lblID.Text = "Search Username:";
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(77, 150);
+            resources.ApplyResources(this.label12, "label12");
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 21);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Name:";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(87, 109);
+            resources.ApplyResources(this.label13, "label13");
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 21);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Role:";
             // 
             // tabDeleteAccount
             // 
+            resources.ApplyResources(this.tabDeleteAccount, "tabDeleteAccount");
             this.tabDeleteAccount.Controls.Add(this.txtDeleteUserId);
             this.tabDeleteAccount.Controls.Add(this.label7);
             this.tabDeleteAccount.Controls.Add(this.btnSearchToDelete);
@@ -536,280 +367,194 @@
             this.tabDeleteAccount.Controls.Add(this.txtNameDelete);
             this.tabDeleteAccount.Controls.Add(this.txtRoleDelete);
             this.tabDeleteAccount.Controls.Add(this.label19);
-            this.tabDeleteAccount.Location = new System.Drawing.Point(4, 34);
             this.tabDeleteAccount.Name = "tabDeleteAccount";
-            this.tabDeleteAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDeleteAccount.Size = new System.Drawing.Size(709, 433);
-            this.tabDeleteAccount.TabIndex = 2;
-            this.tabDeleteAccount.Text = "Delete Account";
             this.tabDeleteAccount.UseVisualStyleBackColor = true;
+            // 
+            // txtDeleteUserId
+            // 
+            resources.ApplyResources(this.txtDeleteUserId, "txtDeleteUserId");
+            this.txtDeleteUserId.Name = "txtDeleteUserId";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            this.label7.Click += new System.EventHandler(this.Label7_Click);
             // 
             // btnSearchToDelete
             // 
+            resources.ApplyResources(this.btnSearchToDelete, "btnSearchToDelete");
             this.btnSearchToDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnSearchToDelete.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchToDelete.ForeColor = System.Drawing.Color.White;
-            this.btnSearchToDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchToDelete.Location = new System.Drawing.Point(420, 29);
             this.btnSearchToDelete.Name = "btnSearchToDelete";
-            this.btnSearchToDelete.Size = new System.Drawing.Size(210, 56);
-            this.btnSearchToDelete.TabIndex = 18;
-            this.btnSearchToDelete.Text = "Search";
             this.btnSearchToDelete.UseVisualStyleBackColor = false;
             this.btnSearchToDelete.Click += new System.EventHandler(this.BtnSearchToDelete_Click);
             // 
             // btnDelete
             // 
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(420, 234);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(210, 72);
-            this.btnDelete.TabIndex = 19;
-            this.btnDelete.Text = "Delete Account";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // txtDelete
             // 
-            this.txtDelete.Location = new System.Drawing.Point(157, 43);
+            resources.ApplyResources(this.txtDelete, "txtDelete");
             this.txtDelete.Name = "txtDelete";
-            this.txtDelete.Size = new System.Drawing.Size(226, 29);
-            this.txtDelete.TabIndex = 17;
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(60, 314);
+            resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 21);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Is hired:";
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(76, 267);
+            resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 21);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Email:";
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(38, 223);
+            resources.ApplyResources(this.label16, "label16");
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(90, 21);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Last Name:";
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(11, 46);
+            resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(140, 21);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Search Username:";
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(71, 179);
+            resources.ApplyResources(this.label18, "label18");
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(57, 21);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Name:";
             // 
             // txtIsActiveDelete
             // 
-            this.txtIsActiveDelete.AutoSize = true;
-            this.txtIsActiveDelete.Location = new System.Drawing.Point(147, 314);
+            resources.ApplyResources(this.txtIsActiveDelete, "txtIsActiveDelete");
             this.txtIsActiveDelete.Name = "txtIsActiveDelete";
-            this.txtIsActiveDelete.Size = new System.Drawing.Size(28, 21);
-            this.txtIsActiveDelete.TabIndex = 0;
-            this.txtIsActiveDelete.Text = "---";
             // 
             // txtEmailDelete
             // 
-            this.txtEmailDelete.AutoSize = true;
-            this.txtEmailDelete.Location = new System.Drawing.Point(147, 267);
+            resources.ApplyResources(this.txtEmailDelete, "txtEmailDelete");
             this.txtEmailDelete.Name = "txtEmailDelete";
-            this.txtEmailDelete.Size = new System.Drawing.Size(28, 21);
-            this.txtEmailDelete.TabIndex = 0;
-            this.txtEmailDelete.Text = "---";
             // 
             // txtLastNameDelete
             // 
-            this.txtLastNameDelete.AutoSize = true;
-            this.txtLastNameDelete.Location = new System.Drawing.Point(147, 223);
+            resources.ApplyResources(this.txtLastNameDelete, "txtLastNameDelete");
             this.txtLastNameDelete.Name = "txtLastNameDelete";
-            this.txtLastNameDelete.Size = new System.Drawing.Size(28, 21);
-            this.txtLastNameDelete.TabIndex = 0;
-            this.txtLastNameDelete.Text = "---";
             // 
             // txtNameDelete
             // 
-            this.txtNameDelete.AutoSize = true;
-            this.txtNameDelete.Location = new System.Drawing.Point(147, 179);
+            resources.ApplyResources(this.txtNameDelete, "txtNameDelete");
             this.txtNameDelete.Name = "txtNameDelete";
-            this.txtNameDelete.Size = new System.Drawing.Size(28, 21);
-            this.txtNameDelete.TabIndex = 0;
-            this.txtNameDelete.Text = "---";
             // 
             // txtRoleDelete
             // 
-            this.txtRoleDelete.AutoSize = true;
-            this.txtRoleDelete.Location = new System.Drawing.Point(147, 138);
+            resources.ApplyResources(this.txtRoleDelete, "txtRoleDelete");
             this.txtRoleDelete.Name = "txtRoleDelete";
-            this.txtRoleDelete.Size = new System.Drawing.Size(28, 21);
-            this.txtRoleDelete.TabIndex = 0;
-            this.txtRoleDelete.Text = "---";
             // 
             // label19
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(81, 138);
+            resources.ApplyResources(this.label19, "label19");
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(47, 21);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Role:";
             // 
             // tabChangePassword
             // 
+            resources.ApplyResources(this.tabChangePassword, "tabChangePassword");
             this.tabChangePassword.Controls.Add(this.btnUpdatePassword);
             this.tabChangePassword.Controls.Add(this.txtUsernameChangePassword);
             this.tabChangePassword.Controls.Add(this.label20);
-            this.tabChangePassword.Controls.Add(this.btnEditChangePassword);
             this.tabChangePassword.Controls.Add(this.txtUserSearchChangePassword);
             this.tabChangePassword.Controls.Add(this.lbl);
             this.tabChangePassword.Controls.Add(this.txtPasswordChangePassword);
             this.tabChangePassword.Controls.Add(this.label8);
-            this.tabChangePassword.Location = new System.Drawing.Point(4, 34);
+            this.tabChangePassword.Controls.Add(this.btnEditChangePassword);
             this.tabChangePassword.Name = "tabChangePassword";
-            this.tabChangePassword.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChangePassword.Size = new System.Drawing.Size(709, 433);
-            this.tabChangePassword.TabIndex = 3;
-            this.tabChangePassword.Text = "Change Password";
             this.tabChangePassword.UseVisualStyleBackColor = true;
             // 
             // btnUpdatePassword
             // 
+            resources.ApplyResources(this.btnUpdatePassword, "btnUpdatePassword");
             this.btnUpdatePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnUpdatePassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdatePassword.ForeColor = System.Drawing.Color.White;
-            this.btnUpdatePassword.Location = new System.Drawing.Point(420, 171);
             this.btnUpdatePassword.Name = "btnUpdatePassword";
-            this.btnUpdatePassword.Size = new System.Drawing.Size(210, 84);
-            this.btnUpdatePassword.TabIndex = 22;
-            this.btnUpdatePassword.Text = "Update Password";
             this.btnUpdatePassword.UseVisualStyleBackColor = false;
             this.btnUpdatePassword.Click += new System.EventHandler(this.BtnUpdatePassword_Click);
             // 
             // txtUsernameChangePassword
             // 
-            this.txtUsernameChangePassword.AutoSize = true;
-            this.txtUsernameChangePassword.Location = new System.Drawing.Point(153, 171);
+            resources.ApplyResources(this.txtUsernameChangePassword, "txtUsernameChangePassword");
             this.txtUsernameChangePassword.Name = "txtUsernameChangePassword";
-            this.txtUsernameChangePassword.Size = new System.Drawing.Size(28, 21);
-            this.txtUsernameChangePassword.TabIndex = 21;
-            this.txtUsernameChangePassword.Text = "---";
             // 
             // label20
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(47, 171);
+            resources.ApplyResources(this.label20, "label20");
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(87, 21);
-            this.label20.TabIndex = 21;
-            this.label20.Text = "Username:";
-            // 
-            // btnEditChangePassword
-            // 
-            this.btnEditChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnEditChangePassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btnEditChangePassword.Image = ((System.Drawing.Image)(resources.GetObject("btnEditChangePassword.Image")));
-            this.btnEditChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditChangePassword.Location = new System.Drawing.Point(420, 29);
-            this.btnEditChangePassword.Name = "btnEditChangePassword";
-            this.btnEditChangePassword.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEditChangePassword.Size = new System.Drawing.Size(210, 56);
-            this.btnEditChangePassword.TabIndex = 20;
-            this.btnEditChangePassword.Text = "Edit";
-            this.btnEditChangePassword.UseVisualStyleBackColor = false;
-            this.btnEditChangePassword.Click += new System.EventHandler(this.BtnEditChangePassword_Click);
             // 
             // txtUserSearchChangePassword
             // 
-            this.txtUserSearchChangePassword.Location = new System.Drawing.Point(157, 43);
+            resources.ApplyResources(this.txtUserSearchChangePassword, "txtUserSearchChangePassword");
             this.txtUserSearchChangePassword.Name = "txtUserSearchChangePassword";
-            this.txtUserSearchChangePassword.Size = new System.Drawing.Size(226, 29);
-            this.txtUserSearchChangePassword.TabIndex = 19;
             // 
             // lbl
             // 
-            this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(11, 46);
+            resources.ApplyResources(this.lbl, "lbl");
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(140, 21);
-            this.lbl.TabIndex = 18;
-            this.lbl.Text = "Search Username:";
             // 
             // txtPasswordChangePassword
             // 
-            this.txtPasswordChangePassword.Location = new System.Drawing.Point(157, 226);
+            resources.ApplyResources(this.txtPasswordChangePassword, "txtPasswordChangePassword");
             this.txtPasswordChangePassword.Name = "txtPasswordChangePassword";
-            this.txtPasswordChangePassword.Size = new System.Drawing.Size(226, 29);
-            this.txtPasswordChangePassword.TabIndex = 17;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(51, 229);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 21);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Password:";
             // 
-            // label7
+            // button1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(62, 103);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 21);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "User Id:";
-            this.label7.Click += new System.EventHandler(this.Label7_Click);
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // txtDeleteUserId
+            // picTitle
             // 
-            this.txtDeleteUserId.AutoSize = true;
-            this.txtDeleteUserId.Location = new System.Drawing.Point(147, 103);
-            this.txtDeleteUserId.Name = "txtDeleteUserId";
-            this.txtDeleteUserId.Size = new System.Drawing.Size(28, 21);
-            this.txtDeleteUserId.TabIndex = 21;
-            this.txtDeleteUserId.Text = "---";
+            resources.ApplyResources(this.picTitle, "picTitle");
+            this.picTitle.Name = "picTitle";
+            this.picTitle.TabStop = false;
+            // 
+            // btnEdit
+            // 
+            resources.ApplyResources(this.btnEdit, "btnEdit");
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            // 
+            // btnEditChangePassword
+            // 
+            resources.ApplyResources(this.btnEditChangePassword, "btnEditChangePassword");
+            this.btnEditChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnEditChangePassword.ForeColor = System.Drawing.Color.White;
+            this.btnEditChangePassword.Name = "btnEditChangePassword";
+            this.btnEditChangePassword.UseVisualStyleBackColor = false;
+            this.btnEditChangePassword.Click += new System.EventHandler(this.BtnEditChangePassword_Click);
             // 
             // ManageUserAccountsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 586);
             this.Controls.Add(this.tabControlSettings);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.tableHeader);
-            this.MaximumSize = new System.Drawing.Size(733, 625);
-            this.MinimumSize = new System.Drawing.Size(733, 625);
             this.Name = "ManageUserAccountsForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage User Accounts (Stackbooks)";
             this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tabControlSettings.ResumeLayout(false);
@@ -823,6 +568,7 @@
             this.tabDeleteAccount.PerformLayout();
             this.tabChangePassword.ResumeLayout(false);
             this.tabChangePassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.ResumeLayout(false);
 
         }

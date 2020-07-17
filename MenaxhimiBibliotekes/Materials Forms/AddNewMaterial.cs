@@ -54,62 +54,131 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         private void BindLanguage()
         {
 
-            languageBllList = new LanguageBLL();
-            Language l = new Language();
-            languageList = languageBllList.GetAll();
-            l = languageList[0];
-            languageList[0] = new Language() { LanguageId = 0, _Language = "Other" };
-            languageList.Add(l);
-            comboLanguage.DataSource = languageList;
-            comboLanguage.DisplayMember = "_Language";
+            try
+            {
+                languageBllList = new LanguageBLL();
+                Language l = new Language();
+                languageList = languageBllList.GetAll();
+                if (languageList.Count > 0)
+                {
+                    l = languageList[0];
+                    languageList[0] = new Language() { LanguageId = 0, _Language = "Other" ,isActive=true};
+                    languageList.Add(l);
+                    comboLanguage.DataSource = languageList.Where(x => x.isActive == true).ToList();
+                    comboLanguage.DisplayMember = "_Language";
+                }
+                else
+                {
+                    languageList = new List<Language>();
+                    languageList.Add ( new Language() { LanguageId = 0, _Language = "Other", isActive = true });
+                                    comboLanguage.DataSource = languageList;
+                    comboLanguage.DisplayMember = "_Language";
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
         private void BindGenre()
         {
 
-            genreBllList = new GenreBLL();
-            Genre g = new Genre();
-            genreList = genreBllList.GetAll();
-            g = genreList[0];
-            genreList[0] = new Genre() { GenreId = 0, _Genre = "Other" };
-            genreList.Add(g);
+            try
+            {
+                genreBllList = new GenreBLL();
+                Genre g = new Genre();
+                genreList = genreBllList.GetAll();
+                if (genreList.Count > 0)
+                {
 
-            comboGenre.DataSource = genreList;
-            comboGenre.DisplayMember = "_Genre";
+                    g = genreList[0];
+                    genreList[0] = new Genre() { GenreId = 0, _Genre = "Other", isActive = true };
+                    genreList.Add(g);
+
+                    comboGenre.DataSource = genreList.Where(x => x.isActive == true).ToList() ;
+                    comboGenre.DisplayMember = "_Genre";
+                }
+                else
+                {
+                    genreList = new List<Genre>();
+                    genreList.Add(  new Genre() { GenreId = 0, _Genre = "Other", isActive = true });
+                    comboGenre.DataSource = genreList;
+                    comboGenre.DisplayMember = "_Genre";
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
         private void BindShelf()
         {
 
-            shelfBLLList = new ShelfBLL();
-            Shelf sh = new Shelf();
-            shelfList = shelfBLLList.GetAll();
-            sh = shelfList[0];
-            shelfList[0] = new Shelf() { ShelfId = 0, Location = "Other" };
-            shelfList.Add(sh);
-            comboMaterialLocation.DataSource = shelfList;
-            comboMaterialLocation.DisplayMember = "Location";
+            try
+            {
+                shelfBLLList = new ShelfBLL();
+                Shelf sh = new Shelf();
+                shelfList = shelfBLLList.GetAll();
+                if (shelfList.Count > 0)
+                {
+                    sh = shelfList[0];
+                    shelfList[0] = new Shelf() { ShelfId = 0, Location = "Other" };
+                    shelfList.Add(sh);
+                    comboMaterialLocation.DataSource = shelfList;
+                    comboMaterialLocation.DisplayMember = "Location";
+                }
+                else
+                {
+                    shelfList = new List<Shelf>();
+                    comboMaterialLocation.DataSource = shelfList;
+                    comboMaterialLocation.DisplayMember = "Location";
+                    shelfList.Add(  new Shelf() { ShelfId = 0, Location = "Other" });
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+           
         }
 
         private void BindMaterialType()
         {
+
+
+            try
+            {
+                materialtypeBllList = new MaterialTypeBLL();
+                MaterialType mt = new MaterialType();
+                materialtypeList = materialtypeBllList.GetAll();
+
+                if (materialtypeList.Count > 0)
+                {
+                    mt = materialtypeList[0];
+                    materialtypeList[0] = new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other",isActive=true };
+                    materialtypeList.Add(mt);
+                    comboMaterialType.DataSource = materialtypeList.Where(x => x.isActive == true).ToList(); 
+                    comboMaterialType.DisplayMember = "_MaterialType";
+
+                }
+                else
+                {
+                    materialtypeList = new List<MaterialType>();
+                    materialtypeList.Add(new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" });
+                    comboMaterialType.DataSource = materialtypeList;
+                    comboMaterialType.DisplayMember = "_MaterialType";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             
-
-            materialtypeBllList = new MaterialTypeBLL();
-            MaterialType mt = new MaterialType();
-            materialtypeList = materialtypeBllList.GetAll();
-            mt = materialtypeList[0];
-            materialtypeList[0] = new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" };
-            materialtypeList.Add(mt);
-
-            comboMaterialType.DataSource = materialtypeList;
-            comboMaterialType.DisplayMember = "_MaterialType";
         }
 
 
-        //Customized Methods
-        private void MultipleAuthors(string myTextbox, string[] authorsContainer)
-        {
-            authorsContainer = myTextbox.Split('/');
-        }
 
         private void DisabledByMaterialType (Control title, Control author, Control genre, Control language, Control isbn, Control location, Control publish_house, Control publish_date, Control quantity, Control pages)
         {
@@ -150,7 +219,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
             MaterialType cmt = comboMaterialType.SelectedItem as MaterialType;
 
-            if (cmt.MaterialTypeId == 0)
+            if (cmt._MaterialType == "Other")
             {
                 if (openFormMT)
                 {
@@ -183,18 +252,18 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
             Genre cg = comboGenre.SelectedItem as Genre;
 
-            if (cg.GenreId == 0)
+            if (cg._Genre == "Other")
             {
                 if (openFormG)
                 {
-                    openFormG = true;
+                    openFormG = false;
                     GenreForm genreForm = new GenreForm();
                     genreForm.ShowDialog();
                     BindGenre();
                 }
                 else
                 {
-                    openFormG = false;
+                    openFormG = true;
                 }
                 
             }
@@ -205,18 +274,18 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
             Language cl = comboLanguage.SelectedItem as Language;
 
-            if (cl.LanguageId == 0)
+            if (cl._Language == "Other")
             {
                 if (openFormL)
                 {
-                    openFormL = true;
+                    openFormL = false;
                     LanguageForm languageForm = new LanguageForm();
                     languageForm.ShowDialog();
                     BindLanguage();
                 }
                 else
                 {
-                    openFormL = false;
+                    openFormL = true;
                 }
             }
         }
@@ -225,18 +294,18 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
             Shelf cml = comboMaterialLocation.SelectedItem as Shelf;
 
-            if (cml.ShelfId == 0)
+            if (cml.Location == "Other")
             {
                 if (openFormSH)
                 {
-                    openFormSH = true;
+                    openFormSH = false;
                     MaterialLocation locationForm = new MaterialLocation();
                     locationForm.ShowDialog();
                     BindShelf();
                 }
                 else
                 {
-                    openFormSH = false;
+                    openFormSH = true;
                 }
 
             }

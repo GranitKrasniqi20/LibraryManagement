@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MenaxhimiBibliotekes.BO;
+using MenaxhimiBibliotekes.Materials_Forms;
+
 namespace MenaxhimiBibliotekes.Settings_Forms
 {
     public partial class SettingsForm : Form
@@ -39,6 +41,17 @@ namespace MenaxhimiBibliotekes.Settings_Forms
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             txtRole.Text = FormLoggedUser.Role.UserRole;
+        }
+
+        private void TableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            ChooseLangauge lang = new ChooseLangauge();
+            lang.ShowDialog();
         }
     }
 }

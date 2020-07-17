@@ -228,5 +228,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             shelfBLL.Delete(shelf.ShelfId);
             //little code because Delete Operation is not yet implemented in DAL for Shelf!
         }
+
+        private void LblShelfQuantityDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
