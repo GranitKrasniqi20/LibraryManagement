@@ -67,7 +67,6 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
 
                 series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
                 series.Label.ResolveOverlappingMode = ResolveOverlappingMode.HideOverlapped;
-                series.Label.TextPattern = "{V:.#}";
 
                 // Create a chart title.
                 ChartTitle chartTitle = new ChartTitle();
@@ -76,8 +75,6 @@ namespace MenaxhimiBibliotekes.Dashboard_Forms
 
                 // Customize axes.
                 XYDiagram diagram = chartMaterials.Diagram as XYDiagram;
-                diagram.AxisX.Label.TextPattern = "{A:MMM, d (HH:mm)}";
-                diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Hour;
                 diagram.AxisX.DateTimeScaleOptions.GridSpacing = 9;
                 diagram.AxisX.WholeRange.SideMarginsValue = 0.5;
                 diagram.AxisY.WholeRange.AlwaysShowZeroLevel = false;

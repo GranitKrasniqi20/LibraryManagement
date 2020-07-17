@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialsForm));
             this.tabMainPage = new System.Windows.Forms.TabPage();
             this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
@@ -170,9 +170,9 @@
             // gridMaterials
             // 
             this.gridMaterials.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridMaterials.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridMaterials.Location = new System.Drawing.Point(23, 3);
             this.gridMaterials.MainView = this.gridView;
             this.gridMaterials.Name = "gridMaterials";
@@ -193,7 +193,7 @@
             this.colPublishYear,
             this.colAvailableCoppies,
             this.colNumberOfPages});
-            this.gridView.CustomizationFormBounds = new System.Drawing.Rectangle(1894, 286, 260, 232);
+            this.gridView.CustomizationFormBounds = new System.Drawing.Rectangle(1788, 286, 260, 232);
             this.gridView.GridControl = this.gridMaterials;
             this.gridView.Name = "gridView";
             // 
