@@ -77,6 +77,13 @@
             this.tableDataGridViewBills = new System.Windows.Forms.TableLayoutPanel();
             this.gridBills = new DevExpress.XtraGrid.GridControl();
             this.gridViewBills = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colBillId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubscriberId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBillingDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRegistrationDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBillExpirationDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableBottom3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFooter3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -95,13 +102,6 @@
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.subscribersTableAdapter = new MenaxhimiBibliotekes.LibraryManagementDataSetTableAdapters.SubscribersTableAdapter();
             this.subscribersTableAdapter1 = new MenaxhimiBibliotekes.LibraryManagementDataSet1TableAdapters.SubscribersTableAdapter();
-            this.colBillId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubscriberId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBillingDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRegistrationDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBillExpirationDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelFullBody.SuspendLayout();
             this.tabControlMembersForm.SuspendLayout();
             this.tabMainPage.SuspendLayout();
@@ -132,24 +132,16 @@
             // panelFullBody
             // 
             this.panelFullBody.Controls.Add(this.tabControlMembersForm);
-            this.panelFullBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFullBody.Location = new System.Drawing.Point(0, 88);
+            resources.ApplyResources(this.panelFullBody, "panelFullBody");
             this.panelFullBody.Name = "panelFullBody";
-            this.panelFullBody.Size = new System.Drawing.Size(740, 529);
-            this.panelFullBody.TabIndex = 2;
             // 
             // tabControlMembersForm
             // 
             this.tabControlMembersForm.Controls.Add(this.tabMainPage);
             this.tabControlMembersForm.Controls.Add(this.tabBills);
-            this.tabControlMembersForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlMembersForm.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlMembersForm.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.tabControlMembersForm, "tabControlMembersForm");
             this.tabControlMembersForm.Name = "tabControlMembersForm";
-            this.tabControlMembersForm.Padding = new System.Drawing.Point(12, 8);
             this.tabControlMembersForm.SelectedIndex = 0;
-            this.tabControlMembersForm.Size = new System.Drawing.Size(740, 529);
-            this.tabControlMembersForm.TabIndex = 0;
             // 
             // tabMainPage
             // 
@@ -159,37 +151,21 @@
             this.tabMainPage.Controls.Add(this.tableButtons);
             this.tabMainPage.Controls.Add(this.tableSpace2);
             this.tabMainPage.Controls.Add(this.tableSpace1);
-            this.tabMainPage.Location = new System.Drawing.Point(4, 32);
+            resources.ApplyResources(this.tabMainPage, "tabMainPage");
             this.tabMainPage.Name = "tabMainPage";
-            this.tabMainPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMainPage.Size = new System.Drawing.Size(732, 493);
-            this.tabMainPage.TabIndex = 0;
-            this.tabMainPage.Text = "Main Page";
             this.tabMainPage.UseVisualStyleBackColor = true;
             // 
             // tableDataGridView
             // 
-            this.tableDataGridView.ColumnCount = 3;
-            this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            resources.ApplyResources(this.tableDataGridView, "tableDataGridView");
             this.tableDataGridView.Controls.Add(this.gridMembers, 1, 0);
-            this.tableDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableDataGridView.Location = new System.Drawing.Point(3, 150);
             this.tableDataGridView.Name = "tableDataGridView";
-            this.tableDataGridView.RowCount = 1;
-            this.tableDataGridView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDataGridView.Size = new System.Drawing.Size(726, 318);
-            this.tableDataGridView.TabIndex = 0;
             // 
             // gridMembers
             // 
-            this.gridMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridMembers.Location = new System.Drawing.Point(23, 3);
+            resources.ApplyResources(this.gridMembers, "gridMembers");
             this.gridMembers.MainView = this.gridView1;
             this.gridMembers.Name = "gridMembers";
-            this.gridMembers.Size = new System.Drawing.Size(680, 312);
-            this.gridMembers.TabIndex = 0;
             this.gridMembers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
             this.gridView});
@@ -214,99 +190,75 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "ID";
+            resources.ApplyResources(this.gridColumn1, "gridColumn1");
             this.gridColumn1.FieldName = "SubscriberId";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "First Name";
+            resources.ApplyResources(this.gridColumn2, "gridColumn2");
             this.gridColumn2.FieldName = "Name";
             this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Last Name";
+            resources.ApplyResources(this.gridColumn3, "gridColumn3");
             this.gridColumn3.FieldName = "LastName";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "Full Address";
+            resources.ApplyResources(this.gridColumn4, "gridColumn4");
             this.gridColumn4.FieldName = "Address";
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "Birthdate";
+            resources.ApplyResources(this.gridColumn5, "gridColumn5");
             this.gridColumn5.FieldName = "Birthday";
             this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "Personal Number";
+            resources.ApplyResources(this.gridColumn6, "gridColumn6");
             this.gridColumn6.FieldName = "PersonalNo";
             this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
             // 
             // gridColumn7
             // 
-            this.gridColumn7.Caption = "Phone Number";
+            resources.ApplyResources(this.gridColumn7, "gridColumn7");
             this.gridColumn7.FieldName = "PhoneNo";
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
             // 
             // gridColumn8
             // 
-            this.gridColumn8.Caption = "E-Mail";
+            resources.ApplyResources(this.gridColumn8, "gridColumn8");
             this.gridColumn8.FieldName = "Email";
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
             // 
             // gridColumn9
             // 
-            this.gridColumn9.Caption = "Gender";
+            resources.ApplyResources(this.gridColumn9, "gridColumn9");
             this.gridColumn9.FieldName = "Gender";
             this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 8;
             // 
             // gridColumn10
             // 
-            this.gridColumn10.Caption = "Registration Date";
+            resources.ApplyResources(this.gridColumn10, "gridColumn10");
             this.gridColumn10.FieldName = "InsDate";
             this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 9;
             // 
             // gridColumn11
             // 
-            this.gridColumn11.Caption = "Expiration Date";
+            resources.ApplyResources(this.gridColumn11, "gridColumn11");
             this.gridColumn11.FieldName = "ExpirationDate";
             this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 10;
             // 
             // gridColumn12
             // 
-            this.gridColumn12.Caption = "Is Active";
+            resources.ApplyResources(this.gridColumn12, "gridColumn12");
             this.gridColumn12.FieldName = "IsActive";
             this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 11;
             // 
             // gridView
             // 
@@ -327,275 +279,162 @@
             // 
             // colID
             // 
-            this.colID.Caption = "ID";
+            resources.ApplyResources(this.colID, "colID");
             this.colID.FieldName = "SubscriberId";
             this.colID.Name = "colID";
-            this.colID.Visible = true;
-            this.colID.VisibleIndex = 0;
             // 
             // colName
             // 
-            this.colName.Caption = "First Name";
+            resources.ApplyResources(this.colName, "colName");
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
             // 
             // colLastName
             // 
-            this.colLastName.Caption = "Last Name";
+            resources.ApplyResources(this.colLastName, "colLastName");
             this.colLastName.FieldName = "LastName";
             this.colLastName.Name = "colLastName";
-            this.colLastName.Visible = true;
-            this.colLastName.VisibleIndex = 2;
             // 
             // colAddress
             // 
-            this.colAddress.Caption = "Full Address";
+            resources.ApplyResources(this.colAddress, "colAddress");
             this.colAddress.FieldName = "Address";
             this.colAddress.Name = "colAddress";
-            this.colAddress.Visible = true;
-            this.colAddress.VisibleIndex = 3;
             // 
             // colBirthday
             // 
-            this.colBirthday.Caption = "Birthdate";
+            resources.ApplyResources(this.colBirthday, "colBirthday");
             this.colBirthday.FieldName = "Birthday";
             this.colBirthday.Name = "colBirthday";
-            this.colBirthday.Visible = true;
-            this.colBirthday.VisibleIndex = 4;
             // 
             // colPersonalNo
             // 
-            this.colPersonalNo.Caption = "Personal Number";
+            resources.ApplyResources(this.colPersonalNo, "colPersonalNo");
             this.colPersonalNo.FieldName = "PersonalNo";
             this.colPersonalNo.Name = "colPersonalNo";
-            this.colPersonalNo.Visible = true;
-            this.colPersonalNo.VisibleIndex = 5;
             // 
             // colPhoneNo
             // 
-            this.colPhoneNo.Caption = "Phone Number";
+            resources.ApplyResources(this.colPhoneNo, "colPhoneNo");
             this.colPhoneNo.FieldName = "PhoneNo";
             this.colPhoneNo.Name = "colPhoneNo";
-            this.colPhoneNo.Visible = true;
-            this.colPhoneNo.VisibleIndex = 6;
             // 
             // colEmail
             // 
-            this.colEmail.Caption = "E-Mail";
+            resources.ApplyResources(this.colEmail, "colEmail");
             this.colEmail.FieldName = "Email";
             this.colEmail.Name = "colEmail";
-            this.colEmail.Visible = true;
-            this.colEmail.VisibleIndex = 7;
             // 
             // colGender
             // 
-            this.colGender.Caption = "Gender";
+            resources.ApplyResources(this.colGender, "colGender");
             this.colGender.FieldName = "Gender";
             this.colGender.Name = "colGender";
-            this.colGender.Visible = true;
-            this.colGender.VisibleIndex = 8;
             // 
             // colInsDate
             // 
-            this.colInsDate.Caption = "Registration Date";
+            resources.ApplyResources(this.colInsDate, "colInsDate");
             this.colInsDate.FieldName = "InsDate";
             this.colInsDate.Name = "colInsDate";
-            this.colInsDate.Visible = true;
-            this.colInsDate.VisibleIndex = 9;
             // 
             // colExpirationDate
             // 
-            this.colExpirationDate.Caption = "Expiration Date";
+            resources.ApplyResources(this.colExpirationDate, "colExpirationDate");
             this.colExpirationDate.FieldName = "ExpirationDate";
             this.colExpirationDate.Name = "colExpirationDate";
-            this.colExpirationDate.Visible = true;
-            this.colExpirationDate.VisibleIndex = 10;
             // 
             // tableBottomSpace
             // 
-            this.tableBottomSpace.ColumnCount = 1;
-            this.tableBottomSpace.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            resources.ApplyResources(this.tableBottomSpace, "tableBottomSpace");
             this.tableBottomSpace.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tableBottomSpace.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableBottomSpace.Location = new System.Drawing.Point(3, 468);
             this.tableBottomSpace.Name = "tableBottomSpace";
-            this.tableBottomSpace.RowCount = 1;
-            this.tableBottomSpace.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableBottomSpace.Size = new System.Drawing.Size(726, 22);
-            this.tableBottomSpace.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.lblFooterTitleCreate, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(720, 16);
-            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lblFooterTitleCreate
             // 
-            this.lblFooterTitleCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFooterTitleCreate.AutoSize = true;
-            this.lblFooterTitleCreate.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterTitleCreate.Location = new System.Drawing.Point(234, 0);
+            resources.ApplyResources(this.lblFooterTitleCreate, "lblFooterTitleCreate");
             this.lblFooterTitleCreate.Name = "lblFooterTitleCreate";
-            this.lblFooterTitleCreate.Size = new System.Drawing.Size(251, 16);
-            this.lblFooterTitleCreate.TabIndex = 11;
-            this.lblFooterTitleCreate.Text = "All Rights, Stackbooks Management System";
             // 
             // tableSearch
             // 
-            this.tableSearch.ColumnCount = 7;
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
-            this.tableSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            resources.ApplyResources(this.tableSearch, "tableSearch");
             this.tableSearch.Controls.Add(this.comboSortMember, 1, 0);
             this.tableSearch.Controls.Add(this.btnSearchMember, 5, 0);
             this.tableSearch.Controls.Add(this.txtSearchMember, 3, 0);
-            this.tableSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableSearch.Location = new System.Drawing.Point(3, 97);
             this.tableSearch.Name = "tableSearch";
-            this.tableSearch.RowCount = 1;
-            this.tableSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSearch.Size = new System.Drawing.Size(726, 53);
-            this.tableSearch.TabIndex = 0;
             // 
             // comboSortMember
             // 
-            this.comboSortMember.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboSortMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.comboSortMember, "comboSortMember");
             this.comboSortMember.FormattingEnabled = true;
             this.comboSortMember.Items.AddRange(new object[] {
-            "Active Members",
-            "Expired Members"});
-            this.comboSortMember.Location = new System.Drawing.Point(23, 3);
+            resources.GetString("comboSortMember.Items"),
+            resources.GetString("comboSortMember.Items1")});
             this.comboSortMember.Name = "comboSortMember";
-            this.comboSortMember.Size = new System.Drawing.Size(213, 40);
-            this.comboSortMember.TabIndex = 5;
             // 
             // btnSearchMember
             // 
             this.btnSearchMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.btnSearchMember.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnSearchMember, "btnSearchMember");
             this.btnSearchMember.ForeColor = System.Drawing.Color.White;
-            this.btnSearchMember.Location = new System.Drawing.Point(493, 3);
             this.btnSearchMember.Name = "btnSearchMember";
-            this.btnSearchMember.Size = new System.Drawing.Size(209, 40);
-            this.btnSearchMember.TabIndex = 6;
-            this.btnSearchMember.Text = "Search";
             this.btnSearchMember.UseVisualStyleBackColor = false;
             this.btnSearchMember.Click += new System.EventHandler(this.btnSearchMember_Click);
             // 
             // txtSearchMember
             // 
-            this.txtSearchMember.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSearchMember.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchMember.Location = new System.Drawing.Point(262, 3);
+            resources.ApplyResources(this.txtSearchMember, "txtSearchMember");
             this.txtSearchMember.Name = "txtSearchMember";
-            this.txtSearchMember.Size = new System.Drawing.Size(213, 39);
-            this.txtSearchMember.TabIndex = 4;
             // 
             // tableButtons
             // 
-            this.tableButtons.ColumnCount = 1;
-            this.tableButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableButtons.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableButtons.Location = new System.Drawing.Point(3, 81);
+            resources.ApplyResources(this.tableButtons, "tableButtons");
             this.tableButtons.Name = "tableButtons";
-            this.tableButtons.RowCount = 1;
-            this.tableButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableButtons.Size = new System.Drawing.Size(726, 16);
-            this.tableButtons.TabIndex = 0;
             // 
             // tableSpace2
             // 
-            this.tableSpace2.ColumnCount = 7;
-            this.tableSpace2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpace2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableSpace2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpace2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableSpace2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpace2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableSpace2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            resources.ApplyResources(this.tableSpace2, "tableSpace2");
             this.tableSpace2.Controls.Add(this.btnAddMember, 1, 0);
             this.tableSpace2.Controls.Add(this.btnUpdateMember, 3, 0);
             this.tableSpace2.Controls.Add(this.btnDeleteMember, 5, 0);
-            this.tableSpace2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableSpace2.Location = new System.Drawing.Point(3, 19);
             this.tableSpace2.Name = "tableSpace2";
-            this.tableSpace2.RowCount = 1;
-            this.tableSpace2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSpace2.Size = new System.Drawing.Size(726, 62);
-            this.tableSpace2.TabIndex = 0;
             // 
             // btnAddMember
             // 
             this.btnAddMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.btnAddMember.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddMember.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnAddMember, "btnAddMember");
             this.btnAddMember.ForeColor = System.Drawing.Color.White;
-            this.btnAddMember.Location = new System.Drawing.Point(23, 3);
             this.btnAddMember.Name = "btnAddMember";
-            this.btnAddMember.Size = new System.Drawing.Size(209, 56);
-            this.btnAddMember.TabIndex = 1;
-            this.btnAddMember.Text = "Add Member";
             this.btnAddMember.UseVisualStyleBackColor = false;
             this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
             // 
             // btnUpdateMember
             // 
             this.btnUpdateMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
-            this.btnUpdateMember.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUpdateMember.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnUpdateMember, "btnUpdateMember");
             this.btnUpdateMember.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateMember.Location = new System.Drawing.Point(258, 3);
             this.btnUpdateMember.Name = "btnUpdateMember";
-            this.btnUpdateMember.Size = new System.Drawing.Size(209, 56);
-            this.btnUpdateMember.TabIndex = 2;
-            this.btnUpdateMember.Text = "Update Member";
             this.btnUpdateMember.UseVisualStyleBackColor = false;
             this.btnUpdateMember.Click += new System.EventHandler(this.btnUpdateMember_Click);
             // 
             // btnDeleteMember
             // 
             this.btnDeleteMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(68)))), ((int)(((byte)(55)))));
-            this.btnDeleteMember.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteMember.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnDeleteMember, "btnDeleteMember");
             this.btnDeleteMember.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteMember.Location = new System.Drawing.Point(493, 3);
             this.btnDeleteMember.Name = "btnDeleteMember";
-            this.btnDeleteMember.Size = new System.Drawing.Size(209, 56);
-            this.btnDeleteMember.TabIndex = 3;
-            this.btnDeleteMember.Text = "Delete Member";
             this.btnDeleteMember.UseVisualStyleBackColor = false;
             this.btnDeleteMember.Click += new System.EventHandler(this.btnDeleteMember_Click);
             // 
             // tableSpace1
             // 
-            this.tableSpace1.ColumnCount = 1;
-            this.tableSpace1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSpace1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableSpace1.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.tableSpace1, "tableSpace1");
             this.tableSpace1.Name = "tableSpace1";
-            this.tableSpace1.RowCount = 1;
-            this.tableSpace1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSpace1.Size = new System.Drawing.Size(726, 16);
-            this.tableSpace1.TabIndex = 0;
             // 
             // tabBills
             // 
@@ -604,37 +443,21 @@
             this.tabBills.Controls.Add(this.tableLayoutPanel3);
             this.tabBills.Controls.Add(this.tableSpaceInfoBills);
             this.tabBills.Controls.Add(this.tableSpace4);
-            this.tabBills.Location = new System.Drawing.Point(4, 32);
+            resources.ApplyResources(this.tabBills, "tabBills");
             this.tabBills.Name = "tabBills";
-            this.tabBills.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBills.Size = new System.Drawing.Size(732, 493);
-            this.tabBills.TabIndex = 2;
-            this.tabBills.Text = "All Bills";
             this.tabBills.UseVisualStyleBackColor = true;
             // 
             // tableDataGridViewBills
             // 
-            this.tableDataGridViewBills.ColumnCount = 3;
-            this.tableDataGridViewBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableDataGridViewBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDataGridViewBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            resources.ApplyResources(this.tableDataGridViewBills, "tableDataGridViewBills");
             this.tableDataGridViewBills.Controls.Add(this.gridBills, 1, 0);
-            this.tableDataGridViewBills.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableDataGridViewBills.Location = new System.Drawing.Point(3, 127);
             this.tableDataGridViewBills.Name = "tableDataGridViewBills";
-            this.tableDataGridViewBills.RowCount = 1;
-            this.tableDataGridViewBills.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDataGridViewBills.Size = new System.Drawing.Size(726, 347);
-            this.tableDataGridViewBills.TabIndex = 6;
             // 
             // gridBills
             // 
-            this.gridBills.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridBills.Location = new System.Drawing.Point(23, 3);
+            resources.ApplyResources(this.gridBills, "gridBills");
             this.gridBills.MainView = this.gridViewBills;
             this.gridBills.Name = "gridBills";
-            this.gridBills.Size = new System.Drawing.Size(680, 341);
-            this.gridBills.TabIndex = 0;
             this.gridBills.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewBills});
             // 
@@ -651,112 +474,95 @@
             this.gridViewBills.GridControl = this.gridBills;
             this.gridViewBills.Name = "gridViewBills";
             // 
+            // colBillId
+            // 
+            resources.ApplyResources(this.colBillId, "colBillId");
+            this.colBillId.FieldName = "BillId";
+            this.colBillId.Name = "colBillId";
+            // 
+            // colSubscriberId
+            // 
+            resources.ApplyResources(this.colSubscriberId, "colSubscriberId");
+            this.colSubscriberId.FieldName = "SubscriberId";
+            this.colSubscriberId.Name = "colSubscriberId";
+            // 
+            // colBillingDate
+            // 
+            resources.ApplyResources(this.colBillingDate, "colBillingDate");
+            this.colBillingDate.FieldName = "BillingDate";
+            this.colBillingDate.Name = "colBillingDate";
+            // 
+            // colPrice
+            // 
+            resources.ApplyResources(this.colPrice, "colPrice");
+            this.colPrice.FieldName = "Price";
+            this.colPrice.Name = "colPrice";
+            // 
+            // colRegistrationDate
+            // 
+            resources.ApplyResources(this.colRegistrationDate, "colRegistrationDate");
+            this.colRegistrationDate.FieldName = "RegistrationDate";
+            this.colRegistrationDate.Name = "colRegistrationDate";
+            // 
+            // colBillExpirationDate
+            // 
+            resources.ApplyResources(this.colBillExpirationDate, "colBillExpirationDate");
+            this.colBillExpirationDate.FieldName = "ExpirationDate";
+            this.colBillExpirationDate.Name = "colBillExpirationDate";
+            // 
+            // colDescription
+            // 
+            resources.ApplyResources(this.colDescription, "colDescription");
+            this.colDescription.FieldName = "Description";
+            this.colDescription.Name = "colDescription";
+            // 
             // tableBottom3
             // 
-            this.tableBottom3.ColumnCount = 3;
-            this.tableBottom3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableBottom3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableBottom3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            resources.ApplyResources(this.tableBottom3, "tableBottom3");
             this.tableBottom3.Controls.Add(this.lblFooter3, 1, 0);
-            this.tableBottom3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableBottom3.Location = new System.Drawing.Point(3, 474);
             this.tableBottom3.Name = "tableBottom3";
-            this.tableBottom3.RowCount = 1;
-            this.tableBottom3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableBottom3.Size = new System.Drawing.Size(726, 16);
-            this.tableBottom3.TabIndex = 5;
             // 
             // lblFooter3
             // 
-            this.lblFooter3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFooter3.AutoSize = true;
-            this.lblFooter3.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooter3.Location = new System.Drawing.Point(237, 0);
+            resources.ApplyResources(this.lblFooter3, "lblFooter3");
             this.lblFooter3.Name = "lblFooter3";
-            this.lblFooter3.Size = new System.Drawing.Size(251, 16);
-            this.lblFooter3.TabIndex = 11;
-            this.lblFooter3.Text = "All Rights, Stackbooks Management System";
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 5;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
             this.tableLayoutPanel3.Controls.Add(this.txtSearchBills, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnSearchBills, 3, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 74);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(726, 53);
-            this.tableLayoutPanel3.TabIndex = 4;
             // 
             // txtSearchBills
             // 
-            this.txtSearchBills.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSearchBills.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchBills.Location = new System.Drawing.Point(23, 3);
+            resources.ApplyResources(this.txtSearchBills, "txtSearchBills");
             this.txtSearchBills.Name = "txtSearchBills";
-            this.txtSearchBills.Size = new System.Drawing.Size(459, 39);
-            this.txtSearchBills.TabIndex = 4;
             // 
             // btnSearchBills
             // 
             this.btnSearchBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.btnSearchBills.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSearchBills.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnSearchBills, "btnSearchBills");
             this.btnSearchBills.ForeColor = System.Drawing.Color.White;
-            this.btnSearchBills.Location = new System.Drawing.Point(508, 3);
             this.btnSearchBills.Name = "btnSearchBills";
-            this.btnSearchBills.Size = new System.Drawing.Size(193, 47);
-            this.btnSearchBills.TabIndex = 6;
-            this.btnSearchBills.Text = "Search";
             this.btnSearchBills.UseVisualStyleBackColor = false;
             this.btnSearchBills.Click += new System.EventHandler(this.btnSearchBills_Click);
             // 
             // tableSpaceInfoBills
             // 
-            this.tableSpaceInfoBills.ColumnCount = 3;
-            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSpaceInfoBills.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            resources.ApplyResources(this.tableSpaceInfoBills, "tableSpaceInfoBills");
             this.tableSpaceInfoBills.Controls.Add(this.lblInfoBills, 1, 0);
-            this.tableSpaceInfoBills.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableSpaceInfoBills.Location = new System.Drawing.Point(3, 19);
             this.tableSpaceInfoBills.Name = "tableSpaceInfoBills";
-            this.tableSpaceInfoBills.RowCount = 1;
-            this.tableSpaceInfoBills.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSpaceInfoBills.Size = new System.Drawing.Size(726, 55);
-            this.tableSpaceInfoBills.TabIndex = 3;
             // 
             // lblInfoBills
             // 
-            this.lblInfoBills.AutoSize = true;
-            this.lblInfoBills.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoBills.Location = new System.Drawing.Point(23, 0);
+            resources.ApplyResources(this.lblInfoBills, "lblInfoBills");
             this.lblInfoBills.Name = "lblInfoBills";
-            this.lblInfoBills.Size = new System.Drawing.Size(474, 37);
-            this.lblInfoBills.TabIndex = 8;
-            this.lblInfoBills.Text = "This Displays List of Registered Bills";
             // 
             // tableSpace4
             // 
-            this.tableSpace4.ColumnCount = 1;
-            this.tableSpace4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSpace4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableSpace4.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.tableSpace4, "tableSpace4");
             this.tableSpace4.Name = "tableSpace4";
-            this.tableSpace4.RowCount = 1;
-            this.tableSpace4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableSpace4.Size = new System.Drawing.Size(726, 16);
-            this.tableSpace4.TabIndex = 2;
             // 
             // subscribersBindingSource1
             // 
@@ -780,52 +586,30 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.picTitle);
-            this.panel1.Location = new System.Drawing.Point(143, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 82);
-            this.panel1.TabIndex = 0;
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(151, 17);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(201, 50);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "MEMBERS";
             // 
             // picTitle
             // 
-            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
-            this.picTitle.Location = new System.Drawing.Point(99, 17);
+            resources.ApplyResources(this.picTitle, "picTitle");
             this.picTitle.Name = "picTitle";
-            this.picTitle.Size = new System.Drawing.Size(58, 50);
-            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTitle.TabIndex = 0;
             this.picTitle.TabStop = false;
             // 
             // tableHeader
             // 
             this.tableHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.tableHeader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableHeader.BackgroundImage")));
-            this.tableHeader.ColumnCount = 3;
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            resources.ApplyResources(this.tableHeader, "tableHeader");
             this.tableHeader.Controls.Add(this.panel1, 1, 0);
-            this.tableHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableHeader.Location = new System.Drawing.Point(0, 0);
             this.tableHeader.Name = "tableHeader";
-            this.tableHeader.RowCount = 1;
-            this.tableHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableHeader.Size = new System.Drawing.Size(740, 88);
-            this.tableHeader.TabIndex = 1;
             // 
             // subscribersTableAdapter
             // 
@@ -835,72 +619,13 @@
             // 
             this.subscribersTableAdapter1.ClearBeforeFill = true;
             // 
-            // colBillId
-            // 
-            this.colBillId.Caption = "Bill ID";
-            this.colBillId.FieldName = "BillId";
-            this.colBillId.Name = "colBillId";
-            this.colBillId.Visible = true;
-            this.colBillId.VisibleIndex = 0;
-            // 
-            // colSubscriberId
-            // 
-            this.colSubscriberId.Caption = "Subscriber ID";
-            this.colSubscriberId.FieldName = "SubscriberId";
-            this.colSubscriberId.Name = "colSubscriberId";
-            this.colSubscriberId.Visible = true;
-            this.colSubscriberId.VisibleIndex = 1;
-            // 
-            // colBillingDate
-            // 
-            this.colBillingDate.Caption = "Billing Date";
-            this.colBillingDate.FieldName = "BillingDate";
-            this.colBillingDate.Name = "colBillingDate";
-            this.colBillingDate.Visible = true;
-            this.colBillingDate.VisibleIndex = 2;
-            // 
-            // colPrice
-            // 
-            this.colPrice.Caption = "Price";
-            this.colPrice.FieldName = "Price";
-            this.colPrice.Name = "colPrice";
-            this.colPrice.Visible = true;
-            this.colPrice.VisibleIndex = 3;
-            // 
-            // colRegistrationDate
-            // 
-            this.colRegistrationDate.Caption = "Registration Date";
-            this.colRegistrationDate.FieldName = "RegistrationDate";
-            this.colRegistrationDate.Name = "colRegistrationDate";
-            this.colRegistrationDate.Visible = true;
-            this.colRegistrationDate.VisibleIndex = 4;
-            // 
-            // colBillExpirationDate
-            // 
-            this.colBillExpirationDate.Caption = "Expiration Date";
-            this.colBillExpirationDate.FieldName = "ExpirationDate";
-            this.colBillExpirationDate.Name = "colBillExpirationDate";
-            this.colBillExpirationDate.Visible = true;
-            this.colBillExpirationDate.VisibleIndex = 5;
-            // 
-            // colDescription
-            // 
-            this.colDescription.Caption = "Bill Description";
-            this.colDescription.FieldName = "Description";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.Visible = true;
-            this.colDescription.VisibleIndex = 6;
-            // 
             // MembersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 617);
             this.Controls.Add(this.panelFullBody);
             this.Controls.Add(this.tableHeader);
             this.Name = "MembersForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Members (Stackbooks)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MembersForm_Load);
             this.panelFullBody.ResumeLayout(false);

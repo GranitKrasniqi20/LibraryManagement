@@ -117,6 +117,997 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;lblSearchLanguageUpdate.Name" xml:space="preserve">
+    <value>lblSearchLanguageUpdate</value>
+  </data>
+  <data name="txtLanguageIDDelete.Text" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="lblLanguageIDUpdate.Text" xml:space="preserve">
+    <value>Language ID:</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleCreate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panelTopUpdate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabCreateLanguage.Text" xml:space="preserve">
+    <value>Create Language</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleCreate.Parent" xml:space="preserve">
+    <value>panelBottomCreate</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleDelete.Parent" xml:space="preserve">
+    <value>panelBottomDelete</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblLanguageIDDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 25</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageCreate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageUpdate.Name" xml:space="preserve">
+    <value>lblLanguageUpdate</value>
+  </data>
+  <data name="btnSearchDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 136</value>
+  </data>
+  <data name="&gt;&gt;lblSearchLanguageDelete.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblLanguageUpdate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnInsert.Text" xml:space="preserve">
+    <value>Insert Language</value>
+  </data>
+  <data name="txtLanguageIDDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 14.25pt, style=Bold</value>
+  </data>
+  <data name="lblFooterTitleUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 9.75pt</value>
+  </data>
+  <data name="txtLanguageDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 427</value>
+  </data>
+  <data name="lblLanguageUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="panelBottomUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 595</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>586, 656</value>
+  </data>
+  <data name="&gt;&gt;comboIsActiveUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="tabUpdateLanguage.Text" xml:space="preserve">
+    <value>Update Language</value>
+  </data>
+  <data name="panelBottomDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 595</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleUpdate.Name" xml:space="preserve">
+    <value>lblFooterTitleUpdate</value>
+  </data>
+  <data name="&gt;&gt;panelBottomUpdate.Name" xml:space="preserve">
+    <value>panelBottomUpdate</value>
+  </data>
+  <data name="&gt;&gt;panelInfoCreate.Parent" xml:space="preserve">
+    <value>tabCreateLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageDelete.Name" xml:space="preserve">
+    <value>lblLanguageDelete</value>
+  </data>
+  <data name="txtLanguageDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 25</value>
+  </data>
+  <data name="&gt;&gt;panelTopUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="lblLanguageUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 406</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panelTopCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;panelTopDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="panelInfoCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 332</value>
+  </data>
+  <data name="txtLanguageDelete.Text" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="lblFooterTitleCreate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;panelTopUpdate.Name" xml:space="preserve">
+    <value>panelTopUpdate</value>
+  </data>
+  <data name="txtSearchLanguageDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 35</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="panelBottomUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 28</value>
+  </data>
+  <data name="lblInfoCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>457, 119</value>
+  </data>
+  <data name="&gt;&gt;panelTopCreate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageIDUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFooterTitleUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="panelInfoCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 505</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>LanguageForm</value>
+  </data>
+  <data name="&gt;&gt;tabUpdateLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtSearchLanguageDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 170</value>
+  </data>
+  <data name="btnSearchUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 69</value>
+  </data>
+  <data name="btnSearchDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 69</value>
+  </data>
+  <data name="panelBottomDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 28</value>
+  </data>
+  <data name="lblTitleDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 24pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;lblSearchLanguageUpdate.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;lblInfoUpdate.Parent" xml:space="preserve">
+    <value>panelInfoUpdate</value>
+  </data>
+  <data name="panelBottomCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblUniqueCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panelInfoDelete.Name" xml:space="preserve">
+    <value>panelInfoDelete</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panelBottomUpdate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelBottomDelete.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblFooterTitleCreate.Text" xml:space="preserve">
+    <value>All Rights, Stackbooks Management System</value>
+  </data>
+  <data name="&gt;&gt;lblInfoCreate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTitleCreate.Parent" xml:space="preserve">
+    <value>panelTopCreate</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>586, 656</value>
+  </data>
+  <data name="lblUniqueCreate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.125pt</value>
+  </data>
+  <data name="lblLanguageIDDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="panelTopCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 100</value>
+  </data>
+  <data name="&gt;&gt;btnInsert.Name" xml:space="preserve">
+    <value>btnInsert</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabDeleteLanguage.Name" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtSearchLanguageDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="lblLanguageIDUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 25</value>
+  </data>
+  <data name="tabCreateLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 626</value>
+  </data>
+  <data name="lblFooterTitleDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 17</value>
+  </data>
+  <data name="btnUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;lblInfoCreate.Name" xml:space="preserve">
+    <value>lblInfoCreate</value>
+  </data>
+  <data name="btnInsert.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="txtLanguageIDUpdate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>Delete Language</value>
+  </data>
+  <data name="&gt;&gt;txtSearchLanguageUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tabUpdateLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="lblDisplayDataDelete.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;tabCreateLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageDelete.Name" xml:space="preserve">
+    <value>txtLanguageDelete</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageIDUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSearchUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSearchLanguageUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblFooterTitleDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleUpdate.Parent" xml:space="preserve">
+    <value>panelBottomUpdate</value>
+  </data>
+  <data name="panelTopDelete.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageCreate.Name" xml:space="preserve">
+    <value>lblLanguageCreate</value>
+  </data>
+  <data name="lblLanguageIDUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 361</value>
+  </data>
+  <data name="txtLanguageIDDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 383</value>
+  </data>
+  <data name="lblInfoCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 16</value>
+  </data>
+  <data name="panelBottomCreate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;btnSearchUpdate.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panelBottomUpdate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;tabDeleteLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelBottomCreate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTitleDelete.Parent" xml:space="preserve">
+    <value>panelTopDelete</value>
+  </data>
+  <data name="lblSearchLanguageDelete.Text" xml:space="preserve">
+    <value>Search Language:</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageIDDelete.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageIDDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblSearchLanguageDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="panelTopDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 100</value>
+  </data>
+  <data name="lblLanguageIDDelete.Text" xml:space="preserve">
+    <value>Language ID:</value>
+  </data>
+  <data name="tabUpdateLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 487</value>
+  </data>
+  <data name="btnSearchUpdate.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="panelTopUpdate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="tabUpdateLanguage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;lblTitleCreate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 69</value>
+  </data>
+  <data name="&gt;&gt;panelTopDelete.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;panelInfoCreate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabUpdateLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 626</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageIDDelete.Name" xml:space="preserve">
+    <value>lblLanguageIDDelete</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageIDUpdate.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblTitleUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageUpdate.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnInsert.Parent" xml:space="preserve">
+    <value>tabCreateLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleDelete.Name" xml:space="preserve">
+    <value>lblFooterTitleDelete</value>
+  </data>
+  <data name="&gt;&gt;panelTopDelete.Name" xml:space="preserve">
+    <value>panelTopDelete</value>
+  </data>
+  <data name="lblTitleDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblTitleCreate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageIDUpdate.Name" xml:space="preserve">
+    <value>txtLanguageIDUpdate</value>
+  </data>
+  <data name="btnInsert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>308, 206</value>
+  </data>
+  <data name="lblTitleUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 24pt, style=Bold</value>
+  </data>
+  <data name="lblDisplayDataDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;lblDisplayDataDelete.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblFooterTitleDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 5</value>
+  </data>
+  <data name="&gt;&gt;btnInsert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="&gt;&gt;panelBottomCreate.Name" xml:space="preserve">
+    <value>panelBottomCreate</value>
+  </data>
+  <data name="lblTitleUpdate.Text" xml:space="preserve">
+    <value>Update Language</value>
+  </data>
+  <data name="lblSearchLanguageDelete.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnSearchDelete.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>602, 695</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageIDDelete.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 25</value>
+  </data>
+  <data name="panelBottomUpdate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="lblFooterTitleCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 5</value>
+  </data>
+  <data name="lblLanguageDelete.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblLanguageDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="tabDeleteLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 626</value>
+  </data>
+  <data name="lblLanguageDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="panelBottomCreate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="panelBottomDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblFooterTitleUpdate.Text" xml:space="preserve">
+    <value>All Rights, Stackbooks Management System</value>
+  </data>
+  <data name="lblTitleDelete.Text" xml:space="preserve">
+    <value>Delete Specific Language</value>
+  </data>
+  <data name="&gt;&gt;lblInfoCreate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblInfoDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 12</value>
+  </data>
+  <data name="lblTitleCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="comboIsActiveUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 33</value>
+  </data>
+  <data name="tabCreateLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtLanguageIDDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 25</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;btnSearchUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
+    <value>btnDelete</value>
+  </data>
+  <data name="lblTitleUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 23</value>
+  </data>
+  <data name="&gt;&gt;txtSearchLanguageDelete.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panelBottomCreate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSearchUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt, style=Bold</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Is Active?</value>
+  </data>
+  <data name="lblDisplayDataUpdate.Text" xml:space="preserve">
+    <value>Display Data:</value>
+  </data>
+  <data name="panelInfoDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>513, 81</value>
+  </data>
+  <data name="lblFooterTitleCreate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="txtLanguageIDUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 361</value>
+  </data>
+  <data name="lblSearchLanguageDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 134</value>
+  </data>
+  <data name="&gt;&gt;lblDisplayDataUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblDisplayDataDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="comboIsActiveUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 451</value>
+  </data>
+  <data name="lblDisplayDataUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;lblInfoUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblDisplayDataUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 320</value>
+  </data>
+  <data name="&gt;&gt;comboIsActiveUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblTitleCreate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnSearchDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;txtSearchLanguageDelete.Name" xml:space="preserve">
+    <value>txtSearchLanguageDelete</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageDelete.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtSearchLanguageUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 15.75pt, style=Bold</value>
+  </data>
+  <data name="panelTopCreate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="txtLanguageIDUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 25</value>
+  </data>
+  <data name="tabDeleteLanguage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="txtLanguageIDDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lblLanguageCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 204</value>
+  </data>
+  <data name="panelInfoUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>513, 81</value>
+  </data>
+  <data name="txtLanguageDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;btnSearchDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSearchUpdate.Name" xml:space="preserve">
+    <value>btnSearchUpdate</value>
+  </data>
+  <data name="lblLanguageIDUpdate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTitleCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 45</value>
+  </data>
+  <data name="lblDisplayDataDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 342</value>
+  </data>
+  <data name="lblUniqueCreate.Text" xml:space="preserve">
+    <value>(Must be unique!)</value>
+  </data>
+  <data name="lblLanguageUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 25</value>
+  </data>
+  <data name="lblFooterTitleCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 17</value>
+  </data>
+  <data name="btnSearchDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt, style=Bold</value>
+  </data>
+  <data name="btnInsert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 69</value>
+  </data>
+  <data name="panelBottomUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;panelInfoUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabDeleteLanguage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;panelBottomDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtSearchLanguageDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 15.75pt, style=Bold</value>
+  </data>
+  <data name="lblLanguageDelete.Text" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="&gt;&gt;panelBottomDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblSearchLanguageUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="lblInfoDelete.Text" xml:space="preserve">
+    <value>The User should be able to search the Genre Type, and delete the data.
+
+If any bug appears, contact Support: support@stackbooks.com
+
+</value>
+  </data>
+  <data name="lblDisplayDataUpdate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblInfoDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>425, 68</value>
+  </data>
+  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 69</value>
+  </data>
+  <data name="txtLanguageIDDelete.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSearchLanguageDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 25</value>
+  </data>
+  <data name="lblDisplayDataUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;btnInsert.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblLanguageCreate.Text" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="&gt;&gt;lblInfoDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageIDDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="lblFooterTitleDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 9.75pt</value>
+  </data>
+  <data name="lblInfoCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelTopUpdate.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="lblLanguageDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 427</value>
+  </data>
+  <data name="&gt;&gt;panelBottomDelete.Name" xml:space="preserve">
+    <value>panelBottomDelete</value>
+  </data>
+  <data name="&gt;&gt;lblInfoDelete.Parent" xml:space="preserve">
+    <value>panelInfoDelete</value>
+  </data>
+  <data name="&gt;&gt;lblInfoDelete.Name" xml:space="preserve">
+    <value>lblInfoDelete</value>
+  </data>
+  <data name="&gt;&gt;lblTitleUpdate.Parent" xml:space="preserve">
+    <value>panelTopUpdate</value>
+  </data>
+  <data name="&gt;&gt;panelInfoDelete.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;panelInfoUpdate.Name" xml:space="preserve">
+    <value>panelInfoUpdate</value>
+  </data>
+  <data name="lblUniqueCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 184</value>
+  </data>
+  <data name="lblInfoDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="lblFooterTitleDelete.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panelTopCreate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUniqueCreate.Parent" xml:space="preserve">
+    <value>tabCreateLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblUniqueCreate.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblSearchLanguageUpdate.Text" xml:space="preserve">
+    <value>Search Language:</value>
+  </data>
+  <data name="lblFooterTitleUpdate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="panelTopDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;lblDisplayDataDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 454</value>
+  </data>
+  <data name="&gt;&gt;tabUpdateLanguage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageIDDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="&gt;&gt;panelTopCreate.Name" xml:space="preserve">
+    <value>panelTopCreate</value>
+  </data>
+  <data name="lblTitleUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="txtLanguageDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 14.25pt, style=Bold</value>
+  </data>
+  <data name="btnSearchUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="panelTopDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblDisplayDataDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 25</value>
+  </data>
+  <data name="panelTopCreate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="lblLanguageDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 25</value>
+  </data>
+  <data name="&gt;&gt;lblInfoUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblUniqueCreate.Name" xml:space="preserve">
+    <value>lblUniqueCreate</value>
+  </data>
+  <data name="comboIsActiveUpdate.Items1" xml:space="preserve">
+    <value>Passive</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>LanguageForm</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleCreate.Name" xml:space="preserve">
+    <value>lblFooterTitleCreate</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageIDDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabDeleteLanguage.Text" xml:space="preserve">
+    <value>Delete Language</value>
+  </data>
+  <data name="&gt;&gt;btnSearchDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="tabDeleteLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="panelTopCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;txtSearchLanguageUpdate.Name" xml:space="preserve">
+    <value>txtSearchLanguageUpdate</value>
+  </data>
+  <data name="txtSearchLanguageDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblInfoCreate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;lblTitleUpdate.Name" xml:space="preserve">
+    <value>lblTitleUpdate</value>
+  </data>
+  <data name="panelInfoUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblTitleUpdate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnSearchUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 126</value>
+  </data>
+  <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt, style=Bold</value>
+  </data>
+  <data name="comboIsActiveUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="lblSearchLanguageUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="tabDeleteLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblSearchLanguageDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageCreate.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.Name" xml:space="preserve">
+    <value>btnUpdate</value>
+  </data>
+  <data name="&gt;&gt;panelInfoCreate.Name" xml:space="preserve">
+    <value>panelInfoCreate</value>
+  </data>
+  <data name="&gt;&gt;tabUpdateLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageIDUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="&gt;&gt;tabDeleteLanguage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtLanguageIDUpdate.Text" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="&gt;&gt;panelInfoUpdate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblInfoUpdate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panelBottomUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="&gt;&gt;btnSearchDelete.Name" xml:space="preserve">
+    <value>btnSearchDelete</value>
+  </data>
+  <data name="txtSearchLanguageUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblTitleCreate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 24pt, style=Bold</value>
+  </data>
+  <data name="panelInfoDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 232</value>
+  </data>
+  <data name="&gt;&gt;lblSearchLanguageUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panelTopDelete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="lblInfoUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageIDUpdate.Name" xml:space="preserve">
+    <value>lblLanguageIDUpdate</value>
+  </data>
+  <data name="&gt;&gt;lblDisplayDataUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtLanguageCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="panelBottomDelete.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panelInfoDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lblFooterTitleDelete.Text" xml:space="preserve">
+    <value>All Rights, Stackbooks Management System</value>
+  </data>
+  <data name="panelInfoCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>513, 165</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageCreate.Name" xml:space="preserve">
+    <value>txtLanguageCreate</value>
+  </data>
+  <data name="txtLanguageUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="panelTopUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 100</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageDelete.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblInfoUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>429, 68</value>
+  </data>
+  <data name="panelBottomCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 595</value>
+  </data>
+  <data name="&gt;&gt;txtSearchLanguageUpdate.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblInfoCreate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtSearchLanguageUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 160</value>
+  </data>
+  <data name="&gt;&gt;lblSearchLanguageDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSearchLanguageUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 25</value>
+  </data>
+  <data name="txtLanguageUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>342, 33</value>
+  </data>
+  <data name="&gt;&gt;panelInfoDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtLanguageIDUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 14.25pt, style=Bold</value>
+  </data>
   <data name="lblInfoCreate.Text" xml:space="preserve">
     <value>The User should be able to insert new Genre in the Combobox of the Source
 Form.
@@ -126,4 +1117,338 @@ Combobox.
 If any bug appears, contact Support:
 support@stackbooks.com</value>
   </data>
+  <data name="&gt;&gt;lblTitleUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCreateLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblLanguageIDDelete.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageIDUpdate.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lblTitleDelete.Name" xml:space="preserve">
+    <value>lblTitleDelete</value>
+  </data>
+  <data name="&gt;&gt;txtSearchLanguageDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelTopUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDisplayDataUpdate.Name" xml:space="preserve">
+    <value>lblDisplayDataUpdate</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageCreate.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblInfoUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 12</value>
+  </data>
+  <data name="lblTitleCreate.Text" xml:space="preserve">
+    <value>Insert New Language</value>
+  </data>
+  <data name="&gt;&gt;panelInfoCreate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panelInfoUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 217</value>
+  </data>
+  <data name="lblLanguageUpdate.Text" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="&gt;&gt;panelInfoDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblDisplayDataDelete.Text" xml:space="preserve">
+    <value>Display Data:</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="txtLanguageCreate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 15.75pt, style=Bold</value>
+  </data>
+  <data name="txtLanguageDelete.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblInfoUpdate.Name" xml:space="preserve">
+    <value>lblInfoUpdate</value>
+  </data>
+  <data name="lblInfoDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblLanguageUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblLanguageIDUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="&gt;&gt;comboIsActiveUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblFooterTitleCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageCreate.Parent" xml:space="preserve">
+    <value>tabCreateLanguage</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblLanguageIDDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="txtLanguageCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 35</value>
+  </data>
+  <data name="lblLanguageIDDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 383</value>
+  </data>
+  <data name="panelTopUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblInfoUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="lblDisplayDataDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="lblFooterTitleUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 17</value>
+  </data>
+  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageIDDelete.Name" xml:space="preserve">
+    <value>txtLanguageIDDelete</value>
+  </data>
+  <data name="lblUniqueCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 19</value>
+  </data>
+  <data name="lblInfoDelete.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageIDUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblFooterTitleCreate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtSearchLanguageUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 35</value>
+  </data>
+  <data name="panelBottomCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 28</value>
+  </data>
+  <data name="&gt;&gt;lblTitleCreate.Name" xml:space="preserve">
+    <value>lblTitleCreate</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="lblTitleDelete.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInfoDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblDisplayDataUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 25</value>
+  </data>
+  <data name="&gt;&gt;panelInfoUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="tabCreateLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="&gt;&gt;panelBottomUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabUpdateLanguage.Name" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageDelete.Parent" xml:space="preserve">
+    <value>tabDeleteLanguage</value>
+  </data>
+  <data name="lblLanguageCreate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;panelTopCreate.Parent" xml:space="preserve">
+    <value>tabCreateLanguage</value>
+  </data>
+  <data name="txtLanguageUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>199, 398</value>
+  </data>
+  <data name="tabCreateLanguage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;lblUniqueCreate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblFooterTitleUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 5</value>
+  </data>
+  <data name="&gt;&gt;lblSearchLanguageDelete.Name" xml:space="preserve">
+    <value>lblSearchLanguageDelete</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>602, 695</value>
+  </data>
+  <data name="&gt;&gt;panelBottomCreate.Parent" xml:space="preserve">
+    <value>tabCreateLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblFooterTitleCreate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageCreate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtLanguageCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 240</value>
+  </data>
+  <data name="&gt;&gt;comboIsActiveUpdate.Name" xml:space="preserve">
+    <value>comboIsActiveUpdate</value>
+  </data>
+  <data name="btnSearchDelete.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="lblSearchLanguageUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 124</value>
+  </data>
+  <data name="&gt;&gt;lblTitleDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblLanguageCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtLanguageUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 14.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCreateLanguage.Name" xml:space="preserve">
+    <value>tabCreateLanguage</value>
+  </data>
+  <data name="panelTopUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="btnUpdate.Text" xml:space="preserve">
+    <value>Update Language</value>
+  </data>
+  <data name="&gt;&gt;txtSearchLanguageUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInfoCreate.Parent" xml:space="preserve">
+    <value>panelInfoCreate</value>
+  </data>
+  <data name="&gt;&gt;lblTitleDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnInsert.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;lblDisplayDataDelete.Name" xml:space="preserve">
+    <value>lblDisplayDataDelete</value>
+  </data>
+  <data name="panelBottomDelete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="lblSearchLanguageDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="comboIsActiveUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="txtLanguageIDUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblLanguageIDUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblSearchLanguageUpdate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;tabCreateLanguage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="lblTitleCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 23</value>
+  </data>
+  <data name="lblTitleUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 45</value>
+  </data>
+  <data name="lblTitleDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 45</value>
+  </data>
+  <data name="lblFooterTitleUpdate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.Parent" xml:space="preserve">
+    <value>tabUpdateLanguage</value>
+  </data>
+  <data name="comboIsActiveUpdate.Items" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageUpdate.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lblDisplayDataUpdate.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageUpdate.Name" xml:space="preserve">
+    <value>txtLanguageUpdate</value>
+  </data>
+  <data name="lblInfoUpdate.Text" xml:space="preserve">
+    <value>The User should be able to search the Genre Type, and modify the data.
+
+If any bug appears, contact Support: support@stackbooks.com
+
+</value>
+  </data>
+  <data name="&gt;&gt;panelTopDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblTitleDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 23</value>
+  </data>
+  <data name="lblFooterTitleDelete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;txtLanguageCreate.Parent" xml:space="preserve">
+    <value>tabCreateLanguage</value>
+  </data>
+  <data name="lblLanguageCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 25</value>
+  </data>
+  <data name="lblLanguageCreate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="lblUniqueCreate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

@@ -140,7 +140,7 @@ namespace MenaxhimiBibliotekes.DAL
                 }
 
                 gen.UpdNo = int.Parse(reader["UpdNo"].ToString());
-
+                gen.isActive = (bool)reader["IsActive"];
 
 
                 return gen;

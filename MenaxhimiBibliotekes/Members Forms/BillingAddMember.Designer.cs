@@ -59,223 +59,121 @@
             // 
             // panelTopCreate
             // 
+            resources.ApplyResources(this.panelTopCreate, "panelTopCreate");
             this.panelTopCreate.BackColor = System.Drawing.SystemColors.Control;
             this.panelTopCreate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelTopCreate.Controls.Add(this.lblTitleCreate);
-            this.panelTopCreate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopCreate.Location = new System.Drawing.Point(0, 0);
-            this.panelTopCreate.Margin = new System.Windows.Forms.Padding(2);
             this.panelTopCreate.Name = "panelTopCreate";
-            this.panelTopCreate.Size = new System.Drawing.Size(718, 100);
-            this.panelTopCreate.TabIndex = 13;
             // 
             // lblTitleCreate
             // 
-            this.lblTitleCreate.AutoSize = true;
-            this.lblTitleCreate.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleCreate.Location = new System.Drawing.Point(25, 27);
+            resources.ApplyResources(this.lblTitleCreate, "lblTitleCreate");
             this.lblTitleCreate.Name = "lblTitleCreate";
-            this.lblTitleCreate.Size = new System.Drawing.Size(314, 45);
-            this.lblTitleCreate.TabIndex = 6;
-            this.lblTitleCreate.Text = "Membership Billing";
             // 
             // lblFullName
             // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.Location = new System.Drawing.Point(227, 207);
+            resources.ApplyResources(this.lblFullName, "lblFullName");
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(105, 25);
-            this.lblFullName.TabIndex = 14;
-            this.lblFullName.Text = "Full Name:";
             // 
             // txtMemberID
             // 
-            this.txtMemberID.AutoSize = true;
-            this.txtMemberID.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMemberID.Location = new System.Drawing.Point(352, 172);
+            resources.ApplyResources(this.txtMemberID, "txtMemberID");
             this.txtMemberID.Name = "txtMemberID";
-            this.txtMemberID.Size = new System.Drawing.Size(36, 25);
-            this.txtMemberID.TabIndex = 14;
-            this.txtMemberID.Text = "---";
             // 
             // lblPersonalNumber
             // 
-            this.lblPersonalNumber.AutoSize = true;
-            this.lblPersonalNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonalNumber.Location = new System.Drawing.Point(212, 244);
+            resources.ApplyResources(this.lblPersonalNumber, "lblPersonalNumber");
             this.lblPersonalNumber.Name = "lblPersonalNumber";
-            this.lblPersonalNumber.Size = new System.Drawing.Size(120, 25);
-            this.lblPersonalNumber.TabIndex = 14;
-            this.lblPersonalNumber.Text = "Personal No:";
             // 
             // lblMemberID
             // 
-            this.lblMemberID.AutoSize = true;
-            this.lblMemberID.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMemberID.Location = new System.Drawing.Point(217, 172);
+            resources.ApplyResources(this.lblMemberID, "lblMemberID");
             this.lblMemberID.Name = "lblMemberID";
-            this.lblMemberID.Size = new System.Drawing.Size(115, 25);
-            this.lblMemberID.TabIndex = 14;
-            this.lblMemberID.Text = "Member ID:";
             // 
             // lblSubscriptionPlan
             // 
-            this.lblSubscriptionPlan.AutoSize = true;
-            this.lblSubscriptionPlan.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubscriptionPlan.Location = new System.Drawing.Point(167, 283);
+            resources.ApplyResources(this.lblSubscriptionPlan, "lblSubscriptionPlan");
             this.lblSubscriptionPlan.Name = "lblSubscriptionPlan";
-            this.lblSubscriptionPlan.Size = new System.Drawing.Size(165, 25);
-            this.lblSubscriptionPlan.TabIndex = 14;
-            this.lblSubscriptionPlan.Text = "Subscription Plan:";
             // 
             // lblRegistrationDate
             // 
-            this.lblRegistrationDate.AutoSize = true;
-            this.lblRegistrationDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrationDate.Location = new System.Drawing.Point(112, 322);
+            resources.ApplyResources(this.lblRegistrationDate, "lblRegistrationDate");
             this.lblRegistrationDate.Name = "lblRegistrationDate";
-            this.lblRegistrationDate.Size = new System.Drawing.Size(220, 25);
-            this.lblRegistrationDate.TabIndex = 14;
-            this.lblRegistrationDate.Text = "Regisration/Billing Date:";
             // 
             // lblExpirationDate
             // 
-            this.lblExpirationDate.AutoSize = true;
-            this.lblExpirationDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpirationDate.Location = new System.Drawing.Point(182, 359);
+            resources.ApplyResources(this.lblExpirationDate, "lblExpirationDate");
             this.lblExpirationDate.Name = "lblExpirationDate";
-            this.lblExpirationDate.Size = new System.Drawing.Size(150, 25);
-            this.lblExpirationDate.TabIndex = 14;
-            this.lblExpirationDate.Text = "Expiration Date:";
             // 
             // lblCashier
             // 
-            this.lblCashier.AutoSize = true;
-            this.lblCashier.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCashier.Location = new System.Drawing.Point(251, 430);
+            resources.ApplyResources(this.lblCashier, "lblCashier");
             this.lblCashier.Name = "lblCashier";
-            this.lblCashier.Size = new System.Drawing.Size(81, 25);
-            this.lblCashier.TabIndex = 14;
-            this.lblCashier.Text = "Cashier:";
             // 
             // txtFullName
             // 
-            this.txtFullName.AutoSize = true;
-            this.txtFullName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(352, 207);
+            resources.ApplyResources(this.txtFullName, "txtFullName");
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(36, 25);
-            this.txtFullName.TabIndex = 14;
-            this.txtFullName.Text = "---";
             // 
             // txtPersonalNumber
             // 
-            this.txtPersonalNumber.AutoSize = true;
-            this.txtPersonalNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonalNumber.Location = new System.Drawing.Point(352, 244);
+            resources.ApplyResources(this.txtPersonalNumber, "txtPersonalNumber");
             this.txtPersonalNumber.Name = "txtPersonalNumber";
-            this.txtPersonalNumber.Size = new System.Drawing.Size(36, 25);
-            this.txtPersonalNumber.TabIndex = 14;
-            this.txtPersonalNumber.Text = "---";
             // 
             // txtSubscriptionPlan
             // 
-            this.txtSubscriptionPlan.AutoSize = true;
-            this.txtSubscriptionPlan.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubscriptionPlan.Location = new System.Drawing.Point(352, 283);
+            resources.ApplyResources(this.txtSubscriptionPlan, "txtSubscriptionPlan");
             this.txtSubscriptionPlan.Name = "txtSubscriptionPlan";
-            this.txtSubscriptionPlan.Size = new System.Drawing.Size(36, 25);
-            this.txtSubscriptionPlan.TabIndex = 14;
-            this.txtSubscriptionPlan.Text = "---";
             // 
             // txtBillingDate
             // 
-            this.txtBillingDate.AutoSize = true;
-            this.txtBillingDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBillingDate.Location = new System.Drawing.Point(352, 322);
+            resources.ApplyResources(this.txtBillingDate, "txtBillingDate");
             this.txtBillingDate.Name = "txtBillingDate";
-            this.txtBillingDate.Size = new System.Drawing.Size(36, 25);
-            this.txtBillingDate.TabIndex = 14;
-            this.txtBillingDate.Text = "---";
             // 
             // txtExpirationDate
             // 
-            this.txtExpirationDate.AutoSize = true;
-            this.txtExpirationDate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExpirationDate.Location = new System.Drawing.Point(352, 359);
+            resources.ApplyResources(this.txtExpirationDate, "txtExpirationDate");
             this.txtExpirationDate.Name = "txtExpirationDate";
-            this.txtExpirationDate.Size = new System.Drawing.Size(36, 25);
-            this.txtExpirationDate.TabIndex = 14;
-            this.txtExpirationDate.Text = "---";
             // 
             // txtCashier
             // 
-            this.txtCashier.AutoSize = true;
-            this.txtCashier.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCashier.Location = new System.Drawing.Point(352, 430);
+            resources.ApplyResources(this.txtCashier, "txtCashier");
             this.txtCashier.Name = "txtCashier";
-            this.txtCashier.Size = new System.Drawing.Size(36, 25);
-            this.txtCashier.TabIndex = 14;
-            this.txtCashier.Text = "---";
             // 
             // panelBottomCreate
             // 
+            resources.ApplyResources(this.panelBottomCreate, "panelBottomCreate");
             this.panelBottomCreate.BackColor = System.Drawing.SystemColors.Control;
             this.panelBottomCreate.Controls.Add(this.lblFooterTitleCreate);
-            this.panelBottomCreate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottomCreate.Location = new System.Drawing.Point(0, 653);
-            this.panelBottomCreate.Margin = new System.Windows.Forms.Padding(2);
             this.panelBottomCreate.Name = "panelBottomCreate";
-            this.panelBottomCreate.Size = new System.Drawing.Size(718, 28);
-            this.panelBottomCreate.TabIndex = 15;
             // 
             // lblFooterTitleCreate
             // 
-            this.lblFooterTitleCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFooterTitleCreate.AutoSize = true;
-            this.lblFooterTitleCreate.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterTitleCreate.Location = new System.Drawing.Point(239, 5);
+            resources.ApplyResources(this.lblFooterTitleCreate, "lblFooterTitleCreate");
             this.lblFooterTitleCreate.Name = "lblFooterTitleCreate";
-            this.lblFooterTitleCreate.Size = new System.Drawing.Size(251, 17);
-            this.lblFooterTitleCreate.TabIndex = 10;
-            this.lblFooterTitleCreate.Text = "All Rights, Stackbooks Management System";
             // 
             // btnPreview
             // 
+            resources.ApplyResources(this.btnPreview, "btnPreview");
             this.btnPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnPreview.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreview.ForeColor = System.Drawing.Color.White;
-            this.btnPreview.Location = new System.Drawing.Point(117, 537);
             this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(215, 66);
-            this.btnPreview.TabIndex = 16;
-            this.btnPreview.Text = "Preview";
             this.btnPreview.UseVisualStyleBackColor = false;
             this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // btnPrint
             // 
+            resources.ApplyResources(this.btnPrint, "btnPrint");
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(357, 537);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(215, 66);
-            this.btnPrint.TabIndex = 16;
-            this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // printPreview
             // 
-            this.printPreview.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreview.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreview.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreview.Enabled = true;
-            this.printPreview.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreview.Icon")));
+            resources.ApplyResources(this.printPreview, "printPreview");
             this.printPreview.Name = "printPreview";
-            this.printPreview.Visible = false;
             // 
             // printDocument
             // 
@@ -283,30 +181,19 @@
             // 
             // lblPrice
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(273, 397);
+            resources.ApplyResources(this.lblPrice, "lblPrice");
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(59, 25);
-            this.lblPrice.TabIndex = 14;
-            this.lblPrice.Text = "Price:";
             // 
             // txtPrice
             // 
-            this.txtPrice.AutoSize = true;
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(352, 397);
+            resources.ApplyResources(this.txtPrice, "txtPrice");
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(36, 25);
-            this.txtPrice.TabIndex = 14;
-            this.txtPrice.Text = "---";
             // 
             // BillingAddMember
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(718, 681);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.panelBottomCreate);
@@ -327,11 +214,7 @@
             this.Controls.Add(this.lblMemberID);
             this.Controls.Add(this.lblFullName);
             this.Controls.Add(this.panelTopCreate);
-            this.MaximumSize = new System.Drawing.Size(734, 720);
-            this.MinimumSize = new System.Drawing.Size(734, 720);
             this.Name = "BillingAddMember";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Membership Billing (Stackbooks)";
             this.Load += new System.EventHandler(this.BillingAddMember_Load);
             this.panelTopCreate.ResumeLayout(false);
             this.panelTopCreate.PerformLayout();

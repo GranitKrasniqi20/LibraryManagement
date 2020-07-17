@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FluentValidation.Results;
@@ -19,6 +20,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         public ReservationsForm()
         {
             InitializeComponent();
+
+
+
+
         }
 
         Subscriber subscriber = new Subscriber();
@@ -103,6 +108,29 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void ReservationsForm_Load(object sender, EventArgs e)
+        {
+            if (Thread.CurrentThread.CurrentCulture.Name == "sq")
+            {
+                btnReserveNow.Text = "Rezervo Tani";
+                btnSearch.Text = "Kerko";
+                lblAddress.Text = "Adresa:";
+                lblAvailability.Text = "Disponueshmeria:";
+                lblFrom.Text = "Nga:	";
+                lblInfo.Text = "Rezervoni materialin tuaj!";
+                lblMaterialID.Text = "Materiali ID:	";
+                lblMaterialName.Text = "Emri:	";
+                lblMaterialType.Text = "Material:	";
+                lblName.Text = "Emri:	";
+                lblOverallQuantity.Text = "Sasia:	";
+                lblPersonalNumber.Text = "Nr Personal:";
+                lblPhoneNumber.Text = "Nr Tel:";
+                lblStockQuantity.Text = "Te lira:";
+                lblSubscriberID.Text = "Abonuesi ID:";
+                lblTill.Text = "Deri:	";
+            }
         }
     }
 }

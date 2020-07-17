@@ -202,5 +202,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 booleanVariable = false;
             }
         }
+
+        private void LblGenreIDUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -92,19 +92,16 @@
             // 
             // tabControl
             // 
+            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Controls.Add(this.tabCreateType);
             this.tabControl.Controls.Add(this.tabUpdateType);
             this.tabControl.Controls.Add(this.tabDeleteType);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(586, 656);
-            this.tabControl.TabIndex = 1;
             // 
             // tabCreateType
             // 
+            resources.ApplyResources(this.tabCreateType, "tabCreateType");
             this.tabCreateType.Controls.Add(this.panelBottomCreate);
             this.tabCreateType.Controls.Add(this.panelTopCreate);
             this.tabCreateType.Controls.Add(this.panelInfoCreate);
@@ -112,121 +109,74 @@
             this.tabCreateType.Controls.Add(this.txtMaterialTypeCreate);
             this.tabCreateType.Controls.Add(this.lblUniqueCreate);
             this.tabCreateType.Controls.Add(this.lblMaterialTypeCreate);
-            this.tabCreateType.Location = new System.Drawing.Point(4, 26);
             this.tabCreateType.Name = "tabCreateType";
-            this.tabCreateType.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCreateType.Size = new System.Drawing.Size(578, 626);
-            this.tabCreateType.TabIndex = 0;
-            this.tabCreateType.Text = "Create Type";
             this.tabCreateType.UseVisualStyleBackColor = true;
             // 
             // panelBottomCreate
             // 
+            resources.ApplyResources(this.panelBottomCreate, "panelBottomCreate");
             this.panelBottomCreate.BackColor = System.Drawing.SystemColors.Control;
             this.panelBottomCreate.Controls.Add(this.lblFooterTitleCreate);
-            this.panelBottomCreate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottomCreate.Location = new System.Drawing.Point(3, 595);
-            this.panelBottomCreate.Margin = new System.Windows.Forms.Padding(2);
             this.panelBottomCreate.Name = "panelBottomCreate";
-            this.panelBottomCreate.Size = new System.Drawing.Size(572, 28);
-            this.panelBottomCreate.TabIndex = 13;
             // 
             // lblFooterTitleCreate
             // 
-            this.lblFooterTitleCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFooterTitleCreate.AutoSize = true;
-            this.lblFooterTitleCreate.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterTitleCreate.Location = new System.Drawing.Point(166, 5);
+            resources.ApplyResources(this.lblFooterTitleCreate, "lblFooterTitleCreate");
             this.lblFooterTitleCreate.Name = "lblFooterTitleCreate";
-            this.lblFooterTitleCreate.Size = new System.Drawing.Size(251, 17);
-            this.lblFooterTitleCreate.TabIndex = 10;
-            this.lblFooterTitleCreate.Text = "All Rights, Stackbooks Management System";
             // 
             // panelTopCreate
             // 
+            resources.ApplyResources(this.panelTopCreate, "panelTopCreate");
             this.panelTopCreate.BackColor = System.Drawing.SystemColors.Control;
             this.panelTopCreate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelTopCreate.Controls.Add(this.lblTitleCreate);
-            this.panelTopCreate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopCreate.Location = new System.Drawing.Point(3, 3);
-            this.panelTopCreate.Margin = new System.Windows.Forms.Padding(2);
             this.panelTopCreate.Name = "panelTopCreate";
-            this.panelTopCreate.Size = new System.Drawing.Size(572, 100);
-            this.panelTopCreate.TabIndex = 12;
             // 
             // lblTitleCreate
             // 
-            this.lblTitleCreate.AutoSize = true;
-            this.lblTitleCreate.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleCreate.Location = new System.Drawing.Point(16, 23);
+            resources.ApplyResources(this.lblTitleCreate, "lblTitleCreate");
             this.lblTitleCreate.Name = "lblTitleCreate";
-            this.lblTitleCreate.Size = new System.Drawing.Size(398, 45);
-            this.lblTitleCreate.TabIndex = 6;
-            this.lblTitleCreate.Text = "Insert New Material Type";
             // 
             // panelInfoCreate
             // 
+            resources.ApplyResources(this.panelInfoCreate, "panelInfoCreate");
             this.panelInfoCreate.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelInfoCreate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelInfoCreate.Controls.Add(this.lblInfoCreate);
-            this.panelInfoCreate.Location = new System.Drawing.Point(34, 332);
             this.panelInfoCreate.Name = "panelInfoCreate";
-            this.panelInfoCreate.Size = new System.Drawing.Size(513, 165);
-            this.panelInfoCreate.TabIndex = 11;
             // 
             // lblInfoCreate
             // 
-            this.lblInfoCreate.AutoSize = true;
-            this.lblInfoCreate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoCreate.Location = new System.Drawing.Point(28, 16);
+            resources.ApplyResources(this.lblInfoCreate, "lblInfoCreate");
             this.lblInfoCreate.Name = "lblInfoCreate";
-            this.lblInfoCreate.Size = new System.Drawing.Size(457, 119);
-            this.lblInfoCreate.TabIndex = 0;
-            this.lblInfoCreate.Text = resources.GetString("lblInfoCreate.Text");
             // 
             // btnInsert
             // 
+            resources.ApplyResources(this.btnInsert, "btnInsert");
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnInsert.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.ForeColor = System.Drawing.Color.White;
-            this.btnInsert.Location = new System.Drawing.Point(308, 206);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(239, 69);
-            this.btnInsert.TabIndex = 9;
-            this.btnInsert.Text = "Insert Type";
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // txtMaterialTypeCreate
             // 
-            this.txtMaterialTypeCreate.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaterialTypeCreate.Location = new System.Drawing.Point(34, 240);
+            resources.ApplyResources(this.txtMaterialTypeCreate, "txtMaterialTypeCreate");
             this.txtMaterialTypeCreate.Name = "txtMaterialTypeCreate";
-            this.txtMaterialTypeCreate.Size = new System.Drawing.Size(227, 35);
-            this.txtMaterialTypeCreate.TabIndex = 7;
             // 
             // lblUniqueCreate
             // 
-            this.lblUniqueCreate.AutoSize = true;
-            this.lblUniqueCreate.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUniqueCreate.Location = new System.Drawing.Point(30, 184);
+            resources.ApplyResources(this.lblUniqueCreate, "lblUniqueCreate");
             this.lblUniqueCreate.Name = "lblUniqueCreate";
-            this.lblUniqueCreate.Size = new System.Drawing.Size(118, 19);
-            this.lblUniqueCreate.TabIndex = 5;
-            this.lblUniqueCreate.Text = "(Must be unique!)";
             // 
             // lblMaterialTypeCreate
             // 
-            this.lblMaterialTypeCreate.AutoSize = true;
-            this.lblMaterialTypeCreate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialTypeCreate.Location = new System.Drawing.Point(29, 204);
+            resources.ApplyResources(this.lblMaterialTypeCreate, "lblMaterialTypeCreate");
             this.lblMaterialTypeCreate.Name = "lblMaterialTypeCreate";
-            this.lblMaterialTypeCreate.Size = new System.Drawing.Size(137, 25);
-            this.lblMaterialTypeCreate.TabIndex = 6;
-            this.lblMaterialTypeCreate.Text = "Material Type:";
             // 
             // tabUpdateType
             // 
+            resources.ApplyResources(this.tabUpdateType, "tabUpdateType");
             this.tabUpdateType.Controls.Add(this.comboIsActiveUpdate);
             this.tabUpdateType.Controls.Add(this.label1);
             this.tabUpdateType.Controls.Add(this.panelInfoUpdate);
@@ -241,196 +191,118 @@
             this.tabUpdateType.Controls.Add(this.lblDisplayDataUpdate);
             this.tabUpdateType.Controls.Add(this.lblSearchMaterialTypeUpdate);
             this.tabUpdateType.Controls.Add(this.panelTopUpdate);
-            this.tabUpdateType.Location = new System.Drawing.Point(4, 26);
             this.tabUpdateType.Name = "tabUpdateType";
-            this.tabUpdateType.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUpdateType.Size = new System.Drawing.Size(578, 626);
-            this.tabUpdateType.TabIndex = 1;
-            this.tabUpdateType.Text = "Update Type";
             this.tabUpdateType.UseVisualStyleBackColor = true;
             // 
             // comboIsActiveUpdate
             // 
-            this.comboIsActiveUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.comboIsActiveUpdate, "comboIsActiveUpdate");
             this.comboIsActiveUpdate.FormattingEnabled = true;
             this.comboIsActiveUpdate.Items.AddRange(new object[] {
-            "Active",
-            "Passive"});
-            this.comboIsActiveUpdate.Location = new System.Drawing.Point(199, 445);
+            resources.GetString("comboIsActiveUpdate.Items"),
+            resources.GetString("comboIsActiveUpdate.Items1")});
             this.comboIsActiveUpdate.Name = "comboIsActiveUpdate";
-            this.comboIsActiveUpdate.Size = new System.Drawing.Size(341, 33);
-            this.comboIsActiveUpdate.TabIndex = 22;
             this.comboIsActiveUpdate.SelectedIndexChanged += new System.EventHandler(this.comboIsActiveUpdate_SelectedIndexChanged);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(87, 448);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 25);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Is Active?";
             // 
             // panelInfoUpdate
             // 
+            resources.ApplyResources(this.panelInfoUpdate, "panelInfoUpdate");
             this.panelInfoUpdate.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelInfoUpdate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelInfoUpdate.Controls.Add(this.lblInfoUpdate);
-            this.panelInfoUpdate.Location = new System.Drawing.Point(29, 214);
             this.panelInfoUpdate.Name = "panelInfoUpdate";
-            this.panelInfoUpdate.Size = new System.Drawing.Size(513, 81);
-            this.panelInfoUpdate.TabIndex = 19;
             // 
             // lblInfoUpdate
             // 
-            this.lblInfoUpdate.AutoSize = true;
-            this.lblInfoUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoUpdate.Location = new System.Drawing.Point(25, 12);
+            resources.ApplyResources(this.lblInfoUpdate, "lblInfoUpdate");
             this.lblInfoUpdate.Name = "lblInfoUpdate";
-            this.lblInfoUpdate.Size = new System.Drawing.Size(442, 68);
-            this.lblInfoUpdate.TabIndex = 0;
-            this.lblInfoUpdate.Text = "The User should be able to search the Material Type, and modify the data.\r\n\r\nIf a" +
-    "ny bug appears, contact Support: support@stackbooks.com\r\n\r\n";
             // 
             // panelBottomUpdate
             // 
+            resources.ApplyResources(this.panelBottomUpdate, "panelBottomUpdate");
             this.panelBottomUpdate.BackColor = System.Drawing.SystemColors.Control;
             this.panelBottomUpdate.Controls.Add(this.lblFooterTitleUpdate);
-            this.panelBottomUpdate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottomUpdate.Location = new System.Drawing.Point(3, 595);
-            this.panelBottomUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.panelBottomUpdate.Name = "panelBottomUpdate";
-            this.panelBottomUpdate.Size = new System.Drawing.Size(572, 28);
-            this.panelBottomUpdate.TabIndex = 18;
             // 
             // lblFooterTitleUpdate
             // 
-            this.lblFooterTitleUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFooterTitleUpdate.AutoSize = true;
-            this.lblFooterTitleUpdate.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterTitleUpdate.Location = new System.Drawing.Point(166, 5);
+            resources.ApplyResources(this.lblFooterTitleUpdate, "lblFooterTitleUpdate");
             this.lblFooterTitleUpdate.Name = "lblFooterTitleUpdate";
-            this.lblFooterTitleUpdate.Size = new System.Drawing.Size(251, 17);
-            this.lblFooterTitleUpdate.TabIndex = 10;
-            this.lblFooterTitleUpdate.Text = "All Rights, Stackbooks Management System";
             // 
             // btnUpdate
             // 
+            resources.ApplyResources(this.btnUpdate, "btnUpdate");
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(29, 501);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(512, 69);
-            this.btnUpdate.TabIndex = 17;
-            this.btnUpdate.Text = "Update Material Type";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSearchUpdate
             // 
+            resources.ApplyResources(this.btnSearchUpdate, "btnSearchUpdate");
             this.btnSearchUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnSearchUpdate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnSearchUpdate.Location = new System.Drawing.Point(302, 121);
             this.btnSearchUpdate.Name = "btnSearchUpdate";
-            this.btnSearchUpdate.Size = new System.Drawing.Size(239, 69);
-            this.btnSearchUpdate.TabIndex = 17;
-            this.btnSearchUpdate.Text = "Search";
             this.btnSearchUpdate.UseVisualStyleBackColor = false;
             this.btnSearchUpdate.Click += new System.EventHandler(this.btnSearchUpdate_Click);
             // 
             // txtMaterialTypeUpdate
             // 
-            this.txtMaterialTypeUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaterialTypeUpdate.Location = new System.Drawing.Point(199, 394);
+            resources.ApplyResources(this.txtMaterialTypeUpdate, "txtMaterialTypeUpdate");
             this.txtMaterialTypeUpdate.Name = "txtMaterialTypeUpdate";
-            this.txtMaterialTypeUpdate.Size = new System.Drawing.Size(342, 33);
-            this.txtMaterialTypeUpdate.TabIndex = 16;
             // 
             // txtSearchMaterialTypeUpdate
             // 
-            this.txtSearchMaterialTypeUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchMaterialTypeUpdate.Location = new System.Drawing.Point(29, 155);
+            resources.ApplyResources(this.txtSearchMaterialTypeUpdate, "txtSearchMaterialTypeUpdate");
             this.txtSearchMaterialTypeUpdate.Name = "txtSearchMaterialTypeUpdate";
-            this.txtSearchMaterialTypeUpdate.Size = new System.Drawing.Size(227, 35);
-            this.txtSearchMaterialTypeUpdate.TabIndex = 16;
             // 
             // txtMaterialTypeIDUpdate
             // 
-            this.txtMaterialTypeIDUpdate.AutoSize = true;
-            this.txtMaterialTypeIDUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaterialTypeIDUpdate.Location = new System.Drawing.Point(194, 357);
+            resources.ApplyResources(this.txtMaterialTypeIDUpdate, "txtMaterialTypeIDUpdate");
             this.txtMaterialTypeIDUpdate.Name = "txtMaterialTypeIDUpdate";
-            this.txtMaterialTypeIDUpdate.Size = new System.Drawing.Size(36, 25);
-            this.txtMaterialTypeIDUpdate.TabIndex = 15;
-            this.txtMaterialTypeIDUpdate.Text = "---";
             // 
             // lblMaterialTypeUpdate
             // 
-            this.lblMaterialTypeUpdate.AutoSize = true;
-            this.lblMaterialTypeUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialTypeUpdate.Location = new System.Drawing.Point(47, 401);
+            resources.ApplyResources(this.lblMaterialTypeUpdate, "lblMaterialTypeUpdate");
             this.lblMaterialTypeUpdate.Name = "lblMaterialTypeUpdate";
-            this.lblMaterialTypeUpdate.Size = new System.Drawing.Size(130, 25);
-            this.lblMaterialTypeUpdate.TabIndex = 15;
-            this.lblMaterialTypeUpdate.Text = "Material Type:";
             // 
             // lblMaterialTypeIDUpdate
             // 
-            this.lblMaterialTypeIDUpdate.AutoSize = true;
-            this.lblMaterialTypeIDUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialTypeIDUpdate.Location = new System.Drawing.Point(24, 357);
+            resources.ApplyResources(this.lblMaterialTypeIDUpdate, "lblMaterialTypeIDUpdate");
             this.lblMaterialTypeIDUpdate.Name = "lblMaterialTypeIDUpdate";
-            this.lblMaterialTypeIDUpdate.Size = new System.Drawing.Size(153, 25);
-            this.lblMaterialTypeIDUpdate.TabIndex = 15;
-            this.lblMaterialTypeIDUpdate.Text = "Material Type ID:";
             // 
             // lblDisplayDataUpdate
             // 
-            this.lblDisplayDataUpdate.AutoSize = true;
-            this.lblDisplayDataUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplayDataUpdate.Location = new System.Drawing.Point(24, 316);
+            resources.ApplyResources(this.lblDisplayDataUpdate, "lblDisplayDataUpdate");
             this.lblDisplayDataUpdate.Name = "lblDisplayDataUpdate";
-            this.lblDisplayDataUpdate.Size = new System.Drawing.Size(127, 25);
-            this.lblDisplayDataUpdate.TabIndex = 15;
-            this.lblDisplayDataUpdate.Text = "Display Data:";
             // 
             // lblSearchMaterialTypeUpdate
             // 
-            this.lblSearchMaterialTypeUpdate.AutoSize = true;
-            this.lblSearchMaterialTypeUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchMaterialTypeUpdate.Location = new System.Drawing.Point(24, 119);
+            resources.ApplyResources(this.lblSearchMaterialTypeUpdate, "lblSearchMaterialTypeUpdate");
             this.lblSearchMaterialTypeUpdate.Name = "lblSearchMaterialTypeUpdate";
-            this.lblSearchMaterialTypeUpdate.Size = new System.Drawing.Size(201, 25);
-            this.lblSearchMaterialTypeUpdate.TabIndex = 15;
-            this.lblSearchMaterialTypeUpdate.Text = "Search Material Type:";
             // 
             // panelTopUpdate
             // 
+            resources.ApplyResources(this.panelTopUpdate, "panelTopUpdate");
             this.panelTopUpdate.BackColor = System.Drawing.SystemColors.Control;
             this.panelTopUpdate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelTopUpdate.Controls.Add(this.lblTitleUpdate);
-            this.panelTopUpdate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopUpdate.Location = new System.Drawing.Point(3, 3);
-            this.panelTopUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.panelTopUpdate.Name = "panelTopUpdate";
-            this.panelTopUpdate.Size = new System.Drawing.Size(572, 100);
-            this.panelTopUpdate.TabIndex = 13;
             // 
             // lblTitleUpdate
             // 
-            this.lblTitleUpdate.AutoSize = true;
-            this.lblTitleUpdate.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleUpdate.Location = new System.Drawing.Point(16, 23);
+            resources.ApplyResources(this.lblTitleUpdate, "lblTitleUpdate");
             this.lblTitleUpdate.Name = "lblTitleUpdate";
-            this.lblTitleUpdate.Size = new System.Drawing.Size(344, 45);
-            this.lblTitleUpdate.TabIndex = 6;
-            this.lblTitleUpdate.Text = "Update Material Type";
             // 
             // tabDeleteType
             // 
+            resources.ApplyResources(this.tabDeleteType, "tabDeleteType");
             this.tabDeleteType.Controls.Add(this.btnDelete);
             this.tabDeleteType.Controls.Add(this.txtMaterialTypeDelete);
             this.tabDeleteType.Controls.Add(this.txtMaterialTypeIDDelete);
@@ -443,185 +315,106 @@
             this.tabDeleteType.Controls.Add(this.lblSearchMaterialTypeDelete);
             this.tabDeleteType.Controls.Add(this.panelBottomDelete);
             this.tabDeleteType.Controls.Add(this.panelTopDelete);
-            this.tabDeleteType.Location = new System.Drawing.Point(4, 26);
             this.tabDeleteType.Name = "tabDeleteType";
-            this.tabDeleteType.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDeleteType.Size = new System.Drawing.Size(578, 626);
-            this.tabDeleteType.TabIndex = 2;
-            this.tabDeleteType.Text = "Delete Type";
             this.tabDeleteType.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(29, 487);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(512, 69);
-            this.btnDelete.TabIndex = 26;
-            this.btnDelete.Text = "Delete Material Type";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // txtMaterialTypeDelete
             // 
-            this.txtMaterialTypeDelete.AutoSize = true;
-            this.txtMaterialTypeDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaterialTypeDelete.Location = new System.Drawing.Point(194, 427);
+            resources.ApplyResources(this.txtMaterialTypeDelete, "txtMaterialTypeDelete");
             this.txtMaterialTypeDelete.Name = "txtMaterialTypeDelete";
-            this.txtMaterialTypeDelete.Size = new System.Drawing.Size(36, 25);
-            this.txtMaterialTypeDelete.TabIndex = 22;
-            this.txtMaterialTypeDelete.Text = "---";
             // 
             // txtMaterialTypeIDDelete
             // 
-            this.txtMaterialTypeIDDelete.AutoSize = true;
-            this.txtMaterialTypeIDDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaterialTypeIDDelete.Location = new System.Drawing.Point(194, 383);
+            resources.ApplyResources(this.txtMaterialTypeIDDelete, "txtMaterialTypeIDDelete");
             this.txtMaterialTypeIDDelete.Name = "txtMaterialTypeIDDelete";
-            this.txtMaterialTypeIDDelete.Size = new System.Drawing.Size(36, 25);
-            this.txtMaterialTypeIDDelete.TabIndex = 22;
-            this.txtMaterialTypeIDDelete.Text = "---";
             // 
             // lblMaterialTypeDelete
             // 
-            this.lblMaterialTypeDelete.AutoSize = true;
-            this.lblMaterialTypeDelete.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialTypeDelete.Location = new System.Drawing.Point(47, 427);
+            resources.ApplyResources(this.lblMaterialTypeDelete, "lblMaterialTypeDelete");
             this.lblMaterialTypeDelete.Name = "lblMaterialTypeDelete";
-            this.lblMaterialTypeDelete.Size = new System.Drawing.Size(130, 25);
-            this.lblMaterialTypeDelete.TabIndex = 23;
-            this.lblMaterialTypeDelete.Text = "Material Type:";
             // 
             // lblMaterialTypeIDDelete
             // 
-            this.lblMaterialTypeIDDelete.AutoSize = true;
-            this.lblMaterialTypeIDDelete.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialTypeIDDelete.Location = new System.Drawing.Point(24, 383);
+            resources.ApplyResources(this.lblMaterialTypeIDDelete, "lblMaterialTypeIDDelete");
             this.lblMaterialTypeIDDelete.Name = "lblMaterialTypeIDDelete";
-            this.lblMaterialTypeIDDelete.Size = new System.Drawing.Size(153, 25);
-            this.lblMaterialTypeIDDelete.TabIndex = 24;
-            this.lblMaterialTypeIDDelete.Text = "Material Type ID:";
             // 
             // lblDisplayDataDelete
             // 
-            this.lblDisplayDataDelete.AutoSize = true;
-            this.lblDisplayDataDelete.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplayDataDelete.Location = new System.Drawing.Point(24, 342);
+            resources.ApplyResources(this.lblDisplayDataDelete, "lblDisplayDataDelete");
             this.lblDisplayDataDelete.Name = "lblDisplayDataDelete";
-            this.lblDisplayDataDelete.Size = new System.Drawing.Size(127, 25);
-            this.lblDisplayDataDelete.TabIndex = 25;
-            this.lblDisplayDataDelete.Text = "Display Data:";
             // 
             // panelInfoDelete
             // 
+            resources.ApplyResources(this.panelInfoDelete, "panelInfoDelete");
             this.panelInfoDelete.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelInfoDelete.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelInfoDelete.Controls.Add(this.lblInfoDelete);
-            this.panelInfoDelete.Location = new System.Drawing.Point(29, 232);
             this.panelInfoDelete.Name = "panelInfoDelete";
-            this.panelInfoDelete.Size = new System.Drawing.Size(513, 81);
-            this.panelInfoDelete.TabIndex = 21;
             // 
             // lblInfoDelete
             // 
-            this.lblInfoDelete.AutoSize = true;
-            this.lblInfoDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoDelete.Location = new System.Drawing.Point(27, 12);
+            resources.ApplyResources(this.lblInfoDelete, "lblInfoDelete");
             this.lblInfoDelete.Name = "lblInfoDelete";
-            this.lblInfoDelete.Size = new System.Drawing.Size(438, 68);
-            this.lblInfoDelete.TabIndex = 0;
-            this.lblInfoDelete.Text = "The User should be able to search the Material Type, and delete the data.\r\n\r\nIf a" +
-    "ny bug appears, contact Support: support@stackbooks.com\r\n\r\n";
             // 
             // btnSearchDelete
             // 
+            resources.ApplyResources(this.btnSearchDelete, "btnSearchDelete");
             this.btnSearchDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnSearchDelete.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchDelete.ForeColor = System.Drawing.Color.White;
-            this.btnSearchDelete.Location = new System.Drawing.Point(302, 136);
             this.btnSearchDelete.Name = "btnSearchDelete";
-            this.btnSearchDelete.Size = new System.Drawing.Size(239, 69);
-            this.btnSearchDelete.TabIndex = 20;
-            this.btnSearchDelete.Text = "Search";
             this.btnSearchDelete.UseVisualStyleBackColor = false;
             this.btnSearchDelete.Click += new System.EventHandler(this.btnSearchDelete_Click);
             // 
             // txtSearchMaterialTypeDelete
             // 
-            this.txtSearchMaterialTypeDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchMaterialTypeDelete.Location = new System.Drawing.Point(29, 170);
+            resources.ApplyResources(this.txtSearchMaterialTypeDelete, "txtSearchMaterialTypeDelete");
             this.txtSearchMaterialTypeDelete.Name = "txtSearchMaterialTypeDelete";
-            this.txtSearchMaterialTypeDelete.Size = new System.Drawing.Size(227, 35);
-            this.txtSearchMaterialTypeDelete.TabIndex = 19;
             // 
             // lblSearchMaterialTypeDelete
             // 
-            this.lblSearchMaterialTypeDelete.AutoSize = true;
-            this.lblSearchMaterialTypeDelete.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchMaterialTypeDelete.Location = new System.Drawing.Point(24, 134);
+            resources.ApplyResources(this.lblSearchMaterialTypeDelete, "lblSearchMaterialTypeDelete");
             this.lblSearchMaterialTypeDelete.Name = "lblSearchMaterialTypeDelete";
-            this.lblSearchMaterialTypeDelete.Size = new System.Drawing.Size(201, 25);
-            this.lblSearchMaterialTypeDelete.TabIndex = 18;
-            this.lblSearchMaterialTypeDelete.Text = "Search Material Type:";
             // 
             // panelBottomDelete
             // 
+            resources.ApplyResources(this.panelBottomDelete, "panelBottomDelete");
             this.panelBottomDelete.BackColor = System.Drawing.SystemColors.Control;
             this.panelBottomDelete.Controls.Add(this.lblFooterTitleDelete);
-            this.panelBottomDelete.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottomDelete.Location = new System.Drawing.Point(3, 595);
-            this.panelBottomDelete.Margin = new System.Windows.Forms.Padding(2);
             this.panelBottomDelete.Name = "panelBottomDelete";
-            this.panelBottomDelete.Size = new System.Drawing.Size(572, 28);
-            this.panelBottomDelete.TabIndex = 15;
             // 
             // lblFooterTitleDelete
             // 
-            this.lblFooterTitleDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFooterTitleDelete.AutoSize = true;
-            this.lblFooterTitleDelete.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterTitleDelete.Location = new System.Drawing.Point(166, 5);
+            resources.ApplyResources(this.lblFooterTitleDelete, "lblFooterTitleDelete");
             this.lblFooterTitleDelete.Name = "lblFooterTitleDelete";
-            this.lblFooterTitleDelete.Size = new System.Drawing.Size(251, 17);
-            this.lblFooterTitleDelete.TabIndex = 10;
-            this.lblFooterTitleDelete.Text = "All Rights, Stackbooks Management System";
             // 
             // panelTopDelete
             // 
+            resources.ApplyResources(this.panelTopDelete, "panelTopDelete");
             this.panelTopDelete.BackColor = System.Drawing.SystemColors.Control;
             this.panelTopDelete.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelTopDelete.Controls.Add(this.lblTitleDelete);
-            this.panelTopDelete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopDelete.Location = new System.Drawing.Point(3, 3);
-            this.panelTopDelete.Margin = new System.Windows.Forms.Padding(2);
             this.panelTopDelete.Name = "panelTopDelete";
-            this.panelTopDelete.Size = new System.Drawing.Size(572, 100);
-            this.panelTopDelete.TabIndex = 14;
             // 
             // lblTitleDelete
             // 
-            this.lblTitleDelete.AutoSize = true;
-            this.lblTitleDelete.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleDelete.Location = new System.Drawing.Point(16, 23);
+            resources.ApplyResources(this.lblTitleDelete, "lblTitleDelete");
             this.lblTitleDelete.Name = "lblTitleDelete";
-            this.lblTitleDelete.Size = new System.Drawing.Size(455, 45);
-            this.lblTitleDelete.TabIndex = 6;
-            this.lblTitleDelete.Text = "Delete Specific Material Type";
             // 
             // MaterialTypeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 656);
             this.Controls.Add(this.tabControl);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(602, 695);
-            this.MinimumSize = new System.Drawing.Size(602, 695);
             this.Name = "MaterialTypeForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alter Data in Material Type (Stackbooks)";
             this.tabControl.ResumeLayout(false);
             this.tabCreateType.ResumeLayout(false);
             this.tabCreateType.PerformLayout();

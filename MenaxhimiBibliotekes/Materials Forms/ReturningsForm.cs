@@ -136,5 +136,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
 
         }
+
+        private void ReturningsForm_Load(object sender, EventArgs e)
+        {
+            BLL.ChooseLanguage<ReturningsForm,mainForm>.ChangeLanguage("sq", this);
+        }
     }
 }

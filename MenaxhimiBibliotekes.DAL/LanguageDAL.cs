@@ -167,7 +167,7 @@ namespace MenaxhimiBibliotekes.DAL
                         command.Parameters.AddWithValue("LanguageId", obj.LanguageId);
                         command.Parameters.AddWithValue("Language", obj._Language);
                         command.Parameters.AddWithValue("UpdBy", obj.UpdBy);
-
+                        command.Parameters.AddWithValue("IsActive",obj.isActive);
 
 
 
@@ -221,7 +221,7 @@ namespace MenaxhimiBibliotekes.DAL
                 {
                     lang.UpdDate = (DateTime)reader["UpdDate"];
                 }
-
+                lang.isActive = (bool)reader["IsActive"];
                 lang.UpdNo = int.Parse(reader["UpdNo"].ToString());
                 return lang;
             }

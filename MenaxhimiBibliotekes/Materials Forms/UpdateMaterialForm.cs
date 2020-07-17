@@ -97,68 +97,89 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         public void BindDropdownMaterialType(MaterialType first)
         {
 
-            materialtypeBllList = new MaterialTypeBLL();
-            MaterialType mt = new MaterialType();
-            materialtypeList = materialtypeBllList.GetAll();
-
-            foreach (var item in materialtypeList)
+            try
             {
-                if (first.MaterialTypeId == item.MaterialTypeId)
-                {
-                    mt = item;
-                }
-            }
-            materialtypeList.Remove(mt);
+                materialtypeBllList = new MaterialTypeBLL();
+                MaterialType mt = new MaterialType();
+                materialtypeList = materialtypeBllList.GetAll();
 
-            mt = new MaterialType();
-            mt = materialtypeList[0];
-            materialtypeList[0] = first;
-            materialtypeList.Add(mt);
-            comboMaterialType.DataSource = materialtypeList;
-            comboMaterialType.DisplayMember = "_MaterialType";
+                foreach (var item in materialtypeList)
+                {
+                    if (first.MaterialTypeId == item.MaterialTypeId)
+                    {
+                        mt = item;
+                    }
+                }
+                materialtypeList.Remove(mt);
+
+                mt = new MaterialType();
+                mt = materialtypeList[0];
+                materialtypeList[0] = first;
+                materialtypeList.Add(mt);
+                comboMaterialType.DataSource = materialtypeList;
+                comboMaterialType.DisplayMember = "_MaterialType";
+            }
+            catch (Exception)
+            {
+
+            }
         }
         public void BindDrobdownMaterialLocation(Shelf first)
         {
             //Combobox MATERIAL LOCATION fill
 
-            shelfBLLList = new ShelfBLL();
-            Shelf sh = new Shelf();
-            shelfList = shelfBLLList.GetAll();
-            foreach (var item in shelfList)
+            try
             {
-                if (first.ShelfId == item.ShelfId)
+                shelfBLLList = new ShelfBLL();
+                Shelf sh = new Shelf();
+                shelfList = shelfBLLList.GetAll();
+                foreach (var item in shelfList)
                 {
-                    sh = item;
+                    if (first.ShelfId == item.ShelfId)
+                    {
+                        sh = item;
+                    }
                 }
+                shelfList.Remove(sh);
+                sh = new Shelf();
+                sh = shelfList[0];
+                shelfList[0] = first;
+                shelfList.Add(sh);
+                comboMaterialLocation.DataSource = shelfList;
+                comboMaterialLocation.DisplayMember = "Location";
             }
-            shelfList.Remove(sh);
-            sh = new Shelf();
-            sh = shelfList[0];
-            shelfList[0] = first;
-            shelfList.Add(sh);
-            comboMaterialLocation.DataSource = shelfList;
-            comboMaterialLocation.DisplayMember = "Location";
+            catch (Exception)
+            {
+
+            }
         }
 
         public void BindDrobdownLanguage(Language first)
         {
-            languageBllList = new LanguageBLL();
-            Language l = new Language(); 
-            languageList = languageBllList.GetAll();
-            foreach (var item in languageList)
+            try
             {
-                if (first.LanguageId == item.LanguageId)
+                languageBllList = new LanguageBLL();
+                Language l = new Language();
+                languageList = languageBllList.GetAll();
+                foreach (var item in languageList)
                 {
-                    l = item;
+                    if (first.LanguageId == item.LanguageId)
+                    {
+                        l = item;
+                    }
                 }
+                languageList.Remove(l);
+                l = new Language();
+                l = languageList[0];
+                languageList[0] = first;
+                languageList.Add(l);
+                comboLanguage.DataSource = languageList;
+                comboLanguage.DisplayMember = "_Language";
             }
-            languageList.Remove(l);
-             l = new Language();
-            l = languageList[0];
-            languageList[0] = first;
-            languageList.Add(l);
-            comboLanguage.DataSource = languageList;
-            comboLanguage.DisplayMember = "_Language";
+            catch (Exception)
+            {
+
+            }
         }
 
 
@@ -299,22 +320,29 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void comboMaterialLocation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Shelf cml = comboMaterialLocation.SelectedItem as Shelf;
-
-            if (cml.ShelfId == 0)
+            try
             {
-                if (openFormSH)
-                {
-                    openFormMT = false;
-                    MaterialLocation locationForm = new MaterialLocation();
-                    locationForm.ShowDialog();
-                    BindDropdownMaterialType(new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" });
+                Shelf cml = comboMaterialLocation.SelectedItem as Shelf;
 
-                }
-                else
+                if (cml.ShelfId == 0)
                 {
-                    openFormSH = true;
+                    if (openFormSH)
+                    {
+                        openFormMT = false;
+                        MaterialLocation locationForm = new MaterialLocation();
+                        locationForm.ShowDialog();
+                        BindDropdownMaterialType(new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" });
+
+                    }
+                    else
+                    {
+                        openFormSH = true;
+                    }
                 }
+            }
+            catch (Exception)
+            {
+
             }
         }
 

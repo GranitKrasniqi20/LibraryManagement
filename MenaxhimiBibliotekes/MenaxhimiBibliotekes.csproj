@@ -119,6 +119,12 @@
     <Compile Include="Materials Forms\BorrowingsForm.Designer.cs">
       <DependentUpon>BorrowingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials Forms\ChooseLangauge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials Forms\ChooseLangauge.Designer.cs">
+      <DependentUpon>ChooseLangauge.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materials Forms\DeleteMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,12 +136,6 @@
     </Compile>
     <Compile Include="Materials Forms\GenreForm.Designer.cs">
       <DependentUpon>GenreForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Materials Forms\InsertNewGenre.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Materials Forms\InsertNewGenre.Designer.cs">
-      <DependentUpon>InsertNewGenre.cs</DependentUpon>
     </Compile>
     <Compile Include="Materials Forms\InsertNewLanguage.cs">
       <SubType>Form</SubType>
@@ -307,7 +307,13 @@
     <Compile Include="Submenus-User-Controls\ucMembers.Designer.cs">
       <DependentUpon>ucMembers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bill Forms\BillForm.sq.resx">
+      <DependentUpon>BillForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard Forms\DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard Forms\DashboardForm.sq.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard Forms\DashboardTest.resx">
@@ -319,20 +325,38 @@
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.sq.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\AddNewMaterial.resx">
+      <DependentUpon>AddNewMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\AddNewMaterial.sq.resx">
       <DependentUpon>AddNewMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\BorrowingsForm.resx">
       <DependentUpon>BorrowingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\BorrowingsForm.sq.resx">
+      <DependentUpon>BorrowingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\ChooseLangauge.resx">
+      <DependentUpon>ChooseLangauge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\ChooseLangauge.sq.resx">
+      <DependentUpon>ChooseLangauge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\DeleteMaterialForm.resx">
+      <DependentUpon>DeleteMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\DeleteMaterialForm.sq.resx">
       <DependentUpon>DeleteMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\GenreForm.resx">
       <DependentUpon>GenreForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Materials Forms\InsertNewGenre.resx">
-      <DependentUpon>InsertNewGenre.cs</DependentUpon>
+    <EmbeddedResource Include="Materials Forms\GenreForm.sq.resx">
+      <DependentUpon>GenreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\InsertNewLanguage.resx">
       <DependentUpon>InsertNewLanguage.cs</DependentUpon>
@@ -343,19 +367,37 @@
     <EmbeddedResource Include="Materials Forms\LanguageForm.resx">
       <DependentUpon>LanguageForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\LanguageForm.sq.resx">
+      <DependentUpon>LanguageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\MaterialLocation.resx">
+      <DependentUpon>MaterialLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\MaterialLocation.sq.resx">
       <DependentUpon>MaterialLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\MaterialsForm.resx">
       <DependentUpon>MaterialsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\MaterialsForm.sq.resx">
+      <DependentUpon>MaterialsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\MaterialTypeForm.resx">
+      <DependentUpon>MaterialTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\MaterialTypeForm.sq.resx">
       <DependentUpon>MaterialTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\ReservationsForm.resx">
       <DependentUpon>ReservationsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\ReservationsForm.sq.resx">
+      <DependentUpon>ReservationsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\ReturningsForm.resx">
+      <DependentUpon>ReturningsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\ReturningsForm.sq.resx">
       <DependentUpon>ReturningsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials Forms\SpecificMaterialForm.resx">
@@ -367,19 +409,34 @@
     <EmbeddedResource Include="Materials Forms\UpdateMaterialForm.resx">
       <DependentUpon>UpdateMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials Forms\UpdateMaterialForm.sq.resx">
+      <DependentUpon>UpdateMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Members Forms\AddMemberForm.resx">
       <DependentUpon>AddMemberForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bill Forms\BillForm.resx">
       <DependentUpon>BillForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Members Forms\AddMemberForm.sq.resx">
+      <DependentUpon>AddMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Members Forms\BillingAddMember.resx">
+      <DependentUpon>BillingAddMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members Forms\BillingAddMember.sq.resx">
       <DependentUpon>BillingAddMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Members Forms\DeleteMemberForm.resx">
       <DependentUpon>DeleteMemberForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Members Forms\DeleteMemberForm.sq.resx">
+      <DependentUpon>DeleteMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Members Forms\MembersForm.resx">
+      <DependentUpon>MembersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members Forms\MembersForm.sq.resx">
       <DependentUpon>MembersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Members Forms\SpecificMemberForm.resx">
@@ -388,7 +445,13 @@
     <EmbeddedResource Include="Members Forms\UpdateMemberForm.resx">
       <DependentUpon>UpdateMemberForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Members Forms\UpdateMemberForm.sq.resx">
+      <DependentUpon>UpdateMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Notifications Forms\NotificationsForm.resx">
+      <DependentUpon>NotificationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications Forms\NotificationsForm.sq.resx">
       <DependentUpon>NotificationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Notifications Forms\SpecifiedNotificationUC.resx">
@@ -411,13 +474,25 @@
     <EmbeddedResource Include="Settings Forms\EditMyProfile.resx">
       <DependentUpon>EditMyProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Settings Forms\EditMyProfile.sq.resx">
+      <DependentUpon>EditMyProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings Forms\ManageUserAccountsForm.resx">
+      <DependentUpon>ManageUserAccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings Forms\ManageUserAccountsForm.sq.resx">
       <DependentUpon>ManageUserAccountsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings Forms\MyProfileForm.resx">
       <DependentUpon>MyProfileForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Settings Forms\MyProfileForm.sq.resx">
+      <DependentUpon>MyProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings Forms\SettingsForm.sq.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Submenus-User-Controls\ucDashboard.resx">
