@@ -57,6 +57,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -537,6 +538,7 @@
     <None Include="LibraryManagementDataSet2.xss">
       <DependentUpon>LibraryManagementDataSet2.xsd</DependentUpon>
     </None>
+    <None Include="Materials Forms\HelperMenaxhimiBibliotekes.chm" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -565,10 +567,12 @@
     <Content Include="brand\helping-icons\edit-small.png" />
     <Content Include="brand\helping-icons\notificationsMaterials.png" />
     <Content Include="brand\helping-icons\notificationsSubscribers.png" />
+    <Content Include="brand\helping-icons\pikpytja2.png" />
     <Content Include="brand\helping-icons\thisLogout.png" />
     <Content Include="brand\helping-icons\thisUser.png" />
     <Content Include="brand\helping-icons\ucLogo.png" />
     <Content Include="brand\icons\dashboard.png" />
+    <Content Include="brand\icons\pikpytje.jpg" />
     <Content Include="brand\icons\thisDashboard.png" />
     <Content Include="brand\icons\thisMaterials.png" />
     <Content Include="brand\icons\thisMembers.png" />

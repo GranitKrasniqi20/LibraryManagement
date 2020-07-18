@@ -102,6 +102,7 @@
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.subscribersTableAdapter = new MenaxhimiBibliotekes.LibraryManagementDataSetTableAdapters.SubscribersTableAdapter();
             this.subscribersTableAdapter1 = new MenaxhimiBibliotekes.LibraryManagementDataSet1TableAdapters.SubscribersTableAdapter();
+            this.btnMemberHelp = new System.Windows.Forms.Button();
             this.panelFullBody.SuspendLayout();
             this.tabControlMembersForm.SuspendLayout();
             this.tabMainPage.SuspendLayout();
@@ -588,6 +589,7 @@
             // 
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnMemberHelp);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.picTitle);
             this.panel1.Name = "panel1";
@@ -610,6 +612,7 @@
             resources.ApplyResources(this.tableHeader, "tableHeader");
             this.tableHeader.Controls.Add(this.panel1, 1, 0);
             this.tableHeader.Name = "tableHeader";
+            this.tableHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.tableHeader_Paint);
             // 
             // subscribersTableAdapter
             // 
@@ -618,6 +621,13 @@
             // subscribersTableAdapter1
             // 
             this.subscribersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // btnMemberHelp
+            // 
+            resources.ApplyResources(this.btnMemberHelp, "btnMemberHelp");
+            this.btnMemberHelp.Name = "btnMemberHelp";
+            this.btnMemberHelp.UseVisualStyleBackColor = true;
+            this.btnMemberHelp.Click += new System.EventHandler(this.btnMemberHelp_Click);
             // 
             // MembersForm
             // 
@@ -736,5 +746,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRegistrationDate;
         private DevExpress.XtraGrid.Columns.GridColumn colBillExpirationDate;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
+        private System.Windows.Forms.Button btnMemberHelp;
     }
 }
