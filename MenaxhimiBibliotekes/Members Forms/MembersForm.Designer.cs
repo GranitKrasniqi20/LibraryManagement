@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MembersForm));
             this.panelFullBody = new System.Windows.Forms.Panel();
             this.tabControlMembersForm = new System.Windows.Forms.TabControl();
@@ -92,17 +91,17 @@
             this.tableSpaceInfoBills = new System.Windows.Forms.TableLayoutPanel();
             this.lblInfoBills = new System.Windows.Forms.Label();
             this.tableSpace4 = new System.Windows.Forms.TableLayoutPanel();
-            this.subscribersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.subscribersBindingSource1 = new System.Windows.Forms.BindingSource();
             this.libraryManagementDataSet1 = new MenaxhimiBibliotekes.LibraryManagementDataSet1();
-            this.subscribersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.subscribersBindingSource = new System.Windows.Forms.BindingSource();
             this.libraryManagementDataSet = new MenaxhimiBibliotekes.LibraryManagementDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMemberHelp = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.subscribersTableAdapter = new MenaxhimiBibliotekes.LibraryManagementDataSetTableAdapters.SubscribersTableAdapter();
             this.subscribersTableAdapter1 = new MenaxhimiBibliotekes.LibraryManagementDataSet1TableAdapters.SubscribersTableAdapter();
-            this.btnMemberHelp = new System.Windows.Forms.Button();
             this.panelFullBody.SuspendLayout();
             this.tabControlMembersForm.SuspendLayout();
             this.tabMainPage.SuspendLayout();
@@ -594,6 +593,13 @@
             this.panel1.Controls.Add(this.picTitle);
             this.panel1.Name = "panel1";
             // 
+            // btnMemberHelp
+            // 
+            resources.ApplyResources(this.btnMemberHelp, "btnMemberHelp");
+            this.btnMemberHelp.Name = "btnMemberHelp";
+            this.btnMemberHelp.UseVisualStyleBackColor = true;
+            this.btnMemberHelp.Click += new System.EventHandler(this.btnMemberHelp_Click);
+            // 
             // lblTitle
             // 
             resources.ApplyResources(this.lblTitle, "lblTitle");
@@ -621,13 +627,6 @@
             // subscribersTableAdapter1
             // 
             this.subscribersTableAdapter1.ClearBeforeFill = true;
-            // 
-            // btnMemberHelp
-            // 
-            resources.ApplyResources(this.btnMemberHelp, "btnMemberHelp");
-            this.btnMemberHelp.Name = "btnMemberHelp";
-            this.btnMemberHelp.UseVisualStyleBackColor = true;
-            this.btnMemberHelp.Click += new System.EventHandler(this.btnMemberHelp_Click);
             // 
             // MembersForm
             // 

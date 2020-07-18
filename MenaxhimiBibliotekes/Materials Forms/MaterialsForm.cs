@@ -312,7 +312,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         public static void GetHelpProvider(Form frm, string topic)
         {
-            Help.ShowHelp(frm, @"C:\Program Files (x86)\MenaxhimiBiblotekes\HelperMenaxhimiBibliotekes.chm", HelpNavigator.Topic, topic);
+            Help.ShowHelp(frm, @"C:\Program Files (x86)\MenaxhimiBibliotekes\HelperMenaxhimiBibliotekes.chm", HelpNavigator.Topic, topic);
 
         }
     }

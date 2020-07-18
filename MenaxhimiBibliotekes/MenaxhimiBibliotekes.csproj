@@ -582,6 +582,7 @@
     <Content Include="brand\logo\full-logo.png" />
     <Content Include="brand\logo\logo-icon.png" />
     <Content Include="brand\logo\logo-name.png" />
+    <None Include="Resources\pikpytja2.png" />
     <None Include="Resources\notificationsSubscribers.png" />
     <None Include="Resources\notificationsMaterials.png" />
   </ItemGroup>

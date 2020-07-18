@@ -1,0 +1,4 @@
+Parakushtet e perdorimit:
+
+1. Duhet te jete i instaluar .net framwork 4.5
+2. Duhet te jete administrator i sistemit jo user i thjeshte
