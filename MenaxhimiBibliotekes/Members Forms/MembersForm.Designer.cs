@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MembersForm));
             this.panelFullBody = new System.Windows.Forms.Panel();
             this.tabControlMembersForm = new System.Windows.Forms.TabControl();
@@ -91,9 +92,9 @@
             this.tableSpaceInfoBills = new System.Windows.Forms.TableLayoutPanel();
             this.lblInfoBills = new System.Windows.Forms.Label();
             this.tableSpace4 = new System.Windows.Forms.TableLayoutPanel();
-            this.subscribersBindingSource1 = new System.Windows.Forms.BindingSource();
+            this.subscribersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.libraryManagementDataSet1 = new MenaxhimiBibliotekes.LibraryManagementDataSet1();
-            this.subscribersBindingSource = new System.Windows.Forms.BindingSource();
+            this.subscribersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryManagementDataSet = new MenaxhimiBibliotekes.LibraryManagementDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMemberHelp = new System.Windows.Forms.Button();
@@ -164,6 +165,7 @@
             // gridMembers
             // 
             resources.ApplyResources(this.gridMembers, "gridMembers");
+            this.gridMembers.EmbeddedNavigator.Margin = ((System.Windows.Forms.Padding)(resources.GetObject("gridMembers.EmbeddedNavigator.Margin")));
             this.gridMembers.MainView = this.gridView1;
             this.gridMembers.Name = "gridMembers";
             this.gridMembers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -185,6 +187,8 @@
             this.gridColumn10,
             this.gridColumn11,
             this.gridColumn12});
+            this.gridView1.DetailHeight = 673;
+            this.gridView1.FixedLineWidth = 4;
             this.gridView1.GridControl = this.gridMembers;
             this.gridView1.Name = "gridView1";
             // 
@@ -192,72 +196,84 @@
             // 
             resources.ApplyResources(this.gridColumn1, "gridColumn1");
             this.gridColumn1.FieldName = "SubscriberId";
+            this.gridColumn1.MinWidth = 40;
             this.gridColumn1.Name = "gridColumn1";
             // 
             // gridColumn2
             // 
             resources.ApplyResources(this.gridColumn2, "gridColumn2");
             this.gridColumn2.FieldName = "Name";
+            this.gridColumn2.MinWidth = 40;
             this.gridColumn2.Name = "gridColumn2";
             // 
             // gridColumn3
             // 
             resources.ApplyResources(this.gridColumn3, "gridColumn3");
             this.gridColumn3.FieldName = "LastName";
+            this.gridColumn3.MinWidth = 40;
             this.gridColumn3.Name = "gridColumn3";
             // 
             // gridColumn4
             // 
             resources.ApplyResources(this.gridColumn4, "gridColumn4");
             this.gridColumn4.FieldName = "Address";
+            this.gridColumn4.MinWidth = 40;
             this.gridColumn4.Name = "gridColumn4";
             // 
             // gridColumn5
             // 
             resources.ApplyResources(this.gridColumn5, "gridColumn5");
             this.gridColumn5.FieldName = "Birthday";
+            this.gridColumn5.MinWidth = 40;
             this.gridColumn5.Name = "gridColumn5";
             // 
             // gridColumn6
             // 
             resources.ApplyResources(this.gridColumn6, "gridColumn6");
             this.gridColumn6.FieldName = "PersonalNo";
+            this.gridColumn6.MinWidth = 40;
             this.gridColumn6.Name = "gridColumn6";
             // 
             // gridColumn7
             // 
             resources.ApplyResources(this.gridColumn7, "gridColumn7");
             this.gridColumn7.FieldName = "PhoneNo";
+            this.gridColumn7.MinWidth = 40;
             this.gridColumn7.Name = "gridColumn7";
             // 
             // gridColumn8
             // 
             resources.ApplyResources(this.gridColumn8, "gridColumn8");
             this.gridColumn8.FieldName = "Email";
+            this.gridColumn8.MinWidth = 40;
             this.gridColumn8.Name = "gridColumn8";
             // 
             // gridColumn9
             // 
             resources.ApplyResources(this.gridColumn9, "gridColumn9");
             this.gridColumn9.FieldName = "Gender";
+            this.gridColumn9.MinWidth = 40;
             this.gridColumn9.Name = "gridColumn9";
             // 
             // gridColumn10
             // 
             resources.ApplyResources(this.gridColumn10, "gridColumn10");
             this.gridColumn10.FieldName = "InsDate";
+            this.gridColumn10.MinWidth = 40;
             this.gridColumn10.Name = "gridColumn10";
             // 
             // gridColumn11
             // 
             resources.ApplyResources(this.gridColumn11, "gridColumn11");
             this.gridColumn11.FieldName = "ExpirationDate";
+            this.gridColumn11.MinWidth = 40;
             this.gridColumn11.Name = "gridColumn11";
             // 
             // gridColumn12
             // 
             resources.ApplyResources(this.gridColumn12, "gridColumn12");
             this.gridColumn12.FieldName = "IsActive";
+            this.gridColumn12.MinWidth = 40;
             this.gridColumn12.Name = "gridColumn12";
             // 
             // gridView
@@ -274,6 +290,8 @@
             this.colGender,
             this.colInsDate,
             this.colExpirationDate});
+            this.gridView.DetailHeight = 673;
+            this.gridView.FixedLineWidth = 4;
             this.gridView.GridControl = this.gridMembers;
             this.gridView.Name = "gridView";
             // 
@@ -281,66 +299,77 @@
             // 
             resources.ApplyResources(this.colID, "colID");
             this.colID.FieldName = "SubscriberId";
+            this.colID.MinWidth = 40;
             this.colID.Name = "colID";
             // 
             // colName
             // 
             resources.ApplyResources(this.colName, "colName");
             this.colName.FieldName = "Name";
+            this.colName.MinWidth = 40;
             this.colName.Name = "colName";
             // 
             // colLastName
             // 
             resources.ApplyResources(this.colLastName, "colLastName");
             this.colLastName.FieldName = "LastName";
+            this.colLastName.MinWidth = 40;
             this.colLastName.Name = "colLastName";
             // 
             // colAddress
             // 
             resources.ApplyResources(this.colAddress, "colAddress");
             this.colAddress.FieldName = "Address";
+            this.colAddress.MinWidth = 40;
             this.colAddress.Name = "colAddress";
             // 
             // colBirthday
             // 
             resources.ApplyResources(this.colBirthday, "colBirthday");
             this.colBirthday.FieldName = "Birthday";
+            this.colBirthday.MinWidth = 40;
             this.colBirthday.Name = "colBirthday";
             // 
             // colPersonalNo
             // 
             resources.ApplyResources(this.colPersonalNo, "colPersonalNo");
             this.colPersonalNo.FieldName = "PersonalNo";
+            this.colPersonalNo.MinWidth = 40;
             this.colPersonalNo.Name = "colPersonalNo";
             // 
             // colPhoneNo
             // 
             resources.ApplyResources(this.colPhoneNo, "colPhoneNo");
             this.colPhoneNo.FieldName = "PhoneNo";
+            this.colPhoneNo.MinWidth = 40;
             this.colPhoneNo.Name = "colPhoneNo";
             // 
             // colEmail
             // 
             resources.ApplyResources(this.colEmail, "colEmail");
             this.colEmail.FieldName = "Email";
+            this.colEmail.MinWidth = 40;
             this.colEmail.Name = "colEmail";
             // 
             // colGender
             // 
             resources.ApplyResources(this.colGender, "colGender");
             this.colGender.FieldName = "Gender";
+            this.colGender.MinWidth = 40;
             this.colGender.Name = "colGender";
             // 
             // colInsDate
             // 
             resources.ApplyResources(this.colInsDate, "colInsDate");
             this.colInsDate.FieldName = "InsDate";
+            this.colInsDate.MinWidth = 40;
             this.colInsDate.Name = "colInsDate";
             // 
             // colExpirationDate
             // 
             resources.ApplyResources(this.colExpirationDate, "colExpirationDate");
             this.colExpirationDate.FieldName = "ExpirationDate";
+            this.colExpirationDate.MinWidth = 40;
             this.colExpirationDate.Name = "colExpirationDate";
             // 
             // tableBottomSpace
@@ -456,6 +485,7 @@
             // gridBills
             // 
             resources.ApplyResources(this.gridBills, "gridBills");
+            this.gridBills.EmbeddedNavigator.Margin = ((System.Windows.Forms.Padding)(resources.GetObject("gridBills.EmbeddedNavigator.Margin")));
             this.gridBills.MainView = this.gridViewBills;
             this.gridBills.Name = "gridBills";
             this.gridBills.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -471,6 +501,8 @@
             this.colRegistrationDate,
             this.colBillExpirationDate,
             this.colDescription});
+            this.gridViewBills.DetailHeight = 673;
+            this.gridViewBills.FixedLineWidth = 4;
             this.gridViewBills.GridControl = this.gridBills;
             this.gridViewBills.Name = "gridViewBills";
             // 
@@ -478,42 +510,49 @@
             // 
             resources.ApplyResources(this.colBillId, "colBillId");
             this.colBillId.FieldName = "BillId";
+            this.colBillId.MinWidth = 40;
             this.colBillId.Name = "colBillId";
             // 
             // colSubscriberId
             // 
             resources.ApplyResources(this.colSubscriberId, "colSubscriberId");
             this.colSubscriberId.FieldName = "SubscriberId";
+            this.colSubscriberId.MinWidth = 40;
             this.colSubscriberId.Name = "colSubscriberId";
             // 
             // colBillingDate
             // 
             resources.ApplyResources(this.colBillingDate, "colBillingDate");
             this.colBillingDate.FieldName = "BillingDate";
+            this.colBillingDate.MinWidth = 40;
             this.colBillingDate.Name = "colBillingDate";
             // 
             // colPrice
             // 
             resources.ApplyResources(this.colPrice, "colPrice");
             this.colPrice.FieldName = "Price";
+            this.colPrice.MinWidth = 40;
             this.colPrice.Name = "colPrice";
             // 
             // colRegistrationDate
             // 
             resources.ApplyResources(this.colRegistrationDate, "colRegistrationDate");
             this.colRegistrationDate.FieldName = "RegistrationDate";
+            this.colRegistrationDate.MinWidth = 40;
             this.colRegistrationDate.Name = "colRegistrationDate";
             // 
             // colBillExpirationDate
             // 
             resources.ApplyResources(this.colBillExpirationDate, "colBillExpirationDate");
             this.colBillExpirationDate.FieldName = "ExpirationDate";
+            this.colBillExpirationDate.MinWidth = 40;
             this.colBillExpirationDate.Name = "colBillExpirationDate";
             // 
             // colDescription
             // 
             resources.ApplyResources(this.colDescription, "colDescription");
             this.colDescription.FieldName = "Description";
+            this.colDescription.MinWidth = 40;
             this.colDescription.Name = "colDescription";
             // 
             // tableBottom3

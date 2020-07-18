@@ -111,7 +111,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
         private void btnMemberHelp_Click(object sender, EventArgs e)
         {
-            //MaterialsForm.GetHelpProvider(this, "Members.htm");
+            MaterialsForm.GetHelpProvider(this, "Members.htm");
         }
 
         
