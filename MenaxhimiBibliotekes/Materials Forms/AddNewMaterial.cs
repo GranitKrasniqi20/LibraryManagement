@@ -132,14 +132,17 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 else
                 {
                     shelfList = new List<Shelf>();
+                    shelfList.Add(  new Shelf() { ShelfId = 0, Location = "Other" });
                     comboMaterialLocation.DataSource = shelfList;
                     comboMaterialLocation.DisplayMember = "Location";
-                    shelfList.Add(  new Shelf() { ShelfId = 0, Location = "Other" });
                 }
             }
             catch (Exception)
             {
-
+                shelfList = new List<Shelf>();
+                shelfList.Add(new Shelf() { ShelfId = 0, Location = "Other" });
+                comboMaterialLocation.DataSource = shelfList;
+                comboMaterialLocation.DisplayMember = "Location";
             }
            
         }

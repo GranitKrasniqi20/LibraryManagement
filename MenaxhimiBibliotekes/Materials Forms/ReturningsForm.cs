@@ -141,5 +141,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         {
             BLL.ChooseLanguage<ReturningsForm>.ChangeLanguage("sq", this);
         }
+
+        private void TableLayoutPanel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
