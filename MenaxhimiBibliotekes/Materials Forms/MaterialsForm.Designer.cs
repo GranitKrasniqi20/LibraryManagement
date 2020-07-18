@@ -449,7 +449,7 @@
             this.colPublishYear,
             this.colAvailableCoppies,
             this.colNumberOfPages});
-            this.gridView.CustomizationFormBounds = new System.Drawing.Rectangle(1340, 286, 260, 232);
+            this.gridView.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 286, 260, 232);
             this.gridView.GridControl = this.gridMaterials;
             this.gridView.Name = "gridView";
             // 
@@ -729,10 +729,7 @@
             this.panel1.Controls.Add(this.btnMaterialHelp);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.picTitle);
-            this.helpProvider1.SetHelpNavigator(this.panel1, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("panel1.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.panel1, resources.GetString("panel1.HelpString"));
             this.panel1.Name = "panel1";
-            this.helpProvider1.SetShowHelp(this.panel1, ((bool)(resources.GetObject("panel1.ShowHelp"))));
             // 
             // btnMaterialHelp
             // 
@@ -790,7 +787,10 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.tableHeader);
             this.HelpButton = true;
+            this.helpProvider1.SetHelpNavigator(this, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("$this.HelpNavigator"))));
+            this.helpProvider1.SetHelpString(this, resources.GetString("$this.HelpString"));
             this.Name = "MaterialsForm";
+            this.helpProvider1.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MaterialsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).EndInit();

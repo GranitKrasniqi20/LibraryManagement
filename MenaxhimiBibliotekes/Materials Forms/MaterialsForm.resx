@@ -3077,6 +3077,18 @@
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="&gt;&gt;btnMaterialHelp.Name" xml:space="preserve">
+    <value>btnMaterialHelp</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;lblTitle.Name" xml:space="preserve">
     <value>lblTitle</value>
   </data>
@@ -3087,7 +3099,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;picTitle.Name" xml:space="preserve">
     <value>picTitle</value>
@@ -3099,7 +3111,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;picTitle.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 3</value>
@@ -3120,6 +3132,27 @@
     <value>tableHeader</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnMaterialHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnMaterialHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnMaterialHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.Name" xml:space="preserve">
+    <value>btnMaterialHelp</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
@@ -3150,7 +3183,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="picTitle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4475,7 +4508,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;picTitle.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="col.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4525,6 +4558,12 @@
   <data name="gridColumn1.Width" type="System.Int32, mscorlib">
     <value>84</value>
   </data>
+  <metadata name="helpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="helpProvider1.HelpNamespace" xml:space="preserve">
+    <value>C:\Users\ET\Desktop\MenaxhimiBibliotekes\MenaxhimiBibliotekes\Materials Forms\HelperMenaxhimiBibliotekes.chm</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -4534,8 +4573,17 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>740, 617</value>
   </data>
+  <data name="$this.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>Topic</value>
+  </data>
+  <data name="$this.HelpString" xml:space="preserve">
+    <value>Materials</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>756, 656</value>
+  </data>
+  <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -4818,6 +4866,12 @@
   </data>
   <data name="&gt;&gt;gridColumn1.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;helpProvider1.Name" xml:space="preserve">
+    <value>helpProvider1</value>
+  </data>
+  <data name="&gt;&gt;helpProvider1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MaterialsForm</value>

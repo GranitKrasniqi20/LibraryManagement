@@ -35,6 +35,9 @@
             this.btnMaterials = new System.Windows.Forms.Button();
             this.btnMembers = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.panelUser = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnLoggedUser = new System.Windows.Forms.Button();
             this.appLogo = new System.Windows.Forms.PictureBox();
             this.appName = new System.Windows.Forms.PictureBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -54,14 +57,11 @@
             this.alterGenresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterLanguagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelUser = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnLoggedUser = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
+            this.panelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appName)).BeginInit();
             this.menuStrip.SuspendLayout();
-            this.panelUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -126,6 +126,33 @@
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // panelUser
+            // 
+            this.panelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.panelUser.Controls.Add(this.btnLogout);
+            this.panelUser.Controls.Add(this.btnLoggedUser);
+            resources.ApplyResources(this.panelUser, "panelUser");
+            this.panelUser.Name = "panelUser";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnLogout, "btnLogout");
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnLoggedUser
+            // 
+            this.btnLoggedUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.btnLoggedUser.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnLoggedUser, "btnLoggedUser");
+            this.btnLoggedUser.ForeColor = System.Drawing.Color.White;
+            this.btnLoggedUser.Name = "btnLoggedUser";
+            this.btnLoggedUser.UseVisualStyleBackColor = false;
+            this.btnLoggedUser.Click += new System.EventHandler(this.btnLoggedUser_Click);
             // 
             // appLogo
             // 
@@ -259,33 +286,7 @@
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
-            // 
-            // panelUser
-            // 
-            this.panelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.panelUser.Controls.Add(this.btnLogout);
-            this.panelUser.Controls.Add(this.btnLoggedUser);
-            resources.ApplyResources(this.panelUser, "panelUser");
-            this.panelUser.Name = "panelUser";
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnLogout, "btnLogout");
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // btnLoggedUser
-            // 
-            this.btnLoggedUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.btnLoggedUser.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnLoggedUser, "btnLoggedUser");
-            this.btnLoggedUser.ForeColor = System.Drawing.Color.White;
-            this.btnLoggedUser.Name = "btnLoggedUser";
-            this.btnLoggedUser.UseVisualStyleBackColor = false;
-            this.btnLoggedUser.Click += new System.EventHandler(this.btnLoggedUser_Click);
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.HelpToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -302,11 +303,11 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.mainForm_Shown);
             this.panelMenu.ResumeLayout(false);
+            this.panelUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appName)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.panelUser.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
