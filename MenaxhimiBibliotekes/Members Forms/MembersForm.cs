@@ -1,5 +1,6 @@
 ﻿using MenaxhimiBibliotekes.BLL;
 using MenaxhimiBibliotekes.BO;
+using MenaxhimiBibliotekes.Materials_Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -102,5 +103,17 @@ namespace MenaxhimiBibliotekes.Members_Forms
                 gridBills.DataSource = billBLL.GetAll().Where(x => x.BillId == int.Parse(txtSearchBills.Text));
             }
         }
+
+        private void tableHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnMemberHelp_Click(object sender, EventArgs e)
+        {
+            MaterialsForm.GetHelpProvider(this, "Members.htm");
+        }
+
+        
     }
 }

@@ -303,8 +303,16 @@ namespace MenaxhimiBibliotekes.Materials_Forms
         //    gridColumn31.Caption = "Data Rezervimit";
         //}
 
-        private void TableDataGridView_Paint(object sender, PaintEventArgs e)
+
+        //HelperGG
+        private void btnMaterialHelp_Click(object sender, EventArgs e)
         {
+            GetHelpProvider(this, "Materials.htm");
+        }
+
+        public static void GetHelpProvider(Form frm, string topic)
+        {
+            Help.ShowHelp(frm, "HelperMenaxhimiBibliotekes.chm", HelpNavigator.Topic, topic);
 
         }
     }

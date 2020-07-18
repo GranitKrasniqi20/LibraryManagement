@@ -105,6 +105,7 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMaterialHelp = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.col = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -112,6 +113,7 @@
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
             this.gridSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridBorrowings)).BeginInit();
@@ -416,7 +418,6 @@
             resources.ApplyResources(this.tableDataGridView, "tableDataGridView");
             this.tableDataGridView.Controls.Add(this.gridMaterials, 1, 0);
             this.tableDataGridView.Name = "tableDataGridView";
-            this.tableDataGridView.Paint += new System.Windows.Forms.PaintEventHandler(this.TableDataGridView_Paint);
             // 
             // gridMaterials
             // 
@@ -448,7 +449,7 @@
             this.colPublishYear,
             this.colAvailableCoppies,
             this.colNumberOfPages});
-            this.gridView.CustomizationFormBounds = new System.Drawing.Rectangle(1894, 286, 260, 232);
+            this.gridView.CustomizationFormBounds = new System.Drawing.Rectangle(1340, 286, 260, 232);
             this.gridView.GridControl = this.gridMaterials;
             this.gridView.Name = "gridView";
             // 
@@ -725,9 +726,20 @@
             // 
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnMaterialHelp);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.picTitle);
+            this.helpProvider1.SetHelpNavigator(this.panel1, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("panel1.HelpNavigator"))));
+            this.helpProvider1.SetHelpString(this.panel1, resources.GetString("panel1.HelpString"));
             this.panel1.Name = "panel1";
+            this.helpProvider1.SetShowHelp(this.panel1, ((bool)(resources.GetObject("panel1.ShowHelp"))));
+            // 
+            // btnMaterialHelp
+            // 
+            resources.ApplyResources(this.btnMaterialHelp, "btnMaterialHelp");
+            this.btnMaterialHelp.Name = "btnMaterialHelp";
+            this.btnMaterialHelp.UseVisualStyleBackColor = true;
+            this.btnMaterialHelp.Click += new System.EventHandler(this.btnMaterialHelp_Click);
             // 
             // lblTitle
             // 
@@ -766,6 +778,10 @@
             resources.ApplyResources(this.gridColumn1, "gridColumn1");
             this.gridColumn1.FieldName = "_material._MaterialType._MaterialType";
             this.gridColumn1.Name = "gridColumn1";
+            // 
+            // helpProvider1
+            // 
+            resources.ApplyResources(this.helpProvider1, "helpProvider1");
             // 
             // MaterialsForm
             // 
@@ -891,5 +907,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private System.Windows.Forms.Button btnMaterialHelp;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
