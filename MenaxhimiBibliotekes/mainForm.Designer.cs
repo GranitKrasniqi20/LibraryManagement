@@ -286,7 +286,7 @@
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.HelpToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -317,14 +317,11 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.PictureBox appLogo;
         private System.Windows.Forms.PictureBox appName;
-        private System.Windows.Forms.Panel panelUser;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnNotifications;
         private System.Windows.Forms.Button btnMaterials;
         private System.Windows.Forms.Button btnMembers;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnLoggedUser;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openMyProfileToolStripMenuItem;
@@ -342,6 +339,9 @@
         private System.Windows.Forms.ToolStripMenuItem alterGenresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterLanguagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Panel panelUser;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnLoggedUser;
     }
 }
 

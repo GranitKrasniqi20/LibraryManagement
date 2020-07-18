@@ -35,15 +35,91 @@ namespace MenaxhimiBibliotekes.BLL
                     }
                 }
 
+               else if (control.GetType() == typeof(Panel))
+                {
+                    foreach (Control co in ((Panel)control).Controls)
+                    {
+
+                        string text = resource.GetString(co.Name + ".Text", c1);
+                        if (text != null)
+                        {
+                            co.Text = text;
+                        }
+
+                        if (co.GetType() == typeof(Panel))
+                        {
+                            foreach (Control control1 in ((Panel)co).Controls)
+                            {
+
+                                text = resource.GetString(control1.Name + ".Text", c1);
+                                if (text != null)
+                                {
+                                    control1.Text = text;
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+
+
+
+                else if (control.GetType() == typeof(MenuStrip))
+                {
+                    foreach (ToolStripMenuItem item in ((MenuStrip)control).Items)
+                    {
+                        string text = resource.GetString(item.Name + ".Text", c1);
+                        if (text != null)
+                        {
+                            item.Text = text;
+                        }
+
+                        foreach (ToolStripMenuItem child in item.DropDownItems)
+                        {
+                             text = resource.GetString(child.Name + ".Text", c1);
+                            if (text != null)
+                            {
+                                child.Text = text;
+                            }
+                        }
+
+
+                    }
+                }
+
+                else if (control.GetType() == typeof(TableLayoutPanel))
+                {
+                    foreach (Control item in ((TableLayoutPanel)control).Controls)
+                    {
+                        string text;
+                        if (item.GetType() == typeof(Panel))
+                        {
+                            foreach (Control control1 in ((Panel)item).Controls)
+                            {
+
+                                text = resource.GetString(control1.Name + ".Text", c1);
+                                if (text != null)
+                                {
+                                    control1.Text = text;
+                                }
+
+                            }
+                        }
+
+                        else
+                        {
+                             text = resource.GetString(item.Name + ".Text", c1);
+                            if (text != null)
+                            {
+                                item.Text = text;
+                            }
+                        }
+                    }
+                }
+
+
             }
-
-
-
-
-
-
-
-
         }
 
     }
@@ -51,5 +127,16 @@ namespace MenaxhimiBibliotekes.BLL
 
 
 
-    
+
+
+
+
+
+
 }
+
+
+
+
+    
+

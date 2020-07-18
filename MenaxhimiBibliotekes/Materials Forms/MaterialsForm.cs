@@ -1,7 +1,9 @@
-﻿using DevExpress.XtraWaitForm;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraWaitForm;
 using MenaxhimiBibliotekes.BLL;
 using MenaxhimiBibliotekes.BO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,17 +41,48 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             add.ShowDialog();
         }
 
+
+
+
         private void btnUpdateMaterial_Click(object sender, EventArgs e)
         {
-            UpdateMaterialForm update = new UpdateMaterialForm();
+            UpdateMaterialForm update;
+            //int[] selRows = gridView.GetSelectedRows();
+
+            //if (selRows.Length > 0)
+            //{
+            //    Material selRow = (Material)(((GridView)gridMaterials.MainView).GetRow(selRows[0]));
+            //     update = new UpdateMaterialForm(selRow);
+            //}
+            //else
+            //{
+                update = new UpdateMaterialForm();
+            //}
+          
+
             update.ShowDialog();
         }
 
         private void btnDeleteMaterial_Click(object sender, EventArgs e)
         {
-            DeleteMaterialForm delete = new DeleteMaterialForm();
+            DeleteMaterialForm delete;
+
+            //int[] selRows = gridView.GetSelectedRows();
+            //if (selRows.Length >0)
+            //{
+            //    Material selRow = (Material)(((GridView)gridMaterials.MainView).GetRow(selRows[0]));
+
+            //     delete = new DeleteMaterialForm(selRow);
+            //}
+            //else
+            //{
+               delete = new DeleteMaterialForm();
+            //}
+
             delete.ShowDialog();
         }
+
+
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -125,7 +158,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 if (comboChoseGrid.SelectedItem.ToString() == "Borrowings")
                 {
                     gridBorrowings.MainView = gridView3;
-                    BorrowingsLanguageChange();
+                    //BorrowingsLanguageChange();
 
                     if (txtBorrowings.Text == string.Empty)
                     {
@@ -162,7 +195,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     res = new ReservationBLL();
                     gridBorrowings.MainView = gridView1;
 
-                    ReservationLanguageChange();
+                    //ReservationLanguageChange();
                     if (txtBorrowings.Text == string.Empty)
                     {
 
@@ -209,66 +242,66 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void MaterialsForm_Load(object sender, EventArgs e)
         {
-            if (Thread.CurrentThread.CurrentCulture.Name== "sq")
-            {
-                btnAddMaterial.Text = "Shto Material";
-                btnUpdateMaterial.Text = "Perditso Material";
-                btnDeleteMaterial.Text = "Fshij Material";
-                btnSearchMaterial.Text = "Kerko";
-                colTitle.Caption = "Titulli";
-                btnReservations.Text = "Rezervimet";
-                btnBorrowings.Text = "Huazimet";
-                btnReturns.Text = "Kthimet";
-                button4.Text = "Kerko";
-                colMaterialType.Caption = "Lloji materialit";
-                colGenre.Caption = "Zhanri";
-                colLanguage.Caption = "Gjuha";
-                colPublishHouse.Caption = "Shtepia Botuese";
-                colPublishYear.Caption = "Viti i publikimit";
-                colAvailableCoppies.Caption = "Kopje te lira";
-                colNumberOfPages.Caption = "Nr. Faqeve";
-                BorrowingsLanguageChange();
-                ReservationLanguageChange();
+            //if (Thread.CurrentThread.CurrentCulture.Name== "sq")
+            //{
+            //    btnAddMaterial.Text = "Shto Material";
+            //    btnUpdateMaterial.Text = "Perditso Material";
+            //    btnDeleteMaterial.Text = "Fshij Material";
+            //    btnSearchMaterial.Text = "Kerko";
+            //    colTitle.Caption = "Titulli";
+            //    btnReservations.Text = "Rezervimet";
+            //    btnBorrowings.Text = "Huazimet";
+            //    btnReturns.Text = "Kthimet";
+            //    button4.Text = "Kerko";
+            //    colMaterialType.Caption = "Lloji materialit";
+            //    colGenre.Caption = "Zhanri";
+            //    colLanguage.Caption = "Gjuha";
+            //    colPublishHouse.Caption = "Shtepia Botuese";
+            //    colPublishYear.Caption = "Viti i publikimit";
+            //    colAvailableCoppies.Caption = "Kopje te lira";
+            //    colNumberOfPages.Caption = "Nr. Faqeve";
+            //    BorrowingsLanguageChange();
+            //    ReservationLanguageChange();
 
 
-            }
-            else
-            {
-                btnAddMaterial.Text = "Add Material";
-            }
+            //}
+            //else
+            //{
+            //    btnAddMaterial.Text = "Add Material";
+            //}
 
         }
-        void BorrowingsLanguageChange()
-        {
-            gridColumn13.Caption = "Id huazmit";
-            gridColumn14.Caption = "Id abonuesit";
-            gridColumn15.Caption = "Emri abonuesit";
-            gridColumn16.Caption = "Mbiemri abonuesit";
-            gridColumn17.Caption = "Titulli";
-            gridColumn18.Caption = "Autori";
-            gridColumn19.Caption = "Lloji materialit";
-            gridColumn20.Caption = "Data huazimit";
-            gridColumn21.Caption = "Perfundimi afatit";
-            gridColumn22.Caption = "Lokacionit";
-            gridColumn23.Caption = "Data e kthimit";
-            gridColumn24.Caption = "Id fatures";
-            gridColumn25.Caption = "Id rezervimit";
-        }
+        //void BorrowingsLanguageChange()
+        //{
+        //    gridColumn13.Caption = "Id huazmit";
+        //    gridColumn14.Caption = "Id abonuesit";
+        //    gridColumn15.Caption = "Emri abonuesit";
+        //    gridColumn16.Caption = "Mbiemri abonuesit";
+        //    gridColumn17.Caption = "Titulli";
+        //    gridColumn18.Caption = "Autori";
+        //    gridColumn19.Caption = "Lloji materialit";
+        //    gridColumn20.Caption = "Data huazimit";
+        //    gridColumn21.Caption = "Perfundimi afatit";
+        //    gridColumn22.Caption = "Lokacionit";
+        //    gridColumn23.Caption = "Data e kthimit";
+        //    gridColumn24.Caption = "Id fatures";
+        //    gridColumn25.Caption = "Id rezervimit";
+        //}
 
-        void ReservationLanguageChange()
-        {
-            gridColumn33.Caption = "Id rezervimit";
-            gridColumn2.Caption = "Emri abonuesit";
-            gridColumn3.Caption = "Emri abonuesit";
-            gridColumn4.Caption = "Mbiemri abonuesit";
-            gridColumn26.Caption = "Numri telefonit";
-            gridColumn7.Caption = "Lloji materialit";
-            gridColumn5.Caption = "Titulli";
-            gridColumn6.Caption = "Autori";
-            gridColumn30.Caption = "Lokacioni";
-            gridColumn9.Caption = "Perfundimi afatit";
-            gridColumn31.Caption = "Data Rezervimit";
-        }
+        //void ReservationLanguageChange()
+        //{
+        //    gridColumn33.Caption = "Id rezervimit";
+        //    gridColumn2.Caption = "Emri abonuesit";
+        //    gridColumn3.Caption = "Emri abonuesit";
+        //    gridColumn4.Caption = "Mbiemri abonuesit";
+        //    gridColumn26.Caption = "Numri telefonit";
+        //    gridColumn7.Caption = "Lloji materialit";
+        //    gridColumn5.Caption = "Titulli";
+        //    gridColumn6.Caption = "Autori";
+        //    gridColumn30.Caption = "Lokacioni";
+        //    gridColumn9.Caption = "Perfundimi afatit";
+        //    gridColumn31.Caption = "Data Rezervimit";
+        //}
 
 
         //HelperGG
@@ -279,7 +312,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         public static void GetHelpProvider(Form frm, string topic)
         {
-            Help.ShowHelp(frm, "HelperMenaxhimiBibliotekes.chm", HelpNavigator.Topic, topic);
+            Help.ShowHelp(frm, @"C:\Program Files (x86)\MenaxhimiBiblotekes\HelperMenaxhimiBibliotekes.chm", HelpNavigator.Topic, topic);
 
         }
     }

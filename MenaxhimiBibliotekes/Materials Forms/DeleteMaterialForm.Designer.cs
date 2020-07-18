@@ -32,6 +32,7 @@
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitleTitle = new System.Windows.Forms.Label();
+            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
@@ -77,9 +78,9 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -96,13 +97,12 @@
             this.panel12.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.SuspendLayout();
             // 
             // tableHeader
             // 
-            resources.ApplyResources(this.tableHeader, "tableHeader");
             this.tableHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
+            resources.ApplyResources(this.tableHeader, "tableHeader");
             this.tableHeader.Controls.Add(this.panel1, 1, 0);
             this.tableHeader.Name = "tableHeader";
             // 
@@ -119,6 +119,12 @@
             this.lblTitleTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitleTitle.Name = "lblTitleTitle";
             // 
+            // picTitle
+            // 
+            resources.ApplyResources(this.picTitle, "picTitle");
+            this.picTitle.Name = "picTitle";
+            this.picTitle.TabStop = false;
+            // 
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
@@ -127,9 +133,9 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.lblSubTitle);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // lblSubTitle
@@ -174,9 +180,9 @@
             // 
             // panel3
             // 
-            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Controls.Add(this.txtTitle);
             this.panel3.Controls.Add(this.lblTitle);
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
             // txtTitle
@@ -191,9 +197,9 @@
             // 
             // panel4
             // 
-            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Controls.Add(this.txtAuthor);
             this.panel4.Controls.Add(this.lblAuthor);
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             // 
             // txtAuthor
@@ -208,9 +214,9 @@
             // 
             // panel5
             // 
-            resources.ApplyResources(this.panel5, "panel5");
             this.panel5.Controls.Add(this.txtGenre);
             this.panel5.Controls.Add(this.lblGenre);
+            resources.ApplyResources(this.panel5, "panel5");
             this.panel5.Name = "panel5";
             // 
             // txtGenre
@@ -225,9 +231,9 @@
             // 
             // panel6
             // 
-            resources.ApplyResources(this.panel6, "panel6");
             this.panel6.Controls.Add(this.txtLanguage);
             this.panel6.Controls.Add(this.lblLanguage);
+            resources.ApplyResources(this.panel6, "panel6");
             this.panel6.Name = "panel6";
             // 
             // txtLanguage
@@ -242,9 +248,9 @@
             // 
             // panel7
             // 
-            resources.ApplyResources(this.panel7, "panel7");
             this.panel7.Controls.Add(this.txtISBN);
             this.panel7.Controls.Add(this.lblISBN);
+            resources.ApplyResources(this.panel7, "panel7");
             this.panel7.Name = "panel7";
             // 
             // txtISBN
@@ -270,9 +276,9 @@
             // 
             // panel8
             // 
-            resources.ApplyResources(this.panel8, "panel8");
             this.panel8.Controls.Add(this.txtMaterialType);
             this.panel8.Controls.Add(this.lblMaterialType);
+            resources.ApplyResources(this.panel8, "panel8");
             this.panel8.Name = "panel8";
             // 
             // txtMaterialType
@@ -287,9 +293,9 @@
             // 
             // panel9
             // 
-            resources.ApplyResources(this.panel9, "panel9");
             this.panel9.Controls.Add(this.txtPublishHouse);
             this.panel9.Controls.Add(this.lblPublishHouse);
+            resources.ApplyResources(this.panel9, "panel9");
             this.panel9.Name = "panel9";
             // 
             // txtPublishHouse
@@ -304,9 +310,9 @@
             // 
             // panel10
             // 
-            resources.ApplyResources(this.panel10, "panel10");
             this.panel10.Controls.Add(this.txtPublishDate);
             this.panel10.Controls.Add(this.lblPublishDate);
+            resources.ApplyResources(this.panel10, "panel10");
             this.panel10.Name = "panel10";
             // 
             // txtPublishDate
@@ -321,9 +327,9 @@
             // 
             // panel11
             // 
-            resources.ApplyResources(this.panel11, "panel11");
             this.panel11.Controls.Add(this.txtPublishPlace);
             this.panel11.Controls.Add(this.lblPublishPlace);
+            resources.ApplyResources(this.panel11, "panel11");
             this.panel11.Name = "panel11";
             // 
             // txtPublishPlace
@@ -338,11 +344,11 @@
             // 
             // panel12
             // 
-            resources.ApplyResources(this.panel12, "panel12");
             this.panel12.Controls.Add(this.txtPages);
             this.panel12.Controls.Add(this.txtQuantity);
             this.panel12.Controls.Add(this.lblPages);
             this.panel12.Controls.Add(this.lblQuantity);
+            resources.ApplyResources(this.panel12, "panel12");
             this.panel12.Name = "panel12";
             // 
             // txtPages
@@ -367,8 +373,8 @@
             // 
             // btnSearchMaterial
             // 
-            resources.ApplyResources(this.btnSearchMaterial, "btnSearchMaterial");
             this.btnSearchMaterial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
+            resources.ApplyResources(this.btnSearchMaterial, "btnSearchMaterial");
             this.btnSearchMaterial.ForeColor = System.Drawing.Color.White;
             this.btnSearchMaterial.Name = "btnSearchMaterial";
             this.tableLayoutPanel3.SetRowSpan(this.btnSearchMaterial, 2);
@@ -389,18 +395,12 @@
             // 
             // btnDelete
             // 
-            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
-            // 
-            // picTitle
-            // 
-            resources.ApplyResources(this.picTitle, "picTitle");
-            this.picTitle.Name = "picTitle";
-            this.picTitle.TabStop = false;
             // 
             // DeleteMaterialForm
             // 
@@ -413,9 +413,11 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableHeader);
             this.Name = "DeleteMaterialForm";
+            this.Load += new System.EventHandler(this.DeleteMaterialForm_Load);
             this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -445,7 +447,6 @@
             this.panel12.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -505,6 +505,7 @@
     <EmbeddedResource Include="Submenus-User-Controls\ucMembers.resx">
       <DependentUpon>ucMembers.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="HelperMenaxhimiBibliotekes.chm" />
     <None Include="LibraryManagementDataSet.xsc">
       <DependentUpon>LibraryManagementDataSet.xsd</DependentUpon>
     </None>
@@ -538,7 +539,6 @@
     <None Include="LibraryManagementDataSet2.xss">
       <DependentUpon>LibraryManagementDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="Materials Forms\HelperMenaxhimiBibliotekes.chm" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
