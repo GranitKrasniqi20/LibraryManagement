@@ -21,6 +21,35 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             InitializeComponent();
         }
 
+        //public DeleteMaterialForm(Material material)
+        //{
+        //    InitializeComponent();
+
+        //    materialbll = new MaterialBLL();
+
+        //    txtMaterialID.Text = material.MaterialId.ToString();
+        //    txtTitle.Text = material.Title;
+        //    txtGenre.Text = material._Genre._Genre;
+        //    txtLanguage.Text = material._Language._Language;
+        //    txtAuthor.Text = material._Author.AuthorName;
+
+        //        txtISBN.Text = material.ISBN;
+
+        //    txtMaterialType.Text = material._MaterialType._MaterialType;
+
+        //    txtPages.Text = material.NumberOfPages.ToString();
+
+
+        //        txtPublishDate.Text = material.PublishYear.Year.ToString();
+            
+
+        //        txtPublishHouse.Text = material._PublishHouse._PublishHouse;
+            
+
+
+        //    txtQuantity.Text = material.Quantity.ToString();
+        //}
+
         private void BtnSearchMaterial_Click(object sender, EventArgs e)
         {
             try
@@ -70,7 +99,6 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             catch (Exception)
             {
 
-                throw;
             }
 
         }
@@ -94,6 +122,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             {
                 MessageBox.Show("This material is not deleted please contact your administrator");
             }
+        }
+
+        private void DeleteMaterialForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

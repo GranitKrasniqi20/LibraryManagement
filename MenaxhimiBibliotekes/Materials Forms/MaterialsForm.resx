@@ -153,201 +153,6 @@
   <data name="gridBorrowings.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="gridColumn2.Caption" xml:space="preserve">
-    <value>Subscriber id</value>
-  </data>
-  <data name="gridColumn2.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn2.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn2.VisibleIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="gridColumn2.Width" type="System.Int32, mscorlib">
-    <value>71</value>
-  </data>
-  <data name="gridColumn3.Caption" xml:space="preserve">
-    <value>Subscriber name</value>
-  </data>
-  <data name="gridColumn3.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn3.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn3.VisibleIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="gridColumn3.Width" type="System.Int32, mscorlib">
-    <value>89</value>
-  </data>
-  <data name="gridColumn4.Caption" xml:space="preserve">
-    <value>Subscriber last name</value>
-  </data>
-  <data name="gridColumn4.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn4.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn4.VisibleIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="gridColumn4.Width" type="System.Int32, mscorlib">
-    <value>109</value>
-  </data>
-  <data name="gridColumn5.Caption" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="gridColumn5.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn5.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn5.VisibleIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="gridColumn5.Width" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="gridColumn6.Caption" xml:space="preserve">
-    <value>Author</value>
-  </data>
-  <data name="gridColumn6.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn6.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn6.VisibleIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="gridColumn6.Width" type="System.Int32, mscorlib">
-    <value>83</value>
-  </data>
-  <data name="gridColumn7.Caption" xml:space="preserve">
-    <value>Material Type</value>
-  </data>
-  <data name="gridColumn7.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn7.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn7.VisibleIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="gridColumn7.Width" type="System.Int32, mscorlib">
-    <value>84</value>
-  </data>
-  <data name="gridColumn9.Caption" xml:space="preserve">
-    <value>Deadline Date</value>
-  </data>
-  <data name="gridColumn9.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn9.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn9.VisibleIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="gridColumn9.Width" type="System.Int32, mscorlib">
-    <value>77</value>
-  </data>
-  <data name="gridColumn30.Caption" xml:space="preserve">
-    <value>Location</value>
-  </data>
-  <data name="gridColumn30.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn30.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn30.VisibleIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="gridColumn30.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="gridColumn31.Caption" xml:space="preserve">
-    <value>Reservation Date</value>
-  </data>
-  <data name="gridColumn31.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn31.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn31.VisibleIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="gridColumn31.Width" type="System.Int32, mscorlib">
-    <value>94</value>
-  </data>
-  <data name="gridColumn33.Caption" xml:space="preserve">
-    <value>Reservation Id</value>
-  </data>
-  <data name="gridColumn33.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn33.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn33.VisibleIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn33.Width" type="System.Int32, mscorlib">
-    <value>81</value>
-  </data>
-  <data name="gridColumn34.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn35.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn36.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn37.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn8.Caption" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="gridColumn8.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn8.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn8.VisibleIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="gridColumn26.Caption" xml:space="preserve">
-    <value>Phone Number</value>
-  </data>
-  <data name="gridColumn26.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gridColumn26.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn26.VisibleIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="gridColumn26.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="gridBorrowings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>680, 308</value>
-  </data>
-  <data name="gridBorrowings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="gridColumn13.Caption" xml:space="preserve">
     <value>Borrow Id</value>
   </data>
@@ -540,6 +345,210 @@
   <data name="gridColumn25.Width" type="System.Int32, mscorlib">
     <value>81</value>
   </data>
+  <metadata name="helpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="helpProvider1.HelpNamespace" xml:space="preserve">
+    <value>C:\Users\ET\Desktop\MenaxhimiBibliotekes\MenaxhimiBibliotekes\Materials Forms\HelperMenaxhimiBibliotekes.chm</value>
+  </data>
+  <data name="gridBorrowings.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridBorrowings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 308</value>
+  </data>
+  <data name="gridBorrowings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn2.Caption" xml:space="preserve">
+    <value>Subscriber id</value>
+  </data>
+  <data name="gridColumn2.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn2.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn2.VisibleIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="gridColumn2.Width" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="gridColumn3.Caption" xml:space="preserve">
+    <value>Subscriber name</value>
+  </data>
+  <data name="gridColumn3.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn3.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn3.VisibleIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="gridColumn3.Width" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="gridColumn4.Caption" xml:space="preserve">
+    <value>Subscriber last name</value>
+  </data>
+  <data name="gridColumn4.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn4.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn4.VisibleIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="gridColumn4.Width" type="System.Int32, mscorlib">
+    <value>109</value>
+  </data>
+  <data name="gridColumn5.Caption" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="gridColumn5.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn5.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn5.VisibleIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="gridColumn5.Width" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="gridColumn6.Caption" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="gridColumn6.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn6.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn6.VisibleIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="gridColumn6.Width" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="gridColumn7.Caption" xml:space="preserve">
+    <value>Material Type</value>
+  </data>
+  <data name="gridColumn7.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn7.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn7.VisibleIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="gridColumn7.Width" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="gridColumn9.Caption" xml:space="preserve">
+    <value>Deadline Date</value>
+  </data>
+  <data name="gridColumn9.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn9.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn9.VisibleIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="gridColumn9.Width" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="gridColumn30.Caption" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="gridColumn30.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn30.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn30.VisibleIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="gridColumn30.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="gridColumn31.Caption" xml:space="preserve">
+    <value>Reservation Date</value>
+  </data>
+  <data name="gridColumn31.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn31.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn31.VisibleIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="gridColumn31.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="gridColumn33.Caption" xml:space="preserve">
+    <value>Reservation Id</value>
+  </data>
+  <data name="gridColumn33.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn33.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn33.VisibleIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn33.Width" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="gridColumn34.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn35.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn36.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn37.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn8.Caption" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="gridColumn8.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn8.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn8.VisibleIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="gridColumn26.Caption" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="gridColumn26.ImageOptions.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gridColumn26.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn26.VisibleIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="gridColumn26.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
   <data name="&gt;&gt;gridBorrowings.Name" xml:space="preserve">
     <value>gridBorrowings</value>
   </data>
@@ -560,6 +569,9 @@
   </data>
   <data name="gridSplitContainer1.Panel2.Text" xml:space="preserve">
     <value>Panel2</value>
+  </data>
+  <data name="gridSplitContainer1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="gridSplitContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>680, 308</value>
@@ -714,6 +726,9 @@
   <data name="colNumberOfPages.VisibleIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="gridMaterials.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="gridMaterials.Size" type="System.Drawing.Size, System.Drawing">
     <value>680, 312</value>
   </data>
@@ -740,6 +755,9 @@
   </data>
   <data name="tableDataGridView.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="tableDataGridView.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tableDataGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 318</value>
@@ -780,6 +798,9 @@
   <data name="lblFooterTitleCreate.Location" type="System.Drawing.Point, System.Drawing">
     <value>234, 0</value>
   </data>
+  <data name="lblFooterTitleCreate.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="lblFooterTitleCreate.Size" type="System.Drawing.Size, System.Drawing">
     <value>251, 16</value>
   </data>
@@ -810,6 +831,9 @@
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tableLayoutPanel1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>720, 16</value>
   </data>
@@ -839,6 +863,9 @@
   </data>
   <data name="tableBottomSpace.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="tableBottomSpace.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tableBottomSpace.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 22</value>
@@ -873,6 +900,9 @@
   <data name="txtSearchMaterial.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 3</value>
   </data>
+  <data name="txtSearchMaterial.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="txtSearchMaterial.Size" type="System.Drawing.Size, System.Drawing">
     <value>431, 39</value>
   </data>
@@ -899,6 +929,9 @@
   </data>
   <data name="btnSearchMaterial.Location" type="System.Drawing.Point, System.Drawing">
     <value>472, 3</value>
+  </data>
+  <data name="btnSearchMaterial.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnSearchMaterial.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 47</value>
@@ -933,6 +966,9 @@
   <data name="tableSearch.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tableSearch.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="tableSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 53</value>
   </data>
@@ -965,6 +1001,9 @@
   </data>
   <data name="tableButtons.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="tableButtons.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tableButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 16</value>
@@ -999,6 +1038,9 @@
   <data name="btnAddMaterial.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 3</value>
   </data>
+  <data name="btnAddMaterial.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="btnAddMaterial.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 56</value>
   </data>
@@ -1028,6 +1070,9 @@
   </data>
   <data name="btnUpdateMaterial.Location" type="System.Drawing.Point, System.Drawing">
     <value>258, 3</value>
+  </data>
+  <data name="btnUpdateMaterial.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnUpdateMaterial.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 56</value>
@@ -1059,6 +1104,9 @@
   <data name="btnDeleteMaterial.Location" type="System.Drawing.Point, System.Drawing">
     <value>493, 3</value>
   </data>
+  <data name="btnDeleteMaterial.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="btnDeleteMaterial.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 56</value>
   </data>
@@ -1088,6 +1136,9 @@
   </data>
   <data name="tableSpace2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="tableSpace2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tableSpace2.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 62</value>
@@ -1122,6 +1173,9 @@
   <data name="tableSpace1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tableSpace1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="tableSpace1.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 16</value>
   </data>
@@ -1148,6 +1202,9 @@
   </data>
   <data name="tabMainPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabMainPage.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tabMainPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>732, 493</value>
@@ -1181,6 +1238,9 @@
   </data>
   <data name="tableLayoutPanel16.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="tableLayoutPanel16.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tableLayoutPanel16.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 314</value>
@@ -1218,6 +1278,9 @@
   <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
     <value>237, 2</value>
   </data>
+  <data name="label22.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
     <value>251, 17</value>
   </data>
@@ -1247,6 +1310,9 @@
   </data>
   <data name="tableLayoutPanel15.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="tableLayoutPanel15.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tableLayoutPanel15.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 21</value>
@@ -1281,6 +1347,9 @@
   <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
     <value>493, 3</value>
   </data>
+  <data name="button4.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 52</value>
   </data>
@@ -1310,6 +1379,9 @@
   </data>
   <data name="txtBorrowings.Location" type="System.Drawing.Point, System.Drawing">
     <value>258, 3</value>
+  </data>
+  <data name="txtBorrowings.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="txtBorrowings.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 39</value>
@@ -1344,6 +1416,9 @@
   <data name="comboChoseGrid.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 3</value>
   </data>
+  <data name="comboChoseGrid.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="comboChoseGrid.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 40</value>
   </data>
@@ -1373,6 +1448,9 @@
   </data>
   <data name="tableLayoutPanel14.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="tableLayoutPanel14.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tableLayoutPanel14.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 58</value>
@@ -1407,6 +1485,9 @@
   <data name="tableLayoutPanel13.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tableLayoutPanel13.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="tableLayoutPanel13.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 16</value>
   </data>
@@ -1440,6 +1521,9 @@
   <data name="btnBorrowings.Location" type="System.Drawing.Point, System.Drawing">
     <value>258, 3</value>
   </data>
+  <data name="btnBorrowings.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="btnBorrowings.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 56</value>
   </data>
@@ -1469,6 +1553,9 @@
   </data>
   <data name="btnReservations.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 3</value>
+  </data>
+  <data name="btnReservations.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnReservations.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 56</value>
@@ -1500,6 +1587,9 @@
   <data name="btnReturns.Location" type="System.Drawing.Point, System.Drawing">
     <value>493, 3</value>
   </data>
+  <data name="btnReturns.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="btnReturns.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 56</value>
   </data>
@@ -1529,6 +1619,9 @@
   </data>
   <data name="tableLayoutPanel12.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="tableLayoutPanel12.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tableLayoutPanel12.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 62</value>
@@ -1563,6 +1656,9 @@
   <data name="tableLayoutPanel11.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tableLayoutPanel11.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="tableLayoutPanel11.Size" type="System.Drawing.Size, System.Drawing">
     <value>726, 16</value>
   </data>
@@ -1589,6 +1685,9 @@
   </data>
   <data name="tabReservationsBorrowings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabReservationsBorrowings.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tabReservationsBorrowings.Size" type="System.Drawing.Size, System.Drawing">
     <value>732, 493</value>
@@ -1622,6 +1721,9 @@
   </data>
   <data name="tabControl.Padding" type="System.Drawing.Point, System.Drawing">
     <value>12, 8</value>
+  </data>
+  <data name="tabControl.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>740, 529</value>
@@ -2660,6 +2762,30 @@
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="btnMaterialHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnMaterialHelp.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnMaterialHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnMaterialHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.Name" xml:space="preserve">
+    <value>btnMaterialHelp</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnMaterialHelp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2668,6 +2794,9 @@
   </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>140, 17</value>
+  </data>
+  <data name="lblTitle.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 50</value>
@@ -2688,7 +2817,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="picTitle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3994,6 +4123,9 @@
   <data name="picTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 17</value>
   </data>
+  <data name="picTitle.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="picTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 50</value>
   </data>
@@ -4013,10 +4145,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;picTitle.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 3</value>
+  </data>
+  <data name="panel1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>453, 82</value>
@@ -4044,6 +4179,9 @@
   </data>
   <data name="tableHeader.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="tableHeader.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tableHeader.Size" type="System.Drawing.Size, System.Drawing">
     <value>740, 88</value>
@@ -4123,14 +4261,107 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>740, 617</value>
   </data>
+  <data name="$this.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>Topic</value>
+  </data>
+  <data name="$this.HelpString" xml:space="preserve">
+    <value>Materials</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>756, 656</value>
+  </data>
+  <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Materials (Stackbooks)</value>
+  </data>
+  <data name="&gt;&gt;gridView3.Name" xml:space="preserve">
+    <value>gridView3</value>
+  </data>
+  <data name="&gt;&gt;gridView3.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn13.Name" xml:space="preserve">
+    <value>gridColumn13</value>
+  </data>
+  <data name="&gt;&gt;gridColumn13.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn14.Name" xml:space="preserve">
+    <value>gridColumn14</value>
+  </data>
+  <data name="&gt;&gt;gridColumn14.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn15.Name" xml:space="preserve">
+    <value>gridColumn15</value>
+  </data>
+  <data name="&gt;&gt;gridColumn15.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn16.Name" xml:space="preserve">
+    <value>gridColumn16</value>
+  </data>
+  <data name="&gt;&gt;gridColumn16.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn17.Name" xml:space="preserve">
+    <value>gridColumn17</value>
+  </data>
+  <data name="&gt;&gt;gridColumn17.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn18.Name" xml:space="preserve">
+    <value>gridColumn18</value>
+  </data>
+  <data name="&gt;&gt;gridColumn18.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn19.Name" xml:space="preserve">
+    <value>gridColumn19</value>
+  </data>
+  <data name="&gt;&gt;gridColumn19.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn20.Name" xml:space="preserve">
+    <value>gridColumn20</value>
+  </data>
+  <data name="&gt;&gt;gridColumn20.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn21.Name" xml:space="preserve">
+    <value>gridColumn21</value>
+  </data>
+  <data name="&gt;&gt;gridColumn21.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn22.Name" xml:space="preserve">
+    <value>gridColumn22</value>
+  </data>
+  <data name="&gt;&gt;gridColumn22.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn23.Name" xml:space="preserve">
+    <value>gridColumn23</value>
+  </data>
+  <data name="&gt;&gt;gridColumn23.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn24.Name" xml:space="preserve">
+    <value>gridColumn24</value>
+  </data>
+  <data name="&gt;&gt;gridColumn24.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn25.Name" xml:space="preserve">
+    <value>gridColumn25</value>
+  </data>
+  <data name="&gt;&gt;gridColumn25.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;gridView1.Name" xml:space="preserve">
     <value>gridView1</value>
@@ -4234,90 +4465,6 @@
   <data name="&gt;&gt;gridColumn26.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;gridView3.Name" xml:space="preserve">
-    <value>gridView3</value>
-  </data>
-  <data name="&gt;&gt;gridView3.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn13.Name" xml:space="preserve">
-    <value>gridColumn13</value>
-  </data>
-  <data name="&gt;&gt;gridColumn13.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn14.Name" xml:space="preserve">
-    <value>gridColumn14</value>
-  </data>
-  <data name="&gt;&gt;gridColumn14.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn15.Name" xml:space="preserve">
-    <value>gridColumn15</value>
-  </data>
-  <data name="&gt;&gt;gridColumn15.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn16.Name" xml:space="preserve">
-    <value>gridColumn16</value>
-  </data>
-  <data name="&gt;&gt;gridColumn16.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn17.Name" xml:space="preserve">
-    <value>gridColumn17</value>
-  </data>
-  <data name="&gt;&gt;gridColumn17.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn18.Name" xml:space="preserve">
-    <value>gridColumn18</value>
-  </data>
-  <data name="&gt;&gt;gridColumn18.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn19.Name" xml:space="preserve">
-    <value>gridColumn19</value>
-  </data>
-  <data name="&gt;&gt;gridColumn19.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn20.Name" xml:space="preserve">
-    <value>gridColumn20</value>
-  </data>
-  <data name="&gt;&gt;gridColumn20.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn21.Name" xml:space="preserve">
-    <value>gridColumn21</value>
-  </data>
-  <data name="&gt;&gt;gridColumn21.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn22.Name" xml:space="preserve">
-    <value>gridColumn22</value>
-  </data>
-  <data name="&gt;&gt;gridColumn22.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn23.Name" xml:space="preserve">
-    <value>gridColumn23</value>
-  </data>
-  <data name="&gt;&gt;gridColumn23.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn24.Name" xml:space="preserve">
-    <value>gridColumn24</value>
-  </data>
-  <data name="&gt;&gt;gridColumn24.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridColumn25.Name" xml:space="preserve">
-    <value>gridColumn25</value>
-  </data>
-  <data name="&gt;&gt;gridColumn25.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
   <data name="&gt;&gt;gridView.Name" xml:space="preserve">
     <value>gridView</value>
   </data>
@@ -4407,6 +4554,12 @@
   </data>
   <data name="&gt;&gt;gridColumn1.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;helpProvider1.Name" xml:space="preserve">
+    <value>helpProvider1</value>
+  </data>
+  <data name="&gt;&gt;helpProvider1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MaterialsForm</value>

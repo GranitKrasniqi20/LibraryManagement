@@ -1,7 +1,9 @@
-﻿using DevExpress.XtraWaitForm;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraWaitForm;
 using MenaxhimiBibliotekes.BLL;
 using MenaxhimiBibliotekes.BO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,17 +41,48 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             add.ShowDialog();
         }
 
+
+
+
         private void btnUpdateMaterial_Click(object sender, EventArgs e)
         {
-            UpdateMaterialForm update = new UpdateMaterialForm();
+            UpdateMaterialForm update;
+            //int[] selRows = gridView.GetSelectedRows();
+
+            //if (selRows.Length > 0)
+            //{
+            //    Material selRow = (Material)(((GridView)gridMaterials.MainView).GetRow(selRows[0]));
+            //     update = new UpdateMaterialForm(selRow);
+            //}
+            //else
+            //{
+                update = new UpdateMaterialForm();
+            //}
+          
+
             update.ShowDialog();
         }
 
         private void btnDeleteMaterial_Click(object sender, EventArgs e)
         {
-            DeleteMaterialForm delete = new DeleteMaterialForm();
+            DeleteMaterialForm delete;
+
+            //int[] selRows = gridView.GetSelectedRows();
+            //if (selRows.Length >0)
+            //{
+            //    Material selRow = (Material)(((GridView)gridMaterials.MainView).GetRow(selRows[0]));
+
+            //     delete = new DeleteMaterialForm(selRow);
+            //}
+            //else
+            //{
+               delete = new DeleteMaterialForm();
+            //}
+
             delete.ShowDialog();
         }
+
+
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -115,76 +148,83 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void Button4_Click(object sender, EventArgs e)
         {
-
-            //x => x._subscriber.SubscriberId == 2 ||
-            int m;
-            bool isNumeric = int.TryParse(txtBorrowings.Text, out m);
-
-            if (comboChoseGrid.SelectedItem.ToString() == "Borrowings")
+            try
             {
-                gridBorrowings.MainView = gridView3;
-                BorrowingsLanguageChange();
 
-                if (txtBorrowings.Text == string.Empty)
-                {
-                    gridBorrowings.DataSource = bbll.GetAll();
-                }
+                //x => x._subscriber.SubscriberId == 2 ||
+                int m;
+                bool isNumeric = int.TryParse(txtBorrowings.Text, out m);
 
-                else if (isNumeric)
+                if (comboChoseGrid.SelectedItem.ToString() == "Borrowings")
                 {
-                    gridBorrowings.DataSource = bbll.GetAll().Where(x => x.SubscriberId == m ||
-                    x.materialId == m || x.BorrowId == m);
-                }
-                else
-                {
+                    gridBorrowings.MainView = gridView3;
+                    //BorrowingsLanguageChange();
+
                     if (txtBorrowings.Text == string.Empty)
                     {
                         gridBorrowings.DataSource = bbll.GetAll();
                     }
+
+                    else if (isNumeric)
+                    {
+                        gridBorrowings.DataSource = bbll.GetAll().Where(x => x.SubscriberId == m ||
+                        x.materialId == m || x.BorrowId == m);
+                    }
                     else
                     {
+                        if (txtBorrowings.Text == string.Empty)
+                        {
+                            gridBorrowings.DataSource = bbll.GetAll();
+                        }
+                        else
+                        {
 
-                        gridBorrowings.DataSource = bbll.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text || $"{ x._subscriber.LastName}" == txtBorrowings.Text ||
-                    $"{ x._subscriber.Name}" == txtBorrowings.Text ||
-                      x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text || x._shelf.Location == txtBorrowings.Text);
+                            gridBorrowings.DataSource = bbll.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text || $"{ x._subscriber.LastName}" == txtBorrowings.Text ||
+                        $"{ x._subscriber.Name}" == txtBorrowings.Text ||
+                          x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text || x._shelf.Location == txtBorrowings.Text);
+                        }
                     }
+
+
                 }
 
-
-            }
-
-            else
-            {
-
-                reservationBO = new Reservation();
-                res = new ReservationBLL();
-                gridBorrowings.MainView = gridView1;
-
-                ReservationLanguageChange();
-                if (txtBorrowings.Text == string.Empty)
-                {
-
-                    gridBorrowings.DataSource = res.GetAll();
-                }
-
-               else if (isNumeric)
-                {
-                    gridBorrowings.DataSource = res.GetAll().Where(x => x.SubscriberId == m ||
-                    x.MaterialId == m || x.MaterialId == m);
-                }
                 else
                 {
+
+                    reservationBO = new Reservation();
+                    res = new ReservationBLL();
+                    gridBorrowings.MainView = gridView1;
+
+                    //ReservationLanguageChange();
                     if (txtBorrowings.Text == string.Empty)
                     {
+
                         gridBorrowings.DataSource = res.GetAll();
+                    }
+
+                    else if (isNumeric)
+                    {
+                        gridBorrowings.DataSource = res.GetAll().Where(x => x.SubscriberId == m ||
+                        x.MaterialId == m || x.MaterialId == m);
                     }
                     else
                     {
-                        gridBorrowings.DataSource = res.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text||
-                        x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text ) ;
+                        if (txtBorrowings.Text == string.Empty)
+                        {
+                            gridBorrowings.DataSource = res.GetAll();
+                        }
+                        else
+                        {
+                            gridBorrowings.DataSource = res.GetAll().Where(x => $"{x._subscriber.Name} {x._subscriber.LastName}" == txtBorrowings.Text ||
+                            x._material.Title == txtBorrowings.Text || x._material._Author.AuthorName == txtBorrowings.Text);
+                        }
                     }
-                }
 
+                }
+            }
+            catch (Exception)
+            {
+                gridBorrowings.DataSource = bbll.GetAll();
             }
 
 
@@ -202,69 +242,77 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void MaterialsForm_Load(object sender, EventArgs e)
         {
-            if (Thread.CurrentThread.CurrentCulture.Name== "sq")
-            {
-                btnAddMaterial.Text = "Shto Material";
-                btnUpdateMaterial.Text = "Perditso Material";
-                btnDeleteMaterial.Text = "Fshij Material";
-                btnSearchMaterial.Text = "Kerko";
-                colTitle.Caption = "Titulli";
-                btnReservations.Text = "Rezervimet";
-                btnBorrowings.Text = "Huazimet";
-                btnReturns.Text = "Kthimet";
-                button4.Text = "Kerko";
-                colMaterialType.Caption = "Lloji materialit";
-                colGenre.Caption = "Zhanri";
-                colLanguage.Caption = "Gjuha";
-                colPublishHouse.Caption = "Shtepia Botuese";
-                colPublishYear.Caption = "Viti i publikimit";
-                colAvailableCoppies.Caption = "Kopje te lira";
-                colNumberOfPages.Caption = "Nr. Faqeve";
-                BorrowingsLanguageChange();
-                ReservationLanguageChange();
+            //if (Thread.CurrentThread.CurrentCulture.Name== "sq")
+            //{
+            //    btnAddMaterial.Text = "Shto Material";
+            //    btnUpdateMaterial.Text = "Perditso Material";
+            //    btnDeleteMaterial.Text = "Fshij Material";
+            //    btnSearchMaterial.Text = "Kerko";
+            //    colTitle.Caption = "Titulli";
+            //    btnReservations.Text = "Rezervimet";
+            //    btnBorrowings.Text = "Huazimet";
+            //    btnReturns.Text = "Kthimet";
+            //    button4.Text = "Kerko";
+            //    colMaterialType.Caption = "Lloji materialit";
+            //    colGenre.Caption = "Zhanri";
+            //    colLanguage.Caption = "Gjuha";
+            //    colPublishHouse.Caption = "Shtepia Botuese";
+            //    colPublishYear.Caption = "Viti i publikimit";
+            //    colAvailableCoppies.Caption = "Kopje te lira";
+            //    colNumberOfPages.Caption = "Nr. Faqeve";
+            //    BorrowingsLanguageChange();
+            //    ReservationLanguageChange();
 
 
-            }
-            else
-            {
-                btnAddMaterial.Text = "Add Material";
-            }
+            //}
+            //else
+            //{
+            //    btnAddMaterial.Text = "Add Material";
+            //}
 
         }
-        void BorrowingsLanguageChange()
+        //void BorrowingsLanguageChange()
+        //{
+        //    gridColumn13.Caption = "Id huazmit";
+        //    gridColumn14.Caption = "Id abonuesit";
+        //    gridColumn15.Caption = "Emri abonuesit";
+        //    gridColumn16.Caption = "Mbiemri abonuesit";
+        //    gridColumn17.Caption = "Titulli";
+        //    gridColumn18.Caption = "Autori";
+        //    gridColumn19.Caption = "Lloji materialit";
+        //    gridColumn20.Caption = "Data huazimit";
+        //    gridColumn21.Caption = "Perfundimi afatit";
+        //    gridColumn22.Caption = "Lokacionit";
+        //    gridColumn23.Caption = "Data e kthimit";
+        //    gridColumn24.Caption = "Id fatures";
+        //    gridColumn25.Caption = "Id rezervimit";
+        //}
+
+        //void ReservationLanguageChange()
+        //{
+        //    gridColumn33.Caption = "Id rezervimit";
+        //    gridColumn2.Caption = "Emri abonuesit";
+        //    gridColumn3.Caption = "Emri abonuesit";
+        //    gridColumn4.Caption = "Mbiemri abonuesit";
+        //    gridColumn26.Caption = "Numri telefonit";
+        //    gridColumn7.Caption = "Lloji materialit";
+        //    gridColumn5.Caption = "Titulli";
+        //    gridColumn6.Caption = "Autori";
+        //    gridColumn30.Caption = "Lokacioni";
+        //    gridColumn9.Caption = "Perfundimi afatit";
+        //    gridColumn31.Caption = "Data Rezervimit";
+        //}
+
+
+        //HelperGG
+        private void btnMaterialHelp_Click(object sender, EventArgs e)
         {
-            gridColumn13.Caption = "Id huazmit";
-            gridColumn14.Caption = "Id abonuesit";
-            gridColumn15.Caption = "Emri abonuesit";
-            gridColumn16.Caption = "Mbiemri abonuesit";
-            gridColumn17.Caption = "Titulli";
-            gridColumn18.Caption = "Autori";
-            gridColumn19.Caption = "Lloji materialit";
-            gridColumn20.Caption = "Data huazimit";
-            gridColumn21.Caption = "Perfundimi afatit";
-            gridColumn22.Caption = "Lokacionit";
-            gridColumn23.Caption = "Data e kthimit";
-            gridColumn24.Caption = "Id fatures";
-            gridColumn25.Caption = "Id rezervimit";
+            GetHelpProvider(this, "Materials.htm");
         }
 
-        void ReservationLanguageChange()
+        public static void GetHelpProvider(Form frm, string topic)
         {
-            gridColumn33.Caption = "Id rezervimit";
-            gridColumn2.Caption = "Emri abonuesit";
-            gridColumn3.Caption = "Emri abonuesit";
-            gridColumn4.Caption = "Mbiemri abonuesit";
-            gridColumn26.Caption = "Numri telefonit";
-            gridColumn7.Caption = "Lloji materialit";
-            gridColumn5.Caption = "Titulli";
-            gridColumn6.Caption = "Autori";
-            gridColumn30.Caption = "Lokacioni";
-            gridColumn9.Caption = "Perfundimi afatit";
-            gridColumn31.Caption = "Data Rezervimit";
-        }
-
-        private void TableDataGridView_Paint(object sender, PaintEventArgs e)
-        {
+            Help.ShowHelp(frm, @"C:\Program Files (x86)\MenaxhimiBiblotekes\HelperMenaxhimiBibliotekes.chm", HelpNavigator.Topic, topic);
 
         }
     }

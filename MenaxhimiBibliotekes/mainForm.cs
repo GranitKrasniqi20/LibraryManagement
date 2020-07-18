@@ -247,7 +247,19 @@ namespace MenaxhimiBibliotekes
 
         private void ProgressPanel1_Click(object sender, EventArgs e)
         {
+        }
 
+
+
+        public static void GetHelpProvider(Form frm, string topic)
+        {
+            Help.ShowHelp(frm, @"C:\Program Files (x86)\MenaxhimiBibliotekes\HelperMenaxhimiBibliotekes.chm", HelpNavigator.Topic, topic);
+
+        }
+
+        private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GetHelpProvider(this, "Materials.htm");
         }
     }
 }

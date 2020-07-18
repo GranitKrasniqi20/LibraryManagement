@@ -23,18 +23,42 @@ namespace MenaxhimiBibliotekes.Materials_Forms
 
         private void BtnInsert_Click(object sender, EventArgs e)
         {
+            string language;
             
             if (rBAlbanish.Checked)
             {
-                BLL.ChooseLanguage<ChooseLangauge,mainForm>.ChangeLanguage("sq", this);
+                language = "sq";
             }
 
             else
             {
-                BLL.ChooseLanguage<ChooseLangauge, mainForm>.ChangeLanguage("en-US", this);
+                language = "en-US";
             }
-            this.Close();
-            
+
+            List<Form> lastOpenedForm;
+            lastOpenedForm = Application.OpenForms.Cast<Form>().ToList();
+            foreach (Form item in lastOpenedForm)
+            {
+
+
+
+                if (item.Name == "mainForm")
+                {
+                    BLL.ChooseLanguage<mainForm>.ChangeLanguage(language, item);
+
+
+                }
+                else if (item.Name == "SettingsForm")
+                {
+                    BLL.ChooseLanguage<Settings_Forms.SettingsForm>.ChangeLanguage(language, item);
+                }
+
+                else if (item.Name == "ChooseLangauge")
+                {
+                    BLL.ChooseLanguage<ChooseLangauge>.ChangeLanguage(language, this);
+                }
+
+            }
 
         }
     }

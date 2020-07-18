@@ -52,50 +52,267 @@ namespace MenaxhimiBibliotekes.Materials_Forms
             mbll = new MaterialBLL();
 
 
+            InitializeComponent();
+            BindGenre(new Genre() { GenreId = 0, _Genre = "Other" });
+            BindMaterialType(new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" });
+            BindShelf(new Shelf() { ShelfId = 0, Location = "Other" });
+            BindLanguage(new Language() { LanguageId = 0, _Language = "Other" });
 
-            BindDropDownGenre(new Genre() { GenreId = 0, _Genre = "Other" });
-            BindDropdownMaterialType(new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" });
-            BindDrobdownMaterialLocation(new Shelf() { ShelfId = 0, Location = "Other" });
-            BindDrobdownLanguage(new Language() { LanguageId = 0, _Language = "Other" });
+
+
 
 
         }
 
+        //public UpdateMaterialForm(Material material)
+        //{
+        //    InitializeComponent();
 
-        private void BindDropDownGenre(Genre first)
+
+        //    if (material != null)
+        //    {
+        //        txtMaterialID.Text = material.MaterialId.ToString();
+        //        txtTitle.Text = material.Title;
+
+        //        txtAuthor.Text = material._Author.AuthorName;
+        //        if (material.ISBN != string.Empty || material.ISBN.Length != null)
+        //        {
+        //            txtISBN.Text = material.ISBN;
+        //        }
+
+        //        txtPages.Text = material.NumberOfPages.ToString();
+
+        //        if (true)
+        //        {
+        //            txtPublishDate.Text = material.PublishYear.Year.ToString();
+        //        }
+
+
+        //        if (material._PublishHouse._PublishHouse != string.Empty || material._PublishHouse._PublishHouse != null)
+        //        {
+        //            txtPublishHouse.Text = material._PublishHouse._PublishHouse;
+        //        }
+
+
+        //        txtQuantity.Text = material.Quantity.ToString();
+
+        //        if (material.IsActive == true)
+        //        {
+        //            comboActiveMaterial.SelectedIndex = 0;
+        //        }
+        //        else
+        //        {
+        //            comboActiveMaterial.SelectedIndex = 1;
+        //        }
+
+        //        BindGenre(material._Genre);
+        //        BindMaterialType(material._MaterialType);
+        //        BindShelf(material._Shelf);
+        //        BindLanguage(material._Language);
+
+        //    }
+        //}
+
+
+        //private void BindDropDownGenre(Genre first)
+        //{
+
+        //    try
+        //    {
+
+        //        genreBllList = new GenreBLL();
+        //        Genre g = new Genre();
+        //        genreList = genreBllList.GetAll();
+
+
+        //        foreach (var item in genreList)
+        //        {
+        //            if (first.GenreId == item.GenreId)
+        //            {
+        //                g = item;
+        //            }
+        //        }
+
+        //        genreList.Remove(g);
+
+        //        g = genreList[0];
+        //        genreList[0] = first;
+        //        genreList.Add(g);
+        //        comboGenre.DataSource = genreList;
+        //        comboGenre.DisplayMember = "_Genre";
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("Material is not updated please contact your adminsitrator");
+        //    }
+        //}
+        //public void BindDropdownMaterialType(MaterialType first)
+        //{
+
+        //    try
+        //    {
+        //        materialtypeBllList = new MaterialTypeBLL();
+        //        MaterialType mt = new MaterialType();
+        //        materialtypeList = materialtypeBllList.GetAll();
+
+        //        foreach (var item in materialtypeList)
+        //        {
+        //            if (first.MaterialTypeId == item.MaterialTypeId)
+        //            {
+        //                mt = item;
+        //            }
+        //        }
+        //        materialtypeList.Remove(mt);
+
+        //        mt = new MaterialType();
+        //        mt = materialtypeList[0];
+        //        materialtypeList[0] = first;
+        //        materialtypeList.Add(mt);
+        //        comboMaterialType.DataSource = materialtypeList;
+        //        comboMaterialType.DisplayMember = "_MaterialType";
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //    }
+        //}
+        //public void BindDrobdownMaterialLocation(Shelf first)
+        //{
+        //    //Combobox MATERIAL LOCATION fill
+
+        //    try
+        //    {
+        //        shelfBLLList = new ShelfBLL();
+        //        Shelf sh = new Shelf();
+        //        shelfList = shelfBLLList.GetAll();
+        //        foreach (var item in shelfList)
+        //        {
+        //            if (first.ShelfId == item.ShelfId)
+        //            {
+        //                sh = item;
+        //            }
+        //        }
+        //        shelfList.Remove(sh);
+        //        sh = new Shelf();
+        //        sh = shelfList[0];
+        //        shelfList[0] = first;
+        //        shelfList.Add(sh);
+        //        comboMaterialLocation.DataSource = shelfList;
+        //        comboMaterialLocation.DisplayMember = "Location";
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //    }
+        //}
+
+        //public void BindDrobdownLanguage(Language first)
+        //{
+        //    try
+        //    {
+        //        languageBllList = new LanguageBLL();
+        //        Language l = new Language();
+        //        languageList = languageBllList.GetAll();
+        //        foreach (var item in languageList)
+        //        {
+        //            if (first.LanguageId == item.LanguageId)
+        //            {
+        //                l = item;
+        //            }
+        //        }
+        //        languageList.Remove(l);
+        //        l = new Language();
+        //        l = languageList[0];
+        //        languageList[0] = first;
+        //        languageList.Add(l);
+        //        comboLanguage.DataSource = languageList;
+        //        comboLanguage.DisplayMember = "_Language";
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //    }
+        //}
+
+        private void BindLanguage(Language lang)
         {
 
             try
             {
-
-                genreBllList = new GenreBLL();
-                Genre g = new Genre();
-                genreList = genreBllList.GetAll();
-
-
-                foreach (var item in genreList)
+                languageBllList = new LanguageBLL();
+                Language l = new Language();
+                languageList = languageBllList.GetAll();
+                if (languageList.Count > 0)
                 {
-                    if (first.GenreId == item.GenreId)
-                    {
-                        g = item;
-                    }
+                    l = languageList[0];
+                    languageList[0] = lang;
+                    languageList.Add(l);
+                    comboLanguage.DataSource = languageList.ToList();
+                    comboLanguage.DisplayMember = "_Language";
                 }
-
-                genreList.Remove(g);
-
-                g = genreList[0];
-                genreList[0] = first;
-                genreList.Add(g);
-                comboGenre.DataSource = genreList;
-                comboGenre.DisplayMember = "_Genre";
             }
             catch (Exception)
             {
-                MessageBox.Show("Material is not updated please contact your adminsitrator");
+
             }
+
         }
-        public void BindDropdownMaterialType(MaterialType first)
+        private void BindGenre(Genre genre)
         {
+
+            try
+            {
+                genreBllList = new GenreBLL();
+                Genre g = new Genre();
+                genreList = genreBllList.GetAll();
+                if (genreList.Count > 0)
+                {
+
+                    g = genreList[0];
+                    genreList[0] = genre;
+                    genreList.Add(g);
+
+                    comboGenre.DataSource = genreList.ToList();
+                    comboGenre.DisplayMember = "_Genre";
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+        private void BindShelf(Shelf shelf)
+        {
+
+            try
+            {
+                shelfBLLList = new ShelfBLL();
+                Shelf sh = new Shelf();
+                shelfList = shelfBLLList.GetAll();
+                if (shelfList.Count > 0)
+                {
+                    sh = shelfList[0];
+                    shelfList[0] = shelf;
+                    shelfList.Add(sh);
+                    comboMaterialLocation.DataSource = shelfList;
+                    comboMaterialLocation.DisplayMember = "Location";
+                }
+
+            }
+            catch (Exception)
+            {
+                shelfList = new List<Shelf>();
+                shelfList.Add(new Shelf() { ShelfId = 0, Location = "Other" });
+                comboMaterialLocation.DataSource = shelfList;
+                comboMaterialLocation.DisplayMember = "Location";
+            }
+
+        }
+
+        private void BindMaterialType(MaterialType materialtype)
+        {
+
 
             try
             {
@@ -103,86 +320,22 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 MaterialType mt = new MaterialType();
                 materialtypeList = materialtypeBllList.GetAll();
 
-                foreach (var item in materialtypeList)
+                if (materialtypeList.Count > 0)
                 {
-                    if (first.MaterialTypeId == item.MaterialTypeId)
-                    {
-                        mt = item;
-                    }
+                    mt = materialtypeList[0];
+                    materialtypeList[0] = materialtype;
+                    materialtypeList.Add(mt);
+                    comboMaterialType.DataSource = materialtypeList.ToList();
+                    comboMaterialType.DisplayMember = "_MaterialType";
+
                 }
-                materialtypeList.Remove(mt);
-
-                mt = new MaterialType();
-                mt = materialtypeList[0];
-                materialtypeList[0] = first;
-                materialtypeList.Add(mt);
-                comboMaterialType.DataSource = materialtypeList;
-                comboMaterialType.DisplayMember = "_MaterialType";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
+
         }
-        public void BindDrobdownMaterialLocation(Shelf first)
-        {
-            //Combobox MATERIAL LOCATION fill
-
-            try
-            {
-                shelfBLLList = new ShelfBLL();
-                Shelf sh = new Shelf();
-                shelfList = shelfBLLList.GetAll();
-                foreach (var item in shelfList)
-                {
-                    if (first.ShelfId == item.ShelfId)
-                    {
-                        sh = item;
-                    }
-                }
-                shelfList.Remove(sh);
-                sh = new Shelf();
-                sh = shelfList[0];
-                shelfList[0] = first;
-                shelfList.Add(sh);
-                comboMaterialLocation.DataSource = shelfList;
-                comboMaterialLocation.DisplayMember = "Location";
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        public void BindDrobdownLanguage(Language first)
-        {
-            try
-            {
-                languageBllList = new LanguageBLL();
-                Language l = new Language();
-                languageList = languageBllList.GetAll();
-                foreach (var item in languageList)
-                {
-                    if (first.LanguageId == item.LanguageId)
-                    {
-                        l = item;
-                    }
-                }
-                languageList.Remove(l);
-                l = new Language();
-                l = languageList[0];
-                languageList[0] = first;
-                languageList.Add(l);
-                comboLanguage.DataSource = languageList;
-                comboLanguage.DisplayMember = "_Language";
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-
 
 
 
@@ -254,7 +407,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     openFormG = false;
                     GenreForm genreForm = new GenreForm();
                     genreForm.ShowDialog();
-                    BindDropDownGenre(new Genre() { GenreId = 0, _Genre = "Other" });
+                    BindGenre(new Genre() { GenreId = 0, _Genre = "Other" });
                 }
 
                 else
@@ -282,7 +435,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     openFormL = false ;
                     LanguageForm languageForm = new LanguageForm();
                     languageForm.ShowDialog();
-                    BindDrobdownLanguage(new Language() { LanguageId = 0, _Language = "Other" });
+                    BindLanguage(new Language() { LanguageId = 0, _Language = "Other" });
                 }
                 else
                 {
@@ -302,7 +455,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     openFormMT = false;
                     MaterialTypeForm materialtypeForm = new MaterialTypeForm();
                     materialtypeForm.ShowDialog();
-                    BindDrobdownMaterialLocation(new Shelf() { ShelfId = 0, Location = "Other" });
+                    BindShelf(new Shelf() { ShelfId = 0, Location = "Other" });
 
                     DisabledByMaterialType(txtTitle, txtAuthor, comboGenre, comboLanguage, txtISBN, comboMaterialLocation, txtPublishHouse, txtPublishDate, txtQuantity, txtPages);
                 }
@@ -331,7 +484,7 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                         openFormMT = false;
                         MaterialLocation locationForm = new MaterialLocation();
                         locationForm.ShowDialog();
-                        BindDropdownMaterialType(new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" });
+                        BindMaterialType(new MaterialType() { MaterialTypeId = 0, _MaterialType = "Other" });
 
                     }
                     else
@@ -405,10 +558,10 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                     comboActiveMaterial.SelectedIndex = 1;
                 }
 
-                BindDropDownGenre(material._Genre);
-                BindDropdownMaterialType(material._MaterialType);
-                BindDrobdownMaterialLocation(material._Shelf);
-                BindDrobdownLanguage(material._Language);
+                BindGenre(material._Genre);
+                BindMaterialType(material._MaterialType);
+                BindShelf(material._Shelf);
+                BindLanguage(material._Language);
 
             }
         }
@@ -552,6 +705,11 @@ namespace MenaxhimiBibliotekes.Materials_Forms
                 mbll = new MaterialBLL();
             }
 
+
+        }
+
+        private void TableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
 
         }
 

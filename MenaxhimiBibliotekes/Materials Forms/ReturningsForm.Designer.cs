@@ -32,7 +32,6 @@
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnRegisterReturn = new System.Windows.Forms.Button();
@@ -67,15 +66,16 @@
             this.lblBorrowedID = new System.Windows.Forms.Label();
             this.txtBorrowedID = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
+            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.panelMainBody.SuspendLayout();
             this.tableContents.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.SuspendLayout();
             // 
             // tableHeader
@@ -98,12 +98,6 @@
             resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Name = "lblTitle";
-            // 
-            // picTitle
-            // 
-            resources.ApplyResources(this.picTitle, "picTitle");
-            this.picTitle.Name = "picTitle";
-            this.picTitle.TabStop = false;
             // 
             // tableLayoutPanel2
             // 
@@ -297,6 +291,7 @@
             this.tableLayoutPanel8.Controls.Add(this.txtBorrowedID, 1, 1);
             this.tableLayoutPanel8.Controls.Add(this.btnFind, 1, 2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel8_Paint);
             // 
             // lblBorrowedID
             // 
@@ -318,6 +313,12 @@
             this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.BtnFind_Click);
             // 
+            // picTitle
+            // 
+            resources.ApplyResources(this.picTitle, "picTitle");
+            this.picTitle.Name = "picTitle";
+            this.picTitle.TabStop = false;
+            // 
             // ReturningsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -333,7 +334,6 @@
             this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -344,6 +344,7 @@
             this.tableContents.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.ResumeLayout(false);
 
         }

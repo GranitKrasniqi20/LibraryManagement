@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MembersForm));
             this.panelFullBody = new System.Windows.Forms.Panel();
             this.tabControlMembersForm = new System.Windows.Forms.TabControl();
@@ -92,11 +91,12 @@
             this.tableSpaceInfoBills = new System.Windows.Forms.TableLayoutPanel();
             this.lblInfoBills = new System.Windows.Forms.Label();
             this.tableSpace4 = new System.Windows.Forms.TableLayoutPanel();
-            this.subscribersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.subscribersBindingSource1 = new System.Windows.Forms.BindingSource();
             this.libraryManagementDataSet1 = new MenaxhimiBibliotekes.LibraryManagementDataSet1();
-            this.subscribersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.subscribersBindingSource = new System.Windows.Forms.BindingSource();
             this.libraryManagementDataSet = new MenaxhimiBibliotekes.LibraryManagementDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMemberHelp = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
@@ -588,9 +588,17 @@
             // 
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnMemberHelp);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.picTitle);
             this.panel1.Name = "panel1";
+            // 
+            // btnMemberHelp
+            // 
+            resources.ApplyResources(this.btnMemberHelp, "btnMemberHelp");
+            this.btnMemberHelp.Name = "btnMemberHelp";
+            this.btnMemberHelp.UseVisualStyleBackColor = true;
+            this.btnMemberHelp.Click += new System.EventHandler(this.btnMemberHelp_Click);
             // 
             // lblTitle
             // 
@@ -610,6 +618,7 @@
             resources.ApplyResources(this.tableHeader, "tableHeader");
             this.tableHeader.Controls.Add(this.panel1, 1, 0);
             this.tableHeader.Name = "tableHeader";
+            this.tableHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.tableHeader_Paint);
             // 
             // subscribersTableAdapter
             // 
@@ -736,5 +745,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRegistrationDate;
         private DevExpress.XtraGrid.Columns.GridColumn colBillExpirationDate;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
+        private System.Windows.Forms.Button btnMemberHelp;
     }
 }
