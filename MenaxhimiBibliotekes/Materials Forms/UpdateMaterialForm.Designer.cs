@@ -364,6 +364,7 @@
             resources.ApplyResources(this.tableLayoutPanel6, "tableLayoutPanel6");
             this.tableLayoutPanel6.Controls.Add(this.panel13, 1, 0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel6_Paint);
             // 
             // panel13
             // 

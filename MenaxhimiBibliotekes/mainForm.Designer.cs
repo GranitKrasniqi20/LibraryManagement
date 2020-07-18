@@ -30,7 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelUser = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnNotifications = new System.Windows.Forms.Button();
+            this.btnMaterials = new System.Windows.Forms.Button();
+            this.btnMembers = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.appLogo = new System.Windows.Forms.PictureBox();
+            this.appName = new System.Windows.Forms.PictureBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openMyProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,20 +54,14 @@
             this.alterGenresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterLanguagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.btnNotifications = new System.Windows.Forms.Button();
-            this.btnMaterials = new System.Windows.Forms.Button();
-            this.btnMembers = new System.Windows.Forms.Button();
-            this.btnDashboard = new System.Windows.Forms.Button();
+            this.panelUser = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnLoggedUser = new System.Windows.Forms.Button();
-            this.appLogo = new System.Windows.Forms.PictureBox();
-            this.appName = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
-            this.panelUser.SuspendLayout();
-            this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appName)).BeginInit();
+            this.menuStrip.SuspendLayout();
+            this.panelUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -78,13 +78,67 @@
             resources.ApplyResources(this.panelMenu, "panelMenu");
             this.panelMenu.Name = "panelMenu";
             // 
-            // panelUser
+            // btnSettings
             // 
-            this.panelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
-            this.panelUser.Controls.Add(this.btnLogout);
-            this.panelUser.Controls.Add(this.btnLoggedUser);
-            resources.ApplyResources(this.panelUser, "panelUser");
-            this.panelUser.Name = "panelUser";
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnSettings, "btnSettings");
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnNotifications
+            // 
+            this.btnNotifications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnNotifications.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnNotifications, "btnNotifications");
+            this.btnNotifications.ForeColor = System.Drawing.Color.White;
+            this.btnNotifications.Name = "btnNotifications";
+            this.btnNotifications.UseVisualStyleBackColor = false;
+            this.btnNotifications.Click += new System.EventHandler(this.btnNotifications_Click);
+            // 
+            // btnMaterials
+            // 
+            this.btnMaterials.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnMaterials.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnMaterials, "btnMaterials");
+            this.btnMaterials.ForeColor = System.Drawing.Color.White;
+            this.btnMaterials.Name = "btnMaterials";
+            this.btnMaterials.UseVisualStyleBackColor = false;
+            this.btnMaterials.Click += new System.EventHandler(this.btnMaterials_Click);
+            // 
+            // btnMembers
+            // 
+            this.btnMembers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnMembers.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnMembers, "btnMembers");
+            this.btnMembers.ForeColor = System.Drawing.Color.White;
+            this.btnMembers.Name = "btnMembers";
+            this.btnMembers.UseVisualStyleBackColor = false;
+            this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnDashboard, "btnDashboard");
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // appLogo
+            // 
+            resources.ApplyResources(this.appLogo, "appLogo");
+            this.appLogo.Name = "appLogo";
+            this.appLogo.TabStop = false;
+            this.appLogo.Click += new System.EventHandler(this.appLogo_Click);
+            // 
+            // appName
+            // 
+            resources.ApplyResources(this.appName, "appName");
+            this.appName.Name = "appName";
+            this.appName.TabStop = false;
             // 
             // menuStrip
             // 
@@ -206,54 +260,13 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
-            // btnSettings
+            // panelUser
             // 
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnSettings, "btnSettings");
-            this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
-            // btnNotifications
-            // 
-            this.btnNotifications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnNotifications.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnNotifications, "btnNotifications");
-            this.btnNotifications.ForeColor = System.Drawing.Color.White;
-            this.btnNotifications.Name = "btnNotifications";
-            this.btnNotifications.UseVisualStyleBackColor = false;
-            this.btnNotifications.Click += new System.EventHandler(this.btnNotifications_Click);
-            // 
-            // btnMaterials
-            // 
-            this.btnMaterials.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnMaterials.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnMaterials, "btnMaterials");
-            this.btnMaterials.ForeColor = System.Drawing.Color.White;
-            this.btnMaterials.Name = "btnMaterials";
-            this.btnMaterials.UseVisualStyleBackColor = false;
-            this.btnMaterials.Click += new System.EventHandler(this.btnMaterials_Click);
-            // 
-            // btnMembers
-            // 
-            this.btnMembers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnMembers.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnMembers, "btnMembers");
-            this.btnMembers.ForeColor = System.Drawing.Color.White;
-            this.btnMembers.Name = "btnMembers";
-            this.btnMembers.UseVisualStyleBackColor = false;
-            this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnDashboard, "btnDashboard");
-            this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            this.panelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(115)))));
+            this.panelUser.Controls.Add(this.btnLogout);
+            this.panelUser.Controls.Add(this.btnLoggedUser);
+            resources.ApplyResources(this.panelUser, "panelUser");
+            this.panelUser.Name = "panelUser";
             // 
             // btnLogout
             // 
@@ -274,19 +287,6 @@
             this.btnLoggedUser.UseVisualStyleBackColor = false;
             this.btnLoggedUser.Click += new System.EventHandler(this.btnLoggedUser_Click);
             // 
-            // appLogo
-            // 
-            resources.ApplyResources(this.appLogo, "appLogo");
-            this.appLogo.Name = "appLogo";
-            this.appLogo.TabStop = false;
-            this.appLogo.Click += new System.EventHandler(this.appLogo_Click);
-            // 
-            // appName
-            // 
-            resources.ApplyResources(this.appName, "appName");
-            this.appName.Name = "appName";
-            this.appName.TabStop = false;
-            // 
             // mainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -302,11 +302,11 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.mainForm_Shown);
             this.panelMenu.ResumeLayout(false);
-            this.panelUser.ResumeLayout(false);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appName)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
+            this.panelUser.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,14 +316,11 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.PictureBox appLogo;
         private System.Windows.Forms.PictureBox appName;
-        private System.Windows.Forms.Panel panelUser;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnNotifications;
         private System.Windows.Forms.Button btnMaterials;
         private System.Windows.Forms.Button btnMembers;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnLoggedUser;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openMyProfileToolStripMenuItem;
@@ -341,6 +338,9 @@
         private System.Windows.Forms.ToolStripMenuItem alterGenresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterLanguagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Panel panelUser;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnLoggedUser;
     }
 }
 

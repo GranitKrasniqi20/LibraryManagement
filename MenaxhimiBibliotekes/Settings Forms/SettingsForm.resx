@@ -117,8 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;btnMyProfile.Parent" xml:space="preserve">
-    <value>panel3</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnMyProfile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;tableSpace1.Name" xml:space="preserve">
     <value>tableSpace1</value>
@@ -139,7 +140,6 @@
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>312, 66</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblRole.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
@@ -158,21 +158,24 @@
   <data name="tableLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 455</value>
   </data>
-  <data name="btnMyProfile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16.125pt, style=Bold</value>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tableHeader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblRole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 25</value>
+  <data name="lblFooterTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblTitleTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 27.75pt, style=Bold</value>
   </data>
-  <data name="tableSpace1.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="lblTitleTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;lblFooterTitle.Name" xml:space="preserve">
     <value>lblFooterTitle</value>
@@ -185,9 +188,6 @@
   </data>
   <data name="&gt;&gt;tableLayoutPanel7.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="btnMyProfile.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="picTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 50</value>
@@ -204,14 +204,8 @@
   <data name="button1.Text" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="lblTitleTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 18</value>
-  </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="txtRole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 0</value>
   </data>
   <data name="&gt;&gt;lblFooterTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -222,11 +216,14 @@
   <data name="lblRole.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
+  <data name="txtRole.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 0</value>
   </data>
   <data name="lblFooterTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>77, 5</value>
@@ -236,6 +233,9 @@
   </data>
   <data name="&gt;&gt;panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblTitleTitle.Text" xml:space="preserve">
+    <value>SETTINGS</value>
   </data>
   <data name="txtRole.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -273,8 +273,8 @@
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 299</value>
   </data>
   <data name="tableLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -291,8 +291,14 @@
   <data name="lblTitleTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblFooterTitle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnManageAccounts.Text" xml:space="preserve">
     <value>Manage User Accounts</value>
@@ -312,7 +318,7 @@
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
     <value>46, 229</value>
   </data>
-  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnMyProfile.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -323,6 +329,9 @@
   </data>
   <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;tableHeader.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingsForm</value>
@@ -348,14 +357,17 @@
   <data name="btnMyProfile.Text" xml:space="preserve">
     <value>My Profile</value>
   </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>421, 521</value>
+  <data name="&gt;&gt;txtRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tableSpace1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16.125pt, style=Bold</value>
+  </data>
+  <data name="picTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 18</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>tableHeader</value>
@@ -376,13 +388,13 @@
     <value>0</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 3</value>
+    <value>18, 3</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel2" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,100,Percent,100,Absolute,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="&gt;&gt;picTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblRole.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="tableHeader.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -405,6 +417,9 @@
   <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblFooterTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -415,13 +430,13 @@
     <value>0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 82</value>
+    <value>355, 82</value>
   </data>
   <data name="lblTitleTitle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>405, 299</value>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;btnManageAccounts.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -435,11 +450,11 @@
   <data name="tableHeader.Size" type="System.Drawing.Size, System.Drawing">
     <value>405, 88</value>
   </data>
-  <data name="tableSpace1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 88</value>
-  </data>
   <data name="&gt;&gt;tableLayoutPanel7.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMyProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtRole.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -462,8 +477,8 @@
   <data name="&gt;&gt;btnManageAccounts.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblRole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 0</value>
+  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -483,8 +498,8 @@
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tableHeader.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
   </data>
   <data name="tableSpace1.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1823,6 +1838,9 @@
   <data name="&gt;&gt;picTitle.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;btnMyProfile.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
   <data name="tableLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1856,8 +1874,8 @@
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
   </data>
-  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>405, 52</value>
@@ -1874,17 +1892,17 @@
   <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 66</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="lblTitleTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 18</value>
   </data>
-  <data name="lblTitleTitle.Text" xml:space="preserve">
-    <value>SETTINGS</value>
+  <data name="&gt;&gt;picTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tableHeader.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="lblRole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 25</value>
   </data>
   <data name="&gt;&gt;btnMyProfile.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1897,6 +1915,9 @@
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
     <value>tableLayoutPanel1</value>
+  </data>
+  <data name="btnManageAccounts.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;tableSpace1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1916,6 +1937,9 @@
   <data name="&gt;&gt;button1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="picTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -1928,17 +1952,20 @@
   <data name="&gt;&gt;tableLayoutPanel7.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblRole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="tableSpace1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
+  <data name="picTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnManageAccounts.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="picTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="tableSpace1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 88</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1952,11 +1979,8 @@
   <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 66</value>
+  <data name="btnMyProfile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16.125pt, style=Bold</value>
   </data>
   <data name="button1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1964,11 +1988,11 @@
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 48</value>
   </data>
-  <data name="&gt;&gt;txtRole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 0</value>
   </data>
-  <data name="picTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 18</value>
+  <data name="tableSpace1.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;tableHeader.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1991,8 +2015,8 @@
   <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="&gt;&gt;btnMyProfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tableLayoutPanel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtRole.Text" xml:space="preserve">
     <value>---</value>
@@ -2011,6 +2035,9 @@
   </data>
   <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 156</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>421, 521</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
