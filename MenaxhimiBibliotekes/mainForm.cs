@@ -259,7 +259,7 @@ namespace MenaxhimiBibliotekes
 
         private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GetHelpProvider(this, "Materials.htm");
+            GetHelpProvider(this, "Hyrje.htm");
         }
     }
 }

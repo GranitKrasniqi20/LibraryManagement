@@ -767,6 +767,7 @@
             // 
             // btnMaterialHelp
             // 
+            this.btnMaterialHelp.BackgroundImage = global::MenaxhimiBibliotekes.Properties.Resources.pikpytja2;
             resources.ApplyResources(this.btnMaterialHelp, "btnMaterialHelp");
             this.btnMaterialHelp.Name = "btnMaterialHelp";
             this.helpProvider1.SetShowHelp(this.btnMaterialHelp, ((bool)(resources.GetObject("btnMaterialHelp.ShowHelp"))));
