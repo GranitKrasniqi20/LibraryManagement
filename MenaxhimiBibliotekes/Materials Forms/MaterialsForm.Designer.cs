@@ -32,6 +32,20 @@
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
             this.gridBorrowings = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,20 +63,6 @@
             this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabMainPage = new System.Windows.Forms.TabPage();
             this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
             this.gridMaterials = new DevExpress.XtraGrid.GridControl();
@@ -117,8 +117,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
             this.gridSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridBorrowings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tabMainPage.SuspendLayout();
             this.tableDataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMaterials)).BeginInit();
@@ -147,6 +147,7 @@
             this.gridSplitContainer1.Panel1.Controls.Add(this.gridBorrowings);
             resources.ApplyResources(this.gridSplitContainer1.Panel1, "gridSplitContainer1.Panel1");
             resources.ApplyResources(this.gridSplitContainer1.Panel2, "gridSplitContainer1.Panel2");
+            this.helpProvider1.SetShowHelp(this.gridSplitContainer1, ((bool)(resources.GetObject("gridSplitContainer1.ShowHelp"))));
             // 
             // gridBorrowings
             // 
@@ -158,12 +159,123 @@
             this.gridBorrowings.EmbeddedNavigator.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("gridBorrowings.EmbeddedNavigator.ImeMode")));
             this.gridBorrowings.EmbeddedNavigator.TextLocation = ((DevExpress.XtraEditors.NavigatorButtonsTextLocation)(resources.GetObject("gridBorrowings.EmbeddedNavigator.TextLocation")));
             this.gridBorrowings.EmbeddedNavigator.ToolTipIconType = ((DevExpress.Utils.ToolTipIconType)(resources.GetObject("gridBorrowings.EmbeddedNavigator.ToolTipIconType")));
-            this.gridBorrowings.MainView = this.gridView1;
+            this.gridBorrowings.MainView = this.gridView3;
             this.gridBorrowings.Name = "gridBorrowings";
+            this.helpProvider1.SetShowHelp(this.gridBorrowings, ((bool)(resources.GetObject("gridBorrowings.ShowHelp"))));
             this.gridBorrowings.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1,
-            this.gridView3});
+            this.gridView3,
+            this.gridView1});
             this.gridBorrowings.Click += new System.EventHandler(this.GridSplitContainer1Grid_Click);
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn19,
+            this.gridColumn20,
+            this.gridColumn21,
+            this.gridColumn22,
+            this.gridColumn23,
+            this.gridColumn24,
+            this.gridColumn25});
+            this.gridView3.GridControl = this.gridBorrowings;
+            this.gridView3.Name = "gridView3";
+            // 
+            // gridColumn13
+            // 
+            resources.ApplyResources(this.gridColumn13, "gridColumn13");
+            this.gridColumn13.FieldName = "BorrowId";
+            this.gridColumn13.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn13.ImageOptions.ImageIndex")));
+            this.gridColumn13.Name = "gridColumn13";
+            // 
+            // gridColumn14
+            // 
+            resources.ApplyResources(this.gridColumn14, "gridColumn14");
+            this.gridColumn14.FieldName = "_subscriber.SubscriberId";
+            this.gridColumn14.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn14.ImageOptions.ImageIndex")));
+            this.gridColumn14.Name = "gridColumn14";
+            // 
+            // gridColumn15
+            // 
+            resources.ApplyResources(this.gridColumn15, "gridColumn15");
+            this.gridColumn15.FieldName = "_subscriber.Name";
+            this.gridColumn15.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn15.ImageOptions.ImageIndex")));
+            this.gridColumn15.Name = "gridColumn15";
+            // 
+            // gridColumn16
+            // 
+            resources.ApplyResources(this.gridColumn16, "gridColumn16");
+            this.gridColumn16.FieldName = "_subscriber.LastName";
+            this.gridColumn16.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn16.ImageOptions.ImageIndex")));
+            this.gridColumn16.Name = "gridColumn16";
+            // 
+            // gridColumn17
+            // 
+            resources.ApplyResources(this.gridColumn17, "gridColumn17");
+            this.gridColumn17.FieldName = "_material.Title";
+            this.gridColumn17.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn17.ImageOptions.ImageIndex")));
+            this.gridColumn17.Name = "gridColumn17";
+            // 
+            // gridColumn18
+            // 
+            resources.ApplyResources(this.gridColumn18, "gridColumn18");
+            this.gridColumn18.FieldName = "_material._Author.AuthorName";
+            this.gridColumn18.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn18.ImageOptions.ImageIndex")));
+            this.gridColumn18.Name = "gridColumn18";
+            // 
+            // gridColumn19
+            // 
+            resources.ApplyResources(this.gridColumn19, "gridColumn19");
+            this.gridColumn19.FieldName = "_material._MaterialType._MaterialType";
+            this.gridColumn19.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn19.ImageOptions.ImageIndex")));
+            this.gridColumn19.Name = "gridColumn19";
+            // 
+            // gridColumn20
+            // 
+            resources.ApplyResources(this.gridColumn20, "gridColumn20");
+            this.gridColumn20.FieldName = "BorrowDate";
+            this.gridColumn20.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn20.ImageOptions.ImageIndex")));
+            this.gridColumn20.Name = "gridColumn20";
+            // 
+            // gridColumn21
+            // 
+            resources.ApplyResources(this.gridColumn21, "gridColumn21");
+            this.gridColumn21.FieldName = "DeadLine";
+            this.gridColumn21.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn21.ImageOptions.ImageIndex")));
+            this.gridColumn21.Name = "gridColumn21";
+            // 
+            // gridColumn22
+            // 
+            resources.ApplyResources(this.gridColumn22, "gridColumn22");
+            this.gridColumn22.FieldName = "_shelf.Location";
+            this.gridColumn22.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn22.ImageOptions.ImageIndex")));
+            this.gridColumn22.Name = "gridColumn22";
+            // 
+            // gridColumn23
+            // 
+            resources.ApplyResources(this.gridColumn23, "gridColumn23");
+            this.gridColumn23.FieldName = "BorrowReturn.ReturnDate";
+            this.gridColumn23.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn23.ImageOptions.ImageIndex")));
+            this.gridColumn23.Name = "gridColumn23";
+            // 
+            // gridColumn24
+            // 
+            resources.ApplyResources(this.gridColumn24, "gridColumn24");
+            this.gridColumn24.FieldName = "BorrowReturn.BillId";
+            this.gridColumn24.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn24.ImageOptions.ImageIndex")));
+            this.gridColumn24.Name = "gridColumn24";
+            // 
+            // gridColumn25
+            // 
+            resources.ApplyResources(this.gridColumn25, "gridColumn25");
+            this.gridColumn25.FieldName = "_reservation.ReservationId";
+            this.gridColumn25.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn25.ImageOptions.ImageIndex")));
+            this.gridColumn25.Name = "gridColumn25";
             // 
             // gridView1
             // 
@@ -291,116 +403,6 @@
             this.gridColumn26.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn26.ImageOptions.ImageIndex")));
             this.gridColumn26.Name = "gridColumn26";
             // 
-            // gridView3
-            // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17,
-            this.gridColumn18,
-            this.gridColumn19,
-            this.gridColumn20,
-            this.gridColumn21,
-            this.gridColumn22,
-            this.gridColumn23,
-            this.gridColumn24,
-            this.gridColumn25});
-            this.gridView3.GridControl = this.gridBorrowings;
-            this.gridView3.Name = "gridView3";
-            // 
-            // gridColumn13
-            // 
-            resources.ApplyResources(this.gridColumn13, "gridColumn13");
-            this.gridColumn13.FieldName = "BorrowId";
-            this.gridColumn13.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn13.ImageOptions.ImageIndex")));
-            this.gridColumn13.Name = "gridColumn13";
-            // 
-            // gridColumn14
-            // 
-            resources.ApplyResources(this.gridColumn14, "gridColumn14");
-            this.gridColumn14.FieldName = "_subscriber.SubscriberId";
-            this.gridColumn14.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn14.ImageOptions.ImageIndex")));
-            this.gridColumn14.Name = "gridColumn14";
-            // 
-            // gridColumn15
-            // 
-            resources.ApplyResources(this.gridColumn15, "gridColumn15");
-            this.gridColumn15.FieldName = "_subscriber.Name";
-            this.gridColumn15.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn15.ImageOptions.ImageIndex")));
-            this.gridColumn15.Name = "gridColumn15";
-            // 
-            // gridColumn16
-            // 
-            resources.ApplyResources(this.gridColumn16, "gridColumn16");
-            this.gridColumn16.FieldName = "_subscriber.LastName";
-            this.gridColumn16.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn16.ImageOptions.ImageIndex")));
-            this.gridColumn16.Name = "gridColumn16";
-            // 
-            // gridColumn17
-            // 
-            resources.ApplyResources(this.gridColumn17, "gridColumn17");
-            this.gridColumn17.FieldName = "_material.Title";
-            this.gridColumn17.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn17.ImageOptions.ImageIndex")));
-            this.gridColumn17.Name = "gridColumn17";
-            // 
-            // gridColumn18
-            // 
-            resources.ApplyResources(this.gridColumn18, "gridColumn18");
-            this.gridColumn18.FieldName = "_material._Author.AuthorName";
-            this.gridColumn18.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn18.ImageOptions.ImageIndex")));
-            this.gridColumn18.Name = "gridColumn18";
-            // 
-            // gridColumn19
-            // 
-            resources.ApplyResources(this.gridColumn19, "gridColumn19");
-            this.gridColumn19.FieldName = "_material._MaterialType._MaterialType";
-            this.gridColumn19.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn19.ImageOptions.ImageIndex")));
-            this.gridColumn19.Name = "gridColumn19";
-            // 
-            // gridColumn20
-            // 
-            resources.ApplyResources(this.gridColumn20, "gridColumn20");
-            this.gridColumn20.FieldName = "BorrowDate";
-            this.gridColumn20.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn20.ImageOptions.ImageIndex")));
-            this.gridColumn20.Name = "gridColumn20";
-            // 
-            // gridColumn21
-            // 
-            resources.ApplyResources(this.gridColumn21, "gridColumn21");
-            this.gridColumn21.FieldName = "DeadLine";
-            this.gridColumn21.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn21.ImageOptions.ImageIndex")));
-            this.gridColumn21.Name = "gridColumn21";
-            // 
-            // gridColumn22
-            // 
-            resources.ApplyResources(this.gridColumn22, "gridColumn22");
-            this.gridColumn22.FieldName = "_shelf.Location";
-            this.gridColumn22.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn22.ImageOptions.ImageIndex")));
-            this.gridColumn22.Name = "gridColumn22";
-            // 
-            // gridColumn23
-            // 
-            resources.ApplyResources(this.gridColumn23, "gridColumn23");
-            this.gridColumn23.FieldName = "BorrowReturn.ReturnDate";
-            this.gridColumn23.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn23.ImageOptions.ImageIndex")));
-            this.gridColumn23.Name = "gridColumn23";
-            // 
-            // gridColumn24
-            // 
-            resources.ApplyResources(this.gridColumn24, "gridColumn24");
-            this.gridColumn24.FieldName = "BorrowReturn.BillId";
-            this.gridColumn24.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn24.ImageOptions.ImageIndex")));
-            this.gridColumn24.Name = "gridColumn24";
-            // 
-            // gridColumn25
-            // 
-            resources.ApplyResources(this.gridColumn25, "gridColumn25");
-            this.gridColumn25.FieldName = "_reservation.ReservationId";
-            this.gridColumn25.ImageOptions.ImageIndex = ((int)(resources.GetObject("gridColumn25.ImageOptions.ImageIndex")));
-            this.gridColumn25.Name = "gridColumn25";
-            // 
             // tabMainPage
             // 
             this.tabMainPage.Controls.Add(this.tableDataGridView);
@@ -411,6 +413,7 @@
             this.tabMainPage.Controls.Add(this.tableSpace1);
             resources.ApplyResources(this.tabMainPage, "tabMainPage");
             this.tabMainPage.Name = "tabMainPage";
+            this.helpProvider1.SetShowHelp(this.tabMainPage, ((bool)(resources.GetObject("tabMainPage.ShowHelp"))));
             this.tabMainPage.UseVisualStyleBackColor = true;
             // 
             // tableDataGridView
@@ -418,6 +421,7 @@
             resources.ApplyResources(this.tableDataGridView, "tableDataGridView");
             this.tableDataGridView.Controls.Add(this.gridMaterials, 1, 0);
             this.tableDataGridView.Name = "tableDataGridView";
+            this.helpProvider1.SetShowHelp(this.tableDataGridView, ((bool)(resources.GetObject("tableDataGridView.ShowHelp"))));
             // 
             // gridMaterials
             // 
@@ -433,6 +437,7 @@
             gridLevelNode1});
             this.gridMaterials.MainView = this.gridView;
             this.gridMaterials.Name = "gridMaterials";
+            this.helpProvider1.SetShowHelp(this.gridMaterials, ((bool)(resources.GetObject("gridMaterials.ShowHelp"))));
             this.gridMaterials.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
             this.gridMaterials.Click += new System.EventHandler(this.GridMaterials_Click);
@@ -522,17 +527,20 @@
             resources.ApplyResources(this.tableBottomSpace, "tableBottomSpace");
             this.tableBottomSpace.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableBottomSpace.Name = "tableBottomSpace";
+            this.helpProvider1.SetShowHelp(this.tableBottomSpace, ((bool)(resources.GetObject("tableBottomSpace.ShowHelp"))));
             // 
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.lblFooterTitleCreate, 1, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.helpProvider1.SetShowHelp(this.tableLayoutPanel1, ((bool)(resources.GetObject("tableLayoutPanel1.ShowHelp"))));
             // 
             // lblFooterTitleCreate
             // 
             resources.ApplyResources(this.lblFooterTitleCreate, "lblFooterTitleCreate");
             this.lblFooterTitleCreate.Name = "lblFooterTitleCreate";
+            this.helpProvider1.SetShowHelp(this.lblFooterTitleCreate, ((bool)(resources.GetObject("lblFooterTitleCreate.ShowHelp"))));
             // 
             // tableSearch
             // 
@@ -540,11 +548,13 @@
             this.tableSearch.Controls.Add(this.txtSearchMaterial, 1, 0);
             this.tableSearch.Controls.Add(this.btnSearchMaterial, 3, 0);
             this.tableSearch.Name = "tableSearch";
+            this.helpProvider1.SetShowHelp(this.tableSearch, ((bool)(resources.GetObject("tableSearch.ShowHelp"))));
             // 
             // txtSearchMaterial
             // 
             resources.ApplyResources(this.txtSearchMaterial, "txtSearchMaterial");
             this.txtSearchMaterial.Name = "txtSearchMaterial";
+            this.helpProvider1.SetShowHelp(this.txtSearchMaterial, ((bool)(resources.GetObject("txtSearchMaterial.ShowHelp"))));
             // 
             // btnSearchMaterial
             // 
@@ -552,6 +562,7 @@
             resources.ApplyResources(this.btnSearchMaterial, "btnSearchMaterial");
             this.btnSearchMaterial.ForeColor = System.Drawing.Color.White;
             this.btnSearchMaterial.Name = "btnSearchMaterial";
+            this.helpProvider1.SetShowHelp(this.btnSearchMaterial, ((bool)(resources.GetObject("btnSearchMaterial.ShowHelp"))));
             this.btnSearchMaterial.UseVisualStyleBackColor = false;
             this.btnSearchMaterial.Click += new System.EventHandler(this.btnSearchMaterial_Click);
             // 
@@ -559,6 +570,7 @@
             // 
             resources.ApplyResources(this.tableButtons, "tableButtons");
             this.tableButtons.Name = "tableButtons";
+            this.helpProvider1.SetShowHelp(this.tableButtons, ((bool)(resources.GetObject("tableButtons.ShowHelp"))));
             // 
             // tableSpace2
             // 
@@ -567,6 +579,7 @@
             this.tableSpace2.Controls.Add(this.btnUpdateMaterial, 3, 0);
             this.tableSpace2.Controls.Add(this.btnDeleteMaterial, 5, 0);
             this.tableSpace2.Name = "tableSpace2";
+            this.helpProvider1.SetShowHelp(this.tableSpace2, ((bool)(resources.GetObject("tableSpace2.ShowHelp"))));
             // 
             // btnAddMaterial
             // 
@@ -574,6 +587,7 @@
             resources.ApplyResources(this.btnAddMaterial, "btnAddMaterial");
             this.btnAddMaterial.ForeColor = System.Drawing.Color.White;
             this.btnAddMaterial.Name = "btnAddMaterial";
+            this.helpProvider1.SetShowHelp(this.btnAddMaterial, ((bool)(resources.GetObject("btnAddMaterial.ShowHelp"))));
             this.btnAddMaterial.UseVisualStyleBackColor = false;
             this.btnAddMaterial.Click += new System.EventHandler(this.btnAddMaterial_Click);
             // 
@@ -583,6 +597,7 @@
             resources.ApplyResources(this.btnUpdateMaterial, "btnUpdateMaterial");
             this.btnUpdateMaterial.ForeColor = System.Drawing.Color.White;
             this.btnUpdateMaterial.Name = "btnUpdateMaterial";
+            this.helpProvider1.SetShowHelp(this.btnUpdateMaterial, ((bool)(resources.GetObject("btnUpdateMaterial.ShowHelp"))));
             this.btnUpdateMaterial.UseVisualStyleBackColor = false;
             this.btnUpdateMaterial.Click += new System.EventHandler(this.btnUpdateMaterial_Click);
             // 
@@ -592,6 +607,7 @@
             resources.ApplyResources(this.btnDeleteMaterial, "btnDeleteMaterial");
             this.btnDeleteMaterial.ForeColor = System.Drawing.Color.White;
             this.btnDeleteMaterial.Name = "btnDeleteMaterial";
+            this.helpProvider1.SetShowHelp(this.btnDeleteMaterial, ((bool)(resources.GetObject("btnDeleteMaterial.ShowHelp"))));
             this.btnDeleteMaterial.UseVisualStyleBackColor = false;
             this.btnDeleteMaterial.Click += new System.EventHandler(this.btnDeleteMaterial_Click);
             // 
@@ -599,6 +615,7 @@
             // 
             resources.ApplyResources(this.tableSpace1, "tableSpace1");
             this.tableSpace1.Name = "tableSpace1";
+            this.helpProvider1.SetShowHelp(this.tableSpace1, ((bool)(resources.GetObject("tableSpace1.ShowHelp"))));
             // 
             // tabControl
             // 
@@ -607,6 +624,7 @@
             resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
+            this.helpProvider1.SetShowHelp(this.tabControl, ((bool)(resources.GetObject("tabControl.ShowHelp"))));
             // 
             // tabReservationsBorrowings
             // 
@@ -618,6 +636,7 @@
             this.tabReservationsBorrowings.Controls.Add(this.tableLayoutPanel11);
             resources.ApplyResources(this.tabReservationsBorrowings, "tabReservationsBorrowings");
             this.tabReservationsBorrowings.Name = "tabReservationsBorrowings";
+            this.helpProvider1.SetShowHelp(this.tabReservationsBorrowings, ((bool)(resources.GetObject("tabReservationsBorrowings.ShowHelp"))));
             this.tabReservationsBorrowings.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel16
@@ -625,6 +644,7 @@
             resources.ApplyResources(this.tableLayoutPanel16, "tableLayoutPanel16");
             this.tableLayoutPanel16.Controls.Add(this.gridSplitContainer1, 1, 0);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.helpProvider1.SetShowHelp(this.tableLayoutPanel16, ((bool)(resources.GetObject("tableLayoutPanel16.ShowHelp"))));
             this.tableLayoutPanel16.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel16_Paint);
             // 
             // tableLayoutPanel15
@@ -632,11 +652,13 @@
             resources.ApplyResources(this.tableLayoutPanel15, "tableLayoutPanel15");
             this.tableLayoutPanel15.Controls.Add(this.label22, 1, 0);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.helpProvider1.SetShowHelp(this.tableLayoutPanel15, ((bool)(resources.GetObject("tableLayoutPanel15.ShowHelp"))));
             // 
             // label22
             // 
             resources.ApplyResources(this.label22, "label22");
             this.label22.Name = "label22";
+            this.helpProvider1.SetShowHelp(this.label22, ((bool)(resources.GetObject("label22.ShowHelp"))));
             // 
             // tableLayoutPanel14
             // 
@@ -645,6 +667,7 @@
             this.tableLayoutPanel14.Controls.Add(this.txtBorrowings, 3, 0);
             this.tableLayoutPanel14.Controls.Add(this.comboChoseGrid, 1, 0);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.helpProvider1.SetShowHelp(this.tableLayoutPanel14, ((bool)(resources.GetObject("tableLayoutPanel14.ShowHelp"))));
             // 
             // button4
             // 
@@ -652,6 +675,7 @@
             resources.ApplyResources(this.button4, "button4");
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Name = "button4";
+            this.helpProvider1.SetShowHelp(this.button4, ((bool)(resources.GetObject("button4.ShowHelp"))));
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
@@ -659,6 +683,7 @@
             // 
             resources.ApplyResources(this.txtBorrowings, "txtBorrowings");
             this.txtBorrowings.Name = "txtBorrowings";
+            this.helpProvider1.SetShowHelp(this.txtBorrowings, ((bool)(resources.GetObject("txtBorrowings.ShowHelp"))));
             this.txtBorrowings.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // comboChoseGrid
@@ -669,11 +694,13 @@
             resources.GetString("comboChoseGrid.Items"),
             resources.GetString("comboChoseGrid.Items1")});
             this.comboChoseGrid.Name = "comboChoseGrid";
+            this.helpProvider1.SetShowHelp(this.comboChoseGrid, ((bool)(resources.GetObject("comboChoseGrid.ShowHelp"))));
             // 
             // tableLayoutPanel13
             // 
             resources.ApplyResources(this.tableLayoutPanel13, "tableLayoutPanel13");
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.helpProvider1.SetShowHelp(this.tableLayoutPanel13, ((bool)(resources.GetObject("tableLayoutPanel13.ShowHelp"))));
             // 
             // tableLayoutPanel12
             // 
@@ -682,6 +709,7 @@
             this.tableLayoutPanel12.Controls.Add(this.btnReservations, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.btnReturns, 5, 0);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.helpProvider1.SetShowHelp(this.tableLayoutPanel12, ((bool)(resources.GetObject("tableLayoutPanel12.ShowHelp"))));
             // 
             // btnBorrowings
             // 
@@ -689,6 +717,7 @@
             resources.ApplyResources(this.btnBorrowings, "btnBorrowings");
             this.btnBorrowings.ForeColor = System.Drawing.Color.White;
             this.btnBorrowings.Name = "btnBorrowings";
+            this.helpProvider1.SetShowHelp(this.btnBorrowings, ((bool)(resources.GetObject("btnBorrowings.ShowHelp"))));
             this.btnBorrowings.UseVisualStyleBackColor = false;
             this.btnBorrowings.Click += new System.EventHandler(this.btnBorrowings_Click);
             // 
@@ -698,6 +727,7 @@
             resources.ApplyResources(this.btnReservations, "btnReservations");
             this.btnReservations.ForeColor = System.Drawing.Color.White;
             this.btnReservations.Name = "btnReservations";
+            this.helpProvider1.SetShowHelp(this.btnReservations, ((bool)(resources.GetObject("btnReservations.ShowHelp"))));
             this.btnReservations.UseVisualStyleBackColor = false;
             this.btnReservations.Click += new System.EventHandler(this.btnReservations_Click);
             // 
@@ -707,6 +737,7 @@
             resources.ApplyResources(this.btnReturns, "btnReturns");
             this.btnReturns.ForeColor = System.Drawing.Color.White;
             this.btnReturns.Name = "btnReturns";
+            this.helpProvider1.SetShowHelp(this.btnReturns, ((bool)(resources.GetObject("btnReturns.ShowHelp"))));
             this.btnReturns.UseVisualStyleBackColor = false;
             this.btnReturns.Click += new System.EventHandler(this.btnReturns_Click);
             // 
@@ -714,6 +745,7 @@
             // 
             resources.ApplyResources(this.tableLayoutPanel11, "tableLayoutPanel11");
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.helpProvider1.SetShowHelp(this.tableLayoutPanel11, ((bool)(resources.GetObject("tableLayoutPanel11.ShowHelp"))));
             // 
             // tableHeader
             // 
@@ -721,6 +753,7 @@
             resources.ApplyResources(this.tableHeader, "tableHeader");
             this.tableHeader.Controls.Add(this.panel1, 1, 0);
             this.tableHeader.Name = "tableHeader";
+            this.helpProvider1.SetShowHelp(this.tableHeader, ((bool)(resources.GetObject("tableHeader.ShowHelp"))));
             // 
             // panel1
             // 
@@ -730,12 +763,14 @@
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.picTitle);
             this.panel1.Name = "panel1";
+            this.helpProvider1.SetShowHelp(this.panel1, ((bool)(resources.GetObject("panel1.ShowHelp"))));
             // 
             // btnMaterialHelp
             // 
             this.btnMaterialHelp.BackgroundImage = global::MenaxhimiBibliotekes.Properties.Resources.pikpytja2;
             resources.ApplyResources(this.btnMaterialHelp, "btnMaterialHelp");
             this.btnMaterialHelp.Name = "btnMaterialHelp";
+            this.helpProvider1.SetShowHelp(this.btnMaterialHelp, ((bool)(resources.GetObject("btnMaterialHelp.ShowHelp"))));
             this.btnMaterialHelp.UseVisualStyleBackColor = true;
             this.btnMaterialHelp.Click += new System.EventHandler(this.btnMaterialHelp_Click);
             // 
@@ -744,11 +779,13 @@
             resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Name = "lblTitle";
+            this.helpProvider1.SetShowHelp(this.lblTitle, ((bool)(resources.GetObject("lblTitle.ShowHelp"))));
             // 
             // picTitle
             // 
             resources.ApplyResources(this.picTitle, "picTitle");
             this.picTitle.Name = "picTitle";
+            this.helpProvider1.SetShowHelp(this.picTitle, ((bool)(resources.GetObject("picTitle.ShowHelp"))));
             this.picTitle.TabStop = false;
             // 
             // col
@@ -797,8 +834,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).EndInit();
             this.gridSplitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridBorrowings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tabMainPage.ResumeLayout(false);
             this.tableDataGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridMaterials)).EndInit();

@@ -247,7 +247,6 @@ namespace MenaxhimiBibliotekes
 
         private void ProgressPanel1_Click(object sender, EventArgs e)
         {
-
         }
 
 
