@@ -30,8 +30,6 @@ namespace MenaxhimiBibliotekes.Members_Forms
         BillBLL billBLL = new BillBLL();
         string subscriptionPlanVariable;
 
-        int n;
-        
         private void btnSearchMember_Click(object sender, EventArgs e)
         {
             try
@@ -53,8 +51,6 @@ namespace MenaxhimiBibliotekes.Members_Forms
                 bill = billBLL.Get(int.Parse(txtMemberID.Text));
 
                 txtFromDate.Text = subscriber.InsDate.ToShortDateString(); 
-                txtFromDate.Text = subscriber.UpdDate.ToShortDateString(); 
-
                 txtTillDate.Text = subscriber.ExpirationDate.ToShortDateString();
             }
 
@@ -102,7 +98,6 @@ namespace MenaxhimiBibliotekes.Members_Forms
                 else
                 {
                     subscriberBLL.Update(subscriber);
-                    n++;
                     MessageBox.Show("The information of subscriber is updated successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -202,21 +197,22 @@ namespace MenaxhimiBibliotekes.Members_Forms
         {
             try
             {
-                if (comboSubscriptionPlan.SelectedItem == "Monthly")
+                if (comboSubscriptionPlan.SelectedIndex == 0)
                 {
                     txtFromDate.Text = DateTime.Now.ToShortDateString();
 
-                    txtTillDate.Text = DateTime.Now.AddMonths(1).ToShortDateString();
-
-                    subscriptionPlanVariable = "Monthly";
-                }
-                if (comboSubscriptionPlan.SelectedItem == "Yearly")
-                {
-                    txtFromDate.Text = DateTime.Now.ToShortDateString();
-
-                    txtTillDate.Text = DateTime.Now.AddYears(1).ToShortDateString();
+                    txtTillDate.Text = DateTime.Parse(txtFromDate.Text).AddYears(1).ToShortDateString();
 
                     subscriptionPlanVariable = "Yearly";
+                }
+
+                if (comboSubscriptionPlan.SelectedIndex == 1)
+                {
+                    txtFromDate.Text = DateTime.Now.ToShortDateString();
+
+                    txtTillDate.Text = DateTime.Parse(txtFromDate.Text).AddMonths(1).ToShortDateString();
+
+                    subscriptionPlanVariable = "Monthly";
                 }
             }
 

@@ -134,22 +134,22 @@ namespace MenaxhimiBibliotekes.Members_Forms
         {
             try
             {
-                if (comboSubscriptionPlan.SelectedItem=="Monthly")
+                if (comboSubscriptionPlan.SelectedIndex == 0)
                 {
                     txtFromDate.Text = DateTime.Now.ToShortDateString();
 
-                    txtTillDate.Text = DateTime.Now.AddMonths(1).ToShortDateString();
+                    txtTillDate.Text = DateTime.Parse(txtFromDate.Text).AddYears(1).ToShortDateString();
 
-                    subscriptionPlanVariable = "Monthly";
+                    subscriptionPlanVariable = "Yearly";
                 }
 
-                if (comboSubscriptionPlan.SelectedItem == "Yearly")
+                if (comboSubscriptionPlan.SelectedIndex == 1)
                 {
                     txtFromDate.Text = DateTime.Now.ToShortDateString();
 
-                    txtTillDate.Text = DateTime.Now.AddYears(1).ToShortDateString();
-                    
-                    subscriptionPlanVariable = "Yearly";
+                    txtTillDate.Text = DateTime.Parse(txtFromDate.Text).AddMonths(1).ToShortDateString();
+
+                    subscriptionPlanVariable = "Monthly";
                 }
             }
 
