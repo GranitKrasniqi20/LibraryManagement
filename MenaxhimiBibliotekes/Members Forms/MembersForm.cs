@@ -1,4 +1,5 @@
-﻿using MenaxhimiBibliotekes.BLL;
+﻿using DevExpress.DataProcessing;
+using MenaxhimiBibliotekes.BLL;
 using MenaxhimiBibliotekes.BO;
 using MenaxhimiBibliotekes.Materials_Forms;
 using System;
@@ -56,19 +57,27 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
         private void btnSearchMember_Click(object sender, EventArgs e)
         {
-
-            if (comboSortMember.SelectedItem == "Active Members")
+            //if (comboSortMember.SelectedItem.ToString() == "Active Members")
+            if (comboSortMember.SelectedIndex == 0)
             {
                 BindDataGrid(true);
             }
-            else
+            else if (comboSortMember.SelectedIndex == 1)
             {
                 BindDataGrid(false);
             }
+            else
+            {
+                gridMembers.DataSource = null;
+                gridMembers.DataSource = subcriberBLL.GetAll().Where(x => (x.Name.Contains(txtSearchMember.Text.Trim())
+                                     || x.LastName.Contains(txtSearchMember.Text.Trim()) ||
+                                     $"{x.Name} {x.LastName}".Contains(txtSearchMember.Text.Trim())));
 
-
-           
+                //gridMembers.DataSource = subcriberBLL.GetAll().Where(x => (x.Name.StartsWith(txtSearchMember.Text)
+                //|| x.LastName.StartsWith(txtSearchMember.Text) || $"{x.Name} {x.LastName}".StartsWith(txtSearchMember.Text)));
+            }
         }
+
         void BindDataGrid(bool i)
         {
            // string[] FullNameArray = txtSearchMember.Text.Split(' ');
@@ -81,8 +90,11 @@ namespace MenaxhimiBibliotekes.Members_Forms
             else
             {
                 gridMembers.DataSource = subcriberBLL.GetAll().Where(x => (x.Name.Contains(txtSearchMember.Text.Trim())
-                                     || x.LastName.Contains(txtSearchMember.Text.Trim()) || 
+                                     || x.LastName.Contains(txtSearchMember.Text.Trim()) ||
                                      $"{x.Name} {x.LastName}".Contains(txtSearchMember.Text.Trim())) && x.IsActive == i);
+
+                //gridMembers.DataSource = subcriberBLL.GetAll().Where(x => (x.Name.StartsWith(txtSearchMember.Text)
+                //|| x.LastName.StartsWith(txtSearchMember.Text) || $"{x.Name} {x.LastName}".StartsWith(txtSearchMember.Text)));
             }
         }
 

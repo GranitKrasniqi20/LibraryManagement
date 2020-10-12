@@ -32,6 +32,7 @@
             this.tableHeader = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitleTitle = new System.Windows.Forms.Label();
+            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSubTitle = new System.Windows.Forms.Label();
@@ -66,9 +67,9 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.picTitle = new System.Windows.Forms.PictureBox();
             this.tableHeader.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -77,13 +78,12 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.SuspendLayout();
             // 
             // tableHeader
             // 
-            resources.ApplyResources(this.tableHeader, "tableHeader");
             this.tableHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+            resources.ApplyResources(this.tableHeader, "tableHeader");
             this.tableHeader.Controls.Add(this.panel1, 1, 0);
             this.tableHeader.Name = "tableHeader";
             // 
@@ -100,6 +100,12 @@
             this.lblTitleTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitleTitle.Name = "lblTitleTitle";
             // 
+            // picTitle
+            // 
+            resources.ApplyResources(this.picTitle, "picTitle");
+            this.picTitle.Name = "picTitle";
+            this.picTitle.TabStop = false;
+            // 
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
@@ -108,9 +114,9 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.lblSubTitle);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // lblSubTitle
@@ -318,18 +324,12 @@
             // 
             // btnRegister
             // 
-            resources.ApplyResources(this.btnRegister, "btnRegister");
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(188)))));
+            resources.ApplyResources(this.btnRegister, "btnRegister");
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click_1);
-            // 
-            // picTitle
-            // 
-            resources.ApplyResources(this.picTitle, "picTitle");
-            this.picTitle.Name = "picTitle";
-            this.picTitle.TabStop = false;
             // 
             // AddNewMaterial
             // 
@@ -346,6 +346,7 @@
             this.tableHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -359,7 +360,6 @@
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.ResumeLayout(false);
 
         }
