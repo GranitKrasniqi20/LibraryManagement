@@ -80,7 +80,7 @@ namespace MenaxhimiBibliotekes.Members_Forms
 
         void BindDataGrid(bool i)
         {
-           // string[] FullNameArray = txtSearchMember.Text.Split(' ');
+            // string[] FullNameArray = txtSearchMember.Text.Split(' ');
             gridMembers.DataSource = null;
 
             if (txtSearchMember.Text == string.Empty)
@@ -126,6 +126,6 @@ namespace MenaxhimiBibliotekes.Members_Forms
             MaterialsForm.GetHelpProvider(this, "Members.htm");
         }
 
-        
+       
     }
 }

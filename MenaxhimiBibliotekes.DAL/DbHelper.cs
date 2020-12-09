@@ -16,7 +16,6 @@ namespace MenaxhimiBibliotekes.DAL
 
         public static SqlConnection GetConnection()
         {
-
             try
             {
                 SqlConnection conn = new SqlConnection(ConnectionString);
@@ -43,9 +42,5 @@ namespace MenaxhimiBibliotekes.DAL
                 return null;
             }
         }
-
- 
-
-
     }
 }
